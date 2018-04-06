@@ -2,7 +2,7 @@
 
 This stand-alone content repository contains deliverables and reports of VHA Knowledge-Based Systems HL7 CDS Knowledge Artifacts. The fastest way to browse it is to load the manifest into the 3rd-party KNARTwork tool, here:
 
-https://knartwork.healthcreek.org/browser?repository=https://vha-kbs-knarts.healthcreek.org
+http://knartwork.healthcreek.org/browser?repository=http://vha-kbs-knarts.healthcreek.org
 
 The editor will allow you to make changes to the KNARTs, but you'll need to download the updated artifact(s) to save them. 
 
