@@ -44,7 +44,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 * Full semantic validation. 
 
 
-# Comsumer Remarks
+# Comsumption Remarks
 
 ## Making Your Own Repository
 
