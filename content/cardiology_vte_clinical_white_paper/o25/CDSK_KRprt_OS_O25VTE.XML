@@ -1,0 +1,2443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?schematron-schema href="../main/schematron/knowledgeartifact.sch"?>
+<?schematron-schema href="../main/schematron/documentationtemplates.sch"?>
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:vmr="urn:hl7-org:vmr:r2" xmlns:dt="urn:hl7-org:cdsdt:r2"
+    xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:p1="http://www.w3.org/1999/xhtml"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:anf="http://hl7.org/anf"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="78885b6c-569b-5a75-bc75-cef8b2d861dc" identifierName="O25" version="1.0"/>
+            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0008BA"
+                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0008BA"/>
+            <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-92" identifierName="Jira KP-92"/>
+        </identifiers>
+        <artifactType value="Order Set"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:0.9"/>
+            </modelReference>
+        </dataModels>
+
+        <title value="Cardiology: Venous Thromboembolism (VTE) Prophylaxis Order Set"/>
+
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr1" identifierName="CCWP"/>
+                        </identifiers>
+                        <title value="Cardiology: Venous Thromboembolism (VTE) Prophylaxis Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr2" identifierName="CSD"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0008BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0008BA"/>
+
+                        </identifiers>
+                        <title value="Cardiology: Venous Thromboembolism (VTE) Prophylaxis Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr3" identifierName="KVRpt"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0008BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0008BA"/>
+                        </identifiers>
+                        <title value="Cardiology: Venous Thromboembolism (VTE) Prophylaxis KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="Padua Risk Calculator" extension="sr4"/>
+                        </identifiers>
+                        <title value="Padua VTE Risk Caclulator"/>
+                        <location value="https://www.mdcalc.com/padua-prediction-score-risk-vte"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="Caprini Risk Assessment" extension="sr5"/>
+                        </identifiers>
+                        <title value="Caprini Risk Assessment &#8211; Online Version &#8211; Venous Resource Center"/>
+                        <location value="https://venousdisease.com/dvt-risk-assessment-online/"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="e1" identifierName="Jacobs 2012"/>
+                            <identifier root="https://doi.org" extension="10.2106/JBJS.9408.ebo746" identifierName="DOI"/>
+                        </identifiers>
+                        <title
+                            value="American Academy of Orthopaedic Surgeons Clinical Practice Guideline on: Preventing Venous Thromboembolic Disease in Patients Undergoing Elective Hip and Knee Arthroplasty."/>
+                        <location value="https://doi.org/10.2106/JBJS.9408.ebo746"/>
+                        <citation
+                            value="Jacobs, Joshua J., Michael A. Mont, Kevin John Bozic, Craig J. Della Valle, Stuart Barry Goodman, Courtland G. Lewis, Adolph Chick J. Yates, et al. 2012. “American Academy of Orthopaedic Surgeons Clinical Practice Guideline on: Preventing Venous Thromboembolic Disease in Patients Undergoing Elective Hip and Knee Arthroplasty.” The Journal of Bone and Joint Surgery. American Volume 94 (8): 746–47. doi:10.2106/JBJS.9408.ebo746."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="Bates 2012" extension="e2"/>
+                            <identifier root="https://doi.org" extension="10.1378/chest.11-2300" identifierName="DOI"/>
+                            <identifier root="https://www.ncbi.nlm.nih.gov" extension="PMC3278054/" identifierName="PMC3278054"/>
+                        </identifiers>
+                        <title
+                            value="VTE, Thrombophilia, Antithrombotic Therapy, and Pregnancy: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines"/>
+                        <location value="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/"/>
+                        <citation
+                            value="Bates, Shannon M., Ian A. Greer, Saskia Middeldorp, David L. Veenstra, Anne-Marie Prabulos, and Per Olav Vandvik. 2012. “VTE, Thrombophilia, Antithrombotic Therapy, and Pregnancy: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.” Chest 141 (2 Suppl): e691S–e736S. doi:10.1378/chest.11-2300"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="e3" identifierName="Douketis 2012"/>
+                            <identifier root="https://doi.org" extension="10.1378/chest.11-2298" identifierName="DOI"/>
+                        </identifiers>
+                        <title
+                            value="Perioperative Management of Antithrombotic Therapy: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines"/>
+                        <location value="https://doi.org/10.1378/chest.11-2296"/>
+                        <citation
+                            value="Douketis, James D, Alex C Spyropoulos, Frederick A Spencer, Michael Mayr, Amir K Jaffer, Mark H Eckman, Andrew S Dunn, and Regina Kunz. 2012. “Perioperative Management of Antithrombotic Therapy: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.” Chest 141 (2 Suppl): e326S–e350S. doi:10.1378/chest.11-2298"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="e4" identifierName="Gould 2012"/>
+                            <identifier root="https://doi.org" extension="10.1378/chest.11-2297" identifierName="DOI"/>
+                        </identifiers>
+                        <title
+                            value="Prevention of VTE in Nonorthopedic Surgical Patients: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines."/>
+                        <location value="https://doi.org/10.2106/JBJS.9408.ebo746"/>
+                        <citation
+                            value="Gould, Michael K., David A. Garcia, Sherry M. Wren, Paul J. Karanicolas, Juan I. Arcelus, John A. Heit, and Charles M. Samama. 2012. “Prevention of VTE in Nonorthopedic Surgical Patients: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.” Chest 141 (2 Suppl): e227S–e277S. doi:10.1378/chest.11-2297."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="e5" identifierName="Kahn 2012"/>
+                            <identifier root="https://doi.org" extension="10.1378/chest.11-2296" identifierName="DOI"/>
+                        </identifiers>
+                        <title
+                            value="Prevention of VTE in Nonsurgical Patients: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines"/>
+                        <location value="https://doi.org/10.1378/chest.11-2296"/>
+                        <citation
+                            value="Kahn, Susan R., Wendy Lim, Andrew S. Dunn, Mary Cushman, Francesco Dentali, Elie A. Akl, Deborah J. Cook, et al. 2012. “Prevention of VTE in Nonsurgical Patients: Antithrombotic Therapy and Prevention of Thrombosis, 9th Ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines.” Chest 141 (2 Suppl): e195S–e226S. doi:10.1378x/chest.11-2296."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="e6" identifierName="IOM 2013"/>
+                            <identifier root="https://doi.org" extension="10.17226/21794" identifierName="DOI"/>
+                        </identifiers>
+                        <title value="Improving Diagnosis in Health Care"/>
+                        <location value="https://doi.org/10.17226/21794"/>
+                        <citation
+                            value="Medicine, Institute of, and Engineering National Academies of Sciences and Medicine. 2013. Improving Diagnosis in Health Care. Washington, DC: The National Academies Press. https://www.nap.edu/catalog/21794/improving-diagnosis-in-health-care. doi:10.17226/21794"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="e7" identifierName="Rogers 2007"/>
+                            <identifier root="https://doi.org" extension="10.1016/j.jamcollsurg.2007.02.072" identifierName="DOI"/>
+                        </identifiers>
+                        <title
+                            value="Multivariable Predictors of Postoperative Venous Thromboembolic Events after General and Vascular Surgery: Results from the Patient Safety in Surgery Study"/>
+                        <location value="https://doi.org/10.1016/j.jamcollsurg.2007.02.072"/>
+                        <citation
+                            value="Rogers, Selwyn O., Ravi K. Kilaru, Patrick Hosokawa, William G. Henderson, Michael J. Zinner, and Shukri F. Khuri. 2007. “Multivariable Predictors of Postoperative Venous Thromboembolic Events after General and Vascular Surgery: Results from the Patient Safety in Surgery Study.” Journal of the American College of Surgeons 204 (6): 1211–21. doi:10.1016/j.jamcollsurg.2007.02.072"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="e8" identifierName="Rogers 2016"/>
+                            <identifier root="https://doi.org" extension="10.1001/jama.2016.16201" identifierName="DOI"/>
+                        </identifiers>
+                        <title value="US Emergency Department Visits for Outpatient Adverse Drug Events, 2013-2014"/>
+                        <location value="https://doi.org/10.1001/jama.2016.16201"/>
+                        <citation
+                            value="Shehab, Nadine, Maribeth C. Lovegrove, Andrew I. Geller, Kathleen O. Rose, Nina J. Weidle, and Daniel S. Budnitz. 2016. “US Emergency Department Visits for Outpatient Adverse Drug Events, 2013-2014.” JAMA 316 (20): 2115–25. doi:10.1001/jama.2016.16201"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+
+
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="d3b30c68-cf45-4b46-8ba6-72090f7ba01a"/>
+                            <identifier root="LocalDocBook" identifierName="NLM 2017a" extension="e9"/>
+                        </identifiers>
+                        <title value="LABEL: ARIXTRA- fondaparinux sodium injection, solution"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d3b30c68-cf45-4b46-8ba6-72090f7ba01a"/>
+                        <citation
+                            value="LABEL: ARIXTRA- fondaparinux sodium injection, solution [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d3b30c68-cf45-4b46-8ba6-72090f7ba01a."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="b4064039-2345-4227-b83d-54dc13a838d3"/>
+                            <identifier root="LocalDocBook" identifierName="NLM 2017b" extension="e10"/>
+                        </identifiers>
+                        <title value="LABEL: ASPIRIN 81 MG- aspirin tablet, coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3"/>
+                        <citation
+                            value="LABEL: ASPIRIN 81 MG- aspirin tablet, coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="a454cd24-0c6d-46e8-b1e4-197388606175"/>
+                            <identifier root="LocalDocBook" identifierName="NLM 2017c" extension="e11"/>
+                        </identifiers>
+                        <title value="LABEL: ELIQUIS- apixaban tablet, film coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175"/>
+                        <citation
+                            value="LABEL: ELIQUIS- apixaban tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="529711c6-6029-4e50-8ece-c0e59b06ff38"/>
+                            <identifier root="LocalDocBook" identifierName="NLM 2017d" extension="e12"/>
+                        </identifiers>
+                        <title value="LABEL: FRAGMIN- dalteparin sodium injection, solution"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=529711c6-6029-4e50-8ece-c0e59b06ff38"/>
+                        <citation
+                            value="LABEL: FRAGMIN- dalteparin sodium injection, solution [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=529711c6-6029-4e50-8ece-c0e59b06ff38."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="56dc3074-f1c5-45a3-b923-f1d14858e06d"/>
+                            <identifier root="LocalDocBook" identifierName="NLM 2017e" extension="e13"/>
+                        </identifiers>
+                        <title value="LABEL: HEPARIN SODIUM- heparin sodium injection"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=56dc3074-f1c5-45a3-b923-f1d14858e06d"/>
+                        <citation
+                            value="LABEL: HEPARIN SODIUM- heparin sodium injection [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=56dc3074-f1c5-45a3-b923-f1d14858e06d."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="5db7f199-8752-4d24-85f7-e34ca8f4d02e"/>
+                            <identifier root="LocalDocBook" identifierName="NLM 2017f" extension="e14"/>
+                        </identifiers>
+                        <title value="LABEL: PRADAXA- dabigatran etexilate mesylate capsule"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5db7f199-8752-4d24-85f7-e34ca8f4d02e"/>
+                        <citation
+                            value="LABEL: PRADAXA- dabigatran etexilate mesylate capsule [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5db7f199-8752-4d24-85f7-e34ca8f4d02e."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="c0cc4511-e656-4b6d-96cd-e02e76173b9d"/>
+                            <identifier root="LocalDocBook" identifierName="NLM 2017g" extension="e15"/>
+                        </identifiers>
+                        <title value="WARFARIN SODIUM- warfarin tablet"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c0cc4511-e656-4b6d-96cd-e02e76173b9d"/>
+                        <citation
+                            value="WARFARIN SODIUM- warfarin tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c0cc4511-e656-4b6d-96cd-e02e76173b9d."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="1166231a-b23a-4c86-8cda-45d41b724e57"/>
+                            <identifier root="LocalDocBook" identifierName="NLM 2017h" extension="e16"/>
+                        </identifiers>
+                        <title value="LABEL: XARELTO- rivaroxaban tablet, film coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1166231a-b23a-4c86-8cda-45d41b724e57"/>
+                        <citation
+                            value="LABEL: XARELTO- rivaroxaban tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1166231a-b23a-4c86-8cda-45d41b724e57."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+        <!-- The applicability element describes the basic context for this KNART.  -->
+        <applicability>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Hospitalist, residents, and other ordering providers involved in managing the patient cohort, and nurses"/>
+                <value code="4a0ec59e-7f9a-452e-954c-01efd0b52c4e |Hospitalist physician (occupation)" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Inpatient"/>
+                <value code="416800000 |Inpatient (person)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Medical and/or Surgical Service"/>
+                <value code="702860000 |General surgery clinic (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Adult inpatients without known VTE and not pregnant"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientGender"/>
+                <description value="All"/>
+            </coverage>
+        </applicability>
+
+        <status value="Active"/>
+
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180403"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180403"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20170810"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20170829"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Bruce"/>
+                        <dt:part type="FAM" value="Bray"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Professor, Cardiovascular Medicine, University of Utah School of Medicine; Staff Cardiologist, Salt Lake City VA Medical Center (VAMC) SME, Primary"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Scott"/>
+                        <dt:part type="FAM" value="Wall"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Assistant Professor, Cardiovascular Medicine, University of Utah; School of Medicine Staff Cardiologist, Electrophysiology, Salt Lake City VAMC, Salt Lake City, UT 84148 SME, Secondary"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Aiden"/>
+                        <dt:part type="FAM" value="Abidov"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="PhD"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Professor of Medicine, Wayne State University; Section Chief, Cardiology, John Dingell VAMC, 4646 John R St, Detroit, MI 48201 SME"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Claibe"/>
+                        <dt:part type="FAM" value="Yarbrough"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="National Program Director, North Texas VHCS, Pulmonary/Critical Care/Sleep Medicine, Dallas, TX, 4500 S Lancaster, Dallas, TX 75216 SME"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Benjamin"/>
+                        <dt:part type="FAM" value="Brooke"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Attending SLC VAMC, Surgery Services, Salt Lake City, UT, 508 Fulton St, Durham, NC 27705 SME"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+    </metadata>
+    <expressions>
+        <def name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code"
+                        code="[416118004 |Administration (procedure)]
+                        ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                        ->(363701004 |Direct substance (attribute))->[Rx;978733 0.2 ML Dalteparin Sodium 25000 UNT/ML Prefilled Syringe]
+                        ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="requestedResult.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="requestedResult.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="385218009 |Injection (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+
+        <def name="Heparin 5000 U solution subcutaneous daily 2 times (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code"
+                        code="[416118004 |Administration (procedure)]
+                        ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                        ->(363701004 |Direct substance (attribute))->[Rx;849699 0.2 ML heparin calcium 25000 UNT/ML Prefilled Syringe]
+                        ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="requestedResult.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="requestedResult.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="385218009 |Injection (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="2"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="2"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code"
+                        code="[416118004 |Administration (procedure)]
+                        ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                        ->(363701004 |Direct substance (attribute))->[Rx;861360 0.5 ML Fondaparinux sodium 5 MG/ML Prefilled Syringe]
+                        ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="requestedResult.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="requestedResult.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="385218009 |Injection (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code"
+                        code="[416118004 |Administration (procedure)]
+                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                            ->(363701004 |Direct substance (attribute))->[Rx;854235 0.4 ML Enoxaparin sodium 100 MG/ML Prefilled Syringe]
+                            ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="requestedResult.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="requestedResult.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="385218009 |Injection (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.periodDuration.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                </elm:element>
+                <elm:element name="repetition.eventFrequency.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Intermittent pneumatic compression (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="443448006 |Application of intermittent pneumatic compression device (procedure)|"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Graduated compressed stockings (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code"
+                        code="[129425003 |Application - action (qualifier value)]
+                            ->(363699004 |Direct device (attribute))->[465885d2-268c-49a8-93e3-c90ed3b6643b |Graduated compression stockings (physical object)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+    </expressions>
+    <actionGroup>
+        <subElements>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                </behaviors>
+                <title value="Resources and Risk Stratification: Medical Patients"/>
+                <description value="This section should be available for all medical patients."/>
+                <subElements>
+                    <simpleAction xsi:type="CollectInformationAction">
+                        <supportingResources>
+                            <resource>
+                                <identifiers>
+                                    <identifier root="LocalDocBook" extension="sr4"/>
+                                </identifiers>
+                            </resource>
+                        </supportingResources>
+                        <documentationConcept>
+                            <prompt value="Acknowledge?"/>
+                            <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Medications: Medical Patients"/>
+                <description value="This section should be available for all medical patients requiring pharmacological VTE prophylaxis"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Acutely Ill Patients"/>
+                        <description
+                            value="This subsection should be available for all acutely ill medical patients at increased risk of thrombosis who are not bleeding or at high risk for bleeding"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 3 times (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;849699 0.2 ML heparin calcium 25000 UNT/ML Prefilled Syringe]
+                                            ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="385218009 |Injection (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="3"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="3"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Critically Ill Patients"/>
+                        <description
+                            value="This subsection should be available for all critically ill medical patients at increased risk of thrombosis who are not bleeding or at high risk for bleeding"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+
+                <title value="Procedures: Medical Patients"/>
+                <description
+                    value="This section should be available for all medical patients requiring mechanical VTE prophylaxis, particularly those who are at increased risk of bleeding events"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Acutely Ill Patients"/>
+                        <description
+                            value="This subsection should be available for all acutely ill medical patients at increased risk of thrombosis who are bleeding or at high risk for major bleeding"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Graduated compressed stockings (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Graduated compressed stockings (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Critically Ill Patients"/>
+                        <description
+                            value="This subsection should be available for all critically ill medical patients at increased risk of thrombosis who are bleeding or at high risk for major bleeding"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Graduated compressed stockings routine"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Graduated compressed stockings (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression routine"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                </behaviors>
+                <title value="Resources and Risk Stratification: Nonorthopedic Surgical Patients"/>
+                <description value="This section should be available for all nonorthopedic surgical patients."/>
+                <subElements>
+                    <simpleAction xsi:type="CollectInformationAction">
+                        <supportingEvidence>
+                            <evidence>
+                                <resources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier root="LocalDocBook" extension="e2"/>
+                                        </identifiers>
+                                    </resource>
+                                </resources>
+                            </evidence>
+                        </supportingEvidence>
+                        <supportingResources>
+                            <resource>
+                                <identifiers>
+                                    <identifier root="LocalDocBook" extension="sr4"/>
+                                </identifiers>
+                            </resource>
+                            <resource>
+                                <identifiers>
+                                    <identifier root="LocalDocBook" extension="sr5"/>
+                                </identifiers>
+                            </resource>
+                        </supportingResources>
+
+                        <documentationConcept>
+                            <prompt value="Acknowledge"/>
+                            <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Activity: Nonorthopedic Surgical Patients"/>
+                <description value="This section should be available for all nonorthopedic surgery patients requiring VTE prophylaxis"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="General and Abdominal-Pelvic Surgery Patients at Very Low Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all general and abdominal-pelvic surgery patients at very low risk for VTE"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Ambulate with assistance 1 time per shift (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="1111000205107 |Ambulating with assistance (regime/therapy)"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="8"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="8"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258702006 |hour (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Bed to chair 1 time per shift (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="445970000 |Moving subject from bed to chair (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="8"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="8"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258702006 |hour (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Up ad lib now"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="423791005 |Ambulation without limitation (regime/therapy)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="49499008 |Stat (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Medications: Nonorthopedic Surgical Patients"/>
+                <description value="This section should be available for all nonorthopedic surgery patients requiring pharmacological VTE prophylaxis"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="General and Abdominal-Pelvic Surgery Patients at Moderate Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all general and abdominal-pelvic surgery patients at moderate risk for VTE who are not at high risk for major bleeding complications"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 2500 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;978725 0.2 ML Dalteparin Sodium 12500 UNT/ML Prefilled Syringe]
+                                            ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="385218009 |Injection (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="General and Abdominal-Pelvic Surgery Patients at High Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all general and abdominal-pelvic surgery patients at high risk for VTE who are not at high risk for major bleeding complications"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="General and Abdominal-Pelvic Surgery Patients at High Risk for VTE with Inability to Use Either LMWH or UFH"/>
+                        <description
+                            value="This subsection should be available for all general and abdominal-pelvic surgery patients at high risk for VTE for whom both LMWH and UFH are contraindicated or unavailable and who are not at high risk for major bleeding complications"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Aspirin 160 mg tablet oral daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;243670 Aspirin 81 MG Oral Tablet]
+                                            ->(410675002 |Route of administration (attribute))->[26643006 |Oral route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="2"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="2"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="421026006 |Oral tablet (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Cardiac Surgery Patients with Nonhemorrhagic Surgical Complications"/>
+                        <description
+                            value="This subsection should be available for all cardiac surgery patients whose inpatient stay is prolonged by nonhemorrhagic surgical complications"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Thoracic Surgery Patients at Moderate Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all thoracic surgery patients at moderate risk for VTE who are not at high risk for perioperative bleeding"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Thoracic Surgery Patients at High Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all thoracic surgery patients at high risk for VTE who are not at high risk for perioperative bleeding"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Craniotomy Patients at Very High Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all craniotomy patients at very high risk for VTE once adequate hemostasis is established and the risk of bleeding decreases"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Spinal Surgery Patients at High Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all spinal surgery patients at high risk for VTE once adequate hemostasis is established and the risk of bleeding decreases"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Major Trauma Patients"/>
+                        <description value="This subsection should be available for all major trauma patients without contraindication"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Heparin 5000 U solution subcutaneous daily 2 times (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Procedures: Nonorthopedic Surgical Patients"/>
+                <description
+                    value="This section should be available for all nonorthopedic surgical patients requiring mechanical VTE prophylaxis, particularly those who are at increased risk of bleeding events"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="General and Abdominal-Pelvic Surgery Patients at Low Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all general and abdominal-pelvic surgery patients at low risk for VTE"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="General and Abdominal-Pelvic Surgery Patients at Moderate Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all general and abdominal-pelvic surgery patients at moderate risk for VTE"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Graduated compression stockings (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[129425003 |Application - action (qualifier value)]
+                                            ->(363699004 |Direct device (attribute))->[465885d2-268c-49a8-93e3-c90ed3b6643b |Graduated compression stockings (physical object)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="General and Abdominal-Pelvic Surgery Patients at High Risk for VTE"/>
+                        <description
+                            value="This subsection should be available for all general and abdominal-pelvic surgery patients at high risk for VTE"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Cardiac Surgery Patients"/>
+                        <description value="This subsection should be available for all cardiac surgery patients"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Thoracic Surgery Patients at High Risk for VTE"/>
+                        <description value="This subsection should be available for all thoracic surgery patients at high risk for VTE"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Graduated compression stockings (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[129425003 |Application - action (qualifier value)]
+                                            ->(363699004 |Direct device (attribute))->[465885d2-268c-49a8-93e3-c90ed3b6643b |Graduated compression stockings (physical object)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Craniotomy Patients"/>
+                        <description value="This subsection should be available for all craniotomy patients"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <title value="Spinal Surgery Patients"/>
+                        <description value="This subsection should be available for all spinal surgery patients"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Major Trauma Patients"/>
+                        <description
+                            value="This subsection should be available for all major trauma patients without contraindication due to lower-extremity injury"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Activity: Orthopedic Surgical Patients"/>
+                <description value="This section should be available for all orthopedic surgical patients requiring VTE prophylaxis."/>
+                <subElements>
+                    <actionGroup>
+                        <title
+                            value="This section should be available to clinical providers and should be prompted to consider early mobilization as indicated by postoperative activity orders for the given surgery, context, and objectives related to weightbearing status."/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt value="Acknowledge?"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Medications: Orthopedic Surgical Patients"/>
+                <description value="This section should be available for all orthopedic surgery patients requiring pharmacological VTE prophylaxis."/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Total Hip Arthoplasty, Total Knee Arthoplasty, and Hip Fracture Surgery Patients"/>
+                        <description
+                            value="This subsection should be available for all total hip arthroplasty, total knee arthroplasty, and hip fracture surgery patients."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 30 mg solution subcutaneous every 12 hours (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;854228 0.3 ML Enoxaparin sodium 100 MG/ML Prefilled Syringe]
+                                            ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="385218009 |Injection (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="12"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="12"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Enoxaparin 40 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;854235 0.4 ML Enoxaparin sodium 100 MG/ML Prefilled Syringe]
+                                            ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="385218009 |Injection (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Dalteparin 5000 U solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Fondaparinux 2.5 mg solution subcutaneous daily 1 time (routine)"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Warfarin tablet oral per protocol (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;1161791 Warfarin Pill]
+                                            ->(410675002 |Route of administration (attribute))->[26643006 |Oral route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="unstructured[0]">
+                                        <elm:value xsi:type="elm:Literal" value="per protocol" valueType="String"/>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Apixaban 2.5 mg tablet oral daily 2 times (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;1364435 apixaban 2.5 MG Oral Tablet]
+                                            ->(410675002 |Route of administration (attribute))->[26643006 |Oral route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="421026006 |Oral tablet (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="2"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="2"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Rivaroxaban 10 mg tablet oral daily 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;1114198 rivaroxaban 10 MG Oral Tablet]
+                                            ->(410675002 |Route of administration (attribute))->[26643006 |Oral route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="421026006 |Oral tablet (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent
+                                    value="Aspirin 81 mg tablet oral daily 1 time with intermittent pneumatic compression device begun intraoperatively and continued postoperatively through duration of hospital stay (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="[416118004 |Administration (procedure)]
+                                            ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                            ->(363701004 |Direct substance (attribute))->[Rx;243670 Aspirin 81 MG Oral Tablet]
+                                            ->(410675002 |Route of administration (attribute))->[26643006 |Oral route (qualifier value)]"
+                                            display="Postcoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="2"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="2"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="requestedResult.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="421026006 |Oral tablet (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.periodDuration.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.resolution">
+                                        <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="repetition.eventFrequency.measureSemantic">
+                                        <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Procedures: Orthopedic Surgical Patients"/>
+                <description
+                    value="This section should be available for all orthopedic surgical patients requiring mechanical VTE prophylaxis, particularly those who are at increased risk of bleeding events."/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Total Hip Arthoplasty, Total Knee Arthoplasty, and Hip Fracture Surgery Patients"/>
+                        <description
+                            value="This subsection should be available for all acutely ill medical patients at increased risk of thrombosis who are bleeding or at high risk for major bleeding"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Intermittent pneumatic compression (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef" name="Intermittent pneumatic compression (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                </behaviors>
+                <title value="Laboratory Tests"/>
+                <description
+                    value="The following laboratory studies should be considered for patients who will receive warfarin. These laboratory studies may also be indicated for patients on other medications for VTE prophylaxis if clinically indicated per clinician judgment."/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Complete blood count daily 1 time (routine)"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="26604007 |Complete blood count (procedure)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="priority">
+                                <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.lowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.includeLowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.includeUpperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.resolution">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.measureSemantic">
+                                <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.lowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.upperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.resolution">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.measureSemantic">
+                                <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Basic metabolic panel daily 1 time (routine)"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Literal" valueType="String" value="Request"> </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="1421000205106 |Basic metabolic panel (procedure)"
+                                    display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="priority">
+                                <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.lowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.includeLowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.includeUpperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.resolution">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.measureSemantic">
+                                <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.lowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.upperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.resolution">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.measureSemantic">
+                                <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Activated partial thromboplastin time daily 1 time (routine)"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="42525009 |Partial thromboplastin time, activated (procedure)|"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="priority">
+                                <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.lowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.includeLowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.includeUpperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.resolution">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.measureSemantic">
+                                <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.lowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.upperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.resolution">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.measureSemantic">
+                                <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Complete International normalized ratio daily 1 time (routine)"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="440685005 |Calculation of international normalized ratio (procedure)|"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="priority">
+                                <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.lowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.includeLowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.includeUpperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="FALSE"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.resolution">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.periodDuration.measureSemantic">
+                                <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.lowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.upperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.includeLowerBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.includeUpperBound">
+                                <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.resolution">
+                                <elm:value xsi:type="elm:Literal" valueType="Float" value="1"/>
+                            </elm:element>
+                            <elm:element name="repetition.eventFrequency.measureSemantic">
+                                <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>
