@@ -30,7 +30,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 	- [ ] Sufficiently reference dynamically bound values.
 	- [ ] Include a valid UUIDv4. [present and 36 characters long including dashes]
 - [ ] All issues have been captured in GitHub, tagged with deliverable ID and artifact type labels.
-- [ ] Review task/issue has updated by the reviewer(s) with a search/filter link showing all the noted issues, and assigned to a program lead that will be notified automatically via email.
+- [ ] On completion of review of assigned KNARTs associatd with a CCWP, reviewer will add comment to that fact and re-assign to Program Lead (Apurva) and Juanita with a search/filter link showing all the noted issues.
 
 ## Post-Verification Checklist
 - [ ] Must-fix issues are aggregated and communicated to B3.
