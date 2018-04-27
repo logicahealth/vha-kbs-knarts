@@ -19,7 +19,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 - [ ] Action tree structure is fully and justifiably represents the clinical intent. 
 - [ ] Content is consistent with the conventions used in other documents.
 - [ ] ELM is:
-	- [ ] Well formed XML
+	- [ ] Well formed XML (no syntactic errors)
 	- [ ] Valid XML
 	- [ ] Appears to capture the semantic intent of the logic by visual inspection only
 - [ ] ANF statements:
