@@ -23,10 +23,10 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 	- [ ] Valid XML
 	- [ ] Appears to capture the semantic intent of the logic by visual inspection only
 - [ ] ANF statements:
-	- [ ] Match what is specified in the TSR, and no:
-		- [ ] Concepts have been ommitted nor committed from the request.
-		- [ ] Copy/paste-type issues have been introduced.
-		- [ ] Discrepencies of models are apparent.
+	- [ ] Match what is specified in the TSR, and:
+		- [ ] No concepts have been ommitted nor committed from the request.
+		- [ ] No copy/paste-type issues have been introduced.
+		- [ ] No discrepencies of models are apparent.
 	- [ ] Sufficiently reference dynamically bound values.
 	- [ ] Include a valid UUIDv4.
 - [ ] All issues have been captured in GitHub, tagged with deliverable ID and artifact type labels, and automatically assigned an id number.
