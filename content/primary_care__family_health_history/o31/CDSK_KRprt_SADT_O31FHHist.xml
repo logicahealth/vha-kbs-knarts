@@ -1,0 +1,1703 @@
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:anf="http://hl7.org/anf"
+   xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:vmr="urn:hl7-org:vmr:r2"
+   xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+
+   <metadata>
+      <identifiers>
+         <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="a5da18a9-4ee9-5531-8fe7-99ae417cdab2" version="1.0" identifierName="O31"/>
+         <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0009BA"
+            identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0009BA"/>
+         <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-97" identifierName="Jira KP-97"/>
+      </identifiers>
+
+
+      <artifactType value="Documentation Template"/>
+      <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+      <dataModels>
+         <modelReference>
+            <description value="VA Analysis Normal Form Model"/>
+            <referencedModel value="urn:solor.io:anf-model:1.0"/>
+         </modelReference>
+      </dataModels>
+
+      <title value="Primary Care: Family Health History Documentation Template"/>
+      <relatedResources>
+         <relatedResource>
+            <relationship value="DerivedFrom"/>
+            <resources>
+               <resource>
+                  <identifiers>
+                     <identifier extension="sr1" identifierName="CCWP" root="LocalDocBook"/>
+                  </identifiers>
+                  <title value="Primary Care: Family Health History Clinical Content White Paper"/>
+                  <description value="Clinical Content White Paper"/>
+               </resource>
+            </resources>
+         </relatedResource>
+         <relatedResource>
+            <relationship value="AssociatedResource"/>
+            <resources>
+               <resource>
+                  <identifiers>
+                     <identifier root="LocalDocBook" identifierName="CSD" extension="sr2"/>
+                     <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0009BA"
+                        identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0009BA"/>
+                  </identifiers>
+                  <title value="Primary Care: Family Health History Documentation Template Conceptual Structure Document"/>
+               </resource>
+            </resources>
+         </relatedResource>
+         <relatedResource>
+            <relationship value="AssociatedResource"/>
+            <resources>
+               <resource>
+                  <identifiers>
+                     <identifier root="LocalDocBook" identifierName="KVRpt" extension="sr3"/>
+                     <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0009BA"
+                        identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0009BA"/>
+                  </identifiers>
+                  <title value="Primary Care: Family Health History Documentation Template KNART Validation Report"/>
+               </resource>
+            </resources>
+         </relatedResource>
+      </relatedResources>
+
+      <supportingEvidence>
+         <evidence>
+            <resources>
+               <resource>
+                  <identifiers>
+                     <identifier extension="e1" identifierName="CMS 2012" root="LocalDocBook"/>
+                  </identifiers>
+                  <title value="Eligible Professional Meaningful Use Menu Set Measures: Measure 4 of 6: Stage 2: Family Health History"/>
+                  <location
+                     value="https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/downloads/Stage2_EPMenu_4_FamilyHealthHistory.pdf"/>
+                  <citation
+                     value="Eligible Professional Meaningful Use Menu Set Measures: Measure 4 of 6: Stage 2: Family Health History: Center for Medicare and Medicaid ; cited October 2012. Available from: https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/downloads/Stage2_EPMenu_4_FamilyHealthHistory.pdf"
+                  />
+               </resource>
+               <resource>
+                  <identifiers>
+                     <identifier extension="e2" identifierName="VHA 2017" root="LocalDocBook"/>
+                  </identifiers>
+                  <title value="Family health history: SMARTForm use case, version 1.2. SMARTForms Family Health History Use Case"/>
+                  <location value="V1.2_20150602.docx"/>
+                  <citation
+                     value="Family health history: SMARTForm use case, version 1.2. SMARTForms Family Health History Use Case: U.S. Department of Veteran Affairs study; cited September 8, 2017. Available from: V1.2_20150602.docx"
+                  />
+               </resource>
+               <resource>
+                  <identifiers>
+                     <identifier extension="e3" identifierName="NIH 2017" root="LocalDocBook"/>
+                  </identifiers>
+                  <title value="My Family Health Portrait: A tool from the Surgeon General"/>
+                  <location value="https://familyhistory.hhs.gov/FHH/html/index.html"/>
+                  <citation
+                     value="My Family Health Portrait: A tool from the Surgeon General: U.S. National Institutes of Health cited December 21, 2017. Available from: https://familyhistory.hhs.gov/FHH/html/index.html"
+                  />
+               </resource>
+            </resources>
+
+         </evidence>
+      </supportingEvidence>
+      <applicability>
+         <coverage>
+            <focus value="TargetUser"/>
+            <description value="Provider to include Primary Care"/>
+            <value code="453231000124104 |Primary care provider (occupation)|" codeSystem="SNOMED CT"/>
+         </coverage>
+         <coverage>
+            <focus value="WorkflowSetting"/>
+            <description value="Primary Care"/>
+         </coverage>
+         <coverage>
+            <focus value="ClinicalVenue"/>
+            <description value="Outpatient"/>
+            <value code="33022008 |Hospital-based outpatient department (environment)|" codeSystem="SNOMED CT"/>
+         </coverage>
+         <coverage>
+            <focus value="PatientAgeGroup"/>
+            <description value="Adult Patients"/>
+            <value code="133936004 |Adult (person)|" codeSystem="SNOMED CT"/>
+         </coverage>
+      </applicability>
+      <status value="Active"/>
+      <eventHistory>
+         <artifactLifeCycleEvent>
+            <eventType value="Published"/>
+            <eventDateTime value="20180427"/>
+         </artifactLifeCycleEvent>
+         <artifactLifeCycleEvent>
+            <eventType value="Reviewed"/>
+            <eventDateTime value="20180427"/>
+         </artifactLifeCycleEvent>
+         <artifactLifeCycleEvent>
+            <eventType value="Created"/>
+            <eventDateTime value="20180307"/>
+         </artifactLifeCycleEvent>
+      </eventHistory>
+      <contributions>
+         <contribution>
+            <contributor xsi:type="Person">
+               <name>
+                  <dt:part type="GIV" value="Angela"/>
+                  <dt:part type="FAM" value="Denietolis"/>
+                  <dt:part type="TITLE" value="MD"/>
+               </name>
+               <affiliation>
+                  <name value="Primary Care Physician James A. Haley Veterans Hospital Tampa VAMC Tampa, FL 33612"/>
+               </affiliation>
+            </contributor>
+            <role value="Author"/>
+         </contribution>
+         <contribution>
+            <contributor xsi:type="Person">
+               <name>
+                  <dt:part type="GIV" value="Pat"/>
+                  <dt:part type="FAM" value="Dumas"/>
+                  <dt:part type="TITLE" value="RN"/>
+               </name>
+               <affiliation>
+                  <name value="Clinical Program Director VACO 810 Vermont Ave NW Washington, DC 20420"/>
+               </affiliation>
+            </contributor>
+            <role value="Author"/>
+         </contribution>
+         <contribution>
+            <contributor xsi:type="Person">
+               <name>
+                  <dt:part type="GIV" value="Manish"/>
+                  <dt:part type="FAM" value="Merchant"/>
+                  <dt:part type="TITLE" value="MD"/>
+               </name>
+               <affiliation>
+                  <name value="Health Informatician Albany VAMC 113 Holland Ave. Albany, NY 12208"/>
+               </affiliation>
+            </contributor>
+            <role value="Author"/>
+         </contribution>
+         <contribution>
+            <contributor xsi:type="Person">
+               <name>
+                  <dt:part type="GIV" value="Timothy"/>
+                  <dt:part type="FAM" value="Dresselhaus"/>
+                  <dt:part type="TITLE" value="MD"/>
+               </name>
+               <affiliation>
+                  <name value="San Diego VAMC - MEDS 3350 La Jolla Village Drive San Diego, CA 92161"/>
+               </affiliation>
+            </contributor>
+            <role value="Author"/>
+         </contribution>
+         <contribution>
+            <contributor xsi:type="Person">
+               <name>
+                  <dt:part type="GIV" value="David"/>
+                  <dt:part type="FAM" value="Douglas"/>
+                  <dt:part type="TITLE" value="MD"/>
+               </name>
+               <affiliation>
+                  <name value="Portland VAMC Portland, OR E-Consult Expert"/>
+               </affiliation>
+            </contributor>
+            <role value="Author"/>
+         </contribution>
+      </contributions>
+      <publishers>
+         <publisher xsi:type="Organization">
+            <name value="Department of Veterans Affairs"/>
+         </publisher>
+      </publishers>
+      
+   </metadata>
+
+   <externalData>
+      <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+   </externalData>
+
+   <expressions>
+      <def name="familyMembersList">
+         <elm:expression xsi:type="elm:List">
+            <elm:element xsi:type="elm:Code" code="27733009 |Sister (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="70924004 |Brother (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="66089001 |Daughter (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="65616008 |Son (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="72705000 |Mother (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="394859001 |Maternal grandmother (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="394857004 |Maternal grandfather (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="719765007 |Maternal half sister (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="719766008 |Maternal half brother (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="736454006 |Maternal aunt (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="442031000124102 |Maternal uncle (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="6839005 |Father (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="394858009 |Paternal grandmother (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="394856008 |Paternal grandfather (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="719764006 |Paternal half sister (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="719762005 |Paternal half brother (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="736455007 |Paternal aunt (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="442041000124107 |Paternal uncle (person)|" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+            <elm:element xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+               <elm:system name="SNOMED CT"/>
+            </elm:element>
+         </elm:expression>
+      </def>
+   </expressions>
+   <actionGroup>
+      <subElements>
+         <actionGroup>
+            <behaviors>
+               <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+            </behaviors>
+            <title value="Family Structure"/>
+            <description
+               value="Consider using this section when a detailed genetic history is the intent. For routine clinical care, consider beginning with the next section. If you do complete this section, include both living and deceased family members."/>
+            <subElements>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="How many brothers do you have?"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="How many sisters do you have?"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="How many sons do you have?"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="How many daughters do you have?"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="How many brothers does your mother have? (your uncles)"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="How many sisters does your mother have? (your aunts)"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="How many brothers does your father have? (your uncles)"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="How many sisters does your father have? (your aunts)"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+            </subElements>
+         </actionGroup>
+         <actionGroup>
+            <title value="Family Health History"/>
+            <subElements>
+               <!-- Begin Autoimmune Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Autoimmune Disorders"/>
+                  <subElements>
+                     <!-- Note: Split autoimmune/allergic disorder into two questions -->
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Autoimmune Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[85828009 |Autoimmune disease (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Age at Autoimmune Disorder Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Autoimmune Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Autoimmune Disorder -->
+
+               <!-- Begin Allergic Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Allergic Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Allergic Disorder"/>
+                           <itemCodes>
+                              <itemCode code="TSR-NoCode" codeSystem="SNOMED CT">
+                                 <dt:displayName value="Code Requested"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Age at Allergic Disorder Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Autoimmune Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+
+               </actionGroup>
+               <!-- End Allergic Disorder -->
+
+               <!-- Begin Cancer Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Cancers"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Cancer"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[363346000 |Malignant neoplastic disease (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Cancer Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Cancer Disorder -->
+
+               <!-- Begin Congenital -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Congenital Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Congenital Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[66091009 |Congenital disease (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Congenital Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Congenital Disorder -->
+
+               <!-- Begin Developmental Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Developmental Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Developmental Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[5294002 |Developmental disorder (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Developmental Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Developmental Disorder -->
+
+               <!-- Dermatologic Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Dermatologic Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Dermatologic Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[95320005 |Disorder of skin (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Dermatologic Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Dermatologic Disorder -->
+
+               <!-- Endocrine Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Endocrine Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Endocrine Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[362969004 |Disorder of endocrine system (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Endocrine Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Endocrine Disorder -->
+
+               <!-- Metabolic Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Metabolic Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Metabolic Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[75934005 |Metabolic disease (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Metabolic Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Metabolic Disorder -->
+
+               <!-- Gastroenterlogic Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Gastroenterologic Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Gastroenterologic Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[119292006 |Disorder of gastrointestinal tract (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Gastroenterologic Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+
+
+                  </subElements>
+               </actionGroup>
+               <!-- End Gastroenterlogic Disorder -->
+
+               <!-- Genitourinary Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Genitourinary Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Genitourinary Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[42030000 |Disorder of the genitourinary system (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Genitourinary Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Genitourinary Disorder -->
+
+               <!-- Reproductive Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Reproductive Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Reproductive Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[362968007 |Disorder of reproductive system (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Reproductive Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Reproductive Disorder -->
+
+               <!-- Hematologic Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Hematologic Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Hematologic Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[414022008 |Disorder of cellular component of blood (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Hematologic Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Hematologic Disorder -->
+
+               <!-- Hereditary Condition -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Hereditary Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Hereditary Condition"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[32895009 |Hereditary disease (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Hereditary Condition Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Hereditary Disorder -->
+               <!-- Infectious Disease  -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Infectious Diseases"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Infectious Disease"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[40733004 |Infectious disease (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Infectious Disease Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Infectioous Disease Disorder -->
+
+               <!-- Musculoskeletal Disorder -->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Musculoskeletal Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Musculoskeletal Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[928000 |Disorder of musculoskeletal system (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Musculoskeletal Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Musculoskeletal Disorder -->
+
+               <!-- Neurologic Disorder-->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Neurologic Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Neurologic Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[118940003 |Disorder of nervous system (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Neurologic Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Neurologic Disorder-->
+
+               <!-- Ophthalmic Disorder-->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Ophthalmic Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Ophthalmic Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[371409005 |Disorder of eye region (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Ophthalmic Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Ophthalmic Disorder-->
+
+               <!-- Psychiatric Disorder-->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Psychiatric Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Psychiatric Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[74732009 |Mental disorder (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Psychiatric Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Psychiatric Disorder-->
+
+               <!-- Behavioral Health Disorder-->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Behavioral Health Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Behavioral Health Disorder"/>
+                           <itemCodes>
+                              <itemCode code="TSR-NoCode" codeSystem="SNOMED CT">
+                                 <dt:displayName value="TSR Code Requested"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Behavioral Health Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Behavioral Health Disorder-->
+
+               <!-- Pulmonary Disorder-->
+               <actionGroup>
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                     <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                  </behaviors>
+                  <title value="History of Pulmonary Disorders"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Pulmonary Disorder"/>
+                           <itemCodes>
+                              <itemCode
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                 ->(363702006 |Has focus (attribute))->[19829001 |Disorder of lung (disorder)]"
+                                 codeSystem="SNOMED CT">
+                                 <dt:displayName value="Postcoordinated Expression"/>
+                              </itemCode>
+                           </itemCodes>
+                           <responseDataType value="String"/>
+                           <responseCardinality value="Single"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member"/>
+                           <responseDataType value="Code"/>
+                           <responseCardinality value="Single"/>
+                           <responseRange xsi:type="LookupConstraint">
+                              <constraintType value="List"/>
+                              <!-- Build selection list using Family Members with Selected Condition section following -->
+                              <items xsi:type="elm:ExpressionRef" name="familyMembersList"/>
+                           </responseRange>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Family Member Age at Diagnosis"/>
+                           <responseDataType value="Integer"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Pulmonary Disorder Detail"/>
+                           <responseDataType value="String"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <documentationConcept>
+                           <prompt value="Died as result of disease?"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                  </subElements>
+               </actionGroup>
+               <!-- End Pulmonary Disorder-->
+            </subElements>
+         </actionGroup>
+         <actionGroup>
+            <title value="Family Members with Selected Condition"/>
+            <description value="Family Members with Selected Condition"/>
+            <subElements>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <behaviors>
+                     <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                  </behaviors>
+                  <documentationConcept>
+                     <prompt value="Family Member with Selected Condition"/>
+                     <responseDataType value="Code"/>
+                     <responseCardinality value="Single"/>
+                     <responseRange xsi:type="EnumerationConstraint">
+                        <constraintType value="List"/>
+                        <item>
+                           <displayText value="Sister"/>
+                        </item>
+                        <item>
+                           <displayText value="Brother"/>
+                        </item>
+                        <item>
+                           <displayText value="Daughter"/>
+                        </item>
+                        <item>
+                           <displayText value="Son"/>
+                        </item>
+                        <item>
+                           <displayText value="Mother"/>
+                        </item>
+                        <item>
+                           <displayText value="Maternal Grandmother"/>
+                        </item>
+                        <item>
+                           <displayText value="Maternal Grandmfather"/>
+                        </item>
+                        <item>
+                           <displayText value="Maternal Half-Sister"/>
+                        </item>
+                        <item>
+                           <displayText value="Maternal Half-Brother"/>
+                        </item>
+                        <item>
+                           <displayText value="Maternal Aunt"/>
+                        </item>
+                        <item>
+                           <displayText value="Maternal Uncle"/>
+                        </item>
+                        <item fillIn="true">
+                           <displayText value="Other"/>
+                           <additionalInstructions value="Details"/>
+                        </item>
+                        <item>
+                           <displayText value="Father"/>
+                        </item>
+                        <item>
+                           <displayText value="Paternal Grandmother"/>
+                        </item>
+                        <item>
+                           <displayText value="Paternal Grandfather"/>
+                        </item>
+                        <item>
+                           <displayText value="Paternal Half-Sister"/>
+                        </item>
+                        <item>
+                           <displayText value="Paternal Half-Brother"/>
+                        </item>
+                        <item>
+                           <displayText value="Paternal Aunt"/>
+                        </item>
+                        <item>
+                           <displayText value="Paternal Uncle"/>
+                        </item>
+                     </responseRange>
+                  </documentationConcept>
+               </simpleAction>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="Living"/>
+                     <responseDataType value="Code"/>
+                     <responseCardinality value="Multiple"/>
+                     <responseRange xsi:type="EnumerationConstraint">
+                        <constraintType value="List"/>
+                        <item>
+                           <codes>
+                              <code
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                              ->(363702006 |Has focus (attribute))->[365472006 |Finding of relatives surviving (finding)]"
+                                 codeSystem="SNOMED CT"/>
+                           </codes>
+                           <displayText value="Yes"/>
+                        </item>
+                        <item>
+                           <codes>
+                              <code
+                                 code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                              ->(363702006 |Has focus (attribute))->[365474007 |Finding of details of family (finding)]-
+                              ->(363714003 |Interprets (attribute))->[fd38bb5d-4f5d-43b5-9b22-b648079ccf4c |Age at time of death (observable entity)]"
+                                 codeSystem="SNOMED CT"/>
+                           </codes>
+                           <displayText value="No"/>
+                        </item>
+                        <item>
+                           <displayText value="Unknown"/>
+                        </item>
+                        <item fillIn="true">
+                           <displayText value="Other"/>
+                           <additionalInstructions value="Details"/>
+                        </item>
+                     </responseRange>
+                  </documentationConcept>
+               </simpleAction>
+               <!-- Condition on Living == No -->
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="Age Deceased?"/>
+                     <responseDataType value="Integer"/>
+                  </documentationConcept>
+               </simpleAction>
+
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="Other comments about this family member"/>
+                     <responseDataType value="String"/>
+                  </documentationConcept>
+               </simpleAction>
+            </subElements>
+         </actionGroup>
+         <actionGroup>
+
+            <title value="Patient Genetic Testing History"/>
+            <description value="Patient Genetic Testing History"/>
+            <subElements>
+
+               <actionGroup>
+                  <title value="Patient Genetic Testing Done?"/>
+                  <subElements>
+                     <simpleAction xsi:type="CollectInformationAction">
+                        <behaviors>
+                           <behavior xsi:type="RequiredBehavior" value="Must"/>
+                        </behaviors>
+                        <documentationConcept>
+                           <prompt value="Yes"/>
+                           <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                     </simpleAction>
+                     <actionGroup>
+
+                        <!-- Condition this action group on positive response to previous question -->
+                        <subElements>
+                           <actionGroup>
+                              <behaviors>
+                                 <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                              </behaviors>
+                              <subElements>
+                                 <simpleAction xsi:type="CollectInformationAction">
+                                    <documentationConcept>
+                                       <prompt value="Test"/>
+                                       <responseDataType value="Code"/>
+                                       <responseCardinality value="Single"/>
+                                       <responseRange xsi:type="EnumerationConstraint">
+                                          <constraintType value="List"/>
+                                          <item>
+                                             <codes>
+                                                <code code="405824009 |Genetic test (procedure)|" codeSystem="SNOMED CT"/>
+                                             </codes>
+                                          </item>
+                                       </responseRange>
+                                    </documentationConcept>
+                                 </simpleAction>
+                                 <simpleAction xsi:type="CollectInformationAction">
+                                    <documentationConcept>
+                                       <prompt value="Results"/>
+                                       <responseDataType value="Tuple"/>
+                                       <responseCardinality value="Single"/>
+                                    </documentationConcept>
+                                 </simpleAction>
+                              </subElements>
+                           </actionGroup>
+                           <simpleAction xsi:type="CollectInformationAction">
+                              <documentationConcept>
+                                 <prompt value="Additional Genetic Testing/Results?"/>
+                                 <responseDataType value="Boolean"/>
+                              </documentationConcept>
+                           </simpleAction>
+                           <actionGroup>
+                              <!-- Condition this group on response to previous question -->
+                              <behaviors>
+                                 <behavior xsi:type="CardinalityBehavior" value="Multiple"/>
+                              </behaviors>
+                              <title value="Patient Genetic Testing Done?"/>
+                              <subElements>
+                                 <simpleAction xsi:type="CollectInformationAction">
+                                    <documentationConcept>
+                                       <prompt value="Additional genetic testing history"/>
+                                       <responseDataType value="String"/>
+                                    </documentationConcept>
+                                 </simpleAction>
+                              </subElements>
+                           </actionGroup>
+                        </subElements>
+                     </actionGroup>
+
+                  </subElements>
+               </actionGroup>
+            </subElements>
+         </actionGroup>
+         <actionGroup>
+            <title value="Historian"/>
+            <description value="Historian"/>
+            <subElements>
+               <simpleAction xsi:type="CollectInformationAction">
+                  <documentationConcept>
+                     <prompt value="Relationship to Patient"/>
+                     <responseDataType value="String"/>
+                  </documentationConcept>
+               </simpleAction>
+            </subElements>
+         </actionGroup>
+      </subElements>
+   </actionGroup>
+</knowledgeDocument>
