@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+
+    <info>
+        <title>Neurosurgery: Radiculopathy (Cervical) Harmonize and Integrate Member KNARTs White
+            Paper</title>
+
+        <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007,
+            CLIN0006AB</releaseinfo>
+        <pubdate>04/24/2018</pubdate>
+        <volumenum>Version: 1.0</volumenum>
+        <author>
+            <orgname>Department of Veterans Affairs (VA)</orgname>
+        </author>
+        <mediaobject>
+            <alt>Department of Veteran's Affairs Logo</alt>
+            <imageobject>
+                <imagedata contentwidth="2in" align="center" fileref="images/va-logo.png"
+                    format="png"/>
+            </imageobject>
+        </mediaobject>
+        <authorgroup>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <pubdate>April 2018</pubdate>
+        <volumenum>Version 1.0</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>4/26/2018</date>
+                <authorinitials>Jerry Goodnough</authorinitials>
+                <revremark>Final</revremark>
+            </revision>
+        </revhistory>
+    </info>
+
+
+
+    <chapter xml:id="chapter_jjm_zm3_qdb">
+        <title>General Process</title>
+    
+    <para>In integrating and harmonizing the individual components of a composite knowledge artifact
+            (KNART), the general process has been to rely on the inherent encapsulation properties
+            envisioned in the new composite structure. Each individual knowledge artifact is
+            presumed to be able to run in a standalone and independent manner. The composite
+            artifact acts as a central orchestration agent, activating individual knowledge
+            artifacts using an event driven model. Intercommunication between artifacts is handled
+            solely through global shared state external to the composite and through the process of
+            event payloads. Individual knowledge artifacts only communicate with the composite
+            container.</para>
+    <para>In the creation of the individual knowledge artifacts used in the formation of the
+        composite their design and implementation explicitly envisioned their further integration
+        into a composite structure. As such minimal harmonization or communication is generally
+        required. All composite KNARTs use references to the individual component knowledge
+        artifacts rather than direct inclusion. The general design principles used should ensure
+        that the overall composite does not alter the essential information contained in the
+        components.</para>
+    <para>In developing the Version 2.0 KNART standard the work group has updated the essential file
+        structure to support composites. The design approach of the workgroup was to define the
+        composite mechanism to support composition the includes both literal inclusion and
+        references to other knowledge artifact. The emerging standard explicitly envisions that
+        composites may be of a heterogeneous nature and supports artifacts authoring in other forms.
+        The creation of the version 2 schema explicitly maintains backward compatibility. The
+        version 1.0 knowledge document schema was structured such that the introduction of composite
+        feature could not be made without breaking backward compatibility. As a result, internal
+        organization of the schema was refactored to isolate out the concept of a knowledge document
+        and create two potential root references which could be used depending on if the KNART was a
+        singleton or a composite. The version 2 schema superset of the prior schema - Which is to
+        say that singletons follow the older schema (reorganized structurally) and the new composite
+        document type supports the composite structures, references, and direct inclusion of
+        multiple knowledge documents. All the elements of the original document type are still
+        supported without breaking anything.</para>
+        <section xml:id="section_myy_snv_ndb">
+            <title>Overview of Integration Scenario</title>
+            <para>This composite uses a simple integration scenario whereby the documentation
+                template is first projected and the order set is then activated. All orchestration
+                is accomplished through embedded Event Condition Action (ECA) Rules in the
+                composite.</para>
+        </section>
+        <section xml:id="section_nyy_snv_ndb">
+            <title>General Limitations</title>
+            <para>The composite KNART is a machine-readable artifact comprised of independently
+                validated components. The goal of the composition is not to add additional content
+                but rather to orchestrate the individual components. The composite is not expected
+                to be machine executable. The schema and functional environment in which the
+                composite is created is based on an emerging standard and is not guaranteed to be
+                compatible with the final balloted standard.</para>
+            <section xml:id="section_wcy_b4v_ndb">
+                <title>Format Limitation</title>
+                <para>The Health Level 7 (HL7) KNART format for composites is based on the original
+                    Knowledge Artifact Specification (KAS) schema. The composite extension is
+                    specifically developed to allow the composition of these singleton KAS artifacts
+                    into an organizing structure to provide greater meaning. The composite KNART
+                    format is an emerging standard at HL7 that allows heterogeneous artifacts to be
+                    grouped into one common organizing document. In creating the composite knowledge
+                    artifacts, the individual components of the composite have been limited to the
+                    existing KAS derived artifact types. As such the abstraction of more advanced
+                    orchestration behavior has been limited to the capabilities of that
+                    model.</para>
+            </section>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Process of Harmonization</title>
+        <section xml:id="section_pyy_snv_ndb">
+            <title>General Process</title>
+            <itemizedlist>
+                <listitem>
+                    <para>Detailed review of composite components</para>
+                </listitem>
+                <listitem>
+                    <para>Map components to conceptual white paper</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section xml:id="section_qyy_snv_ndb">
+            <title>Organization</title>
+            <para>At an organizational level this composite is comprised of two major entities. The
+                first of these entities is the documentation template named
+                CDSK_KRprt_CRDT_B39CervRadi.xml. The second of these entities is the order set named
+                CDSK_KRprt_OS_B15CervRadi.xml. For the purposes of orchestration the composite
+                initially triggers an event causing the documentation template to be activated. Upon
+                the completion of the documentation template the completion triggers the order set
+                knowledge artifact to be activated via an ECA rule.</para>
+        </section>
+        <section xml:id="section_ryy_snv_ndb">
+            <title>Data</title>
+            <section xml:id="section_tbn_4f3_qdb">
+                <title>Orchestration Data Elements</title>
+                <para>All orchestration for this composite is handled by the examination and
+                    assertion of named events. The following table lists the events are used to
+                    drive the key behavior in this composite.</para>
+                <informaltable>
+                    <tgroup cols="3">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <colspec colnum="3" colname="col3"/>
+                        <thead>
+                            <row>
+                                <entry>Event Name</entry>
+                                <entry>Event Type</entry>
+                                <entry>Relevant Payload</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>FireDocTemplate</entry>
+                                <entry>Named event</entry>
+                                <entry>None</entry>
+                            </row>
+                            <row>
+                                <entry>DocumentationCompleteEvent</entry>
+                                <entry>Named event</entry>
+                                <entry>None</entry>
+                            </row>
+                            <row>
+                                <entry> FireOrderSet</entry>
+                                <entry>Named event</entry>
+                                <entry>None</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </informaltable>
+            </section>
+            <section xml:id="section_tyy_snv_ndb">
+                <title>Redundant Data Elements Within KNARTs</title>
+                <para>None. </para>
+            </section>
+            <section xml:id="section_uyy_snv_ndb">
+                <title>Near-Duplicates Within KNARTs</title>
+                <para>None.</para>
+            </section>
+            <section>
+                <title> Redundant References, Supporting Evidence, and Expressions Within
+                    KNARTs</title>
+                <para>None due to execution and encapsulation model of the contained
+                    artifact.</para>
+            </section>
+            <section xml:id="section_vyy_snv_ndb">
+                <title>Data Elements That Are to be Hidden From the User</title>
+                <para> Not applicable.</para>
+            </section>
+        </section>
+        <section xml:id="section_wyy_snv_ndb">
+            <title>Questions Being Asked of the Documenter</title>
+            <section xml:id="section_xyy_snv_ndb">
+                <title>General</title>
+                <para>All questions being asked of the documenter are delegated to the specific
+                    component parts. Readers are asked to refer to the details of the composite
+                    parts. No additional questions are asked by the composite itself.</para>
+            </section>
+            <section xml:id="section_yyy_snv_ndb">
+                <title>Specific to the Composite</title>
+                <para> None.</para>
+            </section>
+        </section>
+        <section xml:id="section_zyy_snv_ndb">
+            <title>Organization of Order Sets</title>
+            <para>Only one order set is present in this composite.</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Integration</title>
+        <section xml:id="section_bzy_snv_ndb">
+            <title>Process</title>
+            <para>The general process integration is based upon the detailed reading of the
+                composite clinical white paper and the individual constituent components. Functional
+                analysis of the expected data flow and event flow between the created entities was
+                used to construct this composite. </para>
+        </section>
+        <section xml:id="section_czy_snv_ndb">
+            <title>Concerns</title>
+            <para>In reviewing the structure and questions asked of the documentation template it is
+                not clear that all the elements required to fully create a referral are being asked.
+                It is suggested that either a standardized referral documentation template be
+                created and used for composites or that a detailed review of the documentation
+                template for the additional required information is conducted prior to proceeding to
+                an implementation phase.</para>
+        </section>
+        <section xml:id="section_dzy_snv_ndb">
+            <title>Assets</title>
+            <para>The following table lists the assets that make up this composite.</para>
+            <informaltable>
+                <tgroup cols="2">
+                    <colspec colnum="1" colname="col1"/>
+                    <colspec colnum="2" colname="col2"/>
+                    <thead>
+                        <row>
+                            <entry>Asset filename</entry>
+                            <entry>Description</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>CDSK_KRprt_CRCK_B60CervRadi.xml</entry>
+                            <entry>The main composite controller</entry>
+                        </row>
+                        <row>
+                            <entry>CDSK_KRprt_CRDT_B39CervRadi.xml</entry>
+                            <entry>The documentation template</entry>
+                        </row>
+                        <row>
+                            <entry>CDSK_KRprt_OS_B15CervRadi.xml</entry>
+                            <entry>The order set</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </informaltable>
+            <para> </para>
+        </section>
+    </chapter>
+</book>
