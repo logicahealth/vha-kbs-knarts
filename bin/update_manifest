@@ -1,0 +1,168 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'pp'
+require 'byebug'
+
+HELP = <<EOF
+
+Updates an existing repository manifest.json file by merging in any additional files found in the root directory. If the existing and new manifest files are the same, the existing file will be *overwriten* in place. Be sure you have a backup handy if you're doing this!
+
+	USAGE: #{__FILE__} <content_root_directory> <existing_manifest.json> <new_manifest.json>
+
+	EXAMPLE:
+		#{__FILE__} . manifest.json manifest-new.json
+
+EOF
+
+# PLACEHOLDER_GROUP_NAME = 'Ungrouped'
+
+SUPPORTED_MIME_TYPES = {
+    "application/pdf": {name: "PDF", extensions: ['pdf']},
+    "application/msword": {name: "Word", extensions: ['doc','docx']},
+    "text/html": {name: "HTML", extensions: ['html','htm']},
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+		{name: "Word", extensions: ['doc','docx']},
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+		{name: "Excel", extensions: ['xls','xlsx']},
+    "application/hl7-cds-knowledge-artifact-1.3+xml": {name: 'HL7 KNART v1.3', extensions: ['xml','knart'], 'knart': true}
+  }
+
+KNART_MIME_TYPES = [
+    "application/hl7-cds-knowledge-artifact-1.3+xml"
+  ]
+
+def mimeTypeForExtension(ext)
+	mimeType = nil
+	SUPPORTED_MIME_TYPES.each do |k,v|
+		if v[:extensions].include?(ext)
+			mimeType = k
+			break
+		end
+	end
+	mimeType
+end
+
+def content_directory_to_item_tree(root)
+	content = []
+	list = Dir["#{root}/**/**"]
+	list.each do |n|
+		# puts n
+		if(File.file?(n))
+			ext = File.extname(n).downcase[1..-1]
+			mimeType = mimeTypeForExtension(ext)
+			name = n.split('/')[1] #.split['.'][0]
+			name = name.split('_').collect(&:capitalize).join(' ')
+			tags = n.split('/').select{|d| d.length <= 4}
+			if mimeType # it's a supported piece of content
+				item = rekey({
+					'name': name,
+					'path': n,
+					'mimeType': mimeType,
+					'tags': tags
+				})
+				# Any directory name of 4 characters or less will be treated as a tag automatically
+				content << item
+			end
+		end
+	end
+	content
+end
+
+def existing_manifest_item_for(item, existing)
+	existing_item = nil
+	existing["groups"].each do |group, i|
+		# puts "NAME: #{group['name']}"
+		# puts group
+		group['items'].each do |n|
+			if n['path'] == item['path']
+				existing_item = n
+				break
+			end
+		end
+	end
+	existing_item
+end
+
+def existing_manifest_group_for(name, existing)
+	existing_group = nil
+	existing["groups"].each do |group, i|
+		# puts "#{name} #{group['name']}"
+		if group['name'].downcase == name.downcase
+			existing_group = group
+			break
+		end
+	end
+	existing_group
+end
+
+# Forces keys to strings.
+def rekey(hash)
+	hash.collect{|k,v| [k.to_s, v]}.to_h
+end
+# If the item path is already present *somewhere* in the manifest it will not be merged in, regardless of any differences in the generated and existing item summary. This is intentional to prevent manual changes from being overwritten. Merged in items will be grouped into a group name matching the item name; if an existing group cannot be identified, they will be put into a special placeholder group.
+def merge_items_into(items, existing)
+	skipped = []
+	placed = []
+	# placed_into_placeholder_group = []
+
+	items.each do |item|
+
+		placeholder_group = nil
+		if placeholder_group = existing_manifest_group_for(item['name'], existing)
+			# It already exists. Great.
+		elsif placeholder_group = existing_manifest_group_for(item['name'], existing)
+			# The placeholder group has already been created. Yay.
+		else
+			placeholder_group = rekey({
+				'name': item['name'],
+				'status': 'generated',
+				'items': []
+			})
+			puts "Adding placeholder group to manifest: #{placeholder_group}"
+			existing['groups'] << placeholder_group
+		end
+
+		if existing_item = existing_manifest_item_for(item, existing)
+			skipped << existing_item
+		elsif existing_group = existing_manifest_group_for(item['name'], existing)
+			# Just drop the item into the existing group.
+			existing_group['items'] << item
+			placed << item
+		# else
+		# 	# No group in the existing manifest appears to be a fit, so put the item into a placeholder group.
+		# 	placeholder_group['items'] << item
+		# 	placed_into_placeholder_group << item
+		end
+	end
+	return [skipped, placed]
+
+end
+
+def report(skipped, placed)
+	puts "\nFiles skipped as already present in the manifest: #{skipped.length}"
+	skipped.each do |n| puts "\t#{n['path']} (#{n['name']})" end
+	puts "\nPlaced into a group: #{placed.length}"
+	placed.each do |n| puts "\t#{n['path']}" end
+	# puts "\nPut into a placeholder group:#{placed_into_placeholder_group.length}"
+	# placed_into_placeholder_group.each do |n| puts "\t#{n['path']}" end
+end
+
+def	write_to_file(path, existing)
+	file = File.open(path, 'w')
+	file.write(JSON.pretty_generate(existing))
+	file.close
+end
+
+if(ARGV.length != 3)
+	puts HELP
+	exit 1
+else
+	file = File.read(ARGV[1])
+	existing = JSON.parse(file)
+	items = content_directory_to_item_tree(ARGV[0])
+	skipped, placed = merge_items_into(items, existing)
+	report(skipped, placed)
+	write_to_file(ARGV[2], existing)
+	exit 0
+end
