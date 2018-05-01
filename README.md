@@ -22,7 +22,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 	- [ ] Well formed XML (no syntactic errors)
 	- [ ] Valid XML
 	- [ ] Appears to capture the semantic intent of the logic by visual inspection only
-	NOTE: Review of ELM for the first 2 items on this sublist will require a review of the Validation Report to confirm there are no 	Warnings or Errors re: the XML or Terminology.
+	- NOTE: Review of ELM for the first 2 items on this sublist will require a review of the Validation Report to confirm there are no Warnings or Errors re: the XML or Terminology.
 - [ ] ANF statements:
 	- [ ] Match what is specified in the TSR, and:
 		- [ ] No concepts have been ommitted nor committed from the request.
@@ -30,7 +30,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 		- [ ] No discrepencies of models are apparent.
 	- [ ] Sufficiently reference dynamically bound values.
 	- [ ] Include a valid UUIDv4. [present and 36 characters long including dashes]
-	NOTE: If any issues are identified related to ANF and/or the TSR, the reviewer is to create an issue ticket; assign it to 		Catherine Staes / Scott Wood and continue their review of the KNART.
+	- NOTE: If any issues are identified related to ANF and/or the TSR, the reviewer is to create an issue ticket; assign it to 		Catherine Staes / Scott Wood and continue their review of the KNART.
 - [ ] All issues have been captured in GitHub, tagged with deliverable ID and artifact type labels.
 - [ ] On completion of review of assigned KNARTs associatd with a CCWP, reviewer will add comment to that fact and re-assign to Program Lead (Apurva) and Juanita with a search/filter link showing all the noted issues.
 
