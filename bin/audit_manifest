@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'pp'
+require 'byebug'
+require 'httparty'
+
+HELP = <<EOF
+
+Audits an existing repository manifest.json by checking for the existance of referenced file paths and URLs. As all paths are relative to the provided manifest.json file, manually specifying the content directory is unnecessary.
+
+	USAGE: #{__FILE__} <manifest.json>
+
+	EXAMPLE:
+		#{__FILE__} manifest.json
+
+EOF
+
+
+def audit_content_directory(root, manifest)
+	good = []
+	bad = []
+	manifest['groups'].each do |group|
+		group['items'].each do |item|
+			if item['path']
+				path = "#{root}/#{item['path']}"
+				if File.exist? path
+					good << item
+				else
+					bad << item
+				end
+			end
+			begin
+				if item['url']
+					response = HTTParty.head(item['url'])
+					if(response.code >= 400)
+						bad << item
+					else
+						good << item
+					end
+				end
+			rescue SocketError => e
+				# Probably a bad DNS or protocol name.
+				bad << item
+			end
+		end
+	end
+	return [good, bad]
+end
+
+# Forces keys to strings.
+def rekey(hash)
+	hash.collect{|k,v| [k.to_s, v]}.to_h
+end
+
+def report(good, bad)
+	puts "\nGood file references: #{good.length}"
+	puts "Bad file references: #{bad.length}"
+	bad.each do |n| puts "\t#{[n['path'],n['url']].join(' ')}" end
+	puts "\n"
+end
+
+if(ARGV.length != 1)
+	puts HELP
+	exit 1
+else
+	file = ARGV[0]
+	manifest = JSON.parse(File.read(file))
+	root = File.dirname(File.expand_path(file))
+	good, bad = audit_content_directory(root, manifest)
+	report(good, bad)
+	exit 0
+end
