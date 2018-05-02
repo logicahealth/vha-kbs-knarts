@@ -12,27 +12,26 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 - [ ] "Final" deliverables are committed and pushed to the GitHub repository in the appropriate folder(s) by Juanita.
 - [ ] Manifest file is updated to include newly introduced content by Preston on a M/W/F schedule.
 - [ ] Verify KNART XML is fully valid and well formed, including embedded ELM, by Preston on a M/W/F schedule.
+- [ ] Preston to confirm all metadata fields are present within the XML file, with no glaring err of ommission nor comission.
+- [ ] Preston to confirm that the ANF new terms include a valid UUIDv4. [present and 36 characters long including dashes]
 - [ ] GitHub issue is created for the review task and assigned to the appropriate reviewer(s), which will notify them automatically via email.  Apurva wil make the assignments.
 
 ## KNART XML CWP Verification Checklist 
 
 - [ ] Reviewer opens the KNART file (XML file) and scroll to "<title value=" to find the name of the KNART under review
 - [ ] Reviewer finds the same Chapter in the Clinical Content White Paper (CCWP) to review the semantic, substantive content of the XML vs. the CCWP.
-	- [ ] All metadata fields are present, with no glaring err of ommission nor comission (preston).
-	- [ ] Action tree structure is fully and justifiably represents the clinical intent. 
-	- [ ] Content is consistent with the conventions used in other documents (style guide issue).
-	- [ ] Appears to capture the semantic intent of the logic by visual inspection only
+- [ ] If the Reviewer identifies that the content is not consistently written across similar artifacts (e.g., Order Sets vs. Order sets or ECA vs. ECA) or at different sections of the same KNART, Reviewer is to create an Issue using the tag "StyleGuide".
+- [ ] Reviewer to confirm that the content of the KNART (the plain text found within the "< and />" tags in the XML file) captures the semantic intent (the clinical meaning) of the matching Chapter in the CCWP.
+- [ ] If Reviewer finds the tag "responseBinding= "X"" in the file, Reviewer is to confirm that the same variable is called/referenced elsewhere in the xml file.
 	- NOTE: Reviewer will be required to review the content of the KNART (either in the XML or in the Conceptula Structure Document (CSD) file) vs. the CCWP to confirm correctedness.
 - [ ] Analysis Normal Form (ANF)/Terminology statements:
 	- [ ] Match what is specified in the TSR, and:
 		- [ ] No concepts have been ommitted nor committed from the request.
 		- [ ] No copy/paste-type issues have been introduced.
 		- [ ] No discrepencies of models are apparent.
-	- [ ] Sufficiently reference dynamically bound values.
-	- [ ] Include a valid UUIDv4. [present and 36 characters long including dashes]
 	- NOTE: If any issues are identified related to ANF and/or the TSR, the reviewer is to create an issue ticket; assign it to 		Catherine Staes / Scott Wood and continue their review of the KNART.
-- [ ] All issues have been captured in GitHub, tagged with deliverable ID and artifact type labels.
-- [ ] On completion of review of assigned KNARTs associatd with a CCWP, reviewer will add comment to that fact and re-assign to Program Lead (Apurva) and Juanita with a search/filter link showing all the noted issues.
+- [ ] Reviewer confirms that all issues they identified for the KNART under review have been captured in GitHub, tagged with deliverable ID and artifact type labels.
+- [ ] On completion of review of assigned KNARTs associated with a CCWP, reviewer will add comment to that fact and re-assign the Issue to Program Lead (Apurva) and Juanita with a search/filter link showing all the noted issues.
 
 ## Post-Verification Checklist
 - [ ] Must-fix issues are aggregated and communicated to B3.
