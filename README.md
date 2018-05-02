@@ -47,7 +47,7 @@ Reviewer will be required to review the content of the KNART (either in the XML 
 - [ ] Review task/issue is "closed".
 
 ## Out of Scope Tasks
-* Verification that concept in the white paper is modelled correctly during the TSR process. The TSRs have already been reviewed based on terms extracted from the white papers: assume the modelling is correct or a 'future implementation issue' has been logged! [NOTE: it is possible that concepts did not get included in the TSR request, or they were not transcribed correctly from the TSR spreadsheet to the KNART xml.]
+* Verification that concept in the white paper is modelled correctly during the TSR process. The TSRs have already been reviewed based on terms extracted from the white papers: assume the modelling is correct or a 'future implementation issue' has been logged! [NOTE: it is possible that concepts did not get included in the TSR request, or they were not transcribed correctly from the TSR spreadsheet to the KNART xml. While the first two are out of scope, the last is definitely inscope.]
 * Anything with CQL.
 * Runtime validation in general.
 * Full semantic validation. 
