@@ -17,14 +17,20 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 - [ ] GitHub issue is created for the review task and assigned to the appropriate reviewer(s), which will notify them automatically via email.  Apurva wil make the assignments.
 
 ## KNART XML CWP Verification Checklist 
-#NOTE: Reviewer will be required to review the content of the KNART (either in the XML or in the Conceptual Structure Document (CSD) file) vs. the CCWP to confirm correctedness.
+NOTE: To conduct the review, the Reviewer will need to download/have open the following files:
+	1. Clinical Content Whitepaper (CCWP) file (pdf) 
+	2. Conceptual Structure Document (CSD) file (pdf)
+	3. KNART Validation Report file (pdf)
+	4. KNART XML file (viewable in browser on Github.com)
+	5. TSR file (excel)
+	
+Reviewer will be required to review the content of the KNART (either in the XML or in the CSD file) vs. the CCWP to confirm the semantic correctedness of the KNART.
 
 - [ ] Reviewer opens the KNART file (XML file) and scroll to "<title value=" to find the name of the KNART under review.
 - [ ] Reviewer finds the same Chapter in the Clinical Content White Paper (CCWP) to review the semantic, substantive content of the XML vs. the CCWP.
 - [ ] Reviewer to confirm that the content of the KNART (the plain text found within the "< and />" tags in the XML file or if using the  CSD, captured in the respective CSD chapters)  captures the semantic intent (the clinical meaning) of the matching Chapter in the CCWP.
 - [ ] If the Reviewer identifies that the content is not consistently written across similar artifacts (e.g., Order Sets vs. Order Sets or ECA vs. ECA) or at different sections of the same KNART, Reviewer is to create an Issue using the tag "StyleGuide".
 - [ ] If Reviewer finds the tag "responseBinding= "X"" in the file, Reviewer is to confirm that the same variable is called/referenced elsewhere in the xml file.
-	- 
 - [ ] Analysis Normal Form (ANF)/Terminology statements:
 	- [ ] Match what is specified in the TSR, and:
 		- [ ] No concepts have been ommitted nor committed from the request.
