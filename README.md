@@ -11,6 +11,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 ## Pre-Verification Checklist
 - [ ] "Final" deliverables are committed and pushed to the GitHub repository in the appropriate folder(s) by Juanita.
 - [ ] Manifest file is updated to include newly introduced content by Preston on a M/W/F schedule.
+- [ ] Verify KNART XML is fully valid and well formed, by Preston on a M/W/F schedule.
 - [ ] GitHub issue is created for the review task and assigned to the appropriate reviewer(s), which will notify them automatically via email.  Apurva wil make the assignments.
 
 ## KNART XML CWP Verification Checklist 
