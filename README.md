@@ -11,7 +11,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 ## Pre-Verification Checklist
 - [ ] "Final" deliverables are committed and pushed to the GitHub repository in the appropriate folder(s) by Juanita.
 - [ ] Manifest file is updated to include newly introduced content by Preston on a M/W/F schedule.
-- [ ] Verify KNART XML is fully valid and well formed, by Preston on a M/W/F schedule.
+- [ ] Verify KNART XML is fully valid and well formed, including embedded ELM, by Preston on a M/W/F schedule.
 - [ ] GitHub issue is created for the review task and assigned to the appropriate reviewer(s), which will notify them automatically via email.  Apurva wil make the assignments.
 
 ## KNART XML CWP Verification Checklist 
@@ -19,11 +19,8 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 - [ ] All metadata fields are present, with no glaring err of ommission nor comission.
 - [ ] Action tree structure is fully and justifiably represents the clinical intent. 
 - [ ] Content is consistent with the conventions used in other documents.
-- [ ] ELM is:
-	- [ ] Well formed XML (no syntactic errors)
-	- [ ] Valid XML
-	- [ ] Appears to capture the semantic intent of the logic by visual inspection only
-	- NOTE: Review of ELM for the first 2 items on this sublist will require a review of the Validation Report to confirm there are no Warnings or Errors re: the XML or Terminology.
+- [ ] Appears to capture the semantic intent of the logic by visual inspection only
+- NOTE: Review of ELM for the first 2 items on this sublist will require a review of the Validation Report to confirm there are no Warnings or Errors re: the XML or Terminology.
 - [ ] ANF statements:
 	- [ ] Match what is specified in the TSR, and:
 		- [ ] No concepts have been ommitted nor committed from the request.
