@@ -20,7 +20,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 - [ ] Action tree structure is fully and justifiably represents the clinical intent. 
 - [ ] Content is consistent with the conventions used in other documents.
 - [ ] Appears to capture the semantic intent of the logic by visual inspection only
-- NOTE: Review of ELM for the first 2 items on this sublist will require a review of the Validation Report to confirm there are no Warnings or Errors re: the XML or Terminology.
+- NOTE: Reviewer will be required to review the content of the KNART (either in the XML or in the Conceptula Structure Document (CSD) file) vs. the Clinical Content Whitepaper (CCWP) to confirm correctedness.
 - [ ] ANF statements:
 	- [ ] Match what is specified in the TSR, and:
 		- [ ] No concepts have been ommitted nor committed from the request.
