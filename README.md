@@ -18,6 +18,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 
 ## KNART XML CWP Verification Checklist 
 NOTE: To conduct the review, the Reviewer will need to download/have open the following files:
+
 	- [ ] 1. Clinical Content Whitepaper (CCWP) file (pdf) 
 	- [ ] 2. Conceptual Structure Document (CSD) file (pdf)
 	- [ ] 3. KNART Validation Report file (pdf)
