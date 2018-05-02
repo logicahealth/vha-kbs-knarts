@@ -16,12 +16,14 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 
 ## KNART XML CWP Verification Checklist 
 
-- [ ] All metadata fields are present, with no glaring err of ommission nor comission.
-- [ ] Action tree structure is fully and justifiably represents the clinical intent. 
-- [ ] Content is consistent with the conventions used in other documents.
-- [ ] Appears to capture the semantic intent of the logic by visual inspection only
-- NOTE: Reviewer will be required to review the content of the KNART (either in the XML or in the Conceptula Structure Document (CSD) file) vs. the Clinical Content Whitepaper (CCWP) to confirm correctedness.
-- [ ] ANF statements:
+- [ ] Reviewer opens the KNART file (XML file) and scroll to "<title value=" to find the name of the KNART under review
+- [ ] Reviewer finds the same Chapter in the Clinical Content White Paper (CCWP) to review the semantic, substantive content of the XML vs. the CCWP.
+	- [ ] All metadata fields are present, with no glaring err of ommission nor comission (preston).
+	- [ ] Action tree structure is fully and justifiably represents the clinical intent. 
+	- [ ] Content is consistent with the conventions used in other documents (style guide issue).
+	- [ ] Appears to capture the semantic intent of the logic by visual inspection only
+	- NOTE: Reviewer will be required to review the content of the KNART (either in the XML or in the Conceptula Structure Document (CSD) file) vs. the CCWP to confirm correctedness.
+- [ ] Analysi Normal Form (ANF)/Terminology statements:
 	- [ ] Match what is specified in the TSR, and:
 		- [ ] No concepts have been ommitted nor committed from the request.
 		- [ ] No copy/paste-type issues have been introduced.
