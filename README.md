@@ -23,7 +23,7 @@ The editor will allow you to make changes to the KNARTs, but you'll need to down
 	- [ ] Content is consistent with the conventions used in other documents (style guide issue).
 	- [ ] Appears to capture the semantic intent of the logic by visual inspection only
 	- NOTE: Reviewer will be required to review the content of the KNART (either in the XML or in the Conceptula Structure Document (CSD) file) vs. the CCWP to confirm correctedness.
-- [ ] Analysi Normal Form (ANF)/Terminology statements:
+- [ ] Analysis Normal Form (ANF)/Terminology statements:
 	- [ ] Match what is specified in the TSR, and:
 		- [ ] No concepts have been ommitted nor committed from the request.
 		- [ ] No copy/paste-type issues have been introduced.
