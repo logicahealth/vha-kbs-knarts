@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'pp'
+require 'byebug'
+require 'nokogiri'
+require 'slim'
+
+require_relative "lib/common"
+include Repository
+
+HELP = <<EOF
+
+Renders a number of validation metrics for every KNART XML document references in a provided manifest.json.
+
+	USAGE: #{__FILE__} <manifest.json> <output.html>
+
+	EXAMPLE:
+		#{__FILE__} manifest.json #{__FILE__}.html
+
+EOF
+
+def report(good, bad)
+	puts "\nGood file references: #{good.length}"
+	puts "Bad file references: #{bad.length}"
+	bad.each do |n| puts "\t#{[n['path'],n['url']].join(' ')}" end
+	puts "\n"
+end
+
+def knart_validations(doc)
+	# We'll cover the basics first.
+	report = {
+		title: doc.xpath("//xmlns:title/@value").first.to_s,
+		artifactType: doc.xpath("//xmlns:artifactType/@value").first.to_s,
+		metadata: {
+			identifiers: doc.xpath("/xmlns:knowledgeDocument/xmlns:metadata/xmlns:identifiers/xmlns:identifier/@identifierName").count, #collect{|n| n.to_s},
+			relatedResources: doc.xpath("//xmlns:relatedResource//xmlns:resource").count,
+			supportingEvidence: doc.xpath("//xmlns:supportingEvidence//xmlns:resource").count,
+			applicability: doc.xpath("//xmlns:applicability/xmlns:coverage").count,
+			eventHistory: doc.xpath("//xmlns:eventHistory/xmlns:artifactLifeCycleEvent").count,
+			contributions: doc.xpath("//xmlns:contributions//xmlns:contributor").count,
+			publishers: doc.xpath("//xmlns:publishers//xmlns:publisher").count,
+		}
+	}
+	# Global ELM stuff.
+	exps = doc.xpath("/xmlns:knowledgeDocument/xmlns:expressions/xmlns:def")
+	
+	report[:expressions] = exps.collect{|e| {
+		name: e.xpath("@name").to_s,
+		type: e.xpath('elm:expression/@xsi:type').to_s
+	}}
+	# puts report
+	report
+end
+
+def	static_manifest_validations(root, manifest)
+	results = {}
+	manifest['groups'].each do |group|
+		group['items'].each do |item|
+			if KNART_MIME_TYPES.include? item['mimeType']
+				path = "#{root}/#{item['path']}"
+				puts "#{path}"
+				doc = Nokogiri::XML(File.open(path))
+				begin
+					results[item['path']] = knart_validations(doc)
+				rescue
+					results[item['path']] = {
+						error: "Could not be validated"
+					}
+				end
+			end
+		end
+	end
+	results
+end
+
+def render_results(results, out)
+	puts template = File.join(File.dirname(File.expand_path(__FILE__)),'lib', 'spot_check.slim')
+	html = Slim::Template.new(template).render(self, {results: results})
+	# html = Jade.compile File.read(template), locals: {results: results}
+	puts html
+	file = File.open(out, 'w')
+	file.write html
+	file.close
+end
+
+if(ARGV.length != 2)
+	puts HELP
+	exit 1
+else
+	file = ARGV[0]
+	manifest = JSON.parse(File.read(file))
+	root = File.dirname(File.expand_path(file))
+	results = static_manifest_validations(root, manifest)
+
+	Slim::Engine.set_options pretty: true
+	render_results(results, ARGV[1])
+	exit 0
+end
