@@ -5,6 +5,8 @@ require 'pp'
 require 'byebug'
 require 'httparty'
 
+require_relative "lib/common"
+include Repository
 HELP = <<EOF
 
 Audits an existing repository manifest.json by checking for the existance of referenced file paths and URLs. As all paths are relative to the provided manifest.json file, manually specifying the content directory is unnecessary.
@@ -16,42 +18,6 @@ Audits an existing repository manifest.json by checking for the existance of ref
 
 EOF
 
-
-def audit_content_directory(root, manifest)
-	good = []
-	bad = []
-	manifest['groups'].each do |group|
-		group['items'].each do |item|
-			if item['path']
-				path = "#{root}/#{item['path']}"
-				if File.exist? path
-					good << item
-				else
-					bad << item
-				end
-			end
-			begin
-				if item['url']
-					response = HTTParty.head(item['url'])
-					if(response.code >= 400)
-						bad << item
-					else
-						good << item
-					end
-				end
-			rescue SocketError => e
-				# Probably a bad DNS or protocol name.
-				bad << item
-			end
-		end
-	end
-	return [good, bad]
-end
-
-# Forces keys to strings.
-def rekey(hash)
-	hash.collect{|k,v| [k.to_s, v]}.to_h
-end
 
 def report(good, bad)
 	puts "\nGood file references: #{good.length}"
