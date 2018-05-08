@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compositeKnowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r2 ../../compositeschema/knowledgeartifact/compositeknowledgedocument.xsd urn:hl7-org:elm:r1 ../../compositeschema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../compositeschema/elm/types.xsd"
+	xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1"
+	xmlns:dt="urn:hl7-org:cdsdt:r2">
+	<metadata>
+		<identifiers>
+			<identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="27a9400c-67fd-5da5-9ab5-a915485f717c" version="1.0"
+				identifierName="B57"/>
+			<identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"
+				extension="CLIN0006AC"
+				identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0006AC"/>
+			<identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-923"
+				identifierName="Jira KP-923"/>
+		</identifiers>
+		<artifactType value="Composite"/>
+		<schemaIdentifier root="urn:hl7-org:knowledgeartifact:r2" version="1"/>
+		<dataModels>
+			<modelReference>
+				<description value="VA Analysis Normal Form Model"/>
+				<referencedModel value="urn:solor.io:anf-model:0.9"/>
+			</modelReference>
+			<modelReference>
+				<description value="VA Analysis Normal Form Model"/>
+				<referencedModel value="urn:solor.io:anf-model:1.0"/>
+			</modelReference>
+		</dataModels>
+		<title value="Cardiology: Electrophysiology consult"/>
+		<!-- Draft status is used for this document since the format is not yet a formal standard -->
+		<status value="Draft"/>
+		<eventHistory>
+			<artifactLifeCycleEvent>
+				<eventType value="Pre-published"/>
+				<eventDateTime value="20180418"/>
+			</artifactLifeCycleEvent>
+		</eventHistory>
+		<publishers>
+			<publisher xsi:type="Organization">
+				<name value="Department of Veterans Affairs"/>
+			</publisher>
+		</publishers>
+	</metadata>
+	<controlBlock>
+		<controllingArtifact bindingName="main"/>
+	</controlBlock>
+	<containedArtifacts>
+		<artifact>
+			<artifactType value="Rule"/>
+			<name value="Main controller"/>
+			<bindingName value="main"/>
+			<inclusionCriteria/>
+			<knowledgeDocument>
+				<metadata>
+					<identifiers>
+						<identifier root="urn:cognitivemedicine.com:lab:knart:internaluseonly"
+							identifierName="main"/>
+					</identifiers>
+					<artifactType value="Rule"/>
+					<schemaIdentifier root="urn:hl7-org:knowledgeartifact:r2" version="1"/>
+					<title value="main controller"/>
+					<status value="Draft"/>
+				</metadata>
+				<actionGroup>
+					<subElements>
+						<simpleAction xsi:type="FireEventAction">
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal" value="FireDocTemplate"
+										valueType="t:String"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+					</subElements>
+				</actionGroup>
+			</knowledgeDocument>
+		</artifact>
+		<artifact>
+			<artifactType value="Documentation Template"/>
+			<name value="TheDocumentTemplate"/>
+			<bindingName value="BaseTemplate"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="FireDocTemplate"> </trigger>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_CRDT_B36EP.xml"/>
+				<uuid value="b098e1ee-609b-5225-b023-56083333057c"/>
+				<identifiers>
+					<identifier root="urn:va.gov:kbs:knart:artifact:r1"
+						extension="b098e1ee-609b-5225-b023-56083333057c" identifierName="B36"
+						version="1.0"/>
+				</identifiers>
+			</reference>
+			<onCompletion>
+				<eventDefinition>
+					<eventName name="DocumentationCompleteEvent"/>
+				</eventDefinition>
+			</onCompletion>
+		</artifact>
+		<artifact>
+			<artifactType value="Rule"/>
+			<name value="RouteOnTempleteComplete"/>
+			<bindingName value="router"/>
+			<inclusionCriteria/>
+			<knowledgeDocument>
+				<metadata>
+					<identifiers>
+						<identifier root="urn:cognitivemedicine.com:lab:knart:internaluseonly"
+							identifierName="router"/>
+					</identifiers>
+					<artifactType value="Rule"/>
+					<schemaIdentifier root="urn:hl7-org:knowledgeartifact:r2" version="1"/>
+					<title value="Composite Router"/>
+					<status value="Draft"/>
+				</metadata>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="DocumentationCompleteEvent">
+						<textEquivalent value="Trigger when the Documentation Template is Complete"
+						/>
+					</trigger>
+				</triggers>
+				<actionGroup>
+					<subElements>
+						<simpleAction xsi:type="FireEventAction">
+							<!-- Atrial fibrillation -->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]->(363702006 |Has focus (attribute))->[49436004 |Atrial fibrillation (disorder)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal" value="FireAFandFOrderSet"
+										valueType="t:String"/>
+								</elm:element>
+								<elm:element name="Documentation">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!-- Atrial flutter -->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]->(363702006 |Has focus (attribute))->[5370000 |Atrial flutter (disorder)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal" value="FireAFandFOrderSet"
+										valueType="t:String"/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!-- Supraventricular Tachycardia -->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]->(363702006 |Has focus (attribute))->[6456007 |Supraventricular tachycardia (disorder)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal" value="FireSVTOrderSet"
+										valueType="t:String"/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!--Syncope Bradycardia -->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]->(363702006 |Has focus (attribute))->[271594007 |Syncope (disorder)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal" value="FireSynBradOrderSet"
+										valueType="t:String"/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!--Pacemaker ICD Follow Up -->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal"
+										value="FirePacemakerFollowUpOrderSet" valueType="t:String"/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!--Pacemaker ICD Generator Change (Replacement of electronic heart device, pulse generator ) -->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]->(363702006 |Has focus (attribute))->[3515001 |Replacement of electronic heart device, pulse generator (procedure)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal"
+										value="FirePacemakerGenChangeOrderSet" valueType="t:String"
+									/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!--Pacemaker ICD Generator Change (Implantation of internal cardiac defibrillator) -->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]->(363702006 |Has focus (attribute))->[395218007 |Implantation of internal cardiac defibrillator (procedure)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal"
+										value="FirePacemakerGenChangeOrderSet" valueType="t:String"
+									/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!-- Primary Prevention ICD Implant (Implantation of cardiac pacemaker)-->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]->(363702006 |Has focus (attribute))->[307280005 |Implantation of cardiac pacemaker (procedure)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal"
+										value="FirePrimaryPreventionICDImplantOrderSet"
+										valueType="t:String"/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!-- Primary Prevention ICD Implant (Implantation of internal cardiac defibrillator)-->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:Equal">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"/>
+										<elm:operand xsi:type="elm:Code"
+											code="[1221000205105 |Cardiology consultation and report (procedure)]->(363702006 |Has focus (attribute))->[395218007 |Implantation of internal cardiac defibrillator (procedure)]">
+											<elm:system name="SNOMED CT"/>
+										</elm:operand>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal"
+										value="FirePrimaryPreventionICDImplantOrderSet"
+										valueType="t:String"/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+						<simpleAction xsi:type="FireEventAction">
+							<!-- Handle Other Electrophysicology order set -->
+							<conditions>
+								<condition>
+									<logic xsi:type="elm:IsNull">
+										<elm:operand xsi:type="elm:Property"
+											path="DocumentationCompleteEvent.Responses.Reasonforconsult"
+										/>
+									</logic>
+									<conditionRole value="ApplicableScenario"/>
+								</condition>
+							</conditions>
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal" value="FireOtherOrderSet"
+										valueType="t:String"/>
+								</elm:element>
+								<elm:element name="Template">
+									<elm:value xsi:type="elm:Property"
+										path="DocumentationCompleteEvent.Responses"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+					</subElements>
+				</actionGroup>
+			</knowledgeDocument>
+		</artifact>
+		<artifact>
+			<artifactType value="Order Set"/>
+			<name value="TheAtrialFibrillationAndFlutterOrderSet"/>
+			<bindingName value="AFandFOrderSet"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="FireAFandFOrderSet"/>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_OS_B6EPAF.xml"/>
+				<uuid value="685caeea-fcfc-59e2-9ecc-87bbda725858"/>
+				<identifiers>
+					<identifier root="urn:va.gov:kbs:knart:artifact:r1"
+						extension="685caeea-fcfc-59e2-9ecc-87bbda725858" identifierName="B6"
+						version="1.0"/>
+				</identifiers>
+			</reference>
+		</artifact>
+		<artifact>
+			<artifactType value="Order Set"/>
+			<name value="TheSVTOrderSet"/>
+			<bindingName value="SVTOrderSet"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="FireSVTOrderSet"/>
+
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KVRpt_OS_B7EPSVT.xml"/>
+				<uuid value="5eea1cce-d8bb-5bc7-aafa-fb1904bf5231"/>
+				<identifiers>
+					<identifier root="urn:va.gov:kbs:knart:artifact:r1"
+						extension="5eea1cce-d8bb-5bc7-aafa-fb1904bf5231" identifierName="B7"
+						version="1.0"/>
+				</identifiers>
+			</reference>
+		</artifact>
+		<artifact>
+			<artifactType value="Order Set"/>
+			<name value="TheSynBradOrderSet"/>
+			<bindingName value="SynBradOrderSet"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="FireSynBradOrderSet"/>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_OS_B8SynBrad.xml"/>
+				<uuid value="2f1da8f8-1c06-575a-b49a-9c7be74cb440"/>
+				<identifiers>
+					<identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="2f1da8f8-1c06-575a-b49a-9c7be74cb440" identifierName="B8" version="1.0"/>
+				</identifiers>
+			</reference>
+		</artifact>
+		<artifact>
+			<artifactType value="Order Set"/>
+			<name value="ThePrimaryPreventionICDImplantOrderSet"/>
+			<bindingName value="PrimaryPreventionICDImplantOrderSet"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger"
+						onEventName="FirePrimaryPreventionICDImplantOrderSet"/>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_OS_B9EPICDImp.xml"/>
+				<uuid value="f7bf24fa-9c7a-5054-a7c6-9896e84e556f"/>
+				<identifiers>
+					<identifier extension="f7bf24fa-9c7a-5054-a7c6-9896e84e556f" identifierName="B9" root="urn:va.gov:kbs:knart:artifact:r1" version="1.0"/>
+				</identifiers>
+			</reference>
+		</artifact>
+		<artifact>
+			<artifactType value="Order Set"/>
+			<name value="ThePacemakerFollowUpOrderSet"/>
+			<bindingName value="PacemakerFollowUpOrderSet"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger"
+						onEventName="FirePacemakerFollowUpOrderSet"/>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_OS_B10EPICDFu.xml"/>
+				<uuid value="c9ea7de5-6287-5165-bf86-200e32cc4107"/>
+				<identifiers>
+					<identifier extension="c9ea7de5-6287-5165-bf86-200e32cc4107" identifierName="B10" root="urn:va.gov:kbs:knart:artifact:r1" version="1.0"/>				</identifiers>
+			</reference>
+		</artifact>
+		<artifact>
+			<artifactType value="Order Set"/>
+			<name value="ThePMICDGenChngOrderSet"/>
+			<bindingName value="PacemakerGenChangeOrderSet"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger"
+						onEventName="FirePacemakerGenChangeOrderSet"/>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_OS_B11EPICDCh.xml"/>
+				<uuid value="777b989f-24a2-522b-a22e-84c137e6b2a9"/>
+				<identifiers>
+					<identifier extension="777b989f-24a2-522b-a22e-84c137e6b2a9" identifierName="B11" root="urn:va.gov:kbs:knart:artifact:r1" version="1.0"/>
+				</identifiers>
+			</reference>
+		</artifact>
+		<artifact>
+			<artifactType value="Order Set"/>
+			<name value="TheOtherOrderSet"/>
+			<bindingName value="OtherOrderSet"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="FireOtherOrderSet"/>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_OSB12EPOther.xml"/>
+				<uuid value="9ec4fd1c-aa93-541f-a2d3-932f3a518171"/>
+				<identifiers>
+					<identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="9ec4fd1c-aa93-541f-a2d3-932f3a518171" identifierName="B12" version="1.0"/>
+				</identifiers>
+			</reference>
+		</artifact>
+	</containedArtifacts>
+</compositeKnowledgeDocument>

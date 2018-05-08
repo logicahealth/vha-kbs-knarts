@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'pp'
+require 'byebug'
+require 'httparty'
+
+require_relative "lib/common"
+include Repository
+HELP = <<EOF
+
+Audits an existing repository manifest.json by checking for the existance of referenced file paths and URLs. As all paths are relative to the provided manifest.json file, manually specifying the content directory is unnecessary.
+
+	USAGE: #{__FILE__} <manifest.json>
+
+	EXAMPLE:
+		#{__FILE__} manifest.json
+
+EOF
+
+
+def report(good, bad)
+	puts "\nGood file references: #{good.length}"
+	puts "Bad file references: #{bad.length}"
+	bad.each do |n| puts "\t#{[n['path'],n['url']].join(' ')}" end
+	puts "\n"
+end
+
+if(ARGV.length != 1)
+	puts HELP
+	exit 1
+else
+	file = ARGV[0]
+	manifest = JSON.parse(File.read(file))
+	root = File.dirname(File.expand_path(file))
+	good, bad = audit_content_directory(root, manifest)
+	report(good, bad)
+	exit 0
+end

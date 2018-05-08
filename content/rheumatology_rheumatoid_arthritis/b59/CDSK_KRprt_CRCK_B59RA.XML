@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compositeKnowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r2 ../../compositeschema/knowledgeartifact/compositeknowledgedocument.xsd urn:hl7-org:elm:r1 ../../compositeschema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../compositeschema/elm/types.xsd" xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:dt="urn:hl7-org:cdsdt:r2">
+	<metadata>
+		<identifiers>
+			<identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="d9879022-bec1-5198-97e5-2d580324f35c" version="1.0" identifierName="B59"/>
+			<identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0006AC"
+				identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0006AC"/>
+			<identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-926" identifierName="Jira KP-926"/>
+		</identifiers>
+		<artifactType value="Composite"/>
+		<schemaIdentifier root="urn:hl7-org:knowledgeartifact:r2" version="1"/>
+		<dataModels>
+			<modelReference>
+				<!-- Based on the composite data models -->
+				<description value="VA Analysis Normal Form Model"/>
+				<referencedModel value="urn:solor.io:anf-model:1.0"/>
+			</modelReference>
+		</dataModels>
+		<title value="Rheumatology: Rheumatoid Arthritis"/>
+		<status value="Draft"/>
+		<eventHistory>
+			<artifactLifeCycleEvent>
+				<eventType value="Pre-published"/>
+				<eventDateTime value="20180420"/>
+			</artifactLifeCycleEvent>
+		</eventHistory>
+		<publishers>
+			<publisher xsi:type="Organization">
+				<name value="Department of Veterans Affairs"/>
+			</publisher>
+		</publishers>
+			</metadata>
+	<controlBlock>
+		<controllingArtifact bindingName="main"/>
+	</controlBlock>
+	<containedArtifacts>
+		<artifact>
+			<artifactType value="Rule"/>
+			<name value="Main controller"/>
+			<bindingName value="main"/>
+			<inclusionCriteria/>
+			<knowledgeDocument>
+				<metadata>
+					<identifiers>
+						<identifier root="urn:cognitivemedicine.com:lab:knart:internaluseonly" identifierName="main"/>
+					</identifiers>
+					<artifactType value="Rule"/>
+					<schemaIdentifier root="urn:hl7-org:knowledgeartifact:r2" version="1"/>
+					<title value="main controller"/>
+					<status value="Draft"/>
+				</metadata>
+				<actionGroup>
+					<subElements>
+						<simpleAction xsi:type="FireEventAction">
+							<eventType eventType="NamedEvent"/>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal" value="FireDocTemplate" valueType="t:String"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+					</subElements>
+				</actionGroup>
+			</knowledgeDocument>
+		</artifact>
+		<artifact>
+			<artifactType value="Documentation Template"/>
+			<name value="TheDocumentTemplate"/>
+			<bindingName value="BaseTemplate"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="FireDocTemplate"/>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_CRDT_B38RA.xml"/>
+				<uuid value="2c3ccce7-4e81-590e-b37c-7bdbeccbbe77"/>
+				<identifiers>
+					<identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="2c3ccce7-4e81-590e-b37c-7bdbeccbbe77" identifierName="B38" version="1.0"/>
+				</identifiers>
+			</reference>
+			<onCompletion>
+				<eventDefinition>
+					<eventName name="DocumentationCompleteEvent"/>
+				</eventDefinition>
+			</onCompletion>
+		</artifact>
+		<artifact>
+			<artifactType value="Rule"/>
+			<name value="RouteOnTempleteComplete"/>
+			<bindingName value="router"/>
+			<inclusionCriteria/>
+			<knowledgeDocument>
+				<metadata>
+					<identifiers>
+						<identifier root="urn:cognitivemedicine.com:lab:knart:internaluseonly" identifierName="router"/>
+					</identifiers>
+					<artifactType value="Rule"/>
+					<schemaIdentifier root="urn:hl7-org:knowledgeartifact:r2" version="1"/>
+					<title value="Composite Router"/>
+					<status value="Draft"/>
+				</metadata>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="DocumentationCompleteEvent">
+						<textEquivalent value="Trigger when the Documentation Template is Complete"></textEquivalent>
+					</trigger>
+				</triggers>
+				<actionGroup>
+					<subElements>
+						<simpleAction xsi:type="FireEventAction">
+							<eventType eventType="NamedEvent"></eventType>
+							<actionSentence xsi:type="elm:Instance" classType="xml:lang">
+								<elm:element name="EventName">
+									<elm:value xsi:type="elm:Literal" value="FireOrderSet" valueType="t:String"/>
+								</elm:element>
+							</actionSentence>
+						</simpleAction>
+					</subElements>
+				</actionGroup>
+			</knowledgeDocument>
+		</artifact>
+		<artifact>
+			<artifactType value="Order Set"/>
+			<name value="TheOrderSet"/>
+			<bindingName value="OrderSet"/>
+			<eventBinding>
+				<bindingModel model="Encapsulated"/>
+				<triggers>
+					<trigger xsi:type="NamedEventTrigger" onEventName="FireOrderSet">
+					</trigger>
+				</triggers>
+			</eventBinding>
+			<reference>
+				<url address="CDSK_KRprt_OS_B14RA.xml"/>
+				<uuid value="34a8654c-a4e6-51da-9154-504de025a02b"/>
+				<identifiers>
+					<identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="34a8654c-a4e6-51da-9154-504de025a02b" identifierName="B14" version="1.0"/>
+				</identifiers>
+			</reference>
+		</artifact>
+	</containedArtifacts>
+</compositeKnowledgeDocument>

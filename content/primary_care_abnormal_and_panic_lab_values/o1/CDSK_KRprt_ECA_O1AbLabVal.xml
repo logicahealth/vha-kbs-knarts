@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?schematron-schema href="../main/schematron/knowledgeartifact.sch"?>
+<?schematron-schema href="../main/schematron/documentationtemplates.sch"?>
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:vmr="urn:hl7-org:vmr:r2" xmlns:dt="urn:hl7-org:cdsdt:r2"
+    xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:p1="http://www.w3.org/1999/xhtml"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:anf="http://hl7.org/anf"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="87c046d0-0c41-542b-9d56-2e0207194fa2" identifierName="O1" version="1.0"/>
+            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007AA"
+                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007AA"/>
+            <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-74" identifierName="Jira KP-74"/>
+        </identifiers>
+        <artifactType value="Rule"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+
+        <title value="Primary Care: Abnormal Laboratory Value Alert Rule"/>
+
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr1" version="1.0" identifierName="CCWP"/>
+                        </identifiers>
+                        <title value="Primary Care: Abnormal and Panic Laboratory Value Alerts Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr2" identifierName="CSD" root="LocalDocBook"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007AA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007AA"/>
+                        </identifiers>
+                        <title value="Primary Care: Abnormal Laboratory Value Alert Rule Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr3" identifierName="KVRpt" root="LocalDocBook"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007AA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007AA"/>
+                        </identifiers>
+                        <title value="Primary Care: Abnormal Laboratory Value Alert Rule KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+
+        <supportingEvidence>
+            <!-- Use the bibliographic information from the CCWP to specify specific evidence used to support the logic
+                 defined in this KNART.  Evidence consists of a set of resources, and possibly an indication of
+                 the quality and strength of recommendation -->
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="10.1007/s11606-011-1949-5" identifierName="DOI"/>
+                            <identifier root="LocalDocBook" extension="e1" identifierName="Callen 2012"/>
+                        </identifiers>
+                        <title value="Failure to follow-up test results for ambulatory patients: a systematic review."/>
+                        <location value="https://doi.org/10.1007/s11606-011-1949-5"/>
+                        <description
+                            value="BACKGROUND: Serious lapses in patient care result from failure to follow-up test results.  OBJECTIVE: To systematically review evidence quantifying the extent of failure to follow-up test results and the impact for ambulatory patients."/>
+                        <citation
+                            value="J. L. Callen, J. I. Westbrook, A. Georgiou, and J. Li, “Failure to follow-up test results for ambulatory patients: a systematic review.,” J. Gen. Intern. Med., vol. 27, no. 10, pp. 1334–1348, Oct. 2012."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="10.1016/S1553-7250(05)31012-9" identifierName="DOI"/>
+                            <identifier root="LocalDocBook" extension="e2" identifierName="Hickner 2005"/>
+                        </identifiers>
+                        <title value="Issues and initiatives in the testing process in primary care physician offices"/>
+                        <location value="https://doi.org/10.1016/S1553-7250(05)31012-9"/>
+                        <description
+                            value="Errors occur frequently in management of the testing process in primary care physicians’ offices. These errors may result in significant harm to patients and lead to inefficient practice. Important issues are summarized for primary care clinicians and their offices to consider in improving the management of the testing processes."/>
+                        <citation
+                            value="J. M. Hickner, D. H. Fernald, D. M. Harris, E. G. Poon, N. C. Elder, and J. W. Mold, “Issues and initiatives in the testing process in primary care physician offices,” Joint Commission journal on quality and patient safety, vol. 31, no. 2, pp. 81–89, Feb. 2005."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://www.va.gov/vhapublications" extension="VHA Directive 1088"/>
+                            <identifier root="LocalDocBook" extension="e3" identifierName="VHA Directive 1088"/>
+                        </identifiers>
+                        <title value="Communicating Test Results to Providers and Patients"/>
+                        <location value="https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3148"/>
+                        <citation
+                            value="U.S. Department of Veterans Affairs, “Communicating Test Results to Providers and Patients,” VHA Directive 1088, 07-Oct-2015. [Online]. Available: https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3148. [Accessed: 07-Oct-2015]."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://www.va.gov/vhapublications" extension="VHA Handbook 1106.01"/>
+                            <identifier root="LocalDocBook" extension="e4" identifierName="VHA 1106.01"/>
+                        </identifiers>
+                        <title value="Pathology and Laboratory Medicine Service (P&amp;LMS) procedures. 2016"/>
+                        <location value="https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3169"/>
+                        <citation value="VHA Handbook 1106.01: Pathology and Laboratory Medicine Service (P&amp;LMS) procedures. 2016."/>
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+
+        <!-- The applicability element describes the basic context for this KNART -->
+        <applicability>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="All"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="All"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientGender"/>
+                <description value="All"/>
+            </coverage>
+            <coverage>
+                <focus value="WorkflowSetting"/>
+                <description value="All"/>
+            </coverage>
+        </applicability>
+
+        <!-- Set the status value for this KNART here, start with "Draft" -->
+        <status value="Active"/>
+
+        <!-- This element is used to capture the revision history of the doucment 
+             "Pre-published can be used to show the date of the initial authoring -->
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <!-- Update to lates CSD/KVRpt  -->
+                <eventType value="Published"/>
+                <eventDateTime value="20180506"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <!-- Update to lates CSD/KVRpt  -->
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180506"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <!-- ready for validation report -->
+                <eventType value="Published"/>
+                <eventDateTime value="20180323"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <!-- preparation for final validation report, and delivery -->
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180323"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20171205"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20171031"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+        <!-- Capture contributors here -->
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Angela"/>
+                        <dt:part type="FAM" value="Denietolis"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Primary Care Physician, James A. Haley Veterans Hospital, Tampa VAMC, Tampa, FL 33612"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Pat"/>
+                        <dt:part type="FAM" value="Dumas"/>
+                        <dt:part type="TITLE" value="RN"/>
+                    </name>
+                    <affiliation>
+                        <name value="Clinical Program Director, VACO, 810 Vermont Ave NW, Washington, DC 20420"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Manish"/>
+                        <dt:part type="FAM" value="Merchant"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Health Informatician, Albany VAMC, 113 Holland Ave., Albany, NY 12208"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Timothy"/>
+                        <dt:part type="FAM" value="Dresselhaus"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Chief, Primary Care Service, San Diego VAMC - MEDS, 3350 La Jolla Village Drive, San Diego, CA 92161"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Michael"/>
+                        <dt:part type="FAM" value="Icardi"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Pathologist, Iowa City VAMC, 601 Highway 6 West, Iowa City, IA 52246"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <codesystem name="RXNorm" id="2.16.840.1.113883.6.1" version="5-Mar-18"/>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAdded">
+            <def name="newLaboratoryResult">
+                <elm:expression xsi:type="elm:Retrieve" dataType="ClinicalStatement" codeProperty="topic">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Any receipt of a laboratory result by the laboratory management system</a:s>
+                    </elm:annotation>
+                    <elm:codes xsi:type="elm:List">
+                        <elm:element xsi:type="elm:Code" code="15220000 |Laboratory test (procedure)|" display="Postcoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:element>
+                    </elm:codes>
+                </elm:expression>
+            </def>
+        </trigger>
+    </externalData>
+    <expressions>
+        <def name="abnormalLabResultQuery">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>Abnormal laboratory result query, Value outside of defined normal reference range for test</a:s>
+                </elm:annotation>
+                <elm:source alias="labResultQuery">
+                    <elm:expression xsi:type="elm:ExpressionRef" name="newLaboratoryResult"/>
+                </elm:source>
+                <elm:where xsi:type="elm:And">
+                    <elm:operand xsi:type="elm:Equal">
+                        <elm:operand path="statementType" xsi:type="elm:Property"/>
+                        <elm:operand xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:operand>
+                    </elm:operand>
+                    <elm:operand xsi:type="elm:Equal">
+                        <elm:operand path="result.healthRisk" xsi:type="elm:Property"/>
+                        <elm:operand xsi:type="elm:Code"
+                            code="[404684003 |Clinical finding (finding)]
+                            ->(363714003 |Interprets (attribute))->[386053000 |Evaluation procedure (procedure)]
+                            ->(363713009 |Has interpretation (attribute))->[263654008 |Abnormal (qualifier value)]"
+                            display="Postcoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:operand>
+                    </elm:operand>
+                </elm:where>
+            </elm:expression>
+        </def>
+    </expressions>
+    <conditions>
+        <condition>
+            <logic xsi:type="elm:Exists">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>Any receipt of abnormal laboratory result by the laboratory management system </a:s>
+                </elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="abnormalLabResultQuery"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+    </conditions>
+    <actionGroup>
+        <title value="Primary Care: Abnormal Laboratory Value Alerts"/>
+        <description value="Primary Care: Abnormal Laboratory Value Alerts"/>
+        <subElements>
+            <simpleAction xsi:type="CreateAction">
+                <textEquivalent
+                    value="Notify the clinical provider of the noncritical abnormal laboratory test result through the laboratory management system"/>
+                <actionSentence xsi:type="elm:Instance" classType="anf:TSR-NoModel">
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Literal" valueType="xsi:string"
+                            value="Communicate abnormal lab result to the clinical provider for the abnormal lab value."/>
+                    </elm:element>
+                </actionSentence>
+            </simpleAction>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>

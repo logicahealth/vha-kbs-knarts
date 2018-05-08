@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="description" content="")
+    meta(name="author" content="")
+    //- link(rel="icon" href="../../../../favicon.ico")
+    title Grid Template for Bootstrap
+    // Bootstrap core CSS
+    link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet")
+    link(href="https://blackrockdigital.github.io/startbootstrap-clean-blog/css/clean-blog.min.css" rel="stylesheet")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js")
+    css:
+      	.card-columns {
+          column-count: 2;
+          column-gap: 30px;
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        .card {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+        }
+
+  body
+    .container-fluid
+      .jumbotron
+        h1 Spot Check Report
+        p.lead
+          | Summary information extracted from KNART XML documents within the repository.
+        h4 Table of Contents
+        ol
+          - results.each do |file, result|
+            li
+              a(href="##{file}") = result[:title]
+
+      .card-columns
+        - results.each do |file, result|
+          .card(id="#{file}")
+            .card-body
+              h4.card-title = result[:title]
+              .card-subtitle = result[:artifactType]
+              small.text-muted = file
+              hr
+              h4 Metadata Items Section
+              table.table.table-condensed.table-striped
+                thead
+                  tr
+                    th Item
+                    th Count
+                tbody
+                  - result[:metadata].each do |k, count|
+                    / tr(class="#{result[:metadata][k] > 0 ? '': 'text-warning'}")
+                    tr(class="#{result[:metadata][k] > 0 ? '': 'text-danger'}")
+                      td = k
+                      td = count
