@@ -32,28 +32,38 @@ html(lang="en")
         p.lead
           | Summary information extracted from KNART XML documents within the repository.
         h4 Table of Contents
+        h5 Composites
         ol
-          - results.each do |file, result|
+          - composites.each do |file, result|
             li
               a(href="##{file}") = result[:title]
 
-      .card-columns
-        - results.each do |file, result|
-          .card(id="#{file}")
-            .card-body
-              h4.card-title = result[:title]
-              .card-subtitle = result[:artifactType]
-              small.text-muted = file
-              hr
-              h4 Metadata Items Section
-              table.table.table-condensed.table-striped
-                thead
-                  tr
-                    th Item
-                    th Count
-                tbody
-                  - result[:metadata].each do |k, count|
-                    / tr(class="#{result[:metadata][k] > 0 ? '': 'text-warning'}")
-                    tr(class="#{result[:metadata][k] > 0 ? '': 'text-danger'}")
-                      td = k
-                      td = count
+        h5 KNARTs
+        ol
+          - knarts.each do |file, result|
+            li
+              a(href="##{file}") = result[:title]
+
+      section
+        h2 Composites
+        .card-columns
+          - composites.each do |file, result|
+            .card(id="#{file}")
+              .card-body
+                h4.card-title = result[:title]
+                .card-subtitle = result[:artifactType]
+                small.text-muted = file
+                hr
+                == render_partial('metadata.slim', {result: result})
+
+      section
+        h1 KNARTs
+        .card-columns
+          - knarts.each do |file, result|
+            .card(id="#{file}")
+              .card-body
+                h4.card-title = result[:title]
+                .card-subtitle = result[:artifactType]
+                small.text-muted = file
+                hr
+                == render_partial('metadata.slim', {result: result})

@@ -1,17 +1,22 @@
 module Repository
 	SUPPORTED_MIME_TYPES = {
-		"application/pdf": {name: "PDF", extensions: ['pdf']},
-		"application/msword": {name: "Word", extensions: ['doc','docx']},
-		"text/html": {name: "HTML", extensions: ['html','htm']},
+		"application/pdf": {name: "PDF", expression: /\.pdf/i},
+		"text/html": {name: "HTML", expression: /\.html?/i},
 		"application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-			{name: "Word", extensions: ['doc','docx']},
+			{name: "Word", expression: /\.docx?/i},
 		"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-			{name: "Excel", extensions: ['xls','xlsx']},
-		"application/hl7-cds-knowledge-artifact-1.3+xml": {name: 'HL7 KNART v1.3', extensions: ['xml','knart'], 'knart': true}
+			{name: "Excel", expression: /\.xlsx?/i},
+		"application/hl7-cds-knowledge-artifact-1.3+xml": {name: 'HL7 KNART v1.3', expression: /KRprt.*\.xml/i},
+		"application/docbook": {name: 'DocBook', expression: /(HIMKWP|KVRpt|CSD).*\.xml/i},
+		'application/hl7-cds-knowledge-artifact-composite+xml': {name: 'Composite Artifact', expression: /CRCK_.*\.xml/i}
 	  }
 	
 	KNART_MIME_TYPES = [
 		"application/hl7-cds-knowledge-artifact-1.3+xml"
+	  ]
+
+	COMPOSITE_MIME_TYPES = [
+		'application/hl7-cds-knowledge-artifact-composite+xml'
 	  ]
 	
 	# def audit_content_directory(root, manifest)

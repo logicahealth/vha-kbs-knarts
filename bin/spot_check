@@ -27,20 +27,24 @@ def report(good, bad)
 	puts "\n"
 end
 
+def extract_metadata(doc)
+	return {
+		identifiers: doc.xpath("///xmlns:metadata/xmlns:identifiers/xmlns:identifier/@identifierName").count, #collect{|n| n.to_s},
+		relatedResources: doc.xpath("//xmlns:relatedResource//xmlns:resource").count,
+		supportingEvidence: doc.xpath("//xmlns:supportingEvidence//xmlns:resource").count,
+		applicability: doc.xpath("//xmlns:applicability/xmlns:coverage").count,
+		eventHistory: doc.xpath("//xmlns:eventHistory/xmlns:artifactLifeCycleEvent").count,
+		contributions: doc.xpath("//xmlns:contributions//xmlns:contributor").count,
+		publishers: doc.xpath("//xmlns:publishers//xmlns:publisher").count,
+	}
+end
+
 def knart_validations(doc)
 	# We'll cover the basics first.
 	report = {
 		title: doc.xpath("//xmlns:title/@value").first.to_s,
 		artifactType: doc.xpath("//xmlns:artifactType/@value").first.to_s,
-		metadata: {
-			identifiers: doc.xpath("/xmlns:knowledgeDocument/xmlns:metadata/xmlns:identifiers/xmlns:identifier/@identifierName").count, #collect{|n| n.to_s},
-			relatedResources: doc.xpath("//xmlns:relatedResource//xmlns:resource").count,
-			supportingEvidence: doc.xpath("//xmlns:supportingEvidence//xmlns:resource").count,
-			applicability: doc.xpath("//xmlns:applicability/xmlns:coverage").count,
-			eventHistory: doc.xpath("//xmlns:eventHistory/xmlns:artifactLifeCycleEvent").count,
-			contributions: doc.xpath("//xmlns:contributions//xmlns:contributor").count,
-			publishers: doc.xpath("//xmlns:publishers//xmlns:publisher").count,
-		}
+		metadata: extract_metadata(doc)
 	}
 	# Global ELM stuff.
 	exps = doc.xpath("/xmlns:knowledgeDocument/xmlns:expressions/xmlns:def")
@@ -53,30 +57,55 @@ def knart_validations(doc)
 	report
 end
 
+def composite_validations(doc)
+	report = {
+		title: doc.xpath("//xmlns:title/@value").first.to_s,
+		artifactType: doc.xpath("//xmlns:artifactType/@value").first.to_s,
+		metadata: extract_metadata(doc)
+	}
+	report
+end
+
 def	static_manifest_validations(root, manifest)
-	results = {}
+	knarts = {}
+	composites = {}
 	manifest['groups'].each do |group|
 		group['items'].each do |item|
+			path = "#{root}/#{item['path']}"
+			puts "#{path}"
 			if KNART_MIME_TYPES.include? item['mimeType']
-				path = "#{root}/#{item['path']}"
-				puts "#{path}"
 				doc = Nokogiri::XML(File.open(path))
 				begin
-					results[item['path']] = knart_validations(doc)
+					knarts[item['path']] = knart_validations(doc)
+					puts knarts[item['path']][:metadata]
 				rescue
-					results[item['path']] = {
+					knarts[item['path']] = {
+						error: "Could not be validated"
+					}
+				end
+			elsif COMPOSITE_MIME_TYPES.include? item['mimeType']
+				doc = Nokogiri::XML(File.open(path))
+				begin
+					composites[item['path']] = composite_validations(doc)
+					puts composites[item['path']][:metadata]
+				rescue
+					composites[item['path']] = {
 						error: "Could not be validated"
 					}
 				end
 			end
 		end
 	end
-	results
+	[knarts, composites]
 end
 
-def render_results(results, out)
-	puts template = File.join(File.dirname(File.expand_path(__FILE__)),'lib', 'spot_check.slim')
-	html = Slim::Template.new(template).render(self, {results: results})
+def render_partial(name, stuff)
+	template = File.join(File.dirname(File.expand_path(__FILE__)),'lib', name)
+	Slim::Template.new(template).render(self, stuff)
+end
+
+def render_results(knarts, composites, out)
+	html = render_partial('spot_check.slim', {knarts: knarts, composites: composites})
 	# html = Jade.compile File.read(template), locals: {results: results}
 	puts html
 	file = File.open(out, 'w')
@@ -91,9 +120,9 @@ else
 	file = ARGV[0]
 	manifest = JSON.parse(File.read(file))
 	root = File.dirname(File.expand_path(file))
-	results = static_manifest_validations(root, manifest)
+	knarts, composites = static_manifest_validations(root, manifest)
 
 	Slim::Engine.set_options pretty: true
-	render_results(results, ARGV[1])
+	render_results(knarts, composites, ARGV[1])
 	exit 0
 end

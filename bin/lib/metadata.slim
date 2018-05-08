@@ -1,0 +1,12 @@
+h4 Metadata Items Section
+table.table.table-condensed.table-striped
+	thead
+	tr
+		th Item
+		th Count
+	tbody
+	- result[:metadata].each do |k, count|
+		/ tr(class="#{result[:metadata][k] > 0 ? '': 'text-warning'}")
+		tr(class="#{result[:metadata][k] > 0 ? '': 'text-danger'}")
+		td = k
+		td = count

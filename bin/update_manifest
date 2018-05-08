@@ -20,25 +20,51 @@ EOF
 # PLACEHOLDER_GROUP_NAME = 'Ungrouped'
 
 
-def mimeTypeForExtension(ext)
+def mimeTypeForFile(path)
 	mimeType = nil
 	SUPPORTED_MIME_TYPES.each do |k,v|
-		if v[:extensions].include?(ext)
+		if v[:expression].match?(path)
 			mimeType = k
 			break
 		end
 	end
+	# puts mimeType || path
 	mimeType
 end
 
+def improveify_name!(item)
+	case item['path']
+	when /CCWP_/
+		item['name'] = "Clinical Content White Paper"
+	when /HIMKWP_/
+		item['name'] = 'Harmonize and Integrate Member KNARTs White Paper'
+	when /ECA_/
+		item['name'] = "ECA"
+	when /DT_/
+		item['name'] = "Documentation Template"
+	when /OS_/
+		item['name'] = "Order Set"
+	when /CRCK_/
+		item['name'] = 'Composite Artifact'
+	else
+		# Keep the existing name
+	end
+
+	case item['path']
+	when /KVRpt_/
+		item['name'] += ' Validation Report'
+	when /CSD_/
+		item['name'] += ' Conceptual Structure Document'
+	end
+end
 def content_directory_to_item_tree(root)
 	content = []
 	list = Dir["#{root}/**/**"]
 	list.each do |n|
 		# puts n
 		if(File.file?(n))
-			ext = File.extname(n).downcase[1..-1]
-			mimeType = mimeTypeForExtension(ext)
+			# ext = File.extname(n).downcase[1..-1]
+			mimeType = mimeTypeForFile(n)
 			name = n.split('/')[1] #.split['.'][0]
 			name = name.split('_').collect(&:capitalize).join(' ')
 			tags = n.split('/').select{|d| d.length <= 4}
@@ -115,6 +141,8 @@ def merge_items_into(items, existing)
 			skipped << existing_item
 		elsif existing_group = existing_manifest_group_for(item['name'], existing)
 			# Just drop the item into the existing group.
+			improveify_name!(item)
+			# puts "#{item['name']} (#{item['path']})"
 			existing_group['items'] << item
 			placed << item
 		# else
