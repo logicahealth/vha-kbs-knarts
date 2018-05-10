@@ -35,14 +35,11 @@ else
 		# puts i['mimeType']
 		# byebug
 		if COMPOSITE_MIME_TYPES.include?(i['mimeType'].to_s)
-			# byebug
-			puts path = i['path'].to_s
+			path = i['path'].to_s
 			doc = Nokogiri::XML(File.open(path))
 			dot = generate_dot(doc)
-			# `echo dot -Tsvg
-			puts svg = "#{path}.svg"
+			svg = "#{path}.svg"
 			stdout_str, error_str, status =	Open3.capture3('dot', '-Tsvg', '-o', svg, stdin_data: dot)
-			puts stdout_str
 		end
 	end
 	

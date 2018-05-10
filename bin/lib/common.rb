@@ -26,7 +26,7 @@ module Repository
 DIGRAPH_TEMPLATE = <<TEMPLATE
 digraph {
 	<% artifacts.each do |a| %>
-	artifact_<%= a[:hash] %>[label="<%= a[:name] %>", shape=rounded, style=filled, fillcolor=lightblue]<% end %>
+	artifact_<%= a[:hash] %>[label="<%= a[:name] %>\n<%= a[:file] %>", shape=rounded, style=filled, fillcolor=lightblue]<% end %>
 
 	<% events.each do |k, v| %>
 	event_<%= v %>[label="<%= k %>", style=filled, fillcolor=yellow]<% end %>
@@ -43,11 +43,14 @@ def generate_dot(doc)
 	events = {}
 	doc.xpath('//xmlns:containedArtifacts/xmlns:artifact').each do |a|
 		name = a.xpath('./xmlns:name/@value').to_s
+		file = a.xpath('./xmlns:reference/xmlns:url/@address').to_s
+		file = '(embedded)' if file.empty?
 		triggers = []
 		emits = []
 		tmp = {
 			name: name,
 			hash: Digest::SHA1.hexdigest(name),
+			file: file,
 			triggers: triggers,
 			emits: emits
 		}
