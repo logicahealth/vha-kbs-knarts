@@ -2,16 +2,16 @@
 
 module Repository
 	SUPPORTED_MIME_TYPES = {
-		"application/pdf": {name: "PDF", expression: /\.pdf/i},
-		"text/html": {name: "HTML", expression: /\.html?/i},
+		"application/pdf": {name: "PDF", expression: /\.pdf$/i},
+		"text/html": {name: "HTML", expression: /\.html?$/i},
 		"application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-			{name: "Word", expression: /\.docx?/i},
+			{name: "Word", expression: /\.docx?$/i},
 		"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-			{name: "Excel", expression: /\.xlsx?/i},
-		"application/hl7-cds-knowledge-artifact-1.3+xml": {name: 'HL7 KNART v1.3', expression: /KRprt.*\.xml/i},
-		"application/docbook": {name: 'DocBook', expression: /(HIMKWP|KVRpt|CSD).*\.xml/i},
-		'application/hl7-cds-knowledge-artifact-composite+xml': {name: 'Composite Artifact', expression: /CRCK_.*\.xml/i},
-		'image/svg+xml': {name: "SVG Image", expression: /\.svg/i}
+			{name: "Excel", expression: /\.xlsx?$/i},
+		"application/hl7-cds-knowledge-artifact-1.3+xml": {name: 'HL7 KNART v1.3', expression: /KRprt(?!_CRCK).*\.xml$/i},
+		"application/docbook": {name: 'DocBook', expression: /(HIMKWP|KVRpt|CSD).*\.xml$/i},
+		'application/hl7-cds-knowledge-artifact-composite+xml': {name: 'Composite Artifact', expression: /CRCK_.*\.xml$/i},
+		'image/svg+xml': {name: "SVG Image", expression: /\.svg$/i}
 	  }
 	
 	KNART_MIME_TYPES = [
@@ -21,12 +21,121 @@ module Repository
 	COMPOSITE_MIME_TYPES = [
 		'application/hl7-cds-knowledge-artifact-composite+xml'
 	  ]
+
+
+DIGRAPH_TEMPLATE = <<TEMPLATE
+digraph {
+	<% artifacts.each do |a| %>
+	artifact_<%= a[:hash] %>[label="<%= a[:name] %>", shape=rounded, style=filled, fillcolor=lightblue]<% end %>
+
+	<% events.each do |k, v| %>
+	event_<%= v %>[label="<%= k %>", style=filled, fillcolor=yellow]<% end %>
+	
+	<% artifacts.each do |a| %><% a[:emits].each do |e| %>
+	artifact_<%= a[:hash] %> -> event_<%= events[e[:name]] %>[fontsize=8, label="emits\n<%= e[:conditions] %>"]<% end %><% end %>
+	<% artifacts.each do |a| %><% a[:triggers].each do |t| %>
+	event_<%= events[t] %> -> artifact_<%= a[:hash] %>[label="triggers"]<% end %><% end %>
+}
+TEMPLATE
+
+def generate_dot(doc)
+	artifacts = []
+	events = {}
+	doc.xpath('//xmlns:containedArtifacts/xmlns:artifact').each do |a|
+		name = a.xpath('./xmlns:name/@value').to_s
+		triggers = []
+		emits = []
+		tmp = {
+			name: name,
+			hash: Digest::SHA1.hexdigest(name),
+			triggers: triggers,
+			emits: emits
+		}
+		artifacts << tmp
+
+		# Search for triggers
+		# puts a
+		a.xpath('.//xmlns:triggers/xmlns:trigger/@onEventName').each do |t|
+			value = t.to_s
+			triggers << value
+			events[value] = Digest::SHA1.hexdigest(value)
+		end
+
+		# Emmitted events within embedded KNARTs.
+		a.xpath('./xmlns:knowledgeDocument//xmlns:simpleAction[@xsi:type="FireEventAction"]').each do |action|
+			conditions = action.xpath('./xmlns:conditions').to_s.gsub('"', '\"')
+			# puts conditions
+			action.xpath('.//elm:element[@name="EventName"]/elm:value/@value').each do |n|
+				value = n.to_s
+				emits << {
+					name: value,
+					conditions: conditions
+				}
+				events[value] = Digest::SHA1.hexdigest(value)
+			end
+		end
+
+		# Emmitted events for referencesd KNARTs.
+		a.xpath('./xmlns:onCompletion//xmlns:eventName/@name').each do |n|
+			value = n.to_s
+			emits << {
+				name: value,
+				conditions: '(always)'
+			}
+			events[value] = Digest::SHA1.hexdigest(value)
+		end
 		
+
+	end
+	# puts artifacts
+	# puts events
+	renderer = ERB.new(DIGRAPH_TEMPLATE)
+	renderer.result(binding)
+end
+
 	# Forces keys to strings.
 	def rekey(hash)
 		hash.collect{|k,v| [k.to_s, v]}.to_h
 	end
 
+	def mimeTypeForFile(path)
+		mimeType = nil
+		SUPPORTED_MIME_TYPES.each do |k,v|
+			if v[:expression].match?(path)
+				mimeType = k
+				break
+			end
+		end
+		# puts mimeType || path
+		mimeType
+	end
+
+	def content_directory_to_item_tree(root)
+		content = []
+		list = Dir["#{root}/**/**"]
+		list.each do |n|
+			# puts n
+			if(File.file?(n))
+				# ext = File.extname(n).downcase[1..-1]
+				mimeType = mimeTypeForFile(n)
+				name = n.split('/')[1] #.split['.'][0]
+				name = name.split('_').collect(&:capitalize).join(' ')
+				tags = n.split('/').select{|d| d.length <= 4}
+				if mimeType # it's a supported piece of content
+					item = rekey({
+						'name': name,
+						'path': n,
+						'mimeType': mimeType,
+						'tags': tags
+					})
+					# Any directory name of 4 characters or less will be treated as a tag automatically
+					content << item
+				end
+			end
+		end
+		content
+	end
+	
 	def audit_content_directory(root, manifest)
 		good = []
 		bad = []
