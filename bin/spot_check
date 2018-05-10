@@ -61,10 +61,18 @@ def composite_validations(doc)
 	report = {
 		title: doc.xpath("//xmlns:title/@value").first.to_s,
 		artifactType: doc.xpath("//xmlns:artifactType/@value").first.to_s,
-		metadata: extract_metadata(doc)
+		metadata: extract_metadata(doc),
+		
 	}
+	# report[:artifacts] = 
+	xml = doc.xpath('//xmlns:containedArtifacts').to_s
+	# byebug
+	# puts xml
+	report[:artifacts] = Hash.from_xml(xml)[:containedArtifacts][:artifact]
+	puts report
 	report
 end
+
 
 def	static_manifest_validations(root, manifest)
 	knarts = {}
@@ -72,12 +80,12 @@ def	static_manifest_validations(root, manifest)
 	manifest['groups'].each do |group|
 		group['items'].each do |item|
 			path = "#{root}/#{item['path']}"
-			puts "#{path}"
+			# puts "#{path}"
 			if KNART_MIME_TYPES.include? item['mimeType']
 				doc = Nokogiri::XML(File.open(path))
 				begin
 					knarts[item['path']] = knart_validations(doc)
-					puts knarts[item['path']][:metadata]
+					# puts knarts[item['path']][:metadata]
 				rescue
 					knarts[item['path']] = {
 						error: "Could not be validated"
@@ -87,7 +95,7 @@ def	static_manifest_validations(root, manifest)
 				doc = Nokogiri::XML(File.open(path))
 				begin
 					composites[item['path']] = composite_validations(doc)
-					puts composites[item['path']][:metadata]
+					# puts composites[item['path']][:metadata]
 				rescue
 					composites[item['path']] = {
 						error: "Could not be validated"
@@ -99,15 +107,12 @@ def	static_manifest_validations(root, manifest)
 	[knarts, composites]
 end
 
-def render_partial(name, stuff)
-	template = File.join(File.dirname(File.expand_path(__FILE__)),'lib', name)
-	Slim::Template.new(template).render(self, stuff)
-end
+
 
 def render_results(knarts, composites, out)
 	html = render_partial('spot_check.slim', {knarts: knarts, composites: composites})
 	# html = Jade.compile File.read(template), locals: {results: results}
-	puts html
+	# puts html
 	file = File.open(out, 'w')
 	file.write html
 	file.close

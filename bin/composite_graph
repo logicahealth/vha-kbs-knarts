@@ -1,0 +1,108 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'pp'
+require 'byebug'
+require 'nokogiri'
+# require 'slim'
+require 'erb'
+require 'digest/sha1'
+
+require_relative "lib/common"
+include Repository
+
+HELP = <<EOF
+
+Transform the event/trigger structure of a composite knowledge artifact into a visual representation using DOT syntax. Rendering may be done using `graphviz` or any number of existing tools.
+
+	USAGE: #{__FILE__} <composite.xml>
+
+	EXAMPLE:
+		#{__FILE__} my_composite_knart.xml |dot -Tsvg -o graph.svg
+
+EOF
+
+TEMPLATE = <<TEMPLATE
+digraph {
+	<% artifacts.each do |a| %>
+	artifact_<%= a[:hash] %>[label="<%= a[:name] %>", shape=box, style=rounded, fillcolor=lightblue]<% end %>
+
+	<% events.each do |k, v| %>
+	event_<%= v %>[label="<%= k %>", style=filled, fillcolor=yellow]<% end %>
+	
+	<% artifacts.each do |a| %><% a[:emits].each do |e| %>
+	artifact_<%= a[:hash] %> -> event_<%= events[e[:name]] %>[fontsize=8, label="emits\n<%= e[:conditions] %>"]<% end %><% end %>
+	<% artifacts.each do |a| %><% a[:triggers].each do |t| %>
+	event_<%= events[t] %> -> artifact_<%= a[:hash] %>[label="triggers"]<% end %><% end %>
+}
+TEMPLATE
+
+
+
+# 	<% artifacts[:emits].each do |e, i| %>
+# 	emit<%= i %> -> <%= e %>[label="emits"]<% end %>
+
+def generate_composite_diagram(doc)
+	artifacts = []
+	events = {}
+	doc.xpath('//xmlns:containedArtifacts/xmlns:artifact').each do |a|
+		name = a.xpath('./xmlns:name/@value').to_s
+		triggers = []
+		emits = []
+		tmp = {
+			name: name,
+			hash: Digest::SHA1.hexdigest(name),
+			triggers: triggers,
+			emits: emits
+		}
+		artifacts << tmp
+
+		# Search for triggers
+		# puts a
+		a.xpath('.//xmlns:triggers/xmlns:trigger/@onEventName').each do |t|
+			value = t.to_s
+			triggers << value
+			events[value] = Digest::SHA1.hexdigest(value)
+		end
+
+		# Emmitted events within embedded KNARTs.
+		a.xpath('./xmlns:knowledgeDocument//xmlns:simpleAction[@xsi:type="FireEventAction"]').each do |action|
+			conditions = action.xpath('./xmlns:conditions').to_s.gsub('"', '\"')
+			# puts conditions
+			action.xpath('.//elm:element[@name="EventName"]/elm:value/@value').each do |n|
+				value = n.to_s
+				emits << {
+					name: value,
+					conditions: conditions
+				}
+				events[value] = Digest::SHA1.hexdigest(value)
+			end
+		end
+
+		# Emmitted events for referencesd KNARTs.
+		a.xpath('./xmlns:onCompletion//xmlns:eventName/@name').each do |n|
+			value = n.to_s
+			emits << {
+				name: value,
+				conditions: '(always)'
+			}
+			events[value] = Digest::SHA1.hexdigest(value)
+		end
+		
+
+	end
+	# puts artifacts
+	# puts events
+	renderer = ERB.new(TEMPLATE)
+	puts output = renderer.result(binding)
+end
+
+if(ARGV.length != 1)
+	puts HELP
+	exit 1
+else
+	path = File.expand_path(ARGV[0])
+	doc = Nokogiri::XML(File.open(path))
+	generate_composite_diagram(doc)
+	exit 0
+end

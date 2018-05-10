@@ -50,11 +50,42 @@ html(lang="en")
           - composites.each do |file, result|
             .card(id="#{file}")
               .card-body
-                h4.card-title = result[:title]
+                h2.card-title = result[:title]
                 .card-subtitle = result[:artifactType]
                 small.text-muted = file
-                hr
-                == render_partial('metadata.slim', {result: result})
+
+                section
+                  == render_partial('metadata.slim', {result: result})
+
+                section
+                  h4
+                    | Artifacts (
+                    = result[:artifacts].length
+                    | )
+                  table.table.table-sm.table-striped
+                    thead
+                      tr
+                        th Name
+                        th Trigger
+                    tbody
+                      - result[:artifacts].each do |a|
+                        tr
+                          td
+                            = a.dig(:name, :value)
+                            |  (
+                            = a.dig(:artifactType, :value)
+                            | )
+                            br
+                            = a.dig(:reference, :url, :address)
+                            - if name = a.dig(:reference, :identifiers, :identifier, :identifierName)
+                              |  (
+                              small = name
+                              | )
+                            = a[:knowledgeDocument] ? '(embedded)' : nil
+                          td
+                            = a.dig(:eventBinding, :triggers, :trigger, :onEventName)
+                            / - a.dig(:eventBinding, :triggers)&.each do |t|
+                            /   = a.dig(:trigger, :onEventName)
 
       section
         h1 KNARTs
