@@ -32,28 +32,69 @@ html(lang="en")
         p.lead
           | Summary information extracted from KNART XML documents within the repository.
         h4 Table of Contents
+        h5 Composites
         ol
-          - results.each do |file, result|
+          - composites.each do |file, result|
             li
               a(href="##{file}") = result[:title]
 
-      .card-columns
-        - results.each do |file, result|
-          .card(id="#{file}")
-            .card-body
-              h4.card-title = result[:title]
-              .card-subtitle = result[:artifactType]
-              small.text-muted = file
-              hr
-              h4 Metadata Items Section
-              table.table.table-condensed.table-striped
-                thead
-                  tr
-                    th Item
-                    th Count
-                tbody
-                  - result[:metadata].each do |k, count|
-                    / tr(class="#{result[:metadata][k] > 0 ? '': 'text-warning'}")
-                    tr(class="#{result[:metadata][k] > 0 ? '': 'text-danger'}")
-                      td = k
-                      td = count
+        h5 KNARTs
+        ol
+          - knarts.each do |file, result|
+            li
+              a(href="##{file}") = result[:title]
+
+      section
+        h2 Composites
+        .card-columns
+          - composites.each do |file, result|
+            .card(id="#{file}")
+              .card-body
+                h2.card-title = result[:title]
+                .card-subtitle = result[:artifactType]
+                small.text-muted = file
+
+                section
+                  == render_partial('metadata.slim', {result: result})
+
+                section
+                  h4
+                    | Artifacts (
+                    = result[:artifacts].length
+                    | )
+                  table.table.table-sm.table-striped
+                    thead
+                      tr
+                        th Name
+                        th Trigger
+                    tbody
+                      - result[:artifacts].each do |a|
+                        tr
+                          td
+                            = a.dig(:name, :value)
+                            |  (
+                            = a.dig(:artifactType, :value)
+                            | )
+                            br
+                            = a.dig(:reference, :url, :address)
+                            - if name = a.dig(:reference, :identifiers, :identifier, :identifierName)
+                              |  (
+                              small = name
+                              | )
+                            = a[:knowledgeDocument] ? '(embedded)' : nil
+                          td
+                            = a.dig(:eventBinding, :triggers, :trigger, :onEventName)
+                            / - a.dig(:eventBinding, :triggers)&.each do |t|
+                            /   = a.dig(:trigger, :onEventName)
+
+      section
+        h1 KNARTs
+        .card-columns
+          - knarts.each do |file, result|
+            .card(id="#{file}")
+              .card-body
+                h4.card-title = result[:title]
+                .card-subtitle = result[:artifactType]
+                small.text-muted = file
+                hr
+                == render_partial('metadata.slim', {result: result})
