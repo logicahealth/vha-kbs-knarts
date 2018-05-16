@@ -42,6 +42,7 @@ end
 def knart_validations(doc)
 	# We'll cover the basics first.
 	report = {
+		doc: doc,
 		title: doc.xpath("//xmlns:title/@value").first.to_s,
 		artifactType: doc.xpath("//xmlns:artifactType/@value").first.to_s,
 		metadata: extract_metadata(doc)
@@ -59,6 +60,7 @@ end
 
 def composite_validations(doc)
 	report = {
+		doc: doc,
 		title: doc.xpath("//xmlns:title/@value").first.to_s,
 		artifactType: doc.xpath("//xmlns:artifactType/@value").first.to_s,
 		metadata: extract_metadata(doc),
@@ -69,7 +71,7 @@ def composite_validations(doc)
 	# byebug
 	# puts xml
 	report[:artifacts] = Hash.from_xml(xml)[:containedArtifacts][:artifact]
-	puts report
+	# puts report
 	report
 end
 
@@ -109,8 +111,8 @@ end
 
 
 
-def render_results(knarts, composites, out)
-	html = render_partial('spot_check.slim', {knarts: knarts, composites: composites})
+def render_results(root, knarts, composites, out)
+	html = render_partial('spot_check.slim', {root: '..', knarts: knarts, composites: composites})
 	# html = Jade.compile File.read(template), locals: {results: results}
 	# puts html
 	file = File.open(out, 'w')
@@ -128,6 +130,6 @@ else
 	knarts, composites = static_manifest_validations(root, manifest)
 
 	Slim::Engine.set_options pretty: true
-	render_results(knarts, composites, ARGV[1])
+	render_results(root, knarts, composites, ARGV[1])
 	exit 0
 end
