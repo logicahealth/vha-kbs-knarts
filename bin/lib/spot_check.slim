@@ -226,7 +226,8 @@ html(lang="en")
                 tr
                   td = c.xpath('./xmlns:name/dt:part[@type="GIV"]/@value')
                   td = c.xpath('./xmlns:name/dt:part[@type="FAM"]/@value')
-                  td = c.xpath('./xmlns:name/dt:part[@type="TITLE"]/@value').collect{|n|n.to_s}.each do |n|
+                  td
+                    - c.xpath('./xmlns:name/dt:part[@type="TITLE"]/@value').collect{|n|n.to_s}.each do |n|
                       = n
                       br
                   td = c.xpath('./xmlns:affiliation/xmlns:name/@value')
@@ -243,7 +244,7 @@ html(lang="en")
               th File
           tbody
             - knarts.each do |file, result|
-              - result[:doc].xpath('//xmlns:supportingEvidence//xmlns:resource').each do |n|
+              - result[:doc].xpath('//xmlns:metadata/xmlns:supportingEvidence//xmlns:resource').each do |n|
                 tr
                   td = n.xpath('./xmlns:title/@value')
                   td
