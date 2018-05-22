@@ -1,0 +1,54 @@
+#!/bin/bash
+
+CONTENT=$1
+echo -e "\nContent directory: $CONTENT"
+
+KD_SCHEMA="../knart_audit/KNART_Validation/compositeschema/knowledgeartifact/document.xsd"
+CKD_SCHEMA="../knart_audit/KNART_Validation/compositeschema/knowledgeartifact/compositeknowledgedocument.xsd"
+
+COMPOSITES=(`find $CONTENT -iname '*CRCK*.xml'`)
+INDIVIDUALS=(`find $CONTENT -iname '*KRprt*.xml' |grep -v CRCK`)
+echo -e "\nXML schema validation will be attempted against\n\t${#COMPOSITES[*]} composites (non-recursive)\n\t${#INDIVIDUALS[*]} individuals\nIt'll probably take a while. Be patient!\n"
+
+function echo_response {
+	case $1 in
+	0) echo "valid!" ;;
+	1) echo "Unclassified" ;;
+	2) echo "Error in DTD" ;;
+	3) echo "Validation error" ;;
+	4) echo "Validation error" ;;
+	5) echo "Error in schema compilation" ;;
+	6) echo "Error writing output" ;;
+	7) echo "Error in pattern (generated when --pattern option is used)" ;;
+	8) echo "Error in Reader registration (generated when --chkregister option is used)" ;;
+	9) echo "Out of memory error" ;;	
+	*) echo "Unknown :-/" ;;
+	esac
+}
+
+function validate_composites {
+	files=("$@")
+	echo -e "Composites:"
+	for ((I = 0; I < ${#files[@]}; I++)); do
+		echo -ne "$I\t${files[$I]} "
+		echo xmllint --noout --schema $CKD_SCHEMA "${files[$I]}" &> /dev/null
+		echo_response $?
+	done
+}
+
+function validate_individuals {
+	files=("$@")
+	echo -e "\nRunning XML schema validation of ${#files[*]} individual KNARTs... (be patient)"
+	# echo "${#FILES[@]}"
+	echo -e "Individuals:"
+	for ((I = 0; I < ${#files[@]}; I++)); do
+	# echo $I
+		echo -ne "$I\t${files[$I]} "
+		xmllint --noout --schema $CKD_SCHEMA "${files[$I]}" &> /dev/null
+		echo_response $?
+	done
+}
+# echo -e "Individual KNARTs"
+
+# validate_composites "${COMPOSITES[@]}"
+validate_individuals "${INDIVIDUALS[@]}"
