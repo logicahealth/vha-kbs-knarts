@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Gastroenterology: Colorectal Cancer Risk - Iron deficiency Order Set</title>
+      <subtitle>Order Set: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007,
+         CLIN0004AE</releaseinfo>
+      <pubdate>05/18/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in" align="center" fileref="images/va-logo.png" format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>May 18, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 15, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>April 24, 2018</entry>
+                  <entry>Created</entry>
+               </row>
+               <row>
+                  <entry>April 24, 2018</entry>
+                  <entry>Pre-published</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>Jason Dominitz, MD MHS</entry>
+                  <entry>Author</entry>
+                  <entry>National Gastroenterology Program Director Department of Veteran Affairs (VA) Puget Sound Health Care System Seattle, WA</entry>
+               </row>
+               <row>
+                  <entry>Lyn Sue Kahng, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Section Chief, GI  Jesse Brown VA Medical Center (VAMC) Chicago, IL 60612</entry>
+               </row>
+               <row>
+                  <entry>David Kaplan, MD MSc</entry>
+                  <entry>Author</entry>
+                  <entry>GI Staff Physician Philadelphia, PA 19104</entry>
+               </row>
+               <row>
+                  <entry>Brian Hertz, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Senior Medical Advisor Office of Veterans Access to Care  Hines VAMC Hines, IL</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>ea404948-68ef-5eff-9964-cf56e70ca975</entry>
+                  <entry>B23</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Primary Care Provider</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Adult</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalFocus</entry>
+                  <entry>Routine unless otherwise identified</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>50811001 |Routine (qualifier value)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowSetting</entry>
+                  <entry>Primary Care</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>5351000124100 |Primary care clinic (environment)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Outpatient</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowTask</entry>
+                  <entry>Colorectal Cancer Screening, Diagnostic Evaluation, or Surveillance</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e2">Complete blood count</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e2"> [26604007 |Complete blood count (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e3">Iron</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e3"> [42950004 |Iron measurement (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e4">Ferritin</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e4"> [489004 |Ferritin measurement (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e5">Total iron binding capacity</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e5"> [359979000 |Total iron binding capacity measurement (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <para>No trigger definitions are present.</para>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>Laboratory Tests</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Complete blood count ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">
+                     <link linkend="gs_any">☐ </link>Complete blood count 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c1" nameend="c3">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">statementType: Precoordinated Expression <link linkend="d6e6">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">topic: Precoordinated Expression <link linkend="d6e2">26604007 |Complete blood count (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">priority: Precoordinated Expression <link linkend="d6e8">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Iron ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">
+                     <link linkend="gs_any">☐ </link>Iron 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c1" nameend="c3">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">statementType: Precoordinated Expression <link linkend="d6e6">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">topic: Precoordinated Expression <link linkend="d6e3">42950004 |Iron measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">priority: Precoordinated Expression <link linkend="d6e8">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Ferritin ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">
+                     <link linkend="gs_any">☐ </link>Ferritin 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c1" nameend="c3">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">statementType: Precoordinated Expression <link linkend="d6e6">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">topic: Precoordinated Expression <link linkend="d6e4">489004 |Ferritin measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">priority: Precoordinated Expression <link linkend="d6e8">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Total iron binding capacity ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">
+                     <link linkend="gs_any">☐ </link>Total iron binding capacity 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c1" nameend="c3">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">statementType: Precoordinated Expression <link linkend="d6e6">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">topic: Precoordinated Expression <link linkend="d6e5">359979000 |Total iron binding capacity measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">priority: Precoordinated Expression <link linkend="d6e8">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Consults and Referrals</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">
+                     <link linkend="gs_any">☐ </link>Referral Gastroenterology evaluate iron deficiency (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c1" nameend="c3">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">statementType: Precoordinated Expression <link linkend="d6e6">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">topic: Precoordinated Expression <link linkend="d6e20">183523005 |Referral to gastroenterology service (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">priority: Precoordinated Expression <link linkend="d6e8">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Patient and Caregiver Education</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">
+                     <link linkend="gs_any">☐ </link>Colorectal cancer testing education (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c1" nameend="c3">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">statementType: Precoordinated Expression <link linkend="d6e6">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">topic: Postcoordinated Expression <link linkend="d6e23">[223464006 |Procedure education (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[268548003 |Screening for malignant neoplasm of large intestine (procedure)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">priority: Precoordinated Expression <link linkend="d6e8">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">
+                     <link linkend="gs_any">☐ </link>Bowel prep for colonoscopy education (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c1" nameend="c3">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">statementType: Precoordinated Expression <link linkend="d6e6">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">topic: Precoordinated Expression <link linkend="d6e27">f165e620-5c1d-4289-b327-d41b4cf3eaac |Education about bowel prep for colonoscopy (procedure)</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">priority: Precoordinated Expression <link linkend="d6e8">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e30">SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>Adult</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e20">SNOMED CT</entry>
+                  <entry>183523005 |Referral to gastroenterology service (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>26604007 |Complete blood count (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e33">SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>Outpatient</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>359979000 |Total iron binding capacity measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e6">SNOMED CT</entry>
+                  <entry>385644000 |Requested (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>7</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>42950004 |Iron measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e29">SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>Primary Care Provider</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e4">SNOMED CT</entry>
+                  <entry>489004 |Ferritin measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e8">SNOMED CT</entry>
+                  <entry>50811001 |Routine (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>8</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e32">SNOMED CT</entry>
+                  <entry>5351000124100 |Primary care clinic (environment)|</entry>
+                  <entry>Primary Care</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e23">SNOMED CT</entry>
+                  <entry>[223464006 |Procedure education (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[268548003 |Screening for malignant neoplasm of large intestine (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e27">SNOMED CT</entry>
+                  <entry>f165e620-5c1d-4289-b327-d41b4cf3eaac |Education about bowel prep for colonoscopy (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Gastroenterology: Colorectal Cancer Risk Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Gastroenterology: Colorectal Cancer Risk - Iron deficiency Order Set Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Gastroenterology: Colorectal Cancer Risk - Iron deficiency Order Set KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="Giardiello 2014">
+               <abbrev>Giardiello 2014</abbrev>
+               <citetitle>Giardiello FM, Allen JI, Axilbund JE, et al. Guidelines on genetic evaluation and management of Lynch syndrome: a consensus statement by the US Multi-Society Task Force on colorectal cancer. Am J Gastroenterol. 2014 Aug;109(8):1159-79.</citetitle> (<link xlink:href="https://doi.org/10.1038/ajg.2014.186">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Johnson 2014">
+               <abbrev>Johnson 2014</abbrev>
+               <citetitle>Johnson DA, Barkun AN, Cohen LB, et al; US Multi-Society Task Force on Colorectal Cancer. Optimizing adequacy of bowel cleansing for colonoscopy: recommendations from the US multi-society task force on colorectal cancer. Gastroenterology. 2014;147(4):903-924.</citetitle> (<link xlink:href="https://doi.org/10.1053/j.gastro.2014.07.002">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Levin 2008">
+               <abbrev>Levin 2008</abbrev>
+               <citetitle>Levin B, Lieberman DA, McFarland B, et al; American Cancer Society Colorectal Cancer Advisory Group; US Multi-Society Task Force; American College of Radiology Colon Cancer Committee. Screening and surveillance for the early detection of colorectal cancer and adenomatous polyps, 2008: a joint guideline from the American Cancer Society, the US Multi-Society Task Force on Colorectal Cancer, and the American College of Radiology. CA Cancer J Clin. 2008;58(3):130-160.</citetitle> (<link xlink:href="https://doi.org/10.3322/CA.2007.0018">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Lieberman 2012">
+               <abbrev>Lieberman 2012</abbrev>
+               <citetitle>Lieberman DA, Rex DK, Winawer SJ, Giardiello FM, Johnson DA, Levin TR. Guidelines for colonoscopy surveillance after screening and polypectomy: a consensus update by the US Multi-Society Task Force on Colorectal Cancer. Gastroenterology. 2012;143(3):844-857.</citetitle> (<link xlink:href="https://doi.org/10.1053/j.gastro.2012.06.001">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NCHPCP 2017a">
+               <abbrev>NCHPCP 2017a</abbrev>
+               <citetitle>National Center for Health Promotion and Disease Prevention. Get Recommended Screening Tests and Immunizations for Men. National Center for Health Promotion and Disease Prevention website. https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Men.asp. Accessed August 25, 2017.</citetitle> (<link xlink:href="https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Men.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NCHPDP 2017b">
+               <abbrev>NCHPDP 2017b</abbrev>
+               <citetitle>National Center for Health Promotion and Disease Prevention. Get Recommended Screening Tests and Immunizations for Women. National Center for Health Promotion and Disease Prevention website. https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Women.asp. Accessed August 25, 2017.</citetitle> (<link xlink:href="https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Women.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Rex 2017">
+               <abbrev>Rex 2017</abbrev>
+               <citetitle>Rex DK, Boland CR, Dominitz JA, et al. Colorectal cancer screening: recommendations for physicians and patients from the U.S. Multi-Society Task Force on Colorectal Cancer. Gastroenterology. 2017;153(1):307-323.</citetitle> (<link xlink:href="https://doi.org/10.1053/j.gastro.2017.05.013">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Shaukat 2013">
+               <abbrev>Shaukat 2013</abbrev>
+               <citetitle>Shaukat A, Mongin SJ, Geisser MS, et al. Long-term mortality after screening for colorectal cancer. N Engl J Med. 2013;369(12):1106-1114.</citetitle> (<link xlink:href="https://doi.org/10.1056/NEJMoa1300720">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017">
+               <abbrev>VA 2017</abbrev>
+               <citetitle>U.S. Department of Veterans Affairs. Colorectal cancer screening/surveillance (CRCS/S): reminder system. CRCS-S CR F2F 20171018 KGALPIN.pptx. PowerPoint (Jason Dominitz, MD, email communication, November 2, 2017).</citetitle> (<link xlink:href="Email Communication">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="USPSTF 2016">
+               <abbrev>USPSTF 2016</abbrev>
+               <citetitle>U.S. Preventive Services Task Force. Final Recommendation Statement: Colorectal Cancer: Screening. U.S. Preventive Services Task Force website. https://www.uspreventiveservicestaskforce.org/Page/Document/RecommendationStatementFinal/colorectal-cancer-screening2. Reviewed June 2016.</citetitle> (<link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/RecommendationStatementFinal/colorectal-cancer-screening2">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
