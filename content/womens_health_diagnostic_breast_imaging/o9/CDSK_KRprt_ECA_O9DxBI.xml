@@ -1,0 +1,785 @@
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:anf="http://hl7.org/anf"
+    xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier extension="6f9a7a47-24b5-5f8b-ac38-b4e28ede49b3" identifierName="O9" root="urn:va.gov:kbs:knart:artifact:r1" version="1.0"/>
+            <identifier extension="CLIN0007BA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"
+                root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+            <identifier extension="KP-80" identifierName="Jira KP-80" root="urn:cognitivemedicine.com:lab:jira"/>
+        </identifiers>
+        <artifactType value="Rule"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+        <title value="Women's Health: Diagnostic Breast Imaging"/>
+        <description value="Diagnostic Breast Imaging"/>
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr1" identifierName="CCWP" root="LocalDocBook"/>
+                            <identifier extension="CLIN0007BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"
+                                root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+                        </identifiers>
+                        <title value="Women’s Health: Diagnostic Breast Imaging Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr2" identifierName="CSD" root="LocalDocBook"/>
+                            <identifier extension="CLIN0007BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"
+                                root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+                        </identifiers>
+                        <title value="Women's Health: Diagnostic Breast Imaging Rule Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr3" identifierName="KVRpt" root="LocalDocBook"/>
+                            <identifier extension="CLIN0007BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"
+                                root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+                        </identifiers>
+                        <title value="Women's Health: Diagnostic Breast Imaging Rule KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e1" identifierName="ACS 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="American Cancer Society. Lifetime Probability of Developing and Dying from Cancer, 2011-2013"/>
+                        <location
+                            value="https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-facts-and-figures/2017/lifetime-probability-of-developing-and-dying-from-cancer-2011-2013.pdf"/>
+                        <citation
+                            value="American Cancer Society. Lifetime Probability of Developing and Dying from Cancer, 2011-2013. American Cancer Society, Surveillance Research, 2017. Cancer Facts &amp; Figures 2017 website."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e2" identifierName="ACR 2013" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="American College of Radiology, Quality and Safety Resources – Breast Imaging - Reporting and Data Systems (BI-RADS) Atlas"/>
+                        <location value="https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/Bi-Rads"/>
+                        <citation
+                            value="American College of Radiology, Quality and Safety Resources – Breast Imaging - Reporting and Data Systems (BI-RADS) Atlas. 5th edition. 2013."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e3" identifierName="ACR 5TIER" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Radiopedia - 5-tier American College of Radiology (ACR) system of radiologic breast findings."/>
+                        <location value="https://radiopaedia.org/articles/5-tier-acr-system-of-radiologic-breast-findings"/>
+                        <citation value="Radiopedia - 5-tier American College of Radiology (ACR) system of radiologic breast findings."/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e4" identifierName="BIRADS FINAL" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Radiology Assistant - BI-RADS Final Assessment."/>
+                        <location
+                            value="http://www.radiologyassistant.nl/en/p53b4082c92130/bi-rads-for-mammography-and-ultrasound-2013.html#in53b4389d91374"/>
+                        <citation value="Radiology Assistant - BI-RADS Final Assessment."/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e5" identifierName="BIRADS Mammography" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="ACR BI-RADS Atlas 5th Edition – Mammography: Reporting System"/>
+                        <location value="https://www.acr.org/-/media/ACR/Files/RADS/BI-RADS/Mammography-Reporting.pdf"/>
+                        <citation
+                            value="American College of Radiology. ACR BI-RADS Atlas 5th Edition – Mammography: Reporting System. American College of Radiology website."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e6" identifierName="BIRADS Ultrasound" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="ACR BI-RADS Atlas 5th Edition – Ultrasound: Reporting System"/>
+                        <location value="https://www.acr.org/-/media/ACR/Files/RADS/BI-RADS/US-Reporting.pdf"/>
+                        <citation
+                            value="American College of Radiology. ACR BI-RADS Atlas 5th Edition – Ultrasound: Reporting System. American College of Radiology website."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e7" identifierName="NCCN 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="NCCN Clinical Practice Guidelines in Oncology (NCCN Guidelines): Breast Cancer Screening and Diagnosis"/>
+                        <location value="https://www.nccn.org/professionals/physician_gls/pdf/breast-screening.pdf"/>
+                        <citation
+                            value="National Comprehensive Cancer Network (NCCN). NCCN Clinical Practice Guidelines in Oncology (NCCN Guidelines): Breast Cancer Screening and Diagnosis, Version 1.2017. National Comprehensive Cancer Network Guidelines website."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1001/jama.2015.12783" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e8" identifierName="Oeffinger 2015" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Breast Cancer Screening for Women at Average Risk: 2015 Guideline Update from the American Cancer Society"/>
+                        <location value="https://doi.org/10.1001/jama.2015.12783"/>
+                        <citation
+                            value="KC Oeffinger, ETH Fontham, R Etzioni, and et al. Breast Cancer Screening for Women at Average Risk: 2015 Guideline Update from the American Cancer Society. JAMA. 2015;314(15):1599-1614"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+        <applicability>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Primary Care Provider"/>
+                <value code="453231000124104 |Primary care provider (occupation)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Gynecologist"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Outpatient"/>
+                <value code="33022008 |Hospital-based outpatient department (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Primary Care"/>
+                <value code="5351000124100 |Primary care clinic (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalFocus"/>
+                <description value="Primary Care, Gynecology, Interventional Radiology, Pathology, Oncology, Surgery"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientGender"/>
+                <description value="Female"/>
+                <value code="248152002 |Female (finding)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Adult"/>
+                <value code="133936004 |Adult (person)|" codeSystem="SNOMED CT"/>
+            </coverage>
+        </applicability>
+        <status value="Active"/>
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180518"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180515"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20180419"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20180419"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="C."/>
+                        <dt:part type="GIV" value="Yvette"/>
+                        <dt:part type="FAM" value="Williams-Harris"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician, 1670 Clairmont Rd Atlanta, GA 30033"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Megan"/>
+                        <dt:part type="FAM" value="Gerber"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician, VA Boston HealthCare System, 150 South Huntington Ave Boston, MA 02130"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Caitlin"/>
+                        <dt:part type="GIV" value="M."/>
+                        <dt:part type="FAM" value="Cusack"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Contractor - Physician Informaticist, Office of Women's Health Services, 8455 Colesville Rd, 12th Floor Silver Spring, MD 20910"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights value="Copyright"/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value=""/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value=""/>
+                            <dt:part type="STA" value=""/>
+                            <dt:part type="ZIP" value=""/>
+                        </address>
+                    </addresses>
+                    <name value=""/>
+                </rightsHolder>
+                <permissions>
+                    <permissions value=""/>
+                </permissions>
+            </rightsDeclaration>
+        </usageTerms>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <def name="PatientAge">
+            <elm:expression xsi:type="elm:SingletonFrom">
+                <elm:annotation><a:s>Determine patient age</a:s></elm:annotation>
+                <elm:operand xsi:type="elm:Query">
+                    <elm:source alias="ageQuery">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code"
+                                    code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                    ->(363702006 |Has focus (attribute))->[105726004 |Age AND/OR growth finding (finding)]"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                    <elm:return>
+                        <elm:expression xsi:type="elm:Property" path="result.lowerBound"/>
+                    </elm:return>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="PatientGenderFemale">
+            <elm:expression xsi:type="elm:SingletonFrom">
+                <elm:annotation><a:s>Determine patient gender</a:s></elm:annotation>
+                <elm:operand xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic">
+                    <elm:codes xsi:type="elm:List">
+                        <elm:element xsi:type="elm:Code"
+                            code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                            ->(363702006 |Has focus (attribute))->[248152002 |Female (finding)]"
+                            display="Postcoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:element>
+                    </elm:codes>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="ScreeningMammogramsCategory">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic">
+                <elm:annotation><a:s>BI-RADS Category 0 (Incomplete/Needs additional imaging and/or comparison films); or BI-RADS Category 3 or
+                        higher; or Abnormal result without the BI-RAD Category recorded</a:s></elm:annotation>
+                <elm:codes xsi:type="elm:List">
+                    <!-- BI-RADS Category 0 (Incomplete/Needs additional imaging and/or comparison films); -->
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[397138000 |Mammography assessment (Category 0) - Need additional imaging evaluation (finding)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <!-- BI-RADS Category 3 -->
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[397143007 |Mammography assessment (Category 3) - Probably benign finding, short interval follow-up (finding)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[397143007 |
+                        397144001 |Mammography assessment (Category 4) - Suspicious abnormality, biopsy should be considered (finding)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[397145000 |Mammography assessment (Category 5) - Highly suggestive of malignancy (finding)|"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[6111000179101 |Mammography assessment (Category 6) - known biopsy, proven malignancy (finding)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <!-- Abnormal result without the BI-RAD Category recorded -->
+                    <elm:element xsi:type="elm:Code"
+                        code="3[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[97137005 |Mammography assessment finding (finding)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+            </elm:expression>
+        </def>
+        <def name="EvaluationOfBreastSymptomsAppointment">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic">
+                <elm:annotation><a:s>This subgroup consists of women who have scheduled an appointment for the evaluation of breast
+                    symptoms</a:s></elm:annotation>
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code"
+                        code="[386053000 |Evaluation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[198116001 |Breast signs and symptoms (finding)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+            </elm:expression>
+        </def>
+        <def name="BreastSymptoms">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation><a:s>This subgroup consists of women whose clinicians record breast symptoms during an exam</a:s></elm:annotation>
+                <elm:source alias="AbnormalFindingsQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[198116001 |Breast signs and symptoms (finding)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AbnormalFindings">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation><a:s>This subgroup consists of women whose clinicians record abnormal clinical breast findings during an
+                    exam</a:s></elm:annotation>
+                <elm:source alias="AbnormalFindingsQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[116339002 |Breast finding (finding)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="result.status">
+                            <elm:value xsi:type="elm:Code" code="263654008 |Abnormal (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="BreastSymptomsOrAbnormalFindings">
+            <elm:expression xsi:type="elm:AnyTrue">
+                <elm:annotation><a:s>This subgroup consists of women whose clinicians record breast symptoms and/or abnormal clinical breast findings
+                        during an exam</a:s></elm:annotation>
+                <elm:source xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Exists">
+                        <elm:operand xsi:type="elm:ExpressionRef" name="BreastSymptoms"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Exists">
+                        <elm:operand xsi:type="elm:ExpressionRef" name="AbnormalFindings"/>
+                    </elm:element>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAdded">
+            <def name="MammogramScreeningTrigger">
+                <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic">
+                    <elm:annotation>
+                        <a:s>Screening mammogram result with BI-RADS Category 0 or Category 3 or Higher recorded; or Abnormal screening mammogram
+                            result without BI-RADS Category recorded.</a:s>
+                    </elm:annotation>
+                    <elm:codes xsi:type="elm:List">
+                        <!-- Screening mammogram result with BI-RADS Category 0 or Category 3 or Higher recorded; -->
+                        <elm:element xsi:type="elm:Code" code="TSR" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:element>
+                        <!-- Abnormal screening mammogram result without BI-RADS Category recorded -->
+                        <elm:element xsi:type="elm:Code" code="TSR" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:element>
+                    </elm:codes>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAdded">
+            <def name="ScreeningMammogramResult">
+                <elm:expression xsi:type="elm:Exists">
+                    <elm:annotation>
+                        <a:s>A screening mammogram result is recorded or Recording of breast symptoms in the patient record or Recording of breast
+                            findings in the patient record</a:s>
+                    </elm:annotation>
+                    <elm:operand xsi:type="elm:ExpressionRef" name="ScreeningMammogramsCategory"/>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAccessed">
+            <def name="OpeningOfPatientRecord">
+                <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic">
+                    <elm:annotation><a:s>Opening of female patient electronic health record during visit with clinical provider for the evaluation of
+                            breast symptoms.</a:s></elm:annotation>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAccessed">
+            <def name="BreastSymptomsOrFindingsVisit">
+                <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic">
+                    <elm:annotation><a:s>Visit with clinical provider in which breast symptoms and/or abnormal clinical breast findings are
+                            recorded</a:s></elm:annotation>
+                    <elm:codes xsi:type="elm:List">
+                        <elm:element xsi:type="elm:Code" code="TSR" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:element>
+                    </elm:codes>
+                </elm:expression>
+            </def>
+        </trigger>
+    </externalData>
+    <conditions>
+        <condition>
+            <logic xsi:type="elm:Exists">
+                <elm:annotation>
+                    <a:s>Patient is female</a:s>
+                </elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="PatientGenderFemale"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:GreaterOrEqual">
+                <elm:annotation>
+                    <a:s>Age >=18</a:s>
+                </elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                <elm:operand xsi:type="elm:Quantity" value="18"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+    </conditions>
+    <actionGroup>
+        <!-- Follow-up to Screening Mammogram -->
+        <subElements>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:annotation>
+                                <a:s>Mammogram Screening Trigger.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="MammogramScreeningTrigger"/>
+                        </logic>
+                        <conditionRole/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:annotation>
+                                <a:s>Screening mammogram result with BI-RADS Category 0 or Category 3 or Higher recorded; or abnormal screening
+                                    mammogram result without BI-RADS Category recorded.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="ScreeningMammogramsCategory"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Follow-up to Screening Mammogram"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Send mammography results to the clinical provider."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the patient of need for follow up."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Schedule patient for follow-up appointment with clinical provider."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code"
+                                    code="[410538000 |Scheduling (procedure)]
+                                    ->(363702006 |Has focus (attribute))->[180301d7-d1e4-4068-8757-9f438f17f843 |Follow-up consultation with healthcare provider (procedure)]"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make sure guideline recommendations are available to clinical provider"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Diagnostic Breast Imaging Documentation Template"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <!-- Section 3.2.2 – Breast Symptoms -->
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:annotation>
+                                <a:s>Opening of female patient electronic health record during visit with clinical provider for the evaluation of
+                                    breast symptoms</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="OpeningOfPatientRecord"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:annotation>
+                                <a:s>This subgroup consists of women who have scheduled an appointment for the evaluation of breast symptoms.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="EvaluationOfBreastSymptomsAppointment"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Breast Symptoms"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make sure guideline recommendations are available to clinical provider."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Diagnostic Breast Imaging Documentation Template"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <!-- Clinical Breast Findings -->
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:annotation>
+                                <a:s>Trigger is ChartOpened.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="BreastSymptomsOrFindingsVisit"/>
+                        </logic>
+                        <conditionRole/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:annotation>
+                                <a:s>This subgroup consists of women whose clinicians record breast symptoms and/or abnormal clinical breast findings
+                                    during an exam.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="BreastSymptomsOrAbnormalFindings"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Clinical Breast Findings"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make sure guideline recommendations are available to clinical provider."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Diagnostic Breast Imaging Documentation Template"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>
