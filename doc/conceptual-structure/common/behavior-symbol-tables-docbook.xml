@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is intended to be included in DocBook documents via XInclude -->
+<book xmlns="http://docbook.org/ns/docbook" xmlns:docb="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:elm="urn:hl7-org:elm:r1" xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:func="http://www.cognitivemedicine.com/xsl/functions" version="5.1"
+    xml:lang="en-US" status="draft">
+
+    <chapter>
+        <title>Behavior Symbols</title>
+        <table frame="all">
+            <title>Group Organizational Behavior</title>
+            <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+                <colspec colname="c2" colnum="2"/>
+                <colspec colname="c3" colnum="3" colwidth="2*"/>
+                <thead>
+                    <row>
+                        <entry>Symbol</entry>
+                        <entry>Name</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry xml:id="go_s">▶</entry>
+                        <entry>Sentence Group</entry>
+                        <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="go_l">▷</entry>
+                        <entry>Logical Group</entry>
+                        <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="go_v">➤</entry>
+                        <entry>Visual Group</entry>
+                        <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+
+        <table frame="all">
+            <title>Group Selection Behavior</title>
+            <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+                <colspec colname="c2" colnum="2"/>
+                <colspec colname="c3" colnum="3" colwidth="2*"/>
+                <thead>
+                    <row>
+                        <entry>Symbol</entry>
+                        <entry>Name</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry xml:id="gs_any">☐</entry>
+                        <entry>Any</entry>
+                        <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="gs_all">◉</entry>
+                        <entry>All</entry>
+                        <entry>All the items in the group must be selected as a single unit.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="gs_allnone">◎</entry>
+                        <entry>AllOrNone</entry>
+                        <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="gs_xactone">○</entry>
+                        <entry>ExactlyOne</entry>
+                        <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="gs_atmostone">✪</entry>
+                        <entry>AtMostOne</entry>
+                        <entry>The end user may choose zero or at most one of the items in the group.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="gs_onemore">❂</entry>
+                        <entry>OneOrMore</entry>
+                        <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+
+        <table frame="all">
+            <title>Required Behavior</title>
+            <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+                <colspec colname="c2" colnum="2"/>
+                <colspec colname="c3" colnum="3" colwidth="2*"/>
+                <thead>
+                    <row>
+                        <entry>Symbol</entry>
+                        <entry>Name</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry xml:id="req_must">✦</entry>
+                        <entry>Must</entry>
+                        <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="req_could">✧</entry>
+                        <entry>Could</entry>
+                        <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="req_mustud">➢</entry>
+                        <entry>MustUnlessDocumented</entry>
+                        <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+
+        <table frame="all">
+            <title>Precheck Behavior</title>
+            <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+                <colspec colname="c2" colnum="2"/>
+                <colspec colname="c3" colnum="3" colwidth="2*"/>
+                <thead>
+                    <row>
+                        <entry>Symbol</entry>
+                        <entry>Name</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry xml:id="preck_yes">▲</entry>
+                        <entry>Yes</entry>
+                        <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="preck_no">▽</entry>
+                        <entry>No</entry>
+                        <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+
+        <table frame="all">
+            <title>Cardinality Behavior</title>
+            <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+                <colspec colname="c2" colnum="2"/>
+                <colspec colname="c3" colnum="3" colwidth="2*"/>
+                <thead>
+                    <row>
+                        <entry>Symbol</entry>
+                        <entry>Name</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry xml:id="card_single">◆</entry>
+                        <entry>Single</entry>
+                        <entry>An action with this behavior may only be completed once.</entry>
+                    </row>
+                    <row>
+                        <entry xml:id="card_multiple">❖</entry>
+                        <entry>Multiple</entry>
+                        <entry>An action with this behavior may be repeated multiple times.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+
+        <table frame="all">
+            <title>Item Flags</title>
+            <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+                <colspec colname="c2" colnum="2"/>
+                <colspec colname="c3" colnum="3" colwidth="2*"/>
+                <thead>
+                    <row>
+                        <entry>Symbol</entry>
+                        <entry>Name</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry xml:id="item_fillin">☞</entry>
+                        <entry>fillIn</entry>
+                        <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+
+        <table frame="all">
+            <title>Read Only Behavior</title>
+            <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+                <colspec colname="c2" colnum="2"/>
+                <colspec colname="c3" colnum="3" colwidth="2*"/>
+                <thead>
+                    <row>
+                        <entry>Symbol</entry>
+                        <entry>Name</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry xml:id="item_readonly">☆</entry>
+                        <entry>true</entry>
+                        <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </chapter>
+</book>

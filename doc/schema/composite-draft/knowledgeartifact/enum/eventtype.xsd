@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by Emory Fry (Naval Health Research Center) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:hl7-org:knowledgeartifact:r2" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="urn:hl7-org:knowledgeartifact:r2" elementFormDefault="qualified">
+	<xs:simpleType name="EventType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DataEvent">
+				<xs:annotation>
+					<xs:documentation>An event in which a data item is created, removed, updated, or accessed.
+					Expression is expected to be an ExpressionRef
+						that references an ExpressionDef in ExternalData that contains a
+						Request with a triggerType attribute specified.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PeriodicEvent">
+				<xs:annotation>
+					<xs:documentation>A time-based event which occurs at the specified period. Expression is expected to be a Period literal
+						expression specifying the period on which the
+						event should be repeated
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NamedEvent">
+				<xs:annotation>
+					<xs:documentation>A named event.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
