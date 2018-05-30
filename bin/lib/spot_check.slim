@@ -53,6 +53,7 @@ html(lang="en")
         $('#supportingEvidence').DataTable();
         $('#eventHistory').DataTable();
         $('#applicability').DataTable();
+        $('#validations').DataTable();
       } );
 
   body
@@ -73,6 +74,8 @@ html(lang="en")
           - knarts.each do |file, result|
             li
               a(href="##{file}") = result[:title]
+        h5
+          a(href="#validations") Validations
         h5 Cross-Document Consistency
         ol
           li
@@ -89,6 +92,9 @@ html(lang="en")
             a(href="#eventHistory") Event History
           li
             a(href="#applicability") Applicability
+          li
+            a(href="#validations") Validations
+            
 
       section
         h1 Composites
@@ -152,6 +158,31 @@ html(lang="en")
                 small.text-muted = file
                 hr
                 == render_partial('metadata.slim', {result: result})
+
+      section
+        h1 XML Validation
+        hr
+        table#validations.table.table-sm.table-striped
+          thead
+            tr
+              th File
+              th Result
+              th Errors
+              th Run At
+          tbody
+            - manifest['groups'].each do |group|
+              - group['items'].select{|n| n['validation']}.each do |item|
+                tr
+                  td = item['path']
+                  / item.dig('validation', 'passed')
+                  td
+                    = item.dig('validation', 'display')
+                    / | (
+                    / = item.dig('validation', 'code')
+                    / | )
+                  td = item.dig('validation', 'errors')
+                  td = item.dig('validation', 'run_at')
+
 
       section
         h1 KNART Consistency

@@ -111,8 +111,8 @@ end
 
 
 
-def render_results(root, knarts, composites, out)
-	html = render_partial('spot_check.slim', {root: '..', knarts: knarts, composites: composites})
+def render_results(manifest, root, knarts, composites, out)
+	html = render_partial('spot_check.slim', {root: '..', manifest: manifest, knarts: knarts, composites: composites})
 	# html = Jade.compile File.read(template), locals: {results: results}
 	# puts html
 	file = File.open(out, 'w')
@@ -130,6 +130,6 @@ else
 	knarts, composites = static_manifest_validations(root, manifest)
 
 	Slim::Engine.set_options pretty: true
-	render_results(root, knarts, composites, ARGV[1])
+	render_results(manifest, root, knarts, composites, ARGV[1])
 	exit 0
 end
