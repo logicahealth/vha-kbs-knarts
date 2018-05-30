@@ -35,5 +35,24 @@ else
 	root = File.dirname(File.expand_path(file))
 	good, bad = audit_content_directory(root, manifest)
 	report(good, bad)
+
+	valid = []
+	invalid = []
+	manifest['groups'].each do |group|
+		group['items'].each do |item|
+		  path = "#{root}/#{item['path']}"
+		  # puts "#{path}"
+		  if item['validation']
+			if item['validation']['passed']
+				valid << item
+			else
+				invalid << item
+			end
+		  end
+		end
+	end
+	puts "Declared as valid: #{valid.count}"
+	puts "Declared as invalid: #{invalid.count}"
+	
 	exit 0
 end

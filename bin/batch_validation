@@ -1,54 +1,114 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-CONTENT=$1
-echo -e "\nContent directory: $CONTENT"
+require 'json'
+require 'pp'
+require 'open3'
+require 'byebug'
 
-KD_SCHEMA="../knart_audit/KNART_Validation/compositeschema/knowledgeartifact/document.xsd"
-CKD_SCHEMA="../knart_audit/KNART_Validation/compositeschema/knowledgeartifact/compositeknowledgedocument.xsd"
+require_relative 'lib/common'
+include Repository
 
-COMPOSITES=(`find $CONTENT -iname '*CRCK*.xml'`)
-INDIVIDUALS=(`find $CONTENT -iname '*KRprt*.xml' |grep -v CRCK`)
-echo -e "\nXML schema validation will be attempted against\n\t${#COMPOSITES[*]} composites (non-recursive)\n\t${#INDIVIDUALS[*]} individuals\nIt'll probably take a while. Be patient!\n"
+HELP = <<EOF.freeze
 
-function echo_response {
-	case $1 in
-	0) echo "valid!" ;;
-	1) echo "Unclassified" ;;
-	2) echo "Error in DTD" ;;
-	3) echo "Validation error" ;;
-	4) echo "Validation error" ;;
-	5) echo "Error in schema compilation" ;;
-	6) echo "Error writing output" ;;
-	7) echo "Error in pattern (generated when --pattern option is used)" ;;
-	8) echo "Error in Reader registration (generated when --chkregister option is used)" ;;
-	9) echo "Out of memory error" ;;	
-	*) echo "Unknown :-/" ;;
-	esac
-}
+Performs validation against all artifacts. Provide the manifest file as the only argument. XML schema validation on composites is non-recursive. This may take a few minutes. Be patient! If the existing and new manifest files are the same, the existing file will be *overwriten* in place. Be sure you have a backup handy if you're doing this!"
 
-function validate_composites {
-	files=("$@")
-	echo -e "Composites:"
-	for ((I = 0; I < ${#files[@]}; I++)); do
-		echo -ne "$I\t${files[$I]} "
-		echo xmllint --noout --schema $CKD_SCHEMA "${files[$I]}" &> /dev/null
-		echo_response $?
-	done
-}
+	USAGE: #{__FILE__} <manifest.json> <new_manifest.json>
 
-function validate_individuals {
-	files=("$@")
-	echo -e "\nRunning XML schema validation of ${#files[*]} individual KNARTs... (be patient)"
-	# echo "${#FILES[@]}"
-	echo -e "Individuals:"
-	for ((I = 0; I < ${#files[@]}; I++)); do
-	# echo $I
-		echo -ne "$I\t${files[$I]} "
-		xmllint --noout --schema $CKD_SCHEMA "${files[$I]}" &> /dev/null
-		echo_response $?
-	done
-}
-# echo -e "Individual KNARTs"
+	EXAMPLE:
+		#{__FILE__} manifest.json manifest-new.json
 
-# validate_composites "${COMPOSITES[@]}"
-validate_individuals "${INDIVIDUALS[@]}"
+EOF
+
+# SCRIPT_DIR = File.dirname(File.expand_path(__FILE__))
+ARTIFACT_SCHEMA = 'doc/schema/1.3-revised/knowledgeartifact/knowledgedocument.xsd'.freeze
+COMPOSITE_SCHEMA = 'doc/schema/composite-draft/knowledgeartifact/compositeknowledgedocument.xsd'.freeze
+
+def validate_composites(root, manifest)
+  manifest['groups'].each do |group|
+    group['items'].each do |item|
+      path = "#{root}/#{item['path']}"
+      # puts "#{path}"
+      if COMPOSITE_MIME_TYPES.include? item['mimeType']
+		item['validation'] = validate(root + '/' + item['path'], root + '/' + COMPOSITE_SCHEMA)
+		pp item
+      end
+    end
+  end
+end
+
+def validate_individuals(root, manifest)
+  # list = Dir.glob("#{root}/**/*KRprt*.xml", File::FNM_CASEFOLD)
+  individuals = []
+  manifest['groups'].each do |group|
+    group['items'].each do |item|
+      path = "#{root}/#{item['path']}"
+      # puts "#{path}"
+      if KNART_MIME_TYPES.include? item['mimeType']
+        individuals << item
+		item['validation'] = validate(root + '/' + item['path'], root + '/' + ARTIFACT_SCHEMA)
+		pp item
+      end
+    end
+  end
+end
+
+def validate(_file, _schema)
+  cmd = "xmllint --noout --schema #{_schema} #{_file}"
+  stdout, stderr, status = Open3.capture3(cmd)
+  validation = {
+    passed: status.exitstatus == 0,
+    code: status.exitstatus,
+    display: xmllint_status_code(status.exitstatus),
+    errors:  nil,
+    run_at: Time.now
+  }
+  validation[:errors] = stderr unless validation[:passed]
+  validation
+end
+
+def xmllint_status_code(code)
+  case code
+  when 0
+    'valid!'
+  when 1
+    'Unclassified'
+  when 2
+    'Error in DTD'
+  when 3
+    'Validation error'
+  when 4
+    'Validation error'
+  when 5
+    'Error in schema compilation'
+  when 6
+    'Error writing output'
+  when 7
+    'Error in pattern (generated when --pattern option is used)'
+  when 8
+    'Error in Reader registration (generated when --chkregister option is used)'
+  when 9
+    'Out of memory error'
+  else
+    'Unknown :-/'
+  end
+end
+
+if ARGV.length != 2
+  puts HELP
+  exit 1
+else
+  file = ARGV[0]
+  manifest = JSON.parse(File.read(file))
+  root = File.dirname(File.expand_path(file))
+
+  # Open the output first so we don't waste time if it's not writable.
+  out = File.open(ARGV[1], 'w')
+
+#   validate_composites(root, manifest)
+  validate_individuals(root, manifest)
+
+  out.write(JSON.pretty_generate(manifest))
+  out.close
+
+  exit 0
+end
