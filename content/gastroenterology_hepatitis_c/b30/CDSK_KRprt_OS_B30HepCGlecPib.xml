@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?schematron-schema href="../main/schematron/knowledgeartifact.sch"?>
+<?schematron-schema href="../main/schematron/documentationtemplates.sch"?>
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:vmr="urn:hl7-org:vmr:r2" xmlns:dt="urn:hl7-org:cdsdt:r2"
+    xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:p1="http://www.w3.org/1999/xhtml"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:anf="urn:solor.io:anf:r1"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd 
+    urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd urn:solor.io:anf:r1 ../../schema/anf/anf.xsd">
+    <metadata>
+        <identifiers>
+            <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="34482f34-a4e0-50e6-93ba-13510350fddf" identifierName="B30" version="1.0"/>
+            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0004AJ"
+                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AJ"/>
+            <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-56" identifierName="Jira KP-56"/>
+        </identifiers>
+        <artifactType value="Order Set"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+
+        <title value="Gastroenterology: Hepatitis C - Glecaprevir/Pibrentasvir Order Set"/>
+
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr1" identifierName="CCWP" root="LocalDocBook" version="1.0"/>
+                        </identifiers>
+                        <title value="Gastroenterology: Hepatitis C Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="CSD" extension="sr2"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0004AF"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AF"/>
+                        </identifiers>
+                        <title value="Gastroenterology: Hepatitis C - Glecaprevir/Pibrentasvir Order Set Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="KVRpt" extension="sr3"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0004AM"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AM"/>
+                        </identifiers>
+                        <title value="Gastroenterology: Hepatitis C - Glecaprevir/Pibrentasvir Order Set KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="UL 2018" extension="sr4"/>
+                        </identifiers>
+                        <title value="Hep Drug Interactions"/>
+                        <location value="https://www.hep-druginteractions.org/."/>
+                        <citation
+                            value="University of Liverpool. 2018. Hep Drug Interactions. Accessed April 25, 2018 from https://www.hep-druginteractions.org/."
+                        />
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="VA 2017d" extension="sr5"/>
+                        </identifiers>
+                        <title value="Hepatitis C Information for Veterans"/>
+                        <location value="https://www.hepatitis.va.gov/pdf/Hepatitis-C-Factsheet-Veterans.pdf"/>
+                        <citation
+                            value="US Dept of Veterans Affairs. 2017. Hepatitis C Information for Veterans. Accessed April 25, 2018 from https://www.hepatitis.va.gov/pdf/Hepatitis-C-Factsheet-Veterans.pdf."
+                        />
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="VA 2017e" extension="sr6"/>
+                        </identifiers>
+                        <title value="Chronic Hepatitis C and Alcohol Use"/>
+                        <location value="https://www.hepatitis.va.gov/products/patient/hepatitisC-alcohol-brochure.asp"/>
+                        <citation
+                            value="US Dept of Veterans Affairs. Chronic Hepatitis C and Alcohol Use. 2017. [Internet]. Accessed April 25, 2018 from https://www.hepatitis.va.gov/products/patient/hepatitisC-alcohol-brochure.asp."
+                        />
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="VA 2017f" extension="sr7"/>
+                        </identifiers>
+                        <title value="What to Expect Before Your Treatment for Hepatitis C Virus"/>
+                        <location value="https://www.hepatitis.va.gov/products/patient/hepatitisC-pretreatment.asp"/>
+                        <citation
+                            value="Department of Veterans Affairs. What to expect before your treatment for hepatitis C virus. 2017. [Internet]. Accessed Apr 25, 2018 from https://www.hepatitis.va.gov/products/patient/hepatitisC-pretreatment.asp"
+                        />
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="VA 2017g" extension="sr8"/>
+                        </identifiers>
+                        <title value="Taking Your Hepatitis C Therapy: Mavyret(TM)"/>
+                        <location value="https://www.hepatitis.va.gov/products/patient/sofosbuvir-simeprevir-handouts.asp"/>
+                        <citation value="US Dept of Veterans Affairs. 2017. Taking Your Hepatitis C Therapy: Mavyret(TM). Accessed April 25, 2018."/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="VA 2017h" extension="sr9"/>
+                        </identifiers>
+                        <title value="Managing Side Effects of Mavyret(TM)"/>
+                        <location value="https://www.hepatitis.va.gov/products/patient/side-effects-handouts.asp"/>
+                        <citation value="US Dept of Veterans Affairs. 2017. Managing Side Effects of Mavyret(TM). Accessed April 25, 2018."/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="VA 2017i" extension="sr10"/>
+                        </identifiers>
+                        <title value="Tracking My Hepatitis C Treatment Results"/>
+                        <location value="https://www.hepatitis.va.gov/products/patient/tracking-chart.asp"/>
+                        <citation value="US Dept of Veterans Affairs. 2017. Tracking My Hepatitis C Treatment Results. Accessed April 25, 2018."/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="VA 2017j" extension="sr11"/>
+                        </identifiers>
+                        <title value="FAQs about Sustained Virologic Response to Treatment for Hepatitis C"/>
+                        <location value="https://www.hepatitis.va.gov/products/patient/sustained-virological-response.asp "/>
+                        <citation
+                            value="US Dept of Veterans Affairs. 2017. FAQs about Sustained Virologic Response to Treatment for Hepatitis C. Accessed April 25, 2018."
+                        />
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1002/hep.27950" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e1" identifierName="AASLD 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="HCV Guidance: Recommendations for Testing, Managing, and Treating Hepatitis C"/>
+                        <location value="https://doi.org/10.1002/hep.27950"/>
+                        <citation
+                            value="American Association for the Study of Liver Diseases and the Infectious Diseases Society of America. HCV Guidance: Recommendations for Testing, Managing, and Treating Hepatitis C. Updated September 2017"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e2" identifierName="Fox 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Summary of FDA Approval for Mavyret"/>
+                        <location value="https://www.hepatitis.va.gov/provider/hcv/mavyret-approval.asp"/>
+                        <citation value="Fox RK. Summary of FDA Approval for Mavyret. Published August 2017"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e3" identifierName="VA 2017a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="After the Initial Diagnosis of HCV: Overview of Next Steps"/>
+                        <location value="https://www.hepatitis.va.gov/products/next-steps.asp"/>
+                        <citation
+                            value="U.S. Department of Veterans Affairs. After the Initial Diagnosis of HCV: Overview of Next Steps. Published May 2017"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e4" identifierName="VA 2017b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Chronic Hepatitis C Virus (HCV) Infection: Treatment Considerations from the Department of Veterans Affairs National Hepatitis C Resource Center Program and the HIV, Hepatitis, and Related Conditions Program in the Office of Specialty Care Services"/>
+                        <location value="https://www.hepatitis.va.gov/provider/guidelines/hcv-treatment-considerations.asp"/>
+                        <citation
+                            value="U.S. Department of Veterans Affairs National Hepatitis C Resource Center Program and the National Viral Hepatitis Program. Chronic Hepatitis C Virus (HCV) Infection: Treatment Considerations from the Department of Veterans Affairs National Hepatitis C Resource Center Program and the HIV, Hepatitis, and Related Conditions Program in the Office of Specialty Care Services. Updated March 2017"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e5" identifierName="NLM 2017a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="HARVONI- ledipasvir and sofosbuvir tablet, film coated [Gilead Sciences, Inc]"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f4ec77e4-bae8-4db0-b3d5-bde09c5fa075"/>
+                        <citation
+                            value="U.S. National Library of Medicine. HARVONI- ledipasvir and sofosbuvir tablet, film coated [Gilead Sciences, Inc].  Updated April 2017"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e6" identifierName="NLM 2017b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="MAVYRET- glecaprevir and pibrentasvir tablet, film coated [AbbVie Inc.]"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7bf99777-0401-9095-8645-16c6e907fcc0"/>
+                        <citation
+                            value="U.S. National Library of Medicine. MAVYRET- glecaprevir and pibrentasvir tablet, film coated [AbbVie Inc.].  Updated August 2017"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e7" identifierName="NLM 2016" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="REBETOL- ribavirin capsule; REBETOL- ribavirin liquid [Merck Sharp &amp; Dohme Corp.]"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04d2b6f4-bd9b-4871-9527-92c81aa2d4d0"/>
+                        <citation
+                            value="U.S. National Library of Medicine. REBETOL- ribavirin capsule; REBETOL- ribavirin liquid [Merck Sharp &amp; Dohme Corp.].   Updated January 2016"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e8" identifierName="NLM 2017c" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="ZEPATIER- elbasvir and grazoprevir tablet, film coated [Merck Sharp &amp; Dohme Corp.]"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=164dc02a-9180-426a-b8b5-04ab39d2bbd4"/>
+                        <citation
+                            value="U.S. National Library of Medicine. ZEPATIER- elbasvir and grazoprevir tablet, film coated [Merck Sharp &amp; Dohme Corp.]. Updated February 2017"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e9" identifierName="VA 2016a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Elbasvir/Grazoprevir (ZepatierTM) Criteria for Use"/>
+                        <location value="https://www.pbm.va.gov/apps/VANationalFormulary/"/>
+                        <citation
+                            value="VA Pharmacy Benefits Management Services, Medical Advisory Panel, VISN Pharmacist Executives and Office of Public Health. Elbasvir/Grazoprevir (ZepatierTM) Criteria for Use. Published February 2016"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e10" identifierName="VA 2016b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Ledipasvir/Sofosbuvir (Harvoni®) and Sofosbuvir/Velpatasvir (Epclusa®) Criteria for Use"/>
+                        <location value="https://www.pbm.va.gov/apps/VANationalFormulary/"/>
+                        <citation
+                            value="VA Pharmacy Benefits Management Services, Medical Advisory Panel, VISN Pharmacist Executives and Office of Public Health. Ledipasvir/Sofosbuvir (Harvoni®) and Sofosbuvir/Velpatasvir (Epclusa®) Criteria for Use.  Published September 2016"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+
+        <applicability>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Primary Care physicians"/>
+                <value code="453231000124104 |Primary care provider (occupation)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Gastroenterologists"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Adult patients"/>
+                <value code="133936004 |Adult (person)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalFocus"/>
+                <description value="Adult outpatients with chronic Hepatitis C infection"/>
+            </coverage>
+            <coverage>
+                <focus value="WorkflowSetting"/>
+                <description value="Routine primary care and gastroenterology"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Outpatient"/>
+                <value code="33022008 |Hospital-based outpatient department (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+        </applicability>
+
+        <status value="Active"/>
+
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180529"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180529"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20170810"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20170829"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="David"/>
+                        <dt:part type="FAM" value="Kaplan"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Staff Physician Gastroenterology Philadelphia, PA, Primary"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Timothy"/>
+                        <dt:part type="FAM" value="Morgan"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Long Beach VAMC Physician Long Beach, CA, Secondary"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="James"/>
+                        <dt:part type="FAM" value="Wilson"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Puget Sound Healthcare System Administrative Specialist Seattle, WA"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Jason"/>
+                        <dt:part type="FAM" value="Dominitz"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Puget Sound Healthcare System National Director of Gastroenterology Seattle, WA"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Byron"/>
+                        <dt:part type="FAM" value="Cryer"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="North Texas VHCS Physician Dallas, TX"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Ashley"/>
+                        <dt:part type="FAM" value="Faulx"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Louis Stokes Cleveland DVA Medical Center Med-GI Fellow Cleveland, OH"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Lyn"/>
+                        <dt:part type="GIV" value="Sue"/>
+                        <dt:part type="FAM" value="Kahng"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Jesse Brown VAMC Section Chief, GI Chicago, IL"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Heiko"/>
+                        <dt:part type="FAM" value="Pohl"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician White River Junction VAMC White River Junction, VT"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Aasma"/>
+                        <dt:part type="FAM" value="Shaukat"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Minneapolis VAMC Minneapolis, MN"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Walter"/>
+                        <dt:part type="FAM" value="Smalley"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Tennessee Valley HCS Nashville, TN"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Pamela"/>
+                        <dt:part type="GIV" value="(Pam)"/>
+                        <dt:part type="FAM" value="Belperio"/>
+                    </name>
+                    <affiliation>
+                        <name value="PharmD/Clinical Pharmacist Population Health Services Los Angeles, CA"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Lisa"/>
+                        <dt:part type="FAM" value="Backus"/>
+                    </name>
+                    <affiliation>
+                        <name value="Deputy Chief Consultant Population Health Services Palo Alto, CA"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights value="Copyright"/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value=""/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value=""/>
+                            <dt:part type="STA" value=""/>
+                            <dt:part type="ZIP" value=""/>
+                        </address>
+                    </addresses>
+                    <name value=""/>
+                </rightsHolder>
+                <permissions>
+                    <permissions value=""/>
+                </permissions>
+            </rightsDeclaration>
+        </usageTerms>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+    </externalData>
+    <expressions>
+        <def name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code"
+                        code="[416118004 |Administration (procedure)]
+                        ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                        ->(363701004 |Direct substance (attribute))->[Rx;1940703 glecaprevir 100 MG / pibrentasvir 40 MG Oral Tablet]
+                        ->(410675002 |Route of administration (attribute))->[260548002 |Oral (qualifier value)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="unstructured[0]">
+                    <elm:value xsi:type="elm:Literal" valueType="String" value="84 tablets 1 refills"/>
+                </elm:element>
+                <elm:element name="requestedResult.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="3"/>
+                </elm:element>
+                <elm:element name="requestedResult.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="3"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="421026006 |Conventional release oral tablet (dose form)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="56"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code"
+                        code="[416118004 |Administration (procedure)]
+                        ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                        ->(363701004 |Direct substance (attribute))->[Rx;1940703 glecaprevir 100 MG / pibrentasvir 40 MG Oral Tablet]
+                        ->(410675002 |Route of administration (attribute))->[260548002 |Oral (qualifier value)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="unstructured[0]">
+                    <elm:value xsi:type="elm:Literal" valueType="String" value="84 tablets 2 refills"/>
+                </elm:element>
+                <elm:element name="requestedResult.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="3"/>
+                </elm:element>
+                <elm:element name="requestedResult.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="3"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="421026006 |Conventional release oral tablet (dose form)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="84"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code"
+                        code="[416118004 |Administration (procedure)]
+                        ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                        ->(363701004 |Direct substance (attribute))->[Rx;1940703 glecaprevir 100 MG / pibrentasvir 40 MG Oral Tablet]
+                        ->(410675002 |Route of administration (attribute))->[260548002 |Oral (qualifier value)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="unstructured[0]">
+                    <elm:value xsi:type="elm:Literal" valueType="String" value="84 tablets 3 refills"/>
+                </elm:element>
+                <elm:element name="requestedResult.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="3"/>
+                </elm:element>
+                <elm:element name="requestedResult.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="3"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="requestedResult.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="421026006 |Conventional release oral tablet (dose form)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="priority">
+                    <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="112"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.resolution">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].periodDuration.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.lowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.upperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.includeLowerBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Boolean" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.includeUpperBound">
+                    <elm:value xsi:type="elm:Literal" valueType="Integer" value="TRUE"/>
+                </elm:element>
+                <elm:element name="repetition[0].eventFrequency.measureSemantic">
+                    <elm:value xsi:type="elm:Code" code="258703001 |day (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="HCV genotype 1 time (routine)">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="397662006 |Hepatitis C virus genotype determination (procedure)|"
+                        display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-5"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="Hepatitis B surface antigen (HBsAg) 1 time (routine)">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="47758006 |Hepatitis B surface antigen measurement (procedure)|"
+                        display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-10"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="Hepatitis B core antibody (HBcAb) 1 time (routine)">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="59582004 |Hepatitis B core antibody measurement (procedure)|"
+                        display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-10"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="Hepatitis B surface antibody (HBsAb) 1 time (routine)">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="65911000 |Hepatitis B surface antibody measurement (procedure)|"
+                        display="Pretcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-10"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="Hepatitis A antibody (HAVAb) 1 time (routine)">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="697001 |Hepatitis A virus antibody measurement (procedure)|"
+                        display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-10"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="HCV viral load (quantitative HCV RNA) 1 time (routine)">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="395197008 |Hepatitis C viral load (procedure)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="month" value="-6"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="HIV test 1 time (routine)">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code"
+                        code="359796005 |Measurement of both Human immunodeficiency virus 1 antibody and Human immunodeficiency virus 2 antibody (procedure)|"
+                        display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="month" value="-6"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="Qualitative human chorionic gonadotropin 1 time (routine)">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="386558001 |Chorionic gonadotropin, beta-subunit measurement (procedure)|"
+                        display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="week" value="-2"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+    </expressions>
+
+    <actionGroup>
+        <subElements>
+            <actionGroup>
+                <supportingEvidence>
+                    <evidence>
+                        <resources>
+                            <resource>
+                                <identifiers>
+                                    <identifier root="LocalDocBook" extension="e4"/>
+                                </identifiers>
+                            </resource>
+                        </resources>
+                    </evidence>
+                </supportingEvidence>
+                <supportingResources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr4"/>
+                        </identifiers>
+                    </resource>
+                </supportingResources>
+                <title value="Medications"/>
+                <description
+                    value="Glecaprevir/pibrentasvir should not be used in patients with decompensated cirrhosis (CTP B or C). Glecaprevir/pibrentasvir should not be used in combination with atazanavir or rifampin. Providers should check http://www.hep-druginteractions.org, https://www.hepatitis.va.gov/provider/guidelines/hcv-treatment-considerations.asp, and/or a pharmacist for additional drug interactions or contraindications before starting glecaprevir/pibrentasvir."/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Genotype 1, 2, 3, 4, 5, or 6, Treatment-Naïve, without Cirrhosis."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Genotype 1, 2, 3, 4, 5, or 6, Treatment-Naïve, with Compensated Cirrhosis (CTP A)."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title
+                            value="Genotype 1, Treatment-Experienced (NS5A Protease Inhibitor without Prior NS3/4A Protease Inhibitor), without Cirrhosis."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title
+                            value="Genotype 1, 2, 4, 5, or 6, Treatment-Experienced (Interferon, Pegylated Interferon, Ribavirin, and/or Sofosbuvir), without Cirrhosis."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title
+                            value="Genotype 3, Treatment-Experienced (Interferon, Pegylated Interferon, Ribavirin, and/or Sofosbuvir), without Cirrhosis."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title
+                            value="Genotype 1, Treatment-Experienced (NS5A Protease Inhibitor without Prior NS3/4A Protease Inhibitor), with Compensated Cirrhosis (CTP A)."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title
+                            value="Genotype 1, Treatment-Experienced (NS3/4A Protease Inhibitor without Prior NS5A Protease Inhibitor), with Compensated Cirrhosis (CTP A)."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title
+                            value="Genotype 1, 2, 4, 5, or 6, Treatment-Experienced (Interferon, Pegylated Interferon, Ribavirin, and/or Sofosbuvir), with Compensated Cirrhosis (CTP A)."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title
+                            value="Genotype 3, Treatment-Experienced (Interferon, Pegylated Interferon, Ribavirin, and/or Sofosbuvir), with Compensated Cirrhosis (CTP A)."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                                <actionSentence xsi:type="elm:ExpressionRef"
+                                    name="Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)"/>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+
+            <actionGroup>
+                <title value="Laboratory Tests"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Suggested tests for management of hepatitis C"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Complete blood count 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="26604007 |Complete blood count (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Hepatic function panel 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="26958001 |Hepatic function panel (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="International normalized ratio 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="440685005 |Calculation of international normalized ratio (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Basic metabolic panel 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="1421000205106 |Basic metabolic panel (procedure)"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <textEquivalent value="Glomerular Filtration rate 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="167181009 |Measurement of renal clearance of creatinine (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="The following lab is recommended if not performed within the previous 5 years."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef" name="HCV genotype 1 time (routine)"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="HCV genotype 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="47758006 |Hepatitis B surface antigen measurement (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="The following labs are recommended if not performed within the previous 10 years."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef" name="Hepatitis B surface antigen (HBsAg) 1 time (routine)"
+                                                />
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="Hepatitis B surface antigen (HBsAg) 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="47758006 |Hepatitis B surface antigen measurement (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef" name="Hepatitis B core antibody (HBcAb) 1 time (routine)"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="Hepatitis B core antibody (HBcAb) 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="59582004 |Hepatitis B core antibody measurement (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef" name="Hepatitis B surface antibody (HBsAb) 1 time (routine)"
+                                                />
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="Hepatitis B surface antibody (HBsAb) 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="65911000 |Hepatitis B surface antibody measurement (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef" name="Hepatitis A antibody (HAVAb) 1 time (routine)"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="Hepatitis A antibody (HAVAb) 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="697001 |Hepatitis A virus antibody measurement (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="The following lab is recommended if not performed within the previous 6 months."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef"
+                                                    name="HCV viral load (quantitative HCV RNA) 1 time (routine)"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="HCV viral load (quantitative HCV RNA) 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="395197008 |Hepatitis C viral load (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef" name="HIV test 1 time (routine)"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="HIV test 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code"
+                                            code="359796005 |Measurement of both Human immunodeficiency virus 1 antibody and Human immunodeficiency virus 2 antibody (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001 |Routine (qualifier value)|" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="The following lab is recommended if not performed within the previous 2 weeks."/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef"
+                                                    name="Qualitative human chorionic gonadotropin 1 time (routine)"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="Qualitative human chorionic gonadotropin 1 time (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="386558001 |Chorionic gonadotropin, beta-subunit measurement (procedure)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Patient and Caregiver Education"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title
+                            value="This section should be available to users in gastroenterology settings and for primary care providers who are referring a patient to gastroenterology for management of hepatitis C"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction">
+                                <supportingResources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier root="LocalDocBook" extension="sr5"/>
+                                        </identifiers>
+                                    </resource>
+                                </supportingResources>
+                                <textEquivalent value="Hepatitis C Information for Veterans"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <supportingResources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier root="LocalDocBook" extension="sr6"/>
+                                        </identifiers>
+                                    </resource>
+                                </supportingResources>
+                                <textEquivalent value="Chronic Hepatitis C and Alcohol Use"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <supportingResources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier root="LocalDocBook" extension="sr7"/>
+                                        </identifiers>
+                                    </resource>
+                                </supportingResources>
+                                <textEquivalent value="What to Expect Before Your Treatment for Hepatitis C Virus"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <supportingResources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier root="LocalDocBook" extension="sr8"/>
+                                        </identifiers>
+                                    </resource>
+                                </supportingResources>
+                                <textEquivalent value="Taking Your Hepatitis C Therapy: Mavyret(TM)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <supportingResources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier root="LocalDocBook" extension="sr9"/>
+                                        </identifiers>
+                                    </resource>
+                                </supportingResources>
+                                <textEquivalent value="Managing Side Effects of Mavyret(TM)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <supportingResources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier root="LocalDocBook" extension="sr10"/>
+                                        </identifiers>
+                                    </resource>
+                                </supportingResources>
+                                <textEquivalent value="Tracking My Hepatitis C Treatment Results"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction">
+                                <supportingResources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier root="LocalDocBook" extension="sr11"/>
+                                        </identifiers>
+                                    </resource>
+                                </supportingResources>
+                                <textEquivalent value="FAQs about Sustained Virologic Response to Treatment for Hepatitis C"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                                    <elm:element name="statementType">
+                                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|"
+                                            display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topic">
+                                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>
