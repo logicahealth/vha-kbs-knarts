@@ -1,0 +1,1041 @@
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:anf="http://hl7.org/anf"
+    xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="5dbcf08a-507a-5107-9b38-170377cb334d" identifierName="O12" version="1.0"/>
+            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007CA"
+                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007CA"/>
+            <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-82" identifierName="Jira KP-82"/>
+        </identifiers>
+        <artifactType value="Rule"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+        <title value="Recommended Immunizations Rule"/>
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="urn:va.gov:kbs:knart:ccwp:r1" extension="O15" version="01"
+                                identifierName="Primary Care: Recommended Immunizations"/>
+                            <identifier root="LocalDocBook" extension="sr1" identifierName="CCWP"/>
+                        </identifiers>
+                        <title value="Recommended Immunizations Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="CSD" extension="sr2"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007CA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007CA"/>
+                        </identifiers>
+                        <title value="Recommended Immunizations Rule Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="KVRpt" extension="sr3"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007CA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007CA"/>
+                        </identifiers>
+                        <title value="Recommended Immunizations Rule KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e1" identifierName="Immunization 2017a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Recommended Immunization Schedule for Children and Adolescents Aged 18 Years or Younger, UNITED STATES, 2017"/>
+                        <location value="https://www.cdc.gov/vaccines/schedules/downloads/child/0-18yrs-child-combined-schedule.pdf"/>
+                        <citation
+                            value="Advisory Committee on Immunization Practices. Recommended Immunization Schedule for Children and Adolescents Aged 18 Years or Younger, UNITED STATES, 2017. https://www.cdc.gov/vaccines/schedules/downloads/child/0-18yrs-child-combined-schedule.pdf. Published February 6, 2017"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e2" identifierName="Immunization 2017b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Recommended Immunization Schedule for Adults Aged 19 Years or Older, United States, 2017"/>
+                        <location value="https://www.cdc.gov/vaccines/schedules/downloads/adult/adult-combined-schedule.pdf"/>
+                        <citation
+                            value="Advisory Committee on Immunization Practices. Recommended Immunization Schedule for Adults Aged 19 Years or Older, United States, 2017. https://www.cdc.gov/vaccines/schedules/downloads/adult/adult-combined-schedule.pdf. Published February 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e3" identifierName="CDC 2012a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Updated recommendations for use of tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis (Tdap) vaccine in adults aged 65 years and older - Advisory Committee on Immunization Practices (ACIP), 2012"/>
+                        <location value="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6125a4.htm"/>
+                        <citation
+                            value="Centers for Disease Control and Prevention (CDC). “Updated recommendations for use of tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis (Tdap) vaccine in adults aged 65 years and older - Advisory Committee on Immunization Practices (ACIP), 2012”. MMWR Morb Mortal Wkly Rep. 2012 Jun 29. 61. 25. 468-70"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e4" identifierName="CDC 2010a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Updated recommendations for use of tetanus toxoid, reduced diphtheria toxoid and acellular pertussis (Tdap) vaccine from the Advisory Committee on Immunization Practices, 2010"/>
+                        <location value="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6001a4.htm"/>
+                        <citation
+                            value="Centers for Disease Control and Prevention (CDC). Updated recommendations for use of tetanus toxoid, reduced diphtheria toxoid and acellular pertussis (Tdap) vaccine from the Advisory Committee on Immunization Practices, 2010. MMWR Morb Mortal Wkly Rep. 2011 Jan 14;60(1):13-5"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e5" identifierName="CDC 2013" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Use of 13-valent pneumococcal conjugate vaccine and 23-valent pneumococcal polysaccharide vaccine among children aged 6-18 years with immunocompromising conditions: recommendations of the Advisory Committee on Immunization Practices (ACIP)"/>
+                        <location value="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6225a3.htm"/>
+                        <citation
+                            value="Centers for Disease Control and Prevention (CDC). Use of 13-valent pneumococcal conjugate vaccine and 23-valent pneumococcal polysaccharide vaccine among children aged 6-18 years with immunocompromising conditions: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR Morb Mortal Wkly Rep. 2013 Jun 28;62(25):521-4"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e6" identifierName="CDC 2012b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Use of 13-valent pneumococcal conjugate vaccine and 23-valent pneumococcal polysaccharide vaccine for adults with immunocompromising conditions: recommendations of the Advisory Committee on Immunization Practices (ACIP)"/>
+                        <location value="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6140a4.htm"/>
+                        <citation
+                            value="Centers for Disease Control and Prevention (CDC). Use of 13-valent pneumococcal conjugate vaccine and 23-valent pneumococcal polysaccharide vaccine for adults with immunocompromising conditions: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR Morb Mortal Wkly Rep. 2012 Oct 12;61(40):816-9."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e7" identifierName="CDC 2011" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Use of hepatitis B vaccination for adults with diabetes mellitus: recommendations of the Advisory Committee on Immunization Practices (ACIP)"/>
+                        <location value="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6050a4.htm"/>
+                        <citation
+                            value="Centers for Disease Control and Prevention (CDC). Use of hepatitis B vaccination for adults with diabetes mellitus: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR Morb Mortal Wkly Rep. 2011 Dec 23;60(50):1709-11"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e8" identifierName="CDC 2010b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Updated recommendations for prevention of invasive pneumococcal disease among adults using the 23-valent pneumococcal polysaccharide vaccine (PPSV23)"/>
+                        <location value="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5934a3.htm"/>
+                        <citation
+                            value="Centers for Disease Control and Prevention (CDC); Advisory Committee on Immunization Practices. Updated recommendations for prevention of invasive pneumococcal disease among adults using the 23-valent pneumococcal polysaccharide vaccine (PPSV23). MMWR Morb Mortal Wkly Rep. 2010 Sep 3;59(34):1102-6."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1098/rstb.2013.0433" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e9" identifierName="Greenwood 2014" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="The contribution of vaccination to global health: past, present and future"/>
+                        <location value="https://doi.org/10.1098/rstb.2013.0433"/>
+                        <citation
+                            value="Greenwood B. The contribution of vaccination to global health: past, present and future. Philos Trans R Soc Lond B Biol Sci. 2014 May 12;369(1645):20130433"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.15585/mmwr.mm6434a4" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e10" identifierName="Kobayashi 2015" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Intervals Between PCV13 and PPSV23 Vaccines: Recommendations of the Advisory Committee on Immunization Practices (ACIP)"/>
+                        <location value="https://doi.org/10.15585/mmwr.mm6434a4"/>
+                        <citation
+                            value="Kobayashi M, Bennett NM, Gierke R, et al. Intervals Between PCV13 and PPSV23 Vaccines: Recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR Morb Mortal Wkly Rep. 2015 Sep 4;64(34):944-7."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1111/ajt.14426" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e11" identifierName="McNamara 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="High Risk for Invasive Meningococcal Disease Among Patients Receiving Eculizumab (Soliris) Despite Receipt of Meningococcal Vaccine."/>
+                        <location value="https://doi.org/10.1111/ajt.14426"/>
+                        <citation
+                            value="McNamara LA, Topaz N, Wang X, Hariri S, Fox L, and MacNeil JR. High Risk for Invasive Meningococcal Disease Among Patients Receiving Eculizumab (Soliris) Despite Receipt of Meningococcal Vaccine. MMWR Morb Mortal Wkly Rep. 2017 Jul 14;66(27):734-737"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1111/ajt.14206" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e12" identifierName="Meites 2016a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Use of a 2-Dose Schedule for Human Papillomavirus Vaccination"/>
+                        <location value="https://doi.org/10.1111/ajt.14206"/>
+                        <citation
+                            value="Meites E, Kempe A, and Markowitz LE. Use of a 2-Dose Schedule for Human Papillomavirus Vaccination - Updated Recommendations of the Advisory Committee on Immunization Practices. MMWR Morb Mortal Wkly Rep. 2016 Dec 16;65(49):1405-1408"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e13" identifierName="NCH 2017a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Get Recommended Screening Tests and Immunizations for Men"/>
+                        <location value="https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Men.asp"/>
+                        <citation
+                            value="National Center for Health Promotion and Disease Prevention. Get Recommended Screening Tests and Immunizations for Men. National Center for Health Promotion and Disease Prevention website. https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Men.asp. Accessed August 23, 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e14" identifierName="NCH 2017b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Get Recommended Screening Tests and Immunizations for Women."/>
+                        <location value="https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Women.asp"/>
+                        <citation
+                            value="National Center for Health Promotion and Disease Prevention. Get Recommended Screening Tests and Immunizations for Women. National Center for Health Promotion and Disease Prevention website. https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Women.asp. Accessed August 23, 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e15" identifierName="Schillie 2018" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Prevention of Hepatitis B Virus Infection in the United States: Recommendations of the Advisory Committee on Immunization Practices"/>
+                        <location value="none"/>
+                        <citation
+                            value="Schillie S, Vellozzi C, Reingold A, et al. Prevention of Hepatitis B Virus Infection in the United States: Recommendations of the Advisory Committee on Immunization Practices. MMWR Recomm Rep 2018 Jan 12;67(No. RR-1):1–31."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e16" identifierName="VA 2017a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="VA PC Immunizations"/>
+                        <location value="https://www.publichealth.va.gov/vaccines.asp"/>
+                        <citation
+                            value="U.S. Department of Veterans Affairs/Veterans Health Administrations. VA PC Immunizations. webpage. Received July 26, 2017. Accessed September 18, 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e17" identifierName="NLM 2016a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="BEXSERO- neisseria meningitidis serogroup b nhba fusion protein antigen, neisseria meningitidis serogroup b fhbp fusion protein antigen and neisseria meningitidis serogroup b nada protein antigen injection, suspension [GlaxoSmithKline Biologicals SA"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f70cf2fc-6e6d-4a74-9f7a-db8fec072fd7"/>
+                        <citation
+                            value="U.S. National Library of Medicine. BEXSERO- neisseria meningitidis serogroup b nhba fusion protein antigen, neisseria meningitidis serogroup b fhbp fusion protein antigen and neisseria meningitidis serogroup b nada protein antigen injection, suspension [GlaxoSmithKline Biologicals SA]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f70cf2fc-6e6d-4a74-9f7a-db8fec072fd7. Updated September 2016."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e18" identifierName="NLM 2016b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="BOOSTRIX- tetanus toxoid, reduced diphtheria toxoid and acellular pertussis vaccine, adsorbed suspension [GlaxoSmithKline Biologicals SA]. DailyMed website"/>
+                        <location value="hhttps://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd98bff9-4602-4268-d68d-029a14a5513b"/>
+                        <citation
+                            value="U.S. National Library of Medicine. BOOSTRIX- tetanus toxoid, reduced diphtheria toxoid and acellular pertussis vaccine, adsorbed suspension [GlaxoSmithKline Biologicals SA]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd98bff9-4602-4268-d68d-029a14a5513b. Updated October 2016."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e19" identifierName="NLM 2016c" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="ENGERIX-B - hepatitis b vaccine (recombinant) injection, suspension [GlaxoSmithKline Biologicals SA]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2ec65f7e-4aa2-4b41-b578-885ea59d6e9d"/>
+                        <citation
+                            value="U.S. National Library of Medicine. ENGERIX-B - hepatitis b vaccine (recombinant) injection, suspension [GlaxoSmithKline Biologicals SA]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2ec65f7e-4aa2-4b41-b578-885ea59d6e9d. Updated May 2016."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e20" identifierName="NLM 2016d" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="FLUAD- influenza a virus a/california/7/2009 x-181 (h1n1) antigen (formaldehyde inactivated), influenza a virus a/hong kong/4801/2014, nymc-x-263b (h3n2) hemagglutinin antigen (formaldehyde inactivated) and influenza b virus b/brisbane/60/2008 - wild type hemagglutinin antigen (formaldehyde inactivated) injection, suspension [Seqirus, Inc.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d4757710-d9ac-45ea-82d0-71cb1ec32a4e"/>
+                        <citation
+                            value="U.S. National Library of Medicine. FLUAD- influenza a virus a/california/7/2009 x-181 (h1n1) antigen (formaldehyde inactivated), influenza a virus a/hong kong/4801/2014, nymc-x-263b (h3n2) hemagglutinin antigen (formaldehyde inactivated) and influenza b virus b/brisbane/60/2008 - wild type hemagglutinin antigen (formaldehyde inactivated) injection, suspension [Seqirus, Inc.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d4757710-d9ac-45ea-82d0-71cb1ec32a4e. Updated July 2016."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e21" identifierName="NLM 2017a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="FLUBLOK- influenza vaccine injection, solution [Protein Sciences Corporation]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ce88cc84-b4ed-4d59-8897-10cb53dc2edf"/>
+                        <citation
+                            value="U.S. National Library of Medicine. FLUBLOK- influenza vaccine injection, solution [Protein Sciences Corporation]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ce88cc84-b4ed-4d59-8897-10cb53dc2edf. Updated July 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e22" identifierName="NLM 2017b" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="FLULAVAL QUADRIVALENT 2017/2018- influenza virus vaccine suspension [ID Biomedical Corporation of Quebec]."/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a9806027-8323-4abf-849f-46fb10984f13"/>
+                        <citation
+                            value="U.S. National Library of Medicine. FLULAVAL QUADRIVALENT 2017/2018- influenza virus vaccine suspension [ID Biomedical Corporation of Quebec]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a9806027-8323-4abf-849f-46fb10984f13. Updated July 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e23" identifierName="NLM 2017c" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="FLUZONE HIGH-DOSE- influenza a virusa/michigan/45/2015 x-275 (h1n1) antigen (formaldehyde inactivated), influenza a virus a/hong kong/4801/2014 x-263b (h3n2) antigen (formaldehyde inactivated), and influenza b virus b/brisbane/60/2008 antigen (formaldehyde inactivated) injection, suspension [Sanofi Pasteur Inc.]"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=81758772-80b1-4e76-8f50-e68d1fb4e9ee"/>
+                        <citation
+                            value="U.S. National Library of Medicine. FLUZONE HIGH-DOSE- influenza a virusa/michigan/45/2015 x-275 (h1n1) antigen (formaldehyde inactivated), influenza a virus a/hong kong/4801/2014 x-263b (h3n2) antigen (formaldehyde inactivated), and influenza b virus b/brisbane/60/2008 antigen (formaldehyde inactivated) injection, suspension [Sanofi Pasteur Inc.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=81758772-80b1-4e76-8f50-e68d1fb4e9ee. Updated July 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e24" identifierName="NLM 2017d" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="FLUZONE INTRADERMAL QUADRIVALENT- influenza a virus a/michigan/45/2015 x-275 (h1n1) antigen (formaldehyde inactivated), influenza a virus a/hong kong/4801/2014 x-263b (h3n2) antigen (formaldehyde inactivated), influenza b virus b/phuket/3073/2013 antigen (formaldehyde inactivated), and influenza b virus b/brisbane/60/2008 antigen (formaldehyde inactivated) injection, suspension [Sanofi Pasteur Inc.]"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bc006704-bcdd-4416-9cbc-9cfa76145c7b"/>
+                        <citation
+                            value="U.S. National Library of Medicine. FLUZONE INTRADERMAL QUADRIVALENT- influenza a virus a/michigan/45/2015 x-275 (h1n1) antigen (formaldehyde inactivated), influenza a virus a/hong kong/4801/2014 x-263b (h3n2) antigen (formaldehyde inactivated), influenza b virus b/phuket/3073/2013 antigen (formaldehyde inactivated), and influenza b virus b/brisbane/60/2008 antigen (formaldehyde inactivated) injection, suspension [Sanofi Pasteur Inc.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bc006704-bcdd-4416-9cbc-9cfa76145c7b. Updated July 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e25" identifierName="NLM 2017e" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="GARDASIL 9- human papillomavirus 9-valent vaccine, recombinant injection, suspension"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a21f4f4b-b891-4f25-b747-cb9ec7d865d6"/>
+                        <citation
+                            value="U.S. National Library of Medicine. GARDASIL 9- human papillomavirus 9-valent vaccine, recombinant injection, suspension  [Merck Sharp &amp; Dohme Corp.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bc006704-bcdd-4416-9cbc-9cfa76145c7b. Updated July 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e26" identifierName="NLM 2016e" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="HAVRIX- hepatitis a vaccine injection, suspension [GlaxoSmithKline Biologicals SA]"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f9499a4d-1288-4bd3-9d59-1d72092c38cd"/>
+                        <citation
+                            value="U.S. National Library of Medicine. HAVRIX- hepatitis a vaccine injection, suspension [GlaxoSmithKline Biologicals SA]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f9499a4d-1288-4bd3-9d59-1d72092c38cd. Updated May 2016."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e27" identifierName="NLM 2017f" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="MENOMUNE - A/C/Y/W-135 COMBINED- neisseria meningitidis group a capsular polysaccharide antigen, neisseria meningitidis group c capsular polysaccharide antigen, neisseria meningitidis group y capsular polysaccharide antigen and neisseria meningitidis group w-135 capsular polysaccharide antigen [Sanofi Pasteur Inc.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4621a820-c776-4be5-abf5-018e45682770"/>
+                        <citation
+                            value="U.S. National Library of Medicine. MENOMUNE - A/C/Y/W-135 COMBINED- neisseria meningitidis group a capsular polysaccharide antigen, neisseria meningitidis group c capsular polysaccharide antigen, neisseria meningitidis group y capsular polysaccharide antigen and neisseria meningitidis group w-135 capsular polysaccharide antigen [Sanofi Pasteur Inc.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4621a820-c776-4be5-abf5-018e45682770. Updated February 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e28" identifierName="NLM 2017g" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="MENVEO- meningococcal (groups a, c, y and w-135) oligosaccharide diphtheria crm197 conjugate vaccine [Novartis Vaccines and Diagnostics s.r.l.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=89dde472-1efb-4630-88bc-41cde216fb3a"/>
+                        <citation
+                            value="U.S. National Library of Medicine. MENVEO- meningococcal (groups a, c, y and w-135) oligosaccharide diphtheria crm197 conjugate vaccine [Novartis Vaccines and Diagnostics s.r.l.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=89dde472-1efb-4630-88bc-41cde216fb3a. Updated October 2016."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e29" identifierName="NLM 2017h" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="M-M-R II- measles, mumps, and rubella virus vaccine live injection, powder, lyophilized, for suspension [Merck Sharp &amp; Dohme Corp.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0a9e384f-e717-436b-b9a0-15e53cef0862"/>
+                        <citation
+                            value="U.S. National Library of Medicine. M-M-R II- measles, mumps, and rubella virus vaccine live injection, powder, lyophilized, for suspension [Merck Sharp &amp; Dohme Corp.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0a9e384f-e717-436b-b9a0-15e53cef0862. Updated May 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e30" identifierName="NLM 2015a" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="PNEUMOVAX 23- pneumococcal vaccine polyvalent injection, solution [Merck Sharp &amp; Dohme Corp.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bb362a20-6d91-4ae8-bebb-9ee8b2591814"/>
+                        <citation
+                            value="U.S. National Library of Medicine. PNEUMOVAX 23- pneumococcal vaccine polyvalent injection, solution [Merck Sharp &amp; Dohme Corp.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bb362a20-6d91-4ae8-bebb-9ee8b2591814. Updated July 2015."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e31" identifierName="NLM 2017i" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="PREVNAR 13- pneumococcal 13-valent conjugate vaccine injection, suspension [Wyeth Pharmaceutical Division of Wyeth Holdings LLC, a subsidiary of Pfizer Inc.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5d49181b-b974-a5da-3b38-12a3a87bb96b"/>
+                        <citation
+                            value="U.S. National Library of Medicine. PREVNAR 13- pneumococcal 13-valent conjugate vaccine injection, suspension [Wyeth Pharmaceutical Division of Wyeth Holdings LLC, a subsidiary of Pfizer Inc.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5d49181b-b974-a5da-3b38-12a3a87bb96b. Updated April 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e32" identifierName="NLM 2014" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="RECOMBIVAX HB- hepatitis b vaccine (recombinant) injection, suspension [Merck Sharp &amp; Dohme Corp.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b5bd99e4-569d-48d5-ba75-16e69f8c409a"/>
+                        <citation
+                            value="U.S. National Library of Medicine. RECOMBIVAX HB- hepatitis b vaccine (recombinant) injection, suspension [Merck Sharp &amp; Dohme Corp.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b5bd99e4-569d-48d5-ba75-16e69f8c409a. Updated November 2014."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e33" identifierName="NLM 2016f" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="TETANUS AND DIPHTHERIA TOXOIDS ADSORBED- tetanus and diphtheria toxoids adsorbed injection [Grifols]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=664e47c7-75a8-4f7d-9384-70f36af634a2"/>
+                        <citation
+                            value="U.S. National Library of Medicine. TETANUS AND DIPHTHERIA TOXOIDS ADSORBED- tetanus and diphtheria toxoids adsorbed injection [Grifols]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=664e47c7-75a8-4f7d-9384-70f36af634a2. Updated March 2016."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e34" identifierName="NLM 2017j" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="TRUMENBA- meningococcal group b vaccine injection, suspension [Wyeth Pharmaceutical Division of Wyeth Holdings LLC, a subsidiary of Pfizer Inc.]"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcaf5f75-caaf-41fd-875b-5800310070d1"/>
+                        <citation
+                            value="U.S. National Library of Medicine. TRUMENBA- meningococcal group b vaccine injection, suspension [Wyeth Pharmaceutical Division of Wyeth Holdings LLC, a subsidiary of Pfizer Inc.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcaf5f75-caaf-41fd-875b-5800310070d1. Updated March 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e35" identifierName="NLM 2016g" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="TWINRIX- hepatitis a and hepatitis b (recombinant) vaccine injection, suspension [GlaxoSmithKline Biologicals SA]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=18e8f9fc-4d62-4d30-4ab7-bac03336171e"/>
+                        <citation
+                            value="U.S. National Library of Medicine. TWINRIX- hepatitis a and hepatitis b (recombinant) vaccine injection, suspension [GlaxoSmithKline Biologicals SA]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=18e8f9fc-4d62-4d30-4ab7-bac03336171e. Updated December 2016."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e36" identifierName="NLM 2017k" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="VARIVAX- varicella virus vaccine live injection, powder, lyophilized, for suspension [Merck Sharp &amp; Dohme Corp.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=524cf052-e90e-4595-af0a-608edbe9bd31"/>
+                        <citation
+                            value="U.S. National Library of Medicine. VARIVAX- varicella virus vaccine live injection, powder, lyophilized, for suspension [Merck Sharp &amp; Dohme Corp.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=524cf052-e90e-4595-af0a-608edbe9bd31. Updated February 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e37" identifierName="NLM 2017l" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="ZOSTAVAX- zoster vaccine live injection, powder, lyophilized, for suspension; STERILE DILUENT- sterile water injection [Merck Sharp &amp; Dohme Corp.]. DailyMed website"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=30a0464e-e012-4c16-bc05-88f07e412203"/>
+                        <citation
+                            value="U.S. National Library of Medicine. ZOSTAVAX- zoster vaccine live injection, powder, lyophilized, for suspension; STERILE DILUENT- sterile water injection [Merck Sharp &amp; Dohme Corp.]. DailyMed website. https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=30a0464e-e012-4c16-bc05-88f07e412203. Updated March 2017."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+        <!-- The applicability element describes the basic context for this KNART.  -->
+        <applicability>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="All clinical providers"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Adult patients"/>
+                <value code="133936004 |Adult (person)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalFocus"/>
+                <description value="All"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description
+                    value="Any clinical setting (ambulatory, inpatient, etc.), including employees of the VA who are treated as patients of the VA."/>
+            </coverage>
+        </applicability>
+
+        <status value="Active"/>
+
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <!-- correct artifact type -->
+                <eventDateTime value="20180531"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180529"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180529"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20180413"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20180413"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+        <!-- Capture contributors here -->
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Denietolis"/>
+                        <dt:part type="FAM" value="Angela"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Primary Care Physician James A. Haley Veterans Hospital Tampa VA Medical Center (VAMC) Tampa, FL 33612"/>
+                    </affiliation>
+                </contributor>
+                <role value="Reviewer"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Dumas"/>
+                        <dt:part type="FAM" value="Pat"/>
+                        <dt:part type="TITLE" value="RN"/>
+                    </name>
+                    <affiliation>
+                        <name value="Clinical Program Director VA Central Office (VACO) 810 Vermont Ave NW Washington, DL 20420"/>
+                    </affiliation>
+                </contributor>
+                <role value="Reviewer"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Merchant"/>
+                        <dt:part type="FAM" value="Manish"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6125a4.htm"/>
+                    </affiliation>
+                </contributor>
+                <role value="Reviewer"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Dresselhaus"/>
+                        <dt:part type="FAM" value="Timothy"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="San Diego VAMC - MEDS 3350 La Jolla Village Drive San Diego, CA 92161"/>
+                    </affiliation>
+                </contributor>
+                <role value="Reviewer"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Jane"/>
+                        <dt:part type="FAM" value="Kim"/>
+                        <dt:part type="TITLE" value="NCP"/>
+                    </name>
+                    <affiliation>
+                        <name value="Chief Consultant for Preventive Medicine Durham, NC"/>
+                    </affiliation>
+                </contributor>
+                <role value="Reviewer"/>
+            </contribution>
+        </contributions>
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights value="Copyright"/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value=""/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value=""/>
+                            <dt:part type="STA" value=""/>
+                            <dt:part type="ZIP" value=""/>
+                        </address>
+                    </addresses>
+                    <name value=""/>
+                </rightsHolder>
+                <permissions>
+                    <permissions value=""/>
+                </permissions>
+            </rightsDeclaration>
+        </usageTerms>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <def name="HadSevereAllergicReactionToAnInfluenzaVaccine">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="HadSevereAllergicReactionToAnInfluenzaVaccineQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[416093006 |Allergic reaction caused by drug (disorder)]-
+                                ->(246075003 |Causative agent (attribute))->[396425006 |Influenza virus vaccine (substance)]-
+                                ->(246112005 |Severity (attribute))->[24484000 |Severe (severity modifier) (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ReceivedAnyInfluenzaImmunizationAfterAugust1LastYear">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:annotation>Received any influenza immunization on or after August 1 of last year</elm:annotation>
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[86198006 |Influenza vaccination (procedure)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:DateTime">
+                            <elm:year xsi:type="elm:ExpressionRef" name="CurrentYear"/>
+                            <elm:month xsi:type="elm:Literal" valueType="Integer" value="8"/>
+                            <elm:day xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                        </elm:operand>
+                        <elm:operand xsi:type="elm:Quantity" unit="Month" value="-12"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="ReceivedAnyInfluenzaImmunizationAfterAugust1ThisYear">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:annotation>Received any influenza immunization on or after August 1 of the current year</elm:annotation>
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[86198006 |Influenza vaccination (procedure)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:DateTime">
+                        <elm:year xsi:type="elm:ExpressionRef" name="CurrentYear"/>
+                        <elm:month xsi:type="elm:Literal" valueType="Integer" value="8"/>
+                        <elm:day xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAccessed">
+            <def name="AccessOfPatientRecord">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Access of the patient record</a:s>
+                    </elm:annotation>
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="PeriodicEventTrigger">
+            <def name="Day150TimeBasedRuleProcessing">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>150-day time-based rule processing refers to a whole system run looking every 150 days for any patient meeting the
+                            conditions defined below whose record may not have been accessed and who satisfies initial ECA criteria, to determine
+                            which patients are due for immunizations</a:s>
+                    </elm:annotation>
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </elm:expression>
+            </def>
+        </trigger>
+    </externalData>
+    <expressions>
+        <def name="PatientAge">
+            <elm:expression xsi:type="elm:SingletonFrom">
+                <elm:operand xsi:type="elm:Query">
+                    <elm:source alias="ageQuery">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code"
+                                    code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                    ->(363702006 |Has focus (attribute))->[105726004 |Age AND/OR growth finding (finding)]"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                    <elm:return>
+                        <elm:expression xsi:type="elm:Property" path="result.lowerBound"/>
+                    </elm:return>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="CurrentYear">
+            <elm:expression xsi:type="elm:DateTimeComponentFrom" precision="Year">
+                <elm:operand xsi:type="elm:Today"/>
+            </elm:expression>
+        </def>
+    </expressions>
+    <conditions>
+        <condition>
+            <logic xsi:type="elm:GreaterOrEqual">
+                <elm:annotation>Patient is aged >= 18 years</elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                <elm:operand xsi:type="elm:Quantity" value="18"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+    </conditions>
+    <actionGroup>
+        <!-- 
+               This branch should be processed only between August 1 and April 1 and should include all patients except those who have: 
+1.	Had a severe allergic reaction to an influenza vaccine or any of its components; or
+	 [Technical Note: Do not exclude for allergy to egg protein.]
+2.	Received any influenza immunization on or after August 1 of last year if today’s date is prior to April 1; or 
+3.	Received any influenza immunization on or after August 1 of the current year if today’s date is August 1 or later.
+               -->
+        <behaviors>
+            <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+        </behaviors>
+        <conditions>
+            <condition>
+                <logic xsi:type="elm:Or">
+                    <elm:annotation>Processed only after August 1 or before April 1</elm:annotation>
+                    <elm:operand xsi:type="elm:After">
+                        <elm:annotation>Today is after August 1</elm:annotation>
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:DateTime">
+                            <elm:year xsi:type="elm:ExpressionRef" name="CurrentYear"/>
+                            <elm:month xsi:type="elm:Literal" valueType="Integer" value="8"/>
+                            <elm:day xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                        </elm:operand>
+                    </elm:operand>
+                    <elm:operand xsi:type="elm:Before">
+                        <elm:annotation>Today is before April 1</elm:annotation>
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:DateTime">
+                            <elm:year xsi:type="elm:ExpressionRef" name="CurrentYear"/>
+                            <elm:month xsi:type="elm:Literal" valueType="Integer" value="4"/>
+                            <elm:day xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                        </elm:operand>
+                    </elm:operand>
+                </logic>
+                <conditionRole value="ApplicableScenario"/>
+            </condition>
+            <condition>
+                <logic xsi:type="elm:Not">
+                    <elm:operand xsi:type="elm:Exists">
+                        <elm:annotation>Had a severe allergic reaction to an influenza vaccine or any of its components</elm:annotation>
+                        <elm:operand xsi:type="elm:ExpressionRef" name="HadSevereAllergicReactionToAnInfluenzaVaccine"/>
+                    </elm:operand>
+                </logic>
+                <conditionRole value="ApplicableScenario"/>
+            </condition>
+            <condition>
+                <logic xsi:type="elm:And">
+                    <elm:annotation>Received any influenza immunization on or after August 1 of last year if today’s date is prior to April
+                        1</elm:annotation>
+                    <elm:operand xsi:type="elm:Before">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:DateTime">
+                            <elm:year xsi:type="elm:ExpressionRef" name="CurrentYear"/>
+                            <elm:month xsi:type="elm:Literal" valueType="Integer" value="4"/>
+                            <elm:day xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                        </elm:operand>
+                    </elm:operand>
+                    <elm:operand xsi:type="elm:Not">
+                        <elm:operand xsi:type="elm:Exists">
+                            <elm:annotation>Received any influenza immunization on or after August 1 of last year</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="ReceivedAnyInfluenzaImmunizationAfterAugust1LastYear"/>
+                        </elm:operand>
+                    </elm:operand>
+                </logic>
+                <conditionRole value="ApplicableScenario"/>
+            </condition>
+            <condition>
+                <logic xsi:type="elm:And">
+                    <elm:annotation>Received any influenza immunization on or after August 1 of the current year if today’s date is August 1 or
+                        later</elm:annotation>
+                    <elm:operand xsi:type="elm:After">
+                        <elm:annotation>Today’s date is August 1 or later</elm:annotation>
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:DateTime">
+                            <elm:year xsi:type="elm:ExpressionRef" name="CurrentYear"/>
+                            <elm:month xsi:type="elm:Literal" valueType="Integer" value="8"/>
+                            <elm:day xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                        </elm:operand>
+                    </elm:operand>
+                    <elm:operand xsi:type="elm:Not">
+                        <elm:operand xsi:type="elm:Exists">
+                            <elm:annotation>Received any influenza immunization on or after August 1 of the current year</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="ReceivedAnyInfluenzaImmunizationAfterAugust1ThisYear"/>
+                        </elm:operand>
+                    </elm:operand>
+                </logic>
+                <conditionRole value="ApplicableScenario"/>
+            </condition>
+        </conditions>
+        <title value="Influenza Immunization: General"/>
+        <subElements>
+            <simpleAction xsi:type="CreateAction">
+                <textEquivalent value="Identify the patient as an influenza vaccine candidate"/>
+                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code"
+                            code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                            ->(363702006 |Has focus (attribute))->[86198006 |Influenza vaccination (procedure)]"
+                            display="Postcoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="result.status">
+                        <elm:value xsi:type="elm:Code" code="410525008 |Needed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </actionSentence>
+            </simpleAction>
+            <simpleAction xsi:type="CreateAction">
+                <textEquivalent value="Ensure that the Immunization guidelines for Influenza Vaccination are available to the clinical care team"/>
+                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </actionSentence>
+            </simpleAction>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>
