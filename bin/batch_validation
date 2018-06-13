@@ -10,9 +10,11 @@ include Repository
 
 HELP = <<EOF.freeze
 
-Performs validation against all artifacts. Provide the manifest file as the only argument. XML schema validation on composites is non-recursive. This may take a few minutes. Be patient! If the existing and new manifest files are the same, the existing file will be *overwriten* in place. Be sure you have a backup handy if you're doing this!"
+Performs validation against all artifacts. Provide the manifest file as the only argument. XML schema validation on composites is non-recursive. This may take a few minutes. Be patient! If the existing and new manifest files are the same, the existing file will be *overwriten* in place. Be sure you have a backup handy if you're doing this!
 
-	USAGE: #{__FILE__} <manifest.json> <new_manifest.json>
+The --update or --no-update is required, indicating whether existing passed validations should be re-run or not, respectively.
+
+	USAGE: #{__FILE__} <manifest.json> --(no-)update <new_manifest.json>
 
 	EXAMPLE:
 		#{__FILE__} manifest.json manifest-new.json
@@ -23,14 +25,21 @@ EOF
 ARTIFACT_SCHEMA = 'doc/schema/1.3-revised/knowledgeartifact/knowledgedocument.xsd'.freeze
 COMPOSITE_SCHEMA = 'doc/schema/composite-draft/knowledgeartifact/compositeknowledgedocument.xsd'.freeze
 
+UPDATE_EXISTING_VALIDATIONS = false
+
+def should_validate(old)
+  UPDATE_EXISTING_VALIDATIONS || old.nil? || !old.dig('passed')
+end
+
 def validate_composites(root, manifest)
   manifest['groups'].each do |group|
     group['items'].each do |item|
       path = "#{root}/#{item['path']}"
       # puts "#{path}"
-      if COMPOSITE_MIME_TYPES.include? item['mimeType']
-		item['validation'] = validate(root + '/' + item['path'], root + '/' + COMPOSITE_SCHEMA)
-		pp item
+      old = item['validation']
+      if (COMPOSITE_MIME_TYPES.include? item['mimeType']) && should_validate(old)
+        item['validation'] = validate(root + '/' + item['path'], root + '/' + COMPOSITE_SCHEMA)
+        pp item
       end
     end
   end
@@ -43,10 +52,11 @@ def validate_individuals(root, manifest)
     group['items'].each do |item|
       path = "#{root}/#{item['path']}"
       # puts "#{path}"
-      if KNART_MIME_TYPES.include? item['mimeType']
+      old = item['validation']
+      if (KNART_MIME_TYPES.include? item['mimeType']) && should_validate(old)
         individuals << item
-		item['validation'] = validate(root + '/' + item['path'], root + '/' + ARTIFACT_SCHEMA)
-		pp item
+        item['validation'] = validate(root + '/' + item['path'], root + '/' + ARTIFACT_SCHEMA)
+        pp item
       end
     end
   end
@@ -93,7 +103,7 @@ def xmllint_status_code(code)
   end
 end
 
-if ARGV.length != 2
+if ARGV.length != 3
   puts HELP
   exit 1
 else
@@ -101,10 +111,14 @@ else
   manifest = JSON.parse(File.read(file))
   root = File.dirname(File.expand_path(file))
 
-  # Open the output first so we don't waste time if it's not writable.
-  out = File.open(ARGV[1], 'w')
+  if ARGV[1] == '--update'
+    UPDATE_EXISTING_VALIDATIONS = true
+  end
 
-#   validate_composites(root, manifest)
+  # Open the output first so we don't waste time if it's not writable.
+  out = File.open(ARGV[2], 'w')
+
+  validate_composites(root, manifest)
   validate_individuals(root, manifest)
 
   out.write(JSON.pretty_generate(manifest))
