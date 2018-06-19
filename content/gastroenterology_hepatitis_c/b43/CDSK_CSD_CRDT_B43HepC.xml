@@ -1,0 +1,3135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Gastroenterology: Hepatitis C Documentation Template</title>
+      <subtitle>Documentation Template: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AH</releaseinfo>
+      <pubdate>06/06/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>June 6, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>June 6, 2018</entry>
+                  <entry>Created</entry>
+               </row>
+               <row>
+                  <entry>August 29, 2017</entry>
+                  <entry>Pre-published</entry>
+               </row>
+               <row>
+                  <entry>August 10, 2017</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>David Kaplan, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Staff Physician Gastroenterology Philadelphia, PA</entry>
+               </row>
+               <row>
+                  <entry>Timothy Morgan, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Long Beach VAMC Physician Long Beach, CA</entry>
+               </row>
+               <row>
+                  <entry>James Wilson, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Puget Sound Healthcare System Administrative Specialist Seattle, WA</entry>
+               </row>
+               <row>
+                  <entry>Jason Dominitz, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Puget Sound Healthcare System National Director of Gastroenterology Seattle, WA</entry>
+               </row>
+               <row>
+                  <entry>Byron Cryer, MD</entry>
+                  <entry>Author</entry>
+                  <entry>North Texas VHCS Physician Dallas, TX</entry>
+               </row>
+               <row>
+                  <entry>Ashley Faulx, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Louis Stokes Cleveland DVA Medical Center Med-GI Fellow Cleveland, OH</entry>
+               </row>
+               <row>
+                  <entry>Lyn Sue Kahng, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Jesse Brown VAMC Section Chief, GI Chicago, IL</entry>
+               </row>
+               <row>
+                  <entry>Heiko Pohl, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Physician White River Junction VAMC White River Junction, VT</entry>
+               </row>
+               <row>
+                  <entry>Aasma Shaukat, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Minneapolis VAMC Minneapolis, MN</entry>
+               </row>
+               <row>
+                  <entry>Walter Smalley, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Tennessee Valley HCS Nashville, TN</entry>
+               </row>
+               <row>
+                  <entry>Pamela (Pam) Belperio</entry>
+                  <entry>Author</entry>
+                  <entry>PharmD/Clinical Pharmacist Population Health Services Los Angeles, CA</entry>
+               </row>
+               <row>
+                  <entry>Lisa Backus</entry>
+                  <entry>Author</entry>
+                  <entry>Deputy Chief Consultant Population Health Services Palo Alto, CA</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>5adfc19e-51c4-5ec0-bbf6-dd6ca3ff9bc5</entry>
+                  <entry>B43</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Primary Care physicians</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Gastroenterologists</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Outpatient</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Medical Service</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Adult patients</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientGender</entry>
+                  <entry>All</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e2">PatientRace</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e2"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[302147001 |Demographic history detail (observable entity)]- -&gt;(363714003 |Interprets (attribute))-&gt;[103579009 |Race (observable entity)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e3">BMI</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e3"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[301331008 |Finding of body mass index (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e4">ChildTurcottePughClass</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e4"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710065009 |Child-Pugh score class A (finding)]]</link>elm:element[elm:Code]: <link linkend="d6e5"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710066005 |Child-Pugh score class B (finding)]]</link>elm:element[elm:Code]: <link linkend="d6e6"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710067001 |Child-Pugh score class C (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e5">Encephalopathy</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e7"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[81308009 |Disorder of brain (disorder)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e6">HepatocellularCarcinoma</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e8"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[109841003 |Liver cell carcinoma (disorder)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e7">HepatitisCInfectionStatusOfTheAllograft</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e9"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[365865003 |Finding of Hepatitis C status (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e8">LiverTransplantDate</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e10"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e11"> [18027006 |Transplantation of liver (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e9">CompleteBloodCountInLast12Months</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e12"> [26604007 |Complete blood count (procedure)|]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-12 Month))</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e10">WhiteBloodCountInLast12Month</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e14"> [767002 |White blood cell count (procedure)|]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-12 Month))</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e11">MeanCellVolumeInLast12Month</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e15"> [104133003 |Erythrocyte mean corpuscular volume determination (procedure)|]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-12 Month))</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e12">HemoglobinInLast12Month</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e16"> [441689006 |Measurement of total hemoglobin concentration (procedure)|]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-12 Month))</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e14">PlateletCountInLast12Month</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e17"> [61928009 |Platelet count (procedure)|]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-12 Month))</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e15">LiveUltrasoundInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e18"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105377009 |Ultrasonography of liver (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e16">LiverCTInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e19"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[241549007 |Computed tomography of liver (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e17">LiverMRIInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e20"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[241622002 |Magnetic resonance imaging of liver (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e18">FirbroscanInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e21"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[441491005 |Ultrasound elastography of liver (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <para>No trigger definitions are present.</para>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>Demographics</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Race/Ethnicity</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">
+                     <link linkend="d6e2">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[302147001 |Demographic history detail (observable entity)]- -&gt;(363714003 |Interprets (attribute))-&gt;[103579009 |Race (observable entity)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">
+                     <link linkend="d6e36">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[302147001 |Demographic history detail (observable entity)]- -&gt;(363714003 |Interprets (attribute))-&gt;[364699009 |Ethnic group (observable entity)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Code (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e2">PatientRace</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Body Mass Index (BMI) (kg/m^2)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">
+                     <link linkend="d6e3">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[301331008 |Finding of body mass index (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Real (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e3">BMI</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Date BMI determined</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Timestamp (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Property BMI</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Problem List</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">  <link linkend="card_single">❖ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Current Problem</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Code (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Medication List</title>
+      <para>Include both prescription and OTC medications</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">  <link linkend="card_single">❖ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Current Medication</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Code (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>History of Present Illness</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="7">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <colspec align="left" colname="c6" colnum="6"/>
+            <colspec align="left" colname="c7" colnum="7"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Select all medications that patient has previously received as treatment for Hepatitis C</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c1">response range:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">NS3 Protease Inhibitor plus Peginterferon Alfa/Ribavirin(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e24">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[714427003 |Hepatitis C virus NS3/4A protease inhibitor (product)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">NS5A Protease Inhibitor(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[714013001 |Hepatitis C virus protein NS5A inhibitor (product)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Peginterferon Alfa/Ribavirin(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e27">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[410841001 |Ribavirin+interferon alpha-2b (product)|]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Simeprevir/Sofosbuvir(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e28">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[714169007 |Simeprevir + sofosbuvir (product)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Sofobuvir(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e29">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[713645002 |Sofosbuvir (product)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Sofobuvir/Ribavirin with or without Peginterferon Alfa/Ribavirin(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e29">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[713645002 |Sofosbuvir (product)]</link>
+                     <link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e31">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[35063004 |Product containing ribavirin (medicinal product)]</link>)</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c7"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1">Other medications or treatments?</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Other medications or treatments?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c7">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("OtherMedicationsOrTreatments")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c7" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Property</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c7">Details</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c7">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Liver Complications or Extrahepatic Manifestations.</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="6">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <colspec align="left" colname="c6" colnum="6"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Ascites due to liver failure</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Cirrhosis</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c6">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("Cirrhosis")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Property</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Child Turcotte Pugh Class for this patient</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">EntityName (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">A(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e4">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710065009 |Child-Pugh score class A (finding)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">B(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e5">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710066005 |Child-Pugh score class B (finding)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">C(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e6">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710067001 |Child-Pugh score class C (finding)]</link>)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c6">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e4">ChildTurcottePughClass</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Encephalopathy</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">
+                     <link linkend="d6e7">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[81308009 |Disorder of brain (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c6">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e5">Encephalopathy</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Hepatocellular Carcinoma</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">
+                     <link linkend="d6e8">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[109841003 |Liver cell carcinoma (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c6">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e6">HepatocellularCarcinoma</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="11">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Liver Transplant</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">
+                     <link linkend="d6e11">18027006 |Transplantation of liver (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c6">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("LiverTransplant")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c6" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Property</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c6">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c6">Timestamp (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c3" nameend="c6">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e8">LiverTransplantDate</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c6">Hepatitis C Infection status of the allograft</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c6">String (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c3" nameend="c6">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e7">HepatitisCInfectionStatusOfTheAllograft</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="5">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Other Liver Complications or Extrahepatic Manifestations</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c6" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Property</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c6">Details</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c6">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Prior Lab Results</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="7">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <colspec align="left" colname="c6" colnum="6"/>
+            <colspec align="left" colname="c7" colnum="7"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="10">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( CompleteBloodCountInLast12Months ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="gs_any">☐ </link>Please prompt provider to order a new Complete Blood Count if this there are no results or the date is not within 1 year.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Order Complete Blood Count?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e12">26604007 |Complete blood count (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c7">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("OrderCompleteBloodCount")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c7" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Property</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c7">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c7">statementType: Precoordinated Expression <link linkend="d6e22">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c7">topic: Precoordinated Expression <link linkend="d6e12">26604007 |Complete blood count (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="20">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (CompleteBloodCountInLast12Months)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Complete Blood Count</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c7">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Property CompleteBloodCountInLast12Months</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">White Blood Cell Count (K/microliter)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e14">767002 |White blood cell count (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c7">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e10">WhiteBloodCountInLast12Month</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Mean Cell Volume (femtoliters)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c7">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e11">MeanCellVolumeInLast12Month</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Hemoglobin (g/dL)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e16">441689006 |Measurement of total hemoglobin concentration (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c7">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e12">HemoglobinInLast12Month</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Platelet Count (K/microliter)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e17">61928009 |Platelet count (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c7">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e14">PlateletCountInLast12Month</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Hepatic Function Panel</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="d6e46">26958001 |Hepatic function panel (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="17">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Albumin (d/dL)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e47">26758005 |Albumin measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Total Bilirubin (mg/dL)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e48">359986008 |Bilirubin, total measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Alanine Aminotransferase (U/L)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e50">34608000 |Alanine aminotransferase measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Aspartate Aminotransferase (U/L)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e51">45896001 |Aspartate aminotransferase measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Alkaline Phosphatase (U/L)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e52">88810008 |Alkaline phosphatase measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">International Normalized Ratio</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="d6e53">440685005 |Calculation of international normalized ratio (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Results</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Estimated Glomerular Filtration Rate</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="d6e54">395680003 |Estimated creatine clearance (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Results (mL/min per 1.73 m^2)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Creatinine</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="d6e55">70901006 |Creatinine measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Results (mg/dL)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">HCV Viral Load [Quantitative HCV Ribonucleic Acid (RNA)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="d6e56">395197008 |Hepatitis C viral load (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Results (IU/L)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">HCV Genotype</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="d6e57">397662006 |Hepatitis C virus genotype determination (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Results</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">SimpleCode (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">HIV Test</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="d6e58">165813002 |Human immunodeficiency virus test (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Results</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">Hepatitis B Screen</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c7">
+                     <link linkend="d6e59">314099008 |Hepatitis B screening test (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c7"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="11">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c7" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">HBsAg</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e60">47758006 |Hepatitis B surface antigen measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Anti-HBs</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e62">65911000 |Hepatitis B surface antibody measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">Anti-HBc</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c7">
+                     <link linkend="d6e63">59582004 |Hepatitis B core antibody measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c7">Boolean (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Imaging Results</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Liver Ultrasound Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">String (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e15">LiveUltrasoundInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Liver Computed Tomography (CT) Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">String (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e16">LiverCTInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Liver Magnetic Resonance Imaging (MRI) Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">String (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e17">LiverMRIInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Fibroscan Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">String (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e18">FirbroscanInterpretation</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e15">SNOMED CT</entry>
+                  <entry>104133003 |Erythrocyte mean corpuscular volume determination (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e65">SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>Adult patients</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e58">SNOMED CT</entry>
+                  <entry>165813002 |Human immunodeficiency virus test (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e11">SNOMED CT</entry>
+                  <entry>18027006 |Transplantation of liver (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e12">SNOMED CT</entry>
+                  <entry>26604007 |Complete blood count (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e47">SNOMED CT</entry>
+                  <entry>26758005 |Albumin measurement (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e46">SNOMED CT</entry>
+                  <entry>26958001 |Hepatic function panel (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e59">SNOMED CT</entry>
+                  <entry>314099008 |Hepatitis B screening test (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e64">SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>Outpatient</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e50">SNOMED CT</entry>
+                  <entry>34608000 |Alanine aminotransferase measurement (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e48">SNOMED CT</entry>
+                  <entry>359986008 |Bilirubin, total measurement (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e22">SNOMED CT</entry>
+                  <entry>385644000 |Requested (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e56">SNOMED CT</entry>
+                  <entry>395197008 |Hepatitis C viral load (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e54">SNOMED CT</entry>
+                  <entry>395680003 |Estimated creatine clearance (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e57">SNOMED CT</entry>
+                  <entry>397662006 |Hepatitis C virus genotype determination (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e10">SNOMED CT</entry>
+                  <entry>398166005 |Performed (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e53">SNOMED CT</entry>
+                  <entry>440685005 |Calculation of international normalized ratio (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e16">SNOMED CT</entry>
+                  <entry>441689006 |Measurement of total hemoglobin concentration (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e51">SNOMED CT</entry>
+                  <entry>45896001 |Aspartate aminotransferase measurement (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e60">SNOMED CT</entry>
+                  <entry>47758006 |Hepatitis B surface antigen measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e63">SNOMED CT</entry>
+                  <entry>59582004 |Hepatitis B core antibody measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e17">SNOMED CT</entry>
+                  <entry>61928009 |Platelet count (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e62">SNOMED CT</entry>
+                  <entry>65911000 |Hepatitis B surface antibody measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e55">SNOMED CT</entry>
+                  <entry>70901006 |Creatinine measurement (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e14">SNOMED CT</entry>
+                  <entry>767002 |White blood cell count (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e52">SNOMED CT</entry>
+                  <entry>88810008 |Alkaline phosphatase measurement (procedure)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e18">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105377009 |Ultrasonography of liver (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e19">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[241549007 |Computed tomography of liver (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e20">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[241622002 |Magnetic resonance imaging of liver (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e21">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[441491005 |Ultrasound elastography of liver (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e31">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[35063004 |Product containing ribavirin (medicinal product)]</entry>
+                  <entry>Sofobuvir/Ribavirin with or without Peginterferon Alfa/Ribavirin</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e27">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[410841001 |Ribavirin+interferon alpha-2b (product)|]</entry>
+                  <entry>Peginterferon Alfa/Ribavirin</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e29">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[713645002 |Sofosbuvir (product)]</entry>
+                  <entry>Sofobuvir</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e26">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[714013001 |Hepatitis C virus protein NS5A inhibitor (product)]</entry>
+                  <entry>NS5A Protease Inhibitor</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e28">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[714169007 |Simeprevir + sofosbuvir (product)]</entry>
+                  <entry>Simeprevir/Sofosbuvir</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e24">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[714427003 |Hepatitis C virus NS3/4A protease inhibitor (product)]</entry>
+                  <entry>NS3 Protease Inhibitor plus Peginterferon Alfa/Ribavirin</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e8">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[109841003 |Liver cell carcinoma (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[301331008 |Finding of body mass index (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e9">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[365865003 |Finding of Hepatitis C status (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e4">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710065009 |Child-Pugh score class A (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710066005 |Child-Pugh score class B (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e6">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[710067001 |Child-Pugh score class C (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e7">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[81308009 |Disorder of brain (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[302147001 |Demographic history detail (observable entity)]- -&gt;(363714003 |Interprets (attribute))-&gt;[103579009 |Race (observable entity)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e36">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[302147001 |Demographic history detail (observable entity)]- -&gt;(363714003 |Interprets (attribute))-&gt;[364699009 |Ethnic group (observable entity)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Gastroenterology: Hepatitis C Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Gastroenterology: Hepatitis C Documentation Template Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Gastroenterology: Hepatitis C Documentation Template KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="AASLD 2017">
+               <abbrev>AASLD 2017</abbrev>
+               <citetitle>American Association for the Study of Liver Diseases and the Infectious Diseases Society of America. HCV Guidance: Recommendations for Testing, Managing, and Treating Hepatitis C. Updated September 2017</citetitle> (<link xlink:href="https://doi.org/10.1002/hep.27950">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Fox 2017">
+               <abbrev>Fox 2017</abbrev>
+               <citetitle>Fox RK. Summary of FDA Approval for Mavyret. Published August 2017</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/provider/hcv/mavyret-approval.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017">
+               <abbrev>VA 2017</abbrev>
+               <citetitle>U.S. Department of Veterans Affairs. After the Initial Diagnosis of HCV: Overview of Next Steps. Published May 2017</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/products/next-steps.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2018">
+               <abbrev>VA 2018</abbrev>
+               <citetitle>Chronic Hepatitis C Virus (HCV) Infection: Treatment Considerations [Internet].; 2017 [updated Oct 18; cited Apr 22, 2018]. Available from: https://www.hepatitis.va.gov/provider/guidelines/hcv-treatment-considerations.asp.</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/provider/guidelines/hcv-treatment-considerations.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017a">
+               <abbrev>NLM 2017a</abbrev>
+               <citetitle>U.S. National Library of Medicine. HARVONI- ledipasvir and sofosbuvir tablet, film coated [Gilead Sciences, Inc]. Updated April 2017</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f4ec77e4-bae8-4db0-b3d5-bde09c5fa075">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017b">
+               <abbrev>NLM 2017b</abbrev>
+               <citetitle>U.S. National Library of Medicine. MAVYRET- glecaprevir and pibrentasvir tablet, film coated [AbbVie Inc.]. Updated August 2017</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7bf99777-0401-9095-8645-16c6e907fcc0">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2016">
+               <abbrev>NLM 2016</abbrev>
+               <citetitle>U.S. National Library of Medicine. REBETOL- ribavirin capsule; REBETOL- ribavirin liquid [Merck Sharp &amp; Dohme Corp.]. Updated January 2016</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04d2b6f4-bd9b-4871-9527-92c81aa2d4d0">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017c">
+               <abbrev>NLM 2017c</abbrev>
+               <citetitle>U.S. National Library of Medicine. ZEPATIER- elbasvir and grazoprevir tablet, film coated [Merck Sharp &amp; Dohme Corp.]. Updated February 2017</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=164dc02a-9180-426a-b8b5-04ab39d2bbd4">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2016a">
+               <abbrev>VA 2016a</abbrev>
+               <citetitle>VA Pharmacy Benefits Management Services, Medical Advisory Panel, VISN Pharmacist Executives and Office of Public Health. Elbasvir/Grazoprevir (ZepatierTM) Criteria for Use. Published February 2016</citetitle> (<link xlink:href="https://www.pbm.va.gov/apps/VANationalFormulary/">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2016b">
+               <abbrev>VA 2016b</abbrev>
+               <citetitle>VA Pharmacy Benefits Management Services, Medical Advisory Panel, VISN Pharmacist Executives and Office of Public Health. Ledipasvir/Sofosbuvir (Harvoni®) and Sofosbuvir/Velpatasvir (Epclusa®) Criteria for Use. Published September 2016</citetitle> (<link xlink:href="https://www.pbm.va.gov/apps/VANationalFormulary/">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>

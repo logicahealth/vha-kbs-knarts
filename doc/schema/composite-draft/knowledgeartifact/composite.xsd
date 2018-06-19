@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by Emory Fry (Naval Health Research Center) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:hl7-org:knowledgeartifact:r2" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:elm="urn:hl7-org:elm:r1" targetNamespace="urn:hl7-org:knowledgeartifact:r2" elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>This file defines the root knowledge document type and
+			element.</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="urn:hl7-org:elm:r1" schemaLocation="../elm/clinicalexpression.xsd"/>
+	<xs:include schemaLocation="metadata.xsd"/>
+	<xs:include schemaLocation="action.xsd"/>
+	<xs:include schemaLocation="condition.xsd"/>
+	<xs:include schemaLocation="trigger.xsd"/>
+	<xs:include schemaLocation="document.xsd"/>
+	<xs:include schemaLocation="enum/metadatabindingtype.xsd"/>
+	<xs:complexType name="Composite">
+		<xs:sequence>
+			<xs:element name="metadata" type="Metadata">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="controlBlock" type="ControlBlock" minOccurs="0">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="manifest" type="Manifest" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Provides a summary location and content metadata and a single access point for stream</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="containedArtifacts" type="ContainedArtifactList" minOccurs="1">
+				<xs:annotation/>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControlBlock">
+		<xs:annotation>
+			<xs:documentation>Control information on how the artifact is expected to operate,This includes </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="context" type="Context" minOccurs="0">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="eventActivation" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Defines the events that activate a this artifact and map to the behavior.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="propagation" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Defines how events and data are progated.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mapping" type="MappingType" minOccurs="0">
+				<xs:annotation/>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="controllingArtifact" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The artifact which acts as the principle orchestrator/controller of the composite.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="bindingName" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="initialArtifact" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>The artifacts which which are initially activated </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="bindingName" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MappingType">
+		<xs:sequence>
+			<xs:element name="componentEventMappings" type="ComponentEventBinding"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Manifest">
+		<xs:annotation>
+			<xs:documentation>The role of the manifest is to provide single access point that describes what is in the composite without incuring the cost of loading the full artifacts. The manifest should include basic type infomation, a summary of the artifacts contained within, and envelop security information like hashs and signatures.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="artifactSummary" type="ArtifactSummary"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContainedArtifactList">
+		<xs:sequence>
+			<xs:element name="artifact" type="ContainedArtifact" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContainedArtifact">
+		<xs:annotation>
+			<xs:documentation>Set of contained artifacts</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="artifactType">
+				<xs:complexType>
+					<xs:attribute name="value" type="CompondArtifactType" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="name">
+				<xs:annotation/>
+				<xs:complexType>
+					<xs:attribute name="value" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="bindingName" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name by which this artifact is known to this composite. The name is scoped to just this composite and would form that basis for intra-artifact references </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="value" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="inclusionCriteria" minOccurs="0">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="context" type="Context" minOccurs="0">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="eventBinding" type="EventBinding" minOccurs="0">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="metadataBinding" type="MetadataBinding" minOccurs="0">
+				<xs:annotation/>
+			</xs:element>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="wrappedContent" type="WrappedContent">
+					<xs:annotation/>
+				</xs:element>
+				<xs:element name="reference" type="Reference">
+					<xs:annotation/>
+				</xs:element>
+				<xs:element name="knowledgeDocument" type="KnowledgeDocument">
+					<xs:annotation/>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="mustUnderstand" minOccurs="0"/>
+			<xs:element name="onCompletion" type="Completion" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Context">
+		<xs:annotation>
+			<xs:documentation>Defintion of a context, usage is contextual and include intended use, user, authoring environment, and environement etc.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="ArtifactSummary">
+		<xs:annotation>
+			<xs:documentation>Summary of a single contained or referenced artifact</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name"/>
+			<xs:element name="identifier"/>
+			<xs:element name="artifactType"/>
+			<xs:element name="size"/>
+			<xs:element name="hash"/>
+			<xs:element name="signatures"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReferenceList">
+		<xs:sequence>
+			<xs:element name="reference" type="Reference" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Reference">
+		<xs:annotation>
+			<xs:documentation>Reference to an Artifact outside of the packing of the composite.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="url" minOccurs="1" maxOccurs="1">
+				<xs:annotation/>
+				<xs:complexType>
+					<xs:attribute name="address" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="contentHash" minOccurs="0" maxOccurs="1">
+				<xs:annotation/>
+				<xs:complexType>
+					<xs:attribute name="hashvalue" type="xs:string" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="uuid" minOccurs="0" maxOccurs="1">
+				<xs:annotation/>
+				<xs:complexType>
+					<xs:attribute name="value" type="xs:string" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="identifiers" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Each version of a CDS knowledge artifact may have more than one identifier associated with it.  Note that each identifier must be globally unique in the universe of CDS knowledge artifacts in which a particular artifact resides.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="identifier" type="VersionedIdentifier" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The identifier of a CDS knowledge artifact consists of two parts:  (1) a base identifier which uniquely identifies the CDS Knowledge Artifact from all other CDS Knowledge Artifacts, regardless of version.  (2) a version identifier which uniquely identifies the CDS Knowledge Artifact from all other CDS Knowledge Artifact versions.
+									
+									Essentially, the full identifier is for a particular "artifact version".</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WrappedContent">
+		<xs:annotation>
+			<xs:documentation>Base64 Encoded artifact that can be from an open set of types</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="contentSignifier" type="ContentSignifier">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="content">
+				<xs:annotation/>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContentSignifier">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="type" type="Coding">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="form" type="Coding">
+				<xs:annotation/>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Coding">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="system">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="version">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="display">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="code">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="userSeclected"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MetadataBinding">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="bindings" type="SpecificMetadataBinding" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EventBinding">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="bindingModel">
+				<xs:annotation/>
+				<xs:complexType>
+					<xs:attribute name="model" type="xs:string" use="optional" default="Encapsulated"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="incomingBindings" type="SpecificEventBinding" minOccurs="0"/>
+			<xs:element name="outgoingBindings" type="SpecificEventBinding" minOccurs="0"/>
+			<xs:element name="triggers" type="TriggerBindings" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentEventMappings">
+		<xs:sequence>
+			<xs:element name="componentId" minOccurs="1"/>
+			<xs:element name="binding" minOccurs="1">
+				<xs:complexType>
+					<xs:attribute name="model" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComponentEventBinding">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="bindingModel">
+				<xs:annotation>
+					<xs:documentation>Shared, Encapsulated</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="model" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="componentId" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="incomingBindings" type="SpecificEventBinding" minOccurs="0"/>
+			<xs:element name="outgoingBindings" type="SpecificEventBinding" minOccurs="0"/>
+			<xs:element name="triggers" type="TriggerBindings" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpecificEventBinding">
+		<xs:annotation/>
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ContainerEvent" type="xs:string">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="eventBindingType">
+				<xs:annotation>
+					<xs:documentation>Recast, Passthru, Suppress, Filter, Restates
+				</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="binding" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ComponentEvent" type="xs:string">
+				<xs:annotation/>
+			</xs:element>
+			<xs:element name="mutability"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpecificMetadataBinding">
+		<xs:annotation/>
+		<xs:sequence>
+			<xs:element name="bindingType">
+				<xs:annotation/>
+				<xs:complexType>
+					<xs:attribute name="binding" type="MetadataBindingType" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="metadata" type="Metadata">
+				<xs:annotation/>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TriggerBindings">
+		<xs:annotation/>
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="trigger" type="Trigger">
+				<xs:annotation/>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Completion">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="eventDefinition" type="NamedEventDef"/>
+				<xs:element name="actionGroup" type="ActionGroup"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NamedEventDef">
+		<xs:sequence>
+			<xs:element name="eventName">
+				<xs:complexType>
+					<xs:attribute name="name" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

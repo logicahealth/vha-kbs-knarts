@@ -1,0 +1,1888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Primary Care: Tobacco Assessment and Cessation Counseling Documentation
+         Template</title>
+      <subtitle>Documentation Template: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007,
+         CLIN0009AA</releaseinfo>
+      <pubdate>05/31/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in" align="center" fileref="images/va-logo.png" format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>May 31, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 31, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>April 4, 2018</entry>
+                  <entry>Pre-published</entry>
+               </row>
+               <row>
+                  <entry>April 4, 2018</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>Angela Denietolis, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Primary Care Physician James A. Haley Veterans Hospital Tampa VAMC Tampa, FL 33612</entry>
+               </row>
+               <row>
+                  <entry>Pat Dumas, RN</entry>
+                  <entry>Author</entry>
+                  <entry>Clinical Program Director VACO 810 Vermont Ave NW Washington, DL 20420</entry>
+               </row>
+               <row>
+                  <entry>Manish Merchant, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Health Informatician Albany VAMC 113 Holland Ave. Albany, NY 12208</entry>
+               </row>
+               <row>
+                  <entry>Timothy Dresselhaus, MD</entry>
+                  <entry>Author</entry>
+                  <entry>San Diego VAMC - MEDS 3350 La Jolla Village Drive San Diego, CA 92161</entry>
+               </row>
+               <row>
+                  <entry>Kim Hamlett-Berry, PhD</entry>
+                  <entry>Author</entry>
+                  <entry>National Program Director Tobacco and Health: Policy and Programs Mental Health Services 1575 I St., NW Washington, DC 20420</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>34d04a65-4d4b-5dd8-8632-beef77c9067b</entry>
+                  <entry>O28</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Any clinical provider who is able to screen for current tobacco use, including physicians, APNs, PAs, RNs, LPNs, pharmacists, psychologists, social workers, dentists, and substance abuse counselors.</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Population 18 years old or older</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Any clinical setting to include outpatient</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Any clinical setting to include inpatient</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowSetting</entry>
+                  <entry>All</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e2">PatientAge</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e3"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105726004 |Age AND/OR growth finding (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e3">PatientGenderMale</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e5"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[248153007 |Male (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e4">Abdominal Ultrasound</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e7"> [45036003 |Ultrasonography of abdomen (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e5">Abdominal CT with or without contrast</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e8"> [32962002 |Computerized tomography of abdomen with contrast (procedure)|]</link>elm:element[elm:Code]: <link linkend="d6e9"> [396101000119105 |Computed tomography of abdomen without contrast (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e6">Abdominal Angiogram</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e11"> [241234000 |Abdominal angiography (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e7">Abdominal MRI</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e14"> [241621009 |Magnetic resonance imaging of abdomen (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e8">Chest CT</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e16"> [169069000 |Computed tomography of chest (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e9">Low-dose chest CT</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e17"> [713548006 |Low dose computed tomography of thorax (procedure)|]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(1 year))</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e10">chest X-Ray</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e19"> [399208008 |Plain chest X-ray (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e11">Chest MRI</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e21"> [6007000 |Magnetic resonance imaging of chest (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <para>No trigger definitions are present.</para>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>Tobacco Use History</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Current Tobacco Use</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Do you currently use tobacco? Tobacco includes cigarettes, pipe, cigars, and smokeless tobacco, such as dip, chew, snuff, and snus. Excludes e-cigarettes, ENDS (electronic nicotine delivery systems), and vaping devices</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Every day(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e22">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[7f7759c7-ce4b-409e-8bca-0ee54aca7a87 |Uses tobacco daily (finding)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Some days(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e23">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[66664506-de13-4733-8ea6-fb03ff364ccc |Uses tobacco on some days (finding)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Not at all(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e24">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[451371000124109 |Tobacco non-user (finding)]</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="38">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Length of Tobacco Use History</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">How long have you been using tobacco? Tobacco includes cigarettes, pipe, cigars, and smokeless tobacco, such as dip, chew, snuff, and snus. Excludes e-cigarettes, ENDS (electronic nicotine delivery systems), and vaping devices</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Less than 1 year(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater than 1 year to less than 5 years(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater than or equal to 5 years to less than equal to 15 years(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater than 15 years to less than 30 years(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater than or equal to 30 years(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">If you are a smoker, for how many years have you smoked?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Real (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("lengthOfSmoking")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">If you are a smoker, how many cigarettes have you smoked per day on average?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="req_must">✦ </link>Former Smoking History</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Have you ever used tobacco? Tobacco includes cigarettes, pipe, cigars, and smokeless tobacco, such as dip, chew, snuff, and snus. Excludes e-cigarettes, ENDS (electronic nicotine delivery systems), and vaping devices</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Never user(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e31">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[702979003 |Never used tobacco (finding)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Former user(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e32">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[702975009 |Ex-tobacco user (finding)]</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="req_must">✦ </link>Quit Using Tobacco History</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">How long ago did you quit using tobacco?</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2"/>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Previous guidance recommended providing relapse prevention counseling for those who had quit for less than 1 year. This is not required by HEDIS, and there is limited evidence basis for relapse counseling. The provider should use clinical judgment regarding how to advise or support a patient who has only recently quit.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater than 1 year(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater than or equal to 1 year to less than 5 years(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater than or equal to 5 years to less than or equal to 15 years(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater 15 years to less than 30 years(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Greater than or equal to 30 years(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e26">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">If you were a smoker, for how many years did you smoke?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">If you were a smoker, how many cigarettes did you smoke a day on average?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="req_must">✦ </link>Calculate Pack Years</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Number of pack years smoking? Calculate pack years using data entered in this template and display in this section. Currently there is no ability to automatically calculate pack years in CPRS. Number of pack years = (number of cigarettes smoked per day/20) × number of years smoked.  Note that 20 cigarettes = 1 pack).]</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">If you were a smoker, how many cigarettes did you smoke a day on average?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Real (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Advising Users to Quit</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="5">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">Advise tobacco user to quit.</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">Quitting smoking or tobacco use is one of the most important things patients can do to protect their health, and the VA has resources to support them. Advise the patient to set a quit date; get support from family and friends; encourage the patient to review past quit attempts (What helped? What didn’t?); anticipate triggers and/or challenges and plan how to cope with them; advise the patient to remove all tobacco products from home, car, work when ready to quit; include message that the combination of behavioral counseling plus the use of the United States Food and Drug Administration (FDA)-approved medications is the most effective way to quit tobacco use. (Items above are consistent with Joint Commission Practical Counseling language)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>Fiore 2008</citation>) </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Treating Tobacco Use and Dependence: 2008 Update<link xlink:href="https://bphc.hrsa.gov/buckets/treatingtobacco.pdf"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Current Smoker Advised to Quit</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d6e39">225323000 |Smoking cessation education (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Resources for VHA clinical providers</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Tobacco and Health<link xlink:href="https://www.publichealth.va.gov/smoking/"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2016</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">For Health Professionals: Tobacco Cessation<link xlink:href="https://www.publichealth.va.gov/smoking/professionals"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2018a</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Tobacco use treatment PULSE<link xlink:href="https://www.vapulse.net/community/care-topics/tobacco-use-treatment"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2018b</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Tobacco and health SharePoint site<link xlink:href="https://vaww.portal.va.gov/sites/tobacco/default.aspx"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VHA 2014</citation>) </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Primary Care and Tobacco Cessation Handbook: A Resource for Providers. U.S. Department of Veterans Affairs<link xlink:href="https://www.publichealth.va.gov/smoking/professionals/tools-publications.asp"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Acknowledge: Resources for clinical providers</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Cessation Strategies-Counseling</title>
+      <para>Advise Patient: Counseling increases your chances of successfully quitting tobacco use.  VA can help you to develop a plan and provide support, guidance, and tools to help you quit, such as a tobacco cessation clinic or group, a national quit line (1-855-QUIT-VET), and information about community options.</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="5">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c5">Would you like more information about how to use any of these treatment options today?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c5">Boolean (Single) </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c5"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">Patient educational materials available in English and Spanish</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Tobacco and Health<link xlink:href="https://www.publichealth.va.gov/smoking/"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2016</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">For Health Professionals: Tobacco Cessation<link xlink:href="https://www.publichealth.va.gov/smoking/professionals"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Provided resources to patient</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Boolean (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Cessation Strategies-Medications</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Advise patient: The use of FDA-approved medications, such as nicotine replacement therapy including the patch, gum, and lozenge, and other medications such as varenicline, play an important role in the initial weeks and months after you quit tobacco. Medications help you cope with cravings and withdrawal symptoms and increase your chances of successfully quitting tobacco use.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Would you like more information on how to use these medications and a prescription for tobacco cessation medications today?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d6e40">[409073007 |Education (procedure)] (363702006 |Has focus (attribute))-&gt;[713700008 |Smoking cessation drug therapy (regime/therapy)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Advise patient: The VA can provide you with FDA-approved tobacco cessation medications to help you quit.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Would you like to receive medication to assist with quitting tobacco use?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d6e41">713700008 |Smoking cessation drug therapy (regime/therapy)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Screening for Smoking Related Medical Conditions</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="16">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (PatientGenderMale)</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Greater (elm:Property("lengthOfSmoking" from: elm:ParameterRef(Responses)) elm:Literal())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:In (PatientAge elm:Interval())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">The United States Preventive Services Task Force (USPSTF) recommends one-time screening for abdominal aortic aneurysm (AAA) by ultrasonography in men aged 65-75 who have ever smoked. The USPSTF makes no recommendation for or against screening for AAA in asymptomatic men aged 65-75 who have never smoked.)</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">Technical Note: Display the following section only for male patients age &gt;= 65 and less than 75 years who have ever smoked.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Abdominal Ultrasound Result</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e4">Abdominal Ultrasound</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Abdominal CT with or without contrast</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e5">Abdominal CT with or without contrast</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Abdominal Angiogram</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e6">Abdominal Angiogram</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Abdominal MRI</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e7">Abdominal MRI</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_atmostone">✪ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Prescribing provider Abdominal Aortic Aneurysm Screening Order Set</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_atmostone">✪ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Message to prescribing provider suggesting abdominal aortic aneurysm screening</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="12">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:LessOrEqual (elm:Property("lengthOfSmoking" from: elm:ParameterRef(Responses)) elm:Literal())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( Low-dose chest CT ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:In (PatientAge elm:Interval())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">Technical Note: Display this section only for patients who meet all of the following criteria:                                         current smokers or former smokers who quit less than or equal to 15 years ago, age &gt;= 55 and less than or equal to 80 years,                                        with a 30-pack year history or more, and who have not had Low-dose chest CT less than or equal to 1 year ago.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Chest CT</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e8">Chest CT</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">chest X-Ray</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e10">chest X-Ray</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Chest MRI</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e11">Chest MRI</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_atmostone">✪ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Prescribing Provider: Low-dose chest CT for lung cancer screening order</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_atmostone">✪ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Message to prescribing provider suggesting abdominal aortic aneurysm screening-The USPSTF recommends annual screening for lung cancer with low-dose computed tomography (LDCT) in adults aged 55 to 80 years who have a 30 pack-year smoking history and currently smoke or have quit within the past 15 years, and who do not have a history of lung cancer.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e42">SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>Population 18 years old or older</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e16">SNOMED CT</entry>
+                  <entry>169069000 |Computed tomography of chest (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e39">SNOMED CT</entry>
+                  <entry>225323000 |Smoking cessation education (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e11">SNOMED CT</entry>
+                  <entry>241234000 |Abdominal angiography (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e14">SNOMED CT</entry>
+                  <entry>241621009 |Magnetic resonance imaging of abdomen (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e8">SNOMED CT</entry>
+                  <entry>32962002 |Computerized tomography of abdomen with contrast (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e43">SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>Any clinical setting to include outpatient</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e9">SNOMED CT</entry>
+                  <entry>396101000119105 |Computed tomography of abdomen without contrast (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>398166005 |Performed (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>8</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e19">SNOMED CT</entry>
+                  <entry>399208008 |Plain chest X-ray (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e7">SNOMED CT</entry>
+                  <entry>45036003 |Ultrasonography of abdomen (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e21">SNOMED CT</entry>
+                  <entry>6007000 |Magnetic resonance imaging of chest (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e17">SNOMED CT</entry>
+                  <entry>713548006 |Low dose computed tomography of thorax (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e41">SNOMED CT</entry>
+                  <entry>713700008 |Smoking cessation drug therapy (regime/therapy)|</entry>
+                  <entry>Precoordianted Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e26">SNOMED CT</entry>
+                  <entry>TSR-NoCode<footnote>
+                        <para>TSR-NoCode is a placeholder indicating a code was requested, but was not provided.</para>
+                     </footnote>
+                  </entry>
+                  <entry>Less than 1 year</entry>
+                  <entry>10</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e40">SNOMED CT</entry>
+                  <entry>[409073007 |Education (procedure)] (363702006 |Has focus (attribute))-&gt;[713700008 |Smoking cessation drug therapy (regime/therapy)]</entry>
+                  <entry>Precoordianted Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105726004 |Age AND/OR growth finding (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[248153007 |Male (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e24">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[451371000124109 |Tobacco non-user (finding)]</entry>
+                  <entry>Not at all</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e23">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[66664506-de13-4733-8ea6-fb03ff364ccc |Uses tobacco on some days (finding)]</entry>
+                  <entry>Some days</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e32">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[702975009 |Ex-tobacco user (finding)]</entry>
+                  <entry>Former user</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e31">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[702979003 |Never used tobacco (finding)]</entry>
+                  <entry>Never user</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e22">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[7f7759c7-ce4b-409e-8bca-0ee54aca7a87 |Uses tobacco daily (finding)]</entry>
+                  <entry>Every day</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Primary Care: Tobacco Assessment and Cessation Counseling Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Primary Care: Tobacco Assessment and Cessation Counseling Documentation Template Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Primary Care: Tobacco Assessment and Cessation Counseling Documentation Template KNART Validation Report</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="VA 2017">
+               <abbrev>VA 2017</abbrev>
+               <citetitle>Tobacco and health [Internet].; 2017; cited May 22, 2018]. Available from: https://www.publichealth.va.gov/smoking/</citetitle> (<link xlink:href="https://www.publichealth.va.gov/smoking/">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2016">
+               <abbrev>VA 2016</abbrev>
+               <citetitle>For Health Professionals: Tobacco Cessation [Internet].; 2016; cited May 22, 2018]. Available from: https://www.publichealth.va.gov/smoking/professionals</citetitle> (<link xlink:href="https://www.publichealth.va.gov/smoking/professionals">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2018a">
+               <abbrev>VA 2018a</abbrev>
+               <citetitle>Tobacco use treatment PULSE [Internet].; cited May 22, 2018]. Available from: https://www.vapulse.net/community/care-topics/tobacco-use-treatment</citetitle> (<link xlink:href="https://www.vapulse.net/community/care-topics/tobacco-use-treatment">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2018b">
+               <abbrev>VA 2018b</abbrev>
+               <citetitle>Tobacco and health SharePoint site [Internet]. Available from: https://vaww.portal.va.gov/sites/tobacco/default.aspx.</citetitle> (<link xlink:href="https://vaww.portal.va.gov/sites/tobacco/default.aspx">link</link>) </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="Fiore 2017">
+               <abbrev>Fiore 2017</abbrev>
+               <citetitle>Fiore MC, Jaén TB, et al. Treating Tobacco Use and Dependence: 2008 Update. Agency for Healthcare Research and Quality. Accessed October 20, 2017</citetitle> (<link xlink:href="http://www.ahrq.gov/professionals/clinicians-providers/guidelines-recommendations/tobacco/index.html">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Goff 2014">
+               <abbrev>Goff 2014</abbrev>
+               <citetitle>American College of Cardiology/American Heart Association Task Force on Practice Guidelines. 2013 ACC/AHA guideline on the assessment of cardiovascular risk: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines. Goff 2014</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="VHA 2017a">
+               <abbrev>VHA 2017a</abbrev>
+               <citetitle>National Center for Health Promotion and Disease Prevention website.Get Recommended Screening Tests and Immunizations for Men. Accessed August 29, 2017</citetitle> (<link xlink:href="https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Men.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VHA 2017b">
+               <abbrev>VHA 2017b</abbrev>
+               <citetitle>National Center for Health Promotion and Disease Prevention website. Get Recommended Screening Tests and Immunizations for Women. Accessed August 29, 2017</citetitle> (<link xlink:href="https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Women.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VHA 2017c">
+               <abbrev>VHA 2017c</abbrev>
+               <citetitle>National Center for Health Promotion and Disease Prevention website. Screening for Abdominal Aortic Aneurysm. Published July 15, 2017</citetitle> (<link xlink:href="https://www.prevention.va.gov/Preventing_Diseases/Screening_for_Abdominal_Aortic_Aneurysm.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VHA 2017d">
+               <abbrev>VHA 2017d</abbrev>
+               <citetitle>National Center for Health Promotion and Disease Prevention website. Screening for Lung Cancer. Accessed August 29, 2017</citetitle> (<link xlink:href="https://www.prevention.va.gov/preventing_diseases/screening_for_lung_cancer.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="HEDIS 2018">
+               <abbrev>HEDIS 2018</abbrev>
+               <citetitle>Healthcare Effectiveness Data and Information Set (HEDIS) 2018 Volume 2: Technical Specification for Health Plans. http://store.ncqa.org/index.php/performance-measurement.html</citetitle> (<link xlink:href="http://store.ncqa.org/index.php/performance-measurement.html">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="USHHS 2014">
+               <abbrev>USHHS 2014</abbrev>
+               <citetitle>The Health Consequences of Smoking: 50 Years of Progress. A Report of the Surgeon General. Atlanta, GA: U.S. Department of Health and Human Services, Centers for Disease Control and Prevention, National Center for Chronic Disease Prevention and Health Promotion, Office on Smoking and Health, 2014. Printed with corrections, January 2014</citetitle> (<link xlink:href="https://www.surgeongeneral.gov/library/reports/50-years-of-progress/exec-summary.pdf">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VHA 2014">
+               <abbrev>VHA 2014</abbrev>
+               <citetitle>Primary Care and Tobacco Cessation Handbook: A Resource for Providers. U.S. Department of Veterans Affairs Public Health website. Published May 2014</citetitle> (<link xlink:href="https://www.publichealth.va.gov/smoking/professionals/tools-publications.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="USPSTF 2011">
+               <abbrev>USPSTF 2011</abbrev>
+               <citetitle>Bladder Cancer in Adults: Screening. U.S. Preventive Services Task Force website. Published August 2011</citetitle> (<link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/bladder-cancer-in-adults-screening">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="USPSTF 2016">
+               <abbrev>USPSTF 2016</abbrev>
+               <citetitle>U.S. Preventive Services Task Force website. Chronic Obstructive Pulmonary Disease: Screening. U.S. Preventive Services Task Force. Published April 2016</citetitle> (<link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/chronic-obstructive-pulmonary-disease-screening">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="USPSTF 2013a">
+               <abbrev>USPSTF 2013a</abbrev>
+               <citetitle>Final Recommendation Statement: Peripheral Arterial Disease (PAD) and CVD in Adults: Risk Assessment with Ankle Brachial Index U.S. Preventive Services Task Force website. Published September 2013</citetitle> (<link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/RecommendationStatementFinal/peripheral-arterial-disease-pad-and-cvd-in-adults-risk-assessment-with-ankle-brachial-index">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="USPSTF 2103b">
+               <abbrev>USPSTF 2103b</abbrev>
+               <citetitle>Oral Cancer: Screening. U.S. Preventive Services Task Force website. Published November 2013</citetitle> (<link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/oral-cancer-screening1">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="USPSTF 2015">
+               <abbrev>USPSTF 2015</abbrev>
+               <citetitle>Tobacco Smoking Cessation in Adults, Including Pregnant Women: Behavioral and Pharmacotherapy Interventions. U.S. Preventive Services Task Force website. Published September 2015</citetitle> (<link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/tobacco-use-in-adults-and-pregnant-women-counseling-and-interventions">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Wilson, 1998">
+               <abbrev>Wilson, 1998</abbrev>
+               <citetitle>Wilson PW, D'Agostino RB, Levy D, Belanger AM, Silbershatz H, Kannel WB. A Prediction of coronary heart disease using risk factor categories. Circulation. 1998;97(18):1837-1847</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="Fiore 2008">
+               <abbrev>Fiore 2008</abbrev>
+               <citetitle>Fiore MC, Jaen CR, Baker TB, Bailey WC, Benowitz NL, Curry SJ, et al. Treating Tobacco Use and Dependence: 2008 Update. U.S. Department of Health and Human Services; 2008.</citetitle> (<link xlink:href="https://bphc.hrsa.gov/buckets/treatingtobacco.pdf">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>

@@ -1,0 +1,1194 @@
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:anf="http://hl7.org/anf"
+    xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:vmr="urn:hl7-org:vmr:r2"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier extension="60a234fb-b0c0-5834-bb76-38ff0c1b46c8" identifierName="O5" root="urn:va.gov:kbs:knart:artifact:r1" version="1.0"/>
+            <identifier extension="CLIN0007BA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"
+                root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+            <identifier extension="KP-96" identifierName="Jira KP-96" root="urn:cognitivemedicine.com:lab:jira"/>
+        </identifiers>
+        <artifactType value="Rule"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+        <title value="Women's Health: Cervical Cancer Screening Rule"/>
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr1" identifierName="CCWP" root="LocalDocBook" version=""/>
+                        </identifiers>
+                        <title value="Women's Health: Cervical Cancer Screening Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr2" identifierName="CSD" root="LocalDocBook"/>
+                            <identifier extension="CLIN0007BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"
+                                root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+                        </identifiers>
+                        <title value="Women's Health: Cervical Cancer Screening Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr3" identifierName="KVRpt" root="LocalDocBook"/>
+                            <identifier extension="CLIN0007BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"
+                                root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+                        </identifiers>
+                        <title value="Women's Health: Cervical Cancer Screening KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1097/AOG.0000000000001708" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e1" identifierName="ACOG 2016" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Practice Bulletin No. 168: Cervical Cancer Screening and Prevention"/>
+                        <location value="https://doi.org/10.1097/AOG.0000000000001708"/>
+                        <citation
+                            value="Practice Bulletin No. 168: Cervical Cancer Screening and Prevention.  Committee on Practice Bulletins—Gynecology. Obstet Gynecol. 2016;128(4):e111-e130"
+                        />
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="CervicalCProvider.pdf" identifierName="URL" root="https://www.prevention.va.gov/docs/"/>
+                            <identifier extension="e2" identifierName="VHA 2013" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Provider Fact Sheet: Cervical Cancer Screening. National Center for Health Promotion and Disease Prevention"/>
+                        <location value="https://www.prevention.va.gov/docs/CervicalCProvider.pdf"/>
+                        <citation
+                            value="Provider Fact Sheet: Cervical Cancer Screening. National Center for Health Promotion and Disease Prevention. June 2013"
+                        />
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="guidelines.pdf" identifierName="URL" root="https://www.cdc.gov/cancer/cervical/pdf/"/>
+                            <identifier extension="e3" identifierName="CDC 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Cervical Cancer Screening Guidelines for Average Risk Women"/>
+                        <location value="https://www.cdc.gov/cancer/cervical/pdf/guidelines.pdf"/>
+                        <citation value="Cervical Cancer Screening Guidelines for Average Risk Women. July 2017"/>
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1097/AOG.0b013e3182680517" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e4" identifierName="ACOG 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Committee Opinion No. 534: Well-Woman Visit. Obstetrics and Gynecology"/>
+                        <location value="https://doi.org/10.1097/AOG.0b013e3182680517"/>
+                        <citation
+                            value="Committee Opinion No. 534: Well-Woman Visit. Obstetrics and Gynecology.  Committee on Gynecologic Practice. August 2012;120(2 Pt 1):421"
+                        />
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="Screening_for_Cervical_Cancer.asp" identifierName="URL"
+                                root="https://www.prevention.va.gov/Preventing_Diseases/"/>
+                            <identifier extension="e5" identifierName="VHA 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Department of Veteran Affairs National Center for Health Promotion and Disease Prevention, Cervical Cancer Screening"/>
+                        <location value="https://www.prevention.va.gov/Preventing_Diseases/Screening_for_Cervical_Cancer.asp"/>
+                        <citation
+                            value="Department of Veteran Affairs National Center for Health Promotion and Disease Prevention, Cervical Cancer Screening. July 2017"
+                        />
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1097/AOG.0b013e3182883a34" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e6" identifierName="Massad 2013" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="2012 Updated Consensus Guidelines For The Management Of Abnormal Cervical Cancer Screening Tests And Cancer Precursors"/>
+                        <location value="https://doi.org/10.1097/AOG.0b013e3182883a34"/>
+                        <citation
+                            value="Massad LS, Einstein MH, Huh WK, Katki HA, Kinney WK, Schiffman M, Solomon D, Wentzensen N, Lawson HW. 2012 Updated Consensus Guidelines For The Management Of Abnormal Cervical Cancer Screening Tests And Cancer Precursors. stetrics and Gynecology. April 1, 2013;121(4):829-46"
+                        />
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="cervical-cancer-screening" identifierName="URL"
+                                root="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/"/>
+                            <identifier extension="e7" identifierName="USPTF 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="United States Preventive Task Force (USPTF) Cervical Cancer Screening Guidelines"/>
+                        <location value="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/cervical-cancer-screening"/>
+                        <citation value="United States Preventive Task Force (USPTF) Cervical Cancer Screening Guidelines. July 2017"/>
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+        <applicability>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Female outpatients 21 years of age or older"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientGender"/>
+                <description value="Female outpatients 21 years of age or older"/>
+                <value code="248152002 |Female (finding)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Primary Care"/>
+                <value code="5351000124100 |Primary care clinic (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Obstetrics/Gynecology"/>
+                <value code="702892004 |Obstetrics and gynecology clinic (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Women's Health"/>
+                <value code="2651000175101 |Women's health service (qualifier value)|" codeSystem="SNOMED CT"/>
+            </coverage>
+        </applicability>
+        <status value="Active"/>
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180503"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180503"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20180327"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="C."/>
+                        <dt:part type="GIV" value="Yvette"/>
+                        <dt:part type="FAM" value="Williams-Harris"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician, 1670 Clairmont Rd Atlanta, GA 30033"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Megan"/>
+                        <dt:part type="FAM" value="Gerber"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician, VA Boston Healthcare System, 150 South Huntington Ave Boston, MA 02130"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Caitlin"/>
+                        <dt:part type="GIV" value="M."/>
+                        <dt:part type="FAM" value="Cusack"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Contractor- Physician Informaticist, Office of Women's Health Services, 8455 Colesville Rd, 12th Floor Silver Spring, MD 20910"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights value="Copyright"/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value=""/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value=""/>
+                            <dt:part type="STA" value=""/>
+                            <dt:part type="ZIP" value=""/>
+                        </address>
+                    </addresses>
+                    <name value=""/>
+                </rightsHolder>
+                <permissions>
+                    <permissions value=""/>
+                </permissions>
+            </rightsDeclaration>
+        </usageTerms>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <def name="Exclusions">
+            <elm:annotation>
+                <a:s>Diagnoses and procedures that exclude eligibility for this rule.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="116140006 |Total hysterectomy (procedure)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[37687000 |Congenital absence of cervix (disorder)]"
+                        display="Poscoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[86406008 |Human immunodeficiency virus infection (disorder)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[38013005 |Immunosuppression (finding)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[698582007 |Fetal or neonatal effect of diethylstilbestrol transmitted via placenta (disorder)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[252991009 |Cervical intraepithelial neoplasia grade III with severe dysplasia (disorder)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[277132007 |Therapeutic procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[285838002 |Cervical intraepithelial neoplasia grade 2 (disorder)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code"
+                        code="[277132007 |Therapeutic procedure (procedure)]
+                        ->(363702006 |Has focus (attribute))->[92564006 |Carcinoma in situ of uterine cervix (disorder)]"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+            </elm:expression>
+        </def>
+        <def name="LifeExpectancyLT10Y">
+            <elm:annotation>
+                <a:s>Life expectancy less than 10 years.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="lifeExpectancyQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="729d3508-98ba-4a1d-8334-9e024a0a760e |Prognosis of life expectancy (finding)"
+                                display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="timing.lowerBound">
+                            <elm:value xsi:type="elm:Literal" valueType="Integer" value="0"/>
+                        </elm:element>
+                        <elm:element name="timing.upperBound">
+                            <elm:value xsi:type="elm:Literal" valueType="Integer" value="10"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="CervicalCytologyExams">
+            <elm:annotation>
+                <a:s>All cervical cytology screens done within past 10 years.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="timing.lowerBound">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="416107004 |Cervical cytology test (procedure)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-10"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAccessed">
+            <def name="duringOutpatientVisit">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation>Opening of the patient record during an outpatient visit to primary care provider, designated women’s health
+                        provider or gynecologist</elm:annotation>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="PeriodicEventTrigger">
+            <def name="preventiveScreeningTrigger">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation>System run of preventive screening rules, run monthly.</elm:annotation>
+                </elm:expression>
+            </def>
+        </trigger>
+    </externalData>
+    <expressions>
+        <def name="PatientAge">
+            <elm:expression xsi:type="elm:SingletonFrom">
+                <elm:operand xsi:type="elm:Query">
+                    <elm:source alias="ageQuery">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code"
+                                    code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                    ->(363702006 |Has focus (attribute))->[105726004 |Age AND/OR growth finding (finding)]"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                    <elm:return>
+                        <elm:expression xsi:type="elm:Property" path="result.lowerBound"/>
+                    </elm:return>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="PatientFemale">
+            <elm:expression xsi:type="elm:SingletonFrom">
+                <elm:operand xsi:type="elm:Query">
+                    <elm:source alias="ageQuery">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code"
+                                    code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                    ->(363702006 |Has focus (attribute))->[248152002 |Female (finding)]"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="CotestsWithInPast5Years">
+            <elm:annotation>
+                <a:s>All co-tests done within past 5 years.</a:s>
+            </elm:annotation>
+            <!-- A cotest is defined as a cervical cytology exam (CervicalCytologyExams) and a cervical HPV screen (CervicalHPVScreens) done on the same day. -->
+            <!-- Realistically, we probably want to relax this constraint a bit.  Perhaps done within 30 days of one another. -->
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="timing.lowerBound">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="416107004 |Cervical cytology test (procedure)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code" code="700152009 |Human papillomavirus screening (procedure)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-5"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"> </elm:high>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="CotestsWithInPast10Years">
+            <elm:annotation>
+                <a:s>co-test results within the previous 10 years.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="timing.lowerBound">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="416107004 |Cervical cytology test (procedure)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Code" code="416032004 |Cervicovaginal cytology normal or benign (finding)|"
+                        display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-10"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="CervicalCytologyExam">
+            <elm:annotation>
+                <a:s>cervical cytology exam within the past 3 years or patient coming due in the next 60 days</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="result.lowerBound">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="416107004 |Cervical cytology test (procedure)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="year" value="-3"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="day" value="60"/>
+                    </elm:high>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="NoCervicalCytologyExamWithinPast3Years">
+            <elm:annotation>
+                <a:s>No cervical cytology exam within the past 3 years</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:Exists">
+                    <elm:operand xsi:type="elm:ExpressionRef" name="CervicalCytologyExam"/>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="NoCotestsWithInPast5Years">
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:Exists">
+                    <elm:operand xsi:type="elm:ExpressionRef" name="CotestsWithInPast5Years"/>
+                </elm:operand>
+            </elm:expression>
+        </def>
+
+        <def name="NegativeCytologyResults">
+            <elm:annotation>
+                <a:s>Negative cytology results.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="dueDateQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="416032004 |Cervicovaginal cytology normal or benign (finding)|"
+                                display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+                <elm:where xsi:type="elm:In">
+                    <elm:operand xsi:type="elm:Property" path="timing.lowerBound"/>
+                    <elm:operand xsi:type="elm:Interval">
+                        <elm:low xsi:type="elm:Add">
+                            <elm:operand xsi:type="elm:Today"/>
+                            <elm:operand xsi:type="elm:Quantity" unit="year" value="-10"/>
+                        </elm:low>
+                        <elm:high xsi:type="elm:Today"/>
+                    </elm:operand>
+                </elm:where>
+                <elm:sort>
+                    <elm:by xsi:type="elm:ByColumn" path="timing.lowerBound" direction="desc"/>
+                </elm:sort>
+            </elm:expression>
+        </def>
+        <def name="NegativeCotestResults">
+            <elm:annotation>
+                <a:s>Negative co-test results.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="dueDateQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+                <elm:where xsi:type="elm:In">
+                    <elm:operand xsi:type="elm:Property" path="timing.lowerBound"/>
+                    <elm:operand xsi:type="elm:Interval">
+                        <elm:low xsi:type="elm:Add">
+                            <elm:operand xsi:type="elm:Today"/>
+                            <elm:operand xsi:type="elm:Quantity" unit="year" value="-10"/>
+                        </elm:low>
+                        <elm:high xsi:type="elm:Today"/>
+                    </elm:operand>
+                </elm:where>
+                <elm:sort>
+                    <elm:by xsi:type="elm:ByColumn" path="timing.lowerBound" direction="desc"/>
+                </elm:sort>
+            </elm:expression>
+        </def>
+        <def name="MostRecentNegativeCytologyResult">
+            <elm:expression xsi:type="elm:Indexer">
+                <elm:operand xsi:type="elm:ExpressionRef" name="NegativeCytologyResults"/>
+                <elm:operand xsi:type="elm:Literal" value="1" valueType="Integer"/>
+            </elm:expression>
+        </def>
+        <def name="MostRecentNegativeCotestResult">
+            <elm:expression xsi:type="elm:Indexer">
+                <elm:operand xsi:type="elm:ExpressionRef" name="NegativeCotestResults"/>
+                <elm:operand xsi:type="elm:Literal" value="1" valueType="Integer"/>
+            </elm:expression>
+        </def>
+        <def name="historyOfAdequateScreening">
+            <elm:annotation>
+                <a:s>Adequate negative prior screening results are defined as 3 consecutive negative cytology results or 2 consecutive negative
+                    co-test results within the previous 10 years, with the most recent test performed within the past 5 years.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:AnyTrue">
+                <elm:source xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Indexer">
+                        <elm:operand xsi:type="elm:ExpressionRef" name="NegativeCytologyResults"/>
+                        <elm:operand xsi:type="elm:Literal" value="3" valueType="Integer"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Indexer">
+                        <elm:operand xsi:type="elm:ExpressionRef" name="NegativeCotestResults"/>
+                        <elm:operand xsi:type="elm:Literal" value="2" valueType="Integer"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Indexer">
+                        <elm:operand xsi:type="elm:ExpressionRef" name="CotestsWithInPast10Years"/>
+                        <elm:operand xsi:type="elm:Literal" value="2" valueType="Integer"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:In">
+                        <elm:operand xsi:type="elm:Property" path="timing.lowerBound">
+                            <elm:source xsi:type="elm:ExpressionRef" name="MostRecentNegativeCytologyResult"/>
+                        </elm:operand>
+                        <elm:operand xsi:type="elm:Interval">
+                            <elm:low xsi:type="elm:Add">
+                                <elm:operand xsi:type="elm:Today"/>
+                                <elm:operand xsi:type="elm:Quantity" value="5" unit="year"/>
+                            </elm:low>
+                            <elm:high xsi:type="elm:Today"/>
+                        </elm:operand>
+                    </elm:element>
+                    <elm:element xsi:type="elm:In">
+                        <elm:operand xsi:type="elm:Property" path="timing.lowerBound">
+                            <elm:source xsi:type="elm:ExpressionRef" name="MostRecentNegativeCotestResult"/>
+                        </elm:operand>
+                        <elm:operand xsi:type="elm:Interval">
+                            <elm:low xsi:type="elm:Add">
+                                <elm:operand xsi:type="elm:Today"/>
+                                <elm:operand xsi:type="elm:Quantity" value="5" unit="year"/>
+                            </elm:low>
+                            <elm:high xsi:type="elm:Today"/>
+                        </elm:operand>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Exists">
+                        <elm:operand xsi:type="elm:ExpressionRef" name="CervicalCytologyExams"/>
+                    </elm:element>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="cytologyScreeningDueMinus30To60Days">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="DiagnosedWithOsteporosisQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="416107004 |Cervical cytology test (procedure)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="timing.lowerBound">
+                            <elm:value xsi:type="elm:Interval">
+                                <elm:low xsi:type="elm:Add">
+                                    <elm:operand xsi:type="elm:Today"/>
+                                    <elm:operand xsi:type="elm:Quantity" value="-30" unit="day"/>
+                                </elm:low>
+                                <elm:high xsi:type="elm:Add">
+                                    <elm:operand xsi:type="elm:Today"/>
+                                    <elm:operand xsi:type="elm:Quantity" value="60" unit="day"/>
+                                </elm:high>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="hpvScreeningDueMinus30To60Days">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="DiagnosedWithOsteporosisQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="700152009 |Human papillomavirus screening (procedure)|"
+                                display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="timing.lowerBound">
+                            <elm:value xsi:type="elm:Interval">
+                                <elm:low xsi:type="elm:Add">
+                                    <elm:operand xsi:type="elm:Today"/>
+                                    <elm:operand xsi:type="elm:Quantity" value="-30" unit="day"/>
+                                </elm:low>
+                                <elm:high xsi:type="elm:Add">
+                                    <elm:operand xsi:type="elm:Today"/>
+                                    <elm:operand xsi:type="elm:Quantity" value="60" unit="day"/>
+                                </elm:high>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="CytologyScreeningDueIn60Days">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="DiagnosedWithOsteporosisQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="416107004 |Cervical cytology test (procedure)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="timing.lowerBound">
+                            <elm:value xsi:type="elm:Interval">
+                                <elm:low xsi:type="elm:Today"/>
+                                <elm:high xsi:type="elm:Add">
+                                    <elm:operand xsi:type="elm:Today"/>
+                                    <elm:operand xsi:type="elm:Quantity" value="60" unit="day"/>
+                                </elm:high>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+    </expressions>
+    <conditions>
+        <condition>
+            <logic xsi:type="elm:Exists">
+                <elm:annotation>
+                    <a:s>Gender is female</a:s>
+                </elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="PatientFemale"/>
+
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:IsTrue">
+                <elm:annotation>
+                    <a:s>Age &gt;=21</a:s>
+                </elm:annotation>
+                <elm:operand xsi:type="elm:GreaterOrEqual">
+                    <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                    <elm:operand xsi:type="elm:Quantity" value="21" unit="year"/>
+                </elm:operand>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:IsFalse">
+                <elm:annotation>
+                    <a:s>No explicit exclusions.</a:s>
+                </elm:annotation>
+                <elm:operand xsi:type="elm:Exists">
+                    <elm:operand xsi:type="elm:ExpressionRef" name="Exclusions"/>
+                </elm:operand>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:IsFalse">
+                <elm:annotation>
+                    <a:s>Life expectancy is not less than 10 years</a:s>
+                </elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="LifeExpectancyLT10Y"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:IsTrue">
+                <elm:annotation>
+                    <a:s>History of adequate screening among women over 65 Technical Note: Adequate negative prior screening results are defined as 3
+                        consecutive negative cytology results or 2 consecutive negative co-test results within the previous 10 years, with the most
+                        recent test performed within the past 5 years.]</a:s>
+                </elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="historyOfAdequateScreening"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+    </conditions>
+    <actionGroup>
+        <subElements>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Cervical Cancer Screening for 21-29 Years of Age: In Person -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:And">
+                            <elm:annotation>
+                                <a:s>Age &gt;=21 and &lt;30</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:GreaterOrEqual">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                                <elm:operand xsi:type="elm:Quantity" value="21" unit="year"/>
+                            </elm:operand>
+                            <elm:operand xsi:type="elm:Less">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                                <elm:operand xsi:type="elm:Quantity" value="30" unit="year"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <!-- No cervical cytology exam within the past 3 years or patient coming due in the next 60 days -->
+                        <logic xsi:type="elm:Or">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="NoCervicalCytologyExamWithinPast3Years"/>
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="CytologyScreeningDueIn60Days"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Cervical Cancer Screening for 21-29 Years of Age: In Person"/>
+                <description value="Cervical Cancer Screening for 21-29 Years of Age: In Person"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Cervical Cancer Screening Documentation Template"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Cervical Cancer Screening Order Set"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Cervical Cancer Screening for 30-65 Years of Age: In Person -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:And">
+                            <elm:annotation>
+                                <a:s>Age &gt;=30 and &lt;=65</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:GreaterOrEqual">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                                <elm:operand xsi:type="elm:Quantity" value="30" unit="year"/>
+                            </elm:operand>
+                            <elm:operand xsi:type="elm:LessOrEqual">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                                <elm:operand xsi:type="elm:Quantity" value="65" unit="year"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <!-- Has had none of the following screens:
+                             Cervical Cytology within the past 3 years, or
+                             Cotesting (cervical cytology and cervical Human Papillomavirus (HPV) screen) within the past 5 years
+                         -->
+                        <logic xsi:type="elm:Or">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="NoCervicalCytologyExamWithinPast3Years"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="NoCotestsWithInPast5Years"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Cervical Cancer Screening for 30-65 Years of Age: In Person"/>
+                <description value="Cervical Cancer Screening for 30-65 Years of Age: In Person"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Cervical Cancer Screening Documentation Template"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Cervical Cancer Screening Order Set"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Cervical Cancer Screening for over 65 Years of Age: In Person -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:GreaterOrEqual">
+                            <elm:annotation>
+                                <a:s>Age &gt;65</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                            <elm:operand xsi:type="elm:Quantity" value="65" unit="year"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:IsFalse">
+                            <elm:annotation>
+                                <a:s>No history of adequate prior negative screening.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="historyOfAdequateScreening"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Cervical Cancer Screening for over 65 Years of Age: In Person"/>
+                <description value="Cervical Cancer Screening for over 65 Years of Age: In Person"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Cervical Cancer Screening Documentation Template"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Cervical Cancer Screening Order Set"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Cervical Cancer Screening for 21-29 Years of Age: Reporting -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="preventiveScreeningTrigger"/>
+                        </logic>
+                        <conditionRole/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:And">
+                            <elm:annotation>
+                                <a:s>Age &gt;=21 and &lt;30</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:GreaterOrEqual">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                                <elm:operand xsi:type="elm:Quantity" value="21" unit="year"/>
+                            </elm:operand>
+                            <elm:operand xsi:type="elm:Less">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                                <elm:operand xsi:type="elm:Quantity" value="30" unit="year"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <!-- Has had none of the following screens:
+                             Cervical Cytology within the past 3 years, or
+                             Cotesting (cervical cytology and cervical Human Papillomavirus (HPV) screen) within the past 5 years -->
+                        <logic xsi:type="elm:Or">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="NoCervicalCytologyExamWithinPast3Years"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="NoCotestsWithInPast5Years"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <!-- Due Date is within 30 days in the past and 60 days in the future of the system run date -->
+                        <logic xsi:type="elm:Or">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="cytologyScreeningDueMinus30To60Days"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="hpvScreeningDueMinus30To60Days"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Cervical Cancer Screening for 21-29 Years of Age: Reporting"/>
+                <description value="Cervical Cancer Screening for 21-29 Years of Age: Reporting"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Send patient cervical cancer screening due notification"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Cervical Cancer Screening for 30-65 Years of Age: Reporting -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="preventiveScreeningTrigger"/>
+                        </logic>
+                        <conditionRole/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:And">
+                            <elm:annotation>
+                                <a:s>Age &gt;=30 and &lt;65</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:GreaterOrEqual">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                                <elm:operand xsi:type="elm:Quantity" value="30" unit="year"/>
+                            </elm:operand>
+                            <elm:operand xsi:type="elm:Less">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                                <elm:operand xsi:type="elm:Quantity" value="65" unit="year"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <!--Has had no cervical cytology exam within the past 3 years  -->
+                        <logic xsi:type="elm:ExpressionRef" name="NoCervicalCytologyExamWithinPast3Years"/>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <!-- Due Date is within 30 days in the past and 60 days in the future of the system run date -->
+                        <logic xsi:type="elm:Or">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="cytologyScreeningDueMinus30To60Days"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="hpvScreeningDueMinus30To60Days"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Cervical Cancer Screening for 30-65 Years of Age: Reporting"/>
+                <description value="Cervical Cancer Screening for 30-65 Years of Age: Reporting"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Send patient cervical cancer screening &quot;due&quot; notification"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!--  Cervical Cancer Screening for 30 to 65 Years of Age: Reporting -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="preventiveScreeningTrigger"/>
+                        </logic>
+                        <conditionRole/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:GreaterOrEqual">
+                            <elm:annotation>
+                                <a:s>Age &gt;65</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                            <elm:operand xsi:type="elm:Quantity" value="65" unit="year"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:IsFalse">
+                            <elm:annotation>
+                                <a:s>No history of adequate prior negative screening.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="historyOfAdequateScreening"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <!-- Has had none of the following screens:
+                             Cervical Cytology within the past 3 years, or
+                             Cotesting (cervical cytology and cervical Human Papillomavirus (HPV) screen) within the past 5 years -->
+                        <logic xsi:type="elm:Or">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="NoCervicalCytologyExamWithinPast3Years"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="NoCotestsWithInPast5Years"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <!-- Due Date is within 30 days in the past and 60 days in the future of the system run date -->
+                        <logic xsi:type="elm:Or">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="cytologyScreeningDueMinus30To60Days"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="hpvScreeningDueMinus30To60Days"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Cervical Cancer Screening for over 65 Years of Age: Reporting"/>
+                <description value="Cervical Cancer Screening for over 65 Years of Age: Reporting"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Send patient cervical cancer screening due notification"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>

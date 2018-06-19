@@ -1,0 +1,2955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Women's Health: Reproductive Health Order Set</title>
+      <subtitle>Order Set: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007,
+         CLIN0008BA</releaseinfo>
+      <pubdate>05/23/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in" align="center" fileref="images/va-logo.png" format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>May 23, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 23, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>March 21, 2018</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>C. Yvette Williams-Harris, MD MPH</entry>
+                  <entry>Author</entry>
+                  <entry>Physician, 1670 Clairmont Rd Atlanta, GA 30033</entry>
+               </row>
+               <row>
+                  <entry>Megan Geber, MD MPH</entry>
+                  <entry>Author</entry>
+                  <entry>Physician, VA Boston HealthCare System, 150 South Huntington Ave Boston, MA 02130</entry>
+               </row>
+               <row>
+                  <entry>Caitlin M. Cusack, MD MPH</entry>
+                  <entry>Author</entry>
+                  <entry>Contractor - Physician Informaticist, Office of Women's Health Services, 8455 Colesville Rd, 12th Floor Silver Spring, MD 20910</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>adf20fe0-7b1c-555b-958c-1fdc00de60bf</entry>
+                  <entry>O17</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>&gt;=13 and &lt;52 years of age.</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientGender</entry>
+                  <entry>Female</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>248152002 |Female (finding)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Outpatient</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Primary Care</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Designated women's health providers</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Gynecologist</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e4">Disqualifications</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e2"> [236886002 |Hysterectomy (procedure)|]</link>elm:element[elm:Code]: <link linkend="d6e3"> [76876009 |Bilateral oophorectomy (procedure)|]</link>elm:element[elm:Code]: <link linkend="d6e4"> [77543007 |Ligation of fallopian tube (procedure)|]</link>elm:element[elm:Code]: <link linkend="d6e5"> [|Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[76498008 |Postmenopausal state (finding)]]</link>elm:element[elm:Code]: <link linkend="d6e6"> [|Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-d5d1c4f4-5d27-4e48-94b9-866c5c08f163 |Failure to conceive (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <para>No trigger definitions are present.</para>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <table frame="all">
+         <title xml:id="d4e2">PatientAge</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e7"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e8"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105726004 |Age AND/OR growth finding (finding)]]</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e3">PatientGender</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e9"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[248152002 |Female (finding)]]</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Laboratory Tests</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="10">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">If the patient is not known to be pregnant, then consider ordering a pregnancy test.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>quantitative human chorionic gonadotropin-serum now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">167037004 |Measurement of serum total human chorionic gonadotropin (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>qualitative human chorionic gonadotropin-urine now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e16">104405006 |Urine pregnancy test, by visual color comparison methods</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="16">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Sexually Transmitted Infection Screening</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>chlamydia nucleic acid amplification testing vaginal swab now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e19">[398452009 |Chlamydia trachomatis nucleic acid assay (procedure)]-&gt;(116686009 |Has specimen (attribute))-&gt;[ 258520000 |Vaginal swab (specimen)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>gonorrhea nucleic acid amplification testing vaginal swab now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e22">[398381009 |Neisseria gonorrhoeae nucleic acid assay (procedure)] -&gt;(116686009 |Has specimen (attribute))-&gt;[ 258520000 |Vaginal swab (specimen)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>HIV screen-serum now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e26">171121004 |Human immunodeficiency virus screening (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Serum </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Point of Care Tests</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">
+                     <link linkend="gs_any">☐ </link>Point of Care Urine pregnancy test now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c1" nameend="c3">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">topic: Precoordinated Expression <link linkend="d6e29">104405006 |Urine pregnancy test, by visual color comparison methods (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c3">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Medications and Devices</title>
+      <para>If the patient is not known to be pregnant, then consider ordering a pregnancy test prior to ordering any contraceptive options</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="22">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">Please consider the following contraception options</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">Contraceptive Implants</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Etonogestrel 68 mg implant subdermal for implantation now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e32">[71861002 |Implantation (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[257867005 |Insertion - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;389221 Etonogestrel 68 MG Drug Implant]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Levonorgestrel 20 micrograms/day device intrauterine for insertion now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e35">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[257867005 |Insertion - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;804156 Levonorgestrel 0.000833 MG/HR Intrauterine System]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Levonorgestrel 14 micrograms/day device intrauterine for insertion now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e39">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[257867005 |Insertion - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1366334 Levonorgestrel 0.000583 MG/HR Intrauterine System]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Copper T 380A device intrauterine for insertion now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e42">65200003 |Insertion of intrauterine contraceptive device (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Copper T 380A device </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="15">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Contraceptive Injection</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Medroxyprogesterone acetate injectable suspension 150 mg/mL. Give 1 mL solution intramuscular every 3 months, first dose now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e45">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129326001 |Injection - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1000153 1 ML medroxyPROGESTERone acetate 150 MG/ML Prefilled Syringe] -&gt;(410675002 |Route of administration (attribute))-&gt;[78421000 |Intramuscular route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e46">258773002 |Milliliter (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  3 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  3 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e48">258706009 |month (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="190">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Combined Oral Contraceptives</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Desogestrel 0.15 mg/ethinyl estradiol 0.03 mg. Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e51">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;240707 Desogestrel 0.15 MG / Ethinyl Estradiol 0.03 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  True </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e46">258773002 |Milliliter (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Ethinyl estradiol 0.02 mg/levonorgestrel 0.1 mg. Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e56">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;242297 Ethinyl Estradiol 0.02 MG / Levonorgestrel 0.1 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Ethinyl estradiol 0.03 mg/levonorgestrel 0.15 mg. Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e62">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;238019 Ethinyl Estradiol 0.03 MG / Levonorgestrel 0.15 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Ethinyl estradiol 0.03 mg/levonorgestrel 0.05 mg, ethinyl estradiol 0.04 mg/levonorgestrel 0.075 mg, ethinyl estradiol 0.03 mg/levonorgestrel 0.125 mg (triphasic). Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e67">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;748832 {6 (Ethinyl Estradiol 0.03 MG / Levonorgestrel 0.05 MG Oral Tablet) / 10 (Ethinyl Estradiol 0.03 MG / Levonorgestrel 0.125 MG Oral Tablet) / 5 (Ethinyl Estradiol 0.04 MG / Levonorgestrel 0.075 MG Oral Tablet) / 7 (Inert Ingredients 1 MG Oral Tablet) } Pack] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Ethinyl estradiol 0.035 mg/norethindrone 1 mg. Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Ethinyl estradiol 0.035 mg/norethindrone 0.5 mg, ethinyl estradiol 0.035 mg/norethindrone 0.75 mg, ethinyl estradiol 0.035 mg/norethindrone 1 mg (triphasic). Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e72">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;749852 {7 (Ethinyl Estradiol 0.035 MG / Norethindrone 0.5 MG Oral Tablet) / 7 (Ethinyl Estradiol 0.035 MG / Norethindrone 0.75 MG Oral Tablet) / 7 (Ethinyl Estradiol 0.035 MG / Norethindrone 1 MG Oral Tablet) / 7 (Inert Ingredients 1 MG Oral Tablet) } Pack] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Ethinyl estradiol 0.035 mg/norgestimate 0.25 mg. Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e78">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;240128 Ethinyl Estradiol 0.035 MG / norgestimate 0.25 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Ethinyl estradiol 0.035 mg/norgestimate 0.18 mg, ethinyl estradiol 0.035 mg/norgestimate 0.215 mg, ethinyl estradiol 0.035 mg/norgestimate 0.25 mg (triphasic). Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e83">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;749784 {7 (Ethinyl Estradiol 0.035 MG / norgestimate 0.18 MG Oral Tablet) / 7 (Ethinyl Estradiol 0.035 MG / norgestimate 0.215 MG Oral Tablet) / 7 (Ethinyl Estradiol 0.035 MG / norgestimate 0.25 MG Oral Tablet) / 7 (Inert Ingredients 1 MG Oral Tablet) } Pack] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Mestranol 0.05 mg/norethindrone 1 mg. Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e89">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;198043 Mestranol 0.05 MG / Norethindrone 1 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Ethinyl estradiol 0.03 mg/levonorgestrel 0.15 mg, ethinyl estradiol 0.01 mg. Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e94">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;749761 {7 (Ethinyl Estradiol 0.01 MG Oral Tablet) / 84 (Ethinyl Estradiol 0.03 MG / Levonorgestrel 0.15 MG Oral Tablet) } Pack] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence.  Do not skip pills.  Dispense 3 kits.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="15">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Combined Contraceptive Vaginal Ring</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Ethinyl estradiol 0.015 mg/day/etonogestrel ethinyl 0.120 mg/day. 1 vaginal ring. Insert ring into vagina. Leave in place continuously for 3 weeks. Remove for 1 week. Then immediately replace. Dispense 1 box. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e100">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[257867005 |Insertion - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1367436 21 DAY Ethinyl Estradiol 0.000625 MG/HR / Etonogestrel 0.005 MG/HR Vaginal Ring]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Insert ring into vagina. Leave in place continuously for 3 weeks. Remove for 1 week. Then immediately replace. Dispense 1 box.  3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e101">385292009 |Vaginal dose form (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  48 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e102">258705008 |week (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="21">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Progestin-Only Contraceptive Pill</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Norethindrone 0.35 mg. Take 1 tablet oral daily 1 time. Take pills in sequence. Do not skip pills. Dispense 3 kits. 3 refills</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e104">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;198042 Norethindrone 0.35 MG Oral Tablet]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take pills in sequence. Do not skip pills.  Dispense 3 kits. 3 refills </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  168 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e53">258703001 |day (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="43">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">Emergency Contraceptive</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">"1 refill now" allows the patient to take home medications for future emergency use when indicated.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Levonorgestrel 0.75 mg tablet. Take one tablet oral every 12 hours. Take first tablet as soon as possible after and within 72 hours of unprotected intercourse. Take second tablet 12 hours after first tablet. Dispense 1 box containing 2 tablets. 1 refill now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e110">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;259218 Levonorgestrel 0.75 MG Oral Tablet]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take first tablet as soon as possible after and within 72 hours of unprotected intercourse.  Take second tablet 12 hours after first tablet.  Dispense 1 box containing 2 tablets.  1 refill now </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  84 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e112">258702006 |hour (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  12 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  12 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e112">258702006 |hour (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>Levonorgestrel 1.5 mg tablet oral 1 time. Take as soon as possible after and within 72 hours of unprotected intercourse. Dispense 1 box containing 1 tablet. 1 refill now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e115">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;483325 Levonorgestrel 1.5 MG Oral Tablet]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Take as soon as possible after and within 72 hours of unprotected intercourse.  Dispense 1 box containing 1 tablet. 1 refill now </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">requestedResult.measureSemantic: Precoordinated Expression <link linkend="d6e52">421026006 |Conventional release oral tablet (dose form)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.upperBound:  72 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.resolution:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].periodDuration.measureSemantic: Precoordinated Expression <link linkend="d6e112">258702006 |hour (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.lowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.upperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeLowerBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.includeUpperBound:  TRUE </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">repetition[0].eventFrequency.measureSemantic: Precoordinated Expression <link linkend="d6e118">246432004 |Number of occurrences (qualifier value)|</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Procedures</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="22">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Select procedures from the following list.  All procedures are priority of "now" unless otherwise specified.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Essure permanent contraceptive device. Schedule for insertion now</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e120">[410538000 |Scheduling (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[65200003 |Insertion of intrauterine contraceptive device (procedure)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">unstructured[0]:  Essure permanent contraceptive device </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e14">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Contraceptive implant implantation</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e124">[71861002 |Implantation (procedure)] -&gt;(363699004 |Direct device (attribute))-&gt;[468312002 |Drug-eluting contraceptive implant (physical object)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Intrauterine device insertion</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e42">65200003 |Insertion of intrauterine contraceptive device (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Diaphragm fitting</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e128">275811000 |Diaphragm fit (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Cervical cap fitting</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e11">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e130">225251006 |Fitting of cervical cap (procedure)|</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e16">SNOMED CT</entry>
+                  <entry>104405006 |Urine pregnancy test, by visual color comparison methods</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e29">SNOMED CT</entry>
+                  <entry>104405006 |Urine pregnancy test, by visual color comparison methods (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e12">SNOMED CT</entry>
+                  <entry>167037004 |Measurement of serum total human chorionic gonadotropin (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e26">SNOMED CT</entry>
+                  <entry>171121004 |Human immunodeficiency virus screening (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e130">SNOMED CT</entry>
+                  <entry>225251006 |Fitting of cervical cap (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>236886002 |Hysterectomy (procedure)|</entry>
+                  <entry>Precoordinated Expresssion</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e118">SNOMED CT</entry>
+                  <entry>246432004 |Number of occurrences (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e131">SNOMED CT</entry>
+                  <entry>248152002 |Female (finding)|</entry>
+                  <entry>Female</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e112">SNOMED CT</entry>
+                  <entry>258702006 |hour (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e53">SNOMED CT</entry>
+                  <entry>258703001 |day (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>19</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e102">SNOMED CT</entry>
+                  <entry>258705008 |week (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e48">SNOMED CT</entry>
+                  <entry>258706009 |month (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e46">SNOMED CT</entry>
+                  <entry>258773002 |Milliliter (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e128">SNOMED CT</entry>
+                  <entry>275811000 |Diaphragm fit (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e132">SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>Outpatient</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e101">SNOMED CT</entry>
+                  <entry>385292009 |Vaginal dose form (dose form)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e11">SNOMED CT</entry>
+                  <entry>385644000 |Requested (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>29</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e7">SNOMED CT</entry>
+                  <entry>398166005 |Performed (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e52">SNOMED CT</entry>
+                  <entry>421026006 |Conventional release oral tablet (dose form)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>12</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e134">SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>Primary Care</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e14">SNOMED CT</entry>
+                  <entry>50811001 |Routine (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>12</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e42">SNOMED CT</entry>
+                  <entry>65200003 |Insertion of intrauterine contraceptive device (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>76876009 |Bilateral oophorectomy (procedure)|</entry>
+                  <entry>Precoordinated Expresssion</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e4">SNOMED CT</entry>
+                  <entry>77543007 |Ligation of fallopian tube (procedure)|</entry>
+                  <entry>Precoordinated Expresssion</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e22">SNOMED CT</entry>
+                  <entry>[398381009 |Neisseria gonorrhoeae nucleic acid assay (procedure)] -&gt;(116686009 |Has specimen (attribute))-&gt;[ 258520000 |Vaginal swab (specimen)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e19">SNOMED CT</entry>
+                  <entry>[398452009 |Chlamydia trachomatis nucleic acid assay (procedure)]-&gt;(116686009 |Has specimen (attribute))-&gt;[ 258520000 |Vaginal swab (specimen)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e120">SNOMED CT</entry>
+                  <entry>[410538000 |Scheduling (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[65200003 |Insertion of intrauterine contraceptive device (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e45">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129326001 |Injection - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1000153 1 ML medroxyPROGESTERone acetate 150 MG/ML Prefilled Syringe] -&gt;(410675002 |Route of administration (attribute))-&gt;[78421000 |Intramuscular route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e104">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;198042 Norethindrone 0.35 MG Oral Tablet]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e89">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;198043 Mestranol 0.05 MG / Norethindrone 1 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e62">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;238019 Ethinyl Estradiol 0.03 MG / Levonorgestrel 0.15 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e78">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;240128 Ethinyl Estradiol 0.035 MG / norgestimate 0.25 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e51">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;240707 Desogestrel 0.15 MG / Ethinyl Estradiol 0.03 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e56">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;242297 Ethinyl Estradiol 0.02 MG / Levonorgestrel 0.1 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e110">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;259218 Levonorgestrel 0.75 MG Oral Tablet]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e115">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;483325 Levonorgestrel 1.5 MG Oral Tablet]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e67">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;748832 {6 (Ethinyl Estradiol 0.03 MG / Levonorgestrel 0.05 MG Oral Tablet) / 10 (Ethinyl Estradiol 0.03 MG / Levonorgestrel 0.125 MG Oral Tablet) / 5 (Ethinyl Estradiol 0.04 MG / Levonorgestrel 0.075 MG Oral Tablet) / 7 (Inert Ingredients 1 MG Oral Tablet) } Pack] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e94">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;749761 {7 (Ethinyl Estradiol 0.01 MG Oral Tablet) / 84 (Ethinyl Estradiol 0.03 MG / Levonorgestrel 0.15 MG Oral Tablet) } Pack] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e83">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;749784 {7 (Ethinyl Estradiol 0.035 MG / norgestimate 0.18 MG Oral Tablet) / 7 (Ethinyl Estradiol 0.035 MG / norgestimate 0.215 MG Oral Tablet) / 7 (Ethinyl Estradiol 0.035 MG / norgestimate 0.25 MG Oral Tablet) / 7 (Inert Ingredients 1 MG Oral Tablet) } Pack] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e72">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;749852 {7 (Ethinyl Estradiol 0.035 MG / Norethindrone 0.5 MG Oral Tablet) / 7 (Ethinyl Estradiol 0.035 MG / Norethindrone 0.75 MG Oral Tablet) / 7 (Ethinyl Estradiol 0.035 MG / Norethindrone 1 MG Oral Tablet) / 7 (Inert Ingredients 1 MG Oral Tablet) } Pack] -&gt;(410675002 |Route of administration (attribute))-&gt;[26643006 |Oral route (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e39">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[257867005 |Insertion - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1366334 Levonorgestrel 0.000583 MG/HR Intrauterine System]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e100">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[257867005 |Insertion - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1367436 21 DAY Ethinyl Estradiol 0.000625 MG/HR / Etonogestrel 0.005 MG/HR Vaginal Ring]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e35">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[257867005 |Insertion - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;804156 Levonorgestrel 0.000833 MG/HR Intrauterine System]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e32">SNOMED CT</entry>
+                  <entry>[71861002 |Implantation (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[257867005 |Insertion - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;389221 Etonogestrel 68 MG Drug Implant]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e124">SNOMED CT</entry>
+                  <entry>[71861002 |Implantation (procedure)] -&gt;(363699004 |Direct device (attribute))-&gt;[468312002 |Drug-eluting contraceptive implant (physical object)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e8">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105726004 |Age AND/OR growth finding (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e9">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[248152002 |Female (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>|Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[76498008 |Postmenopausal state (finding)]</entry>
+                  <entry>Postcoordinated Expresssion</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e6">SNOMED CT</entry>
+                  <entry>|Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-d5d1c4f4-5d27-4e48-94b9-866c5c08f163 |Failure to conceive (finding)]</entry>
+                  <entry>Postcoordinated Expresssion</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Women's Health: Reproductive Health Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Women's Health: Reproductive Health Order Set Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Women's Health: Reproductive Health Order Set KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="ACOG 2017">
+               <abbrev>ACOG 2017</abbrev>
+               <citetitle>American College of Obstetricians and Gynecologists Committee on Adolescent Health Care. Committee Opinion No 699: Adolescent Pregnancy, Contraception, and Sexual Activity. Obstet Gynecol. 2017;129(5):e142-e149</citetitle> (<link xlink:href="https://doi.org/10.1097/AOG.0000000000002045">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="ACOG 2014">
+               <abbrev>ACOG 2014</abbrev>
+               <citetitle>American College of Obstetricians and Gynecologists. ACOG Committee Opinion no. 598: Committee on Adolescent Health Care: The initial reproductive health visit. 2014;123(5):1143-1147</citetitle> (<link xlink:href="https://doi.org/10.1097/01.AOG.0000446826.46833.c0">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Bayer 2002">
+               <abbrev>Bayer 2002</abbrev>
+               <citetitle>Bayer Pharma AG. Berlin. Essure: Permanent Birth Control. Germany: 2002.</citetitle> (<link xlink:href="https://doi.org/10.1016/j.nwh.2017.07.006">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2014">
+               <abbrev>NLM 2014</abbrev>
+               <citetitle>U.S. National Library of Medicine. BREVICON- norethindrone and ethinyl estradiol; NORINYL- norethindrone and ethinyl estradiol; NORINYL- norethindrone and mestranol [Actavis Pharma, Inc.]. August 2014</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=aaaf32ea-045b-436c-b125-767f95f4cf0e">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017-1">
+               <abbrev>NLM 2017-1</abbrev>
+               <citetitle>U.S. National Library of Medicine. IMPLANON- etonogestrel implant [Organon USA Inc.]. May 2017.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=50ed7e31-b9b7-4f0a-8e36-91ed5af86b81">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2012-1">
+               <abbrev>NLM 2012-1</abbrev>
+               <citetitle>U.S. National Library of Medicine. LUTERA- levonorgestrel and ethinyl estradiol [Watson Pharma, Inc.]. March 2012.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=435f565c-771d-44ff-88b7-4e089767c25f">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017-2">
+               <abbrev>NLM 2017-2</abbrev>
+               <citetitle>U.S. National Library of Medicine. MEDROXYPROGESTERONE ACETATE- medroxyprogesterone acetate injection, suspension [Teva Parenteral Medicines, Inc.]. January 2017.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d279981c-e9e4-4989-bafb-1e184a6d3dd2">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2013-1">
+               <abbrev>NLM 2013-1</abbrev>
+               <citetitle>U.S. National Library of Medicine. MIRENA- levonorgestrel intrauterine device [Bayer HealthCare Pharmaceuticals Inc.]. February 2013.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=92231d6f-f4d8-43b0-aa95-f7cec1cc18c5">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2015-1">
+               <abbrev>NLM 2015-1</abbrev>
+               <citetitle>U.S. National Library of Medicine. MONONESSA- norgestimate and ethinyl estradiol; TRINESSA- norgestimate and ethinyl estradiol [Actavis Pharma, Inc]. December 2015.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=704ba4ae-edd0-4298-a399-03a49f8411c7">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2013-2">
+               <abbrev>NLM 2013-2</abbrev>
+               <citetitle>U.S. National Library of Medicine. NECON 777- norethindrone and ethinyl estradiol [Watson Pharma Inc]. November 2013.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=db3b28a4-15d3-43e0-bb65-e625300c452c">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2012-2">
+               <abbrev>NLM 2012-2</abbrev>
+               <citetitle>U.S. National Library of Medicine. NOR QD- norethindrone tablet [Watson Pharma, Inc.]. June 2012.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=aa34bfca-06c3-4916-bb51-4bfbfc0ee371">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017-3">
+               <abbrev>NLM 2017-3</abbrev>
+               <citetitle>U.S. National Library of Medicine. NUVARING- etonogestrel and ethinyl estradiol insert, extended release [Organon USA Inc.]. May 2017.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=017343fb-86c4-45ab-9c47-52cc5b9f3a02">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2015-2">
+               <abbrev>NLM 2015-2</abbrev>
+               <citetitle>U.S. National Library of Medicine. PARAGARD T 380A- copper intrauterine device [Teva Women's Health, Inc.]. August 2015.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2b009ddb-378e-40d8-a8d8-00211f10e06c">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2012-3">
+               <abbrev>NLM 2012-3</abbrev>
+               <citetitle>U.S. National Library of Medicine. PLAN B - levonorgestrel tablet [Physicians Total Care, Inc.]. April 2012.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fffebd01-3815-425f-8293-1ad909d0d0ab">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2016-1">
+               <abbrev>NLM 2016-1</abbrev>
+               <citetitle>U.S. National Library of Medicine. PLAN B ONE-STEP- levonorgestrel tablet [Teva Women's Health, Inc.]. May 2016.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ce3ccc4-23f2-4e0a-9650-856cf026c72c">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017-4">
+               <abbrev>NLM 2017-4</abbrev>
+               <citetitle>U.S. National Library of Medicine. RECLIPSEN 28 DAY- desogestrel and ethinyl estradiol [Teva Pharmaceuticals USA, Inc.]. May 2017.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a1e00bc6-7487-4057-9dcc-d0e2327d1d12">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2016-2">
+               <abbrev>NLM 2016-2</abbrev>
+               <citetitle>U.S. National Library of Medicine. SEASONIQUE- levonorgestrel / ethinyl estradiol and ethinyl estradiol [Teva Women's Health, Inc.]. November 2016.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=95e06935-8788-420c-b4a4-dc6ea339c7d0">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017-5">
+               <abbrev>NLM 2017-5</abbrev>
+               <citetitle>U.S. National Library of Medicine. SKYLA- levonorgestrel intrauterine device [Bayer HealthCare Pharmaceuticals Inc.]. March 2017.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9f44ff35-e052-49cd-a1c2-0bfd87d49309">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2010">
+               <abbrev>NLM 2010</abbrev>
+               <citetitle>U.S. National Library of Medicine. TRIVORA- levonogestrel and ethinyl estradiol [Watson Pharma, Inc.]. February 2010.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae220f22-24b0-41a8-a10d-28839b300fe1">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="CDC 2017">
+               <abbrev>CDC 2017</abbrev>
+               <citetitle>Center for Disease Control, US Medical Eligibility Criteria (US MEC) for Contraceptive Use. July 2017.</citetitle> (<link xlink:href="https://www.cdc.gov/reproductivehealth/unintendedpregnancy/pdf/legal_summary-chart_english_final_tag508.pdf">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Curtis 2016">
+               <abbrev>Curtis 2016</abbrev>
+               <citetitle>Curtis KM, Jatlaoui TC, Tepper NK, et al. U.S. Selected Practice Recommendations for Contraceptive Use, 2016. MMWR Recomm Rep 2016;65(No. RR-4):1–66.</citetitle> (<link xlink:href="http://dx.doi.org/10.15585/mmwr.rr6504a1">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Bellanca 2013">
+               <abbrev>Bellanca 2013</abbrev>
+               <citetitle>Bellanca Helen K., Hunter Michele Stranger. ONE KEY QUESTION®: preventive reproductive health is part of high quality primary care. Contraceptive 88.1. 2013;:3-6</citetitle> (<link xlink:href="https://doi.org/10.1016/j.contraception.2013.05.003">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>

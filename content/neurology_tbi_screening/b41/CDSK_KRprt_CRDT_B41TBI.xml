@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?schematron-schema href="../main/schematron/knowledgeartifact.sch"?>
+<?schematron-schema href="../main/schematron/documentationtemplates.sch"?>
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:elm="urn:hl7-org:elm:r1"
+    xmlns:t="urn:hl7-org:elm-types:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:p1="http://www.w3.org/1999/xhtml"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:anf="http://hl7.org/anf"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="80b3f7ad-54c5-565a-8a50-097a702f72f5" identifierName="B41" version="1.0"/>
+            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0005AK"
+                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AK"/>
+            <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-897" identifierName="Jira KP-897"/>
+        </identifiers>
+        <artifactType value="Documentation Template"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+
+        <title value="Neurology: Traumatic Brain Injury (TBI) Documentation Template"/>
+
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr1" identifierName="CCWP" root="LocalDocBook" version="1.0"/>
+                            <identifier root="urn:va.gov:kbs:knart:ccwp:r1" extension="B41" version="1" identifierName="TBI"/>
+                        </identifiers>
+                        <title value="Neurology: Traumatic Brain Injury Screening Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="CSD" extension="sr2"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0005AF"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AF"/>
+                        </identifiers>
+                        <title value="Neurology: Traumatic Brain Injury (TBI) Documentation Template Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="KVRpt" extension="sr3"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0005AP"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AP"/>
+                        </identifiers>
+                        <title value="Neurology: Traumatic Brain Injury (TBI) Documentation Template KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1111/j.1745-7599.2011.00658.x" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e1" identifierName="MildTBIRehabToolkit" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Mild Traumatic Brain Injury Rehabilitation Toolkit."/>
+                        <location value="https://doi.org/10.1111/j.1745-7599.2011.00658.x"/>
+                        <citation
+                            value="Mild Traumatic Brain Injury Rehabilitation Toolkit. Army Medical Department Center and School ( AMEDDC&amp;S ), U.S. Army Health Readiness Center of Excellence ( HRCoE ) website. Accessed August 28, 2017"
+                        />
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e2" identifierName="VA/DoD" root="LocalDocBook"/>
+                        </identifiers>
+                        <title
+                            value="Management of Concussion-mild Traumatic Brain Injury (mTBI), Version 2.0 – 2016. VA/DoD Clinical Practice Guidelines website"/>
+                        <location value="https://www.healthquality.va.gov/guidelines/Rehab/mtbi/mTBICPGFullCPG50821816.pdf"/>
+                        <citation
+                            value="Management of Concussion-mild Traumatic Brain Injury (mTBI), Version 2.0 – 2016. VA/DoD Clinical Practice Guidelines website. Management of Concussion/mTBI Working Group. Published February 2016"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+
+        <applicability>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Primary Care"/>
+                <value code="453231000124104 |Primary care provider (occupation)|" codeSystemName="SNOMED CT" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalFocus"/>
+                <description value="Adult patients with suspected Traumatic Brain Injury"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Outpatient"/>
+                <value code="33022008 |Hospital-based outpatient department (environment)|" codeSystemName="SNOMED CT" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Adult patients"/>
+                <value code="133936004 |Adult (person)|" codeSystemName="SNOMED CT" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientGender"/>
+                <description value="All"/>
+            </coverage>
+            <coverage>
+                <focus value="WorkflowTask"/>
+                <description value="Request Neurology Consultation"/>
+            </coverage>
+        </applicability>
+
+        <status value="Active"/>
+
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20180525"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180525"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20180403"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20180403"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Donald"/>
+                        <dt:part type="FAM" value="Higgins"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="National Program Director of Neurology 810 Vermont Ave NW Rm 668 Washington, DC 20420"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Glenn"/>
+                        <dt:part type="FAM" value="Graham"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Deputy National Director of Neurology 810 Vermont Ave NW Rm 670 Washington, DC 20420"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Eilis"/>
+                        <dt:part type="FAM" value="Boudreau"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Staff Neurologist, Portland VA Medical Center (VAMC) 3710 SW US Veterans Hospital Road Portland, OR 97239"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Jason"/>
+                        <dt:part type="FAM" value="Sico"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician, VAMC Connecticut VAMC Connecticut 950 Campbell Ave West Haven, CT 06516"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Michael"/>
+                        <dt:part type="FAM" value="Phipps"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Neurologist, VAMC Baltimore, Baltimore VAMC 10 N Greene St Baltimore, MD 21201"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Sarah"/>
+                        <dt:part type="FAM" value="Maulden"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Assistant Professor of Neurology 550 Foothill Dr, Ste 400 SLC, UT 84113"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Joel"/>
+                        <dt:part type="FAM" value="Scholten"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="National Director, Physical Medicine and Rehabilitation, 50 Irving St NW Washington, DC 20422"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Lisa"/>
+                        <dt:part type="FAM" value="Perla"/>
+                    </name>
+                    <affiliation>
+                        <name value="Rehabilitation Planning Specialist, 31 Hopkins Plaza, Room 1250 Baltimore, MD 21201"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights value="Copyright"/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value=""/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value=""/>
+                            <dt:part type="STA" value=""/>
+                            <dt:part type="ZIP" value=""/>
+                        </address>
+                    </addresses>
+                    <name value=""/>
+                </rightsHolder>
+                <permissions>
+                    <permissions value=""/>
+                </permissions>
+            </rightsDeclaration>
+        </usageTerms>
+
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+    </externalData>
+    <actionGroup>
+        <subElements>
+            <actionGroup>
+                <title value="Consults and Referrals"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Referral Request: Polytrauma Rehabilitation Clinic"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt
+                                        value="Reason for Referral:  Evaluate and Manage Rehabilitation needs for Mild Traumatic Brain Injury with Current Symptomatology"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <actionGroup>
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Property" path="Polytrauma">
+                                            <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                        </logic>
+                                        <conditionRole value="ApplicableScenario"/>
+                                    </condition>
+                                </conditions>
+                                <subElements>
+                                    <simpleAction xsi:type="CollectInformationAction">
+                                        <documentationConcept>
+                                            <prompt value="Consult priority"/>
+                                            <responseDataType value="EntityName"/>
+                                            <responseCardinality value="Single"/>
+                                            <responseRange xsi:type="EnumerationConstraint">
+                                                <constraintType value="List"/>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Emergency"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="394849002 |High priority (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="High Priority"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="50811001 |Routine (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Routine Priority"/>
+                                                </item>
+                                            </responseRange>
+                                        </documentationConcept>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Referral Request: Physical Therapy"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt
+                                        value="Reason for Referral: Evaluate and Manage Mobility Issues Related to Mild Traumatic Brain Injury with Current Symptomatology"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <actionGroup>
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Property" path="PhysicalTherapy">
+                                            <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                        </logic>
+                                        <conditionRole value="ApplicableScenario"/>
+                                    </condition>
+                                </conditions>
+                                <subElements>
+                                    <simpleAction xsi:type="CollectInformationAction">
+                                        <documentationConcept>
+                                            <prompt value="Consult priority"/>
+                                            <responseDataType value="EntityName"/>
+                                            <responseCardinality value="Single"/>
+                                            <responseRange xsi:type="EnumerationConstraint">
+                                                <constraintType value="List"/>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Emergency"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="394849002 |High priority (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="High Priority"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="50811001 |Routine (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Routine Priority"/>
+                                                </item>
+                                            </responseRange>
+                                        </documentationConcept>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Referral Request: Occupational Therapy"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt
+                                        value="Reason for Referral: Evaluate and Manage Activities of Daily Living Issues Related to Mild Traumatic Brain Injury with Current Symptomatology"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <actionGroup>
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Property" path="OccupationTherapy">
+                                            <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                        </logic>
+                                        <conditionRole value="ApplicableScenario"/>
+                                    </condition>
+                                </conditions>
+                                <subElements>
+                                    <simpleAction xsi:type="CollectInformationAction">
+                                        <documentationConcept>
+                                            <prompt value="Consult priority"/>
+                                            <responseDataType value="EntityName"/>
+                                            <responseCardinality value="Single"/>
+                                            <responseRange xsi:type="EnumerationConstraint">
+                                                <constraintType value="List"/>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Emergency"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="394849002 |High priority (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="High Priority"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="50811001 |Routine (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Routine Priority"/>
+                                                </item>
+                                            </responseRange>
+                                        </documentationConcept>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Referral Request: Speech-Language Pathology"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt
+                                        value="Reason for Referral: Evaluate and Manage Speech, Language, and Cognitive Issues Related to Mild Traumatic Brain Injury with Current Symptomatology"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <actionGroup>
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Property" path="SpeechLanguagePathology">
+                                            <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                        </logic>
+                                        <conditionRole value="ApplicableScenario"/>
+                                    </condition>
+                                </conditions>
+                                <subElements>
+                                    <simpleAction xsi:type="CollectInformationAction">
+                                        <documentationConcept>
+                                            <prompt value="Consult priority"/>
+                                            <responseDataType value="EntityName"/>
+                                            <responseCardinality value="Single"/>
+                                            <responseRange xsi:type="EnumerationConstraint">
+                                                <constraintType value="List"/>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Emergency"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="394849002 |High priority (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="High Priority"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="50811001 |Routine (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Routine Priority"/>
+                                                </item>
+                                            </responseRange>
+                                        </documentationConcept>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Referral Request: Neurology"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt value="Reason for Referral: Evaluate for Mild Traumatic Brain Injury with Current Symptomatology"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <actionGroup>
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Property" path="Neurology">
+                                            <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                        </logic>
+                                        <conditionRole value="ApplicableScenario"/>
+                                    </condition>
+                                </conditions>
+                                <subElements>
+                                    <simpleAction xsi:type="CollectInformationAction">
+                                        <documentationConcept>
+                                            <prompt value="Consult priority"/>
+                                            <responseDataType value="EntityName"/>
+                                            <responseCardinality value="Single"/>
+                                            <responseRange xsi:type="EnumerationConstraint">
+                                                <constraintType value="List"/>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)| " codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+
+                                                    <displayText value="Emergency"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="394849002 |High priority (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+
+                                                    <displayText value="High Priority"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+
+                                                    <displayText value="Routine Priority"/>
+                                                </item>
+                                            </responseRange>
+                                        </documentationConcept>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Referral Request: Mental Health"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt
+                                        value="Reason for Referral: Evaluate and Manage Mental Health Issues Related to Mild Traumatic Brain Injury with Current Symptomatology"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <actionGroup>
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Property" path="MentalHealth">
+                                            <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                        </logic>
+                                        <conditionRole value="ApplicableScenario"/>
+                                    </condition>
+                                </conditions>
+                                <subElements>
+                                    <simpleAction xsi:type="CollectInformationAction">
+                                        <documentationConcept>
+                                            <prompt value="Consult priority"/>
+                                            <responseDataType value="EntityName"/>
+                                            <responseCardinality value="Single"/>
+                                            <responseRange xsi:type="EnumerationConstraint">
+                                                <constraintType value="List"/>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Emergency"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="394849002 |High priority (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="High Priority"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="50811001 |Routine (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Routine Priority"/>
+                                                </item>
+                                            </responseRange>
+                                        </documentationConcept>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Consult Request: Social Services"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt
+                                        value="Reason for Consult: Evaluate Need for Social Services Related to Mild Traumatic Brain Injury with Current Symptomatology"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <actionGroup>
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Property" path="SocialServices">
+                                            <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                        </logic>
+                                        <conditionRole value="ApplicableScenario"/>
+                                    </condition>
+                                </conditions>
+                                <subElements>
+                                    <simpleAction xsi:type="CollectInformationAction">
+                                        <documentationConcept>
+                                            <prompt value="Consult priority"/>
+                                            <responseDataType value="EntityName"/>
+                                            <responseCardinality value="Single"/>
+                                            <responseRange xsi:type="EnumerationConstraint">
+                                                <constraintType value="List"/>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Emergency"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="394849002 |High priority (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="High Priority"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="50811001 |Routine (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Routine Priority"/>
+                                                </item>
+                                            </responseRange>
+                                        </documentationConcept>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Consult Request: Integrative Health"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt
+                                        value="Reason for Consult: Evaluate Wellness Needs Related to Mild Traumatic Brain Injury with Current Symptomatology"/>
+                                    <responseDataType value="Boolean"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <actionGroup>
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Property" path="IntegrativeHealth">
+                                            <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                        </logic>
+                                        <conditionRole value="ApplicableScenario"/>
+                                    </condition>
+                                </conditions>
+                                <subElements>
+                                    <simpleAction xsi:type="CollectInformationAction">
+                                        <documentationConcept>
+                                            <prompt value="Consult priority"/>
+                                            <responseDataType value="EntityName"/>
+                                            <responseCardinality value="Single"/>
+                                            <responseRange xsi:type="EnumerationConstraint">
+                                                <constraintType value="List"/>
+                                                <item>
+                                                    <codes>
+                                                        <code code="25876001 |Emergency (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Emergency"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="394849002 |High priority (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="High Priority"/>
+                                                </item>
+                                                <item>
+                                                    <codes>
+                                                        <code code="50811001 |Routine (qualifier value)|" codeSystem="SNOMED CT"
+                                                            codeSystemName="SNOMED CT">
+                                                            <dt:displayName value="Precoordinated Expression"/>
+                                                        </code>
+                                                    </codes>
+                                                    <displayText value="Routine Priority"/>
+                                                </item>
+                                            </responseRange>
+                                        </documentationConcept>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Referring Physician Information"/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt value="Physician Name"/>
+                                    <responseDataType value="String"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt value="Physician Office Address"/>
+                                    <responseDataType value="String"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt value="Physician Phone Number 1"/>
+                                    <responseDataType value="String"/>
+                                </documentationConcept>
+                            </simpleAction>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt value="Physician Phone Number 2"/>
+                                    <responseDataType value="String"/>
+                                </documentationConcept>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:hl7-org:knowledgeartifact:r2"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="urn:hl7-org:knowledgeartifact:r2"
+	elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>
+			This file defines the Metadata Binding Type enumeration.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="MetadataBindingType">
+		<xs:annotation>
+			<xs:documentation>Defines how metadata is bound between composite entities
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Replaces">
+				<xs:annotation>
+					<xs:documentation>The metadata is a full replacement, prior metadata is discarded</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Supplements">
+				<xs:annotation>
+					<xs:documentation>The metadata is a supplement and is intended to extend the existing metadata</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Restates">
+				<xs:annotation>
+					<xs:documentation>The metadata is a restatement of the base metadata and may be a subset. A mismatch between the prior metadata and the restatement can be considered an error by validators</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
