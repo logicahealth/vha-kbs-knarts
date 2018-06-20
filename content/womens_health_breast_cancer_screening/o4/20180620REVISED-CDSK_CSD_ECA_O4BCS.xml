@@ -1,0 +1,2143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Women's Health: Breast Cancer Screening Rule</title>
+      <subtitle>Rule: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA</releaseinfo>
+      <pubdate>06/08/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>June 8, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>April 17, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>April 17, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>February 16, 2018</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>C. Yvette Williams-Harris, MD, MPH</entry>
+                  <entry>Author</entry>
+                  <entry>Physician, 1670 Clairmont Rd Atlanta, GA 30033</entry>
+               </row>
+               <row>
+                  <entry>Megan Gerber, MD, MPH</entry>
+                  <entry>Author</entry>
+                  <entry>Physician, VA Boston HealthCare System, 150 South Huntington Ave Boston, MA 02130</entry>
+               </row>
+               <row>
+                  <entry>Caitlin M. Cusack, MD, MPH</entry>
+                  <entry>Author</entry>
+                  <entry>Contractor- Physician Informaticist, Office of Women's Health Services, 8455 Colesville Rd, 12th Floor Silver Spring, MD 20910</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>18bf1fa5-e352-5edb-8dd8-bc872a65d326</entry>
+                  <entry>O4</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Female outpatients &gt;=40 and &lt;45 years of age.</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalFocus</entry>
+                  <entry>Breast Cancer Screening</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Primary Care</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Obstetrics/Gynecology</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Women's Health</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e3">PatientGender</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e2"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[248152002 |Female (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e4">MammographyProcedure</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e3"> [71651007 |Mammography (procedure)|]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-12 Month))</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e5">EarlyChestRadiotherapy</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e4"> [108290001 |Radiation oncology AND/OR radiotherapy (procedure)|]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: ()</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Add( <link linkend="d4e2">PatientAge</link>  elm:Quantity(30 Year))</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e6">MammographyScreeningInterval</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e5"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [268547008 |Screening for malignant neoplasm of breast (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e7">GeneticMarker</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e7"> [[a997cc03-3e99-40eb-833a-6374c7750a3a Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[1e53d17c-cd1c-4251-ae9a-f7b999178c90 |Breast cancer genetic marker of susceptibility finding]]</link>elm:element[elm:Code]: <link linkend="d6e8"> [[a997cc03-3e99-40eb-833a-6374c7750a3a Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[1e53d17c-cd1c-4251-ae9a-f7b999178c90 |Breast cancer genetic marker of susceptibility finding (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e8">ScreeningDueDate</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e5"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [268547008 |Screening for malignant neoplasm of breast (procedure)|]</link>elm:value[elm:Code]: <link linkend="d6e11"> [385643006 |To be done (qualifier value)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e9">ScreeningScheduleDate</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e5"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [268547008 |Screening for malignant neoplasm of breast (procedure)|]</link>elm:value[elm:Code]: <link linkend="d6e15"> [416151008 |Scheduled - procedure status (qualifier value)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <table frame="all">
+            <title xml:id="d4e10">duringEncounter</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Trigger: type=DataEventTrigger, DataElementAccessed</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Instance</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Opening of the patient record during an encounter in either a primary care clinic, an OB/GYN or during a women's health
+                     outpatient visit</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e11">Activation of the breast cancer screening order set ECA rule</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Trigger: type=DataEventTrigger, DataElementAdded</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Instance</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Activation of the breast cancer screening order set ECA rule.</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e16"> [TSR-NoCode]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e12">EveryMonth</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Trigger: type=PeriodicEventTrigger, </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Instance</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e16"> [TSR-NoCode]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <table frame="all">
+         <title xml:id="d4e2">PatientAge</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e5"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e19"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105726004 |Age AND/OR growth finding (finding)]]</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Actions</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="5">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="18">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">General information</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Patient declines early breast cancer screening.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c5">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("declinesEarlyScreening")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Patient declines breast cancer screening.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c5">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("declinesScreening")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Patient desires to continue breast cancer screening.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c5">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("continueScreening")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Patient has a personal history of breast cancer.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c5">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("hasPersonalHistoryOfBreastCancer")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Patient has a life expectancy of greater than 10 years.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c5">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("hasExtendedLifeExpectancy")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Auto generated patient notifications.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c5">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("autoGeneratedPatientNotifications")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="33">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:And (elm:GreaterOrEqual( PatientAge elm:Quantity(40 )) elm:Less( PatientAge elm:Quantity(45 )))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("declinesEarlyScreening" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyScreeningInterval ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyProcedure ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("hasPersonalHistoryOfBreastCancer" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( EarlyChestRadiotherapy ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( GeneticMarker ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Outpatient Visit, Age &gt;=40 to &lt;45 Years, Desires Early Breast Cancer Screening</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Set screening interval to annual.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e6">268547008 |Screening for malignant neoplasm of breast (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.lowerBound:  12 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.upperBound:  12 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.includeLowerBound:  true </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.includeUpperBound:  true </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.resolution:  12 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.measureSemantic: Precoordinated Expression <link linkend="d6e23">258706009 |month (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Notify the provider that options for breast cancer screening should be discussed with patient and that the discussion should be documented.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Postcoordinated Expression <link linkend="d6e26">[409073007 |Education (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[268547008 |Screening for malignant neoplasm of breast (procedure)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening history section of the documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer risk assessment of the documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening order set ECA rule.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="16">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:And (elm:GreaterOrEqual( PatientAge elm:Quantity(40 )) elm:Less( PatientAge elm:Quantity(45 )))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsTrue (elm:Property("declinesEarlyScreening" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyScreeningInterval ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyProcedure ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("hasPersonalHistoryOfBreastCancer" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( EarlyChestRadiotherapy ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( GeneticMarker ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Outpatient Visit, Age &gt;=40 to &lt;45 Years, No Desire for Early Breast Cancer Screening</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate declines breast cancer screening section of the documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Set screening interval to declines early breast cancer screening.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e6">268547008 |Screening for malignant neoplasm of breast (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.status: Precoordinated Expression <link linkend="d6e38">410528005 |Not wanted (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="31">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:And (elm:GreaterOrEqual( PatientAge elm:Quantity(45 )) elm:Less( PatientAge elm:Quantity(55 )))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyProcedure ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("hasPersonalHistoryOfBreastCancer" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( EarlyChestRadiotherapy ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( GeneticMarker ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Outpatient Visit, Age &gt;=45 to &lt;55 Years</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Set screening interval to annual.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e6">268547008 |Screening for malignant neoplasm of breast (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.lowerBound:  12 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.upperBound:  12 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.includeLowerBound:  true </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.includeUpperBound:  true </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.resolution:  12 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.measureSemantic: Precoordinated Expression <link linkend="d6e23">258706009 |month (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Notify the provider that options for breast cancer screening should be discussed with patient and that the discussion should be documented.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Postcoordinated Expression <link linkend="d6e26">[409073007 |Education (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[268547008 |Screening for malignant neoplasm of breast (procedure)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening history section of the documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer risk assessment of the documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening order set ECA rule.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="32">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:And (elm:GreaterOrEqual( PatientAge elm:Quantity(55 )) elm:Less( PatientAge elm:Quantity(75 )))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyProcedure ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyScreeningInterval ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("hasPersonalHistoryOfBreastCancer" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( EarlyChestRadiotherapy ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( GeneticMarker ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Outpatient Visit, Age gt;=55 to &lt;75 Years</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Set screening interval to biennial.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e6">268547008 |Screening for malignant neoplasm of breast (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.lowerBound:  24 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.upperBound:  24 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.includeLowerBound:  true </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.includeUpperBound:  true </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.resolution:  24 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.measureSemantic: Precoordinated Expression <link linkend="d6e23">258706009 |month (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Notify the provider that options for breast cancer screening should be discussed with patient and that the discussion should be documented.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Postcoordinated Expression <link linkend="d6e26">[409073007 |Education (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[268547008 |Screening for malignant neoplasm of breast (procedure)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening history section of the documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening order set ECA rule.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="34">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:GreaterOrEqual (PatientAge elm:Quantity(75 ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsTrue (elm:Property("hasExtendedLifeExpectancy" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsTrue (elm:Property("continueScreening" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyProcedure ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Contains( MammographyScreeningInterval elm:Code()))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("hasPersonalHistoryOfBreastCancer" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( EarlyChestRadiotherapy ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( GeneticMarker ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Outpatient Visit, Age &gt;=75 Years, Desires to Continue Screening</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Set screening interval to biennial.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e6">268547008 |Screening for malignant neoplasm of breast (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.lowerBound:  24 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.upperBound:  24 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.includeLowerBound:  true </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.includeUpperBound:  true </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.resolution:  24 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.measureSemantic: Precoordinated Expression <link linkend="d6e23">258706009 |month (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Notify the provider that options for breast cancer screening should be discussed with patient and that the discussion should be documented.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Postcoordinated Expression <link linkend="d6e26">[409073007 |Education (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[268547008 |Screening for malignant neoplasm of breast (procedure)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening history section of the documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening documentation template.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening order set ECA rule.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="13">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:GreaterOrEqual (PatientAge elm:Quantity(75 ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsTrue (elm:Property("hasExtendedLifeExpectancy" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsFalse (elm:Property("continueScreening" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( MammographyProcedure ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Contains( MammographyScreeningInterval elm:Code()))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("hasPersonalHistoryOfBreastCancer" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( EarlyChestRadiotherapy ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Exists( GeneticMarker ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Outpatient Visit, Age &gt;=75 Years, Desires to Stop Screening</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Set screening interval to stop screening.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e6">268547008 |Screening for malignant neoplasm of breast (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">result.status: Precoordinated Expression <link linkend="d6e63">410546004 |Discontinued (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (Activation of the breast cancer screening order set ECA rule)</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Before (ScreeningDueDate elm:Add( elm:Now() elm:Quantity(60 days)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsFalse (elm:Exists( ScreeningScheduleDate ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("declinesScreening" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Breast Cancer Screening Order Set ECA Rule</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c5">  <link linkend="item_readonly">☆ </link>Activate the breast cancer screening order set.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="14">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (EveryMonth)</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:In (ScreeningDueDate elm:Interval())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsFalse (elm:Exists( ScreeningScheduleDate ))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Not (elm:Property("declinesScreening" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Periodic System Run</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsTrue (elm:Property("autoGeneratedPatientNotifications" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">  <link linkend="item_readonly">☆ </link>Notify the patient of their Breast Cancer Screening due date.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:IsFalse (elm:Property("autoGeneratedPatientNotifications" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">  <link linkend="item_readonly">☆ </link>Add the patient to the report of patients due for breast cancer screening with their Breast Cancer Screening due date.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">statementType: Precoordinated Expression <link linkend="d6e21">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topic: Precoordinated Expression <link linkend="d6e16">TSR-NoCode</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e4">SNOMED CT</entry>
+                  <entry>108290001 |Radiation oncology AND/OR radiotherapy (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e23">SNOMED CT</entry>
+                  <entry>258706009 |month (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>4</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e6">SNOMED CT</entry>
+                  <entry>268547008 |Screening for malignant neoplasm of breast (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>9</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e11">SNOMED CT</entry>
+                  <entry>385643006 |To be done (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e21">SNOMED CT</entry>
+                  <entry>385644000 |Requested (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>26</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>398166005 |Performed (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>4</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e38">SNOMED CT</entry>
+                  <entry>410528005 |Not wanted (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e63">SNOMED CT</entry>
+                  <entry>410546004 |Discontinued (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e15">SNOMED CT</entry>
+                  <entry>416151008 |Scheduled - procedure status (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>71651007 |Mammography (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e16">SNOMED CT</entry>
+                  <entry>TSR-NoCode<footnote>
+                        <para>TSR-NoCode is a placeholder indicating a code was requested, but was not provided.</para>
+                     </footnote>
+                  </entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>18</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e26">SNOMED CT</entry>
+                  <entry>[409073007 |Education (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[268547008 |Screening for malignant neoplasm of breast (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>4</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e8">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[1e53d17c-cd1c-4251-ae9a-f7b999178c90 |Breast cancer genetic marker of susceptibility finding (finding)]</entry>
+                  <entry>Postcoordianted Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e7">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[1e53d17c-cd1c-4251-ae9a-f7b999178c90 |Breast cancer genetic marker of susceptibility finding]</entry>
+                  <entry>Postcoordianted Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e19">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105726004 |Age AND/OR growth finding (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[248152002 |Female (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Women's Health: Breast Cancer Screening Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Women's Health: Breast Cancer Screening Rule Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Women's Health: Breast Cancer Screening Rule KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="Nelson 2009">
+               <abbrev>Nelson 2009</abbrev>
+               <citetitle>H. D. Nelson et al., Screening for Breast Cancer A Systematic Review to Update the 2009 U.S. Preventive Services Task Force Recommendation, Agency for Healthcare Research and Quality, USA, Jan. 2016.</citetitle> (<link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/breast-cancer-screening">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Oeffinger 2015">
+               <abbrev>Oeffinger 2015</abbrev>
+               <citetitle>Oeffinger, 2015. Oeffinger KC, Fontham ETH, Etzioni R, et al. Breast Cancer Screening for Women at Average Risk: 2015 Guideline Update From the American Cancer Society. JAMA. 2015;314(15):1599-1614</citetitle> (<link xlink:href="https://doi.org/10.1001/jama.2015.12783">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Pearlman 2017">
+               <abbrev>Pearlman 2017</abbrev>
+               <citetitle>Pearlman, 2017. Pearlman M, Jeudy M, Chelmow D. Breast Cancer Risk Assessment and Screening in Average-Risk Women. OBSTETRICS AND GYNECOLOGY. 2017 Jul 1;130(1):E1-6</citetitle> (<link xlink:href="https://doi.org/10.1097/AOG.0000000000002158">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="ACS 2017">
+               <abbrev>ACS 2017</abbrev>
+               <citetitle>American Cancer Society Breast Cancer Screening Guidelines. American Cancer Society [Internet]. 2018 [cited 2018 Jan 24].</citetitle> (<link xlink:href="https://www.cancer.org/health-care-professionals/american-cancer-society-prevention-early-detection-guidelines/breast-cancer-screening-guidelines.html">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
