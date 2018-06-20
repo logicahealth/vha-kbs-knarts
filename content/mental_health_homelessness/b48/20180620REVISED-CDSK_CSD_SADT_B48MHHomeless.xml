@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Mental Health: Homelessness Documentation Template</title>
+      <subtitle>Documentation Template: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AE</releaseinfo>
+      <pubdate>06/12/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>June 12, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>April 24, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>April 24, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>March 27, 2018</entry>
+                  <entry>Pre-published</entry>
+               </row>
+               <row>
+                  <entry>March 27, 2018</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>Mike Wilson, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Medical Director, Homeless Programs Company VA Central Office (VACO) 1601 E. Fourth Plain Blvd. Vancouver, WA 98661</entry>
+               </row>
+               <row>
+                  <entry>Roger Casey</entry>
+                  <entry>Author</entry>
+                  <entry>Director, Education-Dissemination, National Center on Homelessness, Veteran Health Administration (VHA)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>e9531500-5e74-5d9a-9360-c417a36a5197</entry>
+                  <entry>B48</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Mental Health Providers; Primary Care Providers (PCPs)</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>All patients</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalFocus</entry>
+                  <entry>Routine</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowSetting</entry>
+                  <entry>Mental Health; Primary Care</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>All locations</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <para>No externalData expression definitions and no trigger definitions are present. </para>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>Screening</title>
+      <para>All Veterans should be screened for homelessness (and near-future risk) annually, unless the Veteran is a long-term resident of a nursing home/long-term care facility</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="8">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <colspec align="left" colname="c6" colnum="6"/>
+            <colspec align="left" colname="c7" colnum="7"/>
+            <colspec align="left" colname="c8" colnum="8"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="61">  </entry>
+                  <entry namest="c2" nameend="c8" rowsep="1">Homelessness Screening:</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c8">Homeless screening performed?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c8">String (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c8">Homeless screen performed</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c8">Homeless screen not performed</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c8">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("Homeless screen performed")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="40">  </entry>
+                  <entry namest="c3" nameend="c8" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Contains (elm:Property("Homeless screen performed" from: elm:ParameterRef(Responses)) elm:Literal())</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c8">Homeless screen</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c8">Ask Patient: In the past 2 months, have you been living in stable housing? By that, we mean housing that is affordable, permanent, safe, decent, and livable.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Current housing stability</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">
+                     <link linkend="d22e2">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[161036002 |Housing adequate (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c3">response range:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Yes, living in stable housing</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">No, not living in stable housing</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c3" nameend="c8">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("stableHousing")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Other Details</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c3" nameend="c8">
+                     <emphasis role="bold">Condition:</emphasis>elm:Contains (elm:Property("stableHousing" from: elm:ParameterRef(Responses)) elm:Literal())</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Housing confidence</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c3">response range:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Yes, confident in continuing to live in stable housing</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">No, not confident in continuing to live in stable housing</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c3" nameend="c8">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("confidentLivingInStableHousing")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="14">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c8" rowsep="1">Where have you lived for MOST of the past 2 months?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c4" nameend="c8">
+                     <emphasis role="bold">Condition:</emphasis>elm:Contains (elm:Property("confidentLivingInStableHousing" from: elm:ParameterRef(Responses)) elm:Literal())</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Housing situation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c8">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c4">response range:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Apartment/house/room, no government subsidy</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Apartment/house/room, with government subsidy</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">With friend/family</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Motel/hotel</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Short-term institution, such as hospital, rehab center, drug treatment center</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Homeless shelter</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Anywhere outside, such as street, vehicle, abandoned building</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Other</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Detail</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c8">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c8" rowsep="1">Ask Patient: Would you like to be referred to talk more about your housing situation?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c4" nameend="c8">
+                     <emphasis role="bold">Condition:</emphasis>elm:Or (elm:Contains( elm:Property("stableHousing" from: elm:ParameterRef(Responses)) elm:Literal()) elm:Contains( elm:Property("confidentLivingInStableHousing" from: elm:ParameterRef(Responses)) elm:Literal()))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Homelessness services referral preference</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c8">String (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c4">response range:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Patient agrees to referral for homelessness services or assistance</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Patient declines referral at this time; given information for future reference</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">  </entry>
+                  <entry namest="c3" nameend="c8" rowsep="1">Ask Patient: What is the best way to reach you?</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Contact information from patient</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="10">  </entry>
+                  <entry namest="c3" nameend="c8" rowsep="1">Homeless screen not peformed</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_onemore">❂ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Reason homeless screen not performed</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c3">response range:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Already receiving homelessness services or assistance</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Long-term resident of nursing home/long-term care facility</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Declines screening at this time</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Veteran/caregiver unable to answer</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Other</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_onemore">❂ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Detail</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="41">  </entry>
+                  <entry namest="c2" nameend="c8" rowsep="1">All Veterans should be screened for food insecurity unless the Veteran is a resident of a nursing home/long-term care facility</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c8">Food insecurity screen performed?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c8">String (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c8">Food insecurity screen performed</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c8">Food insecurity screen not performed</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="24">  </entry>
+                  <entry namest="c3" nameend="c8" rowsep="0">Food insecurity screen</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c8">Ask Patient “In the past 3 months, did you ever run out of food and you were not able to access more food or have the money to buy more food?</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_onemore">❂ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Food availability</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c3">response range:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Yes, food shortage and no money to buy food or access to food</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">No food shortage</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c3" nameend="c8">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("foodShortage")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_onemore">❂ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c8" rowsep="1">Ask patient “Are you confident that you will continue to have enough food or money to buy food for at least the next 3 months?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c4" nameend="c8">
+                     <emphasis role="bold">Condition:</emphasis>elm:Contains (elm:Property("foodShortage" from: elm:ParameterRef(Responses)) elm:Literal())</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_onemore">❂ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Food access confidence?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c8">Boolean (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c4">response range:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Yes, confident in continued access to food</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">No, not confident in continued access to food</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="9">
+                     <link linkend="gs_onemore">❂ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c8" rowsep="1">Ask Patient: Would you like to be referred to talk more about your food shortage situation?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c4" nameend="c8">
+                     <emphasis role="bold">Condition:</emphasis>elm:Contains (elm:Property("foodShortage" from: elm:ParameterRef(Responses)) elm:Literal())</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_onemore">❂ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Food shortage referral preference</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c8">String (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c4">response range:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Patient agrees to referral to social services</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Patient agrees to referral to nutrition and food services</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Patient declines referral at this time; given information for future reference</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_onemore">❂ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c8">Food Insecurity Screen not performed</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c8">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="10">  </entry>
+                  <entry namest="c3" nameend="c8" rowsep="1">Food insecurity screen not performed</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_onemore">❂ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Reasons for not performing Food Insecurity Screen</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c3">response range:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Already receiving services or assistance to address known food insecurity issue</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Resident of nursing home/long-term care facility</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Declines screening at this time</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Veteran/caregiver unable to answer</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Other</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_onemore">❂ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c8">Detail</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c8">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Plan</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Provide homelessness educational materials</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Provide link</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA.gov</citation>) </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Homeless Veterans Website<link xlink:href="https://www.va.gov/homeless/index.asp"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Order consult for homeless program</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Reason for request</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d22e3">22c9bf08-1d5c-4da9-a0af-0ae4940d240f |Veterans Affairs Homeless Veterans Assistance Center consultation and report (procedure)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Veteran has been identified as being currently homeless or homeless within the past 2 months</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Veteran has been identified as being at risk of homelessness within the next 60 days</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Describe in detail the Veteran’s current living situation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="11">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Order consult for social work or for nutrition and food services</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Reason for request</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d22e4">1061000205108 |Social services consultation and report (procedure)</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d22e5">c86bf351-ec7e-4310-ae35-5cfc41d3f9fe |Nutrition and food services consultation and report (procedure)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Veteran has been identified as having a current food shortage or a food shortage within the past 3 months</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Veteran has been identified as being at risk of a food shortage within the next 90 days</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Describe in detail the Veteran’s current food situation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Other details</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d22e4">SNOMED CT</entry>
+                  <entry>1061000205108 |Social services consultation and report (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d22e3">SNOMED CT</entry>
+                  <entry>22c9bf08-1d5c-4da9-a0af-0ae4940d240f |Veterans Affairs Homeless Veterans Assistance Center consultation and report (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d22e2">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[161036002 |Housing adequate (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d22e5">SNOMED CT</entry>
+                  <entry>c86bf351-ec7e-4310-ae35-5cfc41d3f9fe |Nutrition and food services consultation and report (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Mental Health: Homelessness Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Mental Health: Homelessness Documentation Template Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Mental Health: Homelessness Documentation Template KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="Byrne 2015">
+               <abbrev>Byrne 2015</abbrev>
+               <citetitle>Byrne T, Fargo JD, Montgomery AE, Roberts CB, Culhane DP, Kane V. Screening for homelessness in the Veterans Health Administration (VHA): monitoring housing stability through repeat screening. Public Health Rep. 2015;130(6):684-692</citetitle> (<link xlink:href="https://doi.org/10.1177/003335491513000618">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Chhabra 2018">
+               <abbrev>Chhabra 2018</abbrev>
+               <citetitle>Chhabra M, Cusack C, Dichter M, Montgomery AE, True G. Screening for homelessness: VA provider reflections on addressing a social determinant of health. Poster presented at: Academy Health Annual Research Meeting 2017 June 25-27, 2017 Accessed January 30, 2018</citetitle> (<link xlink:href="https://academyhealth.confex.com/academyhealth/2017arm/meetingapp.cgi/Paper/18938">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Fargo 2017">
+               <abbrev>Fargo 2017</abbrev>
+               <citetitle>Fargo JD, Montgomery AE, Byrne T, Brignone E, Cusack M, Gundlapalli AV. Needles in a haystack: screening and healthcare system evidence for homelessness. Stud Health Technol Inform. 2017;235:574-578</citetitle> (<link xlink:href="https://doi.org/10.3233/978-1-61499-753-5-574">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Montgomery 2014">
+               <abbrev>Montgomery 2014</abbrev>
+               <citetitle>Montgomery AE, Fargo JD, Kane V, Culhane DP. Development and validation of an instrument to assess imminent risk of homelessness among veterans. Public Health Rep. 2014;129(5):428-436</citetitle> (<link xlink:href="https://doi.org/10.1177/003335491412900506">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="OToole 2017">
+               <abbrev>OToole 2017</abbrev>
+               <citetitle>O'Toole TP, Roberts CB, Johnson EE. Screening for Food Insecurity in Six Veterans Administration Clinics for the Homeless, June-December 2015. Prev Chronic Dis. 2017;14:E04</citetitle> (<link xlink:href="https://doi.org/10.5888/pcd14.160375">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA Portland">
+               <abbrev>VA Portland</abbrev>
+               <citetitle>Homeless Screening Clinical Reminder. August 31, 2017, Microsoft Word document (David Douglas, MD, provided documentation from Portland VA)</citetitle> (<link xlink:href="https://www.va.gov/homeless/nchav/research/assessment-tools/hscr.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA.gov">
+               <abbrev>VA.gov</abbrev>
+               <citetitle>U.S. Department of Veterans Affairs. Homeless Veterans Website. Accessed October 12, 2017</citetitle> (<link xlink:href="https://www.va.gov/homeless/index.asp">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
