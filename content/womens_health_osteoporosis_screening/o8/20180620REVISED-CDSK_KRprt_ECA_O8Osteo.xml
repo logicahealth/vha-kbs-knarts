@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?schematron-schema href="../main/schematron/knowledgeartifact.sch"?>
+<?schematron-schema href="../main/schematron/documentationtemplates.sch"?>
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:vmr="urn:hl7-org:vmr:r2" xmlns:dt="urn:hl7-org:cdsdt:r2"
+    xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:p1="http://www.w3.org/1999/xhtml"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:anf="http://hl7.org/anf"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier extension="6ab2870a-7bc5-53c9-be4e-9fb798c50e15" identifierName="O8" root="urn:va.gov:kbs:knart:artifact:r1" version="1.0"/>
+            <identifier extension="CLIN0007BA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"
+                root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+            <identifier extension="KP-884" identifierName="Jira KP-884" root="urn:cognitivemedicine.com:lab:jira"/>
+        </identifiers>
+        <artifactType value="Rule"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+
+
+        <title value="Women's Health: Osteoporosis Screening Rule"/>
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr1" identifierName="CCWP" root="LocalDocBook" version="1.1"/>
+                        </identifiers>
+                        <title value="Women's Health: Osteoporosis Screening Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr2" identifierName="CSD" root="LocalDocBook"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"/>
+                        </identifiers>
+                        <title value="Women's Health: Osteoporosis Screening Rule Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr3" identifierName="KVRpt" root="LocalDocBook"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007BA"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"/>
+                        </identifiers>
+                        <title value="Women's Health: Osteoporosis Screening Rule KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1097/AOG.0b013e31826dc446" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e1" identifierName="AGOG 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="AGOG Practice Bulletin N. 129. Osteoporosis"/>
+                        <location value="https://doi.org/10.1097/AOG.0b013e31826dc446"/>
+                        <citation
+                            value="Committee on Practice Bulletins-Gynecology, ACOG. AGOG Practice Bulletin N. 129. Osteoporosis. Obstet Gynecol. 2012;120(3):718-734"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1007/s00198-014-2794-2" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e2" identifierName="Cosman 2014" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Clinician's Guide to Prevention and Treatment of Osteoporosis"/>
+                        <location value="http://doi.org/10.1007/s00198-014-2794-2"/>
+                        <citation
+                            value="Cosman F, de Beur S.J., LeBoff M.S., Lewiecki E.M., Tanner B, Randall S, Lindsay R. Clinician's Guide to Prevention and Treatment of Osteoporosis. Osteoporosis International. 2014;25(10):2359-2381"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1056%2FNEJMoa1107142" identifierName="DOI" root="https://dx.doi.org/"/>
+                            <identifier extension="e3" identifierName="Gourlay 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Bone-density testing interval and transition to osteoporosis in older women"/>
+                        <location value="https://dx.doi.org/10.1056%2FNEJMoa1107142"/>
+                        <citation
+                            value="Gourlay ML, Fine JP, Preisser JS, May RC, Li C, Lui LY, Ransohoff DF, Cauley JA, Ensrud KE. Bone-density testing interval and transition to osteoporosis in older women. New England Journal of Medicine. 2012 Jan;19(366):225-33"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="factsheets/Calcium-HealthProfessional" root="https://ods.od.nih.gov/"/>
+                            <identifier extension="e4" identifierName="NIH 2017" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Calcium Fact Sheet for Health Professionals"/>
+                        <location value="https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"/>
+                        <citation value="National Institutes of Health. Calcium Fact Sheet for Health Professionals. Accessed August 2017."/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="Page/Document/UpdateSummaryFinal/osteoporosis-screening"
+                                root="https://www.uspreventiveservicestaskforce.org/"/>
+                            <identifier extension="e5" identifierName="USPTF 2015" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Final Update Summary: Osteoporosis: U.S. Preventive Services Task Force website"/>
+                        <location value="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/osteoporosis-screening"/>
+                        <citation value="USPSTF. Final Update Summary: Osteoporosis: U.S. Preventive Services Task Force website. Reviewed July 2015"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+
+        <applicability>
+            <coverage>
+                <focus value="PatientGender"/>
+                <description value="Female"/>
+                <value code="248152002 |Female (finding)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Population 18 years old or older"/>
+                <value code="133936004 |Adult (person)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="WorkflowSetting"/>
+                <description value="Routine"/>
+            </coverage>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Primary Care"/>
+                <value code="453231000124104 |Primary care provider (occupation)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Gynecology"/>
+                <value code="702892004 |Obstetrics and gynecology clinic (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Outpatient"/>
+                <value code="33022008 |Hospital-based outpatient department (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+        </applicability>
+
+        <status value="Active"/>
+
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180605"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <!-- Update for final delivery -->
+                <eventDateTime value="20180605"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180425"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180425"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20180316"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="C."/>
+                        <dt:part type="GIV" value="Yvette"/>
+                        <dt:part type="FAM" value="Williams-Harris"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician, 1670 Clairmont Rd, Atlanta, GA 30033"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Megan"/>
+                        <dt:part type="FAM" value="Gerber"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician, VA Boston Health Care System, 150 South Huntington Ave, Boston, MA 02130"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Caitlin"/>
+                        <dt:part type="GIV" value="M."/>
+                        <dt:part type="FAM" value="Cusack"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="MPH"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Contractor-Physician Informaticist, Office of Women's Health Services, 8455 Colesville Rd, 12th Floor, Silver Spring, MD 20910"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 B3 Group, Inc.
+                    NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+                    See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007."/>
+                <rightsHolder xsi:type="Organization">
+                    <name value="B3 Group, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 Cognitive Medical Systems, Inc.
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+                    This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: https://bitbucket.org/cogmedsys/hl7-kas-examples
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. https://bitbucket.org/cogmedsys/kas-source-material
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007."/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value="10156 Tapestry Ct"/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value="Fairfax"/>
+                            <dt:part type="STA" value="VA"/>
+                            <dt:part type="ZIP" value="22032"/>
+                        </address>
+                    </addresses>
+                    <name value="B3 Group, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+        </usageTerms>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <codesystem name="RXNorm" id="2.16.840.1.113883.6.88" version="5-Mar-18"/>
+        <def name="PatientAge">
+            <elm:expression xsi:type="elm:SingletonFrom">
+                <elm:operand xsi:type="elm:Query">
+                    <elm:source alias="ageQuery">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code"
+                                    code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                    ->(363702006 |Has focus (attribute))->[105726004 |Age AND/OR growth finding (finding)]"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                    <elm:return>
+                        <elm:expression xsi:type="elm:Property" path="result.lowerBound"/>
+                    </elm:return>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="DiagnosedWithOsteporosis">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="DiagnosedWithOsteporosisQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[64859006 |Osteoporosis (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="DXAScanning">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="DXAScanningQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="241686001 |Dual energy X-ray photon absorptiometry (procedure)|"
+                                display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="OsteporosisScreeningInterval">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="OsteporosisScreeningIntervalQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="300004007 |Screening for osteoporosis (procedure)|"
+                                display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="Postmenopausal">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PostmenopausalQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[76498008 |Postmenopausal state (finding)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="HasHistoryOfFragilityFracture">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="HasHistoryOfFragilityFractureQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[268029009 |Pathological fracture (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="LowBodyWeight">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="LowBodyWeightQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="248342006 |Underweight (finding)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="BoneLossCausedByMedication">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="BoneLossCausedByMedicationQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[14651005 |Drug-induced osteoporosis (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="BoneLossCausedByDisease">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="BoneLossCausedByDiseaseQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[17b00578-6b1b-4e0b-b2ee-76f69e6061ec |Osteoporosis due to disease (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ParentalMedicalHistoryOfHipFracture">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="ParentalMedicalHistoryOfHipFractureQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[263225007 |Fracture of proximal end of femur (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="CurrentTobaccoSmoker">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="CurrentTobaccoSmokerQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[77176002 |Smoker (finding)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="HasAlcoholism">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="HasAlcoholismQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[7200002 |Alcoholism (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="RheumatoidArthritis">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="RheumatoidArthritisQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[69896004 |Rheumatoid arthritis (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="DXAScanTScore">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="DXAScanTScoreQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[3dfd49ed-a7e4-41a5-ab44-356015e345a2 |Dual energy X-ray photon absorptiometry scan T score]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+                <elm:sort>
+                    <elm:by xsi:type="elm:ByColumn" path="result.lowerBound" direction="desc"/>
+                </elm:sort>
+            </elm:expression>
+        </def>
+        <def name="MostRecentDXAScanTScore">
+            <elm:expression xsi:type="elm:Indexer">
+                <elm:operand xsi:type="elm:ExpressionRef" name="DXAScanTScore"/>
+                <elm:operand xsi:type="elm:Literal" value="1" valueType="Integer"/>
+            </elm:expression>
+        </def>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAccessed">
+            <def name="AccessOfPatientRecord">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Access of the patient record in a preventive care encounter at a primary care clinic or in an Obstetrics/Gynecology
+                            (OB/GYN) or women's health outpatient department.</a:s>
+                    </elm:annotation>
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAccessed">
+            <def name="DxaScanGreaterEqualFifteenYears">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Previous DXA scan >= 15 years before today.</a:s>
+                    </elm:annotation>
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="241686001 |Dual energy X-ray photon absorptiometry (procedure)|"
+                            display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="timing.lowerBound">
+                        <elm:value xsi:type="elm:Interval" highClosed="true">
+                            <elm:high xsi:type="elm:Subtract">
+                                <elm:operand xsi:type="elm:Today"/>
+                                <elm:operand xsi:type="elm:Quantity" value="15" unit="year"/>
+                            </elm:high>
+                        </elm:value>
+                    </elm:element>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAdded">
+            <def name="DxaScanGreaterEqualFiveYears">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Previous DXA scan >= 5 years before today.</a:s>
+                    </elm:annotation>
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="241686001 |Dual energy X-ray photon absorptiometry (procedure)|"
+                            display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="timing.lowerBound">
+                        <elm:value xsi:type="elm:Interval" highClosed="true">
+                            <elm:high xsi:type="elm:Subtract">
+                                <elm:operand xsi:type="elm:Today"/>
+                                <elm:operand xsi:type="elm:Quantity" value="5" unit="year"/>
+                            </elm:high>
+                        </elm:value>
+                    </elm:element>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAdded">
+            <def name="DxaScanGreaterEqualOneYear">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Previous DXA scan >= 1 year before today.</a:s>
+                    </elm:annotation>
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="241686001 |Dual energy X-ray photon absorptiometry (procedure)|"
+                            display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="timing.lowerBound">
+                        <elm:value xsi:type="elm:Interval" highClosed="true">
+                            <elm:high xsi:type="elm:Subtract">
+                                <elm:operand xsi:type="elm:Today"/>
+                                <elm:operand xsi:type="elm:Quantity" value="1" unit="year"/>
+                            </elm:high>
+                        </elm:value>
+                    </elm:element>
+                </elm:expression>
+            </def>
+        </trigger>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementModified">
+            <def name="EndPatientPerferredScreeningInterval">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>End of set patient-preferred screening interval.</a:s>
+                    </elm:annotation>
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="300004007 |Screening for osteoporosis (procedure)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </elm:expression>
+            </def>
+        </trigger>
+    </externalData>
+    <actionGroup>
+        <subElements>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:GreaterOrEqual">
+                            <elm:annotation>Patient is aged >= 65 years</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                            <elm:operand xsi:type="elm:Quantity" value="65"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>Patient has not been diagnosed with osteoporosis</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="DiagnosedWithOsteporosis"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>Patient has not undergone DXA scanning previously</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="DXAScanning"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>No patient-preferred screening interval has been set</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="OsteporosisScreeningInterval"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Outpatient Visit, &gt;= 65 Years of Age, No Prior Dual-Energy X-ray Absorptiometry (DXA)"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Identify the patient as an osteoporosis screening candidate."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Documentation Template: Osteoporosis Screening KNART."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Order Set: Osteoporosis Screening KNART."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make screening guideline recommendations available for review."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Condition: 
+                    Patient is aged < 65 years; and
+                    Patient is postmenopausal; and
+                    Patient has one or more risk factors associated with osteoporosis (history of fragility fracture; or body weight < 127 lbs; or bone loss caused by medication; or bone loss caused by disease; or parental medical history of hip fracture; or current tobacco smoker; or alcoholism; or rheumatoid arthritis); and
+                    Patient has not been diagnosed with osteoporosis; and
+                    No patient-preferred screening interval has been set.
+                -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Less">
+                            <elm:annotation>Patient is aged &lt; 65 years</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                            <elm:operand xsi:type="elm:Quantity" value="65"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:annotation>Patient is postmenopausal</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="Postmenopausal"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:AnyTrue">
+                            <elm:annotation xsi:type="a:Annotation">
+                                <a:s>Patient has one or more risk factors associated with osteoporosis (history of fragility fracture; or body weight
+                                    &lt; 127 lbs; or bone loss caused by medication; or bone loss caused by disease; or parental medical history of
+                                    hip fracture; or current tobacco smoker; or alcoholism; or rheumatoid arthritis)</a:s>
+                            </elm:annotation>
+                            <elm:source xsi:type="elm:List">
+                                <elm:element xsi:type="elm:Exists">
+                                    <elm:operand xsi:type="elm:ExpressionRef" name="HasHistoryOfFragilityFracture"/>
+                                </elm:element>
+                                <elm:element xsi:type="elm:Exists">
+                                    <elm:operand xsi:type="elm:ExpressionRef" name="LowBodyWeight"/>
+                                </elm:element>
+                                <elm:element xsi:type="elm:Exists">
+                                    <elm:operand xsi:type="elm:ExpressionRef" name="BoneLossCausedByMedication"/>
+                                </elm:element>
+                                <elm:element xsi:type="elm:Exists">
+                                    <elm:operand xsi:type="elm:ExpressionRef" name="BoneLossCausedByDisease"/>
+                                </elm:element>
+                                <elm:element xsi:type="elm:Exists">
+                                    <elm:operand xsi:type="elm:ExpressionRef" name="ParentalMedicalHistoryOfHipFracture"/>
+                                </elm:element>
+                                <elm:element xsi:type="elm:Exists">
+                                    <elm:operand xsi:type="elm:ExpressionRef" name="CurrentTobaccoSmoker"/>
+                                </elm:element>
+                                <elm:element xsi:type="elm:Exists">
+                                    <elm:operand xsi:type="elm:ExpressionRef" name="HasAlcoholism"/>
+                                </elm:element>
+                                <elm:element xsi:type="elm:Exists">
+                                    <elm:operand xsi:type="elm:ExpressionRef" name="RheumatoidArthritis"/>
+                                </elm:element>
+                            </elm:source>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>Patient has not been diagnosed with osteoporosis</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="DiagnosedWithOsteporosis"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>No patient-preferred screening interval has been set</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="OsteporosisScreeningInterval"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Outpatient Visit, &lt; 65 Years of Age"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Identify the patient as an osteoporosis screening candidate"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Documentation Template: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Order Set: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make screening guideline recommendations available for review"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Condition:
+                    Patient is aged >= 65 years; and
+                    Most recent DXA scan result of T-score >= -1.5; and
+                    Patient has not been diagnosed with osteoporosis; and
+                    No patient-preferred screening interval has been set.
+                    -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:GreaterOrEqual">
+                            <elm:annotation>Patient is aged >= 65 years</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                            <elm:operand xsi:type="elm:Quantity" value="65"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:GreaterOrEqual">
+                            <elm:annotation>Most recent DXA scan result of T-score >= -1.5</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="MostRecentDXAScanTScore"/>
+                            <elm:operand xsi:type="elm:Quantity" value="-1.5"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>Patient has not been diagnosed with osteoporosis</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="DiagnosedWithOsteporosis"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>No patient-preferred screening interval has been set</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="OsteporosisScreeningInterval"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title
+                    value="&lt;= 15 Years Since Previous Dual-Energy X-ray Absorptiometry (DXA) Scan, &gt;= 65 Years of Age, Most Recent T-Score &gt;= -1.5"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Identify the patient as an osteoporosis screening candidate"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Documentation Template: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Order Set: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make screening guideline recommendations available for review"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Condition:
+                    Patient is aged >= 65 years; and
+                    Most recent DXA scan result of T-score is > -2.0 and < -1.5; and
+                    Patient has not been diagnosed with osteoporosis; and
+                    No patient-preferred screening interval has been set.
+                -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:GreaterOrEqual">
+                            <elm:annotation>Patient is aged >= 65 years</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                            <elm:operand xsi:type="elm:Quantity" value="65"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:And">
+                            <elm:annotation>Most recent DXA scan result of T-score is &gt; -2.0 and &lt; -1.5</elm:annotation>
+                            <elm:operand xsi:type="elm:Greater">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="MostRecentDXAScanTScore"/>
+                                <elm:operand xsi:type="elm:Quantity" value="-2.0"/>
+                            </elm:operand>
+                            <elm:operand xsi:type="elm:Less">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="MostRecentDXAScanTScore"/>
+                                <elm:operand xsi:type="elm:Quantity" value="-1.5"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>Patient has not been diagnosed with osteoporosis</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="DiagnosedWithOsteporosis"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>No patient-preferred screening interval has been set</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="OsteporosisScreeningInterval"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title
+                    value="5 Years Since Previous Dual-Energy X-ray Absorptiometry (DXA) Scan, &gt;= 65 Years of Age, Most Recent T-Score is &gt; -2.0 and &lt; -1.5"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Identify the patient as an osteoporosis screening candidate"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Documentation Template: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Order Set: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make screening guideline recommendations available for review"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Condition:
+                    Patient is aged >= 65 years; and
+                    Most recent DXA scan result of T-score is >= -2.49 and <= -2; and 
+                    Patient has not been diagnosed with osteoporosis; and
+                    No patient-preferred screening interval has been set.
+                -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:GreaterOrEqual">
+                            <elm:annotation>Patient is aged >= 65 years</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                            <elm:operand xsi:type="elm:Quantity" value="65"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:In">
+                            <elm:annotation>Most recent DXA scan result of T-score is greater than -2.49 and less than -2</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="MostRecentDXAScanTScore"/>
+                            <elm:operand xsi:type="elm:Interval">
+                                <elm:low xsi:type="elm:Quantity" value="-2.49"/>
+                                <elm:high xsi:type="elm:Quantity" value="-2"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>Patient has not been diagnosed with osteoporosis</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="DiagnosedWithOsteporosis"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>No patient-preferred screening interval has been set</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="OsteporosisScreeningInterval"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title
+                    value="1 Year Since Previous Dual-Energy X-ray Absorptiometry (DXA) Scan, &gt;= 65 Years of Age, Most Recent T-Score is &gt;= -2.49 and &lt;= -2"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Identify the patient as an osteoporosis screening candidate"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Documentation Template: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Order Set: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make screening guideline recommendations available for review"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <!-- Condition:
+                    Patient has not been diagnosed with osteoporosis; and
+                    A patient-preferred screening interval has previously been set.
+                -->
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:annotation>Patient has not been diagnosed with osteoporosis</elm:annotation>
+                                <elm:operand xsi:type="elm:ExpressionRef" name="DiagnosedWithOsteporosis"/>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Exists">
+                            <elm:annotation>A patient-preferred screening interval has previously been set</elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="OsteporosisScreeningInterval"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Patient-Preferred Screening Interval"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Identify the patient as an osteoporosis screening candidate"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Documentation Template: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Open Order Set: Osteoporosis Screening KNART"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Make screening guideline recommendations available for review"/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>

@@ -1,0 +1,2934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Cardiology: Chest Pain/Coronary artery disease (CAD) Order Set</title>
+      <subtitle>Order Set: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AD</releaseinfo>
+      <pubdate>05/29/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>May 29, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 29, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>March 26, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>February 28, 2018</entry>
+                  <entry>Pre-published</entry>
+               </row>
+               <row>
+                  <entry>February 26, 2018</entry>
+                  <entry>Superseded</entry>
+               </row>
+               <row>
+                  <entry>August 29, 2017</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>August 29, 2017</entry>
+                  <entry>Pre-published</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>Bruce Bray, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Professor, Cardiovascular Medicine, University of Utah School of Medicine; Staff                                 Cardiologist, Salt Lake City VA Medical Center (VAMC)</entry>
+               </row>
+               <row>
+                  <entry>Scott Wall, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Assistant Professor, Cardiovascular Medicine, University of Utah; School of                                 Medicine Staff Cardiologist, Electrophysiology, Salt Lake City VAMC</entry>
+               </row>
+               <row>
+                  <entry>Aiden Abidov, MD, PhD</entry>
+                  <entry>Author</entry>
+                  <entry>Professor of Medicine, Wayne State University; Section Chief, Cardiology, John                                 Dingell VAMC</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>ce30ff93-c0ab-572b-bcfe-fbd34a085d21</entry>
+                  <entry>B5</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Adult patients</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalFocus</entry>
+                  <entry>Adult with stable CP being considered for cardiology consultation (excluding unstable symptoms and ACS)</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Outpatient</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Provider in Primary Care Clinic</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowTask</entry>
+                  <entry>noninvasive diagnostic orders (stress testing)</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:0.8</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e2">resting12LeadElectrocardiogram</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ElectricalActivityEvaluationOfBodyStructureAction,
+                                    codeProperty=topicFocus,
+                                    dateProperty=dateTime</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e2"> [de405a38-1cc8-44ef-81e7-fd1c0acf9421]</link>
+                     </entry>
+                  </row>
+                  <row>
+                     <entry>dateRange[elm:Interval]</entry>
+                     <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-2 Month))</entry>
+                  </row>
+                  <row>
+                     <entry/>
+                     <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <para>No trigger definitions are present.</para>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>Clinical Stability</title>
+      <para>This order set is not applicable for use with patients who are unstable based on clinician judgement.                              Examples of unstable patients include, but are not limited to, patients with chest pain pattern suggestive of ACS                              (e.g., those with new onset resting CP, CP with minimal exertion, new unstable angina pattern, ST-segment elevation, non–ST-segment elevation myocardial infarction on ECG, or suspected aortic dissection),                              and patients with any of the following symptoms or findings.                              Consider transferring unstable patients to the nearest emergency department immediately</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">  Ongoing resting chest pain for &gt; 20 minutes with ST elevation or depression on ECG</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Ongoing resting chest pain for &gt; 20 minutes with ST elevation or depression on ECG</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("hasOngoingRestChestPain")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">  Onset of new resting chest pain episodes within the past week</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Onset of new resting chest pain episodes within the past week</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("hasOnsetOfNewRestChestPainEpisodes")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">  New onset, recurrent chest pain with minimal exertion over the past 2 months.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">New onset, recurrent chest pain with minimal exertion over the past 2 months.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("hasNewOnsetRecurrentChestPain")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c1" nameend="c3">  Previously stable exertional angina now occurring with minimal activity over the past 2 months.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Previously stable exertional angina now occurring with minimal activity over the past 2 months.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("hasPreviouslyStableExertionalAnginaNowOccurring")</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Consults and Referrals</title>
+      <informaltable xmlns:a="urn:hl7-org:cql-annotations:r1"
+                     xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                     frame="all">
+         <tgroup align="left" cols="1">
+            <thead>
+               <row>
+                  <entry>Conditions</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>
+                     <emphasis role="bold">Condition:</emphasis>elm:IsFalse (elm:Or( elm:Or( elm:Property("hasOngoingRestChestPain" from: elm:ParameterRef(Responses)) elm:Property("hasOnsetOfNewRestChestPainEpisodes" from: elm:ParameterRef(Responses))) elm:Or( elm:Property("hasNewOnsetRecurrentChestPain" from: elm:ParameterRef(Responses)) elm:Property("hasPreviouslyStableExertionalAnginaNowOccurring" from: elm:ParameterRef(Responses)))))</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="17">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">Cardiology consult order</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">Consider other consult modalities which might be available (e.g., e-consult or other rapidly iterative consult method. A simple consult is included here as the overarching clinical intent.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_allnone">◎ </link>Referral to cardiology to evaluate chest pain (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:TSR-NoModel]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">TSR: Referral to cardiology <link linkend="d6e3">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_allnone">◎ </link>Reason for cardiology consultation</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Reason for cardiology consultation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">typical angina(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e187">429559004</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">atypical chest pain(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e188">102589003</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">progressive angina symptoms in a stable patient with known CAD (if the patient is unstable based upon clinical or test results, direct physician-to-physician communication is required)(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e189">371806006</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">
+                     <link linkend="item_fillin">☞ </link>item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">other</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_allnone">◎ </link>Goal of cardiology consultation</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Goal of cardiology consultation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">
+                     <link linkend="item_fillin">☞ </link>item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Goal</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Imaging and ECG</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="17">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">Electrocardiogram/Chest X-ray</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">Consider ordering prior to the cardiology consultation. Resting 12-lead electrocardiogram is required if it has not been obtained within the past two months.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( resting12LeadElectrocardiogram ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Order sentence: resting 12-lead electrocardiogram to evaluate chest pain (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ElectricalActivityEvaluationOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: Electrical activity evaluation <link linkend="d6e2">de405a38-1cc8-44ef-81e7-fd1c0acf9421</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">bodyStructure: Heart structure <link linkend="d6e5">80891009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">usingDevice: Electrocardiographic monitor and recorder, device <link linkend="d6e6">86184003</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">physiologicPatientState: Resting state <link linkend="d6e7">128975004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">indicationForProcedure: Chest pain <link linkend="d6e8">29857009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Order sentence: x-ray chest to evaluate chest pain (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:RadiographicImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: x-ray chest <link linkend="d6e10">278110001</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">bodyStructure: Thoracic structure <link linkend="d6e11">51185008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">usingDevice: Radiographic unit, device <link linkend="d6e12">68080007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">indicationForProcedure: Chest pain <link linkend="d6e8">29857009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="13">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">Coronary CTA</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">Consider ordering prior to the cardiology consultation.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Is Coronary CTA (cCTA) availability at the facility</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("cCTAAvailability")</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:IsTrue (elm:Property("cCTAAvailability" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Coronary CTA angiogram (cCTA) chest to evaluate chest pain (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ComputedTomographyImagingOfBodyStructure]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: coronary CTA chest to evaluate chest pain <link linkend="d6e16">312251004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">bodyStructure: Coronary artery structure <link linkend="d6e17">41801008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">usingDevice: Computerized axial tomography scanner, device <link linkend="d6e18">54953005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">usingSubstance: X-ray contrast media <link linkend="d6e19">419098001</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">indicationForProcedure: Chest pain <link linkend="d6e8">29857009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="13">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="0">Echocardiogram</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c4">Consider for patients with suspected pericarditis, myocarditis, hypertrophic cardiomyopathy, or pulmonary hypertension.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Is the patient suspected with pericarditis, myocarditis, hypertrophic cardiomyopathy, or pulmonary hypertension.</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("patientSuspectedWithPericarditis")</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:IsTrue (elm:Property("patientSuspectedWithPericarditis" from: elm:ParameterRef(Responses)))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Resting echocardiogram to evaluate chest pain (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:UltrasoundImagingOfBodyStrutureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: Resting echocardiogram to evaluate chest pain <link linkend="d6e22">278292003</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">bodyStructure: Heart structure <link linkend="d6e5">80891009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">physiologicPatientState: Resting state <link linkend="d6e7">128975004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">usingDevice: Cardiovascular ultrasound imaging system <link linkend="d6e26">467663007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">indicationForProcedure: Chest pain <link linkend="d6e8">29857009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Laboratory Tests</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="20">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Consider the following tests to be completed prior to the cardiology consultation.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>basic metabolic profile (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:MeasurementOfLaboratoryTestRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: Basic metabolic profile <link linkend="d6e29">bd01faa8-443c-4ad6-9cb6-ea50b4d7a093</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>complete blood count (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:MeasurementOfLaboratoryTestRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: Complete blood count <link linkend="d6e31">26604007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>fasting lipid profile (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:MeasurementOfLaboratoryTestRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: Fasting lipid profile <link linkend="d6e33">16254007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>thyroid function testing (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:MeasurementOfLaboratoryTestRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: Thyroid function testing <link linkend="d6e35">35650009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>brain natriuretic peptide (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:MeasurementOfLaboratoryTestRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: Brain natriuretic peptide <link linkend="d6e38">390917008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Cardiac Risk Stratification</title>
+      <para>For stable patients, these orders may assist in cardiac risk stratification.                     A link to the ACC/AHA clinical practice guideline for stress testing should be made available to ordering providers:</para>
+      <para> (<citation>Gibbons 2002</citation>) ACC/AHA 2002 guideline update for exercise testing: summary article: A report of the American college of cardiology/American heart association task force on practice guidelines (committee to update the 1997 exercise testing guidelines)<link xlink:href="https://doi.org/10.1016/S0735-1097(02)02164-2"> link </link>
+      </para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="5">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="96">  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">Assess for contraindications to stress testing such as: Acute Congestive Heart Failure (CHF), acute MI or unstable angina, severe aortic stenosis, unstable rhythm, aortic aneurysm/dissection, endocarditis, acute pericarditis, acute pulmonary embolus/infarction, acute systemic illness/infection, severe hypertension, inability to cooperate, inability to exercise (&amp;lt;5 METs), left bundle branch block (LBBB), etc.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="0">Exercise Stress Testing</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c5">Consider for patients with no known or prior coronary artery disease, low probability for coronary artery disease, ability to exercise, normal electrocardiogram, and heart rate &gt; 60 beats per minute.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_any">☐ </link>Exercise ECG (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ElectricalActivityEvaluationOfBodyStructure]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Electrical activity evaluation <link linkend="d6e2">de405a38-1cc8-44ef-81e7-fd1c0acf9421</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Heart structure <link linkend="d6e5">80891009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Exercise state <link linkend="d6e42">128976003</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Electrocardiographic monitor and recorder, device <link linkend="d6e6">86184003</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="0">Stress Testing with Echocardiography</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c5">Consider for patients with no known or prior coronary artery disease, low to intermediate probability for coronary artery disease, ability to exercise, and no evidence of significant regional wall motion abnormalities or conduction abnormalities (IVCD/bundle branch block or pacing) of 12-lead electrocardiogram.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_any">☐ </link>Exercise Echocardiography (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:UltrasoundImagingOfBodyStructure]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Exercise Echocardiography <link linkend="d6e22">278292003</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Heart structure <link linkend="d6e5">80891009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Exercise state <link linkend="d6e42">128976003</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Cardiovascular ultrasound imaging system <link linkend="d6e26">467663007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="10">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="0">Dobutamine Stress Testing with Myocardial Perfusion Imaging (MPI)</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c5">Consider for patients with no known or prior coronary artery disease, intermediate probability for coronary artery disease, inability to exercise, and normal electrocardiogram.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_any">☐ </link>dobutamine stress myocardial perfusion imaging (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:RadionuclideImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Dobutamine stress myocardial perfusion imaging <link linkend="d6e51">312421008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Myocardium structure <link linkend="d6e52">74281007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Gamma camera <link linkend="d6e53">261802008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[0]: Dobutamine <link linkend="d6e54">387145002</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[1]: Radioactive isotope <link linkend="d6e55">89457008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Cardiac stress state <link linkend="d6e56">432655005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="9">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="0">Exercise Stress Testing with MPI</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c5">Consider for patients with known or prior CAD, ability to exercise, and normal ST-T.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_any">☐ </link>exercise stress myocardial perfusion imaging (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:RadionuclideImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Radionuclide imaging  <link linkend="d6e51">312421008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Myocardium structure <link linkend="d6e52">74281007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Gamma camera <link linkend="d6e53">261802008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[0]: Radioactive isotope <link linkend="d6e55">89457008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Exercise state <link linkend="d6e42">128976003</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="28">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="0">Vasodilator Stress Testing with MPI</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c5">Consider for patients with known or prior CAD and abnormal electrocardiogram/PPM. This subsection should also be made available to the provider for patients with known or prior CAD, abnormal electrocardiogram, and history of prior myocardial infarction or regional wall motion abnormalities.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_atmostone">✪ </link>Regadenoson (Lexiscan) stress myocardial perfusion imaging (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:RadionuclideImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Radionuclide imaging  <link linkend="d6e51">312421008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Myocardium structure <link linkend="d6e52">74281007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Gamma camera <link linkend="d6e53">261802008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[0]: Regadenoson <link linkend="d6e68">430242005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[1]: Radioactive isotope <link linkend="d6e55">89457008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Cardiac stress state <link linkend="d6e56">432655005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_atmostone">✪ </link>Adenosine stress testing myocardial perfusion imaging (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:RadionuclideImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Radionuclide imaging  <link linkend="d6e51">312421008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Myocardium structure <link linkend="d6e52">74281007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Gamma camera <link linkend="d6e53">261802008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[0]: Adenosine <link linkend="d6e76">35431001</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[1]: Radioactive isotope <link linkend="d6e55">89457008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Cardiac stress state <link linkend="d6e56">432655005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_atmostone">✪ </link>Dipyridamole stress testing myocardial perfusion imaging (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:RadionuclideImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Radionuclide imaging  <link linkend="d6e51">312421008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Myocardium structure <link linkend="d6e52">74281007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Gamma camera <link linkend="d6e53">261802008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[0]: Dipyridamole <link linkend="d6e83">387371005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[1]: Radioactive isotope <link linkend="d6e55">89457008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Cardiac stress state <link linkend="d6e56">432655005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="18">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="0">Dobutamine Stress Testing with Echocardiography or MPI</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c5">Consider for patients with known or prior CAD, inability to exercise, normal electrocardiogram, and no prior myocardial infarction. Only one should be selected.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_atmostone">✪ </link>Dobutamine stress testing echocardiography (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:UltrasoundImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Ultrasound imaging <link linkend="d6e22">278292003</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Heart structure  <link linkend="d6e5">80891009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Cardiovascular ultrasound imaging system <link linkend="d6e26">467663007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[0]: Dobutamine <link linkend="d6e54">387145002</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Cardiac stress state <link linkend="d6e56">432655005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_atmostone">✪ </link>Dobutamine stress testing myocardial perfusion imaging (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:RadionuclideImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Radionuclide imaging <link linkend="d6e51">312421008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Myocardium structure <link linkend="d6e52">74281007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Gamma camera <link linkend="d6e53">261802008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[0]: Dobutamine <link linkend="d6e54">387145002</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[1]: Radioactive isotope <link linkend="d6e55">89457008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">physiologicPatientState: Cardiac stress state <link linkend="d6e56">432655005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">  </entry>
+                  <entry namest="c3" nameend="c5" rowsep="0">Coronary CT Angiogram</entry>
+               </row>
+               <row>
+                  <entry namest="c3" nameend="c5">Consider for patients without known coronary artery disease, low or intermediate probability for coronary artery disease, especially in presence of a history of prior inconclusive or discrepant diagnostic testing, recurrent symptoms or significant family history of CAD/multiple risk factors in young patients. Additional postprocessing (CT-FFR) or CTA stress perfusion may be ordered where available.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="gs_any">☐ </link>coronary CT angiogram (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c5">actionSentence[type=elm:Instance, classType=anf:ComputedTomographyImagingOfBodyStructureRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">topicFocus: Computed tomography imaging <link linkend="d6e16">312251004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">bodyStructure: Coronary artery structure <link linkend="d6e17">41801008</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingDevice: Computerized axial tomography scanner, device <link linkend="d6e18">54953005</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">usingSubstance[0]: X-ray contrast media <link linkend="d6e19">419098001</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c4" nameend="c5">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Medications</title>
+      <para>Consider the following medications for stable patients to be initiated prior to the cardiology consultation.</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="30">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Antianginal Therapy</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>metoprolol tartrate 25 mg tablet oral twice daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType.code: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: metoprolol tartrate 25 mg tablet oral <link linkend="d6e108">866924</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  25 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upderBound:  25 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: twice daily <link linkend="d6e112">229799001</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>metoprolol tartrate 50 mg tablet oral twice daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: metoprolol tartrate 50 mg tablet oral <link linkend="d6e115">866514</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  50 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upderBound:  50 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: twice daily <link linkend="d6e112">229799001</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>amlodipine 5 mg tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: amlodipine 5 mg tablet <link linkend="d6e122">197361</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  5 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upderBound:  5 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="13">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Nitroglycerin</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>nitroglycerin 0.4 mg tablet sub-lingual every 5 minutes as needed for chest pain; maximum 3 tablets (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: nitroglycerin 0.4 mg tablet <link linkend="d6e128">198039</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: sublingual <link linkend="d6e129">37839007</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">indicationForProcedure: Chest pai <link linkend="d6e8">29857009</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  0.4 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  1.2 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.includeLowerBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.includeUpperBound:  1 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: every 5 minutes as needed for chest pain <link linkend="d6e132">471000175102</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="10">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Antiplatelet Therapy</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>aspirin 81 mg enteric coated tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: aspirin 81 mg enteric coated tablet <link linkend="d6e136">308416</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  81 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  81 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="70">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Risk Factor Reduction</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>atorvastatin 20 mg tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: atorvastatin 20 mg tablet <link linkend="d6e142">617310</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  20 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  20 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>atorvastatin 40 mg tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: atorvastatin 40 mg tablet <link linkend="d6e149">617311</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  40 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  40 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>simvastatin 20 mg tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: simvastatin 20 mg tablet <link linkend="d6e155">312961</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  20 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  20 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>simvastatin 40 mg tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: simvastatin 40 mg tablet <link linkend="d6e162">198211</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  40 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  40 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>rosuvastatin 5 mg tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: rosuvastatin 5 mg tablet <link linkend="d6e168">859424</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  5 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  5 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>rosuvastatin 10 mg tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: rosuvastatin 10 mg tablet <link linkend="d6e175">859747</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  10 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  10 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_atmostone">✪ </link>rosuvastatin 20 mg tablet oral daily (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:AdministrationOfMedicationRequest]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicType: Administration <link linkend="d6e107">129445006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topicFocus: rosuvastatin 20 mg tablet <link linkend="d6e182">859751</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">routeOfAdministration: Oral route <link linkend="d6e110">26643006</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.lowerBound:  20 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.upperBound:  20 </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">dosage.unit: milligram <link linkend="d6e111">258684004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">frequency: once daily <link linkend="d6e125">229797004</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: routine <link linkend="d6e9">50811001</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+               <row>
+                  <entry>RXNorm</entry>
+                  <entry>2.16.840.1.113883.6.88</entry>
+                  <entry>5-Mar-18</entry>
+               </row>
+               <row>
+                  <entry>LOINC</entry>
+                  <entry>2.16.840.1.113883.6.1</entry>
+                  <entry>2.61</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e122">RXNorm</entry>
+                  <entry>197361</entry>
+                  <entry>amlodipine 5 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e128">RXNorm</entry>
+                  <entry>198039</entry>
+                  <entry>nitroglycerin 0.4 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e162">RXNorm</entry>
+                  <entry>198211</entry>
+                  <entry>simvastatin 40 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e136">RXNorm</entry>
+                  <entry>308416</entry>
+                  <entry>aspirin 81 mg enteric coated tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e155">RXNorm</entry>
+                  <entry>312961</entry>
+                  <entry>simvastatin 20 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e142">RXNorm</entry>
+                  <entry>617310</entry>
+                  <entry>atorvastatin 20 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e149">RXNorm</entry>
+                  <entry>617311</entry>
+                  <entry>atorvastatin 40 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e168">RXNorm</entry>
+                  <entry>859424</entry>
+                  <entry>rosuvastatin 5 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e175">RXNorm</entry>
+                  <entry>859747</entry>
+                  <entry>rosuvastatin 10 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e182">RXNorm</entry>
+                  <entry>859751</entry>
+                  <entry>rosuvastatin 20 mg tablet</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e115">RXNorm</entry>
+                  <entry>866514</entry>
+                  <entry>metoprolol tartrate 50 mg tablet oral</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e108">RXNorm</entry>
+                  <entry>866924</entry>
+                  <entry>metoprolol tartrate 25 mg tablet oral</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e188">SNOMED CT</entry>
+                  <entry>102589003</entry>
+                  <entry>atypical chest pain</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e7">SNOMED CT</entry>
+                  <entry>128975004</entry>
+                  <entry>Resting state</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e42">SNOMED CT</entry>
+                  <entry>128976003</entry>
+                  <entry>Exercise state</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e107">SNOMED CT</entry>
+                  <entry>129445006</entry>
+                  <entry>Administration</entry>
+                  <entry>12</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e190">SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>Adult patients</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e33">SNOMED CT</entry>
+                  <entry>16254007</entry>
+                  <entry>Fasting lipid profile</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e125">SNOMED CT</entry>
+                  <entry>229797004</entry>
+                  <entry>once daily</entry>
+                  <entry>9</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e112">SNOMED CT</entry>
+                  <entry>229799001</entry>
+                  <entry>twice daily</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e111">SNOMED CT</entry>
+                  <entry>258684004</entry>
+                  <entry>milligram</entry>
+                  <entry>12</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e53">SNOMED CT</entry>
+                  <entry>261802008</entry>
+                  <entry>Gamma camera</entry>
+                  <entry>6</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e31">SNOMED CT</entry>
+                  <entry>26604007</entry>
+                  <entry>Complete blood count</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e110">SNOMED CT</entry>
+                  <entry>26643006</entry>
+                  <entry>Oral route</entry>
+                  <entry>11</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e10">SNOMED CT</entry>
+                  <entry>278110001</entry>
+                  <entry>x-ray chest</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e22">SNOMED CT</entry>
+                  <entry>278292003</entry>
+                  <entry>Resting echocardiogram to evaluate chest pain</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e8">SNOMED CT</entry>
+                  <entry>29857009</entry>
+                  <entry>Chest pain</entry>
+                  <entry>5</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e16">SNOMED CT</entry>
+                  <entry>312251004</entry>
+                  <entry>coronary CTA chest to evaluate chest pain</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e51">SNOMED CT</entry>
+                  <entry>312421008</entry>
+                  <entry>Dobutamine stress myocardial perfusion imaging</entry>
+                  <entry>6</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e191">SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>Outpatient</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e76">SNOMED CT</entry>
+                  <entry>35431001</entry>
+                  <entry>Adenosine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e35">SNOMED CT</entry>
+                  <entry>35650009</entry>
+                  <entry>Thyroid function testing</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e189">SNOMED CT</entry>
+                  <entry>371806006</entry>
+                  <entry>progressive angina symptoms in a stable patient with known CAD (if the patient is unstable based upon clinical or test results, direct physician-to-physician communication is required)</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e129">SNOMED CT</entry>
+                  <entry>37839007</entry>
+                  <entry>sublingual</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e54">SNOMED CT</entry>
+                  <entry>387145002</entry>
+                  <entry>Dobutamine</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e83">SNOMED CT</entry>
+                  <entry>387371005</entry>
+                  <entry>Dipyridamole</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e38">SNOMED CT</entry>
+                  <entry>390917008</entry>
+                  <entry>Brain natriuretic peptide</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e17">SNOMED CT</entry>
+                  <entry>41801008</entry>
+                  <entry>Coronary artery structure</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e19">SNOMED CT</entry>
+                  <entry>419098001</entry>
+                  <entry>X-ray contrast media</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e187">SNOMED CT</entry>
+                  <entry>429559004</entry>
+                  <entry>typical angina</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e68">SNOMED CT</entry>
+                  <entry>430242005</entry>
+                  <entry>Regadenoson</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e56">SNOMED CT</entry>
+                  <entry>432655005</entry>
+                  <entry>Cardiac stress state</entry>
+                  <entry>6</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e26">SNOMED CT</entry>
+                  <entry>467663007</entry>
+                  <entry>Cardiovascular ultrasound imaging system</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e132">SNOMED CT</entry>
+                  <entry>471000175102</entry>
+                  <entry>every 5 minutes as needed for chest pain</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e9">SNOMED CT</entry>
+                  <entry>50811001</entry>
+                  <entry>routine</entry>
+                  <entry>31</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e11">SNOMED CT</entry>
+                  <entry>51185008</entry>
+                  <entry>Thoracic structure</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e18">SNOMED CT</entry>
+                  <entry>54953005</entry>
+                  <entry>Computerized axial tomography scanner, device</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e12">SNOMED CT</entry>
+                  <entry>68080007</entry>
+                  <entry>Radiographic unit, device</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e52">SNOMED CT</entry>
+                  <entry>74281007</entry>
+                  <entry>Myocardium structure</entry>
+                  <entry>6</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>80891009</entry>
+                  <entry>Heart structure</entry>
+                  <entry>5</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e6">SNOMED CT</entry>
+                  <entry>86184003</entry>
+                  <entry>Electrocardiographic monitor and recorder, device</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e55">SNOMED CT</entry>
+                  <entry>89457008</entry>
+                  <entry>Radioactive isotope</entry>
+                  <entry>6</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e29">SNOMED CT</entry>
+                  <entry>bd01faa8-443c-4ad6-9cb6-ea50b4d7a093</entry>
+                  <entry>Basic metabolic profile</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>de405a38-1cc8-44ef-81e7-fd1c0acf9421</entry>
+                  <entry>Electrical activity evaluation</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">TSR</entry>
+                  <entry>TSR-NoCode<footnote>
+                        <para>TSR-NoCode is a placeholder indicating a code was requested, but was not provided.</para>
+                     </footnote>
+                  </entry>
+                  <entry>Referral to cardiology</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Cardiology: Chest Pain/Coronary artery disease (CAD) Order Set Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Cardiology: Chest Pain/Coronary artery disease (CAD) Order Set Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Cardiology: Chest Pain/Coronary artery disease (CAD) Order Set KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="FHS 2017">
+               <abbrev>FHS 2017</abbrev>
+               <citetitle>Cardiovascular disease (10-year risk) [Internet].: Framingham Heart Study; cited 2017]. Cardiovascular Disease (10-year risk). Available from: https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php.</citetitle> (<link xlink:href="https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="D'Agostino 2008">
+               <abbrev>D'Agostino 2008</abbrev>
+               <citetitle>D'Agostino RB S, Vasan RS, Pencina MJ, Wolf PA, Cobain M, Massaro JM, et al. General cardiovascular risk profile for use in primary care: the Framingham Heart Study. Circulation. 2008 February 12;117(6):743-53</citetitle> (<link xlink:href="http://circ.ahajournals.org/content/117/6/743.long">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Fihn 2015">
+               <abbrev>Fihn 2015</abbrev>
+               <citetitle>Fihn SD, Blankenship JC, Alexander KP, Bittl JA, Byrne JG, Fletcher BJ, et al. 2014 ACC/AHA/AATS/PCNA/SCAI/STS focused update of the guideline for the diagnosis and management of patients with stable ischemic heart disease: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines, and the American Association for Thoracic Surgery, Preventive Cardiovascular Nurses Association, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons. J Thorac Cardiovasc Surg. 2015 March 01;149(3):5</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="Gibbons 2002">
+               <abbrev>Gibbons 2002</abbrev>
+               <citetitle>Gibbons RJ, Balady GJ, Bricker JT, Chaitman BR, Fletcher GF, Froelicher VF, et al. ACC/AHA 2002 guideline update for exercise testing: summary article: A report of the American college of cardiology/American heart association task force on practice guidelines (committee to update the 1997 exercise testing guidelines). Circulation. 2002 October 01;106(14):1883-92.</citetitle> (<link xlink:href="https://doi.org/10.1016/S0735-1097(02)02164-2">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017a">
+               <abbrev>NLM 2017a</abbrev>
+               <citetitle>LABEL: ASPIRIN 81 MG- aspirin tablet, coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017b">
+               <abbrev>NLM 2017b</abbrev>
+               <citetitle>LABEL: CLOPIDOGREL- clopidogrel bisulfate tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017c">
+               <abbrev>NLM 2017c</abbrev>
+               <citetitle>LABEL: LIPITOR- atorvastatin calcium tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017d">
+               <abbrev>NLM 2017d</abbrev>
+               <citetitle>LABEL: METOPROLOL SUCCINATE EXTENDED-RELEASE - metoprolol succinate tablet, film coated, extended release [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2d948600-35d8-4490-983b-918bdce488c8.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2d948600-35d8-4490-983b-918bdce488c8">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017e">
+               <abbrev>NLM 2017e</abbrev>
+               <citetitle>LABEL: NITROGLYCERIN- nitroglycerin tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=67bf2a15-b115-47ac-ae28-ce2dafd6b5c9.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=67bf2a15-b115-47ac-ae28-ce2dafd6b5c9">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017f">
+               <abbrev>NLM 2017f</abbrev>
+               <citetitle>LABEL: NORVASC- amlodipine besylate tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=abd6a2ca-40c2-485c-bc53-db1c652505ed.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=abd6a2ca-40c2-485c-bc53-db1c652505ed">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017g">
+               <abbrev>NLM 2017g</abbrev>
+               <citetitle>LABEL: SIMVASTATIN - simvastatin tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c1c694c-4b08-469e-b538-08e69df06146.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c1c694c-4b08-469e-b538-08e69df06146">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Skinner 2010">
+               <abbrev>Skinner 2010</abbrev>
+               <citetitle>Skinner JS, Smeeth L, Kendall JM, Adams PC, Timmis A, Chest Pain Guideline Development Group. NICE guidance. Chest pain of recent onset: assessment and diagnosis of recent onset chest pain or discomfort of suspected cardiac origin. Heart. 2010 June 01;96(12):974-8.</citetitle> (<link xlink:href="http://heart.bmj.com/content/96/12/974.long">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
