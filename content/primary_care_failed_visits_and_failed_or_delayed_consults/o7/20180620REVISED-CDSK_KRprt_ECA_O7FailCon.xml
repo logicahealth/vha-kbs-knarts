@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?schematron-schema href="../main/schematron/knowledgeartifact.sch"?>
+<?schematron-schema href="../main/schematron/documentationtemplates.sch"?>
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:vmr="urn:hl7-org:vmr:r2" xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:a="urn:hl7-org:cql-annotations:r1"
+    xmlns:p1="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:anf="http://hl7.org/anf"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="fdfedf99-f760-5d18-a1d3-a4878297b972" identifierName="O7" version="1.0"/>
+            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007BA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"/>
+            <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-882" identifierName="Jira KP-882"/>
+        </identifiers>
+        <artifactType value="Rule"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="0.1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+        <title value="Primary Care: Failed or Delayed Consults Rule"/>
+
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr1" identifierName="CCWP"/>
+                        </identifiers>
+                        <title value="Primary Care: Failed or Delayed Consults Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr2" identifierName="CSD"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007BA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"/>
+                        </identifiers>
+                        <title value="Primary Care: Failed or Delayed Consults Rule Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr3" identifierName="KVRpt"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0007BA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007BA"/>
+                        </identifiers>
+                        <title value="Primary Care: Failed or Delayed Consults Rule KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+
+        </relatedResources>
+
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1177/2150131913498513" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e1" identifierName="Kaplan-Lewis, 2013" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="No-show to primary care appointments: why patients do not come"/>
+                        <citation value="Kaplan-Lewis E, Percac-Lima S. No-show to primary care appointments: why patients do not come. J Prim Care Community Health. 2013;4:251-255"/>
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1001/archinternmed.2011.168" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e2" identifierName="Rose, 2011" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Advanced access scheduling outcomes: a systematic review"/>
+                        <citation value="Rose KD, Ross JS, Horowitz LI. Advanced access scheduling outcomes: a systematic review. Arch Intern Med. 2011;171(13):1150-1159"/>
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e3" identifierName="VHA 1232(1)" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Consult Processes and Procedures, VHA Directive 1232(1)"/>
+                        <location value="https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3230"/>
+                        <citation
+                            value="U.S. Department of Veterans Affairs, Veterans Health Administration (VHA). Consult Processes and Procedures, VHA Directive 1232(1). VHA Publications website. Published August 24, 2016 Accessed from: https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3230, October 12, 2017"
+                        />
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e4" identifierName="VHA 1230" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Outpatient Scheduling Processes and Procedures, VHA Directive 1230"/>
+                        <location value="https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3218"/>
+                        <citation
+                            value="U.S. Department of Veterans Affairs, Veterans Health Administration (VHA). Outpatient Scheduling Processes and Procedures, VHA Directive 1230. Published July 15, 2016 Accessed from: https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3218 October 12, 2017"
+                        />
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e5" identifierName="VAIQ 7798804" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Memorandum: Scheduling and consult policy updates (VAIQ# 7798804)"/>
+                        <location value="https://www.va.gov/VHApublications/ViewPublication.asp?pub_ID=5922"/>
+                        <citation value="U.S. Department of Veterans Affairs. Memorandum: Scheduling and consult policy updates (VAIQ# 7798804), June 5, 2017"/>
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+
+        <applicability>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="All patients"/>
+            </coverage>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Outpatient Scheduling Staff"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Outpatient"/>
+            </coverage>
+        </applicability>
+
+        <status value="Active"/>
+
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180612"/>
+                <!-- rework completed -->
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180419"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180416"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20170918"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20180105"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Angela"/>
+                        <dt:part type="FAM" value="Denietolis"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Primary Care Physician, James A. Haley Veterans Hospital, Tampa VA Medical Center ( VAMC ), Tampa, FL 33612"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Pat"/>
+                        <dt:part type="FAM" value="Dumas"/>
+                        <dt:part type="TITLE" value="RN"/>
+                    </name>
+                    <affiliation>
+                        <name value="Clinical Program Director, VA Central Office ( VACO ), 810 Vermont Ave NW, Washington, DC 20420"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Manish"/>
+                        <dt:part type="FAM" value="Merchant"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Health Informatician, Albany VAMC, 113 Holland Ave, Albany, NY 12208"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Timothy"/>
+                        <dt:part type="FAM" value="Dresselhaus"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="San Diego VAMC - MEDS, 3350 La Jolla Village Dr, San Diego, CA 92161"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 B3 Group, Inc.
+                    NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+                    See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007."/>
+                <rightsHolder xsi:type="Organization">
+                    <name value="B3 Group, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 Cognitive Medical Systems, Inc.
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: https://bitbucket.org/cogmedsys/hl7-kas-examples
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. https://bitbucket.org/cogmedsys/kas-source-material
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007."/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value="10156 Tapestry Ct"/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value="Fairfax"/>
+                            <dt:part type="STA" value="VA"/>
+                            <dt:part type="ZIP" value="22032"/>
+                        </address>
+                    </addresses>
+                    <name value="B3 Group, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+        </usageTerms>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <codesystem name="RXNorm" id="2.16.840.1.113883.6.88" version="5-Mar-18"/>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAccessed">
+            <def name="appointmentCalendarAccessEvent">
+                <elm:expression xsi:type="elm:Query">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Any access to consult tracking application.</a:s>
+                    </elm:annotation>
+                    <elm:source alias="query">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                </elm:expression>
+            </def>
+        </trigger>
+    </externalData>
+    <expressions>
+        <def name="referralRequest">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>A referral request exists; </a:s>
+                </elm:annotation>
+                <elm:source alias="query">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="result.status">
+                            <elm:value xsi:type="elm:Code" code="416151008 |Scheduled - procedure status (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="consultRequest">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>A consult request exists; </a:s>
+                </elm:annotation>
+                <elm:source alias="query">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="result.status">
+                            <elm:value xsi:type="elm:Code" code="416151008 |Scheduled - procedure status (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="referralOrder">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s> A referral order exists; </a:s>
+                </elm:annotation>
+                <elm:source alias="query">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="consultOrder">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s> A consult order exists; </a:s>
+                </elm:annotation>
+                <elm:source alias="query">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="encounterForReferralOrConsult">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>An encounter with the designated referral or consult provider </a:s>
+                </elm:annotation>
+                <elm:source alias="query">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="encounterForReferralOrConsultNotCompleted">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>An encounter with the designated referral or consult provider has not been completed</a:s>
+                </elm:annotation>
+                <elm:source alias="notCompletedReferralQuery">
+                    <elm:expression xsi:type="elm:ExpressionRef" name="encounterForReferralOrConsult"/>
+                </elm:source>
+                <elm:where xsi:type="elm:Not">
+                    <elm:operand xsi:type="elm:Equal">
+                        <elm:operand path="result.status" xsi:type="elm:Property"/>
+                        <elm:operand xsi:type="elm:Code" code="385658003 |Done (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:operand>
+                    </elm:operand>
+                </elm:where>
+            </elm:expression>
+        </def>
+        <def name="appointmentForReferralOrConsult">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>An appointment with the designated referral or consult provider </a:s>
+                </elm:annotation>
+                <elm:source alias="">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="appointmentForReferralOrConsultQuery">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>An appointment with the designated referral or consult provider has not been scheduled for the patient for a future date and time;</a:s>
+                </elm:annotation>
+                <elm:source alias="appointmentForReferralOrConsultScheduleQuery">
+                    <elm:expression xsi:type="elm:ExpressionRef" name="appointmentForReferralOrConsult"/>
+                </elm:source>
+                <elm:where xsi:type="elm:Greater">
+                    <elm:operand path="timing.lowerBound" xsi:type="elm:Property"/>
+                    <elm:operand xsi:type="elm:Today"/>
+                </elm:where>
+            </elm:expression>
+        </def>
+        <def name="referralOrConsultProviderHasPreferredDate">
+            <elm:expression xsi:type="elm:Query">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>If the requesting provider specified a preferred date (PD) for completing the referral or consult, and the date and time of any scheduled appointment with the designated referral or consult provider exceeds the PD</a:s>
+                </elm:annotation>
+                <elm:source alias="referralPreferredDateQuery">
+                    <elm:expression xsi:type="elm:ExpressionRef" name="appointmentForReferralOrConsult"/>
+                </elm:source>
+                <elm:where xsi:type="elm:Greater">
+                    <elm:operand path="timing.lowerBound" xsi:type="elm:Property"/>
+                    <elm:operand path="TSR-NoCode" xsi:type="elm:Property"/>
+                </elm:where>
+            </elm:expression>
+        </def>
+    </expressions>
+    <conditions>
+        <condition>
+            <logic xsi:type="elm:AllTrue">
+                <elm:annotation xsi:type="a:Annotation">
+                    <a:s>Global Condition</a:s>
+                </elm:annotation>
+                <elm:source xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Exists">
+                        <elm:operand xsi:type="elm:ExpressionRef" name="appointmentCalendarAccessEvent"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:AnyTrue">
+                        <elm:source xsi:type="elm:List">
+                            <elm:element xsi:type="elm:Exists">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="referralRequest"/>
+                            </elm:element>
+                            <elm:element xsi:type="elm:Exists">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="consultRequest"/>
+                            </elm:element>
+                            <elm:element xsi:type="elm:Exists">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="referralOrder"/>
+                            </elm:element>
+                            <elm:element xsi:type="elm:Exists">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="consultOrder"/>
+                            </elm:element>
+                        </elm:source>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Exists">
+                        <elm:operand xsi:type="elm:ExpressionRef" name="encounterForReferralOrConsultNotCompleted"/>
+                    </elm:element>
+                    <elm:element xsi:type="elm:Or">
+                        <elm:operand xsi:type="elm:Not">
+                            <elm:operand xsi:type="elm:Exists">
+                                <elm:operand xsi:type="elm:ExpressionRef" name="appointmentForReferralOrConsultQuery"/>
+                            </elm:operand>
+                        </elm:operand>
+                        <elm:operand xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="referralOrConsultProviderHasPreferredDate"/>
+                        </elm:operand>
+                    </elm:element>
+                </elm:source>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+    </conditions>
+    <actionGroup>
+        <subElements>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="RequiredBehavior" value="Must"/>
+                </behaviors>
+                <title value="Event Condition Action (ECA) Rule: Failed or Delayed Consults"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent
+                            value="The patient has been referred or a consult has been requested; A referral request exists; or A consult request exists; or A referral order exists; or A consult order exists; AND 
+                            An encounter with the designated referral or consult provider has not been completed; AND EITHER
+                            An appointment with the designated referral or consult provider has not been scheduled for the patient for a future date and time; OR
+                            If the requesting provider specified a preferred date (PD) for completing the referral or consult, and the date and time of any scheduled 
+                            appointment with the designated referral or consult provider exceeds the PD. Action: Notify the scheduler that the patient should be contacted and the appointment should be scheduled or rescheduled."/>
+                        <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </actionSentence>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>
