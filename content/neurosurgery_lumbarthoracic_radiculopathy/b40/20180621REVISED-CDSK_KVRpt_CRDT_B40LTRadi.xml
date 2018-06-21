@@ -1,0 +1,1624 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:book xmlns:ns1="http://www.w3.org/1999/xlink" xmlns:ns2="http://docbook.org/ns/docbook" version="5.1">
+    <ns2:info>
+        <ns2:title>Neurosurgery: Radiculopathy (Lumbar Thoracic) Documentation Template KNART Validation Report</ns2:title>
+        <ns2:subtitle>Documentation Template: Validation Report</ns2:subtitle>
+        <ns2:releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AQ</ns2:releaseinfo>
+        <ns2:pubdate>06/20/2018</ns2:pubdate>
+        <ns2:volumenum>Version: 1.0</ns2:volumenum>
+        <ns2:copyright>
+            <ns2:year>2018</ns2:year>
+            <ns2:holder>B3 Group, Inc.</ns2:holder>
+        </ns2:copyright>
+        <ns2:legalnotice>
+            <ns2:title>B3 Group, Inc.</ns2:title>
+            <ns2:para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</ns2:para>
+            <ns2:para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</ns2:para>
+            <ns2:para>You may obtain a copy of the License at <ns2:link ns1:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</ns2:link>
+            </ns2:para>
+            <ns2:para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</ns2:para>
+            <ns2:para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</ns2:para>
+            <ns2:para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</ns2:para>
+            <ns2:para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</ns2:para>
+            <ns2:para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</ns2:para>
+            <ns2:para>See: <ns2:link ns1:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</ns2:link>
+            </ns2:para>
+            <ns2:para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</ns2:para>
+        </ns2:legalnotice>
+        <ns2:copyright>
+            <ns2:year>2018</ns2:year>
+            <ns2:holder>Cognitive Medical Systems, Inc.</ns2:holder>
+        </ns2:copyright>
+        <ns2:legalnotice>
+            <ns2:title>Cognitive Medical Systems, Inc.</ns2:title>
+            <ns2:para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</ns2:para>
+            <ns2:para>You may obtain a copy of the License at <ns2:link ns1:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</ns2:link>
+            </ns2:para>
+            <ns2:para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</ns2:para>
+            <ns2:para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <ns2:link ns1:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</ns2:link>
+            </ns2:para>
+            <ns2:para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <ns2:link ns1:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</ns2:link>
+            </ns2:para>
+            <ns2:para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</ns2:para>
+            <ns2:para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <ns2:link ns1:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</ns2:link>
+            </ns2:para>
+            <ns2:para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</ns2:para>
+        </ns2:legalnotice>
+        <ns2:author>
+            <ns2:orgname>Department of Veterans Affairs</ns2:orgname>
+        </ns2:author>
+        <ns2:mediaobject>
+            <ns2:alt>Department of Veteran's Affairs Logo</ns2:alt>
+            <ns2:imageobject>
+                <ns2:imagedata format="png" fileref="images/va-logo.png" align="center" contentwidth="2in"/>
+            </ns2:imageobject>
+        </ns2:mediaobject>
+        <ns2:authorgroup>
+            <ns2:author>
+                <ns2:orgname>Knowledge Based Systems (KBS)</ns2:orgname>
+            </ns2:author>
+            <ns2:author>
+                <ns2:orgname>Office of Informatics and Information Governance (OIIG)</ns2:orgname>
+            </ns2:author>
+            <ns2:author>
+                <ns2:orgname>Clinical Decision Support (CDS)</ns2:orgname>
+            </ns2:author>
+        </ns2:authorgroup>
+    </ns2:info>
+    <ns2:chapter>
+        <ns2:title>Basic File and Well-formedness Tests</ns2:title>
+        <ns2:table frame="all">
+            <ns2:title>Summary</ns2:title>
+            <ns2:tgroup cols="2">
+                <ns2:colspec colsep="1" colwidth="40mm" colname="Information" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colname="Value" rowsep="1" align="left"/>
+                <ns2:thead>
+                    <ns2:row>
+                        <ns2:entry>Information</ns2:entry>
+                        <ns2:entry>Value</ns2:entry>
+                    </ns2:row>
+                </ns2:thead>
+                <ns2:tbody>
+                    <ns2:row>
+                        <ns2:entry>File name</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>File size</ns2:entry>
+                        <ns2:entry>196.0 KB</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Type</ns2:entry>
+                        <ns2:entry>Documentation Template</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Publication Date</ns2:entry>
+                        <ns2:entry>06/20/2018</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>File Modification Date</ns2:entry>
+                        <ns2:entry>06/20/2018 15:35:06</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Well-formed XML</ns2:entry>
+                        <ns2:entry>YES</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>MD5</ns2:entry>
+                        <ns2:entry>fd4f8f869950e3d7d665d211ead58295</ns2:entry>
+                    </ns2:row>
+                </ns2:tbody>
+            </ns2:tgroup>
+        </ns2:table>
+    </ns2:chapter>
+    <ns2:chapter>
+        <ns2:title>XSD Schema Checks</ns2:title>
+        <ns2:table frame="all">
+            <ns2:title>KAS Schema Validation Summary</ns2:title>
+            <ns2:tgroup cols="2">
+                <ns2:thead>
+                    <ns2:row>
+                        <ns2:entry>Information</ns2:entry>
+                        <ns2:entry>Value</ns2:entry>
+                    </ns2:row>
+                </ns2:thead>
+                <ns2:tbody>
+                    <ns2:row>
+                        <ns2:entry>KAS Schema Version</ns2:entry>
+                        <ns2:entry>urn:hl7-org:knowledgeartifact:r1</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Schema File</ns2:entry>
+                        <ns2:entry>knowledgedocument.xsd</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Validation Errors</ns2:entry>
+                        <ns2:entry>0</ns2:entry>
+                    </ns2:row>
+                </ns2:tbody>
+            </ns2:tgroup>
+        </ns2:table>
+    </ns2:chapter>
+    <ns2:chapter>
+        <ns2:title>Schematron Checks</ns2:title>
+        <ns2:table frame="all">
+            <ns2:title>Editorial Convention Check</ns2:title>
+            <ns2:tgroup cols="2">
+                <ns2:colspec colsep="1" colname="Information" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colname="Value" rowsep="1" align="left"/>
+                <ns2:thead>
+                    <ns2:row>
+                        <ns2:entry>Information</ns2:entry>
+                        <ns2:entry>Value</ns2:entry>
+                    </ns2:row>
+                </ns2:thead>
+                <ns2:tbody>
+                    <ns2:row>
+                        <ns2:entry>Editorial Schematron Version</ns2:entry>
+                        <ns2:entry>ISO Schematron 2016</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Schema File</ns2:entry>
+                        <ns2:entry>knart-L3-validation.sch, L3Validation.sch, KnartStyle.sch</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Validation Errors</ns2:entry>
+                        <ns2:entry>0</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Validation Warnings</ns2:entry>
+                        <ns2:entry>0</ns2:entry>
+                    </ns2:row>
+                </ns2:tbody>
+            </ns2:tgroup>
+        </ns2:table>
+    </ns2:chapter>
+    <ns2:chapter>
+        <ns2:title>Terminology Checks via Ontoserver</ns2:title>
+        <ns2:table frame="all">
+            <ns2:title>Ontoserver Information</ns2:title>
+            <ns2:tgroup cols="5">
+                <ns2:colspec colsep="1" colwidth="30mm" colname="c1" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colwidth="20mm" colname="c2" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colwidth="10mm" colname="c3" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colwidth="50mm" colname="c4" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colname="c5" rowsep="1" align="left"/>
+                <ns2:thead>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c2">Information</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">Value</ns2:entry>
+                    </ns2:row>
+                </ns2:thead>
+                <ns2:tbody>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c2">Ontoserver URL</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">https://ontoserver.hspconsortium.org/fhir</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c2">Ontoserver Version</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">5.0</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c2">Date of Code Checks</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">06/20/2018 15:35:37</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="1">SNOMED</ns2:entry>
+                        <ns2:entry>Version</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">http://snomed.info/sct/731000124108/version/20170901,http://snomed.info/sct/900000000000207008/version/20170731</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Codes</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">443237</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="1">LOINC</ns2:entry>
+                        <ns2:entry>Version</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">2.61,2.63</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Codes</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">126207</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="1">RXNorm</ns2:entry>
+                        <ns2:entry>Version</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">Does not exist</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Codes</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">0</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="1">v3 Code System EducationLevel</ns2:entry>
+                        <ns2:entry>Version</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">2016-03-23</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Codes</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c5">9</ns2:entry>
+                    </ns2:row>
+                </ns2:tbody>
+            </ns2:tgroup>
+        </ns2:table>
+        <ns2:table frame="all">
+            <ns2:title>Terminology and ANF Usage</ns2:title>
+            <ns2:tgroup cols="4">
+                <ns2:colspec colsep="1" colwidth="30mm" colname="c1" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colwidth="20mm" colname="c2" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colwidth="30mm" colname="c3" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colname="c4" rowsep="1" align="left"/>
+                <ns2:thead>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c4">Terminology References</ns2:entry>
+                    </ns2:row>
+                </ns2:thead>
+                <ns2:tbody>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c2">Total Codes Used<ns2:footnote>
+<ns2:para>Total number of unique codes referenced in the KNART XML.</ns2:para>
+                            </ns2:footnote>
+                        </ns2:entry>
+                        <ns2:entry namest="c3" nameend="c4">69</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c2">Resolved<ns2:footnote>
+<ns2:para>Number of unique codes used in the KNART XML and present in ontoserver.</ns2:para>
+                            </ns2:footnote>
+                        </ns2:entry>
+                        <ns2:entry namest="c3" nameend="c4">60</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="2" namest="c1" nameend="c1">Unresolved<ns2:footnote>
+<ns2:para>Number of unique codes used in the KNART XML and not found in ontoserver.</ns2:para>
+                            </ns2:footnote>
+                        </ns2:entry>
+                        <ns2:entry morerows="2">9</ns2:entry>
+                        <ns2:entry>TSR Requested Codes<ns2:footnote>
+<ns2:para>Number of unique code system and code pairs referenced in the KNART XML with a placeholder
+                                ('TSR-NoCode').</ns2:para>
+                            </ns2:footnote>
+                        </ns2:entry>
+                        <ns2:entry>0</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>SOLOR Placeholder Codes<ns2:footnote>
+<ns2:para>Number of unique codes in uuid form referenced in the KNART XML.</ns2:para>
+                            </ns2:footnote>
+                        </ns2:entry>
+                        <ns2:entry>4</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Other Unresolved<ns2:footnote>
+<ns2:para>Number of other unique codes not found in ontoserver, e.g. RXNorm codes.</ns2:para>
+                            </ns2:footnote>
+                        </ns2:entry>
+                        <ns2:entry>5</ns2:entry>
+                    </ns2:row>
+                </ns2:tbody>
+            </ns2:tgroup>
+            <ns2:tgroup cols="4">
+                <ns2:colspec colsep="1" colwidth="30mm" colname="c1" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colwidth="20mm" colname="c2" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colwidth="10mm" colname="c3" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colname="c4" rowsep="1" align="left"/>
+                <ns2:thead>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c4">ANF Model Reference Information</ns2:entry>
+                    </ns2:row>
+                </ns2:thead>
+                <ns2:tbody>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c2">anf:ClinicalStatement</ns2:entry>
+                        <ns2:entry namest="c3" nameend="c4">34</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry namest="c1" nameend="c2">anf:TSR-NoModel<ns2:footnote>
+<ns2:para>KAS elements modeled as 'anf:TSR-NoModel' indicates they cannot be modeled in the current version of
+                                ANF.</ns2:para>
+                            </ns2:footnote>
+                        </ns2:entry>
+                        <ns2:entry namest="c3" nameend="c4">0</ns2:entry>
+                    </ns2:row>
+                </ns2:tbody>
+            </ns2:tgroup>
+        </ns2:table>
+        <ns2:table>
+            <ns2:title>SOLOR Placeholders</ns2:title>
+            <ns2:tgroup cols="3">
+                <ns2:colspec colsep="1" colwidth="10mm" colname="Number" rowsep="1" align="center"/>
+                <ns2:colspec colsep="1" colwidth="30mm" colname="Information" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colname="Value" rowsep="1" align="left"/>
+                <ns2:thead>
+                    <ns2:row>
+                        <ns2:entry namest="Number" nameend="Information">Information</ns2:entry>
+                        <ns2:entry>Value</ns2:entry>
+                    </ns2:row>
+                </ns2:thead>
+                <ns2:tbody>
+                    <ns2:row>
+                        <ns2:entry morerows="4">1</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>246</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>135</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: 7a8d82a5-6876-4b44-985c-6d6d483072c0</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=246column=135">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">2</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>439</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>207</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: 42182e51-7e8b-4550-9a72-99b6987a0f12</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=439column=207">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">3</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>575</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=575column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">4</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>585</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=585column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">5</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>595</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=595column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">6</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>605</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=605column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">7</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>616</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=616column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">8</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>627</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=627column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">9</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>637</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=637column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">10</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>648</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=648column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">11</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>659</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=659column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">12</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>687</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=687column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">13</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>696</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=696column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">14</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>705</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=705column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">15</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>714</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=714column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">16</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>723</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=723column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">17</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1377</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>64</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1377column=64">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">18</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1421</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>90</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1421column=90">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">19</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1628</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>132</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1628column=132">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">20</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1666</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1666column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">21</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1691</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>57</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1691column=57">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">22</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1729</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1729column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">23</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1753</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>126</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1753column=126">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">24</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1791</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1791column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">25</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1815</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>139</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1815column=139">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">26</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1853</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1853column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">27</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>1969</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=1969column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">28</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2113</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>138</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2113column=138">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">29</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2146</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2146column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">30</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2173</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>133</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2173column=133">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">31</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2206</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2206column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">32</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2345</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>132</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2345column=132">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">33</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2385</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2385column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">34</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2412</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>132</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2412column=132">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">35</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2445</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2445column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">36</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2472</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>133</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2472column=133">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">37</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2505</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2505column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">38</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2559</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>127</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2559column=127">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">39</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2592</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2592column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">40</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2607</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>134</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2607column=134">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">41</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2640</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2640column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">42</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2656</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>57</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2656column=57">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">43</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2689</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2689column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">44</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2706</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>57</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2706column=57">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">45</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2706</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>57</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: b0549379-fc0b-45dc-8a84-befe666432f5</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2706column=57">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">46</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2739</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: a997cc03-3e99-40eb-833a-6374c7750a3a</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2739column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">47</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>2739</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>82</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>TSR requested for codeSystem: http://snomed.info/sct and code: b0549379-fc0b-45dc-8a84-befe666432f5</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=2739column=82">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                </ns2:tbody>
+            </ns2:tgroup>
+        </ns2:table>
+        <ns2:table>
+            <ns2:title>Other Unresolved</ns2:title>
+            <ns2:tgroup cols="3">
+                <ns2:colspec colsep="1" colwidth="10mm" colname="Number" rowsep="1" align="center"/>
+                <ns2:colspec colsep="1" colwidth="30mm" colname="Information" rowsep="1" align="left"/>
+                <ns2:colspec colsep="1" colname="Value" rowsep="1" align="left"/>
+                <ns2:thead>
+                    <ns2:row>
+                        <ns2:entry namest="Number" nameend="Information">Information</ns2:entry>
+                        <ns2:entry>Value</ns2:entry>
+                    </ns2:row>
+                </ns2:thead>
+                <ns2:tbody>
+                    <ns2:row>
+                        <ns2:entry morerows="4">1</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>217</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>105</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>Code 5351000124100, codeSystem http://snomed.info/sct not found in Ontoserver.</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=217column=105">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">2</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>226</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>108</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>Code 453231000124104, codeSystem http://snomed.info/sct not found in Ontoserver.</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=226column=108">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">3</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>236</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>110</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>Code 1311000205109, codeSystem http://snomed.info/sct not found in Ontoserver.</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=236column=110">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">4</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>463</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>70</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>Code 182e51-7e8b-4550-9a72-99b6987a0f12, codeSystem http://snomed.info/sct not found in Ontoserver.</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=463column=70">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">5</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>463</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>70</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>Code 182e51-7e8b-4550-9a72-99b6987a0f12, codeSystem http://snomed.info/sct is an invalid code format.</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=463column=70">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">6</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>752</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>Code 737530005, codeSystem http://snomed.info/sct not found in Ontoserver.</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=752column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">7</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>762</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>Code 737530005, codeSystem http://snomed.info/sct not found in Ontoserver.</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=762column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry morerows="4">8</ns2:entry>
+                        <ns2:entry>FileName</ns2:entry>
+                        <ns2:entry>CDSK_KRprt_CRDT_B40LTRadi.xml</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Line</ns2:entry>
+                        <ns2:entry>772</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Column</ns2:entry>
+                        <ns2:entry>85</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Message</ns2:entry>
+                        <ns2:entry>Code 737530005, codeSystem http://snomed.info/sct not found in Ontoserver.</ns2:entry>
+                    </ns2:row>
+                    <ns2:row>
+                        <ns2:entry>Reference</ns2:entry>
+                        <ns2:entry>
+                            <ns2:link ns1:href="file:CDSK_KRprt_CRDT_B40LTRadi.xml#line=772column=85">KNART</ns2:link>
+                        </ns2:entry>
+                    </ns2:row>
+                </ns2:tbody>
+            </ns2:tgroup>
+        </ns2:table>
+    </ns2:chapter>
+</ns2:book>
