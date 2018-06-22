@@ -1,0 +1,3024 @@
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:anf="http://hl7.org/anf" xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier extension="d56a4d73-6ff6-529c-b51c-af9d1f8db2f7" identifierName="O11" root="urn:va.gov:kbs:knart:artifact:r1" version="1.0"/>
+            <identifier extension="CLIN0007CA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007CA" root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+            <identifier extension="KP-59" identifierName="Jira KP-59" root="urn:cognitivemedicine.com:lab:jira"/>
+        </identifiers>
+        <artifactType value="Rule"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+        <title value="Cardiology: Inpatient Heparin Anticoagulation Protocol Rule"/>
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr1" identifierName="CCWP" root="LocalDocBook"/>
+                            <identifier extension="CLIN0007CA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007CA" root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+                        </identifiers>
+                        <title value="Inpatient Heparin Anticoagulation Protocol Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr2" identifierName="CSD" root="LocalDocBook"/>
+                            <identifier extension="CLIN0007CA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007CA" root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+                        </identifiers>
+                        <title value="Cardiology: Inpatient Heparin Anticoagulation Protocol Rule Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr3" identifierName="KVRpt" root="LocalDocBook"/>
+                            <identifier extension="CLIN0007CA" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007CA" root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007"/>
+                        </identifiers>
+                        <title value="Cardiology: Inpatient Heparin Anticoagulation Protocol Rule KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="CapriniScoreDVT" extension="sr4"/>
+                        </identifiers>
+                        <title value="Caprini score: DVT risk assessment"/>
+                        <location value="http://venousdisease.com/caprini-dvt-risk-assessment/"/>
+                        <citation value="Caprini score: DVT risk assessment. Venous Resource Center website. Accessed August 8, 2017"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="PaduaPredScore" extension="sr5"/>
+                        </identifiers>
+                        <title value="Padua Prediction Score for Risk of VTE"/>
+                        <location value="https://www.mdcalc.com/padua-prediction-score-risk-vte/"/>
+                        <citation value="Padua Prediction Score for Risk of VTE. MDCalc website. Accessed August 8, 2017"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1378/chest.11-2300" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e1" identifierName="Bates 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="VTE, Thrombophilia, Antithrombotic Therapy, and Pregnancy: Antithrombotic Therapy and Prevention of Thrombosis"/>
+                        <location value="https://doi.org/10.1378/chest.11-2300"/>
+                        <citation
+                            value="Bates SM, Greer IA, Middeldorp S, Veenstra DL, Prabulos AM, Vandvik PO. VTE, Thrombophilia, Antithrombotic Therapy, and Pregnancy: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2 Suppl):e691S-e736S"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1378/chest.11-2298" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e2" identifierName="Douketis 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Perioperative management of antithrombotic therapy: Antithrombotic Therapy and Prevention of Thrombosis"/>
+                        <location value="https://doi.org/10.1378/chest.11-2298"/>
+                        <citation
+                            value="Douketis JD, Spyropoulos AC, Spencer FA, Mayr M, Jaffer AK, Eckman MH, Dunn AS, Kunz R. Perioperative management of antithrombotic therapy: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2 Suppl):e326S-e350S"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1378/chest.11-2404" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e3" identifierName="Falck-Ytter 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Prevention of VTE in orthopedic surgery patients: Antithrombotic Therapy and Prevention of Thrombosis"/>
+                        <location value="https://doi.org/10.1378/chest.11-2404"/>
+                        <citation
+                            value="Falck-Ytter Y, Francis CW, Johanson NA, Curley C, Dahl OE, Schulman S, Ortel TL, Pauker SG, Colwell CW Jr. Prevention of VTE in orthopedic surgery patients: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2 Suppl):e278S-e325S"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1378/chest.11-2297" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e4" identifierName="Gould 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Prevention of VTE in nonorthopedic surgical patients: Antithrombotic Therapy and Prevention of Thrombosis"/>
+                        <location value="https://doi.org/10.1378/chest.11-2297"/>
+                        <citation
+                            value="Gould MK, Garcia DA, Wren SM, Karanicolas PJ, Arcelus JI, Heit JA, Samama CM. Prevention of VTE in nonorthopedic surgical patients: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2 Suppl):e227S-e277S"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1378/chest.11-2296" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e5" identifierName="Kahn 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Prevention of VTE in nonsurgical patients: Antithrombotic Therapy and Prevention of Thrombosis"/>
+                        <location value="https://doi.org/10.1378/chest.11-2296"/>
+                        <citation
+                            value="Kahn SR, Lim W, Dunn AS, Cushman M, Dentali F, Akl EA, Cook DJ, Balekian AA, Klein RC, Le H, Schulman S, Murad MH. Prevention of VTE in nonsurgical patients: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2 Suppl):e195S-e226S"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1378/chest.11-2301" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e6" identifierName="Kearon 2012" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Antithrombotic therapy for VTE disease: Antithrombotic Therapy and Prevention of Thrombosis"/>
+                        <location value="https://doi.org/10.1378/chest.11-2301"/>
+                        <citation
+                            value="Kearon C, Akl EA, Comerota AJ, Prandoni P, Bounameaux H, Goldhaber SZ, Nelson ME, Wells PS, Gould MK, Dentali F, Crowther M, Kahn SR. Antithrombotic therapy for VTE disease: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2 Suppl):e419S-e496S"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1016/j.chest.2015.11.026" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e7" identifierName="Kearon 2016" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Antithrombotic Therapy for VTE Disease: CHEST Guideline and Expert Panel Report"/>
+                        <location value="https://doi.org/10.1016/j.chest.2015.11.026"/>
+                        <citation
+                            value="Kearon C, Akl EA, Ornelas J, Blaivas A, Jimenez D, Bounameaux H, Huisman M, King CS, Morris TA, Sood N, Stevens SM, Vintch JRE, Wells P, Woller SC, Moores L. Antithrombotic Therapy for VTE Disease: CHEST Guideline and Expert Panel Report. Chest. 2016 Feb;149(2):315-352"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.17226/21794" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e8" identifierName="Balogh 2015" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Improving Diagnosis in Health Care"/>
+                        <location value="https://doi.org/10.17226/21794"/>
+                        <citation value="Balogh EP, Miller BT, Ball JR. Improving Diagnosis in Health Care. Washington (DC): National Academies Press (US); 2015 Dec"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e9" identifierName="Raschke 1993" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="The weight-based heparin dosing nomogram compared with a &quot;standard care&quot; nomogram"/>
+                        <location value="http://annals.org/aim/article-abstract/706814/weight-based-heparin-dosing-nomogram-compared-standard-care-nomogram-randomized?volume=119&amp;issue=9&amp;page=874"/>
+                        <citation
+                            value="Raschke RA, Reilly BM, Guidry JR, Fontana JR, Srinivas S. The weight-based heparin dosing nomogram compared with a &quot;standard care&quot; nomogram. A randomized controlled trial. Ann Intern Med. 1993 Nov 1;119(9):874-81"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1016/j.jamcollsurg.2007.02.072" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e10" identifierName="Rogers 2007" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Multivariable predictors of postoperative venous thromboembolic events after general and vascular surgery: results from the patient safety in surgery study"/>
+                        <location value="https://doi.org/10.1016/j.jamcollsurg.2007.02.072"/>
+                        <citation
+                            value="Rogers SO Jr, Kilaru RK, Hosokawa P, Henderson WG, Zinner MJ, Khuri SF. Multivariable predictors of postoperative venous thromboembolic events after general and vascular surgery: results from the patient safety in surgery study. J Am Coll Surg. 2007 Jun;204(6):1211-21"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1001/jama.2016.16201" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e11" identifierName="Shehab 2016" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="US Emergency Department Visits for Outpatient Adverse Drug Events, 2013-2014"/>
+                        <location value="https://doi.org/10.1001/jama.2016.16201"/>
+                        <citation value="Shehab N, Lovegrove MC, Geller AI, Rose KO, Weidle NJ, Budnitz DS. US Emergency Department Visits for Outpatient Adverse Drug Events, 2013-2014. JAMA. 2016 Nov 22;316(20):2115-2125"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e12" identifierName="DailyMed Arixtra" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="ARIXTRA- fondaparinux sodium injection, solution"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d3b30c68-cf45-4b46-8ba6-72090f7ba01a"/>
+                        <citation value="U.S. National Library of Medicine. ARIXTRA- fondaparinux sodium injection, solution [Mylan Institutional LLC]. DailyMed website. Revised October 2015"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e13" identifierName="DailyMed Aspirin" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="ASPIRIN 81 MG- aspirin tablet, coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3"/>
+                        <citation value="U.S. National Library of Medicine. ASPIRIN 81 MG- aspirin tablet, coated [DOLGENCORP, LLC]. DailyMed website. Revised January 2017"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e14" identifierName="DailyMed Eliquis" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="ELIQUIS- apixaban tablet, film coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175"/>
+                        <citation value="U.S. National Library of Medicine. ELIQUIS- apixaban tablet, film coated [Cardinal Health]. DailyMed website. Revised March 2017"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e15" identifierName="DailyMed Enoxaparin" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="ENOXAPARIN SODIUM- enoxaparin sodium injection"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ab8118dc-aca8-478b-8290-a468cbe36ae1"/>
+                        <citation value="U.S. National Library of Medicine. ENOXAPARIN SODIUM- enoxaparin sodium injection [Amphastar Pharmaceuticals, Inc.]. DailyMed website. Revised June 2017"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e16" identifierName="DailyMedFond" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="FONDAPARINUX SODIUM- fondaparinux sodium injection"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8a27f341-f612-de72-8c1f-3fd977905de0"/>
+                        <citation value="U.S. National Library of Medicine. FONDAPARINUX SODIUM- fondaparinux sodium injection [Dr. Reddy's Laboratories Inc.]. DailyMed website. Revised September 2016"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e17" identifierName="DailyMed Fragmin" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="FRAGMIN- dalteparin sodium injection, solution"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=529711c6-6029-4e50-8ece-c0e59b06ff38"/>
+                        <citation value="U.S. National Library of Medicine. FRAGMIN- dalteparin sodium injection, solution [Pfizer, Inc.]. DailyMed website. Revised March 2009"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e18" identifierName="DailyMed Heparin1" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="HEPARIN SODIUM- heparin sodium injection"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=56dc3074-f1c5-45a3-b923-f1d14858e06d"/>
+                        <citation value="U.S. National Library of Medicine. HEPARIN SODIUM- heparin sodium injection [Pfizer Laboratories Div Pfizer Inc]. DailyMed website. Revised August 2016"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e19" identifierName="DailyMed Heparin2" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="HEPARIN SODIUM- heparin sodium injection, solution"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=efcdb321-832b-4554-8049-dbbb33b48334"/>
+                        <citation value="U.S. National Library of Medicine. HEPARIN SODIUM- heparin sodium injection, solution. DailyMed website. Revised April 2016"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e20" identifierName="DailyMed Pradaxa" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="PRADAXA- dabigatran etexilate mesylate capsule"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ba74e3cd-b06f-4145-b284-5fd6b84ff3c9"/>
+                        <citation value="U.S. National Library of Medicine. PRADAXA- dabigatran etexilate mesylate capsule [Boehringer Ingelheim Pharmaceuticals Inc.]. DailyMed website. Revised July 2017"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e21" identifierName="DailyMed Warfarin" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="WARFARIN SODIUM- warfarin tablet"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c0cc4511-e656-4b6d-96cd-e02e76173b9d"/>
+                        <citation value="U.S. National Library of Medicine. WARFARIN SODIUM- warfarin tablet [Exelan Pharmaceuticals Inc.]. DailyMed website. Revised May 2016"/>
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e22" identifierName="DailyMed Xarelto" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="XARELTO- rivaroxaban tablet, film coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1166231a-b23a-4c86-8cda-45d41b724e57"/>
+                        <citation value="U.S. National Library of Medicine. XARELTO- rivaroxaban tablet, film coated [Avera McKennan Hospital]. DailyMed website. Revised December 2015"/>
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+        <applicability>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Hospitalists, Residents and other ordering providers involved in managing the patient cohort"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Adult patients"/>
+                <value code="133936004 |Adult (person)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Inpatient"/>
+            </coverage>
+            <coverage>
+                <focus value="WorkflowSetting"/>
+                <description value="Surgical and Medical Service"/>
+            </coverage>
+            <coverage>
+                <focus value="WorkflowTask"/>
+                <description value="Adult inpatients requiring therapeutic anticoagulation management"/>
+            </coverage>
+        </applicability>
+        <status value="Active"/>
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180618"/>
+                <!-- Completed rework. -->
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180524"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180524"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20180501"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Bruce"/>
+                        <dt:part type="FAM" value="Bray"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Professor, Cardiovascular Medicine, University of Utah School of Medicine; Staff Cardiologist, Salt Lake City VAMC"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Scott"/>
+                        <dt:part type="FAM" value="Wall"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Assistant Professor, Cardiovascular Medicine, University of Utah School of Medicine; Staff Cardiologist, Electrophysiology, Salt Lake City VAMC"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Aiden"/>
+                        <dt:part type="FAM" value="Abidov"/>
+                        <dt:part type="TITLE" value="MD"/>
+                        <dt:part type="TITLE" value="PhD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Professor of Medicine, Wayne State University; Section Chief, Cardiology John Dingell VA Medical Center"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Claibe"/>
+                        <dt:part type="FAM" value="Yarbrough"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="National Program Director, North Texas VHCS Pulmonary/Critical Care/Sleep Medicine Dallas, TX"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Benjamin"/>
+                        <dt:part type="FAM" value="Brooke"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Attending, SLC VAMC Surgery Services Salt lake City, UT"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 B3 Group, Inc.
+                    NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+                    See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007."/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value="10156 Tapestry Ct"/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value="Fairfax"/>
+                            <dt:part type="STA" value="VA"/>
+                            <dt:part type="ZIP" value="22032"/>
+                        </address>
+                    </addresses>
+                    <name value="B3 Group, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 Cognitive Medical Systems, Inc.
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: https://bitbucket.org/cogmedsys/hl7-kas-examples
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. https://bitbucket.org/cogmedsys/kas-source-material
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007."/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value="9444 Waples Street"/>
+                            <dt:part type="ADL" value="Suite 300"/>
+                            <dt:part type="CTY" value="San Diego"/>
+                            <dt:part type="STA" value="CA"/>
+                            <dt:part type="ZIP" value="92121"/>
+                        </address>
+                    </addresses>
+                    <name value="Cognitive Medical Systems, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+        </usageTerms>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <def name="PatientAge">
+            <elm:expression xsi:type="elm:SingletonFrom">
+                <elm:operand xsi:type="elm:Query">
+                    <elm:source alias="ageQuery">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code"
+                                    code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                    ->(363702006 |Has focus (attribute))->[105726004 |Age AND/OR growth finding (finding)]"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                    <elm:return>
+                        <elm:expression xsi:type="elm:Property" path="result.lowerBound"/>
+                    </elm:return>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="IsPregnant">
+            <!-- TSR: Currently pregnant -->
+            <elm:annotation>
+                <a:s>Patient is pregnant.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[77386006 |Pregnant (finding)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+                <elm:return>
+                    <elm:expression xsi:type="elm:Property" path="TSR-NoCode"/>
+                </elm:return>
+            </elm:expression>
+        </def>
+
+        <def name="SpontaneousAbortionCount">
+            <!-- TSR: Spontaneous abortion -->
+            <elm:annotation>
+                <a:s>Number of spontaneous abortions.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Ha+F2s focus (attribute))->[17+F15369002 |Miscarriage (disorder)]-
+                                ->(363714003 |Interprets (attribute))->[248989003 |Number of miscarriages (observable entity)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+                <elm:return>
+                    <elm:expression xsi:type="elm:Property" path="TSR-NoCode"/>
+                </elm:return>
+            </elm:expression>
+        </def>
+        <def name="ReceivingVitaminKAntagonist">
+            <!-- TSR: Vitamin K antagonist -->
+            <elm:annotation>
+                <a:s>The patient is receiving vitamin K antagonist therapy.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="[722045009 |Warfarin therapy (procedure)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ReceivingLMWHeparin">
+            <!-- TSR: Low-molecular-weight heparin -->
+            <elm:annotation>
+                <a:s>The patient is receiving low-molecular-weight heparin.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[416118004 |Administration (procedure)]
+                                ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                ->(363701004 |Direct substance (attribute))->[87233003 |Low molecular weight heparin (product)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ReceivingFondaparinux">
+            <!-- TSR: Fondaparinux -->
+            <elm:annotation>
+                <a:s>The patient is receiving fondaparinux.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[416118004 |Administration (procedure)]
+                                ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                ->(363701004 |Direct substance (attribute))->[737675000 |Product containing fondaparinux sodium (medicinal product)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ReceivingIVHeparin">
+            <!-- TSR: Intravenous unfractionated heparin -->
+            <elm:annotation>
+                <a:s>The patient is receiving intravenous unfractionated heparin.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[416118004 |Administration (procedure)]
+                                ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                ->(363701004 |Direct substance (attribute))->[96382006 |Unfractionated heparin (substance)]
+                                ->(410675002 |Route of administration (attribute))->[47625008 |Intravenous route (qualifier value)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ReceivingSQHeparin">
+            <!-- TSR: Subcutaneous unfractionated heparin -->
+            <elm:annotation>
+                <a:s>The patient is receiving subcutaneous unfractionated heparin.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[416118004 |Administration (procedure)]
+                                ->(260686004 |Method (attribute))->[129445006 |Administration - action (qualifier value)]
+                                ->(363701004 |Direct substance (attribute))->[96382006 |Unfractionated heparin (substance)]
+                                ->(410675002 |Route of administration (attribute))->[34206005 |Subcutaneous route (qualifier value)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ReceivingAnticoagulant">
+            <!-- TSR: Anticoagulant medication -->
+            <elm:annotation>
+                <a:s>The patient is receiving anticoagulation therapy.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="182764009 |Anticoagulant therapy (procedure)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ReceivingThrombolytic">
+            <!-- TSR: Thrombolytic agent -->
+            <elm:annotation>
+                <a:s>The patient is undergoing thrombolysis.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="426347000 |Thrombolytic therapy (procedure)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+
+            </elm:expression>
+        </def>
+        <def name="ReceivingBridgingAnticoagulationTx">
+            <!-- “Bridging anticoagulation therapy” refers to “the administration of a short-acting anticoagulant, consisting of subcutaneous (SC) low-molecular-weight heparin (LMWH) or IV unfractionated heparin (UFH), for an ~10- to 12-day period during interruption of VKA therapy when the international normalized ratio (INR) is not within a therapeutic range” -->
+            <!-- Not sure how to model this -->
+            <elm:annotation>
+                <a:s>The patient is receiving bridging anticoagulation therapy.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="707309004 |Bridging anticoagulant therapy with low molecular weight heparin (procedure)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal"
+                                value="{Bridging anticoagulation therapy” refers to “the administration of a short-acting anticoagulant, consisting of subcutaneous (SC) low-molecular-weight heparin (LMWH) or IV unfractionated heparin (UFH), for an ~10- to 12-day period during interruption of VKA therapy when the international normalized ratio (INR) is not within a therapeutic range)"
+                                valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="MechanicalHeartValve">
+            <!-- TSR: Mechanical heart valve -->
+            <elm:annotation>
+                <a:s>The patient has a mechanical heart valve.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[699347000 |Mechanical heart valve replacement (procedure)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AtrialFibrillation">
+            <!-- TSR: Atrial Fibrillation -->
+            <elm:annotation>
+                <a:s>The patient has atrial fibrillation.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[49436004 |Atrial fibrillation (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="VenousThromboembolism">
+            <!-- TSR: Venous thromboembolism -->
+            <elm:annotation>
+                <a:s>The patient has venous thromboembolism.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[429098002 |Thromboembolism of vein (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcutePE_HighSuspicion">
+            <!-- TSR: Acute pulmonary embolism, high suspicion -->
+            <!-- From admitting diagnosis? -->
+            <elm:annotation>
+                <a:s>The patient has a highly suspected acute pulmonary embolism.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[706870000 |Acute pulmonary embolism (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="Highly suspected" valueType="String"/>
+                        </elm:element>
+                        <elm:element name="result.status">
+                            <elm:value xsi:type="elm:Code" code="415684004 |Suspected (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcutePE_IntermediateSuspicion">
+            <!-- TSR: Acute pulmonary embolism, intermediate suspicion -->
+            <!-- From admitting diagnosis? -->
+            <elm:annotation>
+                <a:s>The patient has an intermediately suspected acute pulmonary embolism.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[706870000 |Acute pulmonary embolism (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="Intermediately suspected" valueType="String"/>
+                        </elm:element>
+                        <elm:element name="result.status">
+                            <elm:value xsi:type="elm:Code" code="415684004 |Suspected (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcuteVenousThromboembolism_HighSuspicion">
+            <!-- TSR: Acute venous thromboembolism, high suspicion -->
+            <!-- From admitting diagnosis? -->
+            <elm:annotation>
+                <a:s>The patient has a highly suspected acute venous thromboembolism.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[429098002 |Thromboembolism of vein (disorder)]-
+                                ->(263502005 |Clinical course (attribute))->[373933003 |Acute onset (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="Highly suspected" valueType="String"/>
+                        </elm:element>
+                        <elm:element name="result.status">
+                            <elm:value xsi:type="elm:Code" code="415684004 |Suspected (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcuteVenousThromboembolism_IntermediateSuspicion">
+            <!-- TSR: Acute venous thromboembolism, intermediate suspicion -->
+            <!-- From admitting diagnosis? -->
+            <elm:annotation>
+                <a:s>The patient has an intermediately suspected acute venous thromboembolism.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[429098002 |Thromboembolism of vein (disorder)]-
+                                ->(263502005 |Clinical course (attribute))->[373933003 |Acute onset (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="Intermediately suspected" valueType="String"/>
+                        </elm:element>
+                        <elm:element name="result.status">
+                            <elm:value xsi:type="elm:Code" code="415684004 |Suspected (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcutePE">
+            <!-- TSR: Acute pulmonary embolism -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has an acute pulmonary embolism.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[706870000 |Acute pulmonary embolism (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AsymptomaticPE">
+            <!-- TSR: Asymptomatic pulmonary embolism -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has an asymptomatic pulmonary embolism.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[59282003 |Pulmonary embolism (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="Asymptomatic" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcuteUEDVT">
+            <!-- TSR: Acute upper extremity deep venous thrombosis -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has an acute upper extremity deep venous thrombosis.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[132321000119103 |Acute deep venous thrombosis of upper extremity (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcuteIsolatedDistalDVTLeg">
+            <!-- TSR: Acute isolated distal deep venous thrombosis of the leg -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has an acute isolated distal deep venous thrombosis of the leg.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[651000119108 |Acute deep vein thrombosis of lower limb (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="isolated distal" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcuteProximalDVTLeg">
+            <!-- TSR: Acute proximal deep venous thrombosis of the leg -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has an acute proximal deep venous thrombosis of the leg.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[651000119108 |Acute deep vein thrombosis of lower limb (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="proximal" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcuteDVTLeg">
+            <!-- TSR: Acute deep venous thrombosis of the leg -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has an acute deep venous thrombosis of the leg.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[651000119108 |Acute deep vein thrombosis of lower limb (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="SymptomaticSplanchnicVeinThrombosis">
+            <!-- TSR: Splanchnic vein thrombosis of the leg, symptomatic -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has symptomatic splanchnic vein thrombosis (defined as portal, mesenteric, splenic, or a combination of these).</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[7f601aca-6a66-4922-9a72-7e86a67b36e7 |Thrombosis of splanchnic vein (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="Symptomatic" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcuteDVTAxillary">
+            <!-- TSR: Acute upper extremity deep venous thrombosis involving the axillary veins -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has an acute upper extremity deep venous thrombosis involving the axillary veins.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[132321000119103 |Acute deep venous thrombosis of upper extremity (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="involving the axillary veins" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="AcuteDVTProximalUE">
+            <!-- TSR: Acute upper extremity deep venous thrombosis involving more proximal veins -->
+            <!-- Based on diagnostic test result? -->
+            <elm:annotation>
+                <a:s>The patient has an acute upper extremity deep venous thrombosis involving more proximal veins.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[132321000119103 |Acute deep venous thrombosis of upper extremity (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="involving more proximal veins" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ThrombusExtensionDistal">
+            <!-- TSR: Thrombus extension within distal veins -->
+            <elm:annotation>
+                <a:s>The thrombus extends within the distal veins.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[404223003 |Deep venous thrombosis of lower extremity (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="extends within the distal veins" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="ThrombusExtensionProximal">
+            <!-- TSR: Thrombus extension into proximal veins -->
+            <elm:annotation>
+                <a:s>The thrombus extends into the proximal veins.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[404223003 |Deep venous thrombosis of lower extremity (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="extends into the proximal veins" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="SymptomaticHepaticVeinThrombosis">
+            <!-- TSR: Hepatic vein thrombosis, symptomatic -->
+            <elm:annotation>
+                <a:s>The patient has symptomatic hepatic vein thrombosis.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[38739001 |Hepatic vein thrombosis (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="unstructured[0]">
+                            <elm:value xsi:type="elm:Literal" value="symptomatic" valueType="String"/>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="HasRiskFactorsForExtension">
+            <!-- What are the risk factors for extension? -->
+            <elm:annotation>
+                <a:s>The patient has risk factors for extension.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="HighRiskForThromboembolism">
+            <!-- Thromboembolism risk, high -->
+            <elm:annotation>
+                <a:s>The patient has a high risk for thromboembolism.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[711328005 |At high risk of venous thromboembolism (finding)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="CurrentActiveBleedingRisk">
+            <!-- TSR: Active bleeding risk -->
+            <!-- How to determine? -->
+            <elm:annotation>
+                <a:s>The patient does have a current active risk of bleeding.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[704348005 |At risk of hemorrhage (finding)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="SevereDVTSymptoms">
+            <!-- TSR: Severe symptoms related to the deep venous thrombosis -->
+            <elm:annotation>
+                <a:s>The patient has severe symptoms related to the deep venous thrombosis OR the patient has risk factors for extension.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[162470006 |Symptom severe (finding)]-
+                                ->(42752001 |Due to (attribute))->[128053003 |Deep venous thrombosis (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="DiagnosticTestResults">
+            <!-- Need to enumerate which tests to consider -->
+            <!-- Only consider tests done since admission (perhaps minus one day?) -->
+            <elm:annotation>
+                <a:s>Venous thromboembolism test results.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PlannedThrombectomy">
+            <!-- TSR: Thrombectomy, planned (scheduled) -->
+            <elm:annotation>
+                <a:s>The patient is undergoing thrombectomy.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="43810009 |Removal of thrombus (procedure)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PlannedElectiveSurgery">
+            <!-- TSR: Elective surgery, planned (scheduled) -->
+            <elm:annotation>
+                <a:s>The patient is undergoing elective surgery.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="pregnant">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="274075007 |Optional surgery (procedure)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="HasIVCFilter">
+            <!-- TSR: Inferior vena cava (IVC) filter -->
+            <elm:annotation>
+                <a:s>The patient has received an inferior vena cava (IVC) filter.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="HasIVCFilterQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[216051000119102 |Inferior vena cava filter in situ (finding)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="APLASyndrome">
+            <!-- Need to determine criteria -->
+            <elm:annotation>
+                <a:s>The patient meets laboratory criteria for antiphospholipid antibody (APLA) syndrome.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="APLASyndromeQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                ->(363702006 |Has focus (attribute))->[26843008 |Antiphospholipid syndrome (disorder)]"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAdded">
+            <!-- TSR: Inpatient admission -->
+            <def name="InpatientAdmission">
+                <elm:annotation>
+                    <a:s>Inpatient admission</a:s>
+                </elm:annotation>
+                <elm:expression xsi:type="elm:Query">
+                    <elm:source alias="InpatientAdmissionQuery">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code" code="32485007 |Hospital admission (procedure)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                </elm:expression>
+            </def>
+        </trigger>
+    </externalData>
+    <expressions>
+        <def name="AdultPatient">
+            <elm:annotation>
+                <a:s>Patient is an adult.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:GreaterOrEqual">
+                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                <elm:operand xsi:type="elm:Quantity" value="18"/>
+            </elm:expression>
+        </def>
+        <def name="NotPregnant">
+            <elm:annotation>
+                <a:s>Patient is not pregnant.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:ExpressionRef" name="IsPregnant"/>
+            </elm:expression>
+        </def>
+        <def name="SpontaneousAbortionGE3">
+            <elm:annotation>
+                <a:s>The patient has a history of &gt;= 3 pregnancy losses</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:GreaterOrEqual">
+                <elm:operand xsi:type="elm:ExpressionRef" name="SpontaneousAbortionCount"/>
+                <elm:operand xsi:type="elm:Literal" valueType="Integer" value="3"/>
+            </elm:expression>
+        </def>
+        <def name="NotReceivingLMWHeparin">
+            <elm:annotation>
+                <a:s>The patient is not receiving low-molecular-weight heparin.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:ExpressionRef" name="ReceivingLMWHeparin"/>
+            </elm:expression>
+        </def>
+        <def name="NotReceivingFondaparinux">
+            <elm:annotation>
+                <a:s>The patient is not receiving fondaparinux.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:ExpressionRef" name="ReceivingFondaparinux"/>
+            </elm:expression>
+        </def>
+        <def name="NotReceivingIVHeparin">
+            <elm:annotation>
+                <a:s>The patient is not receiving intravenous unfractionated heparin.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:ExpressionRef" name="ReceivingIVHeparin"/>
+            </elm:expression>
+        </def>
+        <def name="NotReceivingSQHeparin">
+            <elm:annotation>
+                <a:s>The patient is not receiving subcutaneous unfractionated heparin.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:ExpressionRef" name="ReceivingSQHeparin"/>
+            </elm:expression>
+        </def>
+        <def name="NotReceivingAnticoagulant">
+            <elm:annotation>
+                <a:s>The patient is not receiving anticoagulation therapy.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:ExpressionRef" name="ReceivingAnticoagulant"/>
+            </elm:expression>
+        </def>
+        <def name="NotReceivingBridgingAnticoagulationTx">
+            <elm:annotation>
+                <a:s>The patient is not receiving bridging anticoagulation therapy.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:ExpressionRef" name="ReceivingBridgingAnticoagulationTx"/>
+            </elm:expression>
+        </def>
+        <def name="NoDiagnosticTestResults">
+            <elm:annotation>
+                <a:s>No venous thromboembolism test results.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:Exists">
+                    <elm:operand xsi:type="elm:ExpressionRef" name="DiagnosticTestResults"/>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="NoCurrentActiveBleedingRisk">
+            <elm:annotation>
+                <a:s>The patient does not have a current active risk of bleeding.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:Exists">
+                    <elm:operand xsi:type="elm:ExpressionRef" name="CurrentActiveBleedingRisk"/>
+                </elm:operand>
+            </elm:expression>
+        </def>
+        <def name="NoDiagnosticTestResultsWithin4Hours">
+            <!-- Not sure how to implement this logic? -->
+            <elm:annotation>
+                <a:s>Diagnostic test results are not expected to be received within the next 4 hours.</a:s>
+            </elm:annotation>
+            <elm:expression xsi:type="elm:Quantity"/>
+        </def>
+        <def name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Generate the Inpatient Heparin Anticoagulation Order Set KNART">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Notify the provider that the patient should be considered for the same anticoagulation therapy irrespective of the absence of symptoms related to the pulmonary embolism">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Notify the provider that the patient should be considered for the same intensity and duration of anticoagulation therapy irrespective of the thrombolysis">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Notify the provider that the patient should be considered for the same intensity and duration of anticoagulation therapy irrespective of the thrombosis removal">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred.">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Notify the provider that the patient should be managed according to the American College of Chest Physicians perioperative anticoagulation management guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278059/)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Notify the provider that the patient should be managed according to the American College of Chest Physicians pregnancy anticoagulation guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/)">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+        <def name="Notify the provider that the patient should be managed according to the American College of Chest Physicians pregnancy anticoagulation guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/).">
+            <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                <elm:element name="statementType">
+                    <elm:value xsi:type="elm:Code" code="385644000 |Requested (qualifier value)|" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+                <elm:element name="topic">
+                    <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:value>
+                </elm:element>
+            </elm:expression>
+        </def>
+    </expressions>
+    <conditions>
+        <condition>
+            <logic xsi:type="elm:ExpressionRef" name="AdultPatient">
+                <elm:annotation>
+                    <a:s>Patient is an adult.</a:s>
+                </elm:annotation>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+    </conditions>
+    <actionGroup>
+        <subElements>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcuteDVTLeg">
+                            <elm:annotation>
+                                <a:s>The patient has an acute deep venous thrombosis of the leg.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="ReceivingVitaminKAntagonist">
+                            <elm:annotation>
+                                <a:s>The patient is receiving vitamin K antagonist therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingLMWHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving low-molecular-weight heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingFondaparinux">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving fondaparinux.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingIVHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving intravenous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingSQHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving subcutaneous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute DVT of Leg Treated with Vitamin K Antagonist"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcuteVenousThromboembolism_HighSuspicion">
+                            <elm:annotation>
+                                <a:s>The patient has a highly suspected acute venous thromboembolism.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NoDiagnosticTestResults">
+                            <elm:annotation>
+                                <a:s>Diagnostic test results are not available.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingLMWHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving low-molecular-weight heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingFondaparinux">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving fondaparinux.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingIVHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving intravenous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingSQHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving subcutaneous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="High Clinical Suspicion of Acute VTE"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcuteVenousThromboembolism_IntermediateSuspicion">
+                            <elm:annotation>
+                                <a:s>The patient has an intermediately suspected acute venous thromboembolism.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NoDiagnosticTestResults">
+                            <elm:annotation>
+                                <a:s>Diagnostic test results are not available.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NoDiagnosticTestResultsWithin4Hours">
+                            <elm:annotation>
+                                <a:s>Diagnostic test results are not expected to be received within the next 4 hours.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingLMWHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving low-molecular-weight heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingFondaparinux">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving fondaparinux.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingIVHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving intravenous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingSQHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving subcutaneous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Intermediate Clinical Suspicion of Acute VTE and Results of Diagnostic Tests Expected to Be Delayed &gt; 4 Hours"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcuteIsolatedDistalDVTLeg">
+                            <elm:annotation>
+                                <a:s>The patient has an acute isolated distal deep venous thrombosis of the leg.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Or">
+                            <elm:annotation>
+                                <a:s>The patient has severe symptoms related to the deep venous thrombosis OR the patient has risk factors for extension.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="SevereDVTSymptoms"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="HasRiskFactorsForExtension"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingAnticoagulant">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving anticoagulation therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute Isolated Distal DVT of Leg and Severe Symptoms or Risk Factors for Extension"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcuteIsolatedDistalDVTLeg">
+                            <elm:annotation>
+                                <a:s>The patient has an acute isolated distal deep venous thrombosis of the leg.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:Or">
+                            <elm:annotation>
+                                <a:s>The thrombus extends within the distal veins OR the thrombus extends into the proximal veins.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="ThrombusExtensionDistal"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="ThrombusExtensionProximal"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingAnticoagulant">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving anticoagulation therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute Isolated Distal DVT of Leg if Thrombus Extends within Distal System or into Proximal Veins"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcuteDVTLeg">
+                            <elm:annotation>
+                                <a:s>The patient has an acute deep venous thrombosis of the leg.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="PlannedThrombectomy">
+                            <elm:annotation>
+                                <a:s>The patient is undergoing thrombectomy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute DVT of Leg with Thrombectomy"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient should be considered for the same intensity and duration of anticoagulation therapy irrespective of the thrombosis removal."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient should be considered for the same intensity and duration of anticoagulation therapy irrespective of the thrombosis removal"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcuteProximalDVTLeg">
+                            <elm:annotation>
+                                <a:s>The patient has an acute proximal deep venous thrombosis of the leg.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="HasIVCFilter">
+                            <elm:annotation>
+                                <a:s>The patient has received an inferior vena cava (IVC) filter.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NoCurrentActiveBleedingRisk">
+                            <elm:annotation>
+                                <a:s>The patient does not have a current active risk of bleeding.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingAnticoagulant">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving anticoagulation therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute Proximal DVT of Leg and IVC Filter If Risk of Bleeding Resolves"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcutePE">
+                            <elm:annotation>
+                                <a:s>The patient has an acute pulmonary embolism.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingLMWHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving low-molecular-weight heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingFondaparinux">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving fondaparinux.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingIVHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving intravenous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingSQHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving subcutaneous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute Pulmonary Embolism (PE)"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcutePE_HighSuspicion">
+                            <elm:annotation>
+                                <a:s>The patient has a highly suspected acute pulmonary embolism.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NoDiagnosticTestResults">
+                            <elm:annotation>
+                                <a:s>Diagnostic test results are not available.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingLMWHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving low-molecular-weight heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingFondaparinux">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving fondaparinux.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingIVHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving intravenous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingSQHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving subcutaneous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="High Clinical Suspicion of Acute PE"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcutePE_IntermediateSuspicion">
+                            <elm:annotation>
+                                <a:s>The patient has an intermediately suspected acute pulmonary embolism.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NoDiagnosticTestResults">
+                            <elm:annotation>
+                                <a:s>Diagnostic test results are not available.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NoDiagnosticTestResultsWithin4Hours">
+                            <elm:annotation>
+                                <a:s>Diagnostic test results are not expected to be received within the next 4 hours.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingLMWHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving low-molecular-weight heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingFondaparinux">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving fondaparinux.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingIVHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving intravenous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingSQHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving subcutaneous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Intermediate Clinical Suspicion of Acute PE if Results of Diagnostic Tests Expected to Be Delayed &gt; 4 Hours"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcutePE">
+                            <elm:annotation>
+                                <a:s>The patient has an acute pulmonary embolism.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="HasIVCFilter">
+                            <elm:annotation>
+                                <a:s>The patient has received an inferior vena cava (IVC) filter.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NoCurrentActiveBleedingRisk">
+                            <elm:annotation>
+                                <a:s>The patient does not have a current active risk of bleeding.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingAnticoagulant">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving anticoagulation therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute PE and IVC Filter if Risk of Bleeding Resolves"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AsymptomaticPE">
+                            <elm:annotation>
+                                <a:s>The patient has an asymptomatic pulmonary embolism.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Asymptomatic PE"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient should be considered for the same anticoagulation therapy irrespective of the absence of symptoms related to the pulmonary embolism."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient should be considered for the same anticoagulation therapy irrespective of the absence of symptoms related to the pulmonary embolism"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:Or">
+                            <elm:annotation>
+                                <a:s>The patient has an acute upper extremity deep venous thrombosis involving the axillary veins OR the patient has an acute upper extremity deep venous thrombosis involving more proximal veins.</a:s>
+                            </elm:annotation>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="AcuteDVTAxillary"/>
+                            <elm:operand xsi:type="elm:ExpressionRef" name="AcuteDVTProximalUE"/>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingLMWHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving low-molecular-weight heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingFondaparinux">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving fondaparinux.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingIVHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving intravenous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingSQHeparin">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving subcutaneous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute Upper-Extremity DVT That Involves Axillary or More Proximal Veins"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="AcuteUEDVT">
+                            <elm:annotation>
+                                <a:s>The patient has an acute upper extremity deep venous thrombosis.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="ReceivingThrombolytic">
+                            <elm:annotation>
+                                <a:s>The patient is undergoing thrombolysis.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Acute Upper-Extremity DVT with Thrombolysis"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient should be considered for the same intensity and duration of anticoagulation therapy irrespective of the thrombolysis."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient should be considered for the same intensity and duration of anticoagulation therapy irrespective of the thrombolysis"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="SymptomaticSplanchnicVeinThrombosis">
+                            <elm:annotation>
+                                <a:s>The patient has symptomatic splanchnic vein thrombosis (defined as portal, mesenteric, splenic, or a combination of these).</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingAnticoagulant">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving anticoagulation therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Symptomatic Splanchnic Vein Thrombosis"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="SymptomaticHepaticVeinThrombosis">
+                            <elm:annotation>
+                                <a:s>The patient has symptomatic hepatic vein thrombosis.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingAnticoagulant">
+                            <elm:annotation>
+                                <a:s>The patient is not receiving anticoagulation therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is not pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Symptomatic Hepatic Vein Thrombosis"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Notify the provider that the patient is a candidate for intravenous unfractionated heparin, although other options may be preferred"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CreateAction">
+                        <textEquivalent value="Generate the Inpatient Heparin Anticoagulation Order Set KNART."/>
+                        <actionSentence xsi:type="elm:ExpressionRef" name="Generate the Inpatient Heparin Anticoagulation Order Set KNART"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="PlannedElectiveSurgery">
+                            <elm:annotation>
+                                <a:s>The patient is undergoing elective surgery.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="ReceivingVitaminKAntagonist">
+                            <elm:annotation>
+                                <a:s>The patient is receiving vitamin K antagonist therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:AnyTrue">
+                            <elm:annotation>
+                                <a:s>The patient has a mechanical heart valve OR the patient has atrial fibrillation OR the patient has a venous thromboembolism.</a:s>
+                            </elm:annotation>
+                            <elm:source xsi:type="elm:List">
+                                <elm:element xsi:type="elm:ExpressionRef" name="MechanicalHeartValve"/>
+                                <elm:element xsi:type="elm:ExpressionRef" name="AtrialFibrillation"/>
+                                <elm:element xsi:type="elm:ExpressionRef" name="VenousThromboembolism"/>
+                            </elm:source>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="HighRiskForThromboembolism">
+                            <elm:annotation>
+                                <a:s>The patient has a high risk for thromboembolism.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="NotReceivingBridgingAnticoagulationTx">
+                            <!-- “Bridging anticoagulation therapy” refers to “the administration of a short-acting anticoagulant, consisting of subcutaneous (SC) low-molecular-weight heparin (LMWH) or IV unfractionated heparin (UFH), for an ~10- to 12-day period during interruption of VKA therapy when the international normalized ratio (INR) is not within a therapeutic range” -->
+                            <elm:annotation>
+                                <a:s>The patient is not receiving bridging anticoagulation therapy.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Perioperative Anticoagulation with Mechanical Heart Valve, Atrial Fibrillation, or VTE at High Risk for Additional Thromboembolism"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <supportingEvidence>
+                            <evidence>
+                                <resources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier extension="e2" identifierName="Douketis 2012" root="LocalDocBook"/>
+                                        </identifiers>
+                                    </resource>
+                                </resources>
+                            </evidence>
+                        </supportingEvidence>
+                        <textEquivalent
+                            value="Notify the provider that the patient should be managed according to the American College of Chest Physicians perioperative anticoagulation management guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278059/)."/>
+                        <actionSentence xsi:type="elm:ExpressionRef"
+                            name="Notify the provider that the patient should be managed according to the American College of Chest Physicians perioperative anticoagulation management guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278059/)"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="PlannedElectiveSurgery">
+                            <elm:annotation>
+                                <a:s>The patient is undergoing elective surgery.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="ReceivingBridgingAnticoagulationTx">
+                            <elm:annotation>
+                                <a:s>The patient is receiving bridging anticoagulation with a therapeutic dose of intravenous unfractionated heparin.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Perioperative Anticoagulation with UFH - Timing of Pre-surgical Stopping of UFH"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <supportingEvidence>
+                            <evidence>
+                                <resources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier extension="e2" identifierName="Douketis 2012" root="LocalDocBook"/>
+                                        </identifiers>
+                                    </resource>
+                                </resources>
+                            </evidence>
+                        </supportingEvidence>
+                        <textEquivalent
+                            value="Notify the provider that the patient should be managed according to the American College of Chest Physicians perioperative anticoagulation management guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278059/)."/>
+                        <actionSentence xsi:type="elm:ExpressionRef"
+                            name="Notify the provider that the patient should be managed according to the American College of Chest Physicians perioperative anticoagulation management guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278059/)"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="IsPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="APLASyndrome">
+                            <elm:annotation>
+                                <a:s>The patient meets laboratory criteria for antiphospholipid antibody (APLA) syndrome.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="SpontaneousAbortionGE3">
+                            <elm:annotation>
+                                <a:s>The patient has a history of &gt;= 3 pregnancy losses</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Pregnancy with Antiphospholipid Antibodies (APLA) Syndrome"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <supportingEvidence>
+                            <evidence>
+                                <resources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier extension="e1" identifierName="Bates 2012" root="LocalDocBook"/>
+                                        </identifiers>
+                                    </resource>
+                                </resources>
+                            </evidence>
+                        </supportingEvidence>
+                        <textEquivalent value="Notify the provider that the patient should be managed according to the American College of Chest Physicians pregnancy anticoagulation guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/)."/>
+                        <actionSentence xsi:type="elm:ExpressionRef"
+                            name="Notify the provider that the patient should be managed according to the American College of Chest Physicians pregnancy anticoagulation guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/)"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="ReadOnlyBehavior" value="true"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="IsPregnant">
+                            <elm:annotation>
+                                <a:s>The patient is pregnant.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                    <condition>
+                        <logic xsi:type="elm:ExpressionRef" name="MechanicalHeartValve">
+                            <elm:annotation>
+                                <a:s>The patient has a mechanical heart valve.</a:s>
+                            </elm:annotation>
+                        </logic>
+                        <conditionRole value="ApplicableScenario"/>
+                    </condition>
+                </conditions>
+                <title value="Pregnancy with Mechanical Heart Valve"/>
+                <subElements>
+                    <simpleAction xsi:type="CreateAction">
+                        <supportingEvidence>
+                            <evidence>
+                                <resources>
+                                    <resource>
+                                        <identifiers>
+                                            <identifier extension="e1" identifierName="Bates 2012" root="LocalDocBook"/>
+                                        </identifiers>
+                                    </resource>
+                                </resources>
+                            </evidence>
+                        </supportingEvidence>
+                        <textEquivalent value="Notify the provider that the patient should be managed according to the American College of Chest Physicians pregnancy anticoagulation guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/)."/>
+                        <actionSentence xsi:type="elm:ExpressionRef"
+                            name="Notify the provider that the patient should be managed according to the American College of Chest Physicians pregnancy anticoagulation guidelines (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/)."/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>
