@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Mental Health: Iraq &amp; Afghanistan Post-Deployment Screen - Rule to Create
+         Appropriate Order Set Rule</title>
+      <subtitle>Rule: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0007AA</releaseinfo>
+      <pubdate>06/18/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>June 18, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>June 6, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>June 6, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>April 27, 2018</entry>
+                  <entry>Pre-published</entry>
+               </row>
+               <row>
+                  <entry>April 9, 2018</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>Rani Hoff, PhD MPH</entry>
+                  <entry>Author</entry>
+                  <entry>Director, Northeast Program Evaluation Center Office of Mental Health and Suicide Prevention (10NC5) VA Central Office (VACO) Professor of Psychiatry, Yale University School of Medicine</entry>
+               </row>
+               <row>
+                  <entry>Katy Lysell, MD</entry>
+                  <entry>Author</entry>
+                  <entry>National Mental Health Director for Informatics Honolulu, HI 96819</entry>
+               </row>
+               <row>
+                  <entry>Andrew Pomerantz</entry>
+                  <entry>Author</entry>
+                  <entry>National Mental Health Director, Integrated Care</entry>
+               </row>
+               <row>
+                  <entry>John McCarthy</entry>
+                  <entry>Author</entry>
+                  <entry>Director, Serious Mental Illness Treatment Resource and Evaluation Center (SMITREC) &amp; National PC-MHI Evaluation</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>8bea8573-d9ed-510e-81a2-571c850cc022</entry>
+                  <entry>O3</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Primary Care Provider</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Mental Health Provider</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>310190000 |Mental health counselor (occupation)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Adult</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowSetting</entry>
+                  <entry>Outpatient</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowTask</entry>
+                  <entry>Post-deployment screening</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>10918624-0ba1-4f32-be0e-bf7fd0d0cca3|Defense force post-deployment health screening (procedure)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e2">UnexplainedFevers</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Affirmative response to: Unexplained fevers since serving in the area of conflict?</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e3"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[7520000 |Pyrexia of unknown origin (finding)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e3">GIComplaints</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Affirmative response to: Chronic diarrhea or other gastrointestinal complaints since serving in the area of conflict?</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e3"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[7520000 |Pyrexia of unknown origin (finding)]]</link>elm:element[elm:Code]: <link linkend="d6e5"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[236071009 |Chronic diarrhea (disorder)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e4">PersistentRash</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Affirmative response to: Persistent papular or nodular rash since serving in the area of conflict?</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e6"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[271757001 |Papular eruption (disorder)]- -&gt;(263502005 |Clinical course (attribute))-&gt;[90734009 |Chronic (qualifier value)];]</link>elm:element[elm:Code]: <link linkend="d6e7"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[95319004 |Skin nodule (finding)]- -&gt;(263502005 |Clinical course (attribute))-&gt;[90734009 |Chronic (qualifier value)];]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e5">EmbeddedFragments</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Affirmative response to: Suspected or known embedded fragments or shrapnel as a result of serving in the area of
+                        conflict?</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e8"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[219391000 |War injury due to fragments from shrapnel (disorder)]]</link>elm:element[elm:Code]: <link linkend="d6e8"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[219391000 |War injury due to fragments from shrapnel (disorder)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e6">TBI</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Affirmative response to: Suspected or known head injury resulting in alteration or loss of consciousness during
+                        deployment?</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e10"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[3006004 |Disturbance of consciousness (finding)]- -&gt;(42752001 |Due to (attribute))-&gt;[82271004 |Injury of head (disorder)];]</link>elm:element[elm:Code]: <link linkend="d6e11"> [[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[419045004 |Loss of consciousness (finding)]- -&gt;(42752001 |Due to (attribute))-&gt;[82271004 |Injury of head (disorder)];]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <table frame="all">
+            <title xml:id="d4e7">newPDSDocTemplate</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Trigger: type=DataEventTrigger, DataElementAdded</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=ClinicalStatement,
+                                    codeProperty=topic</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Submission of the "Mental Health – Iraq &amp; Afghanistan Post-Deployment Screen" documentation template.</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e12"> [TSR-NoCode]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>Actions</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="16">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (UnexplainedFevers)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to " General Clinical Note " documentation template KNART.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to " Generic E-Consult " documentation template-consult request KNART.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Display order for infectious diseases consult for unexplained fevers in the "Consults and Referrals" section of the "Mental Health – Iraq &amp; Afghanistan Post-Deployment Screen" order set.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e19">[ef732ceb-c7fa-4c91-91d5-bbca6184db62 |Infectious disease consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute)|)-&gt;[7520000 |Pyrexia of unknown origin (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Display order for patient education for unexplained fevers in Veterans who served in Iraq or Afghanistan after September 11, 2001, in the "Patient and Caregiver Education" section of the "Mental Health – Iraq &amp; Afghanistan Post-Deployment Screen" order set.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e21">[311401005 |Patient education (procedure)] -&gt;(363702006 |Has focus (attribute)|)-&gt;[7520000 |Pyrexia of unknown origin (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="16">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (GIComplaints)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to " General Clinical Note " documentation template KNART.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to " Generic E-Consult " documentation template-consult request KNART.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Display order for gastroenterology consult in the "Consults and Referrals" section of the "Mental Health – Iraq &amp; Afghanistan Post-Deployment Screen" order set.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e28">50687007 |Digestive tract consultation and report (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Display order for patient education for chronic diarrhea and other gastrointestinal complaints in Veterans who served in Iraq or Afghanistan after September 11, 2001, in the "Patient and Caregiver Education" section of the "Mental Health – Iraq &amp; Afghanistan Post-Deployment Screen" order set.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e30">[311401005 |Patient education (procedure)] -&gt;(363702006 |Has focus (attribute)|)-&gt;[236071009 |Chronic diarrhea (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="16">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (PersistentRash)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to "General Clinical Note" documentation template KNART.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to " Generic E-Consult " documentation template-consult request KNART.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Display order for infectious diseases consult for persistent rash in the "Consults and Referrals" section of the "Mental Health – Iraq &amp; Afghanistan Post-Deployment Screen" order set.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e36">[ef732ceb-c7fa-4c91-91d5-bbca6184db62 |Infectious disease consultation and report (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[271807003 |Eruption of skin (disorder)]- -&gt;(263502005 |Clinical course (attribute))-&gt;[90734009 |Chronic (qualifier value)];</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Display order for patient education for persistent rash in Veterans who served in Iraq or Afghanistan after September 11, 2001, in the "Patient and Caregiver Education" section of the "Mental Health – Iraq &amp; Afghanistan Post-Deployment Screen" order set.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e39">[311401005 |Patient education (procedure)]- -&gt;(363702006 |Has focus (attribute)|)-&gt;[271807003 |Eruption of skin (disorder)]- -&gt;(263502005 |Clinical course (attribute))-&gt;[90734009 |Chronic (qualifier value)];</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="12">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (EmbeddedFragments)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to "General Clinical Note" documentation template KNART.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to "Generic E-Consult" documentation template-consult request KNART.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Display order for patient education for embedded fragments or shrapnel in Veterans who served in Iraq or Afghanistan after September 11, 2001, in the "Patient and Caregiver Education" section of the "Mental Health – Iraq &amp; Afghanistan Post-Deployment Screen " order set.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Postcoordinated Expression <link linkend="d6e45">[311401005 |Patient education (procedure)] -&gt;(363702006 |Has focus (attribute)|)-&gt;[219391000 |War injury due to fragments from shrapnel (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Exists (TBI)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">  <link linkend="item_readonly">☆ </link>Provide link to "Neurology – TBI Screening" ECA Rule.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e14">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e12">TSR-NoCode</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e52">SNOMED CT</entry>
+                  <entry>10918624-0ba1-4f32-be0e-bf7fd0d0cca3|Defense force post-deployment health screening (procedure)|</entry>
+                  <entry>Post-deployment screening</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e51">SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>Adult</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e50">SNOMED CT</entry>
+                  <entry>310190000 |Mental health counselor (occupation)|</entry>
+                  <entry>Mental Health Provider</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e14">SNOMED CT</entry>
+                  <entry>385644000 |Requested (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>16</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>398166005 |Performed (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e48">SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>Primary Care Provider</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e28">SNOMED CT</entry>
+                  <entry>50687007 |Digestive tract consultation and report (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e12">SNOMED CT</entry>
+                  <entry>TSR-NoCode<footnote>
+                        <para>TSR-NoCode is a placeholder indicating a code was requested, but was not provided.</para>
+                     </footnote>
+                  </entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>10</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e45">SNOMED CT</entry>
+                  <entry>[311401005 |Patient education (procedure)] -&gt;(363702006 |Has focus (attribute)|)-&gt;[219391000 |War injury due to fragments from shrapnel (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e30">SNOMED CT</entry>
+                  <entry>[311401005 |Patient education (procedure)] -&gt;(363702006 |Has focus (attribute)|)-&gt;[236071009 |Chronic diarrhea (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e21">SNOMED CT</entry>
+                  <entry>[311401005 |Patient education (procedure)] -&gt;(363702006 |Has focus (attribute)|)-&gt;[7520000 |Pyrexia of unknown origin (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e39">SNOMED CT</entry>
+                  <entry>[311401005 |Patient education (procedure)]- -&gt;(363702006 |Has focus (attribute)|)-&gt;[271807003 |Eruption of skin (disorder)]- -&gt;(263502005 |Clinical course (attribute))-&gt;[90734009 |Chronic (qualifier value)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e8">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[219391000 |War injury due to fragments from shrapnel (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[236071009 |Chronic diarrhea (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[7520000 |Pyrexia of unknown origin (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e6">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[271757001 |Papular eruption (disorder)]- -&gt;(263502005 |Clinical course (attribute))-&gt;[90734009 |Chronic (qualifier value)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e10">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[3006004 |Disturbance of consciousness (finding)]- -&gt;(42752001 |Due to (attribute))-&gt;[82271004 |Injury of head (disorder)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e11">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[419045004 |Loss of consciousness (finding)]- -&gt;(42752001 |Due to (attribute))-&gt;[82271004 |Injury of head (disorder)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e7">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[95319004 |Skin nodule (finding)]- -&gt;(263502005 |Clinical course (attribute))-&gt;[90734009 |Chronic (qualifier value)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e19">SNOMED CT</entry>
+                  <entry>[ef732ceb-c7fa-4c91-91d5-bbca6184db62 |Infectious disease consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute)|)-&gt;[7520000 |Pyrexia of unknown origin (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e36">SNOMED CT</entry>
+                  <entry>[ef732ceb-c7fa-4c91-91d5-bbca6184db62 |Infectious disease consultation and report (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[271807003 |Eruption of skin (disorder)]- -&gt;(263502005 |Clinical course (attribute))-&gt;[90734009 |Chronic (qualifier value)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Mental Health: Iraq &amp; Afghanistan Post-Deployment Screen Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Mental Health: Iraq &amp; Afghanistan Post-Deployment Screen - Rule to Create Appropriate Order Set Rule Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Mental Health: Iraq &amp; Afghanistan Post-Deployment Screen - Rule to Create Appropriate Order Set Rule KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="Bush 1998">
+               <abbrev>Bush 1998</abbrev>
+               <citetitle>Bush K, Kivlahan DR, McDonell MB, Fihn SD, Bradley KA, et al. The AUDIT alcohol consumption questions (AUDIT-C): an effective brief screening test for problem drinking. Ambulatory Care Quality Improvement Project (ACQUIP). Alcohol Use Disorders Identification Test. Arch Intern Med. 1998 Sep 14;158(16):1789-95</citetitle> (<link xlink:href="https://www.ncbi.nlm.nih.gov/pubmed/9738608">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Committee, 2013">
+               <abbrev>Committee, 2013</abbrev>
+               <citetitle>Committee on the Assessment of the Readjustment Needs of Military Personnel, Veterans, and Their Families; Board on the Health of Select Populations; Institute of Medicine. Returning Home from Iraq and Afghanistan: Assessment of Readjustment Needs of Veterans, Service Members, and Their Families. Washington (DC): National Academies Press (US); Mar 2013</citetitle> (<link xlink:href="https://www.ncbi.nlm.nih.gov/books/NBK206857">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="DOD 2012">
+               <abbrev>DOD 2012</abbrev>
+               <citetitle>Department of Defense (DoD) Deployment Health Clinical Center. DoD/VA Post-Deployment Health Clinical Practice Guideline (PDH-CPG) Fact Sheet. Website. Published November 2012</citetitle> (<link xlink:href="https://www.qmo.amedd.army.mil/redep/PDH-CPG_fact_sheet_15NOV12.pdf">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VHA/DOD 2012">
+               <abbrev>VHA/DOD 2012</abbrev>
+               <citetitle>Department of Veterans Affairs. Screening and Evaluation Protocol for Veterans with Embedded Fragments Who Served in Iraq and/or Afghanistan Post-September 11, 2001. Veterans Health Administration. Washington DC 20420. VHA Directive 1303.01. Transmittal Sheet. Published April 2017</citetitle> (<link xlink:href="https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=5372">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VHA/DOD 2016">
+               <abbrev>VHA/DOD 2016</abbrev>
+               <citetitle>Department of Veterans Affairs/Department of Defense. VA/DoD Clinical Practice Guideline for the Management of Concussion-Mild Traumatic Brain Injury. Version 2.0 – 2016. VA/DoD Clinical Practice Guidelines Website. Published February 2016.</citetitle> (<link xlink:href="https://www.healthquality.va.gov/guidelines/Rehab/mtbi/mTBICPGFullCPG50821816.pdf">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VHA/DOD 2015">
+               <abbrev>VHA/DOD 2015</abbrev>
+               <citetitle>Department of Veterans Affairs. VA/DoD Clinical Practice Guideline for the Management of Substance Use Disorders. Version 3.0 – 2015. VA/DoD Clinical Practice Guidelines Website. Published December 2015</citetitle> (<link xlink:href="https://www.healthquality.va.gov/guidelines/MH/sud/VADoDSUDCPGRevised22216.pdf">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
