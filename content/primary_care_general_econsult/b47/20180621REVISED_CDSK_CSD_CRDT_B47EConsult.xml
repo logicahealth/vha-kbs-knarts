@@ -1,0 +1,2104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>General E-Consult Documentation Template</title>
+      <subtitle>Documentation Template: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AE</releaseinfo>
+      <pubdate>06/14/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>June 14, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 18, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 18, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>November 3, 2017</entry>
+                  <entry>Created</entry>
+               </row>
+               <row>
+                  <entry>March 22, 2013</entry>
+                  <entry>Pre-published</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>Angela Denietolis, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Primary Care Physician, James A. Haley Veterans Hospital, Tampa VAMC, Tampa, FL 33612</entry>
+               </row>
+               <row>
+                  <entry>Pat Dumas, RN</entry>
+                  <entry>Author</entry>
+                  <entry>Clinical Program Director, VACO, 810 Vermont Avenue NW, Washington, DL 20420</entry>
+               </row>
+               <row>
+                  <entry>Manish Merchant, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Health Informatician, Albany VAMC, 113 Holland Avenue, Albany, NY 12208</entry>
+               </row>
+               <row>
+                  <entry>Timothy Dresselhaus, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Chief, Primary Care Service, San Diego VAMC - MEDS, 3350 La Jolla Village Drive, San Diego, CA 92161</entry>
+               </row>
+               <row>
+                  <entry>David Douglas, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Facility Chief Health Informatics Officer, Portland VAMC, Portland, OR E-Consult Expert</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>8d4512ca-6e86-5a7e-ac2d-2ff6d15c7352</entry>
+                  <entry>B47</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Clinical Providers</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>All patients</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalFocus</entry>
+                  <entry>Stat E-Consult: response within 24 hours; Routine E-Consult: response as soon as possible, but within 7 days; Routine E-Consult with Scheduling Instructions: response time-frame specified by ordering provider</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowSetting</entry>
+                  <entry>All to include Inpatient and outpatient</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Any clinical specialty needing an E-Consult</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <para>No externalData expression definitions and no trigger definitions are present. </para>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>E-Consult Request</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="5">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>
+                     <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c5">E-Consult Request</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c5"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="49">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">Select Specialty Service for E-Consult</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>
+                     <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Medicine</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Adolescent Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e7">3841000175105 |Adolescent medicine service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Allergy and Immunology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e8">711332004 |Allergy service (qualifier value)|</link>
+                     <link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e9">708190004 |Immunology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Anesthesiology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e10">310001007 |Anesthetic service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Cardiology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e11">3471000175103 |Cardiology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Critical Care(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e12">310032008 |Intensive care service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Dermatology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e14">700241009 |Dermatology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Emergency Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e15">409971007 |Emergency medical services (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Endocrinology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e16">700434000 |Endocrinology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Gastroenterology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e17">700433006 |Gastroenterology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Genetics and Genomics(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e18">3511000175109 |Genetics service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Geriatrics(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e19">3531000175102 |Geriatric service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Hematology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e20">708196005 |Hematology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Infectious Disease(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e21">3541000175108 |Infectious disease service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Internal Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e22">040b18ee-1d3d-4d83-a1ff-709add73fa68 |Internal medicine service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Mental Health(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e23">708168004 |Mental health service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Nephrology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e24">449601000124105 |Nephrology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Neurology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e26">3591000175103 |Neurology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Occupational Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e27">310064001 |Occupational health service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Oncology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e28">310022001 |Clinical oncology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Optometry(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e29">310105000 |Optometry service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Pain Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e30">310071006 |Pain management service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Pathology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e31">310074003 |Pathology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Pediatrics(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e32">310066004 |Pediatric service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Physical Medicine and Rehabilitation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e33">722424008 |Physical medicine and rehabilitation service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Primary Care(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e34">81cc06be-341d-4606-9841-a81ebc76a289 |Primary care service (qualifier value)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Psychiatry(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e35">310116007 |Psychiatry service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Pulmonology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e36">722174002 |Pulmonary medicine service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Rheumatology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e38">3621000175101 |Rheumatology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Sleep Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e39">f0f88e7a-c854-4c0c-8533-677bef970dd5 |Sleep medicine service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Sports Medicine - Nonsurgical(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e40">1b5c822e-cd98-42aa-b968-9f06d30fa7db |Nonsurgical sports medicine service (qualifier value)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Travel Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e41">2a1fd1f7-da54-437e-b2c0-7942376375b7 |Travel medicine service (qualifier value)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Undersea and Hyperbaric Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e42">84e193e6-2751-425f-99ae-12a97b184a88 |Undersea and hyperbaric medicine service (qualifier value)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Surgery(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e2">310138009 |Surgical service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Obstetrics and Gynecology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e3">310060005 |Obstetrics and gynecology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Orthopedics(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e45">310161006 |Orthopedic service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Otolaryngology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e46">3831000175104 |Otolaryngology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Plastic and Reconstructive Surgery(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e47">310164003 |Plastic surgery service (qualifier value)|</link>
+                     <link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e48">3851000175107 |Reconstructive surgery service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Sports Medicine - Surgical(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e50">9980204d-cd97-4a01-8417-9681201abbb5 |Surgical sports medicine service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Trauma and Emergency Surgery(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e51">310166001 |Trauma surgery service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Urology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e52">310167005 |Urology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Vascular Surgery(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e53">310168000 |Vascular surgery service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Radiology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e4">310125001 |Radiology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Long Term Care (may include nursing homes, skilled nursing facilities, and other assisted living facilities)(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e55">3491000175102 |Long-term care service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Dental Consult(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e56">722176000 |Dentistry service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">
+                     <link linkend="item_fillin">☞ </link>item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Other(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e5">TSR-NoCode</link>)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c5">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("selectedSpecialty")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Equal (elm:Property("selectedSpecialty" from: elm:ParameterRef(Responses)) elm:Code())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Surgery</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Select surgery type(s)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Burn Surgery(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e58">4f5cc34f-7149-4b61-9b39-6e52c05e0581 |Burn surgery service (qualifier value)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Cardiothoracic Surgery(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e59">310140004 |Cardiothoracic surgery service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">General Surgery(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e60">310156009 |General surgical service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Neurosurgery(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e62">310159002 |Neurosurgical service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Equal (elm:Property("selectedSpecialty" from: elm:ParameterRef(Responses)) elm:Code())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Obstetrics and Gynecology</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Obstetrics and Gynecology</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Gynecologic Oncology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e63">5660db37-e153-4a1e-8d41-cb2b76c6dffc |Gynecologic oncology service (qualifier value)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Gynecology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e64">310061009 |Gynecology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Obstetrics(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e65">310063007 |Obstetrics service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Equal (elm:Property("selectedSpecialty" from: elm:ParameterRef(Responses)) elm:Code())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Radiology</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Radiology</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Diagnostic Radiology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e66">a4a6e0fb-ba7c-42de-b050-9cb6395b632e |Diagnostic radiology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Interventional Radiology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e67">708174004 |Interventional radiology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Nuclear Medicine(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e68">d0d483dd-7ebd-4f01-9869-d0d7a7f60af3 |Nuclear medicine service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Radiation Therapy(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e69">310023006 |Radiotherapy service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="11">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Equal (elm:Property("selectedSpecialty" from: elm:ParameterRef(Responses)) elm:Code())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Ancillary Clinical Services</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Ancillary Clinical Services</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Blood Bank(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e70">708194008 |Blood bank service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Nutrition(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e71">310090003 |Dietetics service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Pharmacy(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e72">310080006 |Pharmacy service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Social Work(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e74">310134006 |Social services (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Toxicology(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e75">708191000 |Toxicology service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Wound Care(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e76">3661000175108 |Wound care service (qualifier value)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">
+                     <link linkend="item_fillin">☞ </link>item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Other Ancillary Clinical Services(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e5">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">Reason for E-Consult?</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Reason for E-Consult</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">Indicate patient’s location</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Indicate patient’s location</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Inpatient(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e78">416800000 |Inpatient (person)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Outpatient(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e79">373864002 |Outpatient (person)|</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Other Specific Location(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e5">TSR-NoCode</link>)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c5">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("patientsLocation")</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Equal (elm:Property("patientsLocation" from: elm:ParameterRef(Responses)) elm:Code())</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c5">Other Specific Location</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Details</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">Specify E-Consult Priority as follows</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Priority</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Stat E-Consult: response within 24 hours(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e81">[a181b06c-80fb-4c93-9f64-ea3948a1d9dd |Electronic consultation (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[53923005 |Medical consultation on inpatient (procedure)]</link>
+                     <link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e82">[a181b06c-80fb-4c93-9f64-ea3948a1d9dd |Electronic consultation (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[17436001 |Medical consultation with outpatient (procedure)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Routine E-Consult: response as soon as possible, but within 7 days(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e81">[a181b06c-80fb-4c93-9f64-ea3948a1d9dd |Electronic consultation (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[53923005 |Medical consultation on inpatient (procedure)]</link>
+                     <link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e82">[a181b06c-80fb-4c93-9f64-ea3948a1d9dd |Electronic consultation (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[17436001 |Medical consultation with outpatient (procedure)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Routine E-Consult with Scheduling Instructions: response time-frame specified by ordering provider(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d16e5">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">STAT (Within 24 hours)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Provider Accepting Request to Provide E-Consult (required)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Provisional Diagnosis</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Additional Patient Information (Relevant History, Examination, Labs, Imaging, etc.)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Multiple) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Referring Physician Contact Information</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="10">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">ROUTINE (As soon as poosible but within 7 days)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Provisional Diagnosis</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Additional Patient Information (Relevant History, Examination, Labs, Imaging, etc.)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Multiple) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Referring Physician</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Referring Physician Contact Information</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Provider Accepting Request to Provide E-Consult (Optional)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="14">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1">ROUTINE WITH SCHEDULING INSTRUCTIONS (Ordering provider specifies timeframe)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Scheduling Instructions</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Timeframe for scheduling consult (Example: within 10 days)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Timestamp (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Provisional Diagnosis</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Code (Multiple) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Additional Patient Information (Relevant History, Examination, Labs, Imaging, etc.)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Multiple) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Referring Physician</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Referring Physician Contact Information</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Provider Accepting Request to Provide E-Consult (Optional)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single) </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d16e22">SNOMED CT</entry>
+                  <entry>040b18ee-1d3d-4d83-a1ff-709add73fa68 |Internal medicine service (qualifier value)|</entry>
+                  <entry>Internal Medicine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e40">SNOMED CT</entry>
+                  <entry>1b5c822e-cd98-42aa-b968-9f06d30fa7db |Nonsurgical sports medicine service (qualifier value)</entry>
+                  <entry>Sports Medicine - Nonsurgical</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e41">SNOMED CT</entry>
+                  <entry>2a1fd1f7-da54-437e-b2c0-7942376375b7 |Travel medicine service (qualifier value)</entry>
+                  <entry>Travel Medicine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e10">SNOMED CT</entry>
+                  <entry>310001007 |Anesthetic service (qualifier value)|</entry>
+                  <entry>Anesthesiology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e28">SNOMED CT</entry>
+                  <entry>310022001 |Clinical oncology service (qualifier value)|</entry>
+                  <entry>Oncology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e69">SNOMED CT</entry>
+                  <entry>310023006 |Radiotherapy service (qualifier value)|</entry>
+                  <entry>Radiation Therapy</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e12">SNOMED CT</entry>
+                  <entry>310032008 |Intensive care service (qualifier value)|</entry>
+                  <entry>Critical Care</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e3">SNOMED CT</entry>
+                  <entry>310060005 |Obstetrics and gynecology service (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e64">SNOMED CT</entry>
+                  <entry>310061009 |Gynecology service (qualifier value)|</entry>
+                  <entry>Gynecology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e65">SNOMED CT</entry>
+                  <entry>310063007 |Obstetrics service (qualifier value)|</entry>
+                  <entry>Obstetrics</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e27">SNOMED CT</entry>
+                  <entry>310064001 |Occupational health service (qualifier value)|</entry>
+                  <entry>Occupational Medicine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e32">SNOMED CT</entry>
+                  <entry>310066004 |Pediatric service (qualifier value)|</entry>
+                  <entry>Pediatrics</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e30">SNOMED CT</entry>
+                  <entry>310071006 |Pain management service (qualifier value)|</entry>
+                  <entry>Pain Medicine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e31">SNOMED CT</entry>
+                  <entry>310074003 |Pathology service (qualifier value)|</entry>
+                  <entry>Pathology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e72">SNOMED CT</entry>
+                  <entry>310080006 |Pharmacy service (qualifier value)|</entry>
+                  <entry>Pharmacy</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e71">SNOMED CT</entry>
+                  <entry>310090003 |Dietetics service (qualifier value)|</entry>
+                  <entry>Nutrition</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e29">SNOMED CT</entry>
+                  <entry>310105000 |Optometry service (qualifier value)|</entry>
+                  <entry>Optometry</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e35">SNOMED CT</entry>
+                  <entry>310116007 |Psychiatry service (qualifier value)|</entry>
+                  <entry>Psychiatry</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e4">SNOMED CT</entry>
+                  <entry>310125001 |Radiology service (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e74">SNOMED CT</entry>
+                  <entry>310134006 |Social services (qualifier value)|</entry>
+                  <entry>Social Work</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e2">SNOMED CT</entry>
+                  <entry>310138009 |Surgical service (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e59">SNOMED CT</entry>
+                  <entry>310140004 |Cardiothoracic surgery service (qualifier value)|</entry>
+                  <entry>Cardiothoracic Surgery</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e60">SNOMED CT</entry>
+                  <entry>310156009 |General surgical service (qualifier value)|</entry>
+                  <entry>General Surgery</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e62">SNOMED CT</entry>
+                  <entry>310159002 |Neurosurgical service (qualifier value)|</entry>
+                  <entry>Neurosurgery</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e45">SNOMED CT</entry>
+                  <entry>310161006 |Orthopedic service (qualifier value)|</entry>
+                  <entry>Orthopedics</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e47">SNOMED CT</entry>
+                  <entry>310164003 |Plastic surgery service (qualifier value)|</entry>
+                  <entry>Plastic and Reconstructive Surgery</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e51">SNOMED CT</entry>
+                  <entry>310166001 |Trauma surgery service (qualifier value)|</entry>
+                  <entry>Trauma and Emergency Surgery</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e52">SNOMED CT</entry>
+                  <entry>310167005 |Urology service (qualifier value)|</entry>
+                  <entry>Urology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e53">SNOMED CT</entry>
+                  <entry>310168000 |Vascular surgery service (qualifier value)|</entry>
+                  <entry>Vascular Surgery</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e11">SNOMED CT</entry>
+                  <entry>3471000175103 |Cardiology service (qualifier value)|</entry>
+                  <entry>Cardiology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e55">SNOMED CT</entry>
+                  <entry>3491000175102 |Long-term care service (qualifier value)|</entry>
+                  <entry>Long Term Care (may include nursing homes, skilled nursing facilities, and other assisted living facilities)</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e18">SNOMED CT</entry>
+                  <entry>3511000175109 |Genetics service (qualifier value)|</entry>
+                  <entry>Genetics and Genomics</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e19">SNOMED CT</entry>
+                  <entry>3531000175102 |Geriatric service (qualifier value)|</entry>
+                  <entry>Geriatrics</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e21">SNOMED CT</entry>
+                  <entry>3541000175108 |Infectious disease service (qualifier value)|</entry>
+                  <entry>Infectious Disease</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e26">SNOMED CT</entry>
+                  <entry>3591000175103 |Neurology service (qualifier value)|</entry>
+                  <entry>Neurology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e38">SNOMED CT</entry>
+                  <entry>3621000175101 |Rheumatology service (qualifier value)|</entry>
+                  <entry>Rheumatology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e76">SNOMED CT</entry>
+                  <entry>3661000175108 |Wound care service (qualifier value)|</entry>
+                  <entry>Wound Care</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e79">SNOMED CT</entry>
+                  <entry>373864002 |Outpatient (person)|</entry>
+                  <entry>Outpatient</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e46">SNOMED CT</entry>
+                  <entry>3831000175104 |Otolaryngology service (qualifier value)|</entry>
+                  <entry>Otolaryngology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e7">SNOMED CT</entry>
+                  <entry>3841000175105 |Adolescent medicine service (qualifier value)|</entry>
+                  <entry>Adolescent Medicine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e48">SNOMED CT</entry>
+                  <entry>3851000175107 |Reconstructive surgery service (qualifier value)|</entry>
+                  <entry>Plastic and Reconstructive Surgery</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e15">SNOMED CT</entry>
+                  <entry>409971007 |Emergency medical services (qualifier value)|</entry>
+                  <entry>Emergency Medicine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e78">SNOMED CT</entry>
+                  <entry>416800000 |Inpatient (person)|</entry>
+                  <entry>Inpatient</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e24">SNOMED CT</entry>
+                  <entry>449601000124105 |Nephrology service (qualifier value)|</entry>
+                  <entry>Nephrology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e58">SNOMED CT</entry>
+                  <entry>4f5cc34f-7149-4b61-9b39-6e52c05e0581 |Burn surgery service (qualifier value)</entry>
+                  <entry>Burn Surgery</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e63">SNOMED CT</entry>
+                  <entry>5660db37-e153-4a1e-8d41-cb2b76c6dffc |Gynecologic oncology service (qualifier value)</entry>
+                  <entry>Gynecologic Oncology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e14">SNOMED CT</entry>
+                  <entry>700241009 |Dermatology service (qualifier value)|</entry>
+                  <entry>Dermatology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e17">SNOMED CT</entry>
+                  <entry>700433006 |Gastroenterology service (qualifier value)|</entry>
+                  <entry>Gastroenterology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e16">SNOMED CT</entry>
+                  <entry>700434000 |Endocrinology service (qualifier value)|</entry>
+                  <entry>Endocrinology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e23">SNOMED CT</entry>
+                  <entry>708168004 |Mental health service (qualifier value)|</entry>
+                  <entry>Mental Health</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e67">SNOMED CT</entry>
+                  <entry>708174004 |Interventional radiology service (qualifier value)|</entry>
+                  <entry>Interventional Radiology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e9">SNOMED CT</entry>
+                  <entry>708190004 |Immunology service (qualifier value)|</entry>
+                  <entry>Allergy and Immunology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e75">SNOMED CT</entry>
+                  <entry>708191000 |Toxicology service (qualifier value)|</entry>
+                  <entry>Toxicology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e70">SNOMED CT</entry>
+                  <entry>708194008 |Blood bank service (qualifier value)|</entry>
+                  <entry>Blood Bank</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e20">SNOMED CT</entry>
+                  <entry>708196005 |Hematology service (qualifier value)|</entry>
+                  <entry>Hematology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e8">SNOMED CT</entry>
+                  <entry>711332004 |Allergy service (qualifier value)|</entry>
+                  <entry>Allergy and Immunology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e36">SNOMED CT</entry>
+                  <entry>722174002 |Pulmonary medicine service (qualifier value)|</entry>
+                  <entry>Pulmonology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e56">SNOMED CT</entry>
+                  <entry>722176000 |Dentistry service (qualifier value)|</entry>
+                  <entry>Dental Consult</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e33">SNOMED CT</entry>
+                  <entry>722424008 |Physical medicine and rehabilitation service (qualifier value)|</entry>
+                  <entry>Physical Medicine and Rehabilitation</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e34">SNOMED CT</entry>
+                  <entry>81cc06be-341d-4606-9841-a81ebc76a289 |Primary care service (qualifier value)</entry>
+                  <entry>Primary Care</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e42">SNOMED CT</entry>
+                  <entry>84e193e6-2751-425f-99ae-12a97b184a88 |Undersea and hyperbaric medicine service (qualifier value)</entry>
+                  <entry>Undersea and Hyperbaric Medicine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e50">SNOMED CT</entry>
+                  <entry>9980204d-cd97-4a01-8417-9681201abbb5 |Surgical sports medicine service (qualifier value)|</entry>
+                  <entry>Sports Medicine - Surgical</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e5">SNOMED CT</entry>
+                  <entry>TSR-NoCode<footnote>
+                        <para>TSR-NoCode is a placeholder indicating a code was requested, but was not provided.</para>
+                     </footnote>
+                  </entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>6</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e82">SNOMED CT</entry>
+                  <entry>[a181b06c-80fb-4c93-9f64-ea3948a1d9dd |Electronic consultation (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[17436001 |Medical consultation with outpatient (procedure)]</entry>
+                  <entry>Stat E-Consult: response within 24 hours</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e81">SNOMED CT</entry>
+                  <entry>[a181b06c-80fb-4c93-9f64-ea3948a1d9dd |Electronic consultation (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[53923005 |Medical consultation on inpatient (procedure)]</entry>
+                  <entry>Stat E-Consult: response within 24 hours</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e66">SNOMED CT</entry>
+                  <entry>a4a6e0fb-ba7c-42de-b050-9cb6395b632e |Diagnostic radiology service (qualifier value)|</entry>
+                  <entry>Diagnostic Radiology</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e68">SNOMED CT</entry>
+                  <entry>d0d483dd-7ebd-4f01-9869-d0d7a7f60af3 |Nuclear medicine service (qualifier value)|</entry>
+                  <entry>Nuclear Medicine</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d16e39">SNOMED CT</entry>
+                  <entry>f0f88e7a-c854-4c0c-8533-677bef970dd5 |Sleep medicine service (qualifier value)|</entry>
+                  <entry>Sleep Medicine</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Primary Care: E-Consult Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>General E-Consult Documentation Template Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>General E-Consult Documentation Template KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="Akbari 2008">
+               <abbrev>Akbari 2008</abbrev>
+               <citetitle>Akbari A., Mayhew A., Al-Alawi MA, et al. Interventions to improve outpatient referrals from primary care to secondary care. Cochrane Database Syst Rev. 2008;4:CD005471</citetitle> (<link xlink:href="https://doi.org/10.1002/14651858.CD005471">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2016">
+               <abbrev>VA 2016</abbrev>
+               <citetitle>Consult Processes and Procedures-VHA DIRECTIVE 1232. Amended 2016 September 16</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
