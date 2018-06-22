@@ -1,0 +1,3554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Endocrinology: Hypoglycemia Documentation Template</title>
+      <subtitle>Documentation Template: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AF</releaseinfo>
+      <pubdate>06/18/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>June 18, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 25, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 25, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>April 20, 2018</entry>
+                  <entry>Pre-published</entry>
+               </row>
+               <row>
+                  <entry>April 20, 2018</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>Leonard Pogach, MD</entry>
+                  <entry>Author</entry>
+                  <entry>National Director MedicineVACO, 810 Vermont Ave. NW, Room 662 Washington, DC 20420</entry>
+               </row>
+               <row>
+                  <entry>Paul Conlin, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Endocrinologist; Chief of Medicine, Boston VAMC; Chair of the Field Advisory Committee for Diabetes/Endocrinology, 1400 VFW Parkway, Boston, MA 02132</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>a3d8ea14-b1d9-56ec-9774-239ba16e16e4</entry>
+                  <entry>B45</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Clinical Providers</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Adult outpatient with an active problem of either diabetes mellitus, type 1 or type 2</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowSetting</entry>
+                  <entry>Emergency Department (ED), inpatient hospital, urgent care, or ambulatory care clinic</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowTask</entry>
+                  <entry>Care and Management of the Diabetic Patient</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e2">creatinine</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e3"> [70901006 |Creatinine measurement (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e3">glomerular filtration rate</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e5"> [167181009 |Measurement of renal clearance of creatinine (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e4">albumin-to-creatinine ratio</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:SingletonFrom</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e7"> [271075006 |Urine albumin/creatinine ratio measurement (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <para>No trigger definitions are present.</para>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>History of Present Illness</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="9">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <colspec align="left" colname="c6" colnum="6"/>
+            <colspec align="left" colname="c7" colnum="7"/>
+            <colspec align="left" colname="c8" colnum="8"/>
+            <colspec align="left" colname="c9" colnum="9"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">  </entry>
+                  <entry namest="c2" nameend="c9" rowsep="1">Reason for Evaluation</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Select</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Recent hypoglycemic episode(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e8">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[317006 |Reactive hypoglycemia (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">At risk for hypoglycemia without recent episode(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e9">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[b91c7da2-cb27-42e5-8ae9-3b7dacecbb7f |At risk for hypoglycemia (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Other reason</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Provide details of other reason for evaluation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="20">  </entry>
+                  <entry namest="c2" nameend="c9" rowsep="1">Diabetes Control Status</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Type of Diabetes</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Code (Single)</entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Type I Diabetes(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e10">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[46635009 |Diabetes mellitus type 1 (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Type II Diabetes(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e11">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[44054006 |Diabetes mellitus type 2 (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Glycated Hemoglobin (HbA1c) goal</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e17">[225294001 |Identifying goals (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[243860001 |Diabetic monitoring status (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[408591000 |Hemoglobin A1c target (observable entity)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Real (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="5">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Most recent HbA1c (%)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e18">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[43396009 |Hemoglobin A1c measurement (procedure)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Ratio (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Preprandial blood glucose target range (goal)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e19">[225294001 |Identifying goals (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[243860001 |Diabetic monitoring status (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[787bb747-3d69-4383-b69d-68937ad61f24 |Fasting blood glucose target (observable entity)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">IntegerInterval (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Preprandial blood glucose target range (actual)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e20">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[271062006 |Fasting blood glucose measurement (procedure)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">IntegerInterval (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">  <link linkend="card_single">❖ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c9" rowsep="1">Medication Reconciliation: Potential medication interactions with antiglycemic agents and/or medication impact on hypoglycemic awareness</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Description of reaction/interactions</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">  <link linkend="req_must">✦ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c9">Prior Hypoglycemic Episodes?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c9">
+                     <link linkend="d6e8">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[317006 |Reactive hypoglycemia (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c9">Boolean (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c1">response range:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c9">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c9">No</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c9">Yes</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c9">
+                     <emphasis role="bold">responseBinding: </emphasis> Property ("hasPriorHypoglycemicEpisodes")</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c9"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="59">  </entry>
+                  <entry namest="c2" nameend="c9" rowsep="0">
+                     <emphasis xmlns:a="urn:hl7-org:cql-annotations:r1"
+                               xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                               role="bold">Condition:</emphasis>elm:Property</entry>
+               </row>
+               <row>
+                  <entry namest="c2" nameend="c9">Collect details about hypoglycemic episode(s)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="27">  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1">Episode type(s)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Hypoglycemia requiring paramedics, emergency department evaluation, or hospitalization</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e22">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[401082004 |Hypoglycemic attack requiring third party assistance (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;acd5c50a-e40a-47cd-bf34-d02bdb9f0342 |Frequency of emergency department treated hypoglycemia attack (observable entity)];</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e23">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[401082004 |Hypoglycemic attack requiring third party assistance (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[712660009 |Frequency of hospital-treated hypoglycemia attack (observable entity)];</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Number of episodes since last visit</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Number of episodes during past year</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Hypoglycemia requiring bystander intervention</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e24">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[401082004 |Hypoglycemic attack requiring third party assistance (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[06cf6868-d29b-4586-9e30-fabe9594642e |Frequency of bystander assisted hypoglycemia attack (observable entity)];</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Number of episodes since last visit</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Number of episodes during past year</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Self-managed hypoglycemic episode</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e26">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[317006 |Reactive hypoglycemia (disorder)]- -&gt;(363714003 |Interprets (attribute))-&gt;[1b7c2726-74d4-48e7-a5b6-be5992196203 |Frequency of self-managed hypoglycemia attack (observable entity)];</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Number of episodes since last visit</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Number of episodes during past year</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Typical number of hypoglycemic episodes per week</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="16">  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1">Methods Used to Treat Hypoglycemia</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Carbohydrate-rich snacks or drinks</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e27">[381be1bc-0c9d-4dc2-aa6f-56183c4123bd |Self-administration of substance (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[99ca8d24-6e83-4619-863b-1e2378229ff6 |Carbohydrate-rich snack (substance)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Glucose tablets, gels, or drinks</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e28">[225425006 |Self-administration of medication (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1165824 Glucose Pill]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e29">[225425006 |Self-administration of medication (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;377980 Glucose Oral Gel]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e30">[225425006 |Self-administration of medication (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1165822 Glucose Oral Liquid Product]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Glucagon injections</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">itemCode: </entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">
+                     <link linkend="d6e31">[225425006 |Self-administration of medication (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1165209 Glucagon Injectable Product]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Number of injections since last visit</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Number of injections during past year</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1">How good is your ability to recognize your hypoglycemia symptoms?</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">How good is your ability to recognize your hypoglycemia symptoms?</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e32">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[719732004 |Able to recognize own symptoms (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c3">response range:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">None</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Poor</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">item:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Good</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Hypoglycemic symptoms</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Most common cause(s)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="114">  </entry>
+                  <entry namest="c2" nameend="c9" rowsep="1">Hypoglycemic Assessment and Risk Factors</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Age</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e33">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105726004 |Age AND/OR growth finding (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Life Expectancy</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e34">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[729d3508-98ba-4a1d-8334-9e024a0a760e |Prognosis of life expectancy (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Integer (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Cognitive Impairment/Dementia</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e35">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[386806002 |Impaired cognition (finding)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e36">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[52448006 |Dementia (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="5">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Major neurologic disorder</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e38">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[118940003 |Disorder of nervous system (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="5">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Major Depression</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e39">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[370143000 |Major depressive disorder (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="5">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Cardiovascular Disease</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e40">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[49601007 |Disorder of cardiovascular system (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="26">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Chronic Kidney Disease</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e41">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[709044004 |Chronic kidney disease (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Most recent creatinine (mg/dL)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">itemCode: </entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">
+                     <link linkend="d6e3">70901006 |Creatinine measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c4" nameend="c9">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e2">creatinine</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Most recent glomerular filtration rate (GFR) (mL/min/1.73 m^2)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">itemCode: </entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">
+                     <link linkend="d6e5">167181009 |Measurement of renal clearance of creatinine (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Real (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c4" nameend="c9">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e3">glomerular filtration rate</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Most recent urinary albumin-to-creatinine ratio (mg/g)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">itemCode: </entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">
+                     <link linkend="d6e7">271075006 |Urine albumin/creatinine ratio measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Ratio (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c4" nameend="c9">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e4">albumin-to-creatinine ratio</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Date</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Timestamp (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Fall history or risk</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e45">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[161898004 |Falls (finding)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">
+                     <link linkend="d6e46">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[129839007 |At risk for falls (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Potential Self-Management Difficulties</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="17">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Poor manual dexterity</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e47">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[306741005 |Poor manual dexterity (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Active mental health diagnosis</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e48">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[413307004 |Mental health problem (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Advanced eye disease, including but not limited to visual loss and retinopathy</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e50">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[371405004 |Disorder of eye proper (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Food insufficiency</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e51">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[706875005 |Insufficient food supply (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Other</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c9">Social Risk Factors</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="21">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Alcoholism/Substance Abuse</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">itemCode: </entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">
+                     <link linkend="d6e52">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[7200002 |Alcoholism (disorder)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">itemCode: </entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">
+                     <link linkend="d6e53">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[66214007 |Substance abuse (disorder)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Homelessness</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e54">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[32911000 |Homeless (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Living alone</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e55">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105529008 |Lives alone (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Social isolation</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e56">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[422650009 |Social isolation (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c4" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Other</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="5">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Patient has fears or concerns regarding their diabetes management</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c3">itemCode: </entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">
+                     <link linkend="d6e57">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[247808006 |Anxiety about body function or health (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[405096004 |Diabetes self-management behavior (observable entity)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c9" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Other</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c9">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c9">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Past Medical History</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">History of microvascular disease?</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">History of microvascular disease</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">None(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e12">TSR-NoCode</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Mild (microalbuminuria, background retinopathy, and/or mild nephropathy)(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e14">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[58729003 |Disorder of capillaries (disorder)]- -&gt;(246112005 |Severity (attribute))-&gt;[255604002 |Mild (qualifier value)];</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Moderate (persistent, fixed proteinuria; pre-proliferative retinopathy; and/or peripheral neuropathy with sensory loss)(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e15">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[58729003 |Disorder of capillaries (disorder)]- -&gt;(246112005 |Severity (attribute))-&gt;[6736007 |Moderate (severity modifier) (qualifier value)];</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Advanced (renal insufficiency, proliferative retinopathy/prior laser treatment; peripheral neuropathy with insensate extremities, and/or autonomic neuropathy)(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e16">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[58729003 |Disorder of capillaries (disorder)]- -&gt;(246112005 |Severity (attribute))-&gt;[24484000 |Severe (severity modifier) (qualifier value)];</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Functional status</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Other relevant Past Medical History</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Medications</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Insulin</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d6e58">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[126210001 |Human insulin product (product)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Details of current prescription</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Adverse effects to taking medication</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Sulfonylureas</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d6e59">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[34012005 |Product containing sulfonylurea (medicinal product)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Details of current prescription</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Adverse effects to taking medication</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Other glucose-lowering agents</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">
+                     <link linkend="d6e60">[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[312064005 |Hypoglycemic agent (product)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Details of current prescription</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Adverse effects to taking medication</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c4">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Lifestyle</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="5">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c5">Typical diet</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c5">
+                     <link linkend="d6e62">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[36823005 |Normal diet (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c5">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c5">Exercise</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">itemCode: </entry>
+                  <entry rowsep="0" namest="c2" nameend="c5">
+                     <link linkend="d6e63">226029000 |Exercises (regime/therapy)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c5">String (Single)</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c5"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Tobacco, alcohol, or other substance use</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="d6e64">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[110483000 |Tobacco user (finding)]</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">itemCode: </entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">
+                     <link linkend="d6e65">[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[219006 |Current drinker of alcohol (finding)]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Other</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Patient Preferences</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="5">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c5">Patient preference for glucose-lowering agent assessed</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c5">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c5"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">
+                     <link linkend="gs_any">☐ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c5" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c5">Patient preferences for glucose-lowering agents</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c5">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Plan</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="6">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <colspec align="left" colname="c6" colnum="6"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="15">  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1">HbA1c Target Range</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">6.0% to 7.0% (Recommended for those with absent or mild microvascular disease, no major comorbidity, and life expectancy greater than 10 years)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">7.0% to 8.0% (Recommended for those with moderate microvascular disease, no major comorbidity, and life expectancy greater than 10 years or with absent or mild microvascular disease, major comorbidity present but manageable, and life expectancy of 5 to 10 years)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">7.5% to 8.5% (Recommended for those with moderate microvascular disease, major comorbidity present but manageable, and life expectancy of 5 to 10 years or with advanced microvascular disease, major comorbidity present and challenging to manage or end-stage, and life expectancy of at least 5 years)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">8.0% to 9.0% (Recommended for those with major comorbidity present and challenging to manage or end-stage and life expectancy less than 5 years)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Other</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">
+                     <link linkend="gs_xactone">○ </link>
+                  </entry>
+                  <entry namest="c3" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c4" nameend="c6">Description</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c3">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c4" nameend="c6">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_xactone">○ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Preprandial blood glucose target range</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">IntegerInterval (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">  <link linkend="card_single">❖ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Self-management plan changes</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="2">  <link linkend="card_single">❖ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Recommended lifestyle changes</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="4">  <link linkend="card_single">❖ </link>
+                  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Consultations</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">  prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Other</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e66">SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>Adult outpatient with an active problem of either diabetes mellitus, type 1 or type 2</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>167181009 |Measurement of renal clearance of creatinine (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e63">SNOMED CT</entry>
+                  <entry>226029000 |Exercises (regime/therapy)|</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e7">SNOMED CT</entry>
+                  <entry>271075006 |Urine albumin/creatinine ratio measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>398166005 |Performed (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>70901006 |Creatinine measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e12">SNOMED CT</entry>
+                  <entry>TSR-NoCode<footnote>
+                        <para>TSR-NoCode is a placeholder indicating a code was requested, but was not provided.</para>
+                     </footnote>
+                  </entry>
+                  <entry>None</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e17">SNOMED CT</entry>
+                  <entry>[225294001 |Identifying goals (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[243860001 |Diabetic monitoring status (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[408591000 |Hemoglobin A1c target (observable entity)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e19">SNOMED CT</entry>
+                  <entry>[225294001 |Identifying goals (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[243860001 |Diabetic monitoring status (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[787bb747-3d69-4383-b69d-68937ad61f24 |Fasting blood glucose target (observable entity)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e31">SNOMED CT</entry>
+                  <entry>[225425006 |Self-administration of medication (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1165209 Glucagon Injectable Product]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e30">SNOMED CT</entry>
+                  <entry>[225425006 |Self-administration of medication (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1165822 Glucose Oral Liquid Product]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e28">SNOMED CT</entry>
+                  <entry>[225425006 |Self-administration of medication (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1165824 Glucose Pill]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e29">SNOMED CT</entry>
+                  <entry>[225425006 |Self-administration of medication (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;377980 Glucose Oral Gel]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e27">SNOMED CT</entry>
+                  <entry>[381be1bc-0c9d-4dc2-aa6f-56183c4123bd |Self-administration of substance (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[99ca8d24-6e83-4619-863b-1e2378229ff6 |Carbohydrate-rich snack (substance)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e58">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[126210001 |Human insulin product (product)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e60">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[312064005 |Hypoglycemic agent (product)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e59">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[34012005 |Product containing sulfonylurea (medicinal product)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e55">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105529008 |Lives alone (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e33">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[105726004 |Age AND/OR growth finding (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e64">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[110483000 |Tobacco user (finding)]</entry>
+                  <entry/>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e38">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[118940003 |Disorder of nervous system (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e46">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[129839007 |At risk for falls (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e45">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[161898004 |Falls (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e65">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[219006 |Current drinker of alcohol (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e20">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[271062006 |Fasting blood glucose measurement (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e47">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[306741005 |Poor manual dexterity (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e8">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[317006 |Reactive hypoglycemia (disorder)]</entry>
+                  <entry>Recent hypoglycemic episode</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e54">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[32911000 |Homeless (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e62">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[36823005 |Normal diet (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e39">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[370143000 |Major depressive disorder (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e50">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[371405004 |Disorder of eye proper (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e35">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[386806002 |Impaired cognition (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e48">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[413307004 |Mental health problem (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e56">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[422650009 |Social isolation (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e18">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[43396009 |Hemoglobin A1c measurement (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e11">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[44054006 |Diabetes mellitus type 2 (disorder)]</entry>
+                  <entry>Type II Diabetes</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e10">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[46635009 |Diabetes mellitus type 1 (disorder)]</entry>
+                  <entry>Type I Diabetes</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e40">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[49601007 |Disorder of cardiovascular system (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e36">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[52448006 |Dementia (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e53">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[66214007 |Substance abuse (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e51">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[706875005 |Insufficient food supply (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e41">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[709044004 |Chronic kidney disease (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e32">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[719732004 |Able to recognize own symptoms (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e52">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[7200002 |Alcoholism (disorder)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e34">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[729d3508-98ba-4a1d-8334-9e024a0a760e |Prognosis of life expectancy (finding)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e9">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[b91c7da2-cb27-42e5-8ae9-3b7dacecbb7f |At risk for hypoglycemia (disorder)]</entry>
+                  <entry>At risk for hypoglycemia without recent episode</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e57">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[247808006 |Anxiety about body function or health (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[405096004 |Diabetes self-management behavior (observable entity)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e26">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[317006 |Reactive hypoglycemia (disorder)]- -&gt;(363714003 |Interprets (attribute))-&gt;[1b7c2726-74d4-48e7-a5b6-be5992196203 |Frequency of self-managed hypoglycemia attack (observable entity)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e24">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[401082004 |Hypoglycemic attack requiring third party assistance (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[06cf6868-d29b-4586-9e30-fabe9594642e |Frequency of bystander assisted hypoglycemia attack (observable entity)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e23">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[401082004 |Hypoglycemic attack requiring third party assistance (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;[712660009 |Frequency of hospital-treated hypoglycemia attack (observable entity)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e22">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[401082004 |Hypoglycemic attack requiring third party assistance (finding)]- -&gt;(363714003 |Interprets (attribute))-&gt;acd5c50a-e40a-47cd-bf34-d02bdb9f0342 |Frequency of emergency department treated hypoglycemia attack (observable entity)];</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e16">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[58729003 |Disorder of capillaries (disorder)]- -&gt;(246112005 |Severity (attribute))-&gt;[24484000 |Severe (severity modifier) (qualifier value)];</entry>
+                  <entry>Advanced (renal insufficiency, proliferative retinopathy/prior laser treatment; peripheral neuropathy with insensate extremities, and/or autonomic neuropathy)</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e14">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[58729003 |Disorder of capillaries (disorder)]- -&gt;(246112005 |Severity (attribute))-&gt;[255604002 |Mild (qualifier value)];</entry>
+                  <entry>Mild (microalbuminuria, background retinopathy, and/or mild nephropathy)</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e15">SNOMED CT</entry>
+                  <entry>[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]- -&gt;(363702006 |Has focus (attribute))-&gt;[58729003 |Disorder of capillaries (disorder)]- -&gt;(246112005 |Severity (attribute))-&gt;[6736007 |Moderate (severity modifier) (qualifier value)];</entry>
+                  <entry>Moderate (persistent, fixed proteinuria; pre-proliferative retinopathy; and/or peripheral neuropathy with sensory loss)</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Endocrinology: Hypoglycemia Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Endocrinology: Hypoglycemia Documentation Template Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Endocrinology: Hypoglycemia Documentation Template KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="ADA, 2017">
+               <abbrev>ADA, 2017</abbrev>
+               <citetitle>American Diabetes Association. Diabetes Care. Standards of medical care in diabetes-20172017;40(suppl 1):S1-S135</citetitle> (<link xlink:href="http://care.diabetesjournals.org/content/diacare/suppl/2016/12/15/40.Supplement_1.DC1/DC_40_S1_final.pdf">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="O'Neil 2015">
+               <abbrev>O'Neil 2015</abbrev>
+               <citetitle>O'Neil G. V1-High Risk for Hypoglycemia. June 4, 2015 VISN 1 hypoglycemia reminder PowerPoint (Linda Wedemeyer, MD, email communication, July 10, 2017)</citetitle> (<link xlink:href="V1_HIGH RISK FOR HYPOGLYCEMIA.PowerPoint.ppt.">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Seaquist 2013">
+               <abbrev>Seaquist 2013</abbrev>
+               <citetitle>Seaquist ER, Anderson J, Childs B, et al. Hypoglycemia and diabetes: a report of a workgroup of the American Diabetes Association and the Endocrine Society. Diabetes Care. 2013;36(5):1384-1395</citetitle> (<link xlink:href="https://doi.org/10.2337/dc12-2480">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2015a">
+               <abbrev>NLM 2015a</abbrev>
+               <citetitle>U.S. National Libray of Medicine. GLIPIZIDE- glipizide tablet (Actavis Pharma, Inc.). DailyMed Website. Revised June 2015</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ad55dfd7-ffb5-478a-aa84-1009fa921e22">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017a">
+               <abbrev>NLM 2017a</abbrev>
+               <citetitle>U.S. National Library of Medicine. GLUCAGON- glucagon [Eli Lilly and Company]. DailyMed Website. Revised May 2017</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f143db10-e889-41c3-84ed-603a0ab02f61">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2015b">
+               <abbrev>NLM 2015b</abbrev>
+               <citetitle>U.S. National Library of Medicine. LANTUS- insulin glargine injection, solution, LANTUS SOLOSTAR- insulin glargine injection, solution [sanofi-aventis U.S. LLC]. DailyMed WebsiteRevised August 2015</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d5e07a0c-7e14-4756-9152-9fea485d654a">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2015c">
+               <abbrev>NLM 2015c</abbrev>
+               <citetitle>U.S. National Library of Medicine. LEVEMIR- insulin detemir injection, solution [Novo Nordisk]. DailyMed Website Revised February 2015</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d38d65c1-25bf-401d-9c7e-a2c3222da8af">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017b">
+               <abbrev>NLM 2017b</abbrev>
+               <citetitle>U.S. National Library of Medicine. NOVOLOG- insulin aspart injection, solution [Novo Nordisk]. DailyMed Website. Revised March 2017</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3a1e73a2-3009-40d0-876c-b4cb2be56fc5">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 5.0-2017">
+               <abbrev>VA 5.0-2017</abbrev>
+               <citetitle>U.S. Department of Veterans Affairs and U.S. Department of Defense. VA/DoD Clinical Practice Guideline for the Management of Type 2 Diabetes Mellitus in Primary Care, version 5.0—2017. VA/DoD Clinical Practice Guidelines website</citetitle> (<link xlink:href="https://www.healthquality.va.gov/guidelines/CD/diabetes/VADoDDMCPGFinal508.pdf">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
