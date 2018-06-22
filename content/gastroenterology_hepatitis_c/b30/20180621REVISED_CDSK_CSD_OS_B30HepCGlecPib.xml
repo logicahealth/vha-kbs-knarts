@@ -1,0 +1,2012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Gastroenterology: Hepatitis C - Glecaprevir/Pibrentasvir Order Set</title>
+      <subtitle>Order Set: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AF</releaseinfo>
+      <pubdate>06/14/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>June 14, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 29, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 29, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>August 29, 2017</entry>
+                  <entry>Pre-published</entry>
+               </row>
+               <row>
+                  <entry>August 10, 2017</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>David Kaplan, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Staff Physician Gastroenterology Philadelphia, PA, Primary</entry>
+               </row>
+               <row>
+                  <entry>Timothy Morgan, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Long Beach VAMC Physician Long Beach, CA, Secondary</entry>
+               </row>
+               <row>
+                  <entry>James Wilson, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Puget Sound Healthcare System Administrative Specialist Seattle, WA</entry>
+               </row>
+               <row>
+                  <entry>Jason Dominitz, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Puget Sound Healthcare System National Director of Gastroenterology Seattle, WA</entry>
+               </row>
+               <row>
+                  <entry>Byron Cryer, MD</entry>
+                  <entry>Author</entry>
+                  <entry>North Texas VHCS Physician Dallas, TX</entry>
+               </row>
+               <row>
+                  <entry>Ashley Faulx, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Louis Stokes Cleveland DVA Medical Center Med-GI Fellow Cleveland, OH</entry>
+               </row>
+               <row>
+                  <entry>Lyn Sue Kahng, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Jesse Brown VAMC Section Chief, GI Chicago, IL</entry>
+               </row>
+               <row>
+                  <entry>Heiko Pohl, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Physician White River Junction VAMC White River Junction, VT</entry>
+               </row>
+               <row>
+                  <entry>Aasma Shaukat, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Minneapolis VAMC Minneapolis, MN</entry>
+               </row>
+               <row>
+                  <entry>Walter Smalley, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Tennessee Valley HCS Nashville, TN</entry>
+               </row>
+               <row>
+                  <entry>Pamela (Pam) Belperio</entry>
+                  <entry>Author</entry>
+                  <entry>PharmD/Clinical Pharmacist Population Health Services Los Angeles, CA</entry>
+               </row>
+               <row>
+                  <entry>Lisa Backus</entry>
+                  <entry>Author</entry>
+                  <entry>Deputy Chief Consultant Population Health Services Palo Alto, CA</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>34482f34-a4e0-50e6-93ba-13510350fddf</entry>
+                  <entry>B30</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Primary Care physicians</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Gastroenterologists</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Adult patients</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalFocus</entry>
+                  <entry>Adult outpatients with chronic Hepatitis C infection</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowSetting</entry>
+                  <entry>Routine primary care and gastroenterology</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Outpatient</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <para>No externalData expression definitions and no trigger definitions are present. </para>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <table frame="all">
+         <title xml:id="d4e2">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Instance</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [385644000 |Requested (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e3"> [[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1940703 glecaprevir 100 MG / pibrentasvir 40 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[260548002 |Oral (qualifier value)]]</link>elm:value[elm:Code]: <link linkend="d6e4"> [421026006 |Conventional release oral tablet (dose form)|]</link>elm:value[elm:Code]: <link linkend="d6e5"> [50811001 |Routine (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [258703001 |day (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [258703001 |day (qualifier value)|]</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e3">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Instance</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [385644000 |Requested (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e3"> [[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1940703 glecaprevir 100 MG / pibrentasvir 40 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[260548002 |Oral (qualifier value)]]</link>elm:value[elm:Code]: <link linkend="d6e4"> [421026006 |Conventional release oral tablet (dose form)|]</link>elm:value[elm:Code]: <link linkend="d6e5"> [50811001 |Routine (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [258703001 |day (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [258703001 |day (qualifier value)|]</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e4">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Instance</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:value[elm:Code]: <link linkend="d6e2"> [385644000 |Requested (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e3"> [[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1940703 glecaprevir 100 MG / pibrentasvir 40 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[260548002 |Oral (qualifier value)]]</link>elm:value[elm:Code]: <link linkend="d6e4"> [421026006 |Conventional release oral tablet (dose form)|]</link>elm:value[elm:Code]: <link linkend="d6e5"> [50811001 |Routine (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [258703001 |day (qualifier value)|]</link>elm:value[elm:Code]: <link linkend="d6e6"> [258703001 |day (qualifier value)|]</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e5">HCV genotype 1 time (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e21"> [397662006 |Hepatitis C virus genotype determination (procedure)|]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry>dateRange[elm:Interval]</entry>
+                  <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-5 year))</entry>
+               </row>
+               <row>
+                  <entry/>
+                  <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e6">Hepatitis B surface antigen (HBsAg) 1 time (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e22"> [47758006 |Hepatitis B surface antigen measurement (procedure)|]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry>dateRange[elm:Interval]</entry>
+                  <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-10 year))</entry>
+               </row>
+               <row>
+                  <entry/>
+                  <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e7">Hepatitis B core antibody (HBcAb) 1 time (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e23"> [59582004 |Hepatitis B core antibody measurement (procedure)|]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry>dateRange[elm:Interval]</entry>
+                  <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-10 year))</entry>
+               </row>
+               <row>
+                  <entry/>
+                  <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e8">Hepatitis B surface antibody (HBsAb) 1 time (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e24"> [65911000 |Hepatitis B surface antibody measurement (procedure)|]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry>dateRange[elm:Interval]</entry>
+                  <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-10 year))</entry>
+               </row>
+               <row>
+                  <entry/>
+                  <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e9">Hepatitis A antibody (HAVAb) 1 time (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e26"> [697001 |Hepatitis A virus antibody measurement (procedure)|]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry>dateRange[elm:Interval]</entry>
+                  <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-10 year))</entry>
+               </row>
+               <row>
+                  <entry/>
+                  <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e10">HCV viral load (quantitative HCV RNA) 1 time (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e27"> [395197008 |Hepatitis C viral load (procedure)|]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry>dateRange[elm:Interval]</entry>
+                  <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-6 month))</entry>
+               </row>
+               <row>
+                  <entry/>
+                  <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e11">HIV test 1 time (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e28"> [359796005 |Measurement of both Human immunodeficiency virus 1 antibody and Human immunodeficiency virus 2 antibody (procedure)|]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry>dateRange[elm:Interval]</entry>
+                  <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-6 month))</entry>
+               </row>
+               <row>
+                  <entry/>
+                  <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title xml:id="d4e12">Qualitative human chorionic gonadotropin 1 time (routine)</title>
+         <tgroup cols="4" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c4">Expression: type=elm:Retrieve ,
+                                    dataType=anf:ClinicalStatement,
+                                    codeProperty=topic,
+                                    dateProperty=dateTime</entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Annotation: </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c4">Codes: elm:element[elm:Code]: <link linkend="d6e29"> [386558001 |Chorionic gonadotropin, beta-subunit measurement (procedure)|]</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry>dateRange[elm:Interval]</entry>
+                  <entry namest="c2" nameend="c4">low: elm:Add( elm:Today() elm:Quantity(-2 week))</entry>
+               </row>
+               <row>
+                  <entry/>
+                  <entry namest="c2" nameend="c4">high: elm:Today()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Medications</title>
+      <para>Glecaprevir/pibrentasvir should not be used in patients with decompensated cirrhosis (CTP B or C). Glecaprevir/pibrentasvir should not be used in combination with atazanavir or rifampin. Providers should check http://www.hep-druginteractions.org, https://www.hepatitis.va.gov/provider/guidelines/hcv-treatment-considerations.asp, and/or a pharmacist for additional drug interactions or contraindications before starting glecaprevir/pibrentasvir.</para>
+      <para>Hep Drug Interactions<link xlink:href="https://www.hep-druginteractions.org/."> link</link>
+      </para>
+      <para> (<citation>VA 2017b</citation>) Chronic Hepatitis C Virus (HCV) Infection: Treatment Considerations from the Department of Veterans Affairs National Hepatitis C Resource Center Program and the HIV, Hepatitis, and Related Conditions Program in the Office of Specialty Care Services<link xlink:href="https://www.hepatitis.va.gov/provider/guidelines/hcv-treatment-considerations.asp"> link </link>
+      </para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 1, 2, 3, 4, 5, or 6, Treatment-Naïve, without Cirrhosis.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e2">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 1, 2, 3, 4, 5, or 6, Treatment-Naïve, with Compensated Cirrhosis (CTP A).</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e3">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 1, Treatment-Experienced (NS5A Protease Inhibitor without Prior NS3/4A Protease Inhibitor), without Cirrhosis.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e3">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 1, 2, 4, 5, or 6, Treatment-Experienced (Interferon, Pegylated Interferon, Ribavirin, and/or Sofosbuvir), without Cirrhosis.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e2">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 1 refills (routine)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 3, Treatment-Experienced (Interferon, Pegylated Interferon, Ribavirin, and/or Sofosbuvir), without Cirrhosis.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e4">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 1, Treatment-Experienced (NS5A Protease Inhibitor without Prior NS3/4A Protease Inhibitor), with Compensated Cirrhosis (CTP A).</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e4">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 3 refills (routine)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 1, Treatment-Experienced (NS3/4A Protease Inhibitor without Prior NS5A Protease Inhibitor), with Compensated Cirrhosis (CTP A).</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e3">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 1, 2, 4, 5, or 6, Treatment-Experienced (Interferon, Pegylated Interferon, Ribavirin, and/or Sofosbuvir), with Compensated Cirrhosis (CTP A).</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e3">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="3">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Genotype 3, Treatment-Experienced (Interferon, Pegylated Interferon, Ribavirin, and/or Sofosbuvir), with Compensated Cirrhosis (CTP A).</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:ExpressionRef, classType=]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">
+                     <link linkend="d4e3">Glecaprevir/pibrentasvir (100 mg/40 mg) 3 tablets oral, daily, 84 tablets 2 refills (routine)</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Laboratory Tests</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="25">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">Suggested tests for management of hepatitis C</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Complete blood count 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e31">26604007 |Complete blood count (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Hepatic function panel 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e34">26958001 |Hepatic function panel (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>International normalized ratio 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e38">440685005 |Calculation of international normalized ratio (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Basic metabolic panel 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e41">1421000205106 |Basic metabolic panel (procedure)</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Glomerular Filtration rate 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e44">167181009 |Measurement of renal clearance of creatinine (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="6">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">The following lab is recommended if not performed within the previous 5 years.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( HCV genotype 1 time (routine) ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>HCV genotype 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e22">47758006 |Hepatitis B surface antigen measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="24">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">The following labs are recommended if not performed within the previous 10 years.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Hepatitis B surface antigen (HBsAg) 1 time (routine) ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Hepatitis B surface antigen (HBsAg) 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e22">47758006 |Hepatitis B surface antigen measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Hepatitis B core antibody (HBcAb) 1 time (routine) ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Hepatitis B core antibody (HBcAb) 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e23">59582004 |Hepatitis B core antibody measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Hepatitis B surface antibody (HBsAb) 1 time (routine) ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Hepatitis B surface antibody (HBsAb) 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e24">65911000 |Hepatitis B surface antibody measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Hepatitis A antibody (HAVAb) 1 time (routine) ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Hepatitis A antibody (HAVAb) 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e26">697001 |Hepatitis A virus antibody measurement (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="12">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">The following lab is recommended if not performed within the previous 6 months.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( HCV viral load (quantitative HCV RNA) 1 time (routine) ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>HCV viral load (quantitative HCV RNA) 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e27">395197008 |Hepatitis C viral load (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( HIV test 1 time (routine) ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>HIV test 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e28">359796005 |Measurement of both Human immunodeficiency virus 1 antibody and Human immunodeficiency virus 2 antibody (procedure)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">priority: Precoordinated Expression <link linkend="d6e5">50811001 |Routine (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="5">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">The following lab is recommended if not performed within the previous 2 weeks.</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c4">
+                     <emphasis role="bold">Condition:</emphasis>elm:Not (elm:Exists( Qualitative human chorionic gonadotropin 1 time (routine) ))</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Qualitative human chorionic gonadotropin 1 time (routine)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e29">386558001 |Chorionic gonadotropin, beta-subunit measurement (procedure)|</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Patient and Caregiver Education</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="4">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="35">  </entry>
+                  <entry namest="c2" nameend="c4" rowsep="1">This section should be available to users in gastroenterology settings and for primary care providers who are referring a patient to gastroenterology for management of hepatitis C</entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Hepatitis C Information for Veterans</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e72">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017d</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Hepatitis C Information for Veterans<link xlink:href="https://www.hepatitis.va.gov/pdf/Hepatitis-C-Factsheet-Veterans.pdf"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Chronic Hepatitis C and Alcohol Use</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e72">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017e</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Chronic Hepatitis C and Alcohol Use<link xlink:href="https://www.hepatitis.va.gov/products/patient/hepatitisC-alcohol-brochure.asp"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>What to Expect Before Your Treatment for Hepatitis C Virus</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e72">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017f</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">What to Expect Before Your Treatment for Hepatitis C Virus<link xlink:href="https://www.hepatitis.va.gov/products/patient/hepatitisC-pretreatment.asp"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Taking Your Hepatitis C Therapy: Mavyret(TM)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e72">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017g</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Taking Your Hepatitis C Therapy: Mavyret(TM)<link xlink:href="https://www.hepatitis.va.gov/products/patient/sofosbuvir-simeprevir-handouts.asp"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Managing Side Effects of Mavyret(TM)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e72">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017h</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Managing Side Effects of Mavyret(TM)<link xlink:href="https://www.hepatitis.va.gov/products/patient/side-effects-handouts.asp"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>Tracking My Hepatitis C Treatment Results</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e72">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017i</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">Tracking My Hepatitis C Treatment Results<link xlink:href="https://www.hepatitis.va.gov/products/patient/tracking-chart.asp"> link</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" namest="c2" nameend="c4">
+                     <link linkend="gs_any">☐ </link>FAQs about Sustained Virologic Response to Treatment for Hepatitis C</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0" namest="c2" nameend="c4">actionSentence[type=elm:Instance, classType=anf:ClinicalStatement]</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">statementType: Precoordinated Expression <link linkend="d6e2">385644000 |Requested (qualifier value)|</link>
+                  </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry rowsep="0" colsep="0"/>
+                  <entry rowsep="0" colsep="0" namest="c3" nameend="c4">topic: Precoordinated Expression <link linkend="d6e72">TSR-NoCode</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0" colsep="0" namest="c2"> (<citation>VA 2017j</citation>)</entry>
+                  <entry rowsep="0" namest="c3" nameend="c4">FAQs about Sustained Virologic Response to Treatment for Hepatitis C<link xlink:href="https://www.hepatitis.va.gov/products/patient/sustained-virological-response.asp "> link</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e88">SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>Adult patients</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e41">SNOMED CT</entry>
+                  <entry>1421000205106 |Basic metabolic panel (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e44">SNOMED CT</entry>
+                  <entry>167181009 |Measurement of renal clearance of creatinine (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e6">SNOMED CT</entry>
+                  <entry>258703001 |day (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>6</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e31">SNOMED CT</entry>
+                  <entry>26604007 |Complete blood count (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e34">SNOMED CT</entry>
+                  <entry>26958001 |Hepatic function panel (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e89">SNOMED CT</entry>
+                  <entry>33022008 |Hospital-based outpatient department (environment)|</entry>
+                  <entry>Outpatient</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e28">SNOMED CT</entry>
+                  <entry>359796005 |Measurement of both Human immunodeficiency virus 1 antibody and Human immunodeficiency virus 2 antibody (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>385644000 |Requested (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>23</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e29">SNOMED CT</entry>
+                  <entry>386558001 |Chorionic gonadotropin, beta-subunit measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e27">SNOMED CT</entry>
+                  <entry>395197008 |Hepatitis C viral load (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e21">SNOMED CT</entry>
+                  <entry>397662006 |Hepatitis C virus genotype determination (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e4">SNOMED CT</entry>
+                  <entry>421026006 |Conventional release oral tablet (dose form)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e38">SNOMED CT</entry>
+                  <entry>440685005 |Calculation of international normalized ratio (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e87">SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>Primary Care physicians</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e22">SNOMED CT</entry>
+                  <entry>47758006 |Hepatitis B surface antigen measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>3</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>50811001 |Routine (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>15</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e23">SNOMED CT</entry>
+                  <entry>59582004 |Hepatitis B core antibody measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e24">SNOMED CT</entry>
+                  <entry>65911000 |Hepatitis B surface antibody measurement (procedure)|</entry>
+                  <entry>Pretcoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e26">SNOMED CT</entry>
+                  <entry>697001 |Hepatitis A virus antibody measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e72">SNOMED CT</entry>
+                  <entry>TSR-NoCode<footnote>
+                        <para>TSR-NoCode is a placeholder indicating a code was requested, but was not provided.</para>
+                     </footnote>
+                  </entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>7</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>[416118004 |Administration (procedure)] -&gt;(260686004 |Method (attribute))-&gt;[129445006 |Administration - action (qualifier value)] -&gt;(363701004 |Direct substance (attribute))-&gt;[Rx;1940703 glecaprevir 100 MG / pibrentasvir 40 MG Oral Tablet] -&gt;(410675002 |Route of administration (attribute))-&gt;[260548002 |Oral (qualifier value)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>3</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Gastroenterology: Hepatitis C Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Gastroenterology: Hepatitis C - Glecaprevir/Pibrentasvir Order Set Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Gastroenterology: Hepatitis C - Glecaprevir/Pibrentasvir Order Set KNART Validation Report</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="UL 2018">
+               <abbrev>UL 2018</abbrev>
+               <citetitle>University of Liverpool. 2018. Hep Drug Interactions. Accessed April 25, 2018 from https://www.hep-druginteractions.org/.</citetitle> (<link xlink:href="https://www.hep-druginteractions.org/.">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017d">
+               <abbrev>VA 2017d</abbrev>
+               <citetitle>US Dept of Veterans Affairs. 2017. Hepatitis C Information for Veterans. Accessed April 25, 2018 from https://www.hepatitis.va.gov/pdf/Hepatitis-C-Factsheet-Veterans.pdf.</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/pdf/Hepatitis-C-Factsheet-Veterans.pdf">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017e">
+               <abbrev>VA 2017e</abbrev>
+               <citetitle>US Dept of Veterans Affairs. Chronic Hepatitis C and Alcohol Use. 2017. [Internet]. Accessed April 25, 2018 from https://www.hepatitis.va.gov/products/patient/hepatitisC-alcohol-brochure.asp.</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/products/patient/hepatitisC-alcohol-brochure.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017f">
+               <abbrev>VA 2017f</abbrev>
+               <citetitle>Department of Veterans Affairs. What to expect before your treatment for hepatitis C virus. 2017. [Internet]. Accessed Apr 25, 2018 from https://www.hepatitis.va.gov/products/patient/hepatitisC-pretreatment.asp</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/products/patient/hepatitisC-pretreatment.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017g">
+               <abbrev>VA 2017g</abbrev>
+               <citetitle>US Dept of Veterans Affairs. 2017. Taking Your Hepatitis C Therapy: Mavyret(TM). Accessed April 25, 2018.</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/products/patient/sofosbuvir-simeprevir-handouts.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017h">
+               <abbrev>VA 2017h</abbrev>
+               <citetitle>US Dept of Veterans Affairs. 2017. Managing Side Effects of Mavyret(TM). Accessed April 25, 2018.</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/products/patient/side-effects-handouts.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017i">
+               <abbrev>VA 2017i</abbrev>
+               <citetitle>US Dept of Veterans Affairs. 2017. Tracking My Hepatitis C Treatment Results. Accessed April 25, 2018.</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/products/patient/tracking-chart.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017j">
+               <abbrev>VA 2017j</abbrev>
+               <citetitle>US Dept of Veterans Affairs. 2017. FAQs about Sustained Virologic Response to Treatment for Hepatitis C. Accessed April 25, 2018.</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/products/patient/sustained-virological-response.asp ">link</link>) </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="AASLD 2017">
+               <abbrev>AASLD 2017</abbrev>
+               <citetitle>American Association for the Study of Liver Diseases and the Infectious Diseases Society of America. HCV Guidance: Recommendations for Testing, Managing, and Treating Hepatitis C. Updated September 2017</citetitle> (<link xlink:href="https://doi.org/10.1002/hep.27950">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Fox 2017">
+               <abbrev>Fox 2017</abbrev>
+               <citetitle>Fox RK. Summary of FDA Approval for Mavyret. Published August 2017</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/provider/hcv/mavyret-approval.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017a">
+               <abbrev>VA 2017a</abbrev>
+               <citetitle>U.S. Department of Veterans Affairs. After the Initial Diagnosis of HCV: Overview of Next Steps. Published May 2017</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/products/next-steps.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2017b">
+               <abbrev>VA 2017b</abbrev>
+               <citetitle>U.S. Department of Veterans Affairs National Hepatitis C Resource Center Program and the National Viral Hepatitis Program. Chronic Hepatitis C Virus (HCV) Infection: Treatment Considerations from the Department of Veterans Affairs National Hepatitis C Resource Center Program and the HIV, Hepatitis, and Related Conditions Program in the Office of Specialty Care Services. Updated March 2017</citetitle> (<link xlink:href="https://www.hepatitis.va.gov/provider/guidelines/hcv-treatment-considerations.asp">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017a">
+               <abbrev>NLM 2017a</abbrev>
+               <citetitle>U.S. National Library of Medicine. HARVONI- ledipasvir and sofosbuvir tablet, film coated [Gilead Sciences, Inc]. Updated April 2017</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f4ec77e4-bae8-4db0-b3d5-bde09c5fa075">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017b">
+               <abbrev>NLM 2017b</abbrev>
+               <citetitle>U.S. National Library of Medicine. MAVYRET- glecaprevir and pibrentasvir tablet, film coated [AbbVie Inc.]. Updated August 2017</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7bf99777-0401-9095-8645-16c6e907fcc0">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2016">
+               <abbrev>NLM 2016</abbrev>
+               <citetitle>U.S. National Library of Medicine. REBETOL- ribavirin capsule; REBETOL- ribavirin liquid [Merck Sharp &amp; Dohme Corp.]. Updated January 2016</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04d2b6f4-bd9b-4871-9527-92c81aa2d4d0">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017c">
+               <abbrev>NLM 2017c</abbrev>
+               <citetitle>U.S. National Library of Medicine. ZEPATIER- elbasvir and grazoprevir tablet, film coated [Merck Sharp &amp; Dohme Corp.]. Updated February 2017</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=164dc02a-9180-426a-b8b5-04ab39d2bbd4">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2016a">
+               <abbrev>VA 2016a</abbrev>
+               <citetitle>VA Pharmacy Benefits Management Services, Medical Advisory Panel, VISN Pharmacist Executives and Office of Public Health. Elbasvir/Grazoprevir (ZepatierTM) Criteria for Use. Published February 2016</citetitle> (<link xlink:href="https://www.pbm.va.gov/apps/VANationalFormulary/">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="VA 2016b">
+               <abbrev>VA 2016b</abbrev>
+               <citetitle>VA Pharmacy Benefits Management Services, Medical Advisory Panel, VISN Pharmacist Executives and Office of Public Health. Ledipasvir/Sofosbuvir (Harvoni®) and Sofosbuvir/Velpatasvir (Epclusa®) Criteria for Use. Published September 2016</citetitle> (<link xlink:href="https://www.pbm.va.gov/apps/VANationalFormulary/">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
