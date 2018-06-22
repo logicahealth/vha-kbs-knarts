@@ -1,0 +1,2819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:docb="http://docbook.org/ns/docbook"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:elm="urn:hl7-org:elm:r1"
+      xmlns:dt="urn:hl7-org:cdsdt:r2"
+      xmlns:func="http://www.cognitivemedicine.com/xsl/functions"
+      version="5.1"
+      xml:lang="en-US">
+   <info>
+      <title>Cardiology: Electrophysiology (EP) Documentation Template</title>
+      <subtitle>Documentation Template: Conceptual Structure</subtitle>
+      <releaseinfo>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0005AG</releaseinfo>
+      <pubdate>06/14/2018</pubdate>
+      <volumenum>Version: 1.0</volumenum>
+      <copyright>
+         <year>2018</year>
+         <holder>B3 Group, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>B3 Group, Inc.</title>
+         <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.</para>
+         <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007.</para>
+      </legalnotice>
+      <copyright>
+         <year>2018</year>
+         <holder>Cognitive Medical Systems, Inc.</holder>
+      </copyright>
+      <legalnotice>
+         <title>Cognitive Medical Systems, Inc.</title>
+         <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</para>
+         <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+         </para>
+         <para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</para>
+         <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: <link xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples">https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+         </para>
+         <para>Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material">https://bitbucket.org/cogmedsys/kas-source-material</link>
+         </para>
+         <para>Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.</para>
+         <para>US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+         </para>
+         <para>Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+      </legalnotice>
+      <author>
+         <orgname>Department of Veterans Affairs (VA)</orgname>
+      </author>
+      <mediaobject>
+         <alt>Department of Veteran's Affairs Logo</alt>
+         <imageobject>
+            <imagedata contentwidth="2in"
+                       align="center"
+                       fileref="images/va-logo.png"
+                       format="png"/>
+         </imageobject>
+      </mediaobject>
+      <authorgroup>
+         <author>
+            <orgname>Knowledge Based Systems (KBS)</orgname>
+         </author>
+         <author>
+            <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+         </author>
+         <author>
+            <orgname>Clinical Decision Support (CDS)</orgname>
+         </author>
+      </authorgroup>
+   </info>
+   <preface>
+      <title>Preface</title>
+      <table frame="all">
+         <title>Revision History</title>
+         <tgroup cols="2" align="left" colsep="0" rowsep="0">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <thead>
+               <row>
+                  <entry>Date</entry>
+                  <entry>Life Cycle Event</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>June 14, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 14, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>May 11, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>May 6, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>April 17, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>April 17, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>March 29, 2018</entry>
+                  <entry>Published</entry>
+               </row>
+               <row>
+                  <entry>March 29, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>February 25, 2018</entry>
+                  <entry>Reviewed</entry>
+               </row>
+               <row>
+                  <entry>December 8, 2017</entry>
+                  <entry>Created</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Clinical White Paper Contributors</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="3*"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Role</entry>
+                  <entry>Affiliation</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>Bray Bruce, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Professor, Cardiovascular Medicine, University of Utah School of Medicine; Staff Cardiologist, Salt Lake City VA Medical Center</entry>
+               </row>
+               <row>
+                  <entry>Wall Scott, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Assistant Professor, Cardiovascular Medicine, University of Utah; School of Medicine Staff Cardiologist, Salt Lake City VAMC</entry>
+               </row>
+               <row>
+                  <entry>Abidov Aiden, MD</entry>
+                  <entry>Author</entry>
+                  <entry>Professor of Medicine, Wayne State University; Section Chief, Cardiology, John Dingell VAMC</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all">
+         <title>Artifact Identifier</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.25*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.75*"/>
+            <colspec colname="c3" colnum="3" colwidth=".5*"/>
+            <thead>
+               <row>
+                  <entry>Domain</entry>
+                  <entry>Artifact ID</entry>
+                  <entry>Name</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:va.gov:kbs:knart:artifact:r1</entry>
+                  <entry>b098e1ee-609b-5225-b023-56083333057c</entry>
+                  <entry>B36</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Artifact Applicability</title>
+      <table frame="all">
+         <title>Applicability Foci, Description and Codes</title>
+         <tgroup cols="6" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth="1.5*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3"/>
+            <colspec colname="c4" colnum="4" colwidth="1.5*"/>
+            <colspec colname="c5" colnum="5"/>
+            <colspec colname="c6" colnum="6"/>
+            <thead>
+               <row>
+                  <entry>Focus</entry>
+                  <entry>Description</entry>
+                  <entry>Code System</entry>
+                  <entry>Code</entry>
+                  <entry>Value Set</entry>
+                  <entry>Value Set Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>PatientAgeGroup</entry>
+                  <entry>Adult outpatient needing Cardiology consult for arrhythmia evaluation</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>ClinicalVenue</entry>
+                  <entry>Primary Care Clinic</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>5351000124100 |Primary care clinic (environment)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>TargetUser</entry>
+                  <entry>Clinical Providers in Primary Care Clinic</entry>
+                  <entry>SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowSetting</entry>
+                  <entry>Cardiology Consultation</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+                  <entry>WorkflowTask</entry>
+                  <entry>Ensure a minimum workup is initiated prior to a Cardiology Consultation for adult patients who present to a Primary Care Clinic for evaluation of atrial fibrillation, atrial flutter</entry>
+                  <entry/>
+                  <entry/>
+                  <entry>N/A</entry>
+                  <entry>N/A</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <preface>
+      <title>Models</title>
+      <table frame="all">
+         <title>Model References</title>
+         <tgroup cols="2" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Referenced Model</entry>
+                  <entry>Description</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>urn:solor.io:anf-model:1.0</entry>
+                  <entry>VA Analysis Normal Form Model</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </preface>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>External Data Definitions</title>
+      <section>
+         <title>Definitions</title>
+         <table frame="all">
+            <title xml:id="d4e2">basicMetabolicPanelLabResult</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Basic Metabolic Panel Lab Result</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e3"> [1421000205106 |Basic metabolic panel (procedure)]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e3">completeBloodCountLabResult</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Complete Blood Count Lab Result</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e5"> [26604007 |Complete blood count (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e4">lipidPanelLabResult</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Lipid Panel Lab Result</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e7"> [16254007 |Lipid panel (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e5">thyroidFunctionTestingLabResult</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Thyroid Function Testing Lab Result</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e9"> [35650009 |Thyroid panel (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e6">troponinLabResult</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Troponin Lab Result</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e11"> [105000003 |Troponin measurement (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e7">brainNatriureticPeptideLabResult</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Brain Natriuretic Peptide Lab Result</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e14"> [407059007 |Brain natriuretic peptide (substance)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e8">d-dimerLabResult</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: D-dimer Lab Result</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e16"> [70648006 |D-dimer assay (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e9">resting12LeadElectrocardiogram</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Resting 12-Lead Electrocardiogram Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e18"> [447113005 |12 lead electrocardiogram at rest (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e10">resting12LeadElectrocardiogramInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Resting 12-Lead Electrocardiogram Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e20"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[447113005 |12 lead electrocardiogram at rest (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e11">stressElectrocardiography</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Stress Electrocardiography</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e22"> [46136006 |Electrocardiogram with exercise test (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e12">stressElectrocardiographyInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Stress Electrocardiography Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e24"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[46136006 |Electrocardiogram with exercise test (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e14">restingEchocardiogram</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Resting Echocardiogram/Doppler</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e27"> [50871731-ba83-45bb-a582-a14943f1d06d |Echocardiography at rest (procedure)]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e15">restingEchocardiogramDopplerInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Resting Echocardiogram/Doppler Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e29"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[50871731-ba83-45bb-a582-a14943f1d06d |Echocardiography at rest (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e16">stressEchocardiogram</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Stress Echocardiogram</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e31"> [433233004 |Exercise stress echocardiography (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e17">stressEchocardiogramInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Stress Echocardiogram Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e33"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[433233004 |Exercise stress echocardiography (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e18">stressMPI</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Stress Myocardial Perfusion Imaging (MPI)</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e35"> [16545191000119100 |Radionuclide myocardial perfusion stress study (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e19">stressMPIInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Stress Myocardial Perfusion Imaging (MPI) Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e38"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[16545191000119100 |Radionuclide myocardial perfusion stress study (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e20">stressMRI</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Stress Magnetic Resonance Imaging (MRI)</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e40"> [737593009 | Magnetic resonance imaging of heart under stress (procedure) |]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e21">stressMRIInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Stress Magnetic Resonance Imaging (MRI) Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e42"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[737593009 | Magnetic resonance imaging of heart under stress (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e22">chestCT</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Chest CT</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e44"> [169069000 |Computed tomography of chest (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e23">chestCTInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Chest CT Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e46"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[169069000 |Computed tomography of chest (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e24">chestCTA</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Coronary/Cardiac CTA</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e48"> [419545005 |Computed tomography angiography of coronary arteries (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e26">cCTAInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Coronary/Cardiac CTA Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e51"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[419545005 |Computed tomography angiography of coronary arteries (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e27">xRayChest</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: X-Ray Chest Interpretation</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e53"> [399208008 |Plain chest X-ray (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e28">xRayChestInterpretation</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: X-Ray Chest</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e55"> [[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[399208008 |Plain chest X-ray (procedure)]]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e29">icdProcedure</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Implantable Cardioverter-Defibrillator (ICD) Device Implantation" </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e57"> [395218007 |Implantation of internal cardiac defibrillator (procedure)]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e30">crtProcedure</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Cardiac Resynchronization Therapy" </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e59"> [1301000205107 |Implantation of cardiac resynchronization therapy implantable pacemaker (procedure)]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e31">pacemakerProcedure</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:Query</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: Cardiac Pacemaker Implantation" </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: elm:operand[elm:Code]: <link linkend="d6e2"> [398166005 |Performed (qualifier value)|]</link>elm:operand[elm:Code]: <link linkend="d6e62"> [307280005 |Implantation of cardiac pacemaker (procedure)|]</link>
+                     </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <table frame="all">
+            <title xml:id="d4e32">cardiacDiagnosticProcedures</title>
+            <tgroup cols="4" align="left" colsep="0" rowsep="0">
+               <colspec colname="c1" colnum="1"/>
+               <colspec colname="c2" colnum="2"/>
+               <colspec colname="c3" colnum="3"/>
+               <colspec colname="c4" colnum="4"/>
+               <tbody>
+                  <row>
+                     <entry namest="c1" nameend="c4">Expression: type=elm:List</entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Annotation: </entry>
+                  </row>
+                  <row>
+                     <entry namest="c1" nameend="c4">Codes: </entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+      </section>
+      <section>
+         <title>Triggers</title>
+         <para>No trigger definitions are present.</para>
+      </section>
+   </chapter>
+   <chapter xmlns:a="urn:hl7-org:cql-annotations:r1"
+            xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+      <title>Expression Definitions</title>
+      <para>No expression definitions are present. </para>
+   </chapter>
+   <chapter>
+      <title>Clinical Stability</title>
+      <para>This documentation template is not applicable for use with patients who are unstable based on clinician judgement. Examples of unstable patients include, but are not limited to, patients with chest pain pattern suggestive of Acute Coronary Syndrome ( ACS ), symptomatic hypotension, or unstable arrhythmia.                     Consider transferring these unstable patients to the nearest emergency department immediately.</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Acknowledge</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>History and Physical</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="6">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <colspec align="left" colname="c4" colnum="4"/>
+            <colspec align="left" colname="c5" colnum="5"/>
+            <colspec align="left" colname="c6" colnum="6"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="9">  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1">History</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">History, Brief</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">History of prior cardiac evaluations (e.g., prior hospitalization or evaluations for: chest pain, rule/out MI, angina, heart failure, etc.)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Results of prior cardiac diagnostic procedures performed (resting ECG, echocardiogram, stress testing  (echo, nuclear, MRI), Cardiac CT ( CCT ) and Coronary CT Angiography ( CCTA )</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c2" nameend="c6">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e32">cardiacDiagnosticProcedures</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Physical Exam, Pertinent Positive and Negative Findings</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="7">  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Family History of</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Code (Single)</entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c2">response range:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Sudden Unexplained Death(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e63">90049009 | Unexplained sudden death (event) |</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c2">item:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Drowning(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e64">40947009 | Drowning (event) |</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c3" nameend="c6">Prior Radiofrequency Catheter Ablation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c2">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c3" nameend="c6">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="10">  </entry>
+                  <entry namest="c2" nameend="c6" rowsep="1">Implanted Device History</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="9">  </entry>
+                  <entry namest="c3" nameend="c6" rowsep="1">If a device is selected, then enter Current arrhythmia device programmer interrogation report.</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="1"
+                         align="right"
+                         valign="top"
+                         morerows="8">  </entry>
+                  <entry namest="c4" nameend="c6" rowsep="1"/>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c6">Select at most one:</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c6">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c4">response range:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c6">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c6">Prior Implantable Cardioverter-Defibrillator (ICD) Device Implantation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e57">395218007 |Implantation of internal cardiac defibrillator (procedure)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c6">Prior Cardiac Resynchronization Therapy plus Implantable Cardioverter-Defibrillator (CRT-D) Device Implantation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e59">1301000205107 |Implantation of cardiac resynchronization therapy implantable pacemaker (procedure)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c4">item:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c6">Prior Cardiac Pacemaker Implantation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e62">307280005 |Implantation of cardiac pacemaker (procedure)|</link>)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">
+                     <link linkend="gs_allnone">◎ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c5" nameend="c6">Current arrhythmia device programmer interrogation report</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c4">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c5" nameend="c6">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Treatment Provided</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Pharmacologic Therapy</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">String (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Other Pertinent Treatment</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">String (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Laboratory Studies</title>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Basic Metabolic Panel Lab Result</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Indexer <link linkend="d4e2">basicMetabolicPanelLabResult</link>  elm:Literal()</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Complete Blood Count Lab Result</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Indexer <link linkend="d4e3">completeBloodCountLabResult</link>  elm:Literal()</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Lipid Panel Lab Result</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Indexer <link linkend="d4e4">lipidPanelLabResult</link>  elm:Literal()</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Thyroid Function Testing Lab Result</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Indexer <link linkend="d4e5">thyroidFunctionTestingLabResult</link>  elm:Literal()</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Troponin Lab Result</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Indexer <link linkend="d4e6">troponinLabResult</link>  elm:Literal()</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Brain Natriuretic Peptide Lab Result</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Indexer <link linkend="d4e7">brainNatriureticPeptideLabResult</link>  elm:Literal()</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">D-dimer Lab Result</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Single)</entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>elm:Indexer <link linkend="d4e8">d-dimerLabResult</link>  elm:Literal()</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Imaging and Diagnostic Studies</title>
+      <para>For this documentation template, the following information should be included, if available from the prior year.</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry namest="c1" nameend="c3">Attach or link Results: 12-Lead Electrocardiogram</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Resting 12-Lead Electrocardiogram Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e10">resting12LeadElectrocardiogramInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Attach or link Images: 12-Lead Electrocardiogram</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Resting 12-Lead Electrocardiogram</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e9">resting12LeadElectrocardiogram</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link results: Stress Electrocardiography</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Stress Electrocardiography Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e12">stressElectrocardiographyInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link images: Stress Electrocardiography</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Stress Electrocardiography</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e11">stressElectrocardiography</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link results: Resting Echocardiogram/Doppler</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Resting Echocardiogram/Doppler Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e15">restingEchocardiogramDopplerInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link images: Resting Echocardiogram/Doppler</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Resting Echocardiogram/Doppler</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e14">restingEchocardiogram</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link results: Stress Echocardiogram</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Stress Echocardiogram Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e17">stressEchocardiogramInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link images: Stress Echocardiogram</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Stress Echocardiogram</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e16">stressEchocardiogram</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link results: Stress MPI Interpretation</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Stress Myocardial Perfusion Imaging (MPI) Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e19">stressMPIInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link images: Stress MPI</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Stress Myocardial Perfusion Imaging (MPI)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e18">stressMPI</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link results: Rest/Stress Magnetic Resonance Imaging (MRI) Interpretation</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Rest/Stress Magenetic Resonance Imaging (MRI) Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e21">stressMRIInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link images: Rest/Stress Magenetic Resonance Imaging (MRI)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Rest/Stress Magnetic Resonance Imaging (MRI)</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e20">stressMRI</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link results: Chest CT</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Chest CT Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e23">chestCTInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link images: Chest CT</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Chest CT</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e22">chestCT</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link results: Coronary/Cardiac CTA</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Coronary/Cardiac CTA Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e26">cCTAInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link images: Coronary/Cardiac CTA</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Coronary/Cardiac CTA</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e24">chestCTA</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link results: X-Ray Chest</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">X-Ray Chest Interpretation</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e28">xRayChestInterpretation</link>
+                  </entry>
+               </row>
+               <row>
+                  <entry namest="c1" nameend="c3">Link images:  X-Ray Chest</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">X-Ray Chest</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Tuple (Multiple) </entry>
+               </row>
+               <row xmlns:a="urn:hl7-org:cql-annotations:r1"
+                    xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                    rowsep="0">
+                  <entry namest="c1" nameend="c3">
+                     <emphasis role="bold">initalValue: </emphasis>
+                     <link linkend="d4e27">xRayChest</link>
+                  </entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Reason for Cardiology Arrhythmia Consult</title>
+      <para>Select one.</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_all">◉ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Reason for consult:</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Code (Single) </entry>
+               </row>
+               <row>
+                  <entry align="right" rowsep="0" colsep="0" colname="c1">response range:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">EnumerationConstraint (List) </entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Atrial Fibrillation Evaluation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e68">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[49436004 |Atrial fibrillation (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Atrial Flutter Evaluation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e69">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[5370000 |Atrial flutter (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Bradycardia Evaluation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e70">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[6456007 |Supraventricular tachycardia (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Supraventricular Tachycardia Evaluation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e71">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[48867003 |Bradycardia (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Syncope Evaluation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e72">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[271594007 |Syncope (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Presyncope Evaluation(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e72">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[271594007 |Syncope (disorder)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">
+                     <link linkend="item_fillin">☞ </link>item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Other Arrhythmia Evaluation</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1"/>
+                  <entry namest="c2" nameend="c3">Enter evaluation type</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Pacemaker followup(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e75">1221000205105 |Cardiology consultation and report (procedure)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">ICD follow-up(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e75">1221000205105 |Cardiology consultation and report (procedure)</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Pacemaker generator change(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e77">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[3515001 |Replacement of electronic heart device, pulse generator (procedure)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">ICD generator change(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e78">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[395218007 |Implantation of internal cardiac defibrillator (procedure)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Primary prevention pacemaker(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e79">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[307280005 |Implantation of cardiac pacemaker (procedure)]</link>)</entry>
+               </row>
+               <row>
+                  <entry align="right" colsep="0" rowsep="0" colname="c1">item:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">ICD Implant(<link xmlns:a="urn:hl7-org:cql-annotations:r1"
+                           xmlns:t="urn:hl7-org:knowledgeartifact:temp"
+                           linkend="d6e78">[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[395218007 |Implantation of internal cardiac defibrillator (procedure)]</link>)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Stroke and Bleeding Risk</title>
+      <para>Ask the following questions and check any of the following that apply to the patient.</para>
+      <informaltable frame="none">
+         <tgroup align="left" cols="3">
+            <colspec align="left" colname="c1" colnum="1" colwidth="0.25*"/>
+            <colspec align="left" colname="c2" colnum="2"/>
+            <colspec align="left" colname="c3" colnum="3"/>
+            <tbody>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Active problem of congestive heart failure or active problem of left ventricular systolic dysfunction?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Active problem of hypertension?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Age ≥ 75 years?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Active problem of diabetes mellitus?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">History of stroke or of problem of transient ischemic attack or thromboembolism?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Active problem of vascular disease?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Age ≥ 65 years and age ≤ 74 years?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+               <row>
+                  <entry rowsep="0"
+                         colsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">
+                     <link linkend="gs_any">☐ </link>prompt:</entry>
+                  <entry rowsep="0" namest="c2" nameend="c3">Female?</entry>
+               </row>
+               <row>
+                  <entry colsep="0"
+                         rowsep="0"
+                         align="right"
+                         valign="top"
+                         colname="c1">response:</entry>
+                  <entry rowsep="0" valign="top" namest="c2" nameend="c3">Boolean (Single)</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </informaltable>
+   </chapter>
+   <chapter>
+      <title>Tabular List</title>
+      <subtitle>Terminology Service Request (TSR) Mappings</subtitle>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology Versions</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3"/>
+            <thead>
+               <row>
+                  <entry>Name</entry>
+                  <entry>Identifer</entry>
+                  <entry>Version</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry>SNOMED CT</entry>
+                  <entry>2.16.840.1.113883.6.96</entry>
+                  <entry>United States Edition 20180301</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table xmlns:a="urn:hl7-org:cql-annotations:r1"
+             xmlns:t="urn:hl7-org:knowledgeartifact:temp">
+         <title>Terminology References</title>
+         <tgroup cols="4" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1"/>
+            <colspec colname="c2" colnum="2" colwidth="1.5*"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <colspec colname="c4" colnum="4"/>
+            <thead>
+               <row>
+                  <entry>System</entry>
+                  <entry>Code</entry>
+                  <entry>Display Text<footnote>
+                        <para>If a code is used multiple times in the KNART, only the display text of the first
+                                        instance is shown.</para>
+                     </footnote>
+                  </entry>
+                  <entry>References<footnote>
+                        <para>Count of the number of times the given code system and code pair is used in the
+                                        KNART.</para>
+                     </footnote>
+                  </entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="d6e11">SNOMED CT</entry>
+                  <entry>105000003 |Troponin measurement (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e75">SNOMED CT</entry>
+                  <entry>1221000205105 |Cardiology consultation and report (procedure)</entry>
+                  <entry>Pacemaker followup</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e59">SNOMED CT</entry>
+                  <entry>1301000205107 |Implantation of cardiac resynchronization therapy implantable pacemaker (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e81">SNOMED CT</entry>
+                  <entry>133936004 |Adult (person)|</entry>
+                  <entry>Adult outpatient needing Cardiology consult for arrhythmia evaluation</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e3">SNOMED CT</entry>
+                  <entry>1421000205106 |Basic metabolic panel (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e7">SNOMED CT</entry>
+                  <entry>16254007 |Lipid panel (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e35">SNOMED CT</entry>
+                  <entry>16545191000119100 |Radionuclide myocardial perfusion stress study (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e44">SNOMED CT</entry>
+                  <entry>169069000 |Computed tomography of chest (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e5">SNOMED CT</entry>
+                  <entry>26604007 |Complete blood count (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e62">SNOMED CT</entry>
+                  <entry>307280005 |Implantation of cardiac pacemaker (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e9">SNOMED CT</entry>
+                  <entry>35650009 |Thyroid panel (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e57">SNOMED CT</entry>
+                  <entry>395218007 |Implantation of internal cardiac defibrillator (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e2">SNOMED CT</entry>
+                  <entry>398166005 |Performed (qualifier value)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>28</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e53">SNOMED CT</entry>
+                  <entry>399208008 |Plain chest X-ray (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e14">SNOMED CT</entry>
+                  <entry>407059007 |Brain natriuretic peptide (substance)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e64">SNOMED CT</entry>
+                  <entry>40947009 | Drowning (event) |</entry>
+                  <entry>Drowning</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e48">SNOMED CT</entry>
+                  <entry>419545005 |Computed tomography angiography of coronary arteries (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e31">SNOMED CT</entry>
+                  <entry>433233004 |Exercise stress echocardiography (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e18">SNOMED CT</entry>
+                  <entry>447113005 |12 lead electrocardiogram at rest (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e83">SNOMED CT</entry>
+                  <entry>453231000124104 |Primary care provider (occupation)|</entry>
+                  <entry>Clinical Providers in Primary Care Clinic</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e22">SNOMED CT</entry>
+                  <entry>46136006 |Electrocardiogram with exercise test (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e27">SNOMED CT</entry>
+                  <entry>50871731-ba83-45bb-a582-a14943f1d06d |Echocardiography at rest (procedure)</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e82">SNOMED CT</entry>
+                  <entry>5351000124100 |Primary care clinic (environment)|</entry>
+                  <entry>Primary Care Clinic</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e16">SNOMED CT</entry>
+                  <entry>70648006 |D-dimer assay (procedure)|</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e40">SNOMED CT</entry>
+                  <entry>737593009 | Magnetic resonance imaging of heart under stress (procedure) |</entry>
+                  <entry>Precoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e63">SNOMED CT</entry>
+                  <entry>90049009 | Unexplained sudden death (event) |</entry>
+                  <entry>Sudden Unexplained Death</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e72">SNOMED CT</entry>
+                  <entry>[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[271594007 |Syncope (disorder)]</entry>
+                  <entry>Syncope Evaluation</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e79">SNOMED CT</entry>
+                  <entry>[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[307280005 |Implantation of cardiac pacemaker (procedure)]</entry>
+                  <entry>Primary prevention pacemaker</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e77">SNOMED CT</entry>
+                  <entry>[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[3515001 |Replacement of electronic heart device, pulse generator (procedure)]</entry>
+                  <entry>Pacemaker generator change</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e78">SNOMED CT</entry>
+                  <entry>[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[395218007 |Implantation of internal cardiac defibrillator (procedure)]</entry>
+                  <entry>ICD generator change</entry>
+                  <entry>2</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e71">SNOMED CT</entry>
+                  <entry>[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[48867003 |Bradycardia (disorder)]</entry>
+                  <entry>Supraventricular Tachycardia Evaluation</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e68">SNOMED CT</entry>
+                  <entry>[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[49436004 |Atrial fibrillation (disorder)]</entry>
+                  <entry>Atrial Fibrillation Evaluation</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e69">SNOMED CT</entry>
+                  <entry>[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[5370000 |Atrial flutter (disorder)]</entry>
+                  <entry>Atrial Flutter Evaluation</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e70">SNOMED CT</entry>
+                  <entry>[1221000205105 |Cardiology consultation and report (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[6456007 |Supraventricular tachycardia (disorder)]</entry>
+                  <entry>Bradycardia Evaluation</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e38">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[16545191000119100 |Radionuclide myocardial perfusion stress study (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e46">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[169069000 |Computed tomography of chest (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e55">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[399208008 |Plain chest X-ray (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e51">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[419545005 |Computed tomography angiography of coronary arteries (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e33">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[433233004 |Exercise stress echocardiography (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e20">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[447113005 |12 lead electrocardiogram at rest (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e24">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[46136006 |Electrocardiogram with exercise test (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e29">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[50871731-ba83-45bb-a582-a14943f1d06d |Echocardiography at rest (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+               <row>
+                  <entry xml:id="d6e42">SNOMED CT</entry>
+                  <entry>[370851004 |Evaluation of diagnostic study results (procedure)] -&gt;(363702006 |Has focus (attribute))-&gt;[737593009 | Magnetic resonance imaging of heart under stress (procedure)]</entry>
+                  <entry>Postcoordinated Expression</entry>
+                  <entry>1</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <chapter>
+      <title>Behavior Symbols</title>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Organizational Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="go_s">▶</entry>
+                  <entry>Sentence Group</entry>
+                  <entry>A group of related alternative actions is a sentence group if the item referenced by the action is the same in all the
+                            actions, and each action simply constitutes a different variation on how to specify the details for that item. For
+                            example, two actions that could be in a SentenceGroup are "aspirin, 500 mg, 2 times per day" and "aspirin, 300 mg, 3 times
+                            per day". In both cases, aspirin is the item referenced by the action, and the two actions represent two different options
+                            for how aspirin might be ordered for the patient. Note that a SentenceGroup would almost always have an associated
+                            selection behavior of "AtMostOne", unless it's a required action, in which case, it would be "ExactlyOne".</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_l">▷</entry>
+                  <entry>Logical Group</entry>
+                  <entry>A group with this behavior logically groups its sub-elements, and may be shown as a visual group to the end user, but
+                            it is not required to do so.</entry>
+               </row>
+               <row>
+                  <entry xml:id="go_v">➤</entry>
+                  <entry>Visual Group</entry>
+                  <entry>Any group marked with this behavior should be displayed as a visual group to the end user.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Group Selection Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="gs_any">☐</entry>
+                  <entry>Any</entry>
+                  <entry>Any number of the items in the group may be chosen, from zero to all.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_all">◉</entry>
+                  <entry>All</entry>
+                  <entry>All the items in the group must be selected as a single unit.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_allnone">◎</entry>
+                  <entry>AllOrNone</entry>
+                  <entry>All the items in the group are meant to be chosen as a single unit: either all must be selected by the end user, or
+                            none may be selected.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_xactone">○</entry>
+                  <entry>ExactlyOne</entry>
+                  <entry>The end user must choose one and only one of the selectable items in the group. The user may not choose none of the
+                            items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_atmostone">✪</entry>
+                  <entry>AtMostOne</entry>
+                  <entry>The end user may choose zero or at most one of the items in the group.</entry>
+               </row>
+               <row>
+                  <entry xml:id="gs_onemore">❂</entry>
+                  <entry>OneOrMore</entry>
+                  <entry>The end user must choose a minimum of one, and as many additional as desired.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Required Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="req_must">✦</entry>
+                  <entry>Must</entry>
+                  <entry>An action with this behavior must be included in the actions processed by the end user; the end user may not choose not
+                            to include this action.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_could">✧</entry>
+                  <entry>Could</entry>
+                  <entry>An action with this behavior may be included in the set of actions processed by the end user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="req_mustud">➢</entry>
+                  <entry>MustUnlessDocumented</entry>
+                  <entry>An action with this behavior must be included in the set of actions processed by the end user, unless the end user
+                            provides documentation as to why the action was not included.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Precheck Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="preck_yes">▲</entry>
+                  <entry>Yes</entry>
+                  <entry>An action with this behavior is one of the most frequent actions that is, or should be, included by an end user, for
+                            the particular context in which the action occurs. The system displaying the action to the end user should consider
+                            "pre-checking" such an action as a convenience for the user.</entry>
+               </row>
+               <row>
+                  <entry xml:id="preck_no">▽</entry>
+                  <entry>No</entry>
+                  <entry>An action with this behavior is one of the less frequent actions included by the end user, for the particular context
+                            in which the action occurs. The system displaying the actions to the end user would typically not "pre-check" such an
+                            action.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Cardinality Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="card_single">◆</entry>
+                  <entry>Single</entry>
+                  <entry>An action with this behavior may only be completed once.</entry>
+               </row>
+               <row>
+                  <entry xml:id="card_multiple">❖</entry>
+                  <entry>Multiple</entry>
+                  <entry>An action with this behavior may be repeated multiple times.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Item Flags</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_fillin">☞</entry>
+                  <entry>fillIn</entry>
+                  <entry>This item, in a list entry, allows the user to enter a fill in value that is not present in the set of presented
+                            choices.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+      <table frame="all"
+             xml:base="./common/behavior-symbol-tables-docbook.xml"
+             xml:lang="en-US">
+         <title>Read Only Behavior</title>
+         <tgroup cols="3" align="left" colsep="1" rowsep="1">
+            <colspec colname="c1" colnum="1" colwidth=".25*" align="center"/>
+            <colspec colname="c2" colnum="2"/>
+            <colspec colname="c3" colnum="3" colwidth="2*"/>
+            <thead>
+               <row>
+                  <entry>Symbol</entry>
+                  <entry>Name</entry>
+                  <entry>Definition</entry>
+               </row>
+            </thead>
+            <tbody>
+               <row>
+                  <entry xml:id="item_readonly">☆</entry>
+                  <entry>true</entry>
+                  <entry>For a particular action or action group, specifies whether the elements are read only.</entry>
+               </row>
+            </tbody>
+         </tgroup>
+      </table>
+   </chapter>
+   <appendix>
+      <title>References</title>
+      <para>This appendix contains the list of related resources and supporting documents used in creating this KNART.</para>
+      <bibliography>
+         <title>List of References</title>
+         <bibliodiv>
+            <title>Related Resources</title>
+            <bibliomixed xreflabel="CCWP">
+               <abbrev>CCWP</abbrev>
+               <citetitle>Cardiology: (EP) Arrhythmias Clinical Content White Paper</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="CSD">
+               <abbrev>CSD</abbrev>
+               <citetitle>Cardiology: Electrophysiology (EP) Documentation Template Conceptual Structure Document</citetitle>
+            </bibliomixed>
+            <bibliomixed xreflabel="KVRpt">
+               <abbrev>KVRpt</abbrev>
+               <citetitle>Cardiology: Electrophysiology (EP) Documentation Template KNART Validation Report</citetitle>
+            </bibliomixed>
+         </bibliodiv>
+         <bibliodiv>
+            <title>Supporting Evidence</title>
+            <bibliomixed xreflabel="Heidenreich 2016">
+               <abbrev>Heidenreich 2016</abbrev>
+               <citetitle>Heidenreich, P., Solis, P., Estes, M., Fonarow, G., Jurgens, C., Marine, J., McManus, D., McNamara, R. 2016 ACC/AHA Clinical Performance and Quality Measures for Adults With Atrial Fibrillation or Atrial Flutter. Circulation: Cardiovascular Quality and Outcomes. 2016;9:443-488 Originally published June 27, 2016. doi:10.1161/HCQ.0000000000000018</citetitle> (<link xlink:href="https://doi.org/10.1161/HCQ.0000000000000018">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Holbrook 2012">
+               <abbrev>Holbrook 2012</abbrev>
+               <citetitle>Holbrook, A., Schulman, S., Witt, D., Vandvik, P., Fish, J., Kovacs, M., Svensson, P., Veenstra, D., Crowther, M., Guyatt, G., et.al. Evidence-Based Management of Anticoagulant Therapy (2012). Official Publication of the American College of Chest Physicians. 2012 February 12;141(2):e152S-e184S</citetitle> (<link xlink:href="http://dx.doi.org/10.1378/chest.11-2295">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="January 2014">
+               <abbrev>January 2014</abbrev>
+               <citetitle>January, C. T., Wann, L. S., Alpert, J. S., Calkins, H., Cigarroa, J. E., Cleveland, J. C., ... Yancy, C. W. (2014). 2014 AHA/ACC/HRS guideline for the management of patients with atrial fibrillation: Executive summary: A report of the American College of cardiology/American heart association task force on practice guidelines and the heart rhythm society. Circulation, 130(23), 2071-2104</citetitle> (<link xlink:href="https://doi.org/10.1161/CIR.0000000000000040">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Kearon 2016">
+               <abbrev>Kearon 2016</abbrev>
+               <citetitle>Kearon, C., Aki, E., Ornelas, J., Blaivas, A., Jimenez, D., Bounameaux, H., et al. Antithrombotic therapy for VTE disease: CHEST guideline and expert panel report. (2016) HEST Journal, Official Publication of the College of Chest Physicians 2016 February 149(2) 315–352</citetitle> (<link xlink:href="http://dx.doi.org/10.1016/j.chest.2015.11.026">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Page 2016">
+               <abbrev>Page 2016</abbrev>
+               <citetitle>Page, R., Joglar, J., Caldwell, M., Calkins, H., Conti, J., Deal, B., Estes, M., Field, M., Goldberger, Z., Hammill, S., Indik, J., Lindsay, B., et al. 2015 ACC/AHA/HRS Guideline for the Management of Adult Patients With Supraventricular Tachycardia. (2016) Journal of the American College of Cardiology Volume 67, Issue 13, April 2016</citetitle> (<link xlink:href="http://www.onlinejacc.org/content/67/13/e27?_ga=1.87330320.984974867.1480494374">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="Shen 2017">
+               <abbrev>Shen 2017</abbrev>
+               <citetitle>Shen, W.K., Sheldon, R., Benditt, D., Cohen, M., Forman, D., Goldberger, Z., Grubb, B., Field, M., Goldberger, Z., Hamdan, M., Krahn, A., Link, M.,Olshansky, B., et al. 2017 ACC/AHA/HRS Guideline for the Evaluation and Management of Patients With Syncope: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines, and the Heart Rhythm Society.. August 2017 Volume 14, Issue 8, Pages e155–e21</citetitle> (<link xlink:href="http://dx.doi.org/10.1016/j.hrthm.2017.03.004">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017a">
+               <abbrev>NLM 2017a</abbrev>
+               <citetitle>LABEL: AMIODARONE HCL- amiodarone hydrochloride tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=08641e51-abca-4c1c-ba19-d24435332018.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=08641e51-abca-4c1c-ba19-d24435332018">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017b">
+               <abbrev>NLM 2017b</abbrev>
+               <citetitle>LABEL: ASPIRIN 81 MG- aspirin tablet, coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2016a">
+               <abbrev>NLM 2016a</abbrev>
+               <citetitle>LABEL: CARDIZEM- diltiazem hydrochloride tablet, coated [Internet].: National Library of Medicine; 2016. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f3e7ecef-f360-4987-a4f5-933214130ab2.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f3e7ecef-f360-4987-a4f5-933214130ab2">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017c">
+               <abbrev>NLM 2017c</abbrev>
+               <citetitle>LABEL: CLOPIDOGREL- clopidogrel bisulfate tablet, film coated, [Internet].: National Library of Medicine; 2016. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017d">
+               <abbrev>NLM 2017d</abbrev>
+               <citetitle>LABEL: COUMADIN- warfarin sodium tablet, [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d91934a0-902e-c26c-23ca-d5accc4151b6.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d91934a0-902e-c26c-23ca-d5accc4151b6">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2016b">
+               <abbrev>NLM 2016b</abbrev>
+               <citetitle>LABEL: DIGOXIN- digoxin tablet, [Internet].: National Library of Medicine; 2016. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dfac7f13-28be-423d-9389-9089da29da17.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dfac7f13-28be-423d-9389-9089da29da17">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2016c">
+               <abbrev>NLM 2016c</abbrev>
+               <citetitle>LABEL: DILTIAZEM HCL CD- diltiazem hydrochloride capsule, coated, extended release, [Internet].: National Library of Medicine; 2016. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5e39be50-ea17-4077-a2dc-668267049f6a.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5e39be50-ea17-4077-a2dc-668267049f6a">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017e">
+               <abbrev>NLM 2017e</abbrev>
+               <citetitle>LABEL: ELIQUIS- apixaban tablet, film coated ELIQUIS 30-DAY STARTER PACK- apixaban, [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e9481622-7cc6-418a-acb6-c5450daae9b0.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e9481622-7cc6-418a-acb6-c5450daae9b0">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2012">
+               <abbrev>NLM 2012</abbrev>
+               <citetitle>LABEL: FLECAINIDE ACETATE- flecainide tablet, [Internet].: National Library of Medicine; 2012. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa68b35e-9f50-408b-9e70-e84cecf3fd6e.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa68b35e-9f50-408b-9e70-e84cecf3fd6e">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2008">
+               <abbrev>NLM 2008</abbrev>
+               <citetitle>LABEL: ISOPTIN SR- verapamil hydrochloride tablet, coated, [Internet].: National Library of Medicine; 2018. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6ae13cb4-0316-40d1-9216-c7d5556aaed3.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6ae13cb4-0316-40d1-9216-c7d5556aaed3">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017f">
+               <abbrev>NLM 2017f</abbrev>
+               <citetitle>LABEL: LOPRESSOR- metoprolol tartrate tablet, [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0283bc9d-6998-493a-824a-d4c85f704111.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0283bc9d-6998-493a-824a-d4c85f704111">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017g">
+               <abbrev>NLM 2017g</abbrev>
+               <citetitle>LABEL: PRADAXA- dabigatran etexilate mesylate capsule, [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ba74e3cd-b06f-4145-b284-5fd6b84ff3c9.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ba74e3cd-b06f-4145-b284-5fd6b84ff3c9">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017h">
+               <abbrev>NLM 2017h</abbrev>
+               <citetitle>LABEL: PROPAFENONE HCL- propafenone hydrochloride tablet, film coated, [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a313c111-e539-47bc-9d57-c3767f74bcca.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a313c111-e539-47bc-9d57-c3767f74bcca">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017i">
+               <abbrev>NLM 2017i</abbrev>
+               <citetitle>LABEL: TOPROL XL- metoprolol succinate tablet, extended release, [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4a5762c6-d7a2-4e4c-10b7-8832b36fa5f4.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4a5762c6-d7a2-4e4c-10b7-8832b36fa5f4">link</link>) </bibliomixed>
+            <bibliomixed xreflabel="NLM 2017j">
+               <abbrev>NLM 2017j</abbrev>
+               <citetitle>LABEL: XARELTO- rivaroxaban tablet, film coated, [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610.</citetitle> (<link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610">link</link>) </bibliomixed>
+         </bibliodiv>
+      </bibliography>
+   </appendix>
+</book>
