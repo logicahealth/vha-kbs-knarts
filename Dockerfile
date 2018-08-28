@@ -5,7 +5,8 @@ LABEL maintainer="Preston Lee <preston.lee@prestonlee.com"
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy slower-moving content directories first.
-COPY content superseded /usr/share/nginx/html/
+COPY superseded /usr/share/nginx/html/superseded
+COPY content /usr/share/nginx/html/content
 
 # Copy faster-moving stuffinto the content directory.
-COPY index.html LICENSE.txt manifest.json connect.json overview.html /usr/share/nginx/html/
+COPY index.html LICENSE.txt manifest.json connect.json /usr/share/nginx/html/
