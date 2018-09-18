@@ -1,0 +1,1905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?schematron-schema href="../main/schematron/knowledgeartifact.sch"?>
+<?schematron-schema href="../main/schematron/documentationtemplates.sch"?>
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:anf="urn:va.gov:models:anf" xmlns:dt="urn:hl7-org:cdsdt:r2"
+    xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:p1="http://www.w3.org/1999/xhtml"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="ce30ff93-c0ab-572b-bcfe-fbd34a085d21" version="1.0" identifierName="B5"/>
+            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0004AG"
+                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AG"/>
+            <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-921" identifierName="Jira KP-921"/>
+        </identifiers>
+        <artifactType value="Order Set"/>
+
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:0.8"/>
+            </modelReference>
+        </dataModels>
+
+        <title value="Cardiology: Chest Pain/Coronary artery disease (CAD) Order Set"/>
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="sr1" identifierName="CCWP"/>
+                        </identifiers>
+                        <title value="Cardiology: Chest Pain/Coronary artery disease (CAD) Order Set Conceptual Structure Document"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="CSD" extension="sr2"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0004AD"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AD"/>
+                        </identifiers>
+                        <title value="Cardiology: Chest Pain/Coronary artery disease (CAD) Order Set Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="KVRpt" extension="sr3"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0004AK"
+                                identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AK"/>
+                        </identifiers>
+                        <title value="Cardiology: Chest Pain/Coronary artery disease (CAD) Order Set KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" extension="e1" identifierName="FHS 2017"/>
+                        </identifiers>
+                        <title value="Cardiovascular Disease (10-year risk)"/>
+                        <location value="https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php"/>
+                        <description
+                            value="Outcome CVD (coronary death, myocardial infarction, coronary insufficiency, angina, ischemic stroke, hemorrhagic stroke, transient ischemic attack, peripheral artery disease, heart failure)"/>
+                        <citation
+                            value="Cardiovascular disease
+                            (10-year risk) [Internet].: Framingham Heart Study; cited 2017]. Cardiovascular Disease (10-year risk). Available from: https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://doi.org" extension="10.1161/CIRCULATIONAHA.107.699579" identifierName="DOI"/>
+                            <identifier root="LocalDocBook" extension="e2" identifierName="D'Agostino 2008"/>
+                        </identifiers>
+                        <title value="General cardiovascular risk profile for use in primary care: the Framingham Heart Study"/>
+                        <location value="http://circ.ahajournals.org/content/117/6/743.long"/>
+                        <description
+                            value="BACKGROUND:
+                            Separate multivariable risk algorithms are commonly used to assess risk of specific atherosclerotic cardiovascular disease (CVD) events, ie, coronary heart disease, cerebrovascular disease, peripheral vascular disease, and heart failure. The present report presents a single multivariable risk function that predicts risk of developing all CVD and of its constituents."/>
+                        <citation
+                            value="D'Agostino RB S, Vasan RS, Pencina MJ, Wolf PA, Cobain M, Massaro JM, et al. General cardiovascular risk profile for use in primary care: the Framingham Heart Study. Circulation. 2008 February 12;117(6):743-53"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://doi.org" extension="10.1016/j.jtcvs.2014.11.002" identifierName="DOI"/>
+                            <identifier root="LocalDocBook" extension="e3" identifierName="Fihn 2015"/>
+                        </identifiers>
+                        <title
+                            value="2014 ACC/AHA/AATS/PCNA/SCAI/STS focused update of the guideline for the diagnosis and management of patients with stable ischemic heart disease: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines, and the American Association for Thoracic Surgery, Preventive Cardiovascular Nurses Association, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons"/>
+                        <description
+                            value="A report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines, and the American Association for Thoracic Surgery, Preventive Cardiovascular Nurses Association, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons"/>
+                        <citation
+                            value="Fihn SD, Blankenship JC, Alexander KP, Bittl JA, Byrne JG, Fletcher BJ, et al. 2014 ACC/AHA/AATS/PCNA/SCAI/STS focused update of the guideline for the diagnosis and management of patients with stable ischemic heart disease: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines, and the American Association for Thoracic Surgery, Preventive Cardiovascular Nurses Association, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons. J Thorac Cardiovasc Surg. 2015 March 01;149(3):5"
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://doi.org" extension="10.1016/S0735-1097(02)02164-2" identifierName="DOI"/>
+                            <identifier root="LocalDocBook" extension="e4" identifierName="Gibbons 2002"/>
+                        </identifiers>
+                        <title
+                            value="ACC/AHA 2002 guideline update for exercise testing: summary article: A report of the American college of cardiology/American heart association task force on practice guidelines (committee to update the 1997 exercise testing guidelines)"/>
+                        <location value="https://doi.org/10.1016/S0735-1097(02)02164-2"/>
+                        <citation
+                            value="Gibbons RJ, Balady GJ, Bricker JT, Chaitman BR, Fletcher GF, Froelicher VF, et al. ACC/AHA 2002 guideline update for exercise testing: summary article: A report of the American college of cardiology/American heart association task force on practice guidelines (committee to update the 1997 exercise testing guidelines). Circulation. 2002 October 01;106(14):1883-92."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="b4064039-2345-4227-b83d-54dc13a838d3"/>
+                            <identifier root="LocalDocBook" extension="e5" identifierName="NLM 2017a"/>
+                        </identifiers>
+                        <title value="LABEL: ASPIRIN 81 MG- aspirin tablet, coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3"/>
+                        <citation
+                            value="LABEL: ASPIRIN 81 MG- aspirin tablet, coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="edae8df1-caf9-ff72-1304-5ae8b355f8e7"/>
+                            <identifier root="LocalDocBook" extension="e6" identifierName="NLM 2017b"/>
+                        </identifiers>
+                        <title value="LABEL: CLOPIDOGREL- clopidogrel bisulfate tablet, film coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7"/>
+                        <citation
+                            value="LABEL: CLOPIDOGREL- clopidogrel bisulfate tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="7fe85155-bc00-406b-b097-e8aece187a8a"/>
+                            <identifier root="LocalDocBook" extension="e7" identifierName="NLM 2017c"/>
+                        </identifiers>
+                        <title value="LABEL: LIPITOR- atorvastatin calcium tablet, film coated"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a"/>
+                        <citation
+                            value="LABEL: LIPITOR- atorvastatin calcium tablet, film coated [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="2d948600-35d8-4490-983b-918bdce488c8"/>
+                            <identifier root="LocalDocBook" extension="e8" identifierName="NLM 2017d"/>
+                        </identifiers>
+                        <title value="LABEL: METOPROLOL SUCCINATE EXTENDED-RELEASE - metoprolol succinate tablet, film coated, extended release"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2d948600-35d8-4490-983b-918bdce488c8"/>
+                        <citation
+                            value="LABEL: METOPROLOL SUCCINATE EXTENDED-RELEASE - metoprolol succinate tablet, film coated, extended release [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2d948600-35d8-4490-983b-918bdce488c8."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="67bf2a15-b115-47ac-ae28-ce2dafd6b5c9"/>
+                            <identifier root="LocalDocBook" extension="e9" identifierName="NLM 2017e"/>
+                        </identifiers>
+                        <title value="LABEL: NITROGLYCERIN- nitroglycerin tablet "/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=67bf2a15-b115-47ac-ae28-ce2dafd6b5c9"/>
+                        <citation
+                            value="LABEL: NITROGLYCERIN- nitroglycerin tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=67bf2a15-b115-47ac-ae28-ce2dafd6b5c9."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="abd6a2ca-40c2-485c-bc53-db1c652505ed"/>
+                            <identifier root="LocalDocBook" extension="e10" identifierName="NLM 2017f"/>
+                        </identifiers>
+                        <title value="LABEL: NORVASC- amlodipine besylate tablet"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=abd6a2ca-40c2-485c-bc53-db1c652505ed"/>
+                        <citation
+                            value="LABEL: NORVASC- amlodipine besylate tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=abd6a2ca-40c2-485c-bc53-db1c652505ed."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://dailymed.nlm.nih.gov/dailymed" extension="5c1c694c-4b08-469e-b538-08e69df06146"/>
+                            <identifier root="LocalDocBook" extension="e11" identifierName="NLM 2017g"/>
+                        </identifiers>
+                        <title value="LABEL: SIMVASTATIN - simvastatin tablet"/>
+                        <location value="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c1c694c-4b08-469e-b538-08e69df06146"/>
+                        <citation
+                            value="LABEL: SIMVASTATIN - simvastatin tablet [Internet].: National Library of Medicine; 2017. Available from: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c1c694c-4b08-469e-b538-08e69df06146."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="https://doi.org" extension="10.1136/hrt.2009.190066" identifierName="DOI"/>
+                            <identifier root="LocalDocBook" extension="e12" identifierName="Skinner 2010"/>
+                        </identifiers>
+                        <title
+                            value="NICE guidance. Chest pain of recent onset: assessment and diagnosis of recent onset chest pain or discomfort of suspected cardiac origin"/>
+                        <location value="http://heart.bmj.com/content/96/12/974.long"/>
+                        <citation
+                            value="Skinner JS, Smeeth L, Kendall JM, Adams PC, Timmis A, Chest Pain Guideline Development Group. NICE guidance. Chest pain of recent onset: assessment and diagnosis of recent onset chest pain or discomfort of suspected cardiac origin. Heart. 2010 June 01;96(12):974-8."
+                        />
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+        <applicability>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Adult patients"/>
+                <value code="133936004 |Adult (person)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalFocus"/>
+                <description value="Adult with stable CP being considered for cardiology consultation (excluding unstable symptoms and ACS)"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Outpatient"/>
+                <value code="33022008 |Hospital-based outpatient department (environment)|" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Provider in Primary Care Clinic"/>
+            </coverage>
+            <coverage>
+                <focus value="WorkflowTask"/>
+                <description value="noninvasive diagnostic orders (stress testing)"/>
+            </coverage>
+        </applicability>
+
+        <status value="Active"/>
+
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180612"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <!-- Update to latest schema compliance, add applicability codes for common items -->
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180529"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <!-- final publication, set to active -->
+                <eventType value="Published"/>
+                <eventDateTime value="20180326"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <!-- draft delivery -->
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20180228"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Superseded"/>
+                <!-- revise to final version of CCWP -->
+                <eventDateTime value="20180226"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20170829"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Pre-published"/>
+                <eventDateTime value="20170829"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Bruce"/>
+                        <dt:part type="FAM" value="Bray"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Professor, Cardiovascular Medicine, University of Utah School of Medicine; Staff
+                                Cardiologist, Salt Lake City VA Medical Center (VAMC)"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Scott"/>
+                        <dt:part type="FAM" value="Wall"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Assistant Professor, Cardiovascular Medicine, University of Utah; School of
+                                Medicine Staff Cardiologist, Electrophysiology, Salt Lake City VAMC"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Aiden"/>
+                        <dt:part type="FAM" value="Abidov"/>
+                        <dt:part type="TITLE" value="MD, PhD"/>
+                    </name>
+                    <affiliation>
+                        <name
+                            value="Professor of Medicine, Wayne State University; Section Chief, Cardiology, John
+                                Dingell VAMC"
+                        />
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 B3 Group, Inc.
+                    NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+                    See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007."/>
+                <rightsHolder xsi:type="Organization">
+                    <name value="B3 Group, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 Cognitive Medical Systems, Inc.
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: https://bitbucket.org/cogmedsys/hl7-kas-examples
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. https://bitbucket.org/cogmedsys/kas-source-material
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007."/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value="10156 Tapestry Ct"/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value="Fairfax"/>
+                            <dt:part type="STA" value="VA"/>
+                            <dt:part type="ZIP" value="22032"/>
+                        </address>
+                    </addresses>
+                    <name value="B3 Group, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+        </usageTerms>
+        </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <codesystem name="RXNorm" id="2.16.840.1.113883.6.88" version="5-Mar-18"/>
+        <codesystem name="LOINC" id="2.16.840.1.113883.6.1" version="2.61"/>
+        
+        <def name="resting12LeadElectrocardiogram">
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ElectricalActivityEvaluationOfBodyStructureAction" codeProperty="topicFocus"
+                dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="de405a38-1cc8-44ef-81e7-fd1c0acf9421" display="Electrical activity evaluation">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:Interval">
+                    <elm:low xsi:type="elm:Add">
+                        <elm:operand xsi:type="elm:Today"/>
+                        <elm:operand xsi:type="elm:Quantity" unit="Month" value="-2"/>
+                    </elm:low>
+                    <elm:high xsi:type="elm:Today"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+    </externalData>
+
+    <actionGroup>
+        <behaviors>
+            <behavior xsi:type="GroupOrganizationBehavior" value="VisualGroup"/>
+        </behaviors>
+        <subElements>
+
+            <actionGroup>
+                <title value="Clinical Stability"/>
+                <description
+                    value="This order set is not applicable for use with patients who are unstable based on clinician judgement. 
+                            Examples of unstable patients include, but are not limited to, patients with chest pain pattern suggestive of ACS 
+                            (e.g., those with new onset resting CP, CP with minimal exertion, new unstable angina pattern, ST-segment elevation, non–ST-segment elevation myocardial infarction on ECG, or suspected aortic dissection), 
+                            and patients with any of the following symptoms or findings. 
+                            Consider transferring unstable patients to the nearest emergency department immediately"/>
+                <subElements>
+                    <simpleAction xsi:type="CollectInformationAction">
+                        <textEquivalent value="Ongoing resting chest pain for > 20 minutes with ST elevation or depression on ECG"/>
+                        <documentationConcept>
+                            <prompt value="Ongoing resting chest pain for > 20 minutes with ST elevation or depression on ECG"/>
+                            <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                        <responseBinding property="hasOngoingRestChestPain"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CollectInformationAction">
+                        <textEquivalent value="Onset of new resting chest pain episodes within the past week"/>
+                        <documentationConcept>
+                            <prompt value="Onset of new resting chest pain episodes within the past week"/>
+                            <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                        <responseBinding property="hasOnsetOfNewRestChestPainEpisodes"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CollectInformationAction">
+                        <textEquivalent value="New onset, recurrent chest pain with minimal exertion over the past 2 months."/>
+                        <documentationConcept>
+                            <prompt value="New onset, recurrent chest pain with minimal exertion over the past 2 months."/>
+                            <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                        <responseBinding property="hasNewOnsetRecurrentChestPain"/>
+                    </simpleAction>
+                    <simpleAction xsi:type="CollectInformationAction">
+                        <textEquivalent value="Previously stable exertional angina now occurring with minimal activity over the past 2 months."/>
+                        <documentationConcept>
+                            <prompt value="Previously stable exertional angina now occurring with minimal activity over the past 2 months."/>
+                            <responseDataType value="Boolean"/>
+                        </documentationConcept>
+                        <responseBinding property="hasPreviouslyStableExertionalAnginaNowOccurring"/>
+                    </simpleAction>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <behaviors>
+                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                </behaviors>
+                <conditions>
+                    <condition>
+                        <logic xsi:type="elm:IsFalse">
+                            <elm:operand xsi:type="elm:Or">
+                                <elm:operand xsi:type="elm:Or">
+                                    <elm:operand xsi:type="elm:Property" path="hasOngoingRestChestPain">
+                                        <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                    </elm:operand>
+                                    <elm:operand xsi:type="elm:Property" path="hasOnsetOfNewRestChestPainEpisodes">
+                                        <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                    </elm:operand>
+                                </elm:operand>
+                                <elm:operand xsi:type="elm:Or">
+                                    <elm:operand xsi:type="elm:Property" path="hasNewOnsetRecurrentChestPain">
+                                        <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                    </elm:operand>
+                                    <elm:operand xsi:type="elm:Property" path="hasPreviouslyStableExertionalAnginaNowOccurring">
+                                        <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                    </elm:operand>
+                                </elm:operand>
+                            </elm:operand>
+                        </logic>
+                        <conditionRole/>
+                    </condition>
+                </conditions>
+                <title value="Consults and Referrals"/>
+
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="AllOrNone"/>
+                        </behaviors>
+                        <title value="Cardiology consult order"/>
+                        <description
+                            value="Consider other consult modalities which might be available (e.g., e-consult or other rapidly iterative consult method. A simple consult is included here as the overarching clinical intent."/>
+                        <subElements>
+                            <simpleAction order="1" xsi:type="CreateAction">
+                                <textEquivalent value="Referral to cardiology to evaluate chest pain (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:TSR-NoModel">
+                                    <elm:element name="TSR">
+                                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Referral to cardiology">
+                                            <elm:system name="TSR"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CollectInformationAction">
+
+                                <textEquivalent value="Reason for cardiology consultation"/>
+                                <documentationConcept>
+                                    <prompt value="Reason for cardiology consultation"/>
+                                    <responseDataType value="Code"/>
+                                    <responseCardinality value="Multiple"/>
+                                    <responseRange xsi:type="EnumerationConstraint">
+                                        <constraintType value="List"/>
+                                        <item>
+                                            <codes>
+                                                <code code="429559004" codeSystem="SNOMED CT"/>
+                                            </codes>
+                                            <displayText value="typical angina"/>
+                                        </item>
+                                        <item>
+                                            <codes>
+                                                <code code="102589003" codeSystem="SNOMED CT"/>
+                                            </codes>
+                                            <displayText value="atypical chest pain"/>
+                                        </item>
+                                        <item>
+                                            <codes>
+                                                <code code="371806006" codeSystem="SNOMED CT"/>
+                                            </codes>
+                                            <displayText
+                                                value="progressive angina symptoms in a stable patient with known CAD (if the patient is unstable based upon clinical or test results, direct physician-to-physician communication is required)"
+                                            />
+                                        </item>
+                                        <item fillIn="true">
+                                            <displayText value="other"/>
+                                        </item>
+                                    </responseRange>
+                                </documentationConcept>
+                            </simpleAction>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <textEquivalent value="Goal of cardiology consultation"/>
+                                <documentationConcept>
+                                    <prompt value="Goal of cardiology consultation"/>
+                                    <responseDataType value="String"/>
+                                    <responseCardinality value="Single"/>
+                                    <responseRange xsi:type="EnumerationConstraint">
+                                        <constraintType value="List"/>
+                                        <item fillIn="true">
+                                            <displayText value="Goal"/>
+                                        </item>
+                                    </responseRange>
+                                </documentationConcept>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Imaging and ECG"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Electrocardiogram/Chest X-ray"/>
+                        <description
+                            value="Consider ordering prior to the cardiology consultation. Resting 12-lead electrocardiogram is required if it has not been obtained within the past two months."/>
+                        <subElements>
+                            <simpleAction order="1" xsi:type="CreateAction">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:Not">
+                                            <elm:operand xsi:type="elm:Exists">
+                                                <elm:operand xsi:type="elm:ExpressionRef" name="resting12LeadElectrocardiogram"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="Order sentence: resting 12-lead electrocardiogram to evaluate chest pain (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ElectricalActivityEvaluationOfBodyStructureRequest">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="de405a38-1cc8-44ef-81e7-fd1c0acf9421"
+                                            display="Electrical activity evaluation">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="bodyStructure">
+                                        <elm:value xsi:type="elm:Code" code="80891009" display="Heart structure">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="usingDevice">
+                                        <elm:value xsi:type="elm:Code" code="86184003" display="Electrocardiographic monitor and recorder, device">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="physiologicPatientState">
+                                        <elm:value xsi:type="elm:Code" code="128975004" display="Resting state">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="indicationForProcedure">
+                                        <elm:value xsi:type="elm:Code" code="29857009" display="Chest pain">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction order="2" xsi:type="CreateAction">
+                                <textEquivalent value="Order sentence: x-ray chest to evaluate chest pain (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:RadiographicImagingOfBodyStructureRequest">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="278110001" display="x-ray chest">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="bodyStructure">
+                                        <elm:value xsi:type="elm:Code" code="51185008" display="Thoracic structure">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="usingDevice">
+                                        <elm:value xsi:type="elm:Code" code="68080007" display="Radiographic unit, device">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="indicationForProcedure">
+                                        <elm:value xsi:type="elm:Code" code="29857009" display="Chest pain">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Coronary CTA"/>
+                        <description value="Consider ordering prior to the cardiology consultation."/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt value="Is Coronary CTA (cCTA) availability at the facility"/>
+                                    <responseDataType value="Boolean"/>
+                                    <responseCardinality value="Single"/>
+                                </documentationConcept>
+                                <responseBinding property="cCTAAvailability"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="1">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:IsTrue">
+                                            <elm:operand xsi:type="elm:Property" path="cCTAAvailability">
+                                                <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="Coronary CTA angiogram (cCTA) chest to evaluate chest pain (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:ComputedTomographyImagingOfBodyStructure">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="312251004" display="coronary CTA chest to evaluate chest pain">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="bodyStructure">
+                                        <elm:value xsi:type="elm:Code" code="41801008" display="Coronary artery structure">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="usingDevice">
+                                        <elm:value xsi:type="elm:Code" code="54953005" display="Computerized axial tomography scanner, device">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="usingSubstance">
+                                        <elm:value xsi:type="elm:Code" code="419098001" display="X-ray contrast media">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="indicationForProcedure">
+                                        <elm:value xsi:type="elm:Code" code="29857009" display="Chest pain">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Echocardiogram"/>
+                        <description
+                            value="Consider for patients with suspected pericarditis, myocarditis, hypertrophic cardiomyopathy, or pulmonary hypertension."/>
+                        <subElements>
+                            <simpleAction xsi:type="CollectInformationAction">
+                                <documentationConcept>
+                                    <prompt
+                                        value="Is the patient suspected with pericarditis, myocarditis, hypertrophic cardiomyopathy, or pulmonary hypertension."/>
+                                    <responseDataType value="Boolean"/>
+                                    <responseCardinality value="Single"/>
+                                </documentationConcept>
+                                <responseBinding property="patientSuspectedWithPericarditis"/>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="2">
+                                <conditions>
+                                    <condition>
+                                        <logic xsi:type="elm:IsTrue">
+                                            <elm:operand xsi:type="elm:Property" path="patientSuspectedWithPericarditis">
+                                                <elm:source xsi:type="elm:ParameterRef" name="Responses"/>
+                                            </elm:operand>
+                                        </logic>
+                                        <conditionRole/>
+                                    </condition>
+                                </conditions>
+                                <textEquivalent value="Resting echocardiogram to evaluate chest pain (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:UltrasoundImagingOfBodyStrutureRequest">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="278292003" display="Resting echocardiogram to evaluate chest pain">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="bodyStructure">
+                                        <elm:value xsi:type="elm:Code" code="80891009" display="Heart structure">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="physiologicPatientState">
+                                        <elm:value xsi:type="elm:Code" code="128975004" display="Resting state">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="usingDevice">
+                                        <elm:value xsi:type="elm:Code" code="467663007" display="Cardiovascular ultrasound imaging system">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="indicationForProcedure">
+                                        <elm:value xsi:type="elm:Code" code="29857009" display="Chest pain">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Laboratory Tests"/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Consider the following tests to be completed prior to the cardiology consultation."/>
+                        <subElements>
+                            <simpleAction order="1" xsi:type="CreateAction">
+                                <textEquivalent value="basic metabolic profile (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:MeasurementOfLaboratoryTestRequest">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="bd01faa8-443c-4ad6-9cb6-ea50b4d7a093" display="Basic metabolic profile">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction order="2" xsi:type="CreateAction">
+                                <textEquivalent value="complete blood count (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:MeasurementOfLaboratoryTestRequest">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="26604007" display="Complete blood count">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction order="3" xsi:type="CreateAction">
+                                <textEquivalent value="fasting lipid profile (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:MeasurementOfLaboratoryTestRequest">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="16254007" display="Fasting lipid profile">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction order="4" xsi:type="CreateAction">
+                                <textEquivalent value="thyroid function testing (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:MeasurementOfLaboratoryTestRequest">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="35650009" display="Thyroid function testing">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction order="5" xsi:type="CreateAction">
+                                <textEquivalent value="brain natriuretic peptide (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:MeasurementOfLaboratoryTestRequest">
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="390917008" display="Brain natriuretic peptide">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <supportingEvidence>
+                    <evidence>
+                        <resources>
+                            <resource>
+                                <identifiers>
+                                    <identifier root="LocalDocBook" extension="e4"/>
+                                </identifiers>
+                            </resource>
+                        </resources>
+                    </evidence>
+                </supportingEvidence>
+                <title value="Cardiac Risk Stratification"/>
+                <description
+                    value="For stable patients, these orders may assist in cardiac risk stratification.
+                    A link to the ACC/AHA clinical practice guideline for stress testing should be made available to ordering providers:"/>
+                <subElements>
+                    <actionGroup>
+                        <title
+                            value="Assess for contraindications to stress testing such as: Acute Congestive Heart Failure (CHF), acute MI or unstable angina, severe aortic stenosis, unstable rhythm, aortic aneurysm/dissection, endocarditis, acute pericarditis, acute pulmonary embolus/infarction, acute systemic illness/infection, severe hypertension, inability to cooperate, inability to exercise (&amp;lt;5 METs), left bundle branch block (LBBB), etc."/>
+                        <subElements>
+                            <actionGroup>
+                                <behaviors>
+                                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                                </behaviors>
+                                <title value="Exercise Stress Testing"/>
+                                <description
+                                    value="Consider for patients with no known or prior coronary artery disease, low probability for coronary artery disease, ability to exercise, normal electrocardiogram, and heart rate &gt; 60 beats per minute."/>
+                                <subElements>
+                                    <simpleAction order="1" xsi:type="CreateAction">
+                                        <textEquivalent value="Exercise ECG (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:ElectricalActivityEvaluationOfBodyStructure">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="de405a38-1cc8-44ef-81e7-fd1c0acf9421"
+                                                    display="Electrical activity evaluation">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="80891009" display="Heart structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="128976003" display="Exercise state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="86184003"
+                                                    display="Electrocardiographic monitor and recorder, device">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                            <actionGroup>
+                                <behaviors>
+                                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                                </behaviors>
+                                <title value="Stress Testing with Echocardiography"/>
+                                <description
+                                    value="Consider for patients with no known or prior coronary artery disease, low to intermediate probability for coronary artery disease, ability to exercise, and no evidence of significant regional wall motion abnormalities or conduction abnormalities (IVCD/bundle branch block or pacing) of 12-lead electrocardiogram."/>
+                                <subElements>
+                                    <simpleAction xsi:type="CreateAction" order="1">
+                                        <textEquivalent value="Exercise Echocardiography (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:UltrasoundImagingOfBodyStructure">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="278292003" display="Exercise Echocardiography">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="80891009" display="Heart structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="128976003" display="Exercise state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="467663007" display="Cardiovascular ultrasound imaging system">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                            <actionGroup>
+                                <behaviors>
+                                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                                </behaviors>
+                                <title value="Dobutamine Stress Testing with Myocardial Perfusion Imaging (MPI)"/>
+                                <description
+                                    value="Consider for patients with no known or prior coronary artery disease, intermediate probability for coronary artery disease, inability to exercise, and normal electrocardiogram."/>
+                                <subElements>
+                                    <simpleAction xsi:type="CreateAction" order="1">
+                                        <textEquivalent value="dobutamine stress myocardial perfusion imaging (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:RadionuclideImagingOfBodyStructureRequest">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="312421008"
+                                                    display="Dobutamine stress myocardial perfusion imaging">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="74281007" display="Myocardium structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="261802008" display="Gamma camera">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[0]">
+                                                <elm:value xsi:type="elm:Code" code="387145002" display="Dobutamine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[1]">
+                                                <elm:value xsi:type="elm:Code" code="89457008" display="Radioactive isotope">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="432655005" display="Cardiac stress state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                            <actionGroup>
+                                <behaviors>
+                                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                                </behaviors>
+                                <title value="Exercise Stress Testing with MPI"/>
+                                <description value="Consider for patients with known or prior CAD, ability to exercise, and normal ST-T."/>
+                                <subElements>
+                                    <simpleAction xsi:type="CreateAction">
+                                        <textEquivalent value="exercise stress myocardial perfusion imaging (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:RadionuclideImagingOfBodyStructureRequest">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="312421008" display="Radionuclide imaging ">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="74281007" display="Myocardium structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="261802008" display="Gamma camera">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[0]">
+                                                <elm:value xsi:type="elm:Code" code="89457008" display="Radioactive isotope">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="128976003" display="Exercise state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                            <actionGroup>
+                                <behaviors>
+                                    <behavior xsi:type="GroupSelectionBehavior" value="AtMostOne"/>
+                                </behaviors>
+                                <title value="Vasodilator Stress Testing with MPI"/>
+                                <description
+                                    value="Consider for patients with known or prior CAD and abnormal electrocardiogram/PPM. This subsection should also be made available to the provider for patients with known or prior CAD, abnormal electrocardiogram, and history of prior myocardial infarction or regional wall motion abnormalities."/>
+                                <subElements>
+                                    <simpleAction xsi:type="CreateAction" order="1">
+                                        <textEquivalent value="Regadenoson (Lexiscan) stress myocardial perfusion imaging (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:RadionuclideImagingOfBodyStructureRequest">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="312421008" display="Radionuclide imaging ">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="74281007" display="Myocardium structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="261802008" display="Gamma camera">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[0]">
+                                                <elm:value xsi:type="elm:Code" code="430242005" display="Regadenoson">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[1]">
+                                                <elm:value xsi:type="elm:Code" code="89457008" display="Radioactive isotope">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="432655005" display="Cardiac stress state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                    <simpleAction xsi:type="CreateAction" order="2">
+                                        <textEquivalent value="Adenosine stress testing myocardial perfusion imaging (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:RadionuclideImagingOfBodyStructureRequest">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="312421008" display="Radionuclide imaging ">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="74281007" display="Myocardium structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="261802008" display="Gamma camera">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[0]">
+                                                <elm:value xsi:type="elm:Code" code="35431001" display="Adenosine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[1]">
+                                                <elm:value xsi:type="elm:Code" code="89457008" display="Radioactive isotope">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="432655005" display="Cardiac stress state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                    <simpleAction xsi:type="CreateAction" order="3">
+                                        <textEquivalent value="Dipyridamole stress testing myocardial perfusion imaging (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:RadionuclideImagingOfBodyStructureRequest">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="312421008" display="Radionuclide imaging ">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="74281007" display="Myocardium structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="261802008" display="Gamma camera">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[0]">
+                                                <elm:value xsi:type="elm:Code" code="387371005" display="Dipyridamole">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[1]">
+                                                <elm:value xsi:type="elm:Code" code="89457008" display="Radioactive isotope">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="432655005" display="Cardiac stress state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                            <actionGroup>
+
+                                <behaviors>
+                                    <behavior xsi:type="GroupSelectionBehavior" value="AtMostOne"/>
+                                </behaviors>
+                                <title value="Dobutamine Stress Testing with Echocardiography or MPI"/>
+                                <description
+                                    value="Consider for patients with known or prior CAD, inability to exercise, normal electrocardiogram, and no prior myocardial infarction. Only one should be selected."/>
+                                <subElements>
+                                    <simpleAction xsi:type="CreateAction" order="1">
+                                        <textEquivalent value="Dobutamine stress testing echocardiography (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:UltrasoundImagingOfBodyStructureRequest">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="278292003" display="Ultrasound imaging">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="80891009" display="Heart structure ">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="467663007" display="Cardiovascular ultrasound imaging system">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[0]">
+                                                <elm:value xsi:type="elm:Code" code="387145002" display="Dobutamine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="432655005" display="Cardiac stress state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                    <simpleAction xsi:type="CreateAction" order="2">
+                                        <textEquivalent value="Dobutamine stress testing myocardial perfusion imaging (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:RadionuclideImagingOfBodyStructureRequest">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="312421008" display="Radionuclide imaging">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="74281007" display="Myocardium structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="261802008" display="Gamma camera">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[0]">
+                                                <elm:value xsi:type="elm:Code" code="387145002" display="Dobutamine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[1]">
+                                                <elm:value xsi:type="elm:Code" code="89457008" display="Radioactive isotope">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="physiologicPatientState">
+                                                <elm:value xsi:type="elm:Code" code="432655005" display="Cardiac stress state">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                            <actionGroup>
+                                <behaviors>
+                                    <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                                </behaviors>
+                                <title value="Coronary CT Angiogram"/>
+                                <description
+                                    value="Consider for patients without known coronary artery disease, low or intermediate probability for coronary artery disease, especially in presence of a history of prior inconclusive or discrepant diagnostic testing, recurrent symptoms or significant family history of CAD/multiple risk factors in young patients. Additional postprocessing (CT-FFR) or CTA stress perfusion may be ordered where available."/>
+                                <subElements>
+                                    <simpleAction xsi:type="CreateAction" order="1">
+                                        <textEquivalent value="coronary CT angiogram (routine)"/>
+                                        <actionSentence xsi:type="elm:Instance" classType="anf:ComputedTomographyImagingOfBodyStructureRequest">
+                                            <elm:element name="topicFocus">
+                                                <elm:value xsi:type="elm:Code" code="312251004" display="Computed tomography imaging">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="bodyStructure">
+                                                <elm:value xsi:type="elm:Code" code="41801008" display="Coronary artery structure">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingDevice">
+                                                <elm:value xsi:type="elm:Code" code="54953005" display="Computerized axial tomography scanner, device">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="usingSubstance[0]">
+                                                <elm:value xsi:type="elm:Code" code="419098001" display="X-ray contrast media">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                            <elm:element name="priority">
+                                                <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                                    <elm:system name="SNOMED CT"/>
+                                                </elm:value>
+                                            </elm:element>
+                                        </actionSentence>
+                                    </simpleAction>
+                                </subElements>
+                            </actionGroup>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+            <actionGroup>
+                <title value="Medications"/>
+                <description value="Consider the following medications for stable patients to be initiated prior to the cardiology consultation."/>
+                <subElements>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="AtMostOne"/>
+                        </behaviors>
+                        <title value="Antianginal Therapy"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction" order="1">
+                                <textEquivalent value="metoprolol tartrate 25 mg tablet oral twice daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType.code">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="866924" display="metoprolol tartrate 25 mg tablet oral">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" value="25" valueType="Integer"> </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.upderBound">
+                                        <elm:value xsi:type="elm:Literal" value="25" valueType="Integer"> </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229799001" display="twice daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="2">
+                                <textEquivalent value="metoprolol tartrate 50 mg tablet oral twice daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="866514" display="metoprolol tartrate 50 mg tablet oral">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" value="50" valueType="Integer"> </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.upderBound">
+                                        <elm:value xsi:type="elm:Literal" value="50" valueType="Integer"> </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229799001" display="twice daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="3">
+                                <textEquivalent value="amlodipine 5 mg tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="197361" display="amlodipine 5 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" value="5" valueType="Integer"> </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.upderBound">
+                                        <elm:value xsi:type="elm:Literal" value="5" valueType="Integer"> </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Nitroglycerin"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction" order="1">
+                                <!-- nitroglycerin is like a category with only a single item -->
+                                <textEquivalent
+                                    value="nitroglycerin 0.4 mg tablet sub-lingual every 5 minutes as needed for chest pain; maximum 3 tablets (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="198039" display="nitroglycerin 0.4 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="37839007" display="sublingual">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="indicationForProcedure">
+                                        <elm:value xsi:type="elm:Code" code="29857009" display="Chest pai">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="0.4"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="1.2"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.includeLowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.includeUpperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="1"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="471000175102" display="every 5 minutes as needed for chest pain">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="Any"/>
+                        </behaviors>
+                        <title value="Antiplatelet Therapy"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction" order="1">
+                                <textEquivalent value="aspirin 81 mg enteric coated tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="308416" display="aspirin 81 mg enteric coated tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="81"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="81"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                    <actionGroup>
+                        <behaviors>
+                            <behavior xsi:type="GroupSelectionBehavior" value="AtMostOne"/>
+                        </behaviors>
+                        <title value="Risk Factor Reduction"/>
+                        <subElements>
+                            <simpleAction xsi:type="CreateAction" order="1">
+                                <textEquivalent value="atorvastatin 20 mg tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="617310" display="atorvastatin 20 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="20"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="20"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="2">
+                                <textEquivalent value="atorvastatin 40 mg tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="617311" display="atorvastatin 40 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="40"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="40"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="3">
+                                <textEquivalent value="simvastatin 20 mg tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="312961" display="simvastatin 20 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="20"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="20"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="4">
+                                <textEquivalent value="simvastatin 40 mg tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="198211" display="simvastatin 40 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="40"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="40"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="5">
+                                <textEquivalent value="rosuvastatin 5 mg tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="859424" display="rosuvastatin 5 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="5"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="5"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="6">
+                                <textEquivalent value="rosuvastatin 10 mg tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="859747" display="rosuvastatin 10 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="10"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="10"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                            <simpleAction xsi:type="CreateAction" order="7">
+                                <textEquivalent value="rosuvastatin 20 mg tablet oral daily (routine)"/>
+                                <actionSentence xsi:type="elm:Instance" classType="anf:AdministrationOfMedicationRequest">
+                                    <elm:element name="topicType">
+                                        <elm:value xsi:type="elm:Code" code="129445006" display="Administration">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="topicFocus">
+                                        <elm:value xsi:type="elm:Code" code="859751" display="rosuvastatin 20 mg tablet">
+                                            <elm:system name="RXNorm"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="routeOfAdministration">
+                                        <elm:value xsi:type="elm:Code" code="26643006" display="Oral route">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="dosage.lowerBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="20"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.upperBound">
+                                        <elm:value xsi:type="elm:Literal" valueType="Integer" value="20"/>
+                                    </elm:element>
+                                    <elm:element name="dosage.unit">
+                                        <elm:value xsi:type="elm:Code" code="258684004" display="milligram">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="frequency">
+                                        <elm:value xsi:type="elm:Code" code="229797004" display="once daily">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                    <elm:element name="priority">
+                                        <elm:value xsi:type="elm:Code" code="50811001" display="routine">
+                                            <elm:system name="SNOMED CT"/>
+                                        </elm:value>
+                                    </elm:element>
+                                </actionSentence>
+                            </simpleAction>
+                        </subElements>
+                    </actionGroup>
+                </subElements>
+            </actionGroup>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>
