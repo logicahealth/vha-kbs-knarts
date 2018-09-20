@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?schematron-schema href="../main/schematron/knowledgeartifact.sch"?>
+<?schematron-schema href="../main/schematron/documentationtemplates.sch"?>
+<knowledgeDocument xmlns="urn:hl7-org:knowledgeartifact:r1" xmlns:dt="urn:hl7-org:cdsdt:r2" xmlns:elm="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:a="urn:hl7-org:cql-annotations:r1" xmlns:p1="http://www.w3.org/1999/xhtml"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:anf="http://hl7.org/anf"
+    xsi:schemaLocation="urn:hl7-org:knowledgeartifact:r1 ../../schema/knowledgeartifact/knowledgedocument.xsd urn:hl7-org:elm:r1 ../../schema/elm/clinicalexpression.xsd urn:hl7-org:elm-types:r1 ../../schema/elm/types.xsd urn:hl7-org:cql-annotations:r1 ../../schema/elm/cqlannotations.xsd">
+    <metadata>
+        <identifiers>
+            <identifier root="urn:va.gov:kbs:knart:artifact:r1" extension="2e225a2b-2821-5815-bc68-4cc1f6db9824" identifierName="B2" version="1.0"/>
+            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0003AE" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0003AE"/>
+            <identifier root="urn:cognitivemedicine.com:lab:jira" extension="KP-30" identifierName="Jira KP-30"/>
+        </identifiers>
+        <artifactType value="Rule"/>
+        <schemaIdentifier root="urn:hl7-org:knowledgeartifact:r1" version="1"/>
+        <dataModels>
+            <modelReference>
+                <description value="VA Analysis Normal Form Model"/>
+                <referencedModel value="urn:solor.io:anf-model:1.0"/>
+            </modelReference>
+        </dataModels>
+
+        <title value="Neurology: Traumatic Brain Injury (TBI) Screening Rule"/>
+
+        <relatedResources>
+            <relatedResource>
+                <relationship value="DerivedFrom"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="sr1" identifierName="CCWP" root="LocalDocBook" version="1.0"/>
+                            <identifier root="urn:va.gov:kbs:knart:ccwp:r1" extension="B41" version="1" identifierName="TBI"/>
+                        </identifiers>
+                        <title value="Neurology: Traumatic Brain Injury Screening Clinical Content White Paper"/>
+                        <description value="Clinical Content White Paper"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="CSD" extension="sr2"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0003AC" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0003AC"/>
+                        </identifiers>
+                        <title value="Neurology: Traumatic Brain Injury (TBI) Screening Rule Conceptual Structure Document"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+            <relatedResource>
+                <relationship value="AssociatedResource"/>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier root="LocalDocBook" identifierName="KVRpt" extension="sr3"/>
+                            <identifier root="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" extension="CLIN0003AG" identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0003AG"/>
+                        </identifiers>
+                        <title value="Neurology: Traumatic Brain Injury (TBI) Screening Rule KNART Validation Report"/>
+                    </resource>
+                </resources>
+            </relatedResource>
+        </relatedResources>
+
+        <supportingEvidence>
+            <evidence>
+                <resources>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="10.1111/j.1745-7599.2011.00658.x" identifierName="DOI" root="https://doi.org"/>
+                            <identifier extension="e1" identifierName="rehabtoolkit" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Mild Traumatic Brain Injury Rehabilitation Toolkit."/>
+                        <location value="https://doi.org/10.1111/j.1745-7599.2011.00658.x"/>
+                        <citation value="Mild Traumatic Brain Injury Rehabilitation Toolkit. Army Medical Department Center and School ( AMEDDC&amp;S ), U.S. Army Health Readiness Center of Excellence ( HRCoE ) website. Accessed August 28, 2017"/>
+                    </resource>
+                    <resource>
+                        <identifiers>
+                            <identifier extension="e2" identifierName="VA/DoD" root="LocalDocBook"/>
+                        </identifiers>
+                        <title value="Management of Concussion-mild Traumatic Brain Injury (mTBI), Version 2.0 – 2016. VA/DoD Clinical Practice Guidelines website"/>
+                        <location value="https://www.healthquality.va.gov/guidelines/Rehab/mtbi/mTBICPGFullCPG50821816.pdf"/>
+                        <citation value="Management of Concussion-mild Traumatic Brain Injury (mTBI), Version 2.0 – 2016. VA/DoD Clinical Practice Guidelines website. Management of Concussion/mTBI Working Group. Published February 2016"/>
+                    </resource>
+                </resources>
+            </evidence>
+        </supportingEvidence>
+
+        <applicability>
+            <coverage>
+                <focus value="TargetUser"/>
+                <description value="Primary Care"/>
+                <value code="453231000124104 |Primary care provider (occupation)|" codeSystemName="SNOMED CT" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalFocus"/>
+                <description value="Adult patients with suspected Traumatic Brain Injury"/>
+            </coverage>
+            <coverage>
+                <focus value="ClinicalVenue"/>
+                <description value="Outpatient"/>
+                <value code="33022008 |Hospital-based outpatient department (environment)|" codeSystemName="SNOMED CT" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientAgeGroup"/>
+                <description value="Adult patients with suspected Traumatic Brain Injury"/>
+                <value code="133936004 |Adult (person)|" codeSystemName="SNOMED CT" codeSystem="SNOMED CT"/>
+            </coverage>
+            <coverage>
+                <focus value="PatientGender"/>
+                <description value="All"/>
+            </coverage>
+            <coverage>
+                <focus value="WorkflowTask"/>
+                <description value="Request Neurology Consultation"/>
+            </coverage>
+        </applicability>
+
+        <status value="Active"/>
+
+        <eventHistory>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180620"/>
+                <!-- Fix SME names. -->
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180618"/>
+                <!-- Completed rework. -->
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Published"/>
+                <eventDateTime value="20180503"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180503"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Reviewed"/>
+                <eventDateTime value="20180501"/>
+            </artifactLifeCycleEvent>
+            <artifactLifeCycleEvent>
+                <eventType value="Created"/>
+                <eventDateTime value="20180403"/>
+            </artifactLifeCycleEvent>
+        </eventHistory>
+
+        <contributions>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Donald"/>
+                        <dt:part type="FAM" value="Higgins"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="National Program Director of Neurology 810 Vermont Ave NW Rm 668 Washington, DC 20420"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Glenn"/>
+                        <dt:part type="FAM" value="Graham"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Deputy National Director of Neurology 810 Vermont Ave NW Rm 670 Washington, DC 20420"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Ellis"/>
+                        <dt:part type="FAM" value="Boudreau"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Staff Neurologist, Portland VAMC Portland VAMC 3710 SW US Veterans Hospital Road Portland, OR 97239"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Jason"/>
+                        <dt:part type="FAM" value="Sico"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Physician, VAMC Connecticut VAMC Connecticut 950 Campbell Ave West Haven, CT 06516"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Michael"/>
+                        <dt:part type="FAM" value="Phipps"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Neurologist, VAMC Baltimore, Baltimore VAMC 10 N Greene St Baltimore, MD 21201"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Sarah"/>
+                        <dt:part type="FAM" value="Maulden"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="Assistant Professor of Neurology 550 Foothill Dr, Ste 400 SLC, UT 84113"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Joel"/>
+                        <dt:part type="FAM" value="Scholten"/>
+                        <dt:part type="TITLE" value="MD"/>
+                    </name>
+                    <affiliation>
+                        <name value="National Director, Physical Medicine and Rehabilitation, 50 Irving St NW Washington, DC 20422"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+            <contribution>
+                <contributor xsi:type="Person">
+                    <name>
+                        <dt:part type="GIV" value="Lisa"/>
+                        <dt:part type="FAM" value="Perla"/>
+                    </name>
+                    <affiliation>
+                        <name value="Rehabilitation Planning Specialist, 31 Hopkins Plaza, Room 1250 Baltimore, MD 21201"/>
+                    </affiliation>
+                </contributor>
+                <role value="Author"/>
+            </contribution>
+        </contributions>
+
+        <publishers>
+            <publisher xsi:type="Organization">
+                <name value="Department of Veterans Affairs"/>
+            </publisher>
+        </publishers>
+
+        <usageTerms>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 B3 Group, Inc.
+                    NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    Portions of this content are derivative works from content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0.
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+                    See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order VA11817F10080007."/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value="10156 Tapestry Ct"/>
+                            <dt:part type="ADL" value=""/>
+                            <dt:part type="CTY" value="Fairfax"/>
+                            <dt:part type="STA" value="VA"/>
+                            <dt:part type="ZIP" value="22032"/>
+                        </address>
+                    </addresses>
+                    <name value="B3 Group, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+            <rightsDeclaration>
+                <assertedRights
+                    value="Copyright 2018 Cognitive Medical Systems, Inc.
+                    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+                    You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+                    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+                    This and related content produced by Cognitive Medical Systems, Inc. licensed under the Apache License, Version 2.0 is available at: https://bitbucket.org/cogmedsys/hl7-kas-examples
+                    Additional portions of this content are derivative works from content contributed by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. https://bitbucket.org/cogmedsys/kas-source-material
+                    Contributions from 2013-2018 were performed either by US Government employees, or under US Veterans Health Administration contracts.
+                    US Veterans Health Administration contributions by government employees are work of the U.S. Government and are not subject to copyright protection in the United States. Portions contributed by government employees are USGovWork (17USC §105). Not subject to copyright. See: https://www.usa.gov/government-works
+                    Contribution by contractors to the US Veterans Health Administration during this period are contractually contributed under the Apache License, Version 2.0 and US Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007."/>
+                <rightsHolder xsi:type="Organization">
+                    <addresses>
+                        <address>
+                            <dt:part type="AL" value="9444 Waples Street"/>
+                            <dt:part type="ADL" value="Suite 300"/>
+                            <dt:part type="CTY" value="San Diego"/>
+                            <dt:part type="STA" value="CA"/>
+                            <dt:part type="ZIP" value="92121"/>
+                        </address>
+                    </addresses>
+                    <name value="Cognitive Medical Systems, Inc."/>
+                </rightsHolder>
+            </rightsDeclaration>
+        </usageTerms>
+    </metadata>
+    <externalData>
+        <codesystem name="SNOMED CT" id="2.16.840.1.113883.6.96" version="United States Edition 20180301"/>
+        <def name="Outpatient">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="OutpatientQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="DeploymentDates">
+            <elm:annotation>Dates when the veteran was deployed</elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="DeploymentDatesQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+                <elm:return>
+                    <elm:expression xsi:type="elm:Property" path="timing.lowerBound"/>
+                </elm:return>
+                <elm:sort>
+                    <elm:by xsi:type="elm:ByColumn" path="timing" direction="desc"/>
+                </elm:sort>
+            </elm:expression>
+        </def>
+        <def name="MostRecentDeployment">
+            <elm:expression xsi:type="elm:Indexer">
+                <elm:operand xsi:type="elm:ExpressionRef" name="DeploymentDates"/>
+                <elm:operand xsi:type="elm:Literal" value="1" valueType="Integer"/>
+            </elm:expression>
+        </def>
+        <def name="InjuredWithHeadTraumaDuringDeployment">
+            <elm:annotation>Injured with head trauma resulting in alteration or loss of consciousness during deployment.</elm:annotation>
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code"
+                        code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                        ->(363702006 |Has focus (attribute))->[3006004 |Disturbance of consciousness (finding)]-
+                        ->(42752001 |Due to (attribute))->[82271004 |Injury of head (disorder)];"
+                        display="Postcoordinated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:List">
+                    <elm:element xsi:type="elm:ExpressionRef" name="DeploymentDates"/>
+                </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="MildTraumaticBrainInjuryReferral">
+            <elm:annotation>A referral is in process for evaluation of mild traumatic brain injury with current symptomatology</elm:annotation>
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="MildTraumaticBrainInjuryReferralQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[127295002 |Traumatic brain injury (disorder)]-
+                                ->(246112005 |Severity (attribute))->[255604002 |Mild (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="TraumaticBrainInjuryScreeningCompleted">
+            <elm:annotation>A traumatic brain injury screening has been completed since the most recent deployment.</elm:annotation>
+            <elm:expression xsi:type="elm:Retrieve" dataType="anf:ClinicalStatement" codeProperty="topic" dateProperty="dateTime">
+                <elm:codes xsi:type="elm:List">
+                    <elm:element xsi:type="elm:Code" code="[225391007 |Injury assessment (procedure)]
+                        ->(363702006 |Has focus (attribute))->[127295002 |Traumatic brain injury (disorder)]" display="Postcooridnated Expression">
+                        <elm:system name="SNOMED CT"/>
+                    </elm:element>
+                </elm:codes>
+                <elm:dateRange xsi:type="elm:ExpressionRef" name="MostRecentDeployment"> </elm:dateRange>
+            </elm:expression>
+        </def>
+        <def name="HasEmergencyEvaluationAndTreatmentConditions">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="HasEmergencyEvaluationAndTreatmentConditionsQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="HasSevereTraumaticBrainInjuryConditions">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="HasSevereTraumaticBrainInjuryConditionsQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[127295002 |Traumatic brain injury (disorder)]-
+                                ->(246112005 |Severity (attribute))->[24484000 |Severe (severity modifier) (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="HasModerateTraumaticBrainInjuryConditions">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="HasModerateTraumaticBrainInjuryConditionsQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[127295002 |Traumatic brain injury (disorder)]-
+                                ->(246112005 |Severity (attribute))->[6736007 |Moderate (severity modifier) (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentHeadache">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentHeadacheQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[25064002 |Headache (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PersistentDizziness">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PersistentDizzinessQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[404640003 |Dizziness (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PersistentBalanceDisorder">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PersistentBalanceDisorderQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[387603000 |Impairment of balance (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentNausea">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentNauseaQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[422587007 |Nausea (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentSleepDisturbance">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentSleepDisturbanceQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[44186003 |Dyssomnia (disorder)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentVisionChanges">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentVisionChangesQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[63102001 |Visual disturbance (disorder)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentLightSensitivity">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentLightSensitivityQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[246622003 |Eyes sensitive to light (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentTinnitus">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentTinnitusQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[60862001 |Tinnitus (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentNumbness">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentNumbnessQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[44077006 |Numbness (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+
+        <def name="PeristentTingling">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentTinglingQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[62507009 |Pins and needles (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentMemoryProblems">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentMemoryProblemsQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[386807006 |Memory impairment (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentCognitiveProblems">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentCognitiveProblemsQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[386806002 |Impaired cognition (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+        <def name="PeristentBehavioralChanges">
+            <elm:expression xsi:type="elm:Query">
+                <elm:source alias="PeristentBehavioralChangesQuery">
+                    <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                        <elm:element name="statementType">
+                            <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                        <elm:element name="topic">
+                            <elm:value xsi:type="elm:Code"
+                                code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]-
+                                ->(363702006 |Has focus (attribute))->[417350008 |Altered behavior (finding)]-
+                                ->(263502005 |Clinical course (attribute))->[62459000 |Chronic persistent (qualifier value)];"
+                                display="Postcoordinated Expression">
+                                <elm:system name="SNOMED CT"/>
+                            </elm:value>
+                        </elm:element>
+                    </elm:expression>
+                </elm:source>
+            </elm:expression>
+        </def>
+
+        <trigger xsi:type="DataEventTrigger" triggerType="DataElementAccessed">
+            <def name="AccessOfPatientRecord">
+                <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Any access of the patient record</a:s>
+                    </elm:annotation>
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </elm:expression>
+            </def>
+        </trigger>
+    </externalData>
+    <expressions>
+        <def name="PatientAge">
+            <elm:expression xsi:type="elm:SingletonFrom">
+                <elm:operand xsi:type="elm:Query">
+                    <elm:source alias="ageQuery">
+                        <elm:expression xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                            <elm:element name="statementType">
+                                <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                            <elm:element name="topic">
+                                <elm:value xsi:type="elm:Code"
+                                    code="[a997cc03-3e99-40eb-833a-6374c7750a3a |Observation procedure (procedure)]
+                                    ->(363702006 |Has focus (attribute))->[105726004 |Age AND/OR growth finding (finding)]"
+                                    display="Postcoordinated Expression">
+                                    <elm:system name="SNOMED CT"/>
+                                </elm:value>
+                            </elm:element>
+                        </elm:expression>
+                    </elm:source>
+                    <elm:return>
+                        <elm:expression xsi:type="elm:Property" path="result.lowerBound"/>
+                    </elm:return>
+                </elm:operand>
+            </elm:expression>
+        </def>
+    </expressions>
+    <conditions>
+        <condition>
+            <logic xsi:type="elm:GreaterOrEqual">
+                <elm:annotation>Adult</elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="PatientAge"/>
+                <elm:operand xsi:type="elm:Quantity" value="18"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:Exists">
+                <elm:annotation>Outpatient</elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="Outpatient"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:Exists">
+                <elm:annotation>Injured with head trauma resulting in alteration or loss of consciousness during deployment</elm:annotation>
+                <elm:operand xsi:type="elm:ExpressionRef" name="InjuredWithHeadTraumaDuringDeployment"/>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:Exists">
+                    <elm:annotation>A referral is in process for evaluation of mild traumatic brain injury with current symptomatology</elm:annotation>
+                    <elm:operand xsi:type="elm:ExpressionRef" name="MildTraumaticBrainInjuryReferral"/>
+                </elm:operand>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+        <condition>
+            <logic xsi:type="elm:Not">
+                <elm:operand xsi:type="elm:Exists">
+                    <elm:annotation>A traumatic brain injury screening has been completed since the most recent deployment</elm:annotation>
+                    <elm:operand xsi:type="elm:ExpressionRef" name="TraumaticBrainInjuryScreeningCompleted"/>
+                </elm:operand>
+            </logic>
+            <conditionRole value="ApplicableScenario"/>
+        </condition>
+    </conditions>
+    <actionGroup>
+        <conditions>
+            <condition>
+                <logic xsi:type="elm:AnyTrue">
+                    <elm:annotation xsi:type="a:Annotation">
+                        <a:s>Persistent symptoms which may include headache, dizziness/balance disorder, nausea, sleep disturbance, vision changes/ light sensitivity, tinnitus, numbness and/or tingling, memory/cognitive problems, behavioral changes</a:s>
+                    </elm:annotation>
+                    <elm:source xsi:type="elm:List">
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentHeadache"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PersistentDizziness"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PersistentBalanceDisorder"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentNausea"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentSleepDisturbance"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentVisionChanges"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentLightSensitivity"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentTinnitus"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentNumbness"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentTingling"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentMemoryProblems"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentCognitiveProblems"/>
+                        </elm:element>
+                        <elm:element xsi:type="elm:Exists">
+                            <elm:operand xsi:type="elm:ExpressionRef" name="PeristentBehavioralChanges"/>
+                        </elm:element>
+                    </elm:source>
+                </logic>
+                <conditionRole value="ApplicableScenario"/>
+            </condition>
+            <condition>
+                <logic xsi:type="elm:Not">
+                    <elm:operand xsi:type="elm:Exists">
+                        <elm:annotation>Meets condition criteria for Emergency Evaluation and Treatment</elm:annotation>
+                        <elm:operand xsi:type="elm:ExpressionRef" name="HasEmergencyEvaluationAndTreatmentConditions"/>
+                    </elm:operand>
+                </logic>
+                <conditionRole value="ApplicableScenario"/>
+            </condition>
+            <condition>
+                <logic xsi:type="elm:Not">
+                    <elm:operand xsi:type="elm:Exists">
+                        <elm:annotation>Meets condition criteria for Severe Traumatic Brain Injury</elm:annotation>
+                        <elm:operand xsi:type="elm:ExpressionRef" name="HasSevereTraumaticBrainInjuryConditions"/>
+                    </elm:operand>
+                </logic>
+                <conditionRole value="ApplicableScenario"/>
+            </condition>
+            <condition>
+                <logic xsi:type="elm:Not">
+                    <elm:operand xsi:type="elm:Exists">
+                        <elm:annotation>Meets condition criteria for Moderate Traumatic Brain Injury</elm:annotation>
+                        <elm:operand xsi:type="elm:ExpressionRef" name="HasModerateTraumaticBrainInjuryConditions"/>
+                    </elm:operand>
+                </logic>
+                <conditionRole value="ApplicableScenario"/>
+            </condition>
+        </conditions>
+        <subElements>
+            <simpleAction xsi:type="CreateAction">
+                <behaviors>
+                    <behavior xsi:type="CardinalityBehavior" value="Single"/>
+                </behaviors>
+                <textEquivalent value="Identify the patient as a candidate for 'mild traumatic brain injury with current symptomatology' screening"/>
+                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="398166005 |Performed (qualifier value)|" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </actionSentence>
+            </simpleAction>
+            <simpleAction xsi:type="CreateAction">
+                <behaviors>
+                    <behavior xsi:type="CardinalityBehavior" value="Single"/>
+                </behaviors>
+                <textEquivalent value="Open Documentation Template: Traumatic Brain Injury (TBI) Screening KNART"/>
+                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </actionSentence>
+            </simpleAction>
+            <simpleAction xsi:type="CreateAction">
+                <behaviors>
+                    <behavior xsi:type="CardinalityBehavior" value="Single"/>
+                </behaviors>
+                <textEquivalent value="Make sure guideline recommendations are available to care team"/>
+                <actionSentence xsi:type="elm:Instance" classType="anf:ClinicalStatement">
+                    <elm:element name="statementType">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                    <elm:element name="topic">
+                        <elm:value xsi:type="elm:Code" code="TSR-NoCode" display="Precoordinated Expression">
+                            <elm:system name="SNOMED CT"/>
+                        </elm:value>
+                    </elm:element>
+                </actionSentence>
+            </simpleAction>
+        </subElements>
+    </actionGroup>
+</knowledgeDocument>
