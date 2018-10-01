@@ -2,9 +2,9 @@
 
 **This is a working copy curated by VHA program staff with input from OSEHRA and clinical communities. Official artifact releases are made through [CDS Connect](https://cds.ahrq.gov/cdsconnect/explore)**
 
-This clinical content repository is the authoritative public-facing source of a broad and deep VHA effort to formally represent 100+ order sets, documentation templates, and event-condition-action (ECA) rules as structured knowledge. Long term, the primary aim is to provide a clinically-vetted knowledge base such that standards-based EHR and support systems may apply and reuse the wealth of tacit knowledge held by VA physicians in interoperable, computable, and automated form. This project was initiated in 2017 under Contract VA118-16-D-1008, Task Order VA11817F10080007. Contributions have been made from a large base of subject matter experts, informaticians, university partners, industry leaders, interagency staff, and other professionals.
+This clinical content repository is the authoritative public-facing source of a broad and deep VHA effort to formally represent 100+ order sets, documentation templates, and event-condition-action (ECA) rules as structured knowledge. Long term, the primary aim is to provide a clinically-vetted knowledge base such that standards-based EHR and support systems may apply and reuse the wealth of tacit knowledge held by VA physicians in interoperable, computable, and automated form. This project was initiated in 2017 under Contract VA118-16-D-1008, Task Order VA11817F10080007. Contributions have been made from a large set of subject matter experts, informaticians, university partners, industry leaders, interagency staff, and other professionals.
 
-The most highly structured type of documents we have created comply with the HL7 CDS Knowledge Artifacts specification: an XML-based specification for representing interoperable clinical knowledge.
+The most highly structured documents we have created comply with the HL7 CDS Knowledge Artifacts specification: an XML-based represention of interoperable clinical knowledge.
 
 
 # Important Legal Statements
