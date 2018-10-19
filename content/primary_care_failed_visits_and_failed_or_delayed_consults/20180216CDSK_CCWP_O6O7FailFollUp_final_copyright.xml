@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Failed Visits and Failed or Delayed Consults Clinical Content White
+            Paper</subtitle>
+        <copyright>
+            <year>June</year>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>
+                    <surname>Department of Veterans Affairs
+                            (<acronym><glossterm>VA</glossterm></acronym>)</surname>
+                </personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center" fileref="images/VASealColor.jpg"
+                                contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems
+                    (<acronym><glossterm>KBS</glossterm></acronym>)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance
+                            (<acronym><glossterm>OIIG</glossterm></acronym>)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support
+                    (<acronym><glossterm>CDS</glossterm></acronym>)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order
+                        (<acronym><glossterm>TO</glossterm></acronym>):
+                    VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: Failed Visits and Failed or Delayed Consults
+                        KNART</title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <entry valign="middle">Failed Visits and Failed or Delayed Consults
+                                    KNART</entry>
+                                <entry valign="middle">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Failed Visits - ECA Rule</entry>
+                                <entry>CLIN0007BA</entry>
+                            </row>
+                            <row>
+                                <entry>Failed or Delayed Consults - ECA Rule</entry>
+                                <entry>CLIN0007BA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>February 2018</pubdate>
+        <volumenum>Version 1.0</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>01/05/2017</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>Final DocBook transformation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>11/01/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Motive data review and clinical evaluation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>10/16/2017</date>
+                <authorinitials>Lindsey Birt</authorinitials>
+                <revremark>Common issues, updated evidence</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>10/13/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Motive data update</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>9/20/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template revisions per PO recommendation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>9/28/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>9/18/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Draft Creation</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (<acronym><glossterm>SME</glossterm></acronym>)
+            Panel</title>
+        <informaltable frame="all">
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Angela Denietolis, MD</entry>
+                        <entry>Primary Care Physician, James A. Haley Veterans Hospital, Tampa VA
+                            Medical Center (<acronym><glossterm>VAMC</glossterm></acronym>), Tampa,
+                            FL 33612 </entry>
+                        <entry>SME, Primary</entry>
+                    </row>
+                    <row>
+                        <entry>Pat Dumas, RN</entry>
+                        <entry>Clinical Program Director, VA Central Office
+                                    (<acronym><glossterm>VACO</glossterm></acronym>), 810 Vermont
+                            Ave NW, Washington, DL 20420 </entry>
+                        <entry>SME, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry>Manish Merchant, MD</entry>
+                        <entry>Health Informatician, Albany VAMC, 113 Holland Ave, Albany, NY 12208 </entry>
+                        <entry>SME</entry>
+                    </row>
+                    <row>
+                        <entry>Timothy Dresselhaus, MD</entry>
+                        <entry>San Diego VAMC - MEDS, 3350 La Jolla Village Dr, San Diego, CA 92161 </entry>
+                        <entry>SME</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface version="5.1">
+        <info>
+            <title>Introduction</title>
+        </info>
+        <para>The VA is committed to improving the ability of clinicians to provide care for
+            patients while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the Health
+            Level 7 (<acronym><glossterm>HL7</glossterm></acronym>) Knowledge Artifact Specification
+            for a wide range of VA clinical use cases. Knowledge Artifacts, referred to as
+                    (<acronym><glossterm>KNARTs</glossterm></acronym>), enable the structuring and
+            encoding of clinical knowledge so the knowledge can be integrated with electronic health
+            records to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper
+                (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context
+            and intent of <acronym><glossterm>KNART</glossterm></acronym> use cases in sufficient
+            detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team
+            with the clinical source material to construct the corresponding knowledge artifacts
+            using the HL7 Knowledge Artifact Specification. This paper has been developed using
+            material from a variety of sources: VA artifacts, clinical practice guidelines, evidence
+            in the body of medical literature, and clinical expertise. After reviewing these
+            sources, the material has been synthesized and harmonized under the guidance of VA
+            subject matter experts to reflect clinical intent for this use case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work.</para>
+    </preface>
+    <preface version="5.1">
+        <info>
+            <title>Conventions Used</title>
+        </info>
+        <para>Conventions used within the knowledge artifact descriptions
+            include:
+            
+            <itemizedlist mark="none" spacing="compact">
+                <listitem>
+                    <para>&lt;obtain&gt;: Indicates a prompt to obtain the
+                        information listed <itemizedlist mark="bullet"
+                            spacing="compact">
+                            <listitem>
+                                <para>If possible, the requested information
+                                    should be obtained from the underlying system(s).
+                                    Otherwise, prompting the user for information may
+                                    be required</para>
+                            </listitem>
+                            <listitem>
+                                <para>Default Values: Unless otherwise noted,
+                                    &lt;obtain&gt; indicates to obtain the most recent
+                                    observation. It is recognized that this default
+                                    time-frame value may be altered by future
+                                    implementations</para>
+                            </listitem>
+                        </itemizedlist></para> </listitem>
+                
+                <listitem>
+                    <para>[...]: Square brackets enclose explanatory text that indicates some
+                        action on the part of the clinical user, or general guidance to the clinical or technical
+                        teams. Examples include, but are not limited to:</para>
+                    
+                    <itemizedlist mark="none" spacing="normal">
+                        <listitem>
+                            <para>[Begin ...], [End
+                                ...]: Indicates the start and end of specific areas to
+                                clearly delineate them for technical purposes.</para>
+                            
+                            <para>[Activate ...]: Initiates another
+                                knowledge artifact or knowledge artifact section.</para>
+                            
+                            <para>[Section Prompt: ...]: If this section is
+                                applicable, then the following prompt should be displayed to the
+                                user.</para>
+                            
+                            <para>[Section Behavior: ...]:
+                                Indicates technical constraints or considerations
+                                for the selection of items outlined in the section
+                                prompt.</para>
+                            
+                            <para>[Attach: ...]: Indicates that the
+                                specified item (e.g. procedure or result
+                                interpretation) should be attached to the
+                                documentation template if available.</para>
+                            
+                            <para>[Link: ...]: Indicates that
+                                rather than attaching an item (e.g. image), a link
+                                should be included in the documentation
+                                template.</para>
+                            
+                            <para>[Clinical Comment: ...]:
+                                Indicates technical considerations or notes to be
+                                utilized for KNART authoring and at time of
+                                implementation planning.</para>
+                            
+                            <para>[Technical Note: ...]: Indicates
+                                technical considerations or notes to be utilized
+                                for KNART authoring and at time of implementation
+                                planning.</para>
+                            
+                            <para>[If ...]: Indicates the beginning of a
+                                conditional section.</para>
+                            
+                            <para>[Else, ...]: Indicates the beginning of
+                                the alternative branch of a conditional section.</para>
+                            
+                            <para>[End if ...]: Indicates the end of a
+                                conditional section.</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                
+                <listitem>
+                    <para>☐ [Check box]: Indicates items that should be
+                        selected based upon the section selection behavior.</para>
+                </listitem>
+            </itemizedlist></para>
+        
+    </preface>
+    <chapter>
+        <title>Failed Visits and Failed or Delayed Consults</title>
+        <para>[Begin Failed Visits and Failed or Delayed Consults.]</para>
+        <section>
+            <title>Clinical Context</title>
+            <para>[Begin Clinical Context.]</para>
+            <para>Gaps in office visits, including unscheduled referrals and patients "no-shows" for
+                scheduled appointments, are a widespread problem that not only wastes resources but
+                also hinders effective patient care. Common reasons for missed appointments, such as
+                forgetting and miscommunication, may be amenable to follow-up interventions.
+                Addressing this problem through a systematic operating mechanism offers the
+                potential for better patient care, better patient outcomes, and higher patient
+                satisfaction. </para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry>Outpatient Scheduling Staff</entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry>Adult patients</entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry>Routine</entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry>All</entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry>Outpatient</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>[End Clinical Context.]</para>
+        </section>
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+            <para>This section describes the knowledge artifacts that are intended to facilitate
+                identification of unscheduled and missed appointments and initiate the actions to
+                schedule or reschedule those appointments.</para>
+            <para>The knowledge artifact consists of two separate Event Condition Action
+                        (<acronym><glossterm>ECA</glossterm></acronym>) Rule KNARTs; 1.) Failed
+                Visits and 2.) Failed or Delayed Consults. The clinical use cases include:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>ECA Rule: Failed Visits KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Rule logic that describes the behavior of the scheduling
+                                system</para>
+                        </listitem>
+                        <listitem>
+                            <para>Actions that include communication requests to reschedule the
+                                missed appointment</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <itemizedlist>
+                <listitem>
+                    <para>ECA Rule: Failed or Delayed Consults KNART<itemizedlist>
+                            <listitem>
+                                <para>Rule logic that describes the behavior of the consult tracking
+                                    system</para>
+                            </listitem>
+                            <listitem>
+                                <para>Actions that include communication requests to schedule or
+                                    reschedule failed or delayed consult appointment
+                                    requests.</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Knowledge Artifacts.]</para>
+            <para>[End Failed Visits and Failed or Delayed Consults.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Event Condition Action (ECA) Rule: Failed Visits</title>
+        <para>[Begin Event Condition Action (ECA) Rule: Failed Visits.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Content in Chapter 1.]</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>Failed Visits</title>
+            <para>[Begin Failed Visits.]</para>
+            <para><emphasis role="bold">Event</emphasis></para>
+            <para>[Begin Event.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Any access of the patient appointment calendar for clinical or health
+                        related services.</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Event.]</para>
+            <para><emphasis role="bold">Conditions</emphasis></para>
+            <para>[Begin Conditions.]</para>
+            <para>The following criteria are met:<itemizedlist>
+                    <listitem>
+                        <para>An appointment has been scheduled; and</para>
+                    </listitem>
+                    <listitem>
+                        <para>The date and time of the scheduled appointment occurred in the past;
+                            and</para>
+                    </listitem>
+                    <listitem>
+                        <para>The patient did not attend the scheduled appointment; and</para>
+                    </listitem>
+                    <listitem>
+                        <para>The missed appointment has not been rescheduled for a future date and
+                            time.</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Conditions.]</para>
+            <para><emphasis role="bold">Actions</emphasis></para>
+            <para>[Begin Actions.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Notify the scheduler that the patient should be contacted and the
+                        appointment should be rescheduled.</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Actions.]</para>
+            <para>[End Failed Visits.]</para>
+            <para>[End Event Condition Action (ECA) Rule: Failed Visits.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Event Condition Action (ECA) Rule: Failed or Delayed Consults</title>
+        <para>[Begin Event Condition Action (ECA) Rule: Failed or Delayed Consults.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>Failed or Delayed Consults</title>
+            <para>[Begin Failed or Delayed Consults.]</para>
+            <para><emphasis role="bold">Event</emphasis></para>
+            <para>[Begin Event.]</para>
+            <para>Any access to consult tracking application.</para>
+            <para>[End Event.]</para>
+            <para><emphasis role="bold">Conditions</emphasis></para>
+            <para>[Begin Conditions.]</para>
+            <para>The following criteria are met:<orderedlist>
+                    <listitem>
+                        <para>The patient has been referred or a consult has been requested;<itemizedlist>
+                                <listitem>
+                                    <para>A referral request exists; or</para>
+                                </listitem>
+                                <listitem>
+                                    <para>A consult request exists; or</para>
+                                </listitem>
+                                <listitem>
+                                    <para>A referral order exists; or</para>
+                                </listitem>
+                                <listitem>
+                                    <para>A consult order exists; AND</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>An encounter with the designated referral or consult provider has not
+                            been completed; AND EITHER</para>
+                    </listitem>
+                    <listitem>
+                        <para>An appointment with the designated referral or consult provider has
+                            not been scheduled for the patient for a future date and time; OR</para>
+                    </listitem>
+                    <listitem>
+                        <para>If the requesting provider specified a preferred date
+                                    (<acronym><glossterm>PD</glossterm></acronym>) for completing
+                            the referral or consult, and the date and time of any scheduled
+                            appointment with the designated referral or consult provider exceeds the
+                            PD.</para>
+                    </listitem>
+                </orderedlist></para>
+            <para>[End Conditions.]</para>
+            <para><emphasis role="bold">Actions</emphasis></para>
+            <para>[Begin Actions.]</para>
+            <para>Notify the scheduler that the patient should be contacted and the appointment
+                should be scheduled or rescheduled.</para>
+            <para>[End Actions.]</para>
+            <para>[End Failed or Delayed Consults.]</para>
+            <para>[End Event Condition Action (ECA) Rule: Failed or Delayed Consults.]</para>
+        </section>
+    </chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <abbrev>Kaplan-Lewis, 2013</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Kaplan-Lewis</surname><firstname>E</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Percac-Lima</surname><firstname>S</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">No-show to primary care appointments: why patients do not
+                come</citetitle>
+            <citetitle pubwork="journal">J Prim Care Community Health</citetitle>
+            <pubdate>2013</pubdate>
+            <volumenum>4</volumenum>
+            <pagenums>251-255</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Rose, 2011</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Rose</surname><firstname>KD</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Ross</surname><firstname>JS</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Horowitz</surname><firstname>LI</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Advanced access scheduling outcomes: a systematic
+                review</citetitle>
+            <citetitle pubwork="journal">Arch Intern Med</citetitle>
+            <pubdate>2011</pubdate>
+            <volumenum>171</volumenum>
+            <issuenum>13</issuenum>
+            <pagenums>1150-1159</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. Department of Veterans Affairs</orgname>
+            </author>
+            <author>
+                <orgname>Veterans Health Administration
+                        (<acronym><glossterm>VHA</glossterm></acronym>)</orgname>
+            </author>
+            <citetitle pubwork="webpage">Consult Processes and Procedures. VHA Directive 1232(1).
+                VHA Publications website</citetitle>
+            <bibliomisc><link
+                    xlink:href="https://www1.va.gov/vhapublications/ViewPublication.asp?pub_ID=3230"
+                /></bibliomisc>
+            <pubdate>Published August 24, 2016</pubdate>
+            <pubdate>Accessed October 12, 2017</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. Department of Veterans Affairs</orgname>
+            </author>
+            <author>
+                <orgname>VHA</orgname>
+            </author>
+            <citetitle pubwork="webpage">Outpatient Scheduling Processes and Procedures. VHA
+                Directive 1230. VHA Publications website</citetitle>
+            <bibliomisc><link
+                xlink:href="https://www1.va.gov/vhapublications/ViewPublication.asp?pub_ID=3218"
+                /></bibliomisc>
+            <pubdate>Published July 15, 2016</pubdate>
+            <pubdate>Accessed October 12, 2017</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. Department of Veterans Affairs</orgname>
+            </author>
+            <citetitle pubwork="webpage"> Memorandum: Scheduling and consult policy updates (VAIQ#
+                7798804)</citetitle>
+            <bibliomisc><link xlink:href="06052017 -- Scheduling and Consult Policy Updates.pdf"
+                /></bibliomisc>
+            <pubdate>June 5, 2017</pubdate>
+        </biblioentry>
+    </bibliography>
+    <appendix>
+        <title>Logic Diagrams</title>
+        <figure>
+            <title>Mammogram Screening</title>
+            
+            <mediaobject>
+                <alt>Failed Visit ECA Rule</alt>
+                
+                <imageobject>
+                    <imagedata align="center" contentdepth="100%" fileref="ECA%20Diagrams/failtoreturn.jpg"
+                        scalefit="1" width="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Mammogram Screening</title>
+            
+            <mediaobject>
+                <alt>Failed or Delayed Consult/Referral</alt>
+                
+                <imageobject>
+                    <imagedata align="center" contentdepth="100%" fileref="ECA%20Diagrams/consultreferalfaildelay.jpg"
+                        scalefit="1" width="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+    <glossary role="auto"><info><title>Acronyms</title></info></glossary>
+</book>
