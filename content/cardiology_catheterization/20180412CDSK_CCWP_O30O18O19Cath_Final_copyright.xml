@@ -1,0 +1,1860 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ns="http://docbook.org/ns/docbook">
+  <info>
+    <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+      Artifacts (KNARTs)</title>
+    <subtitle>Cardiology: Cardiac Catheterization, Pre Cardiac Catheterization, and Post
+      Catheterization Clinical Content White Paper </subtitle>
+    <copyright>
+      <year>April</year>
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright>
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+    <authorgroup>
+      <author>
+        <personname>Department of Veterans Affairs (VA)</personname>
+      </author>
+      <author>
+        <orgname><inlinemediaobject>
+            <alt>Department of Veteran's Affairs Logo</alt>
+            <imageobject>
+              <imagedata fileref="../../../../../Resources/VASealColor.jpg"/>
+            </imageobject>
+          </inlinemediaobject></orgname>
+      </author>
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+      <author>
+        <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+      </author>
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+    <abstract>
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+      </info>
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Relevant KNART Information: Cardiology: Cardiac Catheterization, Pre-Cardiac
+            Catheterization, and Post Catheterization</title>
+          <tgroup align="left" cols="2">
+            <thead>
+              <row valign="bottom">
+                <!--<entry valign="middle">ID</entry>-->
+                <entry align="left" valign="middle">Cardiology KNARTs</entry>
+                <entry align="left" valign="middle">Associated CLIN</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <!--<entry>B5</entry>-->
+                <entry>Cardiac Catheterization - Documentation Template </entry>
+                <entry>CLIN0009BA</entry>
+              </row>
+              <row>
+                <entry>Pre Cardiac Catheterization - Order Set </entry>
+                <entry>CLIN0008BA</entry>
+              </row>
+              <row>
+                <entry>Post Cardiac Catheterization - Order Set </entry>
+                <entry>CLIN0008BA</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+    <pubdate>March 2018</pubdate>
+    <volumenum>Version 1.0</volumenum>
+    <revhistory>
+      <revision>
+        <revnumber>1.1</revnumber>
+        <date>3/28/2018</date>
+        <authorinitials>Diane Montella</authorinitials>
+        <revremark>Comments and final approval</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.0</revnumber>
+        <date>3/16/2018</date>
+        <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+        <revremark>Final DocBook transformation</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.10</revnumber>
+        <date>3/9/2018</date>
+        <authorinitials>Diane Montella</authorinitials>
+        <revremark>Final Commetns received and PO approval.</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.9</revnumber>
+        <date>12/14/2017</date>
+        <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+        <revremark>DocBook transformation</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.8</revnumber>
+        <date>12/10/2017</date>
+        <authorinitials>Ralph Ruocco</authorinitials>
+        <revremark>Revised Motive data added</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.7</revnumber>
+        <date>11/27/2017</date>
+        <authorinitials>Ralph Ruocco</authorinitials>
+        <revremark>Formatting revisions</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.6</revnumber>
+        <date>10/27/2017</date>
+        <authorinitials>Ralph Ruocco</authorinitials>
+        <revremark>Commercial data update</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.5</revnumber>
+        <date>10/26/2017</date>
+        <authorinitials>Scott Wall</authorinitials>
+        <revremark>SME approval</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.4</revnumber>
+        <date>9/24/2017</date>
+        <authorinitials>Ralph Ruocco</authorinitials>
+        <revremark>Template revisions per Program Office</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.3</revnumber>
+        <date>9/7/2017</date>
+        <authorinitials>Ralph Ruocco</authorinitials>
+        <revremark>Added Motive data revisions</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.2</revnumber>
+        <date>8/16/2017</date>
+        <authorinitials>Ralph Ruocco</authorinitials>
+        <revremark>Motive data added</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.1</revnumber>
+        <date>8/2/2017</date>
+        <authorinitials>Ralph Ruocco</authorinitials>
+        <revremark>Initial Draft</revremark>
+      </revision>
+    </revhistory>
+  </info>
+  <preface>
+    <title>VA Subject Matter Expert (SME) Panel</title>
+    <informaltable frame="all">
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry>Name</entry>
+            <entry>Title</entry>
+            <entry>Project Role</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Bruce Bray, MD</entry>
+            <entry>Professor, Cardiovascular Medicine, University of Utah School of Medicine; Staff
+              Cardiologist, Salt Lake City VA Medical Center (VAMC), 500 Foothill Drive, Salt Lake
+              City, Utah 84148</entry>
+            <entry>SME, Primary</entry>
+          </row>
+          <row>
+            <entry>Scott Wall, MD</entry>
+            <entry>Assistant Professor, Cardiovascular Medicine, University of Utah; School of
+              Medicine Staff Cardiologist, Electrophysiology, Salt Lake City VAMC, 500 Foothill
+              Drive, Salt Lake City, Utah 84148</entry>
+            <entry>SME, Secondary</entry>
+          </row>
+          <row>
+            <entry>Aiden Abidov, MD, PhD</entry>
+            <entry>Professor of Medicine, Wayne State University; Section Chief, Cardiology, John
+              Dingell VAMC</entry>
+            <entry>SME</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </preface>
+  <preface>
+    <title>Introduction</title>
+    <para>The VA is committed to improving the ability of clinicians to provide care for patients
+      while increasing quality, safety, and efficiency. Recognizing the importance of standardizing
+      clinical knowledge in support of this goal, VA is implementing the Health Level 7
+          (<acronym><glossterm>HL7</glossterm></acronym>) Knowledge Artifact Specification for a
+      wide range of VA clinical use cases. Knowledge Artifacts, referred to as
+          (<acronym><glossterm>KNARTs</glossterm></acronym>), enable the structuring and encoding of
+      clinical knowledge so the knowledge can be integrated with electronic health records to enable
+      clinical decision support.</para>
+    <para>The purpose of this Clinical Content White Paper
+        (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context and
+      intent of <acronym><glossterm>KNART</glossterm></acronym> use cases in sufficient detail to
+      provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team with the clinical
+      source material to construct the corresponding knowledge artifacts using the HL7 Knowledge
+      Artifact Specification. This paper has been developed using material from a variety of
+      sources: VA artifacts, clinical practice guidelines, evidence in the body of medical
+      literature, and clinical expertise. After reviewing these sources, the material has been
+      synthesized and harmonized under the guidance of VA subject matter experts to reflect clinical
+      intent for this use case.</para>
+    <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+      fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+      creation. To provide an exhaustive list of all possible items and their variations is beyond
+      the scope of this work.</para>
+  </preface>
+  <preface>
+    <title>Conventions Used</title>
+    <para>Conventions used within the knowledge artifact descriptions include:</para>
+    <itemizedlist mark="none">
+      <listitem>
+        <para>&lt;obtain&gt;: Indicates a prompt to obtain the information listed <itemizedlist
+            mark="bullet">
+            <listitem>
+              <para>If possible, the requested information should be obtained from the underlying
+                system(s). Otherwise, prompting the user for information may be required</para>
+            </listitem>
+            <listitem>
+              <para>Default Values: Unless otherwise noted, &lt;obtain&gt; indicates to obtain the
+                most recent observation. It is recognized that this default time-frame value may be
+                altered by future implementations</para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+      <listitem>
+        <para>[...]: Square brackets enclose explanatory text that indicates some action on the part
+          of the clinical user, or general guidance to the clinical or technical teams. Examples
+          include, but are not limited to:</para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>[Begin ...], [End ...]: Indicates the start and end of specific areas to clearly
+              delineate them for technical purposes.</para>
+            <para>[Activate ...]: Initiates another knowledge artifact or knowledge artifact
+              section.</para>
+            <para>[Section Prompt: ...]: If this section is applicable, then the following prompt
+              should be displayed to the user.</para>
+            <para>[Section Selection Behavior: ...]: Indicates technical constraints or
+              considerations for the selection of items within the section.</para>
+            <para>[Attach: ...]: Indicates that the specified item should be attached to the
+              documentation template if available.</para>
+            <para>[Link: ...]: Indicates that rather than attaching an item, a link should be
+              included in the documentation template.</para>
+            <para>[Clinical Comment: ...]: Indicates clinical rationale or guidance.</para>
+            <para>[Technical Note: ...]: Indicates technical considerations or notes.</para>
+            <para>[If ...]: Indicates the beginning of a conditional section.</para>
+            <para>[Else, ...]: Indicates the beginning of the alternative branch of a conditional
+              section.</para>
+            <para>[End if ...]: Indicates the end of a conditional section.</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>☐ [Check box]: Indicates items that should be selected based upon the section
+          selection behavior.</para>
+      </listitem>
+    </itemizedlist>
+  </preface>
+  <chapter>
+    <title>Cardiology: Cardiac Catheterization, Pre Cardiac Catheterization and Post Cardiac
+      Catheterization</title>
+    <section>
+      <title>Clinical Context</title>
+      <para>[Begin Clinical Context.]</para>
+      <para>The Cardiology Cardiac Catheterization KNART is intended for clinical providers caring
+        for adult patients in a Cardiology Clinic who are undergoing cardiac catheterization. The
+        documentation template is intended to ensure that appropriate data elements are captured
+        prior to cardiac catheterization, and the order sets are intended to provide common
+        orderable items for pre- and post-catheterization care. Specific constraints for these
+        artifacts are that:<itemizedlist>
+          <listitem>
+            <para>They apply to outpatients undergoing an elective procedure</para>
+          </listitem>
+          <listitem>
+            <para>They exclude patients with known Acute Coronary Syndrome
+                  (<acronym><glossterm>ACS</glossterm></acronym>)</para>
+          </listitem>
+          <listitem>
+            <para>They exclude patients requiring emergency surgery</para>
+          </listitem>
+        </itemizedlist></para>
+      <table>
+        <title>Clinical Context Domains</title>
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Target User</entry>
+              <entry>Cardiologist </entry>
+            </row>
+            <row>
+              <entry>Patient</entry>
+              <entry>Adult Catheterization lab patients</entry>
+            </row>
+            <row>
+              <entry>Priority</entry>
+              <entry>Routine</entry>
+            </row>
+            <row>
+              <entry>Specialty</entry>
+              <entry>Invasive cardiology/Interventional</entry>
+            </row>
+            <row>
+              <entry>Location</entry>
+              <entry>Outpatient</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>[End Clinical Context.]</para>
+    </section>
+    <section>
+      <title>Knowledge Artifacts</title>
+      <para>[Begin Knowledge Artifacts.]</para>
+      <para>This section describes the CDS knowledge artifacts that are part of the Cardiology
+        Cardiac Catheterization, Pre Cardiac Catheterization and Post Cardiac Catheterization white
+        paper which include:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Documentation Template: Cardiology: Cardiac Catheterization KNART </para>
+          <itemizedlist>
+            <listitem>
+              <para>Documents the information relevant to the catheterization procedure, prior to
+                and immediately following performance of the procedure.</para>
+            </listitem>
+            <listitem>
+              <para>Includes logic for appropriate display of documentation sections</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>Order Set: Cardiology: Pre Cardiac Catheterization KNART</para>
+          <itemizedlist>
+            <listitem>
+              <para>Orderable items for use prior to Cardiac Catheterization procedure</para>
+            </listitem>
+            <listitem>
+              <para>Includes logic for appropriate display of orderables</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>Order Set: Cardiology: Post Cardiac Catheterization KNART</para>
+          <itemizedlist>
+            <listitem>
+              <para>Orderable items for use following Cardiac Catheterization procedures</para>
+            </listitem>
+            <listitem>
+              <para>Includes logic for appropriate display of orderables</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+      <para>[End Knowledge Artifacts.]</para>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Documentation Template: Cardiology: Cardiac Catheterization</title>
+    <para>[Begin Documentation Template: Cardiology: Cardiac Catheterization.]</para>
+    <section>
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.]</para>
+      <para>[See Clinical Context in Chapter 1.]</para>
+      <para>Cardiac catheterization allows detailed evaluation of the heart’s blood vessels,
+        chambers, and valves. It can provide important diagnostic information that can be used to
+        diagnose different types of heart disease and to guide treatment. However, it is also
+        invasive and expensive. In 2012, the American College of Cardiology Foundation
+            (<acronym><glossterm>ACCF</glossterm></acronym>) and the Society for Cardiovascular
+        Angiography and Interventions (<acronym><glossterm>SCAI</glossterm></acronym>), in
+        collaboration with other specialty and subspecialty societies, published appropriate use
+        criteria for cardiac catheterization based on an extensive review of guidelines and relevant
+        studies. The authors anticipated that the appropriate use criteria would facilitate
+        decision-making and could impact reimbursement policies and health care delivery (Patel
+        2012). While rates of inappropriate cardiac catheterization within the VA are low in
+        comparison with other institutions, significant interhospital variation still exists. A
+        particularly important point with regard to patient safety is the controversy regarding the
+        relative merits of radial versus femoral access for cardiac catheterization. Radial artery
+        access appears to result in slightly fewer 30-day major adverse cardiovascular events than
+        femoral access (Valgimigli 2015). </para>
+      <para>[Technical Note: Sections 2.2 through 2.8 should display only prior to cardiac
+        catheterization performance, and section 2.9 should display only after cardiac
+        catheterization performance. Please provide a user interface that enables selection of the
+        appropriate section.]</para>
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+    <section>
+      <title>Cardiac Catheterization Indications</title>
+      <para>[Begin Cardiac Catheterization Indications.]</para>
+      <para>[Technical Note: Add link to Patel 2012 reference:
+        www.scai.org/asset.axd?id=d24adef2-40d4-4897-b665-ee6c2ebcb41f.]</para>
+      <para>[Section Prompt: Indications for cardiac catheterization.]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Suspected Acute Coronary Syndrome</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Suspected Coronary Artery Disease (CAD)
+            <itemizedlist mark="none">
+              <listitem>
+                <para>&#x2610; ST-Segment Elevation Myocardial Infarction</para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Findings on Stress Test
+                  <itemizedlist mark="none">
+                    <listitem>
+                      <para>&#x2610; High-Risk Findings on Electrocardiogram (ECG) Stress Test
+                        (e.g., Duke Treadmill Score =&lt; -11, Ventricular Tachycardia, Prolonged
+                        ST-Segment Depression, or Exercise-Induced Hypotension)</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; High-Risk Findings on Imaging Stress Test (e.g., &gt; 10%
+                        Ischemic Myocardium on Nuclear Perfusion Imaging, Stress-Induced Wall Motion
+                        Abnormality in &gt;= 2 Segments on Echocardiography, Transient Ischemic
+                        Dilation, or Stress-Induced Left Ventricular Dysfunction)</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Resting Left Ventricular Ejection Fraction
+                            (<acronym><glossterm>LVEF</glossterm></acronym>) =&lt; 40% and Viable
+                        Myocardium in Dysfunctional Segment (Reversible Ischemia) on Imaging Stress
+                        Test</para>
+                    </listitem>
+                  </itemizedlist></para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Symptoms <itemizedlist mark="none">
+                    <listitem>
+                      <para>&#x2610; Symptomatic Patient with High Pretest Probability of coronary
+                        artery disease and No Prior Noninvasive Stress Imaging</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Symptomatic Patient with Intermediate-Risk Findings on Imaging
+                        Stress Test (5% to 10% Ischemic Myocardium on Nuclear Perfusion Imaging or
+                        Stress-Induced Wall Motion Abnormality in 1 Segment on Echocardiography)
+                      </para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Symptomatic Patient with Discordant or
+                        Equivocal/Uninterpretable Findings on Imaging Stress Test</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Symptomatic Patient with New Left Ventricular Systolic
+                        Dysfunction (LVEF =&lt; 40%) of Unknown Etiology on Transthoracic
+                        Echocardiography</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Symptomatic Patient with Suspected Significant Ischemic
+                        Complication of CAD on Transthoracic or Transesophageal Echocardiography
+                        (e.g., Mitral Regurgitation or Ventricular Septal Defect)</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Symptomatic Patient with Any Lesion &gt;= 50% on Coronary
+                        Computed Tomography (CT) Angiography</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Symptomatic Patient with Possibly Obstructive Lesion of Unclear
+                        Severity on Coronary CT Angiography</para>
+                    </listitem>
+                  </itemizedlist></para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Known CAD <itemizedlist mark="none">
+                    <listitem>
+                      <para>&#x2610; Medically Managed Patient with Limiting or Worsening Symptoms
+                        and Noninvasive Findings of Intermediate Risk that have worsened</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Medically Managed Patient and High-Risk Noninvasive Findings
+                      </para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Post revascularization (PCI or CABG) Patient with Limiting or
+                        Worsening Symptoms and Intermediate-Risk Noninvasive Findings </para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Post revascularization Patient with Limiting or Worsening
+                        Symptoms and High-Risk Noninvasive Findings</para>
+                    </listitem>
+                  </itemizedlist></para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Return of Spontaneous Circulation after Resuscitated Cardiac Arrest
+                  of Unclear Etiology</para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Ventricular Fibrillation or Sustained Ventricular Tachycardia of
+                  Unclear Etiology </para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Assessment of Valvular Heart Disease <itemizedlist mark="none">
+                    <listitem>
+                      <para>&#x2610; Mitral Valve</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Aortic Valve</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Tricuspid Valve</para>
+                    </listitem>
+                    <listitem>
+                      <para>&#x2610; Pulmonary Valve</para>
+                    </listitem>
+                  </itemizedlist>
+                </para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Pulmonary Hypertension Disproportionate to Valvular Disease </para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Left Ventricular Dysfunction Disproportionate to Valvular Disease
+                </para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Conflict between Findings of Noninvasive Imaging for Mitral or Aortic
+                  Stenosis or Regurgitation and Clinical Impression of Severity </para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Suspected Pericardial Tamponade </para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Suspected or Uncertain Constrictive or Restrictive Pericardial
+                  Disease </para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Suspected or Known Cardiomyopathy </para>
+              </listitem>
+              <listitem>
+                <para>&#x2610; Reevaluation of Known Cardiomyopathy to Guide Therapy or after Change
+                  in Clinical Status or Exam </para>
+                <para>&lt;obtain&gt; Additional Prior Indication Detail</para>
+              </listitem>
+            </itemizedlist></para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[End Cardiac Catheterization Indications.]</para>
+    </section>
+    <section>
+      <title>Prior Cardiac Procedures</title>
+      <para>[Begin Prior Cardiac Procedures.]</para>
+      <para>[Section Prompt: Prior Cardiac Procedures.]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]</para>
+      <para>&#x2610; Most Recent Angiography<itemizedlist mark="none">
+          <listitem>
+            <para>&lt;obtain&gt; Date</para>
+          </listitem>
+          <listitem>
+            <para>&lt;obtain&gt; Findings</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>&#x2610; Most Recent Percutaneous Coronary Intervention<itemizedlist mark="none">
+          <listitem>
+            <para>&lt;obtain&gt; Date</para>
+          </listitem>
+          <listitem>
+            <para>&lt;obtain&gt; Findings</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>&#x2610; Prior Cardiac Operative Report<itemizedlist mark="none">
+          <listitem>
+            <para>&lt;obtain&gt; Date</para>
+          </listitem>
+          <listitem>
+            <para>&lt;obtain&gt; Findings</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[Section Prompt: Additional Prior Cardiac Reports?]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[Technical Note: The clinical provider should have the ability to complete an additional
+        instance of "Prior Cardiac Operative Reports" if "yes" is selected.]</para>
+      <para>&lt;obtain&gt; Additional Prior Cardiac Procedure Detail</para>
+      <para>[End Prior Cardiac Procedures.]</para>
+    </section>
+    <section>
+      <title>Plan</title>
+      <para>[Begin Plan.]</para>
+      <para>[Section Prompt: Planned Procedure?]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Left Heart Catheterization<itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Coronary Angiography</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Left Ventriculography</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Heart Catheterization</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Pericardiocentesis</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Possible Percutaneous Coronary Intervention (Angioplasty/Stent)</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Endomyocardial Biopsy</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Other<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Other Procedure</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Section Prompt: Planned Access Site?]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Left Femoral Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Femoral Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Left Radial Artery</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Radial Artery</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Left Internal Jugular Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Internal Jugular Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Left Subclavian Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Subclavian Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Other<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Other Site</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Plan.]</para>
+    </section>
+    <section>
+      <title>Consent</title>
+      <para>[Begin Consent.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Consent Obtained</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[End Consent.]</para>
+    </section>
+    <section>
+      <title>Special Considerations</title>
+      <para>[Begin Special Considerations.]</para>
+      <para>[Section Prompt: Special Considerations.]</para>
+      <para>[Section Prompt: Radioconrast Allergy?]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; History and Description of Reaction</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[Section Prompt: Diabetes?]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes<itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Hold Insulin<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Details</para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Hold Metformin<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Details</para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[Section Prompt: Anticoagulation?]</para>
+      <para>[Technical Note: Consider providing linkage to Heparin KNART in the future.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes<itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Hold Anticoagulation Therapy<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Details</para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Section Prompt: Kidney Disease?]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes</para>
+            <para>Stage<itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Stage 1 (Glomerular Filtration Rate &gt;= 90 mL/min per 1.73
+                    m^2)</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Stage 2 (Glomerular Filtration Rate 60 to 89 mL/min per 1.73
+                    m^2)</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Stage 3 (Glomerular Filtration Rate 30 to 59 mL/min per 1.73
+                    m^2)</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Stage 4 (Glomerular Filtration Rate 15 to 29 mL/min per 1.73
+                    m^2)</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Stage 5 (Glomerular Filtration Rate &lt; 15 mL/min per 1.73 m^2 or
+                    on dialysis)</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist><itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Special Considerations.]</para>
+    </section>
+    <section>
+      <title>Laboratory Studies</title>
+      <para>[Begin Laboratory Studies.]</para>
+      <para>[Section Prompt: Laboratory Studies.]</para>
+      <para>&lt;obtain&gt; Comprehensive Metabolic Profile Result</para>
+      <para>&lt;obtain&gt; Complete Blood Count Result</para>
+      <para>&lt;obtain&gt; Brain Natriuretic Peptide Result</para>
+      <para>&lt;obtain&gt; Troponin Result</para>
+      <para>&lt;obtain&gt; Magnesium Result</para>
+      <para>&lt;obtain&gt; Activated Partial Thromboplastin Time (aPTT) Result</para>
+      <para>&lt;obtain&gt; Human Chorionic Gonadotropin Result</para>
+      <para>[Section Prompt: Point of Care Studies.]</para>
+      <para>&lt;obtain&gt; Fingerstick Glucose Result</para>
+      <para>[End Laboratory Studies.]</para>
+    </section>
+    <section>
+      <title>Imaging and Diagnostic Studies</title>
+      <para>[Begin Imaging and Diagnostic Studies.]</para>
+      <para>[Technical Note: Images should be attached automatically if text is provided for 12-lead
+        ECG interpretation field]</para>
+      <para>&lt;obtain&gt; 12-Lead ECG Interpretation</para>
+      <para>[Technical Note: Attach: 12-Lead ECG Images.]</para>
+      <para>[Technical Note: Images should be attached automatically if text is provided for the
+        X-Ray Chest Interpretation field]</para>
+      <para>&lt;obtain&gt; X-Ray Chest Interpretation</para>
+      <para>[Technical Note: Attach: X-Ray Chest images.]</para>
+      <para>[Technical Note: Images should be attached automatically if text is provided for the
+        Echocardiogram Interpretation field]</para>
+      <para>&lt;obtain&gt; Echocardiogram Interpretation</para>
+      <para>[Technical Note: Attach: Echocardiogram images.]</para>
+      <para>[End Imaging and Diagnostic Studies.]</para>
+    </section>
+    <section>
+      <title>Brief Post Catheterization Note</title>
+      <para>[Begin Brief Post Catheterization Note.]</para>
+      <para>[Section Prompt: Brief Post Catheterization Note.]</para>
+      <para>[Technical Note: Include link to full VA Clinical Assessment Reporting and Tracking
+        (CART) Program for cardiac catheterization laboratories (Cart-CL) Report.]</para>
+      <para>[Technical Note: Link to CART-CL Report.]</para>
+      <para>[Section Prompt: Procedure Performed.]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Left Heart Catheterization<itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Coronary Angiography</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Left Ventriculography</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Heart Catheterization</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Pericardiocentesis</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Other<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Other Procedure</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Section Prompt: Interventions.]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Percutaneous Coronary Intervention<itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Angioplasty</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Stent</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Endomyocardial Biopsy</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Other<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Other Intervention</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[Section Prompt: Access Site.]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Left Femoral Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Femoral Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Left Radial Artery</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Radial Artery</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Left Internal Jugular Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Internal Jugular Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Left Subclavian Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Right Subclavian Vein</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Other<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Other Site</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para>&lt;obtain&gt; Sheath Size (French)</para>
+      <para>&lt;obtain&gt; Findings</para>
+      <para>&lt;obtain&gt; Interventions Performed Details</para>
+      <para>&lt;obtain&gt; Complications</para>
+      <para>[Section Prompt: Automatic Closure Device Used?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[End Brief Post Catheterization Note.]</para>
+      <para>[End Documentation Template: Cardiology: Cardiac Catheterization.]</para>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Order Set: Cardiology: Pre Cardiac Catheterization</title>
+    <para>[Begin Order Set: Cardiology: Pre Cardiac Catheterization.]</para>
+    <section>
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.]</para>
+      <para>[See Clinical Context in Chapter 1.]</para>
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+    <section>
+      <title>Medications</title>
+      <para>[Begin Medications.]</para>
+      <para>[Section Prompt: Order Pre Cardiac Catheterization Medications.]</para>
+      <para>[Technical Note: Display both the "Oral Contrast Allergy Premedication Regimen" AND the
+        "Intraveneous Contrast Allergy Premedication Regimen" sections ONLY for those patients with
+        documented contrast allergy of any kind.]</para>
+      <para>[Section Prompt: Oral Contrast Allergy Premedication Regimen.]</para>
+      <para>[Section Selection Behavior: Select any that apply. Optional.]</para>
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&#x2610; Prednisone 50 mg tablet oral 1 time 13 hours before procedure </para>
+        </listitem>
+        <listitem>
+          <para>&#x2610; Prednisone 50 mg tablet oral 1 time 7 hours before procedure </para>
+        </listitem>
+        <listitem>
+          <para>&#x2610; Prednisone 50 mg tablet oral 1 time 1 hour before procedure </para>
+        </listitem>
+        <listitem>
+          <para>&#x2610; Diphenhydramine 50 mg tablet oral 1 time 1 hour before procedure </para>
+        </listitem>
+        <listitem>
+          <para>&#x2610; Cimetidine 300 mg tablet oral 1 time 1 hour before procedure </para>
+        </listitem>
+      </itemizedlist>
+      <para>[Section Prompt: Intravenous Contrast Allergy Premedication Regimen.]</para>
+      <para>[Section Selection Behavior: Select any that apply. Optional.]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Hydrocortisone 200 mg solution intraveneous 1 time 4 hours before
+              procedure</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Diphenhydromine 50 mg solution intraveneous 1 time 4 hours before
+              procedure</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[Section Prompt: Hold Medication Orders.]</para>
+      <para>[Technical Note: Orders in this subsection should be made available as appropriate,
+        based on either the patient’s active medication list or selection of the corresponding
+        "Hold…" checkboxes in the Special Considerations section of the Documentation Template:
+        Cardiology: Cardiac Catheterization KNART.]</para>
+      <para>[Technical Note: The prescriber should be prompted to enter the timeframe in which the
+        following medication should be resumed.]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]</para>
+      <para>[Section Prompt: This section applies to patients who are on medications which should be
+        held prior to cardiac catheterization.]</para>
+      <para><itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Hold insulin and resume as directed after cardiac catheterization routine<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Start and stop timing for insulin hold and resume</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para><itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Hold metformin and resume as directed after cardiac catheterization routine<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Start and stop timing for insulin hold and resume</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para><itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Hold anticoagulation therapy and resume as directed after cardiac
+              catheterization routine<itemizedlist>
+                <listitem>
+                  <para>&lt;obtain&gt; Start and stop timing for insulin hold and resume</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Hold aspirin therapy and resume as directed after cardiac catheterization<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Start and stop timing for insulin hold and resume</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Medications.]</para>
+    </section>
+    <section>
+      <title>Laboratory Tests</title>
+      <para>[Begin Laboratory Tests.]</para>
+      <para>[Section Prompt: Please select appropriate laboratory tests to be done prior to cardiac
+        catheterization.]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Comprehensive metabolic profile <itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Stat</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Today</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Upon admission to catheterization lab</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Other<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Timeframe for lab draw</para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Complete blood count <itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Stat</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Today</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Upon admission to catheterization lab</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Other<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Timeframe for lab draw</para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Brain natriuretic peptide <itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Stat</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Today</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Upon admission to catheterization lab</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Other<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Timeframe for lab draw</para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; International normalized ratio (INR)<itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Stat</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Today</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Upon admission to catheterization lab</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Other<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Timeframe for lab draw </para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Troponin <itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Stat</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Today</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Upon admission to catheterization lab</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Other<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Timeframe for lab draw </para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Magnesium level <itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Stat</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Today</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Upon admission to catheterization lab</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Other<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Timeframe for lab draw </para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; aPTT<itemizedlist mark="none">
+                <listitem>
+                  <para>&#x2610; Stat</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Today</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Upon admission to catheterization lab</para>
+                </listitem>
+                <listitem>
+                  <para>&#x2610; Other<itemizedlist mark="none">
+                      <listitem>
+                        <para>&lt;obtain&gt; Timeframe for lab draw </para>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Section Prompt: Pregnancy Testing.]</para>
+      <para>[Technical Note: This subsection should display only if patient is female and medically
+        able to conceive.]</para>
+      <para>[Section Prompt: Order the following study only for a female patient who is medically
+        able to conceive, for example:<itemizedlist>
+          <listitem>
+            <para>Patient is at least 13 years of age but less than 52 years of age; and</para>
+          </listitem>
+          <listitem>
+            <para>Patient is not postmenopausal; and</para>
+          </listitem>
+          <listitem>
+            <para>Patient has not been diagnosed as unable to conceive; and</para>
+          </listitem>
+          <listitem>
+            <para>Patient has not had any of the following:<itemizedlist>
+                <listitem>
+                  <para>Hysterectomy; or</para>
+                </listitem>
+                <listitem>
+                  <para>Bilateral oophorectomy; or</para>
+                </listitem>
+                <listitem>
+                  <para>Tubal ligation</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[Section Prompt: Point of Care Tests.]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Fingerstick glucose</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Laboratory Tests.]</para>
+    </section>
+    <section>
+      <title>Imaging and Electrocardiogram (ECG)</title>
+      <para>[Begin Imaging and Electrocardiogram (ECG).]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; 12-Lead ECG preprocedural evaluation for cardiac catheterization</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Echocardiogram preprocedural evaluation for cardiac catheterization<itemizedlist>
+                <listitem>
+                  <para>&lt;obtain&gt; Details</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; X-ray chest posterioranterior (PA) and lateral preprocedural evaluation
+              for cardiac catheterization</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Echocardiogram anteroposterior (AP) portable preprocedural evaluation for
+              cardiac catheterization</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Imaging and Electrocardiogram (ECG).]</para>
+      <para>[End Order Set: Cardiology: Pre Cardiac Catheterization.]</para>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Order Set: Cardiology: Post Cardiac Catheterization</title>
+    <para>[Begin Order Set: Cardiology: Post Cardiac Catheterization.]</para>
+    <section>
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.]</para>
+      <para>[See Clinical Context in Chapter 1.]</para>
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+    <section>
+      <title>Patient Admission</title>
+      <para>[Begin Patient Admission.]</para>
+      <para>[Section Prompt: Admit to:]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Intensive Care Unit (ICU)</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Telemetry unit</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Medical-Surgical unit</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Other<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Details</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Patient Admission.]</para>
+    </section>
+    <section>
+      <title>Vital Signs and Monitoring</title>
+      <para>[Begin Vital Signs and Monitoring.]</para>
+      <para>[Section Prompt: Vital Signs and Monitoring.]</para>
+      <para>[Section Selection Behavior: Select all that apply. Required.]</para>
+      <para>&#x2610; Vital signs every 4 hours</para>
+      <para>&#x2610; Vital signs every 15 minutes times four, then every 30 minutes times four, then
+        every 60 minutes for duration of bed rest </para>
+      <para>&#x2610; Telemetry Monitoring</para>
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Details</para>
+        </listitem>
+      </itemizedlist>
+      <para>[End Vital Signs and Monitoring.]</para>
+    </section>
+    <section>
+      <title>Activity and Hemostasis Post Cardiac Catheterization</title>
+      <para>[Begin Activity and Hemostasis Post Cardiac Catheterization.]</para>
+      <para>[Section Prompt: For patient who is status post catheterization via radial
+        artery:]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]</para>
+      <para>[Technical Note: The clinical provider should be prompted to specify the start and stop
+        times in the following order.]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Transradial hemostasis band as specified<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Start and stop times for transradial hemostasis band</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[Section Prompt: For patient who is status post catheterization via femoral
+        artery:]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]</para>
+      <para>[Technical Note: The clinical provider should be prompted to specify the number of hours
+        of bed rest in the following order.]</para>
+      <para>[Technical Note: If the following arterial closure device checkbox is selected, the
+        clinical provider should be prompted to specify the device and instructions for pressure in
+        cuff, duration, and observation for bleeding.]</para>
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&#x2610; Arterial closure device per local policy<itemizedlist mark="none">
+              <listitem>
+                <para>&lt;obtain&gt; Device used and instructions for pressure in cuff, duration,
+                  and observation for bleeding</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+      </itemizedlist>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Bed rest per local policy<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Number of hours of bed rest</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Maintain straight leg on the catheter site side during bed rest</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Log roll side-to-side during bed rest as needed</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Elevate head of bed 30 degrees 2 hours after procedure</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[End Activity and Hemostasis Post Cardiac Catheterization.]</para>
+    </section>
+    <section>
+      <title>Nursing Care</title>
+      <para>[Begin Nursing Care.]</para>
+      <para>[Section Prompt: Nursing Care Orders:]</para>
+      <para>[Section Selection Behavior: Select all that apply. Optional.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Check access site and distal pulses every 15 minutes times four, then
+              every 30 minutes times four, then every 60 minutes for duration of bed rest,
+              routine</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[End Nursing Care.]</para>
+    </section>
+    <section>
+      <title>Medications</title>
+      <para>[Begin Medications.]</para>
+      <para>[Section Prompt: Post-procedure Medication Orders:]</para>
+      <para>[Section Selection Behavior: Section all that apply. Optional.]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Aspirin 81 mg tablet orally every day</para>
+          </listitem>
+        </itemizedlist> [Technical Note: The clinical provider should be prompted to specify the
+        start times for all of the remaining orders in this subsection.]<itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Clopidogrel tablet orally, 1 time loading dose in catheterization lab<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Dosage (300 mg or 600 mg)</para>
+                </listitem>
+                <listitem>
+                  <para>&lt;obtain&gt; Details</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Clopidogrel 75 mg tablet orally every day beginning 1 day after loading
+              dose </para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Prasugrel 60 mg tablet orally, 1 time loading dose in catheterization lab
+              as specified in details<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Prasugrel 10 mg tablet orally every day beginning 1 day after loading
+              dose </para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Ticagrelor 180 mg tablet orally, 1 time loading dose in catheterization
+              lab as specified in details<itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Details</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Ticagrelor 90 mg tablet orally, 2 times a day beginning 1 day after
+              loading dose </para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Medications.]</para>
+    </section>
+    <section>
+      <title>Laboratory Tests</title>
+      <para>[Begin Laboratory Tests.]</para>
+      <para>[Section Prompt: Laboratory Tests.]</para>
+      <para>[Section Select Behavior: Select all that apply. Optional.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Comprehensive metabolic panel now</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Complete blood count (CBC) now and in 8 hours; if hemoglobin decreases
+              &gt; 2 g/dl with the second CBC or any subsequent CBC, repeat the CBC in 8 hours
+              again</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Complete blood count daily</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Brain natriuretic peptide now</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Troponin now</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Magnesium now</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; INR now</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; aPTT now</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para><itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Fingerstick glucose now</para>
+          </listitem>
+        </itemizedlist> [End Laboratory Tests.]</para>
+    </section>
+    <section>
+      <title>Imaging and Electrocardiogram (ECG)</title>
+      <para>[Section Prompt: Imaging and Electrocardiogram (ECG).]</para>
+      <para>[Begin Imaging and Electrocardiogram (ECG).]</para>
+      <para>[Section Select Behavior: Select all that apply. Optional.]</para>
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&#x2610; 12-lead ECG postprocedural evaluation following cardiac catheterization
+          </para>
+        </listitem>
+        <listitem>
+          <para>&#x2610; 12-lead ECG as needed for chest pain </para>
+        </listitem>
+      </itemizedlist>
+      <para>[Technical Note: The clinical provider should be prompted to specify any additional
+        parameters for the following echocardiogram order.] <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Echocardiogram postprocedural evaluation following cardiac
+              catheterization <itemizedlist mark="none">
+                <listitem>
+                  <para>&lt;obtain&gt; Details</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; X-ray chest PA and lateral postprocedural evaluation following cardiac
+              catheterization </para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; X-ray chest AP portable postprocedural evaluation following cardiac
+              catheterization </para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Imaging and Electrocardiogram (ECG).]</para>
+      <para>[End Order Set: Cardiology: Post Catheterization.]</para>
+    </section>
+  </chapter>
+  <bibliography>
+    <title>Bibliography/Evidence</title>
+    <biblioentry>
+      <abbrev>Greenberger, 1991</abbrev>
+      <authorgroup>
+        <author>
+          <personname><surname>Greenberger</surname><firstname>PA</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Patterson</surname><firstname>R</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">The prevention of immediate generalized reactions to
+        radiocontrast media in high-risk patients</citetitle>
+      <citetitle pubwork="journal">J Allergy Clin Immunol</citetitle>
+      <pubdate>1991</pubdate>
+      <volumenum>87</volumenum>
+      <issuenum>4</issuenum>
+      <pagenums>867-872</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <abbrev>Maddox, 2014</abbrev>
+      <authorgroup>
+        <author>
+          <personname><surname>Maddox</surname><firstname>TM</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Plomondon</surname><firstname>ME</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Petrich</surname><firstname>M</firstname></personname>
+        </author>
+        <author>
+          <personname>et al</personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">A national clinical quality program for Veterans Affairs
+        catheterization laboratories (from the Veterans Affairs clinical assessment, reporting, and
+        tracking program)</citetitle>
+      <citetitle pubwork="journal">Am J Cardiol</citetitle>
+      <pubdate>2014</pubdate>
+      <volumenum>114</volumenum>
+      <issuenum>11</issuenum>
+      <pagenums>1750-1757</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <abbrev>Patel, 2012</abbrev>
+      <authorgroup>
+        <author>
+          <personname><surname>Patel</surname><firstname>MR</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Bailey</surname><firstname>SR</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Bonow</surname><firstname>RO</firstname></personname>
+        </author>
+        <author>
+          <personname>et al</personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">ACCF/SCAI/AATS/AHA/ASE/ASNC/HFSA/HRS/SCCM/SCCT/SCMR/STS 2012
+        appropriate use criteria for diagnostic catheterization</citetitle>
+      <citetitle pubwork="journal">Cathet Cardiovasc Intervent</citetitle>
+      <pubdate>2012</pubdate>
+      <volumenum>80</volumenum>
+      <issuenum>3</issuenum>
+      <pagenums>E50-E81</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+      <citetitle pubwork="webpage">ASPIRIN 81 MG (aspirin) tablet, coated [DOLGENCORP,
+        LLC]</citetitle>
+      <bibliomisc><link
+          xlink:href="http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3"
+        /></bibliomisc>
+      <pubdate>Revised January 2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+      <citetitle pubwork="webpage">BRILINTA- ticagrelor tablet [AstraZeneca Pharmaceuticals
+        LP]</citetitle>
+      <bibliomisc><link
+          xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f7b3f443-e83d-4bf2-0e96-023448fed9a8."
+        /></bibliomisc>
+      <pubdate>Revised April 2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+      <citetitle pubwork="webpage">CLOPIDOGREL- clopidogrel bisulfate tablet, film coated [Apotex
+        Corp.]</citetitle>
+      <bibliomisc><link
+          xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7"
+        /></bibliomisc>
+      <pubdate>Revised November 2016</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+      <citetitle pubwork="webpage">DELTASONE- prednisone tablet [Pharmacia and Upjohn and
+        Company]</citetitle>
+      <bibliomisc><link
+          xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3400d26a-41cb-40e4-99b4-780e1e0ec561"
+        /></bibliomisc>
+      <pubdate>Revised March 2007</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+      <citetitle pubwork="webpage">DIPHENHYDRAMINE- diphenhydramine hcl tablet, coated [Sam's West
+        Inc]</citetitle>
+      <bibliomisc><link
+          xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=70a584ab-9e24-404a-aad7-f9a05c377248"
+        /></bibliomisc>
+      <pubdate>Revised June 2016</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+      <citetitle pubwork="webpage">DIPHENHYDRAMINE- diphenhydramine hydrochloride injection,
+        solution [APP Pharmaceuticals, LLC]</citetitle>
+      <bibliomisc><link
+          xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fc574e74-1fdc-4a61-a1ed-492ae43faed2"
+        /></bibliomisc>
+      <pubdate>Revised January 2012</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+      <citetitle pubwork="webpage">EFFIENT- prasugrel hydrochloride tablet, film coated [Eli Lilly
+        and Company]</citetitle>
+      <bibliomisc><link
+          xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5fe9c118-c44b-48d7-a142-9668ae3df0c6"
+        /></bibliomisc>
+      <pubdate>Revised July 2016</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+      <citetitle pubwork="webpage">SOLU-CORTEF- hydrocortisone sodium succinate injection, powder,
+        for solution [Pharmacia and Upjohn Company LLC]</citetitle>
+      <bibliomisc><link
+          xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=65eefd58-b166-4d71-ade6-45c8fdf86922"
+        /></bibliomisc>
+      <pubdate>Revised October 2016</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <abbrev>Valgimigli, 2015</abbrev>
+      <authorgroup>
+        <author>
+          <personname><surname>Valgimigli</surname><firstname>M</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Gagnor</surname><firstname>A</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Calabró </surname><firstname>P</firstname></personname>
+        </author>
+        <author>
+          <personname>et al</personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article"> Radial versus femoral access in patients with acute coronary
+        syndromes undergoing invasive management: a randomised multicentre trial</citetitle>
+      <citetitle pubwork="journal">Lancet</citetitle>
+      <pubdate>2015</pubdate>
+      <volumenum>385</volumenum>
+      <issuenum>9986</issuenum>
+      <pagenums>2465-2476</pagenums>
+    </biblioentry>
+  </bibliography>
+  <appendix>
+    <title>Basic Laboratory Panel Definition</title>
+    <itemizedlist>
+      <listitem>
+        <para>Blood urea nitrogen</para>
+      </listitem>
+      <listitem>
+        <para>Calcium</para>
+      </listitem>
+      <listitem>
+        <para>Chloride</para>
+      </listitem>
+      <listitem>
+        <para>CO2 (Carbon dioxide, bicarbonate)</para>
+      </listitem>
+      <listitem>
+        <para>Creatinine</para>
+      </listitem>
+      <listitem>
+        <para>Glucose</para>
+      </listitem>
+      <listitem>
+        <para>Potassium</para>
+      </listitem>
+      <listitem>
+        <para>Sodium</para>
+      </listitem>
+    </itemizedlist>
+  </appendix>
+  <glossary role="auto">
+    <title>Acronyms/Abbreviations</title>
+    <table frame="all">
+      <title>Acronyms/Abreviations</title>
+      <tgroup cols="2">
+        <colspec colname="c1" colnum="1" colwidth="1*"/>
+        <colspec colname="c2" colnum="2" colwidth="1*"/>
+        <thead>
+          <row>
+            <entry>Acronym/Abbreviation</entry>
+            <entry>Definition</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>ACCF </entry>
+            <entry>American College of Cardiology Foundation</entry>
+          </row>
+          <row>
+            <entry>ACS </entry>
+            <entry>Acute Coronary Syndrome</entry>
+          </row>
+          <row>
+            <entry>AP  </entry>
+            <entry>Anteroposterior</entry>
+          </row>
+          <row>
+            <entry>aPTT </entry>
+            <entry>Activated Partial Thromboplastin Time</entry>
+          </row>
+          <row>
+            <entry>CABG </entry>
+            <entry>Coronary Artery Bypass Graft</entry>
+          </row>
+          <row>
+            <entry>CAD </entry>
+            <entry>Coronary Artery Disease</entry>
+          </row>
+          <row>
+            <entry>CART</entry>
+            <entry>Clinical Assessment Reporting and Tracking</entry>
+          </row>
+          <row>
+            <entry>CART-CL </entry>
+            <entry>Clinical Assessment, Reporting, and Tracking System for Cardiac Catheterization
+              Laboratories</entry>
+          </row>
+          <row>
+            <entry>CBC </entry>
+            <entry>Complete Blood Count</entry>
+          </row>
+          <row>
+            <entry>CCWP </entry>
+            <entry>Clinical Context White Paper</entry>
+          </row>
+          <row>
+            <entry>CDS </entry>
+            <entry>Clinical Decision Support</entry>
+          </row>
+          <row>
+            <entry>CO2 </entry>
+            <entry>Carbon Dioxide, Bicarbonate </entry>
+          </row>
+          <row>
+            <entry>CT  </entry>
+            <entry>Computed Tomography</entry>
+          </row>
+          <row>
+            <entry>ECG </entry>
+            <entry>Electrocardiogram</entry>
+          </row>
+          <row>
+            <entry>HL7 </entry>
+            <entry>Health Level 7</entry>
+          </row>
+          <row>
+            <entry>ICU </entry>
+            <entry>Intensive Care Unit</entry>
+          </row>
+          <row>
+            <entry>KBS </entry>
+            <entry>Knowledge Based Systems</entry>
+          </row>
+          <row>
+            <entry>KNART </entry>
+            <entry>Knowledge Artifact</entry>
+          </row>
+          <row>
+            <entry>LVEF </entry>
+            <entry>Left Ventricular Ejection Fraction</entry>
+          </row>
+          <row>
+            <entry>OIIG </entry>
+            <entry>Office of Informatics and Information Governance </entry>
+          </row>
+          <row>
+            <entry>PA  </entry>
+            <entry>Posteroanterior</entry>
+          </row>
+          <row>
+            <entry>PCI </entry>
+            <entry>Percutaneous Coronary Intervention</entry>
+          </row>
+          <row>
+            <entry>SCAI </entry>
+            <entry>Society for Cardiovascular Angiography and Interventions</entry>
+          </row>
+          <row>
+            <entry>SME </entry>
+            <entry>Subject Matter Expert</entry>
+          </row>
+          <row>
+            <entry>VA </entry>
+            <entry>Department of Veteran Affairs</entry>
+          </row>
+          <row>
+            <entry>VAMC</entry>
+            <entry>VA Medical Center</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </glossary>
+</book>
