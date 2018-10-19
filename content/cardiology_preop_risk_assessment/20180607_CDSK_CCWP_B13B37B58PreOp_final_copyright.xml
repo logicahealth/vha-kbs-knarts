@@ -1,0 +1,1348 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Cardiology: Pre-Op Risk Assessment Clinical Content White Paper</subtitle>
+        <copyright>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>Department of Veterans Affairs (VA)</personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <imageobject>
+                            <imagedata fileref="ccwp_resource/VASealColor.jpg"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table colsep="1" frame="all" rowsep="1">
+                    <title>Relevant KNART Information: Cardiology: Pre-Op Risk Assessment</title>
+                    <tgroup align="left" cols="2">
+                        <thead>
+                            <row>
+                                <entry>Gastroenterology KNART</entry>
+                                <entry>Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Cardiology: Pre-Op Risk Assessment - Documentation
+                                    Template</entry>
+                                <entry>0005AC</entry>
+                            </row>
+                            <row>
+                                <entry>Cardiology: Pre-Op Risk Assessment - Order Set</entry>
+                                <entry>0004AC</entry>
+                            </row>
+                            <row>
+                                <entry>Cardiology: Pre-Op Risk Assessment – Composite/Consult
+                                    Request</entry>
+                                <entry>N/A</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>June 2018</pubdate>
+        <volumenum>Version 1.0</volumenum>
+    </info>
+    <preface xml:id="d0e98">
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <para>
+            <table frame="all">
+                <title>VA Subject Matter Expert (SME) Panel</title>
+                <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="2.29*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1.71*"/>
+                    <thead>
+                        <row>
+                            <entry>Name</entry>
+                            <entry>Title</entry>
+                            <entry>Project Role</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry><para>Bruce Bray, MD</para></entry>
+                            <entry><para>Professor, Cardiovascular Medicine University of Utah
+                                School of Medicine Staff Cardiologist, Salt Lake City (SLC) VA
+                                Medical Center (VAMC)</para></entry>
+                            <entry><para>SME, Primary</para></entry>
+                        </row>
+                        <row>
+                            <entry><para>Scott Wall, MD</para></entry>
+                            <entry><para>Assistant Professor, Cardiovascular Medicine University of
+                                Utah School of Medicine Staff Cardiologist, Electrophysiology
+                                Salt Lake City VAMC</para></entry>
+                            <entry><para>SME, Secondary</para></entry>
+                        </row>
+                        <row>
+                            <entry><para>Aiden Abidov, MD, PhD</para></entry>
+                            <entry><para>Professor of Medicine Wayne State University Section Chief,
+                                Cardiology John Dingell VA Medical Center</para></entry>
+                            <entry><para>SME</para></entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table></para>
+    </preface>
+    <preface xml:id="d0e147">
+        <title>Introduction</title>
+        <para>The VA is committed to improving the ability of clinicians to provide care for
+            patients while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the Health
+            Level 7 (HL7) Knowledge Artifact Specification for a wide range of VA clinical use
+            cases. Knowledge Artifacts, referred to as (KNARTs), enable the structuring and encoding
+            of clinical knowledge so the knowledge can be integrated with electronic health records
+            to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper (CCWP) is to capture the clinical
+            context and intent of KNART use cases in sufficient detail to provide the KNART
+            authoring team with the clinical source material to construct the corresponding
+            knowledge artifacts using the HL7 Knowledge Artifact Specification. This paper has been
+            developed using material from a variety of sources: VA artifacts, clinical practice
+            guidelines, evidence in the body of medical literature, and clinical expertise. After
+            reviewing these sources, the material has been synthesized and harmonized under the
+            guidance of VA subject matter experts to reflect clinical intent for this use
+            case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work.</para>
+    </preface>
+    <preface xml:id="d0e156">
+        <title>Conventions Used</title>
+        <para> Conventions used within the knowledge artifact descriptions include: </para>
+        <para> &lt;obtain&gt;: Indicates a prompt to obtain the information listed </para>
+        <itemizedlist>
+            <listitem>
+                <para> If possible, the requested information should be obtained from the underlying
+                    system(s). Otherwise, prompting the user for information may be required </para>
+            </listitem>
+            <listitem>
+                <para>The technical and clinical notes associated with a section should be consulted
+                    for specific constraints on the information (e.g., time-frame, patient
+                    interview, etc.)</para>
+            </listitem>
+            <listitem>
+                <para> Default Values: Unless otherwise noted, &lt;obtain&gt; indicates to obtain
+                    the most recent observation. It is recognized that this default time-frame value
+                    may be altered by future implementations </para>
+            </listitem>
+        </itemizedlist>
+        <para> [...]: Square brackets enclose explanatory text that indicates some action on the
+            part of the clinical user, or general guidance to the clinical or technical teams.
+            Examples include, but are not limited to: </para>
+        <blockquote>
+            <para> [Begin ...], [End ...]: Indicates the start and end of specific areas to clearly
+                delineate them for technical purposes. </para>
+            <para> [Activate ...]: Initiates another knowledge artifact or knowledge artifact
+                section. </para>
+            <para> [Section Prompt: ...]: If this section is applicable, then the following prompt
+                should be displayed to the user. </para>
+            <para> [Section Selection Behavior: ...]: Indicates technical constraints or
+                considerations for the selection of items within the section. </para>
+            <para> [Attach: ...]: Indicates that the specified item should be attached to the
+                documentation template if available. </para>
+            <para> [Link: ...]: Indicates that rather than attaching an item, a link should be
+                included in the documentation template. </para>
+            <para> [Clinical Comment: ...]: Indicates clinical rationale or guidance. </para>
+            <para> [Technical Note: ...]: Indicates technical considerations or notes. </para>
+            <para> [If ...]: Indicates the beginning of a conditional section. </para>
+            <para> [Else, ...]: Indicates the beginning of the alternative branch of a conditional
+                section. </para>
+            <para> [End if ...]: Indicates the end of a conditional section. </para>
+        </blockquote>
+        <para> &#9744;: Indicates items that should be selected based upon the section selection
+            behavior. </para>
+        
+    </preface>
+    <chapter><title>Clinical Context: Cardiology Pre-op Risk Assessment</title>
+       
+        <para>Primary care providers benefit from a standardized approach for determining whether a
+            patient should be referred to cardiology for an evaluation prior to an elective,
+            non-cardiac surgery. Essentially, any non-low-risk patient who is undergoing a
+            non-low-risk procedure should be referred to cardiology for a preoperative evaluation
+            prior to non-cardiac surgery. The terms “non-low-risk patient” and “non-low-risk
+            procedure” are defined within the documentation template, section 3 and 4 in chapter 3.
+            The consult request portion of the knowledge artifact contains information pertinent to
+            the consult.</para>
+        <para>The Cardiology Pre-op Risk Assessment group of KNARTs are intended for clinical
+            providers caring for adult patients in a Primary Care Clinic who require referral to a
+            cardiologist for preoperative medical clearance prior to non-cardiac surgery. This
+            consult request as well as the associated documentation template and order set
+            components are intended to ensure that a cardiology consultation is appropriate and, if
+            so, that the necessary workup is initiated prior to a cardiology consultation for a
+            preoperative evaluation. The intent of these artifacts is to ensure a minimum workup is
+            initiated prior to a Cardiology Consultation. Specific constraints for these artifacts
+            are that the artifacts:</para>
+        <itemizedlist>
+            <listitem xml:id="d0e189">
+                <para>Apply to outpatients undergoing elective, non-cardiac surgery</para>
+            </listitem>
+            <listitem xml:id="d0e192">
+                <para>Are not appropriate for use for patients with acute coronary syndrome
+                    (ACS)</para>
+            </listitem>
+            <listitem xml:id="d0e195">
+                <para>Are not appropriate for use for patients requiring emergency surgery</para>
+            </listitem>
+        </itemizedlist>
+        <para>These context domains are summarized in the table below.</para>
+        <para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry align="left">
+                                <para>Provider in a Primary Care Clinic</para>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry align="left">
+                                <para>Adult being considered for elective, non-emergent, non-cardiac
+                                    surgery</para>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry align="left">
+                                <para>Routine</para>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry align="left">
+                                <para>Primary Care</para>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry align="left">
+                                <para>Outpatient</para>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table></para>
+
+        
+        <section><title>Knowledge Artifacts</title>
+        <para>[Begin Knowledge Artifacts.]</para>
+        <para>This section describes the CDS knowledge artifacts that are part of the Cardiology
+            Pre-Op Risk Assessment group, and include:</para>
+        <itemizedlist>
+            <listitem xml:id="d0e236">
+                <para>A Cardiology: Pre-Op Risk Assessment Consult Request Composite KNART </para>
+                <itemizedlist>
+                    <listitem xml:id="d0e240">
+                        <para>High-level, encompassing artifact which uses the Cardiology: Pre-Op
+                            Risk Assessment Documentation Template and the Cardiology: Pre-Op Risk
+                            Assessment Order Set</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e246">
+                <para>A Cardiology: Pre-Op Risk Assessment Documentation Template KNART </para>
+                <itemizedlist>
+                    <listitem xml:id="d0e250">
+                        <para>Documents the information provided by the referring provider</para>
+                    </listitem>
+                    <listitem xml:id="d0e253">
+                        <para>Includes logic for appropriate display of documentation
+                            sections</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e256">
+                <para>A Cardiology: Pre-Op Risk Assessment Order Set KNART </para>
+                <itemizedlist>
+                    <listitem xml:id="d0e260">
+                        <para>Orderable items associated with the consult request</para>
+                    </listitem>
+                    <listitem xml:id="d0e263">
+                        <para>Includes logic for appropriate display of the order set</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+        </itemizedlist>
+        <para>[End Knowledge Artifacts.]</para>
+        </section></chapter>
+        <chapter><title>Composite</title>
+        <para>[Begin Composite.]</para>
+            <section><title>Knowledge Narrative</title>
+        <para>[See Clinical Context in Chapter 1.]</para></section>
+                <section><title>Consult Request</title>
+        <para>[Technical Note: The following list provides the basic components of the consult
+            request. This is the high-level, encompassing artifact, and must be combined with the
+            documentation template and order set to form a fully functional knowledge
+            artifact.]</para>
+        <para>[Section Prompt: In order to initiate a Cardiology consult to evaluate a patient for a
+            preoperative assessment for a non-cardiac elective surgery, please provide the following
+            information.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e334">
+                <para>Reason for Consult: Preoperative cardiovascular evaluation for adult candidate
+                    for non-cardiac surgery</para>
+            </listitem>
+            <listitem xml:id="d0e343">
+                <para>Consult Specialty: Cardiology</para>
+            </listitem>
+            <listitem xml:id="d0e346">
+                <para>Priority: Routine</para>
+            </listitem>
+            <listitem xml:id="d0e349">
+                <para>&lt;obtain&gt; Referring Physician&lt;name&gt;</para>
+            </listitem>
+            <listitem xml:id="d0e352">
+                <para>&lt;obtain&gt; Referring Physician Contact Information (including specialty
+                    and location if referring to outside of VA)</para>
+            </listitem>
+        </itemizedlist>
+        <para>[Activate associated documentation template]</para>
+        <para>[End Composite.]</para></section>
+        </chapter>
+        <chapter><title>Documentation Template</title>
+        <para>[Begin Documentation Template.]</para>
+            <section><title>Knowledge Narrative</title>
+        <para>[See Clinical Context in Chapter 1.]</para>
+        <para>The approach to the assessment of perioperative risk for patients undergoing
+            non-cardiac surgery has been extensively codified and validated by the American College
+            of Cardiology/American Heart Association (ACC/AHA). Additionally, several other
+            instruments have been independently validated, are widely used, and may add further
+            value (Hlatky 1989; Lee 1999). The ACC/AHA approach focuses largely on patient-specific
+            factors, such as age and comorbidity (Fleisher 2014). Alternative procedure-specific
+            approaches have also been developed by other organizations. Of these, the approach
+            selected for use within this documentation template is the Modified Johns Hopkins
+            Surgical Criteria (Donati 2004). These criteria suggest that a NON-LOW-RISK PATIENT who
+            is undergoing a NON-LOW-RISK PROCEDURE should be referred to cardiology for a
+            preoperative evaluation prior to non-cardiac surgery. A NON–LOW-RISK PATIENT is defined
+            using the revised cardiac risk index (RCRI) as a patient with 2 or more Revised Cardiac
+            Risk Index (RCRI) predictors. The RCRI predictors are: high-risk type of surgery,
+            ischemic heart disease, history of congestive heart failure, history of cerebrovascular
+            disease, insulin therapy for diabetes, and preoperative serum creatinine &gt; 2 mg/dL.
+            (Lee 1999.) A NON–LOW-RISK PROCEDURE is defined as any grade II or grade III surgery,
+            based on the modified Johns Hopkins surgical criteria. (Donati 2004.)</para></section>
+                <section><title>Documentation Template Applicability</title>
+        <para>[Section Prompt: This documentation template is not applicable to emergency surgery
+            patients or patients with an acute coronary syndrome. It is intended for patients
+            anticipating an elective, non-cardiac surgery.]</para>
+                <section><title>Procedure Risk</title>
+        <para>[Begin Procedure Risk.]</para>
+        <para>[Section Prompt: With respect to the surgical procedure that the patient requires,
+            define the procedure as Low, Medium or High surgical risk by selecting the appropriate
+            checkbox from just one of the three category options shown below. Note that a
+            “NON–LOW-RISK PROCEDURE” is defined as any surgery that is medium or high risk, based on
+            the modified Johns Hopkins surgical criteria (Donati 2004). To assist the clinical
+            provider in decision making, representative examples of procedures that would be defined
+            as Low, Medium, or High risk appear below the checkbox options.]</para>
+        <para>[Section Selection Behavior: Only one checkbox from among Low, Medium, High should be
+            checked. At least one checkbox must be checked.]</para>
+        <para><literal>☐</literal> Low: minimal to moderately invasive procedure</para>
+        <para><literal>☐</literal> Medium: moderately to significantly invasive procedures (Note:
+            Medium Risk is a NON-LOW RISK Procedure)</para>
+        <para><literal>☐</literal> High: highly invasive procedure (Note: High Risk is a NON-LOW
+            RISK Procedure)</para>
+        <para>The following are representative examples of procedures that would be considered Low,
+            Medium, or High Risk. The list is not exhaustive, and does not supersede clinical
+            judgement regarding the risk a particular surgical procedure carries.</para>
+        <para><emphasis role="bold">Table 4: Example Procedures</emphasis></para>
+        <informaltable>
+            <tgroup cols="3">
+                <colspec colname="c1" colwidth="34*"/>
+                <colspec colname="c2" colwidth="33*"/>
+                <colspec colname="c3" colwidth="33*"/>
+                <tbody valign="top">
+                    <row>
+                        <entry><para><emphasis role="bold">LOW Risk
+                            Procedures</emphasis></para></entry>
+                        <entry><para><emphasis role="bold">MEDIUM Risk
+                            Procedures</emphasis></para></entry>
+                        <entry><para><emphasis role="bold">HIGH Risk
+                            Procedures</emphasis></para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Breast biopsy</para></entry>
+                        <entry align="left"><para>Thyroidectomy</para></entry>
+                        <entry><para>Major orthopedic-spinal reconstruction</para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Removal of minor skin or subcutaneous lesions</para></entry>
+                        <entry align="left"><para>Hysterectomy</para></entry>
+                        <entry><para>Major reconstruction of the gastrointestinal
+                            tract</para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Myringotomy tubes</para></entry>
+                        <entry align="left"><para>Myomectomy</para></entry>
+                        <entry><para>Major genitourinary surgery (e.g., radical retropubic
+                                prostatectomy)</para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Hysteroscopy</para></entry>
+                        <entry align="left"><para>Cystectomy</para></entry>
+                        <entry><para>Major vascular repair without postoperative ICU
+                            stay</para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Cystoscopy</para></entry>
+                        <entry align="left"><para>Cholecystectomy</para></entry>
+                        <entry><para>Cardiothoracic procedure</para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Vasectomy</para></entry>
+                        <entry align="left"><para>Laminectomy</para></entry>
+                        <entry><para>Intracranial procedure</para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Fiber-optic bronchoscopy</para></entry>
+                        <entry align="left"><para>Hip/knee replacement</para></entry>
+                        <entry><para>Major procedure on the oropharynx</para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Diagnostic laparoscopy</para></entry>
+                        <entry align="left"><para>Nephrectomy</para></entry>
+                        <entry><para>Major vascular, skeletal, neurological repair</para></entry>
+                    </row>
+                    <row>
+                        <entry><para>Dilation and curettage</para></entry>
+                        <entry align="left"><para>Major laparoscopic procedures</para></entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry><para>Fallopian tube ligation</para></entry>
+                        <entry align="left"><para>Resection/reconstructive surgery of the digestive
+                                tract</para></entry>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry><para>Arthroscopy</para></entry>
+                        <entry align="left"/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry><para>Inguinal hernia repair</para></entry>
+                        <entry align="left"/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry><para>Laparoscopic lysis of adhesion</para></entry>
+                        <entry align="left"/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry><para>Tonsillectomy/rhinoplasty]</para></entry>
+                        <entry align="left"/>
+                        <entry/>
+                    </row>
+                    <row>
+                        <entry><para>Breast biopsy</para></entry>
+                        <entry align="left"/>
+                        <entry/>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+        <para> [End Procedure Risk.]</para></section>
+                    <section><title>Patient Risk</title>
+        <para>[Begin Patient Risk.]</para>
+        <para>[Section Prompt: Define the patient’s risk for surgery as LOW RISK or NON-LOW RISK. A
+            NON-LOW-RISK PATIENT is defined as a patient with 2 or more revised cardiac risk index
+            (RCRI) predictors. The RCRI predictors are: a NON-LOW-RISK PROCEDURE, ischemic heart
+            disease, history of congestive heart failure, history of cerebrovascular disease,
+            insulin therapy for diabetes, and preoperative serum creatinine &gt; 2 mg/dL.]</para>
+        <para><emphasis role="bold">Revised Cardiac Risk Index (RCRI)</emphasis></para>
+        <para>[Section Prompt: Check any of the following that apply to the patient.]</para>
+        <para>[Section Selection Behavior: None or as many as all may be selected.]</para>
+        <para>[Technical Note: The first box (“Medium or High Risk procedure”) should be
+            pre-selected if the procedure is a NON-LOW RISK PROCEDURE as defined in chapter 3
+            above.]</para>
+        <itemizedlist mark="none">
+            <listitem xml:id="d0e552">
+                <para>☐ Medium or High Risk procedure</para>
+            </listitem>
+            <listitem xml:id="d0e555">
+                <para>☐ Ischemic heart disease</para>
+            </listitem>
+            <listitem xml:id="d0e558">
+                <para>☐ History of congestive heart failure</para>
+            </listitem>
+            <listitem xml:id="d0e561">
+                <para>☐ History of cerebrovascular disease</para>
+            </listitem>
+            <listitem xml:id="d0e564">
+                <para>☐ Insulin-dependent diabetes mellitus</para>
+            </listitem>
+            <listitem>
+                <para>☐ Preoperative serum creatinine &gt; 2 mg/dL</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">Risk of Major Adverse Cardiac Event (MACE)</emphasis></para>
+        <itemizedlist>
+            <listitem xml:id="d0e572">
+                <para>[Technical Note: Add the number of items checked above in the Revised Cardiac
+                    Risk Index (RCRI) Section in order to calculate the Risk of MACE:</para>
+            </listitem>
+            <listitem>
+                <para>If 0 items checked, the risk of a major adverse cardiac event (RISK OF MACE)
+                    is 0.4%,</para>
+            </listitem>
+            <listitem xml:id="d0e575">
+                <para>If 1 item checked, the RISK OF MACE is 0.9%,</para>
+            </listitem>
+            <listitem xml:id="d0e578">
+                <para>If 2 items checked, the RISK OF MACE is 6.6%,</para>
+            </listitem>
+            <listitem xml:id="d0e581">
+                <para>If 3 or more items checked, the RISK OF MACE is 11%]</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>[Section Prompt: The Risk of MACE is estimated by totaling the number
+                            of variables that apply from the Revised Cardiac Risk Indicator. </para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>
+                <para>If 0 items were selected from the RCRI variables, the risk of a major adverse
+                    cardiac event (RISK OF MACE) is 0.4%,</para>
+            </listitem>
+            <listitem>
+                <para>If any 1 item was selected, the RISK OF MACE is 0.9%,</para>
+            </listitem>
+            <listitem>
+                <para>If any 2 items were selected, the RISK OF MACE is 6.6%,</para>
+            </listitem>
+            <listitem>
+                <para>If any 3 items were selected, the RISK OF MACE is 11%]</para>
+            </listitem>
+            <listitem>
+                <para>[Section Prompt: The patient’s estimated risk of a major adverse cardiac event
+                    (RISK of MACE) is:]</para>
+            </listitem>
+        </itemizedlist>
+        <para> Display the RISK OF MACE.</para>
+        <para><emphasis role="bold">RISK OF MACE is less than 1%</emphasis></para>
+        <para>[Technical Note: If RISK OF MACE is less than 1%:]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e591">
+                <para>[Section Prompt: Consider proceeding to surgery without cardiology
+                    consultation since the patient’s estimated risk of a major adverse cardiac event
+                    is less than 1%.]</para>
+            </listitem>
+            <listitem xml:id="d0e594">
+                <para>[Documentation Template complete.]</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">RISK OF MACE is NOT less than 1%</emphasis></para>
+        <itemizedlist>
+            <listitem xml:id="d0e600">
+                <para>[Section Prompt: Can the patient perform activity of at least 4 metabolic
+                    equivalents (METs)? (Examples of 4 METs would include: light yard work, walking
+                    slowly on a flat surface at a 15-minute mile pace, or a moderate amount of work
+                    around the house like sweeping floors or carrying groceries.) (Jette 1990:
+                    https://onlinelibrary.wiley.com/doi/pdf/10.1002/clc.4960130809)] </para>
+            </listitem>
+        </itemizedlist>
+        <para><literal>☐</literal> Yes, the patient can perform at least 4 METs</para>
+        <para><literal>☐</literal> No, the patient cannot perform at least 4 METs</para>
+        <para>[Technical Note: If the patient can perform at least 4 METs:]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e715">
+                <para>[Section Prompt: If the patient is able to perform at least 4 METs, the
+                    patient may proceed to surgery since their functional capacity is at least 4
+                    METs.]</para>
+            </listitem>
+            <listitem xml:id="d0e718">
+                <para>[End Documentation Template.]</para>
+            </listitem>
+        </itemizedlist>
+        <para>[Technical Note: If the patient cannot perform at least 4 METs:]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e724">
+                <para>[Section Prompt: If the patient cannot perform at least 4 METs, consider
+                    referring the patient for cardiology consult for risk stratification due to less
+                    than moderate functional capacity.]</para>
+            </listitem>
+            <listitem xml:id="d0e727">
+                <para>[End Patient Risk.]</para>
+            </listitem>
+        </itemizedlist>
+        <para xml:id="d0e730"><emphasis role="bold">5. Laboratory Studies</emphasis></para>
+        <para> [Technical Note: The following information should be included (latest value within
+            the past 2 years), if available.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e736">
+                <para>&lt;obtain&gt; Basic Metabolic Profile Lab Result</para>
+            </listitem>
+            <listitem xml:id="d0e739">
+                <para>&lt;obtain&gt; Complete Blood Count Lab Result</para>
+            </listitem>
+        </itemizedlist>
+        <para xml:id="d0e742"><emphasis role="bold">6. Imaging and Diagnostic
+            Studies</emphasis></para>
+        <para> [Technical Note: For this documentation template, the following information should be
+            included, if available from the prior 30 days.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e748">
+                <para>[Technical Note: Image and result text should be attached automatically if
+                    they are provided for the 12-Lead Electrocardiogram Interpretation
+                    field.]</para>
+                <itemizedlist>
+                    <listitem xml:id="d0e752">
+                        <para>&lt;obtain&gt; resting 12-Lead Electrocardiogram Interpretation</para>
+                    </listitem>
+                    <listitem xml:id="d0e755">
+                        <para>[Attach/link Images: 12-Lead Electrocardiogram]</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e758">
+                <para>[Technical Note: Result text should be linked automatically if it is provided
+                    for the Stress Electrocardiography Interpretation field.]</para>
+                <itemizedlist>
+                    <listitem xml:id="d0e762">
+                        <para>&lt;obtain&gt; Stress Electrocardiography Interpretation</para>
+                    </listitem>
+                    <listitem xml:id="d0e765">
+                        <para>[Attach/link Images: Stress Electrocardiography]</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e768">
+                <para>[Technical Note: Result text should be linked automatically if it is provided
+                    for the Resting Echocardiogram/Doppler Interpretation field.]</para>
+                <itemizedlist>
+                    <listitem xml:id="d0e772">
+                        <para>&lt;obtain&gt; Resting Echocardiogram/Doppler Interpretation</para>
+                    </listitem>
+                    <listitem xml:id="d0e775">
+                        <para>[Link Images: Resting Echocardiogram/Doppler
+                            Electrocardiography]</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e778">
+                <para>[Technical Note: Result text should be linked automatically if it is provided
+                    for the Stress Echocardiogram Interpretation field. This includes treadmill and
+                    dobutamine stress echo.]</para>
+                <itemizedlist>
+                    <listitem xml:id="d0e782">
+                        <para>&lt;obtain&gt; Stress Echocardiogram Interpretation</para>
+                    </listitem>
+                    <listitem xml:id="d0e785">
+                        <para>[Link Images: Stress Echocardiogram]</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e788">
+                <para>[Technical Note: Result text should be linked automatically if it is provided
+                    for the Stress Myocardial Perfusion Imaging (MPI) Interpretation field.]</para>
+                <itemizedlist>
+                    <listitem xml:id="d0e792">
+                        <para>&lt;obtain&gt; Stress MPI Interpretation</para>
+                    </listitem>
+                    <listitem xml:id="d0e795">
+                        <para>[Link Images: Stress MPI]</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e798">
+                <para>[Technical Note: Result text should be linked automatically if it is provided
+                    for the Rest/Stress Magnetic Resonance Imaging (MRI) Interpretation
+                    field.]</para>
+                <itemizedlist>
+                    <listitem xml:id="d0e802">
+                        <para>&lt;obtain&gt; Rest/Stress MRI Interpretation</para>
+                    </listitem>
+                    <listitem xml:id="d0e805">
+                        <para>[Link Images: Rest/Stress MRI]</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e808">
+                <para>[Technical Note: Result text should be linked automatically if it is provided
+                    for the Chest Computed Tomography (CT) and/or Cardiac CT and/or Coronary CT
+                    Angiography (CTA) Interpretation field.]</para>
+                <itemizedlist>
+                    <listitem xml:id="d0e812">
+                        <para>&lt;obtain&gt; Chest CT and/or Cardiac CT and/or Coronary CT
+                            Angiography (CTA) Interpretation</para>
+                    </listitem>
+                    <listitem xml:id="d0e815">
+                        <para>[Link Images: Chest CT and/or Cardiac CT and/or Coronary CT
+                            Angiography (CTA)] </para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem xml:id="d0e818">
+                <para>[Technical Note: Result text should be linked automatically if it is provided
+                    for the X-Ray Chest Interpretation field.]</para>
+                <itemizedlist>
+                    <listitem xml:id="d0e822">
+                        <para>&lt;obtain&gt; X-Ray Chest Interpretation</para>
+                    </listitem>
+                    <listitem xml:id="d0e825">
+                        <para>[Link Images: X-Ray Chest]</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+        </itemizedlist>
+        <para xml:id="d0e835">[End Documentation Template.]</para></section></section></chapter>
+    <chapter><title>Order Set</title>
+        <para xml:id="d0e1121">[Begin Order Set.]</para>
+        <section><title>Knowledge Narrative</title>
+        <para>[See Clinical Context in Chapter 1.]</para>
+            <section><title>Order Set Applicability</title>
+        <para> [Section Prompt: This order set is not applicable to emergency surgery patients or
+            patients with an acute coronary syndrome. It is intended for patients anticipating an
+            elective, non-cardiac surgery.]</para>
+        <para>[Section Prompt: This order set should be used for a patient who is being referred to
+            cardiology for preoperative cardiac risk stratification prior to non-cardiac surgery,
+            subsequent to determination during use of the documentation template that the patient
+            requires this evaluation. The referring provider should also consider ordering an
+            appropriate risk stratification study from the options presented within this order set
+            in conjunction with the cardiology consult. All orders are routine unless otherwise
+            specified.]</para>
+                <section><title>Consults and Referrals</title>
+        <para>[Section Selection Behavior: Optional.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e1139">
+                <para>☐ Order referral to cardiology for preoperative assessment prior to elective
+                    non-cardiac surgery</para>
+            </listitem>
+        </itemizedlist>
+                    <section><title>4. Risk Stratification Testing</title>
+        <para><emphasis role="bold">Exercise Stress Testing</emphasis></para>
+        <para>[Section Prompt: Consider for patients with no known or <phrase xml:lang="en-US"
+                >suspected </phrase> coronary artery disease, low probability for coronary artery
+            disease, ability to exercise, normal electrocardiogram, and heart rate &gt; 60 beats per
+            minute.]</para>
+        <para>[Section Selection Behavior: Optional.] </para>
+        <itemizedlist>
+            <listitem xml:id="d0e1156">
+                <para>☐ exercise stress testing</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">Stress Testing with Echocardiography</emphasis></para>
+        <para>[Section Prompt: Consider for patients with no known or <phrase xml:lang="en-US"
+                >suspected </phrase> coronary artery disease, low to intermediate probability for
+            coronary artery disease, ability to exercise, and normal electrocardiogram.]</para>
+        <para>[Section Selection Behavior: Optional.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e1166">
+                <para>☐ stress testing echocardiography</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">Dobutamine Stress Testing with Myocardial Perfusion Imaging
+                (MPI)</emphasis></para>
+        <para>[Section Prompt: Consider for patients with no known or <phrase xml:lang="en-US"
+                >suspected </phrase> coronary artery disease, intermediate probability for coronary
+            artery disease, inability to exercise, inability to tolerate other vasodilator stress
+            agents and normal electrocardiogram.]</para>
+        <para>[Section Selection Behavior: Only one should be selected. Optional.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e1176">
+                <para>☐ dobutamine stress testing myocardial perfusion imaging</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">Coronary CT Angiogram</emphasis></para>
+        <para>[Section Prompt: Consider for patients with no known or <phrase xml:lang="en-US"
+                >suspected </phrase> coronary artery disease, high probability for coronary artery
+            disease, inability to exercise, and normal electrocardiogram.]</para>
+        <para>[Section Selection Behavior: Only one should be selected. Optional.] </para>
+        <itemizedlist>
+            <listitem xml:id="d0e1185">
+                <para>☐ coronary CT angiogram</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">Vasodilator Stress Testing with MPI</emphasis></para>
+        <para>[Section Prompt: Consider for patients with no known or <phrase xml:lang="en-US"
+                >suspected </phrase> coronary artery disease, intermediate probability for coronary
+            artery disease, inability to exercise, and abnormal electrocardiogram.]</para>
+        <para>[Section Selection Behavior: Only one should be selected. Optional.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e1195">
+                <para>☐ adenosine stress testing myocardial perfusion imaging</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">Exercise Stress Testing with MPI</emphasis></para>
+        <para>[Section Prompt: Consider for patients with known or <phrase xml:lang="en-US"
+                >suspected </phrase> coronary artery disease, ability to exercise, and normal
+            ST-T.]</para>
+        <para>[Section Selection Behavior: Optional.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e1211">
+                <para>☐ exercise stress testing myocardial perfusion imaging</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">Dobutamine Stress Testing with Echocardiography or
+                MPI</emphasis></para>
+        <para>[Section Prompt: Consider for patients with known or <phrase xml:lang="en-US"
+                >suspected </phrase> coronary artery disease, inability to exercise, normal
+            electrocardiogram, and no prior myocardial infarction. Only one should be
+            selected.]</para>
+        <para>[Section Selection Behavior: Only one should be selected. Optional.]</para>
+        <itemizedlist>
+            <listitem>
+                <para>☐ dobutamine stress testing echocardiography</para>
+            </listitem>
+            <listitem>
+                <para>☐ dobutamine stress testing myocardial perfusion imaging</para>
+            </listitem>
+        </itemizedlist>
+        <para><emphasis role="bold">Vasodilator Stress Testing with MPI</emphasis></para>
+        <para>[Section Prompt: Consider for patients with known or suspected coronary
+            artery disease who have any of the following: abnormal electrocardiogram; permanent
+            pacemaker with ventricular-paced rhythm; poor exercise tolerance.  Also
+            consider for patients with a history of myocardial infarction (MI) or regional wall
+            motion abnormalities, especially for more severe/extensive disease.] </para>
+        <para>[Section Selection Behavior: Only one should be selected. Optional.]</para>
+        <itemizedlist>
+            <listitem xml:id="d0e1221">
+                <para>☐ adenosine stress testing myocardial perfusion imaging</para>
+            </listitem>
+        </itemizedlist>
+        <para>[End Order Set.]</para></section></section></section></section></chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <citetitle pubwork="webpage">ACS NSQIP Surgical Risk Calculator</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                >http://riskcalculator.facs.org/RiskCalculator/index.jsp.</link></bibliomisc>
+            <pubdate>2017</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Daley, 2015</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Daley</surname><firstname>B.J.</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Cecil</surname><firstname>W</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Clarke</surname><firstname>PC</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Cofer</surname><firstname>JB</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Guillamondegui
+                    </surname><firstname>OD</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">How slow is too slow? Correlation of operative time
+                to complications: an analysis from the Tennessee Surgical Quality
+                Collaborative.</citetitle>
+            <citetitle pubwork="journal">J Am Coll Surg</citetitle>
+            <pubdate>2015</pubdate>
+            <volumenum>220(4)</volumenum>
+            <pagenums>550-558</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Donati, 2004</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Donati
+                    </surname><firstname>A</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Ruzzi
+                    </surname><firstname>M</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Adrario
+                    </surname><firstname>E</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">A new and feasible model for predicting operative
+                risk </citetitle>
+            <citetitle pubwork="journal">Br J Anaesth.</citetitle>
+            <pubdate>2004</pubdate>
+            <volumenum>93(3)</volumenum>
+            <pagenums>393-399</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Fleisher, 2014</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Fleisher</surname><firstname>LA</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Fleischmann</surname><firstname>KE</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Auerbach</surname><firstname>AD</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">2014 ACC/AHA guideline on perioperative
+                cardiovascular evaluation and management of patients undergoing non-cardiac
+                surgery: a report of the American College of Cardiology/American Heart
+                Association Task Force on Practice Guidelines.</citetitle>
+            <citetitle pubwork="journal">Circulation</citetitle>
+            <pubdate>2014</pubdate>
+            <volumenum>130(24)</volumenum>
+            <pagenums>e278-e333</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Hlatky , 1989</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Hlatky</surname><firstname>MA</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Boineau</surname><firstname>RE</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Higginbotham</surname><firstname>MB</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">A brief self-administered questionnaire to
+                determine functional capacity (the Duke Activity Status Index).</citetitle>
+            <citetitle pubwork="journal">Am J Cardiol</citetitle>
+            <pubdate>1989</pubdate>
+            <volumenum>64(10)</volumenum>
+            <pagenums>651-654</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Hu, 2016</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Hu</surname><firstname>WH</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Chen</surname><firstname>HH</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Lee</surname><firstname>KC</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Assessment of the addition of hypoalbuminemia to
+                ACS-NSQIP surgical risk calculator in colorectal cancer</citetitle>
+            <citetitle pubwork="journal">Medicine (Baltimore).</citetitle>
+            <pubdate>2016</pubdate>
+            <volumenum>95(10)</volumenum>
+            <pagenums>e2999</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Lee , 1999</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Lee</surname><firstname>TH</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Marcantonio</surname><firstname>ER</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Mangione</surname><firstname>CM</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Derivation and prospective validation of a simple
+                index for prediction of cardiac risk of major non-cardiac
+                surgery</citetitle>
+            <citetitle pubwork="journal">Circulation</citetitle>
+            <pubdate>1999</pubdate>
+            <volumenum>100(10)</volumenum>
+            <pagenums>1043-1049</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>McMillan, 2017</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>McMillan</surname><firstname>MT</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Allegrini</surname><firstname>V</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Asbun</surname><firstname>HJ</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Incorporation of procedure-specific risk into the
+                ACS-NSQIP surgical risk calculator improves the prediction of morbidity and
+                mortality after pancreatoduodenectomy.</citetitle>
+            <citetitle pubwork="journal">Ann Surg.</citetitle>
+            <pubdate>2017</pubdate>
+            <volumenum>265(5)</volumenum>
+            <pagenums>978-986</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Neuberger, 2017</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Neuberger</surname><firstname>JM</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Bechstein</surname><firstname>WO</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Kuypers</surname><firstname>DR</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Practical recommendations for long-term management
+                of modifiable risks in kidney and liver transplant recipients: a guidance
+                report and clinical checklist by the Consensus on Managing Modifiable Risk
+                in Transplantation (COMMIT) Group.</citetitle>
+            <citetitle pubwork="journal"> Transplantation</citetitle>
+            <pubdate>2017</pubdate>
+            <volumenum>101(4S Suppl 2)</volumenum>
+            <pagenums>S1-S56</pagenums>
+        </biblioentry>
+    </bibliography>
+    <appendix>
+        <title>Appendix: Existing VA Artifacts</title>
+        <para>These artifacts consist of screenshots from the Portland VAMC cardiology pre-op
+            service.</para>
+        <figure>
+            <title>Guidance to Referring Provider for Cardiology Pre-Op Consultation</title>
+            <mediaobject>
+                <alt>Screenshot of Cardiology Providers Note: Pre-Op Evaluation list: 1. Most
+                    patients can be evaluated by surgeon and primary care provider and go directly
+                    to anticipating surgery. 2. Please use the Pre-Op Calculator in the Tools Menu
+                    to help assess a patients pre-op cardiac assessment. 3. To proceed directly to a
+                    pre-op consult without using the calculator tool, choose the Pre-Op Consult
+                    linked below. 4. An ECG is required within the past 30 days for all pre-op
+                    consults.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig1ProvidersNotePreOpEvaluation.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Guidance for Pre-Op Medical Risk Assessment</title>
+            <mediaobject>
+                <alt>The image shows a screenshot of the Reason for Request Link to Pre-Op
+                    Guidelines Medical Risk Assessment. No action required.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig2ReasonforRequest.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Basic Surgical Risk Categorization</title>
+            <mediaobject>
+                <alt>PREOP GUIDELINES: http://vaww.portland.med.va.gov/Departments/CCE/PCECS/PreOpGuidelines/MedicalRiskAssessment.htm</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig3BasicSurgicalRiskCategorization.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Met Equivalents</title>
+            <mediaobject>
+                <alt>This image is a screenshot of the definition of MET as well as examples of each stage of METs</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig4MetEquivalents.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Template: Cardiology Pre-Op Service (Screen 1 of 4)</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of a Template: Cardiolgy Pre-Op Service asking whether the patient can exercise 4 METs do to the level of stress of surgery.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig5TemplateCardioPreOpService.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Template: Cardiology Pre-Op Service (Screen 2 of 4)</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of a Template: Cardiology Pre-Op Service showing that if a patient can exercise 4 METS, the following patient history questions must be asked.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig6TemplateCardioPreOpService.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Template: Cardiology Pre-Op Service (Screen 3 of 4)</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of a Template: Cardiology Pre-Op Service continuing the patient history questions if a patient can exercise 4 METs</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig7TemplateCardioPreOpService.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Template: Cardiology Pre-Op Service (Screen 4 of 4)</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of a Template: Cardiology Pre-Op Service continuing the patient history questions if a patient can exercise 4 METs</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig8TemplateCardioPreOpService.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Order a Cardiology Pre-Op Consult</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of an Order to Consult to Service/Specialty if a patient can exercise 4 METs</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig9OrderAConsult.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Template: Cardiology Pre-Op Consult (Screen 1 of 4)</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of a Template: Cardiology Pre-Op Service showing that if a patient can not exercise 4 METS, the following patient history questions must be asked</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig10TemplateCardioPreOpService.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Template: Cardiology Pre-Op Consult (Screen 2 of 4)</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of a Template: Cardiology Pre-Op Service continuing the patient history questions if a patient can not exercise 4 METs</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig11TemplateCardioPreOpService.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Template: Cardiology Pre-Op Consult (Screen 3 of 4)</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of a Template: Cardiology Pre-Op Service continuing the patient history questions if a patient can not exercise 4 METs</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig12TemplateCardioPreOpService.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Order a Cardiology Pre-Op Consult (Screen 4 of 4)</title>
+            <mediaobject>
+                <alt>This image shows a screenshot of an Order to Consult to Service/Specialty if a patient can not exercise 4 METs</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig13OrderAConsult.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+    <appendix>
+        <title xml:lang="en-US">Basic Laboratory Panel Definition </title>
+        <itemizedlist>
+            <listitem xml:lang="en-US">
+                <para>Blood urea nitrogen</para>
+            </listitem>
+            <listitem xml:lang="en-US">
+                <para>Calcium</para>
+            </listitem>
+            <listitem xml:lang="en-US">
+                <para>Chloride</para>
+            </listitem>
+            <listitem xml:lang="en-US">
+                <para>CO2 (Carbon dioxide, bicarbonate)</para>
+            </listitem>
+            <listitem xml:lang="en-US">
+                <para>Creatinine</para>
+            </listitem>
+            <listitem xml:lang="en-US">
+                <para>Glucose</para>
+            </listitem>
+            <listitem xml:lang="en-US">
+                <para>Potassium</para>
+            </listitem>
+            <listitem xml:lang="en-US">
+                <para>Sodium</para>
+            </listitem>
+        </itemizedlist></appendix>
+    <appendix><title>Acronyms/Abbreviations</title>
+        <informaltable>
+            <tgroup cols="2">
+                <colspec colnum="1" colname="col1"/>
+                <colspec colnum="2" colname="col2"/>
+                <tbody>
+                    <row>
+                        <entry><para xml:id="d0e2386"><emphasis role="bold"
+                            >Acronyms</emphasis></para></entry>
+                        <entry><para><emphasis role="bold">Description</emphasis></para></entry>
+                    </row>
+                    <row>
+                        <entry>ACC</entry>
+                        <entry>American College of Cardiology</entry>
+                    </row>
+                    <row>
+                        <entry>ACS</entry>
+                        <entry>Acute Coronary Syndrome</entry>
+                    </row>
+                    <row>
+                        <entry>AHA</entry>
+                        <entry>American Heart Association</entry>
+                    </row>
+                    <row>
+                        <entry>CCWP</entry>
+                        <entry>Clinical Content White Paper</entry>
+                    </row>
+                    <row>
+                        <entry>CDS</entry>
+                        <entry>Clinical Decision Support</entry>
+                    </row>
+                    <row>
+                        <entry>CO2</entry>
+                        <entry>Carbon Dioxide</entry>
+                    </row>
+                    <row>
+                        <entry>CT</entry>
+                        <entry>Computed Tomography</entry>
+                    </row>
+                    <row>
+                        <entry>CTA</entry>
+                        <entry>Coronary CT Angiography</entry>
+                    </row>
+                    <row>
+                        <entry>HL7</entry>
+                        <entry>Health Level 7</entry>
+                    </row>
+                    <row>
+                        <entry>KBS</entry>
+                        <entry>Knowledge Based Systems</entry>
+                    </row>
+                    <row>
+                        <entry>KNART</entry>
+                        <entry>Knowledge Artifact</entry>
+                    </row>
+                    <row>
+                        <entry>MACE</entry>
+                        <entry>Major Adverse Cardiac Event</entry>
+                    </row>
+                    <row>
+                        <entry>METs</entry>
+                        <entry>Metabolic Equivalents</entry>
+                    </row>
+                    <row>
+                        <entry>MI</entry>
+                        <entry>Myocardial Infarction</entry>
+                    </row>
+                    <row>
+                        <entry>MPI</entry>
+                        <entry>Myocardial Perfusion Imaging</entry>
+                    </row>
+                    <row>
+                        <entry>MRI</entry>
+                        <entry>Magnetic Resonance Imaging</entry>
+                    </row>
+                    <row>
+                        <entry>OIIG</entry>
+                        <entry>Office of Informatics and Information Governance</entry>
+                    </row>
+                    <row>
+                        <entry>RCRI</entry>
+                        <entry>Revised Cardiac Risk Index</entry>
+                    </row>
+                    <row>
+                        <entry>SME</entry>
+                        <entry>Subject Matter Expert</entry>
+                    </row>
+                    <row>
+                        <entry>TO</entry>
+                        <entry>Task Order</entry>
+                    </row>
+                    <row>
+                        <entry>VA</entry>
+                        <entry>Department of Veteran Affairs</entry>
+                    </row>
+                    <row>
+                        <entry>VAMC</entry>
+                        <entry>VA Medical Center</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </appendix>
+</book>
