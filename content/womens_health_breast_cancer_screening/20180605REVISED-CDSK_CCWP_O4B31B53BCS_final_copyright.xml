@@ -1,0 +1,1744 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article>
+<book
+  xmlns="http://docbook.org/ns/docbook" version="5.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <info>
+    <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+      Artifacts (KNARTs)</title>
+    <subtitle>Women's Health: Breast Cancer Screening Clinical Content White Paper</subtitle>
+    <copyright>
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright>
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+    <authorgroup>
+      <author>
+        <personname>
+          <surname>Department of Veterans Affairs (VA)</surname>
+        </personname>
+      </author>
+      <author>
+        <orgname>
+          <inlinemediaobject>
+            <alt>Department of Veteran's Affairs Logo</alt>
+            <imageobject>
+              <imagedata align="center" contentdepth="2in" contentwidth="2in"
+                fileref="images/VASealColor.jpg" scalefit="0"/>
+            </imageobject>
+          </inlinemediaobject>
+        </orgname>
+      </author>
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+      <author>
+        <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+      </author>
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+    <abstract>
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+      </info>
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Summary of Women's Health: Breast Cancer Screening KNARTs</title>
+          <tgroup align="left" cols="2">
+            <thead>
+              <row valign="bottom">
+                <entry valign="middle">Women's Health KNART</entry>
+                <entry valign="middle">Associated CLIN</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Breast Cancer Screening - Event Condition Action (ECA) Rule</entry>
+                <entry>CLIN0007BA</entry>
+              </row>
+              <row>
+                <entry>Breast Cancer Screening - Documentation Template</entry>
+                <entry>CLIN0005AC</entry>
+              </row>
+              <row>
+                <entry>Breast Cancer Screening - Order Set</entry>
+                <entry>CLIN0004AA</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+    <pubdate>June 2018</pubdate>
+    <volumenum>Version 1.0</volumenum>
+  </info>
+  
+  <preface>
+    <title>VA Subject Matter Expert (SME) Panel</title>
+    
+    <informaltable frame="all" xml:id="va.SME.List">
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry>Name</entry>
+            
+            <entry>Title</entry>
+            
+            <entry>Project Role</entry>
+          </row>
+        </thead>
+        
+        <tbody>
+          <row>
+            <entry>C. Yvette Williams-Harris, MD, MPH</entry>
+            
+            <entry>Physician, 1670 Clairmont Rd Atlanta, GA 30033</entry>
+            
+            <entry>SME, Primary</entry>
+          </row>
+          
+          <row>
+            <entry>Megan Gerber, MD, MPH</entry>
+            
+            <entry>Physician, VA Boston HealthCare System, 150 South Huntington Ave
+              Boston, MA 02130 </entry>
+            
+            <entry>SME, Secondary</entry>
+          </row>
+          
+          <row>
+            <entry>Caitlin M. Cusack, MD, MPH</entry>
+            
+            <entry>Contractor- Physician Informaticist, Office of Women's Health
+              Services, 8455 Colesville Rd, 12th Floor Silver Spring, MD 20910 </entry>
+            
+            <entry>SME</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </preface>
+  <preface>
+    <title>Introduction</title>
+    
+    <para>The VA is committed to improving the ability of clinicians to provide care for
+      patients while increasing quality, safety, and efficiency. Recognizing the importance of
+      standardizing clinical knowledge in support of this goal, VA is implementing the Health
+      Level 7 (HL7) Knowledge Artifact Specification
+      for a wide range of VA clinical use cases. Knowledge Artifacts, referred to as (KNARTs), enable the structuring and encoding of
+      clinical knowledge so the knowledge can be integrated with electronic health records to
+      enable clinical decision support.</para>
+    
+    <para>The purpose of this Clinical Content White Paper
+      (CCWP) is to capture the clinical context
+      and intent of KNART use cases in sufficient
+      detail to provide the KNART authoring team
+      with the clinical source material to construct the corresponding knowledge artifacts
+      using the HL7 Knowledge Artifact Specification. This paper has been developed using
+      material from a variety of sources: VA artifacts, clinical practice guidelines, evidence
+      in the body of medical literature, and clinical expertise. After reviewing these
+      sources, the material has been synthesized and harmonized under the guidance of VA
+      subject matter experts to reflect clinical intent for this use case.</para>
+    
+    <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+      fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+      creation. To provide an exhaustive list of all possible items and their variations is
+      beyond the scope of this work.</para>
+  </preface>
+  
+  <preface>
+    <title>Conventions Used</title>
+    <para>
+      Conventions used within the knowledge artifact descriptions include:
+    </para>
+    <para>
+      &lt;obtain&gt;: Indicates a prompt to obtain the information listed
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          If possible, the requested information should be obtained from the underlying system(s). Otherwise, prompting the user for information may be required
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Default Values: Unless otherwise noted, &lt;obtain&gt; indicates to obtain the most recent observation. It is recognized that this default time-frame value may be altered by future implementations
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [...]: Square brackets enclose explanatory text that indicates some action on the part of the clinical user, or general guidance to the clinical or technical teams. Examples include, but are not limited to:
+    </para>
+    <blockquote>
+      <para>
+        [Begin ...], [End ...]: Indicates the start and end of specific areas to clearly delineate them for technical purposes.
+      </para>
+      <para>
+        [Activate ...]: Initiates another knowledge artifact or knowledge artifact section.
+      </para>
+      <para>
+        [Section Prompt: ...]: If this section is applicable, then the following prompt should be displayed to the user.
+      </para>
+      <para>
+        [Section Selection Behavior: ...]: Indicates technical constraints or considerations for the selection of items within the section.
+      </para>
+      <para>
+        [Attach: ...]: Indicates that the specified item should be attached to the documentation template if available.
+      </para>
+      <para>
+        [Link: ...]: Indicates that rather than attaching an item, a link should be included in the documentation template.
+      </para>
+      <para>
+        [Clinical Comment: ...]: Indicates clinical rationale or guidance.
+      </para>
+      <para>
+        [Technical Note: ...]: Indicates technical considerations or notes.
+      </para>
+      <para>
+        [If ...]: Indicates the beginning of a conditional section.
+      </para>
+      <para>
+        [Else, ...]: Indicates the beginning of the alternative branch of a conditional section.
+      </para>
+      <para>
+        [End if ...]: Indicates the end of a conditional section.
+      </para>
+    </blockquote>
+    <para>
+      &#9744;: Indicates items that should be selected based upon the section selection behavior.
+    </para>
+  </preface>
+<chapter xml:id="breast-cancer-screening">
+  <title>Breast Cancer Screening</title>
+  <section xml:id="clinical-context">
+    <title>Clinical Context</title>
+    <para>
+      Several authoritative groups, including the United States Preventive Task Force (<emphasis>USPTF</emphasis>) (#ref USPTF), the American Cancer Society (<emphasis>ACS</emphasis>) (#ref Oeffinger, 2015), and the American College of Obstetrics and Gynecology (#ref Pearlman, 2017), have issued guidance that is partially overlapping and conflicting regarding screening mammography. To maximize clarity and reflect the most current evidence standard, the 2015 recommendations of the American Cancer Society (#ref ACS) will be regarded as the highest-tier evidence source (#ref ACSBCSG).
+    </para>
+    <para> The American Cancer Society Guideline Development Group (<emphasis>ACSGDG</emphasis>)
+        reviewed the evidence in an attempt to balance the benefit of early detection and treatment
+        with the risk of false-positive findings, over detection, and over treatment. The ACSGDG
+        also reviewed the evidence, evaluating the same issues, regarding the benefit of clinical
+        breast exams. Based on that review, the ACS recommended starting annual screening
+        mammography at the age of 45 years for all women at average risk of breast cancer, but to
+        offer the opportunity for annual screening mammography starting at age 40 years. The ACS
+        recommended transitioning to screening every other year starting at the age of 55 years,
+        with the option of continuing annual screening. The ACS recommended continuing screening
+        mammography as long as a woman’s overall health remains good and her life expectancy is at
+        least 10 additional years. In May 2017, VA announced that it was adopting the 2015 American
+        Cancer Society breast cancer screening guidelines including starting yearly mammograms by
+        age 45 among women of average risk but also giving women a choice to begin screening at age
+        40, and then transitioning to every other year mammography screening beginning at age 55 and
+        continuing biennial screening as long as a woman’s life expectancy is felt to be greater
+        than 10 years. </para>
+    <para>
+      The ACS did not recommend using the clinical breast exam as a screening method among average-risk women at any age. The ACS defined women at &quot;average risk&quot; as those who do not have a personal history of breast cancer, prior chest radiotherapy at a young age (age 30 or younger), or a suspected or known mutation of a gene, such as the breast cancer (<emphasis>BRCA</emphasis>) gene that increases the risk of breast cancer. The ACS also noted that mammography, alone, may not be as effective in women with a higher-than-average risk based on a significant family history, breast density on mammography, or a prior diagnosis of benign proliferative breast disease. Finally, the ACS noted that the risk of false-positives was increased for women receiving their first mammogram, those who had digital instead of film mammography, those who had longer intervals between mammograms, and those who did not have comparison images. The risk of false-positives was also increased in women using postmenopausal hormone therapy and those with mammographically dense breasts. It is important that providers evaluate a woman’s risk of breast cancer, discuss the risks and benefits of screening mammography with her, and determine her preferences for screening, particularly for women between the ages of 40 years and 44 years and those aged 55 years or older.
+    </para>
+    <para>
+      The Breast Cancer Screening documentation template, order set, ECA rule and composite KNART set is intended to prompt clinical providers to identify a woman's breast cancer risk category; counsel her about that risk; identify her screening preferences; screen based on age, risk, and patient preference; and document the entire process. Breast cancer is a common cause of morbidity and mortality among women. Early signs of breast cancer can be detected with mammography, but the question of when to start screening mammography remains somewhat controversial. The latest guidelines published by ACS and as chosen by the VA will be used for these knowledge artifacts. In addition, other constraints for these artifacts are that:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          They apply to female outpatients over the age of 18.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      These context domains are summarized in the table below.
+    </para>
+    <para>
+      <emphasis role="strong">Table 1.1. Clinical Context Domains</emphasis>
+    </para>
+    <informaltable>
+      <tgroup cols="2">
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Target User
+            </entry>
+            <entry>
+              Provider to include Primary Care, Obstetrics/Gynecology, Women's Health
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              Patient
+            </entry>
+            <entry>
+              Adult Female
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Priority
+            </entry>
+            <entry>
+              Routine
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Specialty
+            </entry>
+            <entry>
+              Primary Care, Obstetrics/Gynecology, Women's Health
+            </entry>
+          </row>
+          <row>
+            <entry>
+              Location
+            </entry>
+            <entry>
+              Outpatient
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </section>
+  <section xml:id="knowledge-artifacts">
+    <title>Knowledge Artifacts</title>
+    <para> This section describes the knowledge artifacts that are part of the Women's Health:
+        Breast Cancer Screening group of clinical decision support artifacts, and include:</para>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Event Condition Action (ECA) Rule: Women's Health: Breast Cancer Screening<itemizedlist>
+                <listitem>
+                  <para>Rule logic for breast cancer screening</para>
+                </listitem>
+                <listitem>
+                  <para>Actions may include activating documentation templates or order sets</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>Documentation Template: Women's Health: Breast Cancer Screening<itemizedlist>
+                <listitem>
+                  <para>Documents an encounter between a patient and a provider</para>
+                </listitem>
+                <listitem>
+                  <para>Includes logic for appropriate display of documentation sections</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+          <listitem>
+            <para>Order Set: Women's Health: Breast Cancer Screening<itemizedlist>
+                <listitem>
+                  <para>Orderable items related to breast cancer screening</para>
+                </listitem>
+                <listitem>
+                  <para>Includes logic for appropriate display of the order set</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist>
+      </para>
+  </section>
+</chapter>
+  <chapter xml:id="event-condition-action-eca-rules-breast-cancer-screening">
+  <title>Event Condition Action (ECA) Rules: Breast Cancer Screening</title>
+  <para> [Begin ECA Rules: Breast Cancer Screening.] </para>
+  <section xml:id="knowledge-narrative">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para> [Clinical Comment: The purpose of the ECA rule set for breast cancer screening is to
+        assess the patient’s breast cancer screening status and, if warranted, to document breast
+        cancer risk and screening desires as well as to order the recommended exam. The rule logic
+        is based upon the ACS 2015 published recommendations as summarized in the clinical context.
+        Essentially this entails, starting annual screening mammography at the age of 45 years for
+        all women at average risk of breast cancer, with the opportunity for annual screening
+        mammography to begin as early as age 40 years. Beginning at age 55, transitioning to
+        mammography screening every other year, with the option of continuing annual screening as
+        long as a woman’s overall health remains good and her life expectancy is at least 10
+        additional years. There are two main categories of events that function as triggers for
+        breast cancer screening rules: </para>
+    <itemizedlist>
+      <listitem>
+        <para> Opening of the patient record during an encounter in a primary care clinic,
+            obstetrics/gynecology (OB/GYN), or a women's health outpatient visit. </para>
+      </listitem>
+      <listitem>
+        <para> System run of preventive screening rules, run monthly.] </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="outpatient-visit-age-40-to-45-years-early-breast-cancer-screening">
+    <title>Outpatient Visit, Age &gt;=40 to &lt;45 Years, Desires Early Breast Cancer
+        Screening</title>
+    <para> [Begin Outpatient Visit, Age &gt;=40 to &lt;45 Years, Desires Early Breast Cancer
+        Screening.] </para>
+    <para>
+      <emphasis><emphasis role="strong">Event</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para> Opening of the patient record during an encounter in either a primary care clinic, an
+            OB/GYN or during a women's health outpatient clinic. </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Patient is female between the ages of &gt;=40 years to &lt;45 years.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not decline early breast cancer screening.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a documented mammography screening interval.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient has not had mammography within 12 months.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a personal history of breast cancer, prior chest radiotherapy at a young age (up to age 30), or a suspected or known mutation of a gene such as BRCA that increases the risk of breast cancer.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+      <orderedlist>
+        <listitem>
+          <para> Set screening interval to annual. </para>
+        </listitem>
+        <listitem>
+          <para> Notify the provider that options for breast cancer screening should be discussed
+            with patient and that the discussion should be documented. </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer screening history section of the documentation template.
+          </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer risk assessment of the documentation template. </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer screening order set ECA rule. </para>
+        </listitem>
+      </orderedlist>
+    <para> [End Outpatient Visit, Age &gt;=40 to &lt;45 Years, Desires Early Breast Cancer
+        Screening.] </para>
+  </section>
+  <section xml:id="outpatient-visit-age-40-to-45-years-no-early-breast-cancer-screening">
+    <title>Outpatient Visit, Age &gt;=40 to &lt;45 Years, No Desire for Early Breast Cancer
+        Screening</title>
+    <para> [Begin Outpatient Visit, Age &gt;=40 to &lt;45 Years, No Desire for Early Breast Cancer
+        Screening.] </para>
+    <para>
+      <emphasis><emphasis role="strong">Event</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para> Opening of the patient record during an encounter in either a primary care clinic, an
+            OB/GYN, or during a women's health outpatient clinic. </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Patient is female between the ages of &gt;=40 and &lt;45 years.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient declines early breast cancer screening.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a documented mammography screening interval.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient has not had mammography within 12 months.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a personal history of breast cancer, prior chest radiotherapy at a young age (up to age 30), or a suspected or known mutation of a gene such as BRCA that increases the risk of breast cancer.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+      <orderedlist>
+        <listitem>
+          <para> Set screening interval to declines early breast cancer screening.</para>
+        </listitem>
+        <listitem>
+          <para>Activate Breast Cancer Screening Documentation Template: Declines Early Breast
+            Cancer Screening</para>
+        </listitem>
+      </orderedlist>
+    <para> [End Outpatient Visit, Age &gt;=40 to &lt;45 Years, No Desire for Early Breast Cancer
+        Screening.] </para>
+  </section>
+  <section xml:id="outpatient-visit-age-45-to-55-years">
+    <title>Outpatient Visit, Age &gt;=45 to &lt;55 Years</title>
+    <para>
+      [Begin Outpatient Visit, Age &gt;=45 to &lt;55 Years.]
+    </para>
+    <para>
+      <emphasis><emphasis role="strong">Event</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para> Opening of the patient record during an encounter in either a primary care clinic, an
+            OB/GYN, or during a women's health outpatient clinic. </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Patient is female between the ages of &gt;=45 and &lt;55 years.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient has not had mammography within 12 months.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a personal history of breast cancer, prior chest radiotherapy at a young age (up to age 30), or a suspected or known mutation of a gene such as BRCA that increases the risk of breast cancer.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+      <orderedlist>
+        <listitem>
+          <para> Set screening interval to annual. </para>
+        </listitem>
+        <listitem>
+          <para> Notify the provider that options for breast cancer screening should be discussed
+            with patient and that the discussion should be documented. </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer screening history section of the documentation template.
+          </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer risk assessment of the documentation template. </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer screening order set ECA rule. </para>
+        </listitem>
+      </orderedlist>
+    <para>
+      [End Outpatient Visit, Age &gt;=45 to &lt;55 Years.]
+    </para>
+  </section>
+  <section xml:id="outpatient-visit-age-55-to-75-years">
+    <title>Outpatient Visit, Age &gt;=55 to &lt;75 Years</title>
+    <para>
+      [Begin Outpatient Visit, Age &gt;=55 to &lt;75 Years.]
+    </para>
+    <para>
+      <emphasis><emphasis role="strong">Event</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para> Opening of the patient record during an encounter in either a primary care clinic, an
+            OB/GYN, or during a women's health outpatient clinic. </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Patient is female between the ages of &gt;=55 and &lt;75 years.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient has not had mammography within 12 months.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a mammography screening interval set to &quot;stop screening.&quot;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a personal history of breast cancer, prior chest radiotherapy at a young age (up to age 30), or a suspected or known mutation of a gene such as BRCA that increases the risk of breast cancer.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+      <orderedlist>
+        <listitem>
+          <para> Set screening interval to biennial. </para>
+        </listitem>
+        <listitem>
+          <para> Notify the provider that options for breast cancer screening should be discussed
+            with patient and that the discussion should be documented. </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer screening documentation template. </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer screening order set ECA rule. </para>
+        </listitem>
+      </orderedlist>
+    <para>
+      [End Outpatient Visit, Age &gt;=55 to &lt;75 Years.]
+    </para>
+  </section>
+  <section xml:id="outpatient-visit-age-75-years-desires-to-continue-screening">
+    <title>Outpatient Visit, Age &gt;=75 Years, Desires to Continue Screening</title>
+    <para>
+      [Begin Outpatient Visit, Age &gt;=75 Years, Desires to Continue Screening.]
+    </para>
+    <para>
+      <emphasis><emphasis role="strong">Event</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para> Opening of the patient record during an encounter in either a primary care clinic, an
+            OB/GYN, or during a women's health outpatient clinic. </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Patient is female age &gt;=75 years.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient has a life expectancy greater than 10 years.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient desires to continue breast cancer screening.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient has not had mammography within 12 months.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a mammography screening interval set to &quot;stop screening.&quot;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a personal history of breast cancer, prior chest radiotherapy at a young age (up to age 30), or a suspected or known mutation of a gene such as BRCA that increases the risk of breast cancer.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+      <orderedlist>
+        <listitem>
+          <para> Set screening interval to biennial. </para>
+        </listitem>
+        <listitem>
+          <para> Notify the provider that options for breast cancer screening should be discussed
+            with patient and that the discussion should be documented. </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer screening documentation template. </para>
+        </listitem>
+        <listitem>
+          <para> Activate the breast cancer screening order set ECA rule. </para>
+        </listitem>
+      </orderedlist>
+    <para>
+      [End Outpatient Visit, Age &gt;=75 Years, Desires to Continue Screening.]
+    </para>
+  </section>
+  <section xml:id="outpatient-visit-age-75-years-desires-to-stop-screening">
+    <title>Outpatient Visit, Age &gt;=75 Years, Desires to Stop Screening</title>
+    <para>
+      [Begin Outpatient Visit, Age &gt;=75 Years, Desires to Stop Screening.]
+    </para>
+    <para>
+      <emphasis><emphasis role="strong">Event</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para> Opening of the patient record during an encounter in either a primary care clinic, an
+            OB/GYN, or during a women's health outpatient clinic. </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Patient is female age &gt;=75 years.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient has a life expectancy greater than 10 years.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient desires to stop breast cancer screening.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient has not had mammography within 12 months.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a mammography screening interval set to &quot;stop screening.&quot;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Patient does not have a personal history of breast cancer, prior chest radiotherapy at a young age (up to age 30), or a suspected or known mutation of a gene such as BRCA that increases the risk of breast cancer.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+      <orderedlist>
+        <listitem>
+          <para>Set screening interval to stop screening.</para>
+        </listitem>
+        <listitem>
+          <para>Activate the Breast Cancer Screening Documentation Template: Stop Breast Cancer
+            Screening</para>
+        </listitem>
+      </orderedlist>
+    <para>
+      [End Outpatient Visit, Age &gt;=75 Years, Desires to Stop Screening.]
+    </para>
+  </section>
+  <section xml:id="breast-cancer-screening-order-set-eca-rule">
+    <title>Breast Cancer Screening Order Set ECA Rule</title>
+    <para>
+      [Begin Breast Cancer Screening Order Set ECA Rule.]
+    </para>
+    <para>
+      <emphasis><emphasis role="strong">Event</emphasis></emphasis>
+    </para>
+      <itemizedlist>
+        <listitem>
+          <para>Activation of the breast cancer screening order set ECA rule. </para>
+        </listitem>
+      </itemizedlist>
+
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Breast Cancer Screening due date is prior to NOW or in the next 60 days
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The patient is not scheduled for Breast Cancer Screening
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+      <orderedlist>
+        <listitem>
+          <para> Activate the breast cancer screening order set. </para>
+        </listitem>
+      </orderedlist>
+    <para>
+      [End Breast Cancer Screening Order Set ECA Rule.]
+    </para>
+  </section>
+  <section xml:id="periodic-system-run">
+    <title>Periodic System Run</title>
+    <para>
+      [Begin Periodic System Run.]
+    </para>
+    <para>
+      <emphasis><emphasis role="strong">Event</emphasis></emphasis>
+    </para>
+    <para>
+      [Technical Note: System run of breast cancer screening rule occurs every month on day 1 of the month.]
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          System run of Breast cancer screening Every month on day 1 of the month.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Breast cancer screening due date is within the time period spanning 1 month ago to 2 months from now
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The patient is not scheduled for breast cancer screening
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The patient does not decline screening at this time
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          For facilities that use auto-generated patient notifications: notify the patient of their Breast Cancer Screening due date
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          For facilities that do not use auto-generated patient notifications: add the patient to the report of patients due for breast cancer screening with their Breast Cancer Screening due date
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [End Periodic System Run.]
+    </para>
+    <para> [End ECA Rules: Breast Cancer Screening.] </para>
+  </section>
+</chapter>
+  <chapter xml:id="breast-cancer-screening---documentation-template">
+  <title>Documentation Template: Breast Cancer Screening</title>
+  <para> [Begin Documentation Template: Breast Cancer Screening.] </para>
+  <section xml:id="knowledge-narrative-1">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [Technical comment: The Breast Cancer Screening Documentation Template provides a mechanism for documenting a patient’s risk for breast cancer. Although the template below is a series of questions and answers, any information that can be obtained from the system should be pre-filled in a manner that is apparent to the user. There are four sections contained within this documentation template, which may be activated independently:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Breast Cancer Screening History
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Breast Cancer Risk Assessment
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Decline Breast Cancer Screening
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Stop Breast Cancer Screening]
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="breast-cancer-screening-history">
+    <title>Breast Cancer Screening History</title>
+    <para>
+      [Begin Breast Cancer Screening History.]
+    </para>
+    <para>
+      [Section Prompt: Does the patient have breast implants?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have a history of breast cancer screening?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Date
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Location
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Results
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;link&gt; Mammography Image
+        </para>
+      </blockquote>
+      <para>
+        ☐ No [If no, then End Breast Cancer Screening History section.]
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have a history of abnormal breast imaging and/or history of treatment for breast abnormality?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Abnormal Results
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;link&gt; Abnormal Mammography Image
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Clinical Comments
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;Select&gt; Date, Location
+        </para>
+      </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have a history of mammographically dense breasts?
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have a history of a breast biopsy?
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Results </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [End Breast Cancer Screening History Section.]
+    </para>
+  </section>
+  <section xml:id="breast-cancer-risk-assessment">
+    <title>Breast Cancer Risk Assessment</title>
+    <para>
+      [Begin Breast Cancer Risk Assessment.]
+    </para>
+    <para>
+      [Section Prompt: Conditions that may increase risk include but are not limited to:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Personal history of any breast cancer, including ductal carcinoma in situ (<emphasis>DCIS</emphasis>).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          History of chest wall radiation up to the age equal to 30.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Known or suspected genetic mutation that increases risk of breast cancer, such as BRCA.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          First degree relatives with ovarian cancer or early breast cancer.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Women with a prior diagnosis of benign proliferative breast disease.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Women with significant mammographic breast density.]
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [Clinical Comment: Estimated lifetime risk of approximately 20% to 25% or greater, as defined by risk assessment models, such as the Breast Cancer Risk Assessment Tool <link xlink:href="https://www.cancer.gov/bcrisktool/">https://www.cancer.gov/bcrisktool/</link>.]
+    </para>
+    <para>
+      [Technical Note: If any boxes are checked “yes”, then display the following notification and document the results.]
+    </para>
+    <para>
+      [Section Prompt: Does the patient have a personal history of any breast cancer including ductal carcinoma in situ (DCIS)?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have a history of chest wall radiation prior to the age of 31?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have a history of known or suspected genetic mutation that increases risk of breast cancer, such as BRCA?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have any first degree relatives with ovarian cancer or early breast cancer (breast cancer diagnosed prior to age 40)?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have a history of prior diagnosis of benign proliferative breast disease?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have an estimated lifetime risk of approximately 20% or greater, as defined by risk assessment models such as the Breast Cancer Risk Assessment Tool https://www.cancer.gov/bcrisktool/?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Evaluate the patient’s risk factors and determine the need for genetic evaluation and/or early, more frequent, or additional breast imaging.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Evaluation details
+      </para>
+    </blockquote>
+    <para>
+      [End Breast Cancer Risk Assessment.]
+    </para>
+  </section>
+  <section xml:id="decline-breast-cancer-screening-today">
+    <title>Declines Breast Cancer Screening Today</title>
+    <para> [Begin Declines Breast Cancer Screening Today.] </para>
+    <para>
+      [Section Prompt: After discussing the need for breast cancer screening, does the patient decline screening?]
+    </para>
+    <para> [Section Selection Behavior: Select one. Required.]</para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details</para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para> [End Declines Breast Cancer Screening Today] </para>
+  </section>
+  <section xml:id="decline-early-breast-cancer-screening">
+    <title>Declines Early Breast Cancer Screening</title>
+    <para> [Begin Declines Early Breast Cancer Screening.] </para>
+    <para>
+      [Section Prompt: After discussing the option for breast cancer screening between ages 40 and 45 years, does the patient decline early screening?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+    </blockquote>
+    <para>
+      [Technical Note: If yes, set Screening Interval to “Declines Early Breast Cancer Screening.” This is relevant until patient reaches 45 years of age.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para> [End Declines Early Breast Cancer Screening.] </para>
+  </section>
+  <section xml:id="stop-breast-cancer-screening">
+    <title>Stop Breast Cancer Screening</title>
+    <para>
+      [Begin Stop Breast Cancer Screening.]
+    </para>
+    <para>
+      [Section Prompt: Does the patient have a history of bilateral mastectomy?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have a life expectancy less than 6 months?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: As the patient's provider, do you feel that there is no net benefit to screening due to life expectancy less than 10 years, or that due to comorbidities the patient will be unable to tolerate further workup or treatment if breast cancer screening were positive?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Does the patient have any reason to stop screening in addition to or other than the ones listed above in this section?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Additional reason to stop screening </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [End Stop Breast Cancer Screening.]
+    </para>
+    <para> [End Documentation Template: Breast Cancer Screening.] </para>
+  </section>
+</chapter>
+  <chapter xml:id="order-set-breast-cancer-screening">
+  <title>Order Set: Breast Cancer Screening</title>
+  <para> [Begin Order Set: Breast Cancer Screening.] </para>
+  <section xml:id="knowledge-narrative-2">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [Clinical Comment: This order set applies to any patient that requires breast cancer screening. All orders are routine unless otherwise specified.]
+    </para>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="breast-cancer-screening-1">
+    <title>Breast Cancer Screening</title>
+    <para>
+      [Begin Breast Cancer Screening.]
+    </para>
+    <para>
+      [Section Prompt: Based upon the patient’s history, provide the appropriate detail for the screening mammography order.]
+    </para>
+    <para>
+      [Section Selection Behavior: Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Perform screening mammography
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Brief clinical history
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Ordering Physician/Provider Name
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Ordering Physician/Provider Service/Section
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Ordering Physician/Provider Telephone Number
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Ordering Physician/Provider Pager
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Other Physician/Provider Name Who Should Also Receive Results
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Other Physician/Provider Service/Section
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Other Physician/Provider Telephone Number
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Other Physician/Provider Pager
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          Date desired: &lt;obtain&gt; Desired date
+        </para>
+      </blockquote>
+      <para>
+        ☐ Additional views: &lt;obtain&gt; Additional views
+      </para>
+    </blockquote>
+    <para>
+      [End Breast Cancer Screening.]
+    </para>
+    <para> [End Order Set: Breast Cancer Screening.] </para>
+  </section>
+  </chapter>
+  <bibliography><title>Bibliography/Evidence</title>
+    <biblioentry>
+      <citetitle pubwork="webpage">Department of Veterans Affairs. May 2017.</citetitle>
+      <bibliomisc>
+        <link
+          xlink:href="https://www.va.gov/opa/pressrel/includes/viewPDF.cfm?id=2899"
+        />
+      </bibliomisc>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="webpage">United States Preventative Task Force Breast Cancer Screening
+        Guidelines.</citetitle>
+      <bibliomisc>
+        <link
+          xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/breast-cancer-screening"
+        />
+      </bibliomisc>
+    </biblioentry>
+    
+    <biblioentry>
+      <abbrev>Oeffinger, 2015</abbrev>
+      
+      <authorgroup>
+        <author>
+          <personname><surname>Oeffinger</surname><firstname>KC</firstname></personname>
+        </author>
+        
+        <author>
+          <personname><surname>Fontham</surname><firstname>ETH</firstname></personname>
+        </author>
+        
+        <author>
+          <personname><surname>Etzioni</surname><firstname>R</firstname></personname>
+        </author>
+        
+        <author>
+          <personname>et al.</personname>
+        </author>
+      </authorgroup>
+      
+      <citetitle pubwork="article">Breast Cancer Screening for Women at Average Risk: 2015
+        Guideline Update From the American Cancer Society</citetitle>
+      
+      <citetitle pubwork="journal">JAMA</citetitle>
+      
+      <pubdate>2015</pubdate>
+      
+      <volumenum>314</volumenum>
+      
+      <issuenum>(15)</issuenum>
+      
+      <pagenums>1599-1614</pagenums>
+    </biblioentry>
+    
+    <biblioentry>
+      <abbrev>Pearlman, 2017</abbrev>
+      
+      <authorgroup>
+        <author>
+          <personname><surname>Pearlman</surname><firstname>M</firstname></personname>
+        </author>
+        
+        <author>
+          <personname><surname>Jeudy</surname><firstname>M</firstname></personname>
+        </author>
+        
+        <author>
+          <personname><surname>Chelmow</surname><firstname>D</firstname></personname>
+        </author>
+      </authorgroup>
+      
+      <citetitle pubwork="article">Breast Cancer Risk Assessment and Screening in Average-Risk
+        Women</citetitle>
+      
+      <citetitle pubwork="journal">OBSTETRICS AND GYNECOLOGY</citetitle>
+      
+      <pubdate>2017 Jul 1</pubdate>
+      
+      <volumenum>130</volumenum>
+      
+      <issuenum>(1)</issuenum>
+      
+      <pagenums>E1-6</pagenums>
+    </biblioentry>
+    
+    <biblioentry>
+      <citetitle pubwork="webpage">American Cancer Society Breast Cancer Screening
+        Guidelines</citetitle>
+      
+      <bibliomisc>
+        <link
+          xlink:href="https://www.cancer.org/health-care-professionals/american-cancer-society-prevention-early-detection-guidelines/breast-cancer-screening-guidelines.html"
+        />
+      </bibliomisc>
+    </biblioentry></bibliography>
+  <appendix>
+    <title>Existing Sample VA Artifacts</title>
+    <figure>
+      <title>Mammogram Annual Screening</title>
+      <mediaobject>
+        <alt>Mammogram annual screening data entry</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/fig1.png"
+            scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Mammogram Screening Clinical Reminder</title>
+      <mediaobject>
+        <alt>Mammogram Screening Clinical Reminder</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/fig2.png"
+            scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Mammogram Screening</title>
+      <mediaobject>
+        <alt>Mammogram screening</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/fig3.png"
+            scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Stop Screening Dialogue</title>
+      <mediaobject>
+        <alt>Stop screening dialogue</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/fig4.png"
+            scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+  
+  
+  <appendix>
+    <title>American Cancer Society Guidelines</title>
+    
+    <para>American Cancer Society Guideline for Breast Cancer Screening, Summary of
+      Recommendations.</para>
+    
+    <para>See <link
+      xlink:href="https://www.cancer.org/health-care-professionals/american-cancer-society-prevention-early-detection-guidelines/breast-cancer-screening-guidelines.html"
+    /> for complete guidelines.</para>
+    
+    <figure>
+      <title>American Cancer Society Guidelines for Breast Cancer Screening, 2015</title>
+      
+      <mediaobject>
+        <alt>Screenshot of the American Cancer Society Guidelines for Breast Cancer
+          Screening, 2015.</alt>
+        
+        <imageobject>
+          <imagedata align="center" contentdepth="100%" fileref="images/fig5.png"
+            scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+  <appendix>
+    <title>Basic Laboratory Panel Definition</title>
+    <itemizedlist>
+      <listitem>
+        <para>Blood Urea Nitrogen</para>
+      </listitem>
+      <listitem>
+        <para>Calcium</para>
+      </listitem>
+      <listitem>
+        <para>Chloride</para>
+      </listitem>
+      <listitem>
+        <para>CO2 (Carbon Dioxide, Bicarbonate)</para>
+      </listitem>
+      <listitem>
+        <para>Creatinine</para>
+      </listitem>
+      <listitem>
+        <para>Glucose</para>
+      </listitem>
+      <listitem>
+        <para>Potassium</para>
+      </listitem>
+      <listitem>
+        <para>Sodium</para>
+      </listitem>
+    </itemizedlist>
+  </appendix>
+  <appendix>
+    <title>Acronyms</title>
+    <informaltable>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry>Acronym</entry>
+            <entry>Definition</entry>
+          </row>
+        </thead>
+        <tbody>
+                   <row>
+            <entry>ACSGDG</entry>
+            <entry>American Cancer Society Guideline Development Group</entry>
+          </row>
+          <row>
+            <entry>ACS</entry>
+            <entry>Acute Coronary Syndrome</entry>
+          </row>
+          <row>
+            <entry>BRCA</entry>
+            <entry>Breast Cancer</entry>
+          </row><row>
+            <entry>CDS</entry>
+            <entry>Clinical Decision Support</entry>
+          </row>
+          <row>
+            <entry>CCWP</entry>
+            <entry>Clinical Content White Paper</entry>
+          </row>
+          <row>
+            <entry>CO2</entry>
+            <entry>Carbon Dioxide</entry>
+          </row>
+          <row>
+            <entry>DCIS</entry>
+            <entry>Ductal carcinoma in situ</entry>
+          </row>
+          <row>
+            <entry>ECA</entry>
+            <entry>Event Condition Action</entry>
+          </row>
+          <row>
+            <entry>HL7</entry>
+            <entry>Health Level 7</entry>
+          </row>
+          <row>
+            <entry>KBS</entry>
+            <entry>Knowledge Based Systems</entry>
+          </row>
+          <row>
+            <entry>KNART</entry>
+            <entry>Knowledge Artifact</entry>
+          </row>
+          <row>
+            <entry>OB/GYN</entry>
+            <entry>Obstetrics/Gynecology</entry>
+          </row>
+          <row>
+            <entry>SME</entry>
+            <entry>Subject Matter Expert</entry>
+          </row>
+          <row>
+            <entry>TO</entry>
+            <entry>Task Order</entry>
+          </row>
+          <row>
+            <entry>USPTF</entry>
+            <entry>United States Preventive Task Force</entry>
+          </row>
+          <row>
+            <entry>VA</entry>
+            <entry>Department of Veterans Affairs</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </appendix>
+</book>
