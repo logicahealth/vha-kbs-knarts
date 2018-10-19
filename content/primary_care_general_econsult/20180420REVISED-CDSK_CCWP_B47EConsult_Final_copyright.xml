@@ -1,0 +1,1089 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>General E-Consult Clinical Content White Paper</subtitle>
+        <copyright>
+            <year>April</year>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>Department of Veterans Affairs (VA)</personname>
+            </author>
+            <author>
+                <orgname>
+                    <inlinemediaobject>
+                        <imageobject>
+                            <imagedata contentdepth="2in" contentwidth="2in"
+                                fileref="images/VASealColor.jpg" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject>
+                </orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: General E-Consult </title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <!--<entry valign="middle">ID</entry>-->
+                                <entry valign="middle">KNART Name</entry>
+                                <entry valign="middle">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <!--<entry>B47</entry>-->
+                                <entry>General E-Consult - Documentation Template</entry>
+                                <entry>CLIN0005AA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>April 2018</pubdate>
+        <volumenum>1.0</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>4/17/2018</date>
+                <authorinitials>Jennifer Reed, Steve Mahalec, Kathleen Keating</authorinitials>
+                <revremark>Comments addressed; Final DocBook submission</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.17</revnumber>
+                <date>3/19/2018</date>
+                <authorinitials>Kathleen Keating and Diane Montella</authorinitials>
+                <revremark>Edits and resubmitted to PO; PO acceptance same day</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.16</revnumber>
+                <date>3/15/2018</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Comments received</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.15</revnumber>
+                <date>3/9/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Edits and resubmitted to PO</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.14</revnumber>
+                <date>3/8/2018</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Comments received</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.13</revnumber>
+                <date>3/7/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Edits and resubmitted to PO</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.12</revnumber>
+                <date>3/1/2018</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Comments received</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.11</revnumber>
+                <date>2/7/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Edits and resubmitted to PO</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.10</revnumber>
+                <date>1/25/2018</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Comments received</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.9</revnumber>
+                <date>12/14/2017</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Edits and resubmitted to PO</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>12/11/2017</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Comments received</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>10/27/2017</date>
+                <authorinitials>Jennifer Reed</authorinitials>
+                <revremark>Updated for initial formal review submission</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>10/10/2017</date>
+                <authorinitials>SME Team and Wendelyn Bradley</authorinitials>
+                <revremark>Approval and acceptance</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>10/07/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Edit and add VA Existing artifacts and approval by Dr.
+                    Douglas</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>10/02/2017</date>
+                <authorinitials>Lindsey Birt</authorinitials>
+                <revremark>Common Issues addressed, edits</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>09/29/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Edit and Review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>09/19/2017</date>
+                <authorinitials>Lindsey Birt</authorinitials>
+                <revremark>Updated with SME comments to be addressed</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>09/12/2017</date>
+                <authorinitials>Lindsey Birt</authorinitials>
+                <revremark>Draft Creation</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <informaltable xml:id="va.SME.List" frame="all">
+            <tgroup cols="3" align="left">
+                <thead>
+                    <row>
+                        <entry align="center">Name</entry>
+                        <entry align="center">Title</entry>
+                        <entry align="center">Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Angela Denietolis, MD</entry>
+                        <entry>Primary Care Physician, James A. Haley Veterans Hospital, Tampa VA
+                            Medical Center (VAMC), Tampa, FL 33612 </entry>
+                        <entry>SME, Primary</entry>
+                    </row>
+                    <row>
+                        <entry>Pat Dumas, RN</entry>
+                        <entry>Clinical Program Director, VA Central Office (VACO), 810 Vermont
+                            Avenue NW, Washington, DC 20420 </entry>
+                        <entry>SME, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry>Manish Merchant, MD</entry>
+                        <entry>Health Informatician, Albany VAMC, 113 Holland Avenue, Albany, NY
+                            12208 </entry>
+                        <entry>SME</entry>
+                    </row>
+                    <row>
+                        <entry>Timothy Dresselhaus, MD</entry>
+                        <entry>Chief, Primary Care Service, San Diego VAMC - MEDS, 3350 La Jolla
+                            Village Drive, San Diego, CA 92161</entry>
+                        <entry>SME</entry>
+                    </row>
+                    <row>
+                        <entry>David Douglas, MD</entry>
+                        <entry>Facility Chief Health Informatics Officer, Portland VAMC, Portland,
+                            OR 97239</entry>
+                        <entry>E-Consult Expert</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface>
+        <title>Introduction</title>
+        <para>The VA is committed to improving the ability of clinicians to provide care for
+            patients while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the Health
+            Level 7 (<acronym><glossterm>HL7</glossterm></acronym>) Knowledge Artifact Specification
+            for a wide range of VA clinical use cases. Knowledge Artifacts, referred to as
+                    (<acronym><glossterm>KNARTs</glossterm></acronym>), enable the structuring and
+            encoding of clinical knowledge so the knowledge can be integrated with electronic health
+            records to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper
+                (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context
+            and intent of <acronym><glossterm>KNART</glossterm></acronym> use cases in sufficient
+            detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team
+            with the clinical source material to construct the corresponding knowledge artifacts
+            using the HL7 Knowledge Artifact Specification. This paper has been developed using
+            material from a variety of sources: VA artifacts, clinical practice guidelines, evidence
+            in the body of medical literature, and clinical expertise. After reviewing these
+            sources, the material has been synthesized and harmonized under the guidance of VA
+            subject matter experts to reflect clinical intent for this use case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work.</para>
+    </preface>
+    <preface>
+        <title>Conventions Used</title>
+        <para>Conventions used within the knowledge artifact descriptions include: <itemizedlist
+                mark="none" spacing="compact">
+                <listitem>
+                    <para><emphasis>&lt;obtain&gt;</emphasis>: Indicates a prompt to obtain the
+                        information listed <itemizedlist mark="bullet" spacing="compact">
+                            <listitem>
+                                <para>If possible, the requested information should be obtained from
+                                    the underlying system(s). Otherwise, prompting the user for
+                                    information may be required</para>
+                            </listitem>
+                            <listitem>
+                                <para>The technical and clinical notes associated with a section
+                                    should be consulted for specific constraints on the information
+                                    (e.g., time-frame, patient interview, etc.)</para>
+                            </listitem>
+                            <listitem>
+                                <para>Default Values: Unless otherwise noted, &lt;obtain&gt;
+                                    indicates to obtain the most recent observation. It is
+                                    recognized that this default time-frame value may be altered by
+                                    future implementations</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para><emphasis>[...]</emphasis>: Square brackets enclose explanatory text that
+                        indicates some action on the part of the clinical user, or general guidance
+                        to the clinical or technical teams. Examples include, but are not limited
+                        to:</para>
+                    <itemizedlist mark="none" spacing="normal">
+                        <listitem>
+                            <para><emphasis>[Begin ...]</emphasis>, <emphasis>[End ...]</emphasis>:
+                                Indicates the start and end of specific areas to clearly delineate
+                                them for technical purposes.</para>
+                            <para><emphasis>[Activate ...]</emphasis>: Initiates another knowledge
+                                artifact or knowledge artifact section.</para>
+                            <para><emphasis>[Section Prompt: ...]</emphasis>: If this section is
+                                applicable, then the following prompt should be displayed to the
+                                user.</para>
+                            <para><emphasis>[Section Selection Behavior: ...]</emphasis>: Indicates
+                                technical constraints or considerations for the selection of items
+                                within the section.</para>
+                            <para><emphasis>[Attach: ...]</emphasis>: Indicates that the specified
+                                item should be attached to the documentation template if
+                                available.</para>
+                            <para><emphasis>[Link: ...]</emphasis>: Indicates that rather than
+                                attaching an item, a link should be included in the documentation
+                                template.</para>
+                            <para><emphasis>[Clinical Comment: ...]</emphasis>: Indicates clinical
+                                rationale or guidance.</para>
+                            <para><emphasis>[Technical Note: ...]</emphasis>: Indicates technical
+                                considerations or notes.</para>
+                            <para><emphasis>[If ...]</emphasis>: Indicates the beginning of a
+                                conditional section.</para>
+                            <para><emphasis>[Else, ...]</emphasis>: Indicates the beginning of the
+                                alternative branch of a conditional section.</para>
+                            <para><emphasis>[End if ...]</emphasis>: Indicates the end of a
+                                conditional section.</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>☐ <emphasis>[Check boxes]</emphasis>: Indicate items that should be
+                        selected based upon the section selection behavior.</para>
+                </listitem>
+            </itemizedlist></para>
+    </preface>
+    <chapter>
+        <title>General E-Consult</title>
+        <section>
+            <title>Clinical Context</title>
+            <para>[Begin Clinical Context.]</para>
+            <para>Referral of patients for subspecialty consultation is a common task in clinical
+                practice. The available evidence (Akbari, 2008:
+                https://www.ncbi.nlm.nih.gov/pubmed/16034981) suggests that there is considerable
+                room for improvement in current referral practices, with potential organizational,
+                patient care, and financial benefits. Using an electronic interface to place the
+                consult request and provide key information to the consultant, E-consults provide a
+                mechanism for facilitating consultation between providers who are located in
+                separate facilities or in separate clinics within a single facility, without
+                expectation that patient and consulting specialist meet face to face.</para>
+            <para>In the traditional face-to-face clinical consultation, one clinical provider may
+                request that another clinical provider see a patient for an in-person consultation
+                (for example, a cardiology consult for a patient with chest pain unresolved with
+                medication, in which the cardiologist sees the patient in person). In the VA, a
+                second option for consultation exists called an "E-consult" in which the consulting
+                provider does not see the patient in person, but rather reviews the patient’s
+                clinical data as available in the electronic record system and as provided by the
+                requesting provider, and renders a consultative opinion about the patient back to
+                the treating clinician. The request for an E-Consult is operationalized as an
+                electronic notification in which the requesting clinical provider seeks information
+                from a specialist to whom the notification will be sent, without a requirement for
+                the specialist having a face-to-face encounter with the patient.</para>
+            <para>By way of full description of the clinical utility of the E-Consult option for
+                consult requests, the E-consult may or may not result in a subsequent consult
+                request being submitted for the consulting provider to see the patient directly in a
+                face-to-face visit, or via other venue for direct communication such as a
+                telemedicine consult between patient and specialist. </para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2" align="left">
+                    <tbody>
+                        <row>
+                            <entry align="left">Target User</entry>
+                            <entry align="left">Clinical providers </entry>
+                        </row>
+                        <row>
+                            <entry align="left">Patient</entry>
+                            <entry align="left">Adult patients in any clinical setting</entry>
+                        </row>
+                        <row>
+                            <entry align="left">Priority</entry>
+                            <entry align="left">
+                                <para>Stat E-Consult: response within 24 hours; Routine E-Consult:
+                                    response as soon as possible, but within 7 days; Routine
+                                    E-Consult with Scheduling Instructions: response time-frame
+                                    specified by ordering provider</para>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry align="left">Specialty</entry>
+                            <entry align="left">Any clinical specialty needing an E-Consult</entry>
+                        </row>
+                        <row>
+                            <entry align="left">Location</entry>
+                            <entry align="left">All</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>[End Clinical Context.]</para>
+        </section>
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+            <para>This section describes a knowledge artifact that is intended for clinicians caring
+                for adult patients in any clinical setting and for whom the requesting clinical
+                provider seeks information from a specialist without first requiring the specialist
+                to see the patient for an in-person visit.</para>
+            <para>One knowledge artifact, the E-Consult Request Documentation Template, defines this
+                clinical use case and is described in detail in the following section.</para>
+            <itemizedlist>
+                <listitem>
+                    <para> Documentation Template: E-Consult Request KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Documentation Template meant to communicate the request for a
+                                specialty consultation electronically</para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of documentation
+                                sections</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>[End Knowledge Artifacts.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Documentation Template: E-Consult Request</title>
+        <para>[Begin Documentation Template: E-Consult Request.]</para>
+        <para>[Clinical Comment: The E- Consult Reques documentation template is applicable to adult
+            patients in any clinical setting.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>E-Consult Request</title>
+            <para>[Begin E-Consult Request.]</para>
+            <para>[Section Prompt: E-Consult Request:]</para>
+            <para>[Section Selection Behavior: Select one. Required.]<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; E-Consult Request</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Select Specialty Service for E-Consult:]</para>
+            <para>[Clinical Comment: In future, one would make specific E-consult forms available to
+                provider based on selected subspecialty if such forms exist.]</para>
+            <para>[Section Selection Behavior: Select one. Required.]</para>
+            <para>[Technical Note: Please provide the clinical user the functionality of a search box
+                into which they can type the first few letters of or the full name of the specialty
+                service they are seeking to consult, as a means to navigating more quickly to the
+                correct check box in the list of Specialties below.]</para>
+            <para>[Section Prompt: Medicine.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Adolescent Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Allergy and Immunology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Anesthesiology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Cardiology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Critical Care</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Dermatology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Emergency Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Endocrinology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Gastroenterology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Genetics and Genomics</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Geriatrics</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Hematology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Hospice and Palliative Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Infectious Disease</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Internal Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Nephrology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Neurology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Occupational Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Oncology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Ophthalmology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Optometry</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Pain Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Pathology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Pediatrics</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Physical Medicine and Rehabilitation</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Primary Care</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Pulmonology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Rheumatology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Sleep Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Sports Medicine - Nonsurgical</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Travel Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Undersea and Hyperbaric Medicine</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Surgery.]<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Burn surgery</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Cardiothoracic Surgery</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; General Surgery</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Neurosurgery</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Obstetrics and Gynecology<itemizedlist>
+                                <listitem>
+                                    <para>&#x2610; Gynecologic Oncology</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Gynecology</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Obstetrics</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Ophthalmology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Orthopedics</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Otolaryngology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Plastic and Reconstructive Surgery</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Sports Medicine - Surgical </para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Trauma and Emergency Surgery</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Urology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Vascular Surgery</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Mental Health.]<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Mental Health </para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Psychiatry</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Radiology.]<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Diagnostic Radiology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Interventional Radiology</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Nuclear Medicine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Radiation Therapy</para>
+                    </listitem>
+                </itemizedlist>[Section Prompt: Long Term Care.]<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Long Term Care (may include nursing homes, skilled nursing
+                            facilities, and other assisted living facilities)</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Dental Consult.]<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Dental Consult</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Ancillary Clinical Services.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Blood Bank</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Nutrition</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Pharmacy</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Social Work</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Toxicology</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Wound Care</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Other</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>&lt;obtain&gt; Other Ancillary Clinical Services</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Other Specialty Consults.]<itemizedlist>
+                    <listitem>
+                        <para>&lt;obtain&gt; Other Specialty</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Reason for E-Consult?]<itemizedlist>
+                    <listitem>
+                        <para>&lt;obtain&gt; Reason for E-Consult</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Indicate patient's location.]</para>
+            <para>[Section Selection Behavior: Select one. Required.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Inpatient</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Outpatient</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Other Specific Location</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&lt;obtain&gt; Details</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Specify E-Consult Priority as follows:]<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Stat E-Consult: response within 24 hours</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Routine E-Consult: response as soon as possible, but within 7
+                            days</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Routine E-Consult with Scheduling Instructions: response
+                            time-frame specified by ordering provider</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: The clinical provider requesting the E-Consult with "Stat"
+                priority must verbally contact the desired consulting provider and document their
+                name below.]</para>
+            <para>[Technical Note: For any selection (Stat, Routine, Routine with Scheduling
+                Information), all &lt;obtain&gt; statements are Required except the two instances
+                where "(optional entry)" appear to the clinical user at the end of the
+                &lt;obtain&gt; statement.]</para>
+            <para>[Section Prompt: Stat E-Consult:]</para>
+            <para>[Technical Note: Display this portion of the consult request only when the user
+                selects "Stat E-Conult" above.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Provider Accepting Request to Provide E-Consult
+                        (required)</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Provisional Diagnosis</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Additional Patient Information (Relevant History,
+                        Examination, Labs, Imaging, etc.)</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Referring Physician</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Routine E-Consult:]</para>
+            <para>[Technical Note: Display this portion of the consult request only when the user
+                selects "Routine E-Consult" above.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Provisional Diagnosis</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Additional Patient Information (Relevant History,
+                        Examination, Labs, Imaging, etc.)</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Referring Physician</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Provider Accepting Request to Provide E-Consult (optional
+                        entry)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Routine with Scheduling Instructions E-Consult:]</para>
+            <para>[Technical Note: Display this portion of the consult request only when the user
+                selects "Routine with Scheduling Instruction E-Consult" above.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Scheduling Instructions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Timeframe for scheduling consult (Example: within 10
+                        days)</para>
+                </listitem>
+            </itemizedlist>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Provisional Diagnosis</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Additional Patient Information (Relevant History,
+                        Examination, Labs, Imaging, etc.)</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Referring Physician</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Provider Accepting Request to Provide E-Consult (optional
+                        entry)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End E-Consult Request.]</para>
+            <para>[End Documentation Template: E-Consult Request.]</para>
+        </section>
+    </chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <abbrev>Akbari, 2008</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Akbari</surname><firstname>A.</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Mayhew</surname><firstname>A.</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Al-Alawi</surname><firstname>MA</firstname></personname>
+                </author>
+                <author>
+                    <personname>et al</personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Interventions to improve outpatient referrals from primary
+                care to secondary care</citetitle>
+            <citetitle pubwork="journal">Cochrane Database Syst Rev</citetitle>
+            <pubdate>2008</pubdate>
+            <volumenum>4</volumenum>
+            <pagenums>CD005471</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>Department of Veterans Affairs</orgname>
+            </author>
+            <citetitle pubwork="webpage">Consult Processess and Procedures</citetitle>
+            <bibliomisc><link
+                xlink:href="https://vaww.vha.vaco.portal.va.gov/sites/DUSHOM/10NA/ACAO/ConsultManagement/Policy/Consult%20Management%20Directive/Published%20Directtive-1232_D_2016-08-23.pdf"
+                /></bibliomisc>
+            <pubdate>August 2016</pubdate>
+        </biblioentry>
+    </bibliography>
+    <appendix>
+        <title>Existing Sample VA Artifacts</title>
+        <figure>
+            <title>E-Consult Instructions (Image 1 of 13)</title>
+            <mediaobject>
+                <alt>Image 1 of 13 for completing an E-Consult. User to begin process by selecting
+                    ‘New Note’ button in the bottom left corner. </alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig1_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consults Instructions (Image 2 of 13)</title>
+            <mediaobject>
+                <alt>Image 2 of 13 for completing an E-Consult. User to create a new consult by
+                    selecting ‘Action’ tab, fourth tab from the left, then select 'Consult Results,
+                    third tab from the top, then select 'Complete/Update Results', first tab from
+                    the top. Or select 'Consults' from the bottom toolbar, sixth tab from the
+                    left.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig2_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consults Instructions (Image 3 of 13)</title>
+            <mediaobject>
+                <alt>Image 3 of 13 for completing an E-Consult. Location for Current Activities
+                    Screen appears.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig3_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consults Instructions (Image 4 of 13)</title>
+            <mediaobject>
+                <alt>Image 4 of 13 for completing an E-Consult. Select the appointment or visit that
+                    should be associated with the note or orders by selecting 'New Visit' tab, third
+                    tab on the right .</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig4_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 5 of 13)</title>
+            <mediaobject>
+                <alt>Image 5 of 13 for completing an E-Consult. Choose E-Consult for your specialty
+                    under the 'New Visit' tab, third tab from the left, then choose E-Consult for
+                    your specialty under 'Visit Location'.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig5_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 6 of 13)</title>
+            <mediaobject>
+                <alt>Image 6 of 13 for completing an E-Consult. In 'Progress Note Title', type your
+                    specialty and choose 'E-consult'.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig6_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 7 of 13)</title>
+            <mediaobject>
+                <alt>Image 7 of 13 for completing an E-Consult. Associate 'Progress Note Title' with
+                    'Consult Request' in the bottom box of your screen.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig7_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 8 of 13)</title>
+            <mediaobject>
+                <alt>Image 8 of 13 for completing an E-Consult. When note is finished, complete the
+                    encounter form under 'Visit Type' tab, first tab from the left at the top of
+                    your screen.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig8_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 9 of 13)</title>
+            <mediaobject>
+                <alt>Image 9 of 13 for completing an E-Consult. Choose 'Diagnoses' tab, the second
+                    tab from the left at the top of your screen.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig9_eConsult.png" scalefit="1" width="100%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 10 of 13)</title>
+            <mediaobject>
+                <alt>Image 10 of 13 for completing an E-Consult. Under 'Section Name', second box
+                    from the left, only 'Brief Consult' may be selected.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig10_eConsult.png" scalefit="1" width="100%"
+                        align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 11 of 13)</title>
+            <mediaobject>
+                <alt>Image 11 of 13 for completing an E-Consult. Under 'Section Name', second box
+                    from the left, some sepecialties may say 'problem focused'.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig11_eConsult.png" scalefit="1" width="100%"
+                        align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 12 of 13)</title>
+            <mediaobject>
+                <alt>Image 12 of 13 for completing an E-Consult. If a face-to-face consult is
+                    needed, under 'Action Tab', fourth tab from the left, choose 'Consult Tracking'
+                    second from top, then choose 'Forward', sixth from top.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig12_eConsult.png" scalefit="1" width="100%"
+                        align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>E-Consult Instructions (Image 13 of 13)</title>
+            <mediaobject>
+                <alt>Image 13 of 13 for completing an E-Consult. In 'To Service' box, first box from
+                    the top, choose appropriate service (but not E-Consult). Enter comments if
+                    needed in the 'Comments' box, second box from the left.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig13_eConsult.png" scalefit="1" width="100%"
+                        align="center"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+    <appendix>
+        <title>Acronyms</title>
+        <informaltable>
+            <tgroup cols="2" align="left">
+                <thead>
+                    <row>
+                        <entry align="left"><emphasis role="bold">Acronym/Term</emphasis></entry>
+                        <entry align="left"><emphasis role="bold">Description</emphasis></entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry align="left">CAD</entry>
+                        <entry align="left">Coronary Artery Disease</entry>
+                    </row>
+                    <row>
+                        <entry>CDS</entry>
+                        <entry align="left">Clinical Decision Support</entry>
+                    </row>
+                    <row>
+                        <entry>CP</entry>
+                        <entry align="left">Chest Pain</entry>
+                    </row>
+                    <row>
+                        <entry>HL7</entry>
+                        <entry align="left">Health Level 7</entry>
+                    </row>
+                    <row>
+                        <entry>KBS</entry>
+                        <entry align="left">Knowledge Based Systems</entry>
+                    </row>
+                    <row>
+                        <entry>KNART</entry>
+                        <entry align="left">Knowledge Artifact</entry>
+                    </row>
+                    <row>
+                        <entry>OIIG</entry>
+                        <entry align="left">Office of Informatics and Information Governance</entry>
+                    </row>
+                    <row>
+                        <entry>SME</entry>
+                        <entry align="left">Subject Matter Expert</entry>
+                    </row>
+                    <row>
+                        <entry>TO</entry>
+                        <entry align="left">Task Order</entry>
+                    </row>
+                    <row>
+                        <entry>VA</entry>
+                        <entry align="left">Department of Veterans Affairs</entry>
+                    </row>
+                    <row>
+                        <entry>VAMC</entry>
+                        <entry align="left">VA Medical Center</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </appendix>
+</book>
