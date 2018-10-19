@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Primary Care: Family Health History Clinical Content White Paper</subtitle>
+        <copyright>
+            <year>April</year>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>
+                    <surname>Department of Veterans Affairs (VA)</surname>
+                </personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center" fileref="images/VALOGO.jpg" contentwidth="2in"
+                                contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: Primary Care: Family Health History
+                        KNART</title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <entry valign="middle">Primary Care KNART</entry>
+                                <entry valign="middle">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Family Health History - Documentation Template</entry>
+                                <entry>CLIN0009BA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>March 2018</pubdate>
+        <volumenum>Version 1.0</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>3/9/2018</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>Final DocBook transformation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>3/1/2018</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Final approval from Program Office</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>11/01/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Clinical Review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>11/01/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Updated Motive data</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>10/04/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template update per PO recommendatioin</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>09/20/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Comments inserted for follow on discussions with SMEs</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>9/20/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Initial Draft-Motive data added</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <informaltable frame="all">
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Angela Denietolis, MD</entry>
+                        <entry>Primary Care Physician, James A. Haley Veterans Hospital, Tampa VA
+                            Medical Center (VAMC) Tampa, FL 33612 </entry>
+                        <entry>SME, Primary</entry>
+                    </row>
+                    <row>
+                        <entry>Pat Dumas, RN</entry>
+                        <entry>Clinical Program Director VA Central Office (VACO), 810 Vermont Ave
+                            NW Washington, DL 20420 </entry>
+                        <entry>SME, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry>Manish Merchant, MD</entry>
+                        <entry>Health Informatician, Albany VAMC, 113 Holland Ave. Albany, NY 12208 </entry>
+                        <entry>SME</entry>
+                    </row>
+                    <row>
+                        <entry>Timothy Dresselhaus, MD</entry>
+                        <entry>San Diego VAMC - MEDS 3350 La Jolla Village Drive San Diego, CA 92161 </entry>
+                        <entry>SME</entry>
+                    </row>
+                    <row>
+                        <entry>David Douglas, MD</entry>
+                        <entry>Facility Chief Health Informatics Officer, Portland VAMC Portland, OR </entry>
+                        <entry>E-Consult Expert</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface>
+        <title>Introduction</title>
+        <para>The VA is committed to improving the ability of clinicians to provide care for patients
+            while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the HL7
+            Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+            Artifacts, referred to as <acronym><glossterm>KNARTs</glossterm></acronym>,
+            enable the structuring and encoding of clinical knowledge so the knowledge can be integrated
+            with electronic health records to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context and intent
+            of KNART use cases in sufficient detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team with the
+            clinical source material to construct the corresponding knowledge artifacts using the HL7
+            Knowledge Artifact Specification. This paper has been developed using material from a
+            variety of sources: VA artifacts, clinical practice guidelines, evidence in the body of
+            medical literature, and clinical expertise. After reviewing these sources, the material has
+            been synthesized and harmonized under the guidance of VA subject matter experts to reflect
+            clinical intent for this use case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is beyond
+            the scope of this work.</para>
+    </preface>
+    <preface version="5.1">
+        <info>
+            <title>Conventions Used</title>
+        </info>
+        <para>Conventions used within the knowledge artifact descriptions include:</para>
+        <itemizedlist mark="none" spacing="compact">
+            <listitem>
+                <para>&lt;obtain&gt;: Indicates a prompt to obtain the information listed
+                        <itemizedlist mark="bullet" spacing="compact">
+                        <listitem>
+                            <para>If possible, the requested information should be obtained from the
+                                underlying system(s). Otherwise, prompting the user for information
+                                may be required</para>
+                        </listitem>
+                        <listitem>
+                            <para>Default Values: Unless otherwise noted, &lt;obtain&gt; indicates
+                                to obtain the most recent observation. It is recognized that this
+                                default time-frame value may be altered by future
+                                implementations</para>
+                        </listitem>
+                    </itemizedlist></para>
+            </listitem>
+            <listitem>
+                <para>[...]: Square brackets enclose explanatory text that indicates some action on
+                    the part of the clinical user, or general guidance to the clinical or technical
+                    teams. Examples include, but are not limited to:</para>
+                <itemizedlist mark="none" spacing="normal">
+                    <listitem>
+                        <para>[Begin ...], [End ...]: Indicates the start and end of specific areas
+                            to clearly delineate them for technical purposes.</para>
+                        <para>[Activate ...]: Initiates another knowledge artifact or knowledge
+                            artifact section.</para>
+                        <para>[Section Prompt: ...]: If this section is applicable, then the
+                            following prompt should be displayed to the user.</para>
+                        <para>[Section Behavior: ...]: Indicates technical constraints or
+                            considerations for the selection of items outlined in the section
+                            prompt.</para>
+                        <para>[Attach: ...]: Indicates that the specified item (e.g. procedure or
+                            result interpretation) should be attached to the documentation template
+                            if available.</para>
+                        <para>[Link: ...]: Indicates that rather than attaching an item (e.g.
+                            image), a link should be included in the documentation template.</para>
+                        <para>[Clinical Comment: ...]: Indicates technical considerations or notes
+                            to be utilized for KNART authoring and at time of implementation
+                            planning.</para>
+                        <para>[Technical Note: ...]: Indicates technical considerations or notes to
+                            be utilized for KNART authoring and at time of implementation
+                            planning.</para>
+                        <para>[If ...]: Indicates the beginning of a conditional section.</para>
+                        <para>[Else, ...]: Indicates the beginning of the alternative branch of a
+                            conditional section.</para>
+                        <para>[End if ...]: Indicates the end of a conditional section.</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>
+                <para>☐ [Check box]: Indicates items that should be selected based upon the section
+                    selection behavior.</para>
+            </listitem>
+        </itemizedlist>
+    </preface>
+    <chapter>
+        <title>Primary Care: Family Health History</title>
+        <section>
+            <title>Clinical Context</title>
+            <para>[Begin Clinical Context.]</para>
+            <para>Family health history contains information that may affect a patient's risk for
+                rare diseases that are inherited in a Mendelian fashion (e.g., Huntington disease)
+                or for common diseases that have a hereditary component (e.g., coronary artery
+                disease). Capturing this information in a structured format will increase its
+                utility as an interoperable knowledge object. </para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry>Provider to include Primary Care</entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry>Adult Patients</entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry>Routine</entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry>Primary Care</entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry>Outpatient</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>[End Clinical Context.]</para>
+        </section>
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+            <para>This section describes the knowledge artifact that is intended to facilitate
+                documentation of family history. The knowledge artifact that defines this clinical
+                use case  is described in detail in the following sections:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Documentation Template: Primary Care: Family Health History KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Documents the patient's family health history</para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of documentation sections
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>[End Knowledge Artifacts.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Documentation Template</title>
+        <para>[Begin Documentation Template.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[Technical Note: This documentation template should be available for all
+                outpatients for whom investigation and documentation of family health history is
+                indicated.] </para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>Family Structure</title>
+            <para>[Begin Family Structure.]</para>
+            <para>[Section Prompt: Family structure: Consider using this section when a detailed
+                genetic history is the intent. For routine clinical care, consider beginning with
+                the next section. If you do complete this section, include both living and deceased
+                family members.]<itemizedlist mark="none">
+                    <listitem>
+                        <para>How many brothers do you have?<itemizedlist mark="none">
+                                <listitem>
+                                    <para>&lt;obtain&gt; Number</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>How many sisters do you have?<itemizedlist mark="none">
+                            <listitem>
+                                <para>&lt;obtain&gt; Number</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para>How many sons do you have?<itemizedlist mark="none">
+                            <listitem>
+                                <para>&lt;obtain&gt; Number</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para>How many daughters do you have?<itemizedlist mark="none">
+                            <listitem>
+                                <para>&lt;obtain&gt; Number</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para>How many brothers does your mother have? (your uncles)<itemizedlist mark="none">
+                            <listitem>
+                                <para>&lt;obtain&gt; Number</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para>How many sisters does your mother have? (your aunts)<itemizedlist mark="none">
+                            <listitem>
+                                <para>&lt;obtain&gt; Number</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para>How many brothers does your father have? (your uncles)<itemizedlist mark="none">
+                            <listitem>
+                                <para>&lt;obtain&gt; Number</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para>How many sisters does your father have? (your aunts)<itemizedlist mark="none">
+                            <listitem>
+                                <para>&lt;obtain&gt; Number</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Family Structure.]</para>
+        </section>
+        <section>
+            <title>Family Health History</title>
+            <para>[Begin Family Health History.]</para>
+            <para>[Section Prompt: Family Health History: Please indicate which conditions are
+                present in this patient's family health history:]</para>
+            <para>[Technical Note: Display the “Family Member” section whenever a condition in the
+                “Family Health History” section is selected. The intent is, whenever a condition is
+                selected, enable the user to indicate which family members have the condition as
+                well as some additional information about said family member. For an example of how
+                a family health history was created see
+                https://familyhistory.hhs.gov/FHH/html/index.html#] </para>
+       
+            <para>&#x2610; Autoimmune/Allergic Disorder <itemizedlist mark="none">
+                    <listitem>
+                        <para>&lt;obtain&gt; Conditions</para>
+                    </listitem>
+                    <listitem>
+                        <para>&lt;obtain&gt; Detail</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>&#x2610; Additional Autoimmune/Allergic Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Autoimmune/Allergic
+                Disorder” is checked.]</para>
+            <para>&#x2610; Cancer</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Cancer</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that "Additional Cancer" is
+                checked.]</para>
+            <para>&#x2610; Congenital/Developmental Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Congenital/Developmental Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that "Additional Congenital/Developmental
+                Disorder" is checked.]</para>
+            <para>&#x2610; Dermatologic Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Dermatologic Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that "Additional Dermatologic Disorder" is
+                checked.]</para>
+            <para>&#x2610; Endocrine/Metabolic Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Endocrine/Metabolic Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that "Additional Endocrine/Metabolic
+                Disorder" is checked.]</para>
+            <para>&#x2610; Gastroenterologic Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Gastroenterologic Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that "Additional Gastroenterologic
+                Disorder" is checked.]</para>
+            <para>&#x2610; Genitourinary/Reproductive Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Genitourinary/Reproductive Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Genitourinary/Reproductive
+                Disorder” is checked.]</para>
+            <para>&#x2610; Hematologic Disorder</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&lt;obtain&gt; Conditions</para>
+                    </listitem>
+                    <listitem>
+                        <para>&lt;obtain&gt; Detail</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>&#x2610; Additional Hematologic Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Hematologic Disorder” is
+                checked.]</para>
+            <para>&#x2610; Hereditary Condition</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Hereditary Condition</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Hereditary Condition” is
+                checked.]</para>
+            <para>&#x2610; Infectious Disease</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Infectious Disease</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Infectious Disease” is
+                checked.]</para>
+            <para>&#x2610; Musculoskeletal Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Musculoskeletal Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Musculoskeletal Disorder”
+                is checked.]</para>
+            <para>&#x2610; Neurologic Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Neurologic Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Neurologic Disorder” is
+                checked.]</para>
+            <para>&#x2610; Ophthalmic Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Ophthalmic Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Ophthalmic Disorder” is
+                checked.]</para>
+            <para>&#x2610; Psychiatric/Behavioral Health Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Psychiatric/Behavioral Health Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Psychiatric/Behavioral
+                Health Disorder” is checked.]</para>
+            <para>&#x2610; Pulmonary Disorder</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&lt;obtain&gt; Conditions</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>&#x2610; Additional Pulmonary Disorder</para>
+            <para>[Technical Note: The clinical provider should be presented with an additional set
+                of the preceding questions for each time that “Additional Pulmonary Disorder” is
+                checked.]</para>
+            <para>[End Family Health History.]</para>
+        </section>
+        <section>
+            <title>Family Members with Selected Condition</title>
+            <para>[Begin Family Members with Selected Condition.]</para>
+            <para>[Technical Note: For each disease selected under “Family Health History”, display
+                the “Family Members with Selected Condition” section of this documentation
+                template.]</para>
+            <para>[Section Prompt: Family Member with Condition.]</para>
+            <para>[Section Selection Behavior: Select one or more. Optional.]</para>
+            <para>[Technical Note: Each time a family member is selected, the rest of the
+                information to be obtained about that family member should be displayed for optional
+                completion.]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Sister</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Brother</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Daughter</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Son</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Mother</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Maternal Grandmother</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Maternal Grandfather</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Maternal Half-Sister</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Maternal Half-Brother</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Maternal Aunt</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Maternal Uncle</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Other<itemizedlist mark="none">
+                                <listitem>
+                                    <para>&lt;obtain&gt; Detail</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; Father</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Paternal Grandmother</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Paternal Grandfather</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Paternal Half-Sister</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Paternal Half-Brother</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Paternal Aunt</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Paternal Uncle</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Other<itemizedlist mark="none">
+                            <listitem>
+                                <para>&lt;obtain&gt; Detail</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Age at diagnosis?]</para>
+            <para>&lt;obtain&gt; Age at diagnosis</para>
+            <para>[Section Prompt: Living?]<itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Yes</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; No</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Unknown</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Age Deceased?]</para>
+            <para>&lt;obtain&gt; Age Deceased (Years)</para>
+            <para>[Section Prompt: Died as results of disease?]<itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Yes</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; No</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Unknown</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>&lt;obtain&gt; Other comments about this family member</para>
+            <para>[Section Prompt: Additional Family Member with this condition?]<itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Yes</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Technical Note: If response is yes, display "Family Members with Selected
+                Condition" section again. If response is no, return to "Family Health History"
+                section.]</para>
+            <para>[End Family Members with Selected Condition.]</para>
+        </section>
+        <section>
+            <title>Patient Genetic Testing History</title>
+            <para>[Begin Patient Genetic Testing History.]</para>
+            <para>[Section Prompt: Patient Genetic Testing Done?]</para>
+            <para>[Section Selection Behavior: Select one, required.]<itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Yes</para>
+                        <para>[Technical Note: Completion of the following sections must be
+                            optional, as this information may not be known.]</para>
+                        <para>&lt;obtain&gt; Test</para>
+                        <para>&lt;obtain&gt; Results</para>
+                        <para>[Section Prompt: Additional Genetic Testing/Results?]<itemizedlist mark="none">
+                                <listitem>
+                                    <para>&#x2610; Yes</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; No</para>
+                                    <para>[Technical Note: Display "Patient Genetic Testing Done?"
+                                        section again when "yes" is selected under "additional
+                                        genetic testing/results"]</para>
+                                    <para>&lt;obtain&gt; Additional genetic testing history</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; No</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Patient Genetic Testing History.]</para>
+        </section>
+        <section>
+            <title>Historian</title>
+            <para>[Begin Historian.]</para>
+            <para>[Section Prompt: Historian.]</para>
+            <para>&lt;obtain&gt; Relationship to Patient</para>
+            <para>[End Historian.]</para>
+            <para>[End Documentation Template.]</para>
+        </section>
+    </chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <orgname>Centers for Medicare &amp; Medicaid Services</orgname>
+            <citetitle pubwork="webpage">Eligible Professional Meaningful Use Menu Set Measures:
+                Measure 4 of 6: Stage 2: Family Health History</citetitle>
+            <bibliomisc><link
+                    xlink:href="https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/downloads/Stage2_EPMenu_4_FamilyHealthHistory.pdf"
+                /></bibliomisc>
+            <pubdate>Issued October 2012</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <orgname>U.S. Department of Veterans Affairs</orgname>
+            <citetitle pubwork="webpage">Family health history: SMARTForm use case, version 1.2.
+                SMARTForms Family Health History Use Case</citetitle>
+            <bibliomisc><link xlink:href="V1.2_20150602.docx"/></bibliomisc>
+            <pubdate>Accessed September 8, 2017</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <orgname>U.S. National Institutes of Health</orgname>
+            <citetitle pubwork="webpage">My Family Health Portrait: A tool from the Surgeon
+                General</citetitle>
+            <bibliomisc><link xlink:href="https://familyhistory.hhs.gov/FHH/html/index.html"
+                /></bibliomisc>
+            <pubdate>Accessed  December 21, 2017</pubdate>
+        </biblioentry>
+    </bibliography>
+    <appendix>
+        <title>Acronyms</title>
+        <informaltable>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Acronym</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>CDS</entry>
+                        <entry>Clinical Decision Support</entry>
+                    </row>
+                    <row>
+                        <entry>CCWP</entry>
+                        <entry>Clinical Context White Paper</entry>
+                    </row>
+                    <row>
+                        <entry>HL7</entry>
+                        <entry>Health Level 7</entry>
+                    </row>
+                    <row>
+                        <entry>KBS</entry>
+                        <entry>Knowledge Based Systems</entry>
+                    </row>
+                    <row>
+                        <entry>KNART</entry>
+                        <entry>Knowledge Artifact</entry>
+                    </row>
+                    <row>
+                        <entry>OIIG</entry>
+                        <entry>Office of Informatics and Information Governance</entry>
+                    </row>
+                    <row>
+                        <entry>SME</entry>
+                        <entry>Subject Matter Expert</entry>
+                    </row>
+                    <row>
+                        <entry>TO</entry>
+                        <entry>Task Order</entry>
+                    </row>
+                    <row>
+                        <entry>VA</entry>
+                        <entry>Department of Veterans Affairs</entry>
+                    </row>
+                    <row>
+                        <entry>VACO</entry>
+                        <entry>VA Central Office</entry>
+                    </row>
+                    <row>
+                        <entry>VAMC</entry>
+                        <entry>VA Medical Center</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </appendix>
+</book>
