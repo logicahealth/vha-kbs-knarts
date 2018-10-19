@@ -1,0 +1,1349 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+      Artifacts (KNARTs)</title>
+    <subtitle>Neurology: Traumatic Brain Injury (TBI) Clinical Content White Paper </subtitle>
+    <copyright>
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright>
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+    <authorgroup>
+      <author>
+        <personname>Department of Veterans Affairs (VA)</personname>
+      </author>
+      <author>
+        <orgname><inlinemediaobject>
+            <alt>Department of Veteran's Affairs Logo</alt>
+            <imageobject>
+              <imagedata fileref="images/VASealColor.jpg"/>
+            </imageobject>
+          </inlinemediaobject></orgname>
+      </author>
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+      <author>
+        <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+      </author>
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+    <abstract>
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+      </info>
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Relevant KNART Information: Neurology: Traumatic Brain Injury (TBI)</title>
+          <tgroup align="left" cols="2">
+            <thead>
+              <row valign="bottom">
+                <entry valign="middle">Neurology KNART</entry>
+                <entry valign="middle">Associated CLIN</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Traumatic Brain Injury (TBI) Screening - Event Condition Action (ECA)
+                  Rule</entry>
+                <entry>CLIN0003AA</entry>
+              </row>
+              <row>
+                <entry>Traumatic Brain Injury (TBI) Screening - Documentation Template</entry>
+                <entry>CLIN0005AB</entry>
+              </row>
+              <row>
+                <entry>Traumatic Brain Injury (TBI) Screening - Documentation Template/Consult
+                  Request</entry>
+                <entry>CLIN0005AB</entry>
+              </row>
+              <row>
+                <entry>Traumatic Brain Injury (TBI) Polytrauma Interdisciplinary Rehabilitation
+                  Clinic - Order Set</entry>
+                <entry>CLIN0004AA</entry>
+              </row>
+              <row>
+                <entry>Traumatic Brain Injury (TBI) Polytrauma Concussion - Order Set</entry>
+                <entry>CLIN0004AA</entry>
+              </row>
+              <row>
+                <entry>Traumatic Brain Injury (TBI) Rehabilitation Medicine Spasticity Clinic -
+                  Order Set</entry>
+                <entry>CLIN0004AA</entry>
+              </row>
+              <row>
+                <entry>Traumatic Brain Injury (TBI) Screening - Composite/Consult Request</entry>
+                <entry>N/A</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+    <pubdate>May 2018</pubdate>
+    <volumenum>Version 1.0</volumenum>
+  </info>
+  <preface xml:id="neurology-traumatic-brain-injury-tbi-screening">
+    <info>
+      <title>A Subject Matter Expert (SME) Panel</title>
+    </info>
+    <para>
+      <table frame="all">
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.29*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.71*"/>
+          <thead>
+            <row>
+              <entry>Name</entry>
+              <entry>Title</entry>
+              <entry>Project Role</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Donald Higgins, MD</entry>
+              <entry>
+                <para>National Program Director of Neurology 810 Vermont Ave NW Rm 668 Washington,
+                  DC 20420 </para>
+              </entry>
+              <entry>SME, Primary</entry>
+            </row>
+            <row>
+              <entry>Glenn Graham, MD</entry>
+              <entry>
+                <para> Deputy National Director of Neurology 810 Vermont Ave NW Rm 670 Washington, DC 20420</para>
+                             </entry>
+              <entry>SME, Secondary</entry>
+            </row><row>
+              <entry>Ellis Boudreau, MD</entry>
+              <entry>
+                <para>Staff Neurologist, Portland VAMC Portland VA Medical Center (VAMC) 3710 SW US Veterans Hospital Road Portland, OR 97239 </para>
+               
+              </entry>
+              <entry>SME</entry>
+            </row><row>
+              <entry>Jason Sico, MD</entry>
+              <entry>
+                <para>Physician, VAMC Connecticut VAMC Connecticut 950 Campbell Ave West Haven, CT 06516 </para>
+               
+              </entry>
+              <entry>SME</entry>
+            </row><row>
+              <entry>Michael Phipps, MD</entry>
+              <entry>
+                <para>Neurologist, VAMC Baltimore, Baltimore VAMC 10 N Greene St Baltimore, MD 21201 </para>
+                
+              </entry>
+              <entry>SME</entry>
+            </row><row>
+              <entry>Sarah Maulden, MD</entry>
+              <entry>
+                <para>Assistant Professor of Neurology 550 Foothill Dr, Ste 400 SLC, UT 84113</para>
+                             </entry>
+              <entry>SME</entry>
+            </row><row>
+              <entry>Joel Scholten, MD</entry>
+              <entry>
+                <para>National Director, Physical Medicine and Rehabilitation, 50 Irving St NW Washington, DC 20422 </para>
+                             </entry>
+              <entry>SME</entry>
+            </row><row>
+              <entry>Lisa Perla</entry>
+              <entry>
+                <para>Rehabilitation Planning Specialist, 31 Hopkins Plaza, Room 1250 Baltimore, MD 21201 </para>
+               
+              </entry>
+              <entry>SME</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+  </preface>
+  <preface>
+    <info>
+      <title>Introduction</title>
+    </info>
+    <para> The VA is committed to improving the ability of clinicians to provide care for patients
+      while increasing quality, safety, and efficiency. Recognizing the importance of standardizing
+      clinical knowledge in support of this goal, VA is implementing the Health Level 7 (HL7)
+      Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+      Artifacts, referred to as (KNARTs), enable the structuring and encoding of clinical knowledge
+      so the knowledge can be integrated with electronic health records to enable clinical decision
+      support. </para>
+    <para> The purpose of this Clinical Content White Paper (CCWP) is to capture the clinical
+      context and intent of KNART use cases in sufficient detail to provide the KNART authoring team
+      with the clinical source material to construct the corresponding knowledge artifacts using the
+      HL7 Knowledge Artifact Specification. This paper has been developed using material from a
+      variety of sources: VA artifacts, clinical practice guidelines, evidence in the body of
+      medical literature, and clinical expertise. After reviewing these sources, the material has
+      been synthesized and harmonized under the guidance of VA subject matter experts to reflect
+      clinical intent for this use case. </para>
+    <para> Unless otherwise noted, items within this white paper (e.g., documentation template
+      fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+      creation. To provide an exhaustive list of all possible items and their variations is beyond
+      the scope of this work. </para>
+  </preface>
+  <preface>
+    <info>
+      <title>Conventions Used</title>
+    </info>
+    <para> Conventions used within the knowledge artifact descriptions include: </para>
+    <para> &lt;obtain&gt;: Indicates a prompt to obtain the information listed </para>
+    <itemizedlist>
+      <listitem>
+        <para> If possible, the requested information should be obtained from the underlying
+          system(s). Otherwise, prompting the user for information may be required </para>
+      </listitem>
+      <listitem>
+        <para>The technical and clinical comments associated with a section should be consulted for
+          specific constraints on the information (e.g., time-frame, patient interview, etc.)</para>
+      </listitem>
+      <listitem>
+        <para> Default Values: Unless otherwise noted, &lt;obtain&gt; indicates to obtain the most
+          recent observation. It is recognized that this default time-frame value may be altered by
+          future implementations </para>
+      </listitem>
+    </itemizedlist>
+    <para> [...]: Square brackets enclose explanatory text that indicates some action on the part of
+      the clinical user, or general guidance to the clinical or technical teams. Examples include,
+      but are not limited to: </para>
+    <blockquote>
+      <para>[Begin ...],[End ...]: Indicates the start and end of specific areas to clearly
+        delineate them for technical purposes. </para>
+      <para> [Activate ...]: Initiates another knowledge artifact or knowledge artifact section. </para>
+      <para>[Section Prompt: ...]: If this section is applicable, then the following prompt should
+        be displayed to the user. </para>
+      <para>[Section Selection Behavior: ...]: Indicates technical constraints or considerations for
+        the selection of items within the section. </para>
+      <para> [Attach: ...]: Indicates that the specified item should be attached to the
+        documentation template if available. </para>
+      <para> [Link: ...]: Indicates that rather than attaching an item, a link should be included in
+        the documentation template. </para>
+      <para> [Clinical Comment: ...]: Indicates clinical rationale or guidance. </para>
+      <para>[Technical Note: ...]: Indicates technical considerations or notes. </para>
+      <para> [If ...]: Indicates the beginning of a conditional section. </para>
+      <para> [Else, ...]: Indicates the beginning of the alternative branch of a conditional
+        section. </para>
+      <para>[End if ...]: Indicates the end of a conditional section. </para>
+    </blockquote>
+    <para> &#9744;: Indicates items that should be selected based upon the section selection
+      behavior. </para>
+  </preface>
+  <chapter xml:id="clinical-context">
+    <title>Neurology: Traumatic Brain Injury (TBI) Screening</title>
+    <section>
+      <title>Clinical Context</title>
+      <para>[Begin Clinical Context.] </para>
+      <para> Mild traumatic brain injury with symptomatology is a highly prevalent condition, whose
+        incidence is especially high within the VA population, and among those returning from
+        deployment in particular. As such, it is a significant cause of morbidity and disability. It
+        is therefore essential that best practices for post deployment screening and treatment be
+        standardized across the VA in accordance with evidence-based guidelines. </para>
+      <para> Clinical Context Domains </para>
+      <informaltable>
+        <tgroup cols="2">
+          <colspec align="left"/>
+          <colspec align="left"/>
+          <tbody>
+            <row>
+              <entry> Target User </entry>
+              <entry> Provider to include Primary Care</entry>
+            </row>
+            <row>
+              <entry> Patient </entry>
+              <entry> Adult patients </entry>
+            </row>
+            <row>
+              <entry> Priority </entry>
+              <entry> Routine unless otherwise identified </entry>
+            </row>
+            <row>
+              <entry> Specialty </entry>
+              <entry> Primary Care </entry>
+            </row>
+            <row>
+              <entry> Location </entry>
+              <entry> Outpatient </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>[End Clinical Context.] </para>
+    </section>
+    <section xml:id="knowledge-artifacts">
+      <title>Knowledge Artifacts</title>
+      <para>[Begin Knowledge Artifacts.] </para>
+      <para> This section describes the CDS knowledge artifacts that are part of the Neurology
+        Traumatic Brain Injury (TBI) group, and that are intended for clinical providers caring for
+        adult patients who may require TBI screening. Target clinical users include Primary Care
+        clinical providers. Patient cohort includes adult outpatients. </para>
+      <para> The intent of these artifacts is to ensure screening for and proper treatment of
+        patients with persistent symptoms who sustained head trauma resulting in alteration or loss
+        of consciousness during deployment. </para>
+      <para> Seven knowledge artifacts define this clinical use case. These are described in detail
+        in the following sections. </para>
+      <itemizedlist>
+        <listitem>
+          <para> Event Condition Action (ECA) Rule - Neurology: Traumatic Brain Injury Screening
+            KNART </para>
+          <itemizedlist>
+            <listitem>
+              <para> Rule logic for activation of the screening documentation template </para>
+            </listitem>
+            <listitem>
+              <para> Action includes activating the TBI screening documentation template </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para> Documentation Template - Neurology: Traumatic Brain Injury Screening KNART </para>
+          <itemizedlist>
+            <listitem>
+              <para> Documents information provided by the clinician screening the patient for TBI </para>
+            </listitem>
+            <listitem>
+              <para> Includes logic for appropriate display of documentation sections </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para> Composite/Consult Request - Neurology: Traumatic Brain Injury Screening KNART </para>
+          <itemizedlist>
+            <listitem>
+              <para> High-level, encompassing artifact which uses the Documentation Template, the
+                Documentation Template/Consult Request and the 3 Order Set KNARTs in the Neurology
+                Traumatic Brain Injury (TBI) group. </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para> Documentation Template/Consult Request - Neurology: Traumatic Brain Injury
+            Screening KNART </para>
+          <itemizedlist>
+            <listitem>
+              <para> Documents the information provided by the referring provider, in conjunction
+                with information provided in the standalone documentation template </para>
+            </listitem>
+            <listitem>
+              <para> Includes logic for appropriate display of documentation sections </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para> Order Sets - Neurology: Traumatic Brain Injury - Polytrauma Interdisciplinary
+            Rehabilitation Clinic, Concussion, and Rehabilitation Medicine Spasticity KNARTs </para>
+          <itemizedlist>
+            <listitem>
+              <para> Orderable items associated with related consult requests </para>
+            </listitem>
+            <listitem>
+              <para> Include logic for appropriate display of the order sets </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+      <para>[End Knowledge Artifacts.] </para>
+    </section>
+  </chapter>
+  <chapter xml:id="composite-traumatic-brain-injury-screening">
+    <title>Composite: Traumatic Brain Injury Screening</title>
+    <para>[Begin Composite: Traumatic Brain Injury Screening.] </para>
+    <section xml:id="knowledge-narrative">
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para>[End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="consult-request">
+      <title>Consult Request</title>
+      <para>[Begin Consult Request.] </para>
+      <para>[Technical Note: The following list provides the basic components of the consult
+        request. This is the high-level, encompassing artifact, and must be combined with the
+        documentation templates and 3 order sets to form a fully functional knowledge artifact. The
+        information for the consult request can be obtained as part of the composite or within the
+        corresponding order set component in the consult section. If obtained within the composite,
+        this information should pre-populate the respective order set component.] </para>
+      <para>[Section Prompt: In order to initiate a Traumatic Brain Injury consult, please provide
+        the following information.] </para>
+      <para>[Section Prompt: Reason for Consult] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Consult reason details </para>
+      </blockquote>
+      <para>[Section Prompt: Goal of Consult: Please provide your recommendations and: </para>
+      <blockquote>
+        <para>☐ Return to Primary Care Provider (PCP) for therapy </para>
+        <para>☐ Start treatment and return to PCP for follow up and maintenance </para>
+        <para>☐ Start treatment, monitor for effect and when on stable therapy return to PCP </para>
+        <para>☐ Treat as long as necessary (or indefinitely) </para>
+      </blockquote>
+      <para>[Section Prompt: Consult Specialty] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Consult Specialty </para>
+
+        <para> Priority: Routine </para>
+      </blockquote>
+      <para>[Section Prompt: Referring Physician Information] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Referring Physician Name </para>
+        <para> &lt;obtain&gt; Referring Physician Contact Information </para>
+      </blockquote>
+      <para>[End Consult Request.] </para>
+      <para>[End Composite: Traumatic Brain Injury Screening.] </para>
+    </section>
+  </chapter>
+  <chapter xml:id="event-condition-action-eca-rule---traumatic-brain-injury-tbi-screening">
+    <title>Event Condition Action (ECA) Rule: Traumatic Brain Injury (TBI) Screening</title>
+    <para>[Begin Event Condition Action (ECA<emphasis>)</emphasis> Rule: Traumatic Brain Injury
+      (TBI) Screening.] </para>
+    <section xml:id="knowledge-narrative-1">
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para>[End Knowledge Narrative.] </para>
+
+      <bridgehead role="strong">Events</bridgehead>
+      <blockquote>
+        <orderedlist numeration="arabic">
+          <listitem>
+            <para> Any access of the patient record </para>
+          </listitem>
+        </orderedlist>
+      </blockquote>
+
+      <bridgehead role="strong">Conditions</bridgehead>
+
+      <para> Patient meets the following criteria: </para>
+      <blockquote>
+        <orderedlist numeration="arabic">
+          <listitem>
+            <para> Adult </para>
+          </listitem>
+          <listitem>
+            <para> Outpatient </para>
+          </listitem>
+          <listitem>
+            <para> Injured with head trauma resulting in alteration or loss of consciousness during
+              deployment. </para>
+          </listitem>
+        </orderedlist>
+      </blockquote>
+      <para> Patients should be excluded if any of the following criteria are met: </para>
+      <blockquote>
+        <orderedlist numeration="arabic">
+          <listitem>
+            <para> A referral is in process for evaluation of mild traumatic brain injury with
+              current symptomatology </para>
+          </listitem>
+          <listitem>
+            <para> A traumatic brain injury screening has been completed since the most recent
+              deployment. </para>
+          </listitem>
+        </orderedlist>
+      </blockquote>
+      <section xml:id="mild-traumatic-brain-injuryconcussion">
+        <title>Mild Traumatic Brain Injury/Concussion</title>
+        <para>[Begin Mild Traumatic Brain Injury/Concussion.] </para>
+
+        <bridgehead role="strong">Conditions</bridgehead>
+
+        <para> Patient has history of traumatic brain injury that met any of the following criteria: </para>
+        <orderedlist numeration="arabic">
+          <listitem>
+            <para> Injured with head trauma resulting in alteration or loss of consciousness during
+              deployment. </para>
+          </listitem>
+          <listitem>
+            <para>Persistent symptoms which may include headache, dizziness/balance disorder,
+              nausea, sleep disturbance, vision changes/ light sensitivity, tinnitus, numbness
+              and/or tingling, memory/cognitive problems, behavioral changes</para>
+          </listitem>
+        </orderedlist>
+        <para> Patients should be excluded if any of the following criteria are met: </para>
+        <blockquote>
+          <orderedlist numeration="arabic">
+            <listitem>
+              <para> Meets condition criteria for Emergency Evaluation and Treatment </para>
+            </listitem>
+            <listitem>
+              <para> Meets condition criteria for Severe Traumatic Brain Injury </para>
+            </listitem>
+            <listitem>
+              <para> Meets condition criteria for Moderate Traumatic Brain Injury </para>
+            </listitem>
+          </orderedlist>
+        </blockquote>
+
+        <bridgehead role="strong">Actions</bridgehead>
+        <blockquote>
+          <orderedlist numeration="arabic">
+            <listitem>
+              <para> Identify the patient as a candidate for “mild traumatic brain injury with
+                current symptomatology” screening </para>
+            </listitem>
+            <listitem>
+              <para> Open Documentation Template: Traumatic Brain Injury (TBI) Screening KNART
+              </para>
+            </listitem>
+            <listitem>
+              <para> Make sure guideline recommendations are available to care team. </para>
+            </listitem>
+          </orderedlist>
+        </blockquote>
+        <para>[End Mild Traumatic Brain Injury/Concussion.] </para>
+        <para>[End Event Condition Action (ECA<emphasis>)</emphasis> Rule: Traumatic Brain Injury
+          (TBI) Screening.] </para>
+      </section>
+    </section>
+  </chapter>
+  <chapter xml:id="documentation-template-traumatic-brain-injury-tbi-screening">
+    <title>Documentation Template: Traumatic Brain Injury (TBI) Screening</title>
+    <para>[Begin Documentation Template: Traumatic Brain Injury (TBI) Screening.] </para>
+    <para>[Section Prompt: This documentation template is not applicable for use with patients who:
+      require emergency evaluation and treatment, suffer from severe traumatic brain injury, or
+      suffer from moderate traumatic brain injury. </para>
+    <para> Requires emergency evaluation and treatment: </para>
+    <blockquote>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Progressively declining neurological exam </para>
+        </listitem>
+        <listitem>
+          <para> Pupillary asymmetry </para>
+        </listitem>
+        <listitem>
+          <para> Seizures </para>
+        </listitem>
+        <listitem>
+          <para> Repeated vomiting </para>
+        </listitem>
+        <listitem>
+          <para> Neurological deficit (motor or sensory) </para>
+        </listitem>
+        <listitem>
+          <para> Double vision </para>
+        </listitem>
+        <listitem>
+          <para> Worsening headache </para>
+        </listitem>
+        <listitem>
+          <para> Cannot recognize people or disoriented to place </para>
+        </listitem>
+        <listitem>
+          <para> Slurred speech </para>
+        </listitem>
+        <listitem>
+          <para> Unusual behavior. </para>
+        </listitem>
+      </orderedlist>
+    </blockquote>
+    <para> Severe traumatic brain injury: </para>
+    <blockquote>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Post-traumatic loss of consciousness &gt; 24 hours </para>
+        </listitem>
+        <listitem>
+          <para> Posttraumatic amnesia &gt; 7 days </para>
+        </listitem>
+        <listitem>
+          <para> Best available score in first 24 hours post traumatic brain injury for Glasgow Coma
+            Scale &lt; 9 </para>
+        </listitem>
+      </orderedlist>
+    </blockquote>
+    <para> Moderate traumatic brain injury: </para>
+    <blockquote>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Post-traumatic loss of consciousness &gt; 30 minutes but &lt; 24 hours </para>
+        </listitem>
+        <listitem>
+          <para> Alteration of consciousness/mental state related to head trauma &gt; 24 hours
+          </para>
+        </listitem>
+        <listitem>
+          <para> Posttraumatic amnesia &gt; 1 day but &lt; 7 days </para>
+        </listitem>
+        <listitem>
+          <para> Best available score in first 24 hours post traumatic brain injury for Glasgow Coma
+            Scale 9-12 </para>
+        </listitem>
+        <listitem>
+          <para> Abnormal structural brain imaging] </para>
+        </listitem>
+      </orderedlist>
+    </blockquote>
+    <section xml:id="knowledge-narrative-2">
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para>[Technical Note: This documentation template should be activated when indicated by the
+        Traumatic Brain Injury (TBI) ECA rule (section 3.1.1).] </para>
+      <para>[End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="reason-for-presentation">
+      <title>Reason for Presentation</title>
+      <para>[Begin Reason for Presentation.] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Chief Complaint </para>
+      </blockquote>
+      <para>[End Reason for Presentation.] </para>
+    </section>
+    <section xml:id="history-of-present-illness">
+      <title>History of Present Illness</title>
+      <para>[Begin History of Present Illness.] </para>
+      <para>[Begin Instances of Mild Traumatic Brain Injury] </para>
+      <para>[Section Prompt: Describe each instance of mild traumatic brain injury with
+        symptomatology in chronological order.] </para>
+
+      <blockquote>
+        <para> &lt;obtain&gt; Description of Instance of Mild Traumatic Brain Injury with
+          Symptomatology </para>
+
+        <para> &lt;obtain&gt; Date </para>
+
+
+        <para> &lt;obtain&gt; Loss of Consciousness? </para>
+
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Duration [Technical Note: Indicate Time Units] </para>
+        </blockquote>
+
+        <para>☐ No </para>
+
+        <para>☐ Unknown </para>
+
+        <para> &lt;obtain&gt; Alterations in Consciousness or Mental State? </para>
+
+
+        <para>☐ Yes </para>
+
+
+        <blockquote>
+          <para>&lt;obtain&gt; Duration [Technical Note: Indicate Time Units]</para>
+        </blockquote>
+
+        <para>☐ No </para>
+
+        <para>☐ Unknown </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Amnesia? </para>
+        </blockquote>
+
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Duration[Technical Note: Indicate Time Units] </para>
+        </blockquote>
+
+        <para>☐ No </para>
+
+        <para>☐ Unknown </para>
+
+
+        <para> &lt;obtain number&gt; Best Glasgow Coma Score in First 24 Hours </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Treatment (Including Any Surgery and/or Rehabilitation Therapy) </para>
+          <para> &lt;obtain&gt; Additional Details </para>
+        </blockquote>
+        <para>[Section Prompt: Additional Mild Traumatic Brain Injury Event/s?] </para>
+        <blockquote>
+          <para>☐ Yes </para>
+          <para>☐ No </para>
+        </blockquote>
+      </blockquote>
+      <para>[Technical Note: If “yes” is selected, present another instance of the “Instances of
+        Mild Traumatic Brain Injury” section. If “no” is selected, display next section.] </para>
+      <para>[End Instances of Mild Traumatic Brain Injury] </para>
+      <para>[Section Prompt: Persistent Symptoms.] </para>
+
+      <blockquote>
+        <para>☐ Headache </para>
+
+        <para>☐ Dizziness/Balance Disorder </para>
+
+        <para>☐ Nausea </para>
+
+        <para>☐ Sleep Disturbance </para>
+
+        <para>☐ Vision Changes/ Light Sensitivity </para>
+
+        <para>☐ Tinnitus </para>
+
+        <para>☐ Numbness and/or Tingling </para>
+
+        <para>☐ Memory/Cognitive Problems </para>
+
+        <para>☐ Behavioral Changes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Other/Additional Details </para>
+        </blockquote>
+      </blockquote>
+
+      <para>[Section Prompt: Do Symptoms Impact Function?] </para>
+
+      <blockquote>
+        <para>☐ Yes </para>
+
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+
+        <para>☐ No </para>
+
+
+        <para>☐ No symptoms </para>
+
+      </blockquote>
+      <para>[End History of Present Illness.] </para>
+    </section>
+    <section xml:id="neuropsychological-testing">
+      <title>Neuropsychological Testing</title>
+      <para>[Begin Neuropsychological Testing.] </para>
+      <para>[Section Prompt: Neuropsychological Testing?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date </para>
+
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+        <para>☐ No </para>
+        <para>☐ Unknown </para>
+      </blockquote>
+      <para>[Section Prompt: Additional Neuropsychological Testing?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Section Prompt: Add a new set of “Neuropsychological Testing” questions if “Yes” is
+        selected.] </para>
+      <para>[End Neuropsychological Testing.] </para>
+    </section>
+    <section xml:id="imaging-and-electroencephalogram">
+      <title>Imaging and Electroencephalogram</title>
+      <para>[Begin Imaging and Electroencephalogram.] </para>
+      <para>[Technical Note: Auto Populate this section and allow updates. Include date of most
+        recent update] </para>
+      <para>[Section Prompt: Head Computed Tomography (CT)?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date </para>
+          <para> &lt;obtain&gt; Head CT Interpretation </para>
+        </blockquote>
+      </blockquote>
+      <para>[Technical Note: Link to Full Report and Images: Head CT] </para>
+      <blockquote>
+        <para>☐ No </para>
+        <para>☐ Unknown </para>
+      </blockquote>
+      <para>[Section Prompt: Additional Head Computed Tomography (CT)?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Technical Note: Display a new set of “Head CT” questions if “Yes” is selected.] </para>
+      <para>[Section Prompt: Head Magnetic Resonance Imaging (MRI)?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date </para>
+
+          <para> &lt;obtain&gt; Head MRI Interpretation </para>
+        </blockquote>
+      </blockquote>
+      <para>[Technical Note: Link to Full Report and Images: Head MRI] </para>
+      <blockquote>
+        <para>☐ No </para>
+        <para>☐ Unknown </para>
+      </blockquote>
+      <para>[Section Prompt: Additional Head MRI?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Technical Note: Display a new set of “Head MRI” questions if “Yes” is selected.] </para>
+      <para>[Section Prompt: Other Relevant Imaging?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date </para>
+          <para> &lt;obtain&gt; Interpretation </para>
+        </blockquote>
+      </blockquote>
+      <para>[Technical Note: Link to Full Report and Images: Other Relevant Imaging] </para>
+      <blockquote>
+        <para>☐ No </para>
+        <para>☐ Unknown </para>
+      </blockquote>
+      <para>[Section Prompt: Additional Other Imaging Study?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Technical Note: Add a new set of “Other Imaging” questions if “Yes” is selected.] </para>
+      <para>[Section Prompt: Electroencephalogram?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date </para>
+          <para> &lt;obtain&gt; Electroencephalogram Interpretation </para>
+        </blockquote>
+      </blockquote>
+      <para>[Technical Note: Link to Full Report: Electroencephalogram] </para>
+      <blockquote>
+        <para>☐ No </para>
+        <para>☐ Unknown </para>
+      </blockquote>
+      <para>[Section Prompt: Additional Electroencephalogram?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Section Prompt: Add a new set of “Electroencephalogram” questions if “Yes” is
+        selected.] </para>
+      <para>[End Imaging and Electroencephalogram.] </para>
+    </section>
+    <section><title>Comorbid Conditions</title>
+      <para>[Begin Comorbid Conditions.] </para>
+      <blockquote>
+        <para>☐ Depression </para>
+        <para>☐ Anxiety </para>
+        <para>☐ Pain </para>
+        <para>☐ Posttraumatic Stress Disorder (PTSD)</para>
+        <para>☐ Sleep Disorder </para>
+        <para>☐ Substance Use Disorder </para>
+        <para>☐ Suicidality </para>
+        <para> &lt;obtain&gt; Additional Details </para>
+      </blockquote>
+      <para>[End Comorbid Conditions.] </para>
+    </section>
+    <section xml:id="deployment-history">
+      <title>Deployment History</title>
+      <para>[Begin Deployment History.] </para>
+      <para>[Section Prompt: Did the veteran serve in Operation Iraqi Freedom (OIF) or in Operation
+        Enduring Freedom (OEF), either on the ground, in nearby coastal waters, or in the air above,
+        after September 11, 2001? (Consider most recent OIF/OEF deployment only.)] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para>☐ Operation Iraqi Freedom </para>
+
+          <para>☐ Operation Enduring Freedom </para>
+        </blockquote>
+        <para>☐ No </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details of deployment history </para>
+        </blockquote>
+      </blockquote>
+      <para>[End Deployment History.] </para>
+    </section>
+    <section xml:id="psychosocial-history">
+      <title>Psychosocial History</title>
+      <para>[Begin Psychosocial History.] </para>
+      <para>[Section Prompt: Spouse/Caregiver in the home?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Section Prompt: Children in the home?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Section Prompt: Homeless?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Section Prompt: Other Social, Living Situation, or Support Instability?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Section Prompt: Currently Employed?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Section Prompt: Currently Attending School?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para>[Section Prompt: Highest Level of Education Completed/Degree Attained?] </para>
+      <blockquote>
+        <para>☐ High School Graduate </para>
+        <para>☐ General Equivalency Development (GED) or Equivalent </para>
+        <para>☐ Some College, No Degree </para>
+        <para>☐ Associate Degree: Occupational, Technical, or Vocational Program </para>
+        <para>☐ Associate Degree: Academic Program </para>
+        <para>☐ Bachelor's Degree (e.g., BA, AB, BS) </para>
+        <para>☐ Master's Degree (e.g., MA, MS, MEng, MEd, MSW, MBA) </para>
+        <para>☐ Professional School Degree (e.g., MD, DDS, DVM, JD) </para>
+        <para>☐ Doctoral Degree (e.g., PhD, EdD) </para>
+        <para> &lt;obtain&gt; Details </para>
+      </blockquote>
+      <para>[Section Prompt: Caffeine Use] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; details </para>
+      </blockquote>
+      <para>[Section Prompt: Alcohol Use] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; details </para>
+      </blockquote>
+      <para>[Section Prompt: Tobacco Use] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; details </para>
+      </blockquote>
+      <para>[Section Prompt: Other Substance Use] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Details </para>
+      </blockquote>
+      <para>[End Psychosocial History.] </para>
+    </section>
+    <section xml:id="additional-medical-history">
+      <title>Additional Medical History</title>
+      <para>[Begin Additional Medical History.] </para>
+      <para>[Section Prompt: Additional medical history not captured above that the screening
+        provider feels is important:] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Additional medical history </para>
+      </blockquote>
+      <para>[End Medical History.] </para>
+    </section>
+    <section xml:id="surgical-history">
+      <title>Surgical History</title>
+      <para>[Begin Surgical History.] </para>
+      <para>[Section Prompt: Additional surgical history not captured above that the screening
+        provider feels is important:] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Additional surgical history </para>
+      </blockquote>
+      <para>[End Surgical History.] </para>
+    </section>
+    <section xml:id="treatment-history">
+      <title>Treatment History</title>
+      <para>[Begin Treatment History.] </para>
+      <para>[Section Prompt: Additional treatment history not captured above that the screening
+        provider feels is important:] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Additional treatment history </para>
+      </blockquote>
+      <para>[End Treatment History.] </para>
+    </section>
+    <section xml:id="exam">
+      <title>Exam</title>
+      <para>[Begin Exam.] </para>
+      <para>[Section Prompt: Cognitive Examination (e.g., Montreal Cognitive Assessment)] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Details </para>
+      </blockquote>
+      <para>[Section Prompt: Neurological Findings?] </para>
+      <blockquote>
+        <para>☐ Aphasia </para>
+        <para>☐ Pupillary Asymmetry </para>
+        <para>☐ Vision Loss </para>
+        <para>☐ Hearing Loss </para>
+        <para>☐ Extraocular Muscle Movement Abnormality </para>
+        <para>☐ Muscle Weakness </para>
+        <para>☐ Pronator Drift </para>
+        <para>☐ Spasticity </para>
+        <para>☐ Clasp-Knife Response </para>
+        <para>☐ Gross Sensory Loss </para>
+        <para>☐ Hyperreflexia </para>
+        <para>☐ Babinski Sign </para>
+        <para>☐ Impaired Balance </para>
+        <para>☐ Impaired Coordination </para>
+        <para> &lt;obtain&gt; Additional Neurological Findings </para>
+        <para> &lt;obtain&gt; Other Findings </para>
+      </blockquote>
+      <para>[End Exam.] </para>
+    </section>
+    <section xml:id="plan">
+      <title>Plan</title>
+      <para>[Begin Plan.] </para>
+      <blockquote>
+        <para>☐ Patient Education </para>
+        <para>☐ Family Education </para>
+        <para>☐ Symptom Management </para>
+        <para>☐ Polytrauma Rehabilitation Clinic Referral </para>
+        <para>☐ Physical Therapy Referral </para>
+        <para>☐ Occupational Therapy Referral </para>
+        <para>☐ Speech-Language Pathology Referral </para>
+        <para>☐ Neurology Referral </para>
+        <para>☐ Mental Health Referral </para>
+        <para>☐ Social Work Referral </para>
+        <para>☐ Integrative Health Consult </para>
+        <para>☐ Rehabilitation Medicine Spasticity Clinic </para>
+        <para>☐ Other </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      </blockquote>
+      <para>[End Plan.] </para>
+      <para>[End Documentation Template: Traumatic Brain Injury (TBI) Screening.] </para>
+    </section>
+  </chapter>
+  <chapter xml:id="documentation-templateconsult-request-traumatic-brain-injury-tbi-screening">
+    <title>Documentation Template/Consult Request: Traumatic Brain Injury (TBI) Screening</title>
+    <para>[Begin Documentation Template/Consult Request: Traumatic Brain Injury (TBI) Screening.] </para>
+    <section xml:id="knowledge-narrative-3">
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para>[Technical Note: This Documentation Template/Consult Request should be completed
+        automatically based on selections made in the TBI Screening Documentation KNART (section
+        4.13), and only when any of the following components of the plan are selected: Polytrauma
+        Rehabilitation Clinic Referral, Physical Therapy Referral, Occupational Therapy Referral,
+        Speech-Language Pathology Referral, Neurology Referral, Mental Health Referral, Social Work
+        Referral, Integrative Health Consult.] </para>
+      <para>[Technical Note: Include Documentation Template: Traumatic Brain Injury (TBI) Screening
+        with this Documentation Template/Consult Request.] </para>
+      <para>[End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="consults-and-referrals">
+      <title>Consults and Referrals</title>
+      <para>[Begin Consults and Referrals.] </para>
+      <para>[Section Prompt: Referral Request: Polytrauma Rehabilitation Clinic.] </para>
+      <blockquote>
+        <para>☐ Reason for Referral: Evaluate and Manage Rehabilitation needs for Mild Traumatic
+          Brain Injury with Current Symptomatology </para>
+        <para>☐ Priority: Routine </para>
+      </blockquote>
+      <para>[Section Prompt: Referral Request: Physical Therapy.] </para>
+      <blockquote>
+        <para>☐ Reason for Referral: Evaluate and Manage Mobility Issues Related to Mild Traumatic
+          Brain Injury with Current Symptomatology </para>
+        <para>☐ Priority: Routine </para>
+      </blockquote>
+      <para>[Section Prompt: Referral Request: Occupational Therapy.] </para>
+      <blockquote>
+        <para>☐ Reason for Referral: Evaluate and Manage Activities of Daily Living Issues Related
+          to Mild Traumatic Brain Injury with Current Symptomatology </para>
+        <para>☐ Priority: Routine </para>
+      </blockquote>
+      <para>[Section Prompt: Referral Request: Speech-Language Pathology.] </para>
+      <blockquote>
+        <para>☐ Reason for Referral: Evaluate and Manage Speech, Language, and Cognitive Issues
+          Related to Mild Traumatic Brain Injury with Current Symptomatology </para>
+        <para>☐ Priority: Routine </para>
+      </blockquote>
+      <para>[Section Prompt: Referral Request: Neurology.] </para>
+      <blockquote>
+        <para>☐ Reason for Referral: Evaluate for Mild Traumatic Brain Injury with Current
+          Symptomatology </para>
+        <para>☐ Priority: Routine </para>
+      </blockquote>
+      <para>[Section Prompt: Referral Request: Mental Health.] </para>
+      <blockquote>
+        <para>☐ Reason for Referral: Evaluate and Manage Mental Health Issues Related to Mild
+          Traumatic Brain Injury with Current Symptomatology </para>
+        <para>☐ Priority: Routine </para>
+      </blockquote>
+      <para>[Section Prompt: Consult Request: Social Services.] </para>
+      <blockquote>
+        <para>☐ Reason for Referral: Evaluate Need for Social Services Related to Mild Traumatic
+          Brain Injury with Current Symptomatology </para>
+        <para>☐ Priority: Routine </para>
+      </blockquote>
+      <para>[Section Prompt: Consult Request: Integrative Health.] </para>
+      <blockquote>
+        <para>☐ Reason for Referral: Evaluate Wellness Needs Related to Mild Traumatic Brain Injury
+          with Current Symptomatology </para>
+        <para>☐ Priority: Routine </para>
+        <para> &lt;obtain&gt; Referring Physician </para>
+        <para> &lt;obtain&gt; Referring Physician Contact Information </para>
+      </blockquote>
+      <para>[End Consults and Referrals.] </para>
+      <para>[End Documentation Template/Consult Request: Traumatic Brain Injury (TBI) Screening.]
+      </para>
+    </section>
+  </chapter>
+  <chapter
+    xml:id="order-sets-polytrauma-interdisciplinary-rehabilitation-clinic-concussion-rehabilitation-medicine-spasticity-clinic">
+    <title>Order Sets: Polytrauma Interdisciplinary Rehabilitation Clinic, Concussion,
+      Rehabilitation Medicine Spasticity Clinic</title>
+    <para>[Begin Order Sets: Polytrauma Interdisciplinary Rehabilitation Clinic, Concussion,
+      Rehabilitation Medicine Spasticity Clinic] </para>
+    <section xml:id="knowledge-narrative-4">
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.] </para>
+      <para>[See Clinical Context in Chapter 1.] </para>
+      <para>[End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="consults-and-referrals-1">
+      <title>Consults and Referrals</title>
+      <para>[Begin Consults and Referrals.] </para>
+      <para>[Technical Note: Include Consults and Referrals for Concussion, Polytrauma
+        Interdisciplinary Rehabilitation Clinic, and Rehabilitation Medicine Spasticity Clinic.] </para>
+      <para>[Technical Note: This section should be available for all patients.] </para>
+      <para>[Section Prompt: Consults and Referrals:] </para>
+      <blockquote>
+        <para>☐ Referral to Neurology: Evaluate for mild traumatic brain injury with current
+          symptomatology (routine) </para>
+        <para>☐ Referral Polytrauma/Physical Medicine and Rehabilitation: Evaluate and manage
+          rehabilitation needs for mild traumatic brain injury with current symptomatology (routine) </para>
+        <para>☐ Referral Physical Therapy: Evaluate and manage mobility issues related to mild
+          traumatic brain injury (routine) </para>
+        <para>☐ Referral Occupational Therapy: Evaluate and manage activities of daily living issues
+          related to mild traumatic brain injury (routine) </para>
+        <para>☐ Referral Speech–Language Pathology: Evaluate and manage speech, language, and
+          cognitive issues related to mild traumatic brain injury (routine) </para>
+        <para>☐ Referral Mental Health: Evaluate and manage mental health issues related to mild
+          traumatic brain injury (routine) </para>
+        <para>☐ Consult Social Work/Case Management: Evaluate need for social services related to
+          mild traumatic brain injury (routine) </para>
+        <para>☐ Consult Integrative Health: Evaluate wellness needs related to mild traumatic brain
+          injury (routine) </para>
+        <para>☐ Referral Rehabilitation Medicine Spasticity Clinic: Evaluate for mild traumatic
+          brain injury with current symptomatology that includes spasticity (routine) </para>
+        <para>☐ Referral Polytrauma Interdisciplinary Rehabilitation Clinic: Evaluate for mild
+          traumatic brain injury with current symptomatology (routine) </para>
+        <para>[Section Prompt: Psychiatry referral is suggested for patient being referred to the
+          Polytrauma Interdisciplinary Rehabilitation Clinic] </para>
+        <para>☐ Consult Psychiatry: Evaluate for psychiatric comorbidity for patients with mild
+          traumatic brain injury with current symptomatology (routine) </para>
+      </blockquote>
+      <para>[End Consults and Referrals.] </para>
+    </section>
+    <section xml:id="patient-and-caregiver-education">
+      <title>Patient and Caregiver Education</title>
+      <para>[Begin Patient and Caregiver Education.] </para>
+      <blockquote>
+        <para>☐ Mild traumatic brain injury with symptomatology education (routine) </para>
+        <para>[Technical Note: Provide a link to relevant educational materials that may be specific
+          to the implementing institution.] </para>
+      </blockquote>
+      <para>[End Patient and Caregiver Education.] </para>
+      <para>[End Order Sets: Polytrauma Interdisciplinary Rehabilitation Clinic, Concussion,
+        Rehabilitation Medicine Spasticity Clinic] </para>
+    </section>
+  </chapter>
+  <bibliography>
+    <title>Bibliography/Evidence</title>
+    <biblioentry>
+      <author>
+        <orgname>Army Medical Department Center and School
+              (AMEDDC&amp;S)</orgname>
+      </author>
+      <author>
+        <orgname>U.S. Army Health Readiness Center of Excellence
+              (HRCoE) website</orgname>
+      </author>
+      <citetitle pubwork="webpage">Mild Traumatic Brain Injury Rehabilitation Toolkit.</citetitle>
+      <bibliomisc><link
+          xlink:href="http://www.cs.amedd.army.mil/borden/Portlet.aspx?ID=065de2f7-81c4-4f9d-9c85-75fe59dbae13"
+        /></bibliomisc>
+      <pubdate>Accessed August 28, 2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>Management of Concussion/mTBI Working Group</orgname>
+      </author>
+      <citetitle pubwork="webpage">Management of Concussion-mild Traumatic Brain Injury (mTBI),
+        Version 2.0 – 2016. VA/DoD Clinical Practice Guidelines website</citetitle>
+      <bibliomisc><link
+          xlink:href="https://www.healthquality.va.gov/guidelines/Rehab/mtbi/mTBICPGFullCPG50821816.pdf"
+        /></bibliomisc>
+      <pubdate>Published February 2016</pubdate>
+    </biblioentry>
+  </bibliography>
+  <appendix>
+    <title>Existing VA Artifacts</title>
+    <para>The following reference is from the Portland VAMC.</para>
+    <figure>
+      <title>Rehabilitation Medicine Spasticity Clinic</title>
+      <mediaobject>
+        <alt>Rehabilitation Medicine Spasticity Clinic</alt>
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig1.png" scalefit="1" width="100%"
+            contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>The following reference is from the Portland VAMC.</para>
+
+    <figure>
+      <title>Polytrauma Concussion Traumatic Brain Injury (TBI) Eval/Education</title>
+      <mediaobject>
+        <alt>Polytrauma Concussion Traumatic Brain Injury (TBI) Eval/Education</alt>
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig2.png" scalefit="1" width="100%"
+            contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>The following reference is from the Greater Los Angeles VAMC.</para>
+
+
+    <figure>
+      <title>Reason for Request: Physical Medicine and Rehabilitation (PM&amp;R) Traumatic Brain
+        Injury/Polytrauma (Image 1 of 2)</title>
+      <mediaobject>
+        <alt>Reason for Request: Physical Medicine and Rehabilitation (PM&amp;R) Traumatic Brain
+          Injury/Polytrauma (Image 1 of 2)</alt>
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig3.png" scalefit="1" width="100%"
+            contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>The following reference is from the Greater Los Angeles VAMC.</para>
+
+    <figure>
+      <title>Reason for Request: Physical Medicine and Rehabilitation (PM&amp;R) Traumatic Brain
+        Injury/Polytrauma (Image 2 of 2)</title>
+      <mediaobject>
+        <alt>Reason for Request: Physical Medicine and Rehabilitation (PM&amp;R) Traumatic Brain
+          Injury/Polytrauma (Image 2 of 2)</alt>
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig4.png" scalefit="1" width="100%"
+            contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+
+
+  </appendix>
+  <appendix>
+    <title>Basic Laboratory Panel Definition</title>
+    <itemizedlist>
+      <listitem>
+        <para>Blood Urea Nitrogen</para>
+      </listitem>
+      <listitem>
+        <para>Calcium</para>
+      </listitem>
+      <listitem>
+        <para>Chloride</para>
+      </listitem>
+      <listitem>
+        <para>CO2 (Carbon Dioxide, Bicarbonate)</para>
+      </listitem>
+      <listitem>
+        <para>Creatinine</para>
+      </listitem>
+      <listitem>
+        <para>Glucose</para>
+      </listitem>
+      <listitem>
+        <para>Potassium</para>
+      </listitem>
+      <listitem>
+        <para>Sodium</para>
+      </listitem>
+    </itemizedlist>
+  </appendix>
+  <appendix>
+    <title>Logic Diagrams</title>
+    <figure>
+      <title>ECA Rule: Traumatic Brain Injury Screening</title>
+      <mediaobject>
+        <alt>ECA Rule: Traumatic Brain Injury Screening</alt>
+        <imageobject>
+          <imagedata align="center" fileref="images/TBI_ECA.png" scalefit="1" width="100%"
+            contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+  <appendix>
+    <title>Acronyms</title>
+  </appendix>
+</book>
