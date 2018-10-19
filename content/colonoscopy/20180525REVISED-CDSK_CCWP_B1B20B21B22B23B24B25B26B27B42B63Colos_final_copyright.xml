@@ -1,0 +1,2860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.1">
+  <info xmlns:d="http://docbook.org/ns/docbook">
+    <title xmlns:ns="http://docbook.org/ns/docbook">Clinical Decision Support (CDS) Content and
+      Health Level 7 (HL7)-Compliant Knowledge Artifacts (KNARTs)</title>
+    <subtitle xmlns:ns="http://docbook.org/ns/docbook">Gastroenterology: Colorectal Cancer Risk
+      Clinical Content White Paper </subtitle>
+    <copyright xmlns:xlink="http://www.w3.org/1999/xlink">
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright xmlns:xlink="http://www.w3.org/1999/xlink">
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+    <authorgroup xmlns:ns="http://docbook.org/ns/docbook">
+      <author>
+        <personname>Department of Veterans Affairs (VA)</personname>
+      </author>
+      <author>
+        <orgname><inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/VASealColor.jpg"/>
+            </imageobject>
+          </inlinemediaobject></orgname>
+      </author>
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+      <author>
+        <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+      </author>
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+    <abstract xmlns:ns="http://docbook.org/ns/docbook">
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+      </info>
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Relevant KNART Information: Gastroenterology: Colorectal Cancer Risk KNARTs</title>
+          <tgroup align="left" cols="2">
+            <thead>
+              <row>
+                <entry>Gastroenterology KNART</entry>
+                <entry>Associated CLIN</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Colorectal Cancer Risk: Colorectal Cancer Screening, Diagnostics, and
+                  Surveillance – Event Condition Action (ECA) Rule</entry>
+                <entry>CLIN0003AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Colorectal Cancer Risk – Documentation
+                  Template/Consult Request</entry>
+                <entry>CLIN0005AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Personal History of Colon Cancer or Polyp – Order
+                  Set</entry>
+                <entry>CLIN0004AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Family History of Colon Cancer, Colon Cancer
+                  Syndrome, or Advanced Adenoma – Order Set </entry>
+                <entry>CLIN0004AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Inflammatory Bowel Disease – Order Set</entry>
+                <entry>CLIN0004AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Iron Deficiency – Order Set</entry>
+                <entry>CLIN0004AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Rectal Bleeding, Positive Screening Test - Order
+                  Set</entry>
+                <entry>CLIN0004AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Average Risk Screening – Order Set</entry>
+                <entry>CLIN0004AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Fecal Immunochemical Test (FIT) – Order Set</entry>
+                <entry>CLIN0004AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk: Other Issues – Order Set</entry>
+                <entry>CLIN0004AB</entry>
+              </row>
+              <row>
+                <entry>Colorectal Cancer Risk - Composite/Consult Request</entry>
+                <entry>N/A</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+    <pubdate xmlns:ns="http://docbook.org/ns/docbook">May 2018</pubdate>
+    <volumenum xmlns:ns="http://docbook.org/ns/docbook">Version 1.0</volumenum>
+  </info>
+  <preface version="5.1">
+    <info xmlns:d="http://docbook.org/ns/docbook">
+      <title xmlns:xlink="http://www.w3.org/1999/xlink">VA Subject Matter Expert (SME) Panel</title>
+    </info>
+
+    <para xmlns:xlink="http://www.w3.org/1999/xlink">
+      <table frame="all">
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.29*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.71*"/>
+          <thead>
+            <row>
+              <entry>Name</entry>
+              <entry>Title</entry>
+              <entry>Project Role</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Jason A. Dominitz, MD, MHS</entry>
+              <entry>
+                <para>National Gastroenterology Program Director </para>
+                <para>Department of Veteran Affairs (VA) </para>
+                <para>Puget Sound Health Care System</para>
+                <para>Seattle, WA</para>
+              </entry>
+              <entry>Primary, SME</entry>
+            </row>
+            <row>
+              <entry>Lyn Sue Kahng, MD</entry>
+              <entry>
+                <para>Section Chief, GI</para>
+                <para>Jesse Brown VA Medical Center (VAMC)</para>
+                <para>Chicago, IL 60612</para>
+              </entry>
+              <entry>Secondary, SME</entry>
+            </row>
+            <row>
+              <entry>David Kaplan, MD, MSc</entry>
+              <entry>
+                <para>GI Staff Physician </para>
+                <para>Philadelphia, PA 19104</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Brian Hertz, MD</entry>
+              <entry>
+                <para>Senior Medical Advisor</para>
+                <para>Office of Veterans Access to Care</para>
+                <para>Hines VAMC</para>
+                <para>Hines, IL</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></para>
+  </preface>
+  <preface version="5.0">
+    <info xmlns:d="http://docbook.org/ns/docbook">
+      <title xmlns:xlink="http://www.w3.org/1999/xlink">Introduction</title>
+    </info>
+
+    <para xmlns:xlink="http://www.w3.org/1999/xlink"> The VA is committed to improving the ability
+      of clinicians to provide care for patients while increasing quality, safety, and efficiency.
+      Recognizing the importance of standardizing clinical knowledge in support of this goal, VA is
+      implementing the Health Level 7 (HL7) Knowledge Artifact Specification for a wide range of VA
+      clinical use cases. Knowledge Artifacts, referred to as (KNARTs), enable the structuring and
+      encoding of clinical knowledge so the knowledge can be integrated with electronic health
+      records to enable clinical decision support. </para>
+    <para xmlns:xlink="http://www.w3.org/1999/xlink"> The purpose of this Clinical Content White
+      Paper (CCWP) is to capture the clinical context and intent of KNART use cases in sufficient
+      detail to provide the KNART authoring team with the clinical source material to construct the
+      corresponding knowledge artifacts using the HL7 Knowledge Artifact Specification. This paper
+      has been developed using material from a variety of sources: VA artifacts, clinical practice
+      guidelines, evidence in the body of medical literature, and clinical expertise. After
+      reviewing these sources, the material has been synthesized and harmonized under the guidance
+      of VA subject matter experts to reflect clinical intent for this use case. </para>
+    <para xmlns:xlink="http://www.w3.org/1999/xlink"> Unless otherwise noted, items within this
+      white paper (e.g., documentation template fields, orderable items, etc.) are chosen to reflect
+      the clinical intent at the time of creation. To provide an exhaustive list of all possible
+      items and their variations is beyond the scope of this work. </para>
+  </preface>
+  <preface version="5.1">
+    <info xmlns:d="http://docbook.org/ns/docbook">
+      <title xmlns:xlink="http://www.w3.org/1999/xlink">Conventions Used</title>
+    </info>
+
+    <para xmlns:xlink="http://www.w3.org/1999/xlink"> Conventions used within the knowledge artifact
+      descriptions include: </para>
+    <para xmlns:xlink="http://www.w3.org/1999/xlink"> &lt;obtain&gt;: Indicates a prompt to obtain
+      the information listed </para>
+    <itemizedlist xmlns:xlink="http://www.w3.org/1999/xlink">
+      <listitem>
+        <para> If possible, the requested information should be obtained from the underlying
+          system(s). Otherwise, prompting the user for information may be required </para>
+      </listitem>
+      <listitem>
+        <para> Default Values: Unless otherwise noted, &lt;obtain&gt; indicates to obtain the most
+          recent observation. It is recognized that this default time-frame value may be altered by
+          future implementations </para>
+      </listitem>
+    </itemizedlist>
+    <para xmlns:xlink="http://www.w3.org/1999/xlink"> [...]: Square brackets enclose explanatory
+      text that indicates some action on the part of the clinical user, or general guidance to the
+      clinical or technical teams. Examples include, but are not limited to: </para>
+    <blockquote xmlns:xlink="http://www.w3.org/1999/xlink">
+      <para> [Begin ...], [End ...]: Indicates the start and end of specific areas to clearly
+        delineate them for technical purposes. </para>
+      <para> [Activate ...]: Initiates another knowledge artifact or knowledge artifact section. </para>
+      <para> [Section Prompt: ...]: If this section is applicable, then the following prompt should
+        be displayed to the user. </para>
+      <para> [Section Selection Behavior: ...]: Indicates technical constraints or considerations
+        for the selection of items within the section. </para>
+      <para> [Attach: ...]: Indicates that the specified item should be attached to the
+        documentation template if available. </para>
+      <para> [Link: ...]: Indicates that rather than attaching an item, a link should be included in
+        the documentation template. </para>
+      <para> [Clinical Comment: ...]: Indicates clinical rationale or guidance. </para>
+      <para> [Technical Note: ...]: Indicates technical considerations or notes. </para>
+      <para> [If ...]: Indicates the beginning of a conditional section. </para>
+      <para> [Else, ...]: Indicates the beginning of the alternative branch of a conditional
+        section. </para>
+      <para> [End if ...]: Indicates the end of a conditional section. </para>
+    </blockquote>
+    <para xmlns:xlink="http://www.w3.org/1999/xlink"> ☐: Indicates items that should be selected
+      based upon the section selection behavior. </para>
+  </preface>
+  <chapter version="5.1">
+    <title>Gastroenterology: Colorectal Cancer Risk</title>
+    <section xml:id="clinical-context">
+      <title>Clinical Context </title>
+      <para> [Begin Clinical Context.] </para>
+      <para> Screening techniques have greatly decreased the incidence of colon cancer (Shaukat,
+        2013). Assisting clinicians in ordering the appropriate screening modality and screening
+        interval requires authoritative, evidence-based decision support. Implementing such decision
+        support across the VA could save lives, decrease morbidity, and manage constrained resources
+        in a cost-effective manner. Although surveillance colonoscopy may be warranted based on
+        numerous potential indications, emphasis should be placed on identifying veterans for whom
+        screening colonoscopy is recommended based on age or for whom surveillance is recommended
+        based on personal or family history of neoplasia or the most significant risk factors for
+        colorectal cancer (Rex, 2017). </para>
+      <para> [Clinical Comments: Intended to identify patients for whom colorectal cancer screening,
+        diagnostic evaluation, or surveillance is recommended, facilitate discussion between the
+        primary care provider and the patient regarding risk factors and screening preferences,
+        support decision-making and documentation related to the screening discussion, and promote
+        appropriate ordering based on patient-specific risk factors and preferences.] </para>
+
+
+      <table>
+        <title>Clinical Context Domains</title>
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Target User</entry>
+              <entry> Primary Care Provider </entry>
+            </row>
+            <row>
+              <entry>Patient</entry>
+              <entry> Adult </entry>
+            </row>
+            <row>
+              <entry>Priority</entry>
+              <entry> Routine unless otherwise identified </entry>
+            </row>
+            <row>
+              <entry>Specialty</entry>
+              <entry> Primary Care </entry>
+            </row>
+            <row>
+              <entry>Location</entry>
+              <entry> Outpatient </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para> [End Clinical Context.] </para>
+    </section>
+    <section xml:id="knowledge-artifacts">
+      <title>Knowledge Artifacts</title>
+      <para> [Begin Knowledge Artifacts.] </para>
+      <para> This section describes the CDS knowledge artifacts that are part of the
+        Gastroenterology: Colorectal Cancer Risk group, and include: </para>
+      <para> A Composite/Consult Request: Gastroenterology: Colorectal Cancer Risk KNART </para>
+      <itemizedlist>
+        <listitem>
+          <para> High-level, encompassing artifact </para>
+        </listitem>
+        <listitem>
+          <para> Relies upon the documentation template and order set artifacts </para>
+        </listitem>
+      </itemizedlist>
+      <para> An Event-Condition-Action (ECA) Rule: Gastroenterology: Colorectal Cancer Screening,
+        Diagnostics, and Surveillance KNART </para>
+      <itemizedlist>
+        <listitem>
+          <para> Rule logic that describes the behavior of the consult </para>
+        </listitem>
+        <listitem>
+          <para> Actions may include activating documentation templates or order sets </para>
+        </listitem>
+      </itemizedlist>
+      <para> A Documentation Template Consult Request: Gastroenterology: Colorectal Cancer Risk
+        KNART </para>
+      <itemizedlist>
+        <listitem>
+          <para> Documents the information provided by the referring provider </para>
+        </listitem>
+        <listitem>
+          <para> Includes logic for appropriate display of documentation sections </para>
+        </listitem>
+      </itemizedlist>
+      <para> Order Sets: Gastroenterology: Colorectal Cancer Risk – Average Risk Screening, Family
+        History of Colon Cancer, Colon Cancer Syndrome or Advanced Adenoma, Iron Deficiency, Rectal
+        Bleeding or Positive Screening Test, Fecal Immunochemical Test (FIT), Personal History of
+        Colon Cancer or Polyp, Inflammatory Bowel Disease, Other Issues KNARTs </para>
+      <itemizedlist>
+        <listitem>
+          <para> Orderable items associated with a consult request </para>
+        </listitem>
+        <listitem>
+          <para> Includes logic for appropriate display of the order set </para>
+        </listitem>
+      </itemizedlist>
+      <para> [End Knowledge Artifacts.] </para>
+    </section>
+  </chapter>
+  <chapter xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:id="compositeconsult-request-colorectal-cancer-risk">
+    <title>Composite/Consult Request: Colorectal Cancer Risk</title>
+    <para> [Begin Composite/Consult Request: Colorectal Cancer Risk.] </para>
+    <section xml:id="knowledge-narrative">
+      <title>Knowledge Narrative</title>
+      <para> [Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para> [End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="consult-request">
+      <title>Consult Request</title>
+      <para> [Begin Consult Request.] </para>
+      <para> [Section Selection Prompt: Only applicable for consult order to an outside facility.] </para>
+      <para> [Section Selection Prompt: To determine appropriate Gastroenterology Colorectal Cancer
+        Risk, please provide the following information.] </para>
+      <para> Reason for Consult: Colorectal Cancer Risk Assessment </para>
+      <para> Consult Specialty: Gastroenterology </para>
+      <para> [Section Prompt: Goal of Consult.] </para>
+      <para> [Section Selection Behavior: Required. Select one.] </para>
+      <blockquote>
+        <para> ☐ Return to primary care provider (PCP) for therapy </para>
+        <para> ☐ Start treatment and return to PCP for follow up and maintenance </para>
+        <para> ☐ Start treatment, monitor for effect and when on stable therapy return to PCP </para>
+        <para> ☐ Treat as long as necessary (or indefinitely) </para>
+      </blockquote>
+      <para> Priority: Routine unless otherwise specified </para>
+      <blockquote>
+        <para>&lt;obtain&gt; Referring Physician </para>
+        <para>&lt;obtain&gt; Referring Physician Contact Information </para>
+      </blockquote>
+      <para> [Technical Note: Activate Documentation Template.] </para>
+      <para> [End Consult Request.] </para>
+      <para> [End Composite/Consult Request: Colorectal Cancer Risk.] </para>
+    </section>
+  </chapter>
+  <chapter xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:id="event-condition-action-eca-rule-colorectal-cancer-risk">
+    <title>Event Condition Action (ECA) Rule: Colorectal Cancer Risk</title>
+    <para> [Begin Event Condition Acton (ECA) Rule: Colorectal Cancer Risk.] </para>
+    <section xml:id="knowledge-narrative-1">
+      <title>Knowledge Narrative</title>
+      <para> [Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para> [End Knowledge Narrative.] </para>
+    </section>
+    <section
+      xml:id="event-condition-action-eca-rule-colorectal-cancer-screening-diagnostics-and-surveillance-general">
+      <title>Event Condition Action (ECA) Rule: Colorectal Cancer Screening, Diagnostics and
+        Surveillance – General</title>
+      <para> [Begin Event Condition Action (ECA) Rule: Colorectal Cancer Screening, Diagnostics and
+        Surveillance – General.] </para>
+      <bridgehead> Event </bridgehead>
+      <para> [Begin Event.] </para>
+      <blockquote>
+        <para>☐ Any access of the patient record </para>
+        <para> System run on routine frequency </para>
+      </blockquote>
+      <para> [Technical Note: These events apply to all subbranches.] </para>
+      <para> [End Event.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begin Conditions.] </para>
+      <para> Include adult outpatients who meet any of the following criteria: </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Have a first-degree family member with a history of colorectal cancer or advanced
+            adenoma </para>
+        </listitem>
+        <listitem>
+          <para> Have a family or personal history of Lynch Syndrome or familial colorectal cancer
+            syndrome type X </para>
+        </listitem>
+        <listitem>
+          <para> Have a personal history of colorectal cancer or advanced adenoma </para>
+        </listitem>
+        <listitem>
+          <para> Are age &gt;= 50. </para>
+        </listitem>
+      </orderedlist>
+      <para> Exclude patients who meet any of the following criteria: </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Who have had a total colectomy </para>
+        </listitem>
+        <listitem>
+          <para> Are receiving hospice or end-of-life care </para>
+        </listitem>
+        <listitem>
+          <para> Have a documented decision to stop colorectal cancer screening </para>
+        </listitem>
+        <listitem>
+          <para> Are age &gt;= 85 years. </para>
+        </listitem>
+      </orderedlist>
+      <para> [Technical Note: The decision to stop screening can be documented in the documentation
+        template-consult request.] </para>
+      <para> [Technical Note: Additional criteria are included in the specific sub-branches.] </para>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <para> [Technical note: The actions are determined in the subbranches.] </para>
+      <para> [End Actions.] </para>
+      <para> [End Event Condition Action (ECA) Rule: Colorectal Cancer Screening, Diagnostics and
+        Surveillance – General.] </para>
+    </section>
+    <section xml:id="colorectal-cancer-screening-average-risk">
+      <title>Colorectal Cancer Screening: Average Risk</title>
+      <para> [Begin Colorectal Cancer Screening: Average Risk.] </para>
+      <bridgehead> Events </bridgehead>
+      <para> [Begin Events.] </para>
+      <para> [Technical Note: Events are addressed in the main branch of the rule.] </para>
+      <para> [End Events.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begin Conditions.] </para>
+      <para> Include adult outpatients aged &gt;= 50 years who have not had any of the following: </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Flexible sigmoidoscopy within 5 years </para>
+        </listitem>
+        <listitem>
+          <para> Colonoscopy within 10 years </para>
+        </listitem>
+        <listitem>
+          <para> Double-contrast barium enema within 5 years </para>
+        </listitem>
+        <listitem>
+          <para> Computed tomography colonography within 5 years </para>
+        </listitem>
+        <listitem>
+          <para> Guaiac-based fecal occult blood test with high test sensitivity for cancer within 1
+            year </para>
+        </listitem>
+        <listitem>
+          <para> Fecal immunochemical test with high test sensitivity for cancer within 1 year
+          </para>
+        </listitem>
+        <listitem>
+          <para> Stool Deoxyribonucleic Acid (DNA) testing within 3 years </para>
+        </listitem>
+      </orderedlist>
+      <para> Exclude patients who meet any of the following criteria: </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Have any first-degree relative diagnosed with colorectal cancer or advanced adenoma
+          </para>
+        </listitem>
+        <listitem>
+          <para> Have a personal history of colorectal cancer or other colorectal neoplasia </para>
+        </listitem>
+        <listitem>
+          <para> Are known to have Lynch syndrome or have a first-degree relative with Lynch
+            Syndrome </para>
+        </listitem>
+        <listitem>
+          <para> Have a family history of familial colorectal cancer syndrome type X </para>
+        </listitem>
+        <listitem>
+          <para> Have a personal history of inflammatory bowel disease </para>
+        </listitem>
+        <listitem>
+          <para> Had a positive result on the most recent imaging colorectal cancer screening test
+            (double-contrast barium enema or computed tomography colonography) and have not had a
+            follow-up colonoscopy </para>
+        </listitem>
+        <listitem>
+          <para> Had an abnormal result on the most recent flexible colonoscopy colorectal cancer
+            screening and have not had a follow-up colonoscopy </para>
+        </listitem>
+        <listitem>
+          <para> Had a positive result on the most recent stool-based colorectal cancer screening
+            test (guaiac-based fecal occult blood test, fecal immunochemical test, or stool DNA
+            test) and have not had a follow-up colonoscopy </para>
+        </listitem>
+        <listitem>
+          <para> Had a finding of inadequate bowel prep on most recent colonoscopy. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Identify the patient as a colorectal cancer screening candidate </para>
+        </listitem>
+        <listitem>
+          <para> Open Documentation Template/Consult Request: Gastroenterology: Colorectal Cancer
+            Risk KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Gastroenterology: Colorectal Cancer Risk - Average Risk Screening
+            KNART </para>
+        </listitem>
+        <listitem>
+          <para> Make sure guideline recommendations are available to care team </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Actions.] </para>
+      <para> [End Colorectal Cancer Screening: Average Risk.] </para>
+    </section>
+    <section
+      xml:id="colorectal-cancer-screening-colorectal-cancer-or-advanced-adenoma-diagnosed-in-multiple-first-degree-relatives-or-in-one-first-degree-relative-before-age-60-years-familial-colorectal-cancer-syndrome-type-x-or-lynch-syndrome">
+      <title> Colorectal Cancer Screening: Colorectal Cancer or Advanced Adenoma Diagnosed in
+        Multiple First-Degree Relatives or in One First-Degree Relative before Age 60 Years,
+        Familial Colorectal Cancer Syndrome Type X, or Lynch Syndrome</title>
+      <para> [Begin Colorectal Cancer Screening: Colorectal Cancer or Advanced Adenoma Diagnosed in
+        Multiple First-Degree Relatives or in One First-Degree Relative before Age 60 Years,
+        Familial Colorectal Cancer Syndrome type X, or Lynch Syndrome.] </para>
+      <bridgehead> Events </bridgehead>
+      <para> [Begin Events.] </para>
+      <para> [Technical Note: Events are addressed in the main branch of the rule.] </para>
+      <para> [End Events.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begin Conditions.] </para>
+      <para> [Technical Notes: Include adult outpatients who have never had a colonoscopy, who did
+        not receive a colonoscopy within the timeframe specified for re-scoping, or do not have a
+        set timeframe for re-scoping who meet at least one of the following criteria]: </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Have a family history of familial colorectal cancer syndrome type X and are at or
+            older than the age 10 years younger than the age at diagnosis of the youngest diagnosed
+            relative. </para>
+        </listitem>
+        <listitem>
+          <para> Have Lynch Syndrome or have a first-degree relative with Lynch Syndrome and are at
+            or older than the patient’s documented screening start age; if the screening start ages
+            is not documented, use the age 5 years younger than the age at diagnosis of the youngest
+            diagnosed relative or age 20 years whichever is youngest. </para>
+        </listitem>
+        <listitem>
+          <para> Have two or more first-degree relatives diagnosed with colorectal cancer or
+            advanced adenomas and are at or older than the age 10 years younger than the age at
+            diagnosis of the youngest diagnosed relative or age &gt;=40 years, whichever is
+            youngest. </para>
+        </listitem>
+        <listitem>
+          <para> Have one first-degree relative diagnosed with colorectal cancer or advanced adenoma
+            at age &lt; 60 years and are at or older than the age 10 years younger than the age at
+            diagnosis of the affected relative or are &gt;= 40 years, whichever is youngest. </para>
+        </listitem>
+      </orderedlist>
+      <para> [Technical Note: Providers have the option of documenting the screening start age for
+        patients with a personal or family history of Lynch Syndrome in the documentation
+        template-consult request form.] </para>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Identify the patient as a colonoscopy candidate </para>
+        </listitem>
+        <listitem>
+          <para> Open Documentation Template—Consult Request: Gastroenterology: Colorectal Cancer
+            Risk KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Gastroenterology: Colorectal Cancer Risk – Family History of Colon
+            Cancer, Colon Cancer Syndrome or Advanced Adenoma KNART </para>
+        </listitem>
+        <listitem>
+          <para> Make sure guideline recommendations are available to care team. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Actions.] </para>
+      <para> [End Colorectal Cancer Screening: Colorectal Cancer or Advanced Adenoma Diagnosed in
+        Multiple First-Degree Relatives or in One First-Degree Relative before Age 60 Years, Family
+        Colon Cancer Syndrome X, or Lynch Syndrome.] </para>
+    </section>
+    <section
+      xml:id="colorectal-cancer-screening-one-first-degree-relative-diagnosed-with-colorectal-cancer-or-advanced-adenoma-at-age-60-years-or-older">
+      <title>Colorectal Cancer Screening: One First-Degree Relative Diagnosed with Colorectal Cancer
+        or Advanced Adenoma at Age 60 Years or Older</title>
+      <para> [Begin Colorectal Cancer Screening: One First-Degree Relative Diagnosed with Colorectal
+        Cancer or Advanced Adenoma at Age 60 Years or Older.] </para>
+      <bridgehead> Events </bridgehead>
+      <para> [Begin Events.] </para>
+      <para> [Technical Note: Events are addressed in the main branch of the rule.] </para>
+      <para> [End Events.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begin Conditions.] </para>
+      <para> [Technical Note: Include adult outpatients aged &gt;= 40 years with exactly one
+        first-degree relative diagnosed with colorectal cancer or advanced adenoma if the affected
+        relative was diagnosed at age &gt;= 60 years and the patient has not had any of the
+        following:] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Flexible sigmoidoscopy within 5 years </para>
+        </listitem>
+        <listitem>
+          <para> Colonoscopy within 10 years </para>
+        </listitem>
+        <listitem>
+          <para> Double-contrast barium enema within 5 years </para>
+        </listitem>
+        <listitem>
+          <para> Computed tomography colonography within 5 years </para>
+        </listitem>
+        <listitem>
+          <para> Guaiac-based fecal occult blood test with high test sensitivity for cancer within 1
+            year </para>
+        </listitem>
+        <listitem>
+          <para> Fecal immunochemical test with high test sensitivity for cancer within 1 year
+          </para>
+        </listitem>
+        <listitem>
+          <para> Stool DNA testing within 3 years. </para>
+        </listitem>
+      </orderedlist>
+      <para> Exclude patients who meet any of the following criteria: </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Have multiple first-degree relatives diagnosed with colorectal cancer or advanced
+            adenoma </para>
+        </listitem>
+        <listitem>
+          <para> Have one first-degree relative diagnosed with colorectal cancer or advanced adenoma
+            at age &lt; 60 years </para>
+        </listitem>
+        <listitem>
+          <para> Have a personal history of colorectal cancer or other colorectal neoplasia </para>
+        </listitem>
+        <listitem>
+          <para> Are known to have Lynch syndrome or have a first-degree relative with Lynch
+            Syndrome </para>
+        </listitem>
+        <listitem>
+          <para> Have a family history of familial colorectal cancer syndrome type X </para>
+        </listitem>
+        <listitem>
+          <para> Have a personal history of inflammatory bowel disease </para>
+        </listitem>
+        <listitem>
+          <para> Had an abnormal result on the most recent imaging colorectal cancer screening test
+            (double-contrast barium enema or computed tomography colonography) and have not had a
+            follow-up colonoscopy </para>
+        </listitem>
+        <listitem>
+          <para> Had a positive result on the most recent flexible colonoscopy colorectal cancer
+            screening and have not had a follow-up colonoscopy </para>
+        </listitem>
+        <listitem>
+          <para> Had a positive result on the most recent stool colorectal cancer screening test
+            (guaiac-based fecal occult blood test, fecal immunochemical test, or stool DNA test) and
+            have not had a follow-up colonoscopy </para>
+        </listitem>
+        <listitem>
+          <para> Had a finding of inadequate bowel prep on most recent colonoscopy. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Identify the patient as a colorectal cancer screening candidate </para>
+        </listitem>
+        <listitem>
+          <para> Open Documentation Template—Consult Request: Gastroenterology: Colorectal Cancer
+            Risk KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Family History of Colon Cancer, Colon Cancer Syndrome or Advanced
+            Adenoma KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Fecal Immunochemical Test (FIT) </para>
+        </listitem>
+        <listitem>
+          <para> Make sure guideline recommendations are available to care team. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Actions.] </para>
+      <para> [End One First-Degree Relative Diagnosed with Colorectal Cancer or Advanced Adenoma at
+        Age 60 Years or Older.] </para>
+    </section>
+    <section xml:id="colorectal-cancer-screening-repeat-colonoscopy-indicated">
+      <title>Colorectal Cancer Screening: Repeat Colonoscopy Indicated</title>
+      <para> [Begin Colorectal Cancer Screening: Repeat Colonoscopy Indicated.] </para>
+      <bridgehead> Events </bridgehead>
+      <para> [Begin Events.] </para>
+      <para> [Technical Note: Events are addressed in the main branch of the rule.] </para>
+      <para> [End Events.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begins Conditions.] </para>
+      <para> [Technical Note: Include adult outpatients whose most recent colorectal cancer
+        screening colonoscopy results indicated that the bowel prep was inadequate where either the
+        timeframe specified for rescoping the patient has been exceeded or no timeframe for
+        rescoping the patient was indicated.] </para>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Identify the patient as a colonoscopy candidate </para>
+        </listitem>
+        <listitem>
+          <para> Open Documentation Template—Consult Request: Gastroenterology: Colorectal Cancer
+            Risk KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Gastroenterology: Colorectal Cancer Risk – Other Issues </para>
+        </listitem>
+        <listitem>
+          <para> Make sure guideline recommendations are available to care team. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Actions.] </para>
+      <para> [End Colorectal Cancer Screening: Repeat Colonoscopy Indicated.] </para>
+    </section>
+    <section xml:id="colorectal-cancer-diagnosis-positive-imaging-or-endoscopy-screening-test">
+      <title>Colorectal Cancer Diagnosis: Positive Imaging or Endoscopy Screening Test</title>
+      <para> [Begin Colorectal Cancer Diagnosis: Positive Imaging or Endoscopy Screening Test.] </para>
+      <bridgehead> Events </bridgehead>
+      <para> [Begin Events.] </para>
+      <para> [Technical Note: Events are addressed in the main branch of the rule.] </para>
+      <para> [End Events.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begin Conditions.] </para>
+      <para> [Technical Note: Include adult outpatients who meet the following criteria:] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Most recent colorectal cancer screening imaging tests (double-contrast barium enema
+            or computed tomography colonography) were positive and no follow-up colonoscopy
+            completed </para>
+        </listitem>
+        <listitem>
+          <para> Most recent flexible sigmoidoscopy colorectal cancer screening tests were positive,
+            and no follow-up colonoscopy completed </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Identify the patient as a colonoscopy candidate </para>
+        </listitem>
+        <listitem>
+          <para> Open Documentation Template—Consult Request: Gastroenterology: Colorectal Cancer
+            Risk KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Gastroenterology: Colorectal Cancer Risk – Rectal Bleeding or
+            Positive Screening Test </para>
+        </listitem>
+        <listitem>
+          <para> Make sure guideline recommendations are available to care team. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Actions.] </para>
+      <para> [End Colorectal Cancer Diagnosis: Positive Imaging or Endoscopy Screening Test.]
+      </para>
+    </section>
+    <section xml:id="colorectal-cancer-diagnosis-positive-colorectal-cancer-screening-stool-test">
+      <title>Colorectal Cancer Diagnosis: Positive Colorectal Cancer Screening Stool Test</title>
+      <para> [Begin Colorectal Cancer Diagnosis: Positive Colorectal Cancer Screening Stool Test.] </para>
+      <bridgehead> Events </bridgehead>
+      <para> [Begin Events.] </para>
+      <para> [Technical Note: Events are addressed in the main branch of the rule.] </para>
+      <para> [End Events.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begin Conditions.] </para>
+      <para> [Technical Note: Include adult outpatients who meet the following criteria:] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Most recent colorectal cancer screening stool-based tests (guaiac-based fecal
+            occult blood test, fecal immunochemical test, or stool DNA test) were positive who have
+            not yet had a follow-up colonoscopy </para>
+        </listitem>
+        <listitem>
+          <para> Significant lower gastrointestinal bleeding with a procedure request for
+            colonoscopy per provider documentation with the requested colonoscopy not yet received.
+          </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Identify the patient as a colonoscopy candidate </para>
+        </listitem>
+        <listitem>
+          <para> Open Documentation Template—Consult Request: Gastroenterology: Colorectal Cancer
+            Risk KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Gastroenterology: Colorectal Cancer – Rectal Bleeding or Positive
+            Screening Test </para>
+        </listitem>
+        <listitem>
+          <para> Make sure guideline recommendations are available to care team. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Colorectal Cancer Diagnosis: Positive Colorectal Cancer Screening Stool Test.]
+      </para>
+    </section>
+    <section xml:id="colorectal-cancer-surveillance-personal-history-of-colon-cancer-or-polyp">
+      <title>Colorectal Cancer Surveillance: Personal History of Colon Cancer or Polyp </title>
+      <para> [Begin Colorectal Cancer Surveillance: Personal History of Colon Cancer or Polyp.] </para>
+      <bridgehead> Events </bridgehead>
+      <para> [Begin Events.] </para>
+      <para> [Technical Note: Events are addressed in the main branch of the rule.] </para>
+      <para> [End Events.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begin Conditions.] </para>
+      <para> [Technical Note: Include adult outpatients who meet the following criteria and either
+        the timeframe specified for rescoping the patient has been exceeded or no timeframe for
+        rescoping the patient was set:] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> No repeat colonoscopy after piecemeal removal of a polyp &gt; 15 mm in size where
+            the polyp is either flat or sessile and either serrated or adenomatous </para>
+        </listitem>
+        <listitem>
+          <para> No repeat colonoscopy after recent colonoscopy with findings of colorectal
+            neoplasia: </para>
+          <blockquote>
+            <blockquote>
+              <para> [Technical Note: Include the following in a table with the appropriate
+                timeframes.] </para>
+            </blockquote>
+            <orderedlist numeration="loweralpha">
+              <listitem>
+                <blockquote>
+                  <para> &gt; 10 adenomas </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> 3–10 adenomas &lt; 10 mm in size </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> &gt;= 1 adenoma with villous features </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> &gt;= 1 adenoma with high-grade dysplasia </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> no adenomas on first surveillance colonoscopy follow-up of prior finding of
+                    high-risk adenoma </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> no adenomas on first surveillance colonoscopy follow-up of prior finding of
+                    low-risk adenoma </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> &gt;= 1 tubular adenoma &gt;= 10 mm in size </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> 1–2 tubular adenomas &lt; 10 mm in size with inadequate bowel preparation
+                  </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> 1–2 tubular adenomas &lt; 10 mm in size with no cecal intubation </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> 1–2 tubular adenomas &lt; 10 mm in size on first surveillance colonoscopy
+                    follow-up of prior finding of adenomas </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> no polyps &gt;= 10 mm with 1–2 tubular adenomas with low-grade dysplasia
+                    and/or &gt;= 1 serrated polyp without cytological dysplasia </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> &gt;= 1 sessile serrated polyp that either is &gt;= 10 mm in size or has
+                    cytological dysplasia </para>
+                </blockquote>
+              </listitem>
+              <listitem>
+                <blockquote>
+                  <para> distal hyperplastic polyps &lt; 10 mm in size </para>
+                </blockquote>
+              </listitem>
+            </orderedlist>
+          </blockquote>
+        </listitem>
+        <listitem>
+          <para> No 1-Year Follow-Up Colonoscopy after Colorectal Cancer Resection Clearing </para>
+        </listitem>
+        <listitem>
+          <para> No 3-Year Surveillance Colonoscopy after First Follow-Up for Colorectal Cancer
+            Resection </para>
+        </listitem>
+        <listitem>
+          <para> No 5-Year Surveillance Colonoscopy after Second Follow-Up for Colorectal Cancer
+            Resection </para>
+        </listitem>
+        <listitem>
+          <para> No repeat colonoscopy within 5 years of most recent ongoing colorectal cancer
+            surveillance colonoscopy, providing the patient record does not indicate that
+            surveillance colonoscopy should be discontinued. </para>
+        </listitem>
+      </orderedlist>
+      <para> [Technical Note: Providers have the option of indicating that post-resection
+        surveillance should be discontinued in the documentation template—consult request.] </para>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Identify the patient as a colonoscopy candidate </para>
+        </listitem>
+        <listitem>
+          <para> Open Documentation Template—Consult Request: Gastroenterology: Colorectal Cancer
+            Risk KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Gastroenterology: Colorectal Cancer Risk– Personal history of colon
+            cancer or polyp KNART </para>
+        </listitem>
+        <listitem>
+          <para> Make sure guideline recommendations are available to care team. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Actions.] </para>
+      <para> [End Colorectal Cancer Surveillance: Personal History of Colon Cancer or Polyp.]
+      </para>
+    </section>
+    <section xml:id="colorectal-cancer-surveillance-inflammatory-bowel-disease">
+      <title>Colorectal Cancer Surveillance: Inflammatory Bowel Disease </title>
+      <para> [Begin Colorectal Cancer Surveillance: Inflammatory Bowel Disease.] </para>
+      <bridgehead> Events </bridgehead>
+      <para> [Begin Events.] </para>
+      <para> [Technical Note: Events are addressed in the main branch of the rule.] </para>
+      <para> [End Events.] </para>
+      <bridgehead> Conditions </bridgehead>
+      <para> [Begin Conditions.] </para>
+      <para> [Technical Note: Include adult outpatients diagnosed with inflammatory bowel disease
+        who have never had a colonoscopy and are at or older than the documented surveillance start
+        age (see section 4.14 of the documentation template) or who did not receive a colonoscopy
+        within the timeframe specified for rescoping or did not have a timeframe for rescoping set.
+        If a surveillance start age has not been set, use the age at diagnosis plus 8 years as the
+        surveillance start age.] </para>
+      <para> [Technical Note: Providers have the option of setting the surveillance start age in the
+        documentation template-consult request form.] </para>
+      <para> [End Conditions.] </para>
+      <bridgehead> Actions </bridgehead>
+      <para> [Begin Actions.] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> Identify the patient as a colonoscopy candidate </para>
+        </listitem>
+        <listitem>
+          <para> Open Documentation Template—Consult Request: Gastroenterology: Colorectal Cancer
+            Risk KNART </para>
+        </listitem>
+        <listitem>
+          <para> Open Order Set: Gastroenterology: Colorectal Cancer Risk Inflammatory Bowel Disease
+            Surveillance KNART </para>
+        </listitem>
+        <listitem>
+          <para> Make sure guideline recommendations are available to care team. </para>
+        </listitem>
+      </orderedlist>
+      <para> [End Actions.] </para>
+      <para> [End Colorectal Cancer Surveillance: Inflammatory Bowel Disease] </para>
+      <para> [End Event Condition Acton (ECA) Rule: Colorectal Cancer Risk] </para>
+    </section>
+  </chapter>
+  <chapter xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:id="documentation-templateconsult-request-colorectal-cancer-risk">
+    <title>Documentation Template/Consult Request: Colorectal Cancer Risk</title>
+    <para> [Begin Documentation Template: Colorectal Cancer Risk.] </para>
+    <para> [Technical Note: This documentation template/consult request should be made available for
+      clinical providers caring for patients meeting the criteria for any branch of ECA Rule KNART
+      and at provider request.] </para>
+    <section xml:id="knowledge-narrative-2">
+      <title>Knowledge Narrative</title>
+      <para> [Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para> [End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="reason-for-presentation">
+      <title>Reason for Presentation</title>
+      <para> [Begin Reason for Presentation.] </para>
+      <para> [Section Prompt: Reason for Presentation.] </para>
+      <para> [Technical Note: This section should be made available for all clinical users of this
+        documentation template/consult request.] </para>
+      <para> &lt;obtain&gt; Chief Complaint </para>
+      <para> &lt;obtain&gt; Additional Details </para>
+      <para> [End Reason for Presentation.] </para>
+    </section>
+    <section xml:id="reason-for-consult">
+      <title>Reason for Consult</title>
+      <para> [Begin Reason for Consult.] </para>
+      <para> [Section Prompt: Reason for Consult.] </para>
+      <para> [Section Selection Behavior: Any or none. Optional.] </para>
+      <para> [Technical Note: This section should be made available for all clinical users of this
+        documentation template/consult request.] </para>
+      <blockquote>
+        <para>☐ &lt;obtain&gt; Age (Years) </para>
+        <para>☐ Positive Finding on Most Recent Stool Test </para>
+        <para>☐ Abnormal Finding on Most Recent Colorectal Imaging </para>
+        <para>☐ Abnormal Finding on Most Recent Flexible Sigmoidoscopy </para>
+        <para>☐ Abnormal Finding on Most Recent Colonoscopy </para>
+        <para>☐ Personal History of Colorectal Polyp </para>
+        <para>☐ Personal History of Colorectal Cancer </para>
+        <para>☐ Family History of Colon Cancer, Colon Cancer Syndrome or Advanced Adenoma </para>
+        <para>☐ Inflammatory Bowel Disease </para>
+        <para>☐ Gastrointestinal Bleeding </para>
+        <para>☐ Iron Deficiency Anemia </para>
+        <para>&lt;obtain&gt; Additional Details </para>
+      </blockquote>
+      <para> [Technical Note: Although iron deficiency anemia has been intentionally omitted from
+        ECA Rule: Gastroenterology: Colorectal Cancer Risk, it may be a symptom of colon cancer. It
+        must be considered in combination with other clinical factors, such as unintentional weight
+        loss, changes in bowel habits, visible blood in the stool, and recent hemoglobin lab test
+        results.] </para>
+      <para> [Section Prompt: Iron deficiency anemia may be a symptom of colon cancer. It must be
+        considered in combination with other clinical factors, such as unintentional weight loss,
+        changes in bowel habits, visible blood in the stool, and recent hemoglobin lab test
+        results.] </para>
+      <para> [End Reason for Consult.] </para>
+    </section>
+    <section xml:id="colorectal-cancer-screening-history-average-risk-patients">
+      <title>Colorectal Cancer Screening History: Average Risk Patients</title>
+      <para> [Begin Colorectal Cancer Screening: Average Risk.] </para>
+      <para> [Technical Note: This section should be made available for clinical providers caring
+        for patients without any risk factors selected in Section 4.3 - Reason for Consult and for
+        clinical providers caring for patients meeting criteria for the Average Risk Screening
+        branch of the ECA Rule Gastroenterology: Colorectal Cancer Screening, Diagnostics, and
+        Surveillance KNART.] </para>
+      <para> [Section Prompt: Test Results] </para>
+      <blockquote>
+        <para>☐ Guaiac-Based Fecal Occult Blood Test </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ Fecal Immunochemical Test </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ Stool DNA Test </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ Double-Contrast Barium Enema </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ Computed Tomography (CT) Colonography </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ Flexible Sigmoidoscopy </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ Colonoscopy </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ No Prior Screening </para>
+        <para>☐ &lt;obtain&gt; Additional Details </para>
+      </blockquote>
+      <para> [End Colorectal Cancer Screening: Average Risk.] </para>
+    </section>
+    <section xml:id="colorectal-cancer-diagnostics-history-positive-stool-test">
+      <title>Colorectal Cancer Diagnostics History: Positive Stool Test</title>
+      <para> [Begin Colorectal Cancer Screening Diagnostics: Follow-up Positive Stool Test.] </para>
+      <para> [Technical Note: This section should be made available only if Positive Finding on Most
+        Recent Stool Test was selected in Section 4.3 - Reason for Consult or if the patient meets
+        criteria for the Positive Colorectal Cancer Screening Stool Tests branch of ECA Rule:
+        Gastroenterology: Colorectal Cancer Screening, Diagnostics, and Surveillance KNART.] </para>
+      <para> [Section Prompt: Stool Screening Test Results] </para>
+      <blockquote>
+        <para>☐ Guaiac-Based Fecal Occult Blood Test </para>
+        <para>          ☐ &lt;obtain&gt; Date </para>
+        <para>☐ Fecal Immunochemical Test </para>
+        <para>          ☐ &lt;obtain&gt; Date </para>
+        <para>☐ Stool DNA Test </para>
+        <para>          ☐ &lt;obtain&gt; Date </para>
+        <para>          ☐ &lt;obtain&gt; Additional Details </para>
+      </blockquote>
+      <para> [End Colorectal Cancer Screening Diagnostics: Follow-up Positive Stool Test.] </para>
+    </section>
+    <section xml:id="colorectal-cancer-diagnostics-history-positive-imaging-screening-test">
+      <title>Colorectal Cancer Diagnostics History: Positive Imaging Screening Test</title>
+      <para> [Begin Colorectal Cancer Diagnostics: Positive Imaging Screening Test.] </para>
+      <para> [Section Prompt: Positive Imaging Screening Test Results] </para>
+      <para> [Technical Note: This section should be made available only if Abnormal Finding on Most
+        Recent Colorectal Imaging was selected in Section 4.3 - Reason for Consult or if the patient
+        meets criteria for the Positive Imaging or Endoscopy Screening Test branch of ECA Rule:
+        Gastroenterology: Colorectal Cancer Screening, Diagnostics, and Surveillance KNART.] </para>
+      <para> [Link: Links should be attached automatically.] </para>
+      <para> [Section Selection Behavior: Any or none. Optional] </para>
+      <blockquote>
+        <para>☐ Double-Contrast Barium Enema </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ &lt;obtain&gt; Adequacy of Bowel Preparation </para>
+        <para>          ☐ Adequate </para>
+        <para>          ☐ Inadequate </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <blockquote>
+        <para>☐ Computed Tomography </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ &lt;obtain&gt; Adequacy of Bowel Preparation </para>
+        <para>          ☐ Adequate </para>
+        <para>          ☐ Inadequate </para>
+      </blockquote>
+      <para> [Link to Full Report and Images.] </para>
+      <para> &lt;obtain&gt; Additional Details </para>
+      <para> [End Colorectal Cancer Diagnostics: Positive Imaging Screening Test.] </para>
+    </section>
+    <section xml:id="colorectal-cancer-evaluation-history-abnormal-flexible-sigmoidoscopy">
+      <title>Colorectal Cancer Evaluation History: Abnormal Flexible Sigmoidoscopy</title>
+      <para> [Begin Follow-up Abnormal Flexible Sigmoidoscopy.] </para>
+      <para> [Section Prompt: Follow-up Abnormal Flexible Sigmoidoscopy.] </para>
+      <para> [Technical Note: This section should be made available only if Abnormal Finding on Most
+        Recent Flexible Sigmoidoscopy was selected in Section 4.3 - Reason for Consult or if the
+        patient meets criteria for the Colorectal Cancer Diagnosis: Positive Imaging or Endoscopy
+        Screening Test branch of ECA Rule: Gastroenterology: Colorectal Cancer Screening,
+        Diagnostics, and Surveillance KNART.] </para>
+      <para> [Link: Links should be attached automatically.] </para>
+      <blockquote>
+        <para>☐ Flexible Sigmoidoscopy </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ &lt;obtain&gt; Adequacy of Bowel Preparation </para>
+        <para>          ☐ Adequate </para>
+        <para>          ☐ Inadequate </para>
+      </blockquote>
+      <para> [Link to Full Report and Images.] </para>
+      <para> &lt;obtain&gt; Additional Details </para>
+      <para> [End Follow-up Abnormal Flexible Sigmoidoscopy.] </para>
+    </section>
+    <section xml:id="colorectal-cancer-evaluation-history-abnormal-colonoscopy">
+      <title>Colorectal Cancer Evaluation History: Abnormal Colonoscopy</title>
+      <para> [Begin Follow-up Abnormal Colonoscopy.] </para>
+      <para> [Section Prompt: Follow-up Abnormal Colonoscopy] </para>
+      <para> [Technical Note: This section should be made available only if Abnormal Finding on Most
+        Recent Colonoscopy was selected in the Section 4.3 - Reason for Consult or if the patient
+        meets criteria for the Colorectal Cancer Diagnosis: Positive Imaging or Endoscopy Screening
+        Test branch of ECA Rule: Gastroenterology: Colorectal Cancer Screening, Diagnostics, and
+        Surveillance KNART.] </para>
+      <blockquote>
+        <para>☐ Most Recent Colonoscopy </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <para> [Section Prompt: If the Colonoscopy Report Is Not Available, please provide as much
+        Information as possible regarding key findings, including: Adequacy of Bowel Preparation,
+        Depth of Insertion, Any Abnormalities (e.g., Polyps or Masses), and Any Sedation
+        Requirements for Patient.] </para>
+      <para> &lt;obtain&gt; Additional Details </para>
+      <para> [End Follow-up Abnormal Colonoscopy.] </para>
+    </section>
+    <section xml:id="personal-history-of-colorectal-polyp">
+      <title>Personal History of Colorectal Polyp</title>
+      <para> [Begin Personal History of Colorectal Polyp.] </para>
+      <para> [Section Prompt: Personal History of Colorectal Polyp.] </para>
+      <para> [Technical Note: This section should be made available only if Personal History of
+        Colorectal Polyp was selected in Section 4.3 - Reason for Consult or if the patient meets
+        criteria for the: Personal History of Cancer or Polyp branch of ECA Rule: Gastroenterology:
+        Colorectal Cancer Screening, Diagnostics, and Surveillance KNART.] </para>
+      <para> [Link: Links should be attached automatically.] </para>
+      <para> [Technical Note: The following form components should be provided as auto populated
+        information for all exams in this section, to be displayed only if the information is
+        available and can be used to auto populate these fields for the given exam:] </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para> No Polyps </para>
+        </listitem>
+        <listitem>
+          <para> Hyperplastic Polyps &lt; 10 mm in Rectum or Sigmoid </para>
+        </listitem>
+        <listitem>
+          <para> &gt;= 1 and =&lt; 2 Tubular Adenomas &lt; 10 mm </para>
+        </listitem>
+        <listitem>
+          <para> &gt;= 1 and =&lt; 10 Tubular Adenomas </para>
+        </listitem>
+        <listitem>
+          <para> &gt; 10 Adenomas </para>
+        </listitem>
+        <listitem>
+          <para> &gt;= 1 Tubular Adenomas &gt;= 10 mm </para>
+        </listitem>
+        <listitem>
+          <para> &gt;= 1 Villous Adenomas </para>
+        </listitem>
+        <listitem>
+          <para> Adenoma with High-Grade Dysplasia </para>
+        </listitem>
+        <listitem>
+          <para> Serrated Lesions </para>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para> &gt;= 1 Sessile Serrated Polyp &lt; 10 mm without Dysplasia </para>
+            </listitem>
+            <listitem>
+              <para> &gt;= 1 Sessile Serrated Polyp &gt;= 10 mm </para>
+            </listitem>
+            <listitem>
+              <para> Sessile Serrated Polyp with Dysplasia </para>
+            </listitem>
+            <listitem>
+              <para> Traditional Serrated Adenoma </para>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem>
+          <para> Serrated Polyposis Syndrome. </para>
+        </listitem>
+      </orderedlist>
+      <para> [Technical Note: Users should not be prompted to complete these form components
+        manually; they should appear only if they are auto populated with existing information.
+        These form components are derived from Table 1 in Lieberman 2012, which should be cited if
+        the form components are displayed.] </para>
+      <para> [Section Prompt: Baseline Pathology.] </para>
+      <para> &lt;obtain&gt; Date </para>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <para> &lt;obtain&gt; Additional Details </para>
+      <para> [Section Prompt: Baseline Polypectomy.] </para>
+      <para> &lt;obtain&gt; Date </para>
+      <para> &lt;obtain&gt; Additional Details </para>
+      <para> [Section Prompt: Baseline Colonoscopy.] </para>
+      <para> &lt;obtain&gt; Date </para>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <para> [Section Prompt: First Surveillance Colonoscopy Performed?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [Section Prompt: Second Surveillance Colonoscopy Preformed?] </para>
+      <para> [Technical Note: Second Surveillance Colonoscopy question should be displayed only if
+        the answer to the First Surveillance Colonoscopy Performed is yes.] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [Section Prompt: Surveillance Completed?] </para>
+      <para> [Technical Note: Surveillance Completed question should be displayed only if the answer
+        to Second Surveillance Colonoscopy Performed is yes.] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ &lt;obtain&gt; Additional Details </para>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [End Personal History of Colorectal Polyp.] </para>
+    </section>
+    <section xml:id="personal-history-of-colorectal-cancer">
+      <title>Personal History of Colorectal Cancer</title>
+      <para> [Begin Personal History of Colorectal Cancer.] </para>
+      <para> [Section Prompt: Follow-up Personal History of Colorectal Cancer.] </para>
+      <para> [Technical Note: This section should be made available only if Personal History of
+        Colorectal Cancer is selected in Section 4.3 - Reason for Consult or if the patient meets
+        criteria for the Colorectal Cancer Screening: Personal History of Cancer or Polyp branch of
+        ECA Rule: Gastroenterology: Colorectal Cancer Screening, Diagnostics, and Surveillance
+        KNART.] </para>
+      <para> &lt;obtain&gt; Diagnosis </para>
+      <para> &lt;obtain&gt; Date of Diagnosis </para>
+      <para> [Section Prompt: Colorectal Cancer Resection Performed?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [Section Prompt: Colorectal Cancer Resection Clearing Colonoscopy Performed?] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [Section Prompt: First Follow-up Colonoscopy Performed?] </para>
+      <para> [Section Prompt: Recommended surveillance interval: Follow-Up Colonoscopy at 1 Year
+        after Colorectal Cancer Resection Clearing.] </para>
+      <para> [Technical Note: First Follow-up Colonoscopy question should be displayed only if the
+        answer to Colorectal Cancer Resection Clearing Colonoscopy Performed is yes.] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [Section Prompt: Second Surveillance Colonoscopy Performed?] </para>
+      <para> [Section Prompt: Recommended surveillance interval: Follow-up Colonoscopy at 3 Years
+        after First Surveillance Colonoscopy for Colorectal Cancer Resection.] </para>
+      <para> [Technical Note: Second Surveillance Colonoscopy question should be displayed only if
+        the answer to First Follow-up Colonoscopy Performed is yes.] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [Section Prompt: Third Surveillance Colonoscopy Performed?] </para>
+      <para> [Section Prompt: Recommended surveillance interval: Follow-up Colonoscopy at 5 Years
+        after Second Surveillance Colonoscopy for Colorectal Cancer Resection.] </para>
+      <para> [Technical Note: Third Surveillance Completed question should be displayed only if the
+        answer to Second Year Surveillance Colonoscopy Performed is yes.] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para>☐ &lt;obtain&gt; Date </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [Section Prompt: Subsequent Surveillance Completed?] </para>
+      <para> [Section Prompt: Recommended surveillance interval: Follow-Up Colonoscopy at 5 Years
+        after Third Surveillance Colonoscopy for Colorectal Cancer Resection.] </para>
+      <para> [Technical Note: Subsequent Surveillance Completed question should be displayed only if
+        the answer to Third Surveillance Colonoscopy Performed is yes.] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para> &lt;obtain&gt; date </para>
+      </blockquote>
+      <para> [Link: Link to Full Report and Images] </para>
+      <para> [Technical Note: include date and links for all subsequent surveillance colonoscopies.] </para>
+      <blockquote>
+        <para>☐ No </para>
+      </blockquote>
+      <para> [Section Prompt: Surveillance Completed?] </para>
+      <para> [Technical Note: Surveillance Completed question should be displayed only if the answer
+        to Third Surveillance Colonoscopy Performed? is Yes.] </para>
+      <blockquote>
+        <para>☐ Yes </para>
+        <para> No </para>
+        <para> &lt;obtain&gt; Additional Details </para>
+      </blockquote>
+      <para> [End Personal History of Colorectal Cancer.] </para>
+    </section>
+    <section xml:id="family-history-of-colon-cancer-colon-cancer-syndrome-or-advanced-adenoma">
+      <title>- Family History of Colon Cancer, Colon Cancer Syndrome or Advanced Adenoma </title>
+      <para> [Begin Family History of Colon Cancer, Colon Cancer Syndrome or Advanced Adenoma.] </para>
+      <para> [Technical Note: This section should be made available only if Family History of Colon
+        Cancer, Colon Cancer Syndrome or Advanced Adenoma is selected in Section 4.3 - Reason for
+        Consult Risk Assessment section or if the patient meets criteria for the Colorectal Cancer
+        Screening: Colorectal Cancer or Advanced Adenoma Diagnosed in Multiple First-Degree
+        Relatives or in One First-Degree Relative before Age 60 Years, Family Colon Cancer Syndrome
+        X, or Lynch Syndrome branch or the Colorectal Cancer Screening: One First-Degree Relative
+        Diagnosed with Colorectal Cancer or Advanced Adenoma at Age 60 Years or Older branch of the
+        ECA Rule: Gastroenterology: Colorectal Cancer Risk KNART.] </para>
+      <para> [Technical Note: Please include a citation for Table 5 in Rex 2017 and for Table 10 in
+        Giardiello 2014, which are the sources of the form components in this section.] </para>
+      <para> [Section Prompt: Family History of Colon Cancer, Colon Cancer Syndrome or Advanced
+        Adenoma?] </para>
+      <blockquote>
+        <para>☐ Patient Personal or Family History of Lynch Syndrome?</para>
+        <para> &lt;obtain&gt; Youngest Age at Diagnosis of Youngest Affected individual (Years) </para>
+        <para> &lt;obtain&gt; Screening Start Age (Years) for this patient. </para>
+      </blockquote>
+      <para> [Technical Note: Display “Screening Start Age (Years)” if “Youngest Age at Diagnosis
+        (Years)” is &gt;= 25.] </para>
+      <blockquote>
+        <para>☐ Family History of Colon Cancer Syndrome Type X?</para>
+        <para> &lt;obtain&gt; Youngest Age at Diagnosis of Youngest Affected Individual (Years)
+        </para>
+      </blockquote>
+      <para> [Section Prompt: One First-Degree Relative Diagnosed with Colorectal Cancer or Advanced
+        Adenoma?] </para>
+      <para> &lt;obtain&gt; Age at Diagnosis (Years) </para>
+      <blockquote>
+        <para>☐ Multiple First-Degree Relatives Diagnosed with Colorectal Cancer or Advanced Adenoma </para>
+        <para> &lt;obtain&gt; Youngest Age at Diagnosis of Youngest Affected Individual (Years) </para>
+        <para> &lt;obtain&gt; Additional Details </para>
+      </blockquote>
+      <para> [End Family History of Colon Cancer, Colon Cancer Syndrome or Advanced Adenoma.]
+      </para>
+    </section>
+    <section xml:id="inflammatory-bowel-disease">
+      <title>Inflammatory Bowel Disease</title>
+      <para> [Begin Inflammatory Bowel Disease.] </para>
+      <para> [Technical Note: This section should be made available only if Inflammatory Bowel
+        Disease was selected in Section 4.3 - Reason for Consult or if the patient meets criteria
+        for the Colorectal Cancer Screening: Inflammatory Bowel Disease branch of ECA Rule:
+        Gastroenterology: Colorectal Cancer Risk KNART.] </para>
+      <para> [Link: Links should be attached automatically.] </para>
+      <para> [Technical Note: The Diagnosis field below should be auto populated with either
+        “ulcerative colitis” or “Crohn’s disease” if that information is available for the patient.] </para>
+      <para> &lt;obtain&gt; Diagnosis </para>
+      <para> &lt;obtain&gt; Date of Diagnosis </para>
+      <para> &lt;obtain&gt; Date of most recent colonoscopy </para>
+      <para> [Link: Link to Full Report and Images.] </para>
+      <para> [Technical Note: The following form components should be provided as auto populated
+        information, to be displayed only if the information is available and can be used to auto
+        populate these fields: </para>
+      <para> [Section Prompt: Was Inflammatory Bowel Disease (IBD) dysplasia found on colonoscopy?] </para>
+      <blockquote>
+        <para> No dysplasia </para>
+        <para>☐ Low grade dysplasia </para>
+        <para>☐ High grade dysplasia </para>
+      </blockquote>
+      <para> [Section Prompt: Were polyps found on the most recent colonoscopy?] </para>
+      <blockquote>
+        <para> No Polyps </para>
+        <para>☐ Hyperplastic Polyps &lt; 10 mm in Rectum or Sigmoid </para>
+        <para>☐ &gt;= 1 and =&lt; 2 Tubular Adenomas &lt; 10 mm </para>
+        <para>☐ &gt;= 1 and =&lt; 10 Tubular Adenomas </para>
+        <para>☐ &gt; 10 Adenomas </para>
+        <para>☐ &gt;= 1 Tubular Adenomas &gt;= 10 mm </para>
+        <para>☐ &gt;= 1 Villous Adenoma </para>
+        <para>☐ Adenoma with High-Grade Dysplasia </para>
+        <para>☐ Serrated Lesions </para>
+        <para>          ☐ &gt;= 1 Sessile Serrated Polyp &lt; 10 mm without Dysplasia</para>
+        <para>          ☐ &gt;= 1 Sessile Serrated Polyp &gt;= 10 mm</para>
+        <para>          ☐ Sessile Serrated Polyp with Dysplasia </para>
+        <para>          ☐ Traditional Serrated Adenoma</para>
+        <para> ☐ Serrated Polyposis Syndrome. </para>
+      </blockquote>
+      <para> [Technical Note: Users should not be prompted to complete the form components above
+        manually; they should appear only if they are auto populated with existing information.
+        These form components are derived from Table 1 in Lieberman 2012, which should be cited if
+        the form components are displayed.] </para>
+      <para> [Section Prompt: Surveillance Start Age] </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Surveillance Start Age (Years) </para>
+        <para> &lt;obtain&gt; Additional Details </para>
+      </blockquote>
+      <para> [End Inflammatory Bowel Disease.] </para>
+    </section>
+    <section xml:id="additional-pertinent-history">
+      <title>Additional Pertinent History</title>
+      <para> [Begin Pertinent History] </para>
+      <section xml:id="signs-and-symptoms">
+        <title>Signs and Symptoms</title>
+        <para> [Begin Signs and Symptoms.] </para>
+        <para> [Section Prompt: Signs and Symptoms.] </para>
+        <para> [Section Selection Behavior: Any or None. Optional.] </para>
+        <blockquote>
+          <para>☐ Unintentional Weight Loss </para>
+          <para>☐ Change in Bowel Habits </para>
+          <para>☐ Visible Blood in Stool </para>
+          <para>☐ Significant Lower Tract Bleeding </para>
+          <para>☐ Minor Lower Tract Bleeding </para>
+          <para>☐ Occult Blood </para>
+          <para>☐ Abdominal Pain </para>
+          <para>☐ Anemia </para>
+          <para>&lt;obtain&gt; Additional Details </para>
+        </blockquote>
+        <para> [End Signs and Symptoms.] </para>
+      </section>
+      <section xml:id="diagnostic-procedures">
+        <title>Diagnostic Procedures</title>
+        <para> [Begin Diagnostic Procedures] </para>
+        <para> [Section Prompt: Prior Colonoscopies?] </para>
+        <para> [Technical Note: All prior colonoscopies should be provided automatically, with the
+          date and a link for each colonoscopy.] </para>
+        <para> &lt;obtain&gt; Date </para>
+        <para> [Link: Link to Full Report and Images] </para>
+        <para> [Section Prompt: Prior Esophagogastroduodenoscopies?] </para>
+        <para> [Technical Note: All prior esophagogastroduodenoscopies should be provided
+          automatically, with the date and a link for each esophagogastroduodenoscopy.] </para>
+        <para> &lt;obtain&gt; Date </para>
+        <para> [Link: Link to Full Report and Images] </para>
+        <blockquote>
+          <para>☐ Other Diagnostic Procedures </para>
+          <para>&lt;obtain&gt; Additional Details </para>
+        </blockquote>
+        <para> [End Diagnostic Procedures.] </para>
+      </section>
+      <section xml:id="medical-history">
+        <title>Medical History</title>
+        <para> [Begin Medical History.] </para>
+        <para> [Link: Links should be attached automatically.] </para>
+        <para> [Technical Note: This section should be auto populated if the information is
+          available for the patient.] </para>
+        <para> &lt;obtain&gt; Relevant Medical History </para>
+        <para> [Link: Link to Full Detail in Patient Record] </para>
+        <para> [End Medical History.] </para>
+      </section>
+      <section xml:id="surgical-history">
+        <title>Surgical History </title>
+        <para> [Begin Surgical History.] </para>
+        <para> [Link: Links should be attached automatically.] </para>
+        <para> [Technical Note: This section should be auto populated if the information is
+          available for the patient.] </para>
+        <para> &lt;obtain&gt; Relevant Surgical History </para>
+        <para> [Link: Link to Full Detail in Patient Record] </para>
+        <para> [End Surgical History.] </para>
+      </section>
+      <section xml:id="medications">
+        <title>Medications </title>
+        <para> [Begin Medications.] </para>
+        <para> [Link: Links should be attached automatically.] </para>
+        <para> [Technical Note: This section should be auto populated if the information is
+          available for the patient.] </para>
+        <para> &lt;obtain&gt; Current Medication List </para>
+        <para> [Link: Link to Full Detail in Patient Record] </para>
+        <para> [End Medications.] </para>
+      </section>
+      <section xml:id="laboratory-test-results">
+        <title>Laboratory Test Results</title>
+        <para> [Begin Laboratory Test Results] </para>
+        <para> [Technical Note: The most recent lab results should be auto populated for the tests
+          below.] </para>
+        <para> &lt;obtain&gt; Complete Blood Count </para>
+        <para> &lt;obtain&gt; Date </para>
+        <para> &lt;obtain&gt; Iron </para>
+        <para> &lt;obtain&gt; Date </para>
+        <para> &lt;obtain&gt; Ferritin </para>
+        <para> &lt;obtain&gt; Date </para>
+        <para> &lt;obtain&gt; Total Iron Binding Capacity </para>
+        <para> &lt;obtain&gt; Date </para>
+        <para> [Link: Links should be attached automatically.] </para>
+        <para> [Link: Link to Full Detail in Patient Record for each lab test result above] </para>
+        <para> [End Laboratory Test Results.] </para>
+        <para> [End Pertinent History.] </para>
+      </section>
+    </section>
+    <section xml:id="plan">
+      <title>Plan</title>
+      <para> [Begin Plan.] </para>
+      <para> [Section Prompt: Plan, including tests, referrals, screening intervals, and screening
+        start and discontinuation age as applicable, discussed with and agreed to by patient.] </para>
+      <blockquote>
+        <para>☐ Refer for Colonoscopy </para>
+      </blockquote>
+      <para> &lt;obtain&gt; Screening Interval (Years) </para>
+      <para> [Technical Note: Screening Interval should be displayed for all patients who have
+        started screening, except those who have stopped screening, are of average risk, or with
+        exactly one first-degree relative diagnosed with colorectal cancer or advanced adenoma at
+        age &gt;= 60 years.] </para>
+      <para> [Technical Note: Screening interval may be set or updated during the consult.] </para>
+      <para> &lt;obtain&gt; Surveillance Start Age (Years) </para>
+      <para> [Technical Note: Surveillance Start Age should only be available for those who have
+        inflammatory bowel disease who have not had their first colonoscopy. If a Surveillance Start
+        Age has already been determined, it should be auto populated, and the provider should be
+        able to edit the field.] </para>
+      <blockquote>
+        <para>☐ Stop Screening for patients aged &gt;= 75 years </para>
+      </blockquote>
+      <para> [Technical Note: Show Stop Screening option only for patients aged &gt;= 75 years.] </para>
+      <para> ☐ Gastroenterology Consult </para>
+      <para> &lt;obtain&gt; Details </para>
+      <blockquote>
+        <para>☐ Other </para>
+        <para>&lt;obtain&gt; Description </para>
+        <para>☐ Plan discussed with and agreed to by the patient </para>
+        <para>&lt;obtain&gt;Date </para>
+      </blockquote>
+      <para> &lt;obtain&gt;Other pertinent plan details </para>
+      <para> [End Plan.] </para>
+      <para> [End Documentation Template: Colorectal Cancer Risk.] </para>
+    </section>
+  </chapter>
+  <chapter xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="screening-order-sets-colorectal-risk">
+    <title>Screening Order Sets: Colorectal Risk </title>
+    <para> [Begin Screening Order Sets: Gastroenterology: Colorectal Risk.] </para>
+    <section xml:id="knowledge-narrative-3">
+      <title>Knowledge Narrative</title>
+      <para> [Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para> [End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="order-set-colorectal-cancer-risk-average-risk-screening">
+      <title>Order Set: Colorectal Cancer Risk – Average Risk Screening</title>
+      <para> [Begin Order Set: Average Risk Screening.] </para>
+      <section xml:id="knowledge-narrative-4">
+        <title>Knowledge Narrative</title>
+        <para> [Begin Knowledge Narrative.] </para>
+        <para> [See Clinical Context in Chapter 1.] </para>
+        <para> [End Knowledge Narrative.] </para>
+      </section>
+      <section xml:id="consults-and-referrals">
+        <title>Consults and Referrals</title>
+        <para> [Begin Consults and Referrals.] </para>
+        <blockquote>
+          <para>☐ Referral Gastroenterology evaluate for colonoscopy (routine) </para>
+        </blockquote>
+        <para> [End Consults and Referrals.] </para>
+      </section>
+      <section xml:id="patient-and-caregiver-education">
+        <title>Patient and Caregiver Education</title>
+        <para> [Begin Patient and Caregiver Education.] </para>
+        <blockquote>
+          <para>☐ Colonoscopy screening education (routine) </para>
+          <para>☐ Bowel prep for colonoscopy screening education (routine) </para>
+        </blockquote>
+        <para> [End Patient and Caregiver Education.] </para>
+        <para> [End Order Set: Average Risk Screening.] </para>
+      </section>
+    </section>
+    <section
+      xml:id="order-set-colorectal-cancer-risk---family-history-of-colon-cancer-colon-cancer-syndrome-or-advanced-adenoma">
+      <title>Order Set: Colorectal Cancer Risk - Family History of Colon Cancer, Colon Cancer
+        Syndrome, or Advanced Adenoma</title>
+      <para> [Begin Order Set: Family History of Colon Cancer, Colon Cancer Syndrome or Advanced
+        Adenoma.] </para>
+      <section xml:id="knowledge-narrative-5">
+        <title>Knowledge Narrative</title>
+        <para> [Begin Knowledge Narrative.] </para>
+        <para> [See Clinical Context in Chapter 1.] </para>
+        <para> [End Knowledge Narrative.] </para>
+      </section>
+      <section xml:id="consults-and-referrals-1">
+        <title>Consults and Referrals</title>
+        <para> [Begin Consults and Referrals.] </para>
+        <para> [Technical Note: This section should be available for all patients.] </para>
+        <blockquote>
+          <para>☐ Referral Gastroenterology evaluate colorectal cancer risk (routine) </para>
+        </blockquote>
+        <para> [End Consults and Referrals.] </para>
+      </section>
+      <section xml:id="patient-and-caregiver-education-1">
+        <title>Patient and Caregiver Education</title>
+        <para> [Begin Patient and Caregiver Education.] </para>
+        <para> [Technical Note: This section should be available for all patients.] </para>
+        <blockquote>
+          <para>☐ Colorectal cancer screening and surveillance education (routine) </para>
+          <para>☐ Bowel prep for colonoscopy education (routine) </para>
+        </blockquote>
+        <para> [End Patient and Caregiver Education.] </para>
+        <para> [End Order Set: Family History of Colon Cancer, Colon Cancer Syndrome or Advanced
+          Adenoma.] </para>
+        <para> [End Screening Order Sets: Gastroenterology: Colorectal Risk.] </para>
+      </section>
+    </section>
+  </chapter>
+  <chapter xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:id="diagnostic-order-sets-colorectal-cancer-risk">
+    <title>Diagnostic Order Sets: Colorectal Cancer Risk </title>
+    <para> [Begin Diagnostic Order Set: Gastroenterology: Colorectal Risk.] </para>
+    <section xml:id="knowledge-narrative-6">
+      <title>Knowledge Narrative</title>
+      <para> [Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para> [End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="order-set-colorectal-cancer-risk-iron-deficiency">
+      <title>Order Set: Colorectal Cancer Risk – Iron Deficiency</title>
+      <para> [Begin Order Set: Colorectal Cancer Risk – Iron Deficiency.] </para>
+      <section xml:id="knowledge-narrative-7">
+        <title>Knowledge Narrative</title>
+        <para> [Begin Knowledge Narrative.] </para>
+        <para> [See Clinical Context in Chapter 1.] </para>
+        <para> [End Knowledge Narrative.] </para>
+      </section>
+      <section xml:id="laboratory-tests">
+        <title>Laboratory Tests</title>
+        <para> [Begin Laboratory Tests.] </para>
+        <para> [Technical Note: Display only if no lab results for these tests are seen within the
+          system for the last two months.] </para>
+        <blockquote>
+          <para>☐ Complete blood count 1 time (routine) </para>
+          <para>☐ Iron 1 time (routine) </para>
+          <para>☐ Ferritin 1 time (routine) </para>
+          <para>☐ Total iron binding capacity 1 time (routine) </para>
+        </blockquote>
+        <para> [End Laboratory Tests.] </para>
+      </section>
+      <section xml:id="section-6.2.3.-consults-and-referrals">
+        <title>Section 6.2.3. – Consults and Referrals</title>
+        <para> [Begin Consults and Referrals.] </para>
+        <blockquote>
+          <para>☐ Referral Gastroenterology evaluate iron deficiency (routine) </para>
+        </blockquote>
+        <para> [End Consults and Referrals.] </para>
+      </section>
+      <section xml:id="section-6.2.4.-patient-and-caregiver-education">
+        <title>Section 6.2.4. – Patient and Caregiver Education</title>
+        <para> [Begin Patient and Caregiver Education.] </para>
+        <blockquote>
+          <para>☐ Colorectal cancer testing education (routine) </para>
+          <para>☐ Bowel prep for colonoscopy education (routine) </para>
+        </blockquote>
+        <para> [End Patient and Caregiver Education.] </para>
+        <para> [End Order Set: Gastroenterology: Colorectal Cancer Risk – Iron Deficiency.] </para>
+      </section>
+    </section>
+    <section xml:id="order-set-colorectal-cancer-risk-rectal-bleeding-or-positive-screening-test">
+      <title>Order Set: Colorectal Cancer Risk – Rectal Bleeding or Positive Screening Test</title>
+      <para> [Begin Order Set: Colorectal Cancer Risk – Rectal Bleeding or Positive Screening Test.] </para>
+      <section xml:id="knowledge-narrative-8">
+        <title>Knowledge Narrative</title>
+        <para> [Begin Knowledge Narrative.] </para>
+        <para> [See Clinical Context in Chapter 1.] </para>
+        <para> [End Knowledge Narrative.] </para>
+      </section>
+      <section xml:id="consults-and-referrals-2">
+        <title>Consults and Referrals</title>
+        <para> [Begin Consults and Referrals.] </para>
+        <blockquote>
+          <para>☐ Referral Gastroenterology evaluate for colonoscopy (routine) </para>
+        </blockquote>
+        <para> [End Consults and Referrals.] </para>
+      </section>
+      <section xml:id="patient-and-caregiver-education-2">
+        <title>Patient and Caregiver Education</title>
+        <para> [Begin Patient and Caregiver Education.] </para>
+        <blockquote>
+          <para>☐ Diagnostic Colonoscopy education (routine) </para>
+          <para>☐ Bowel prep for colonoscopy education (routine) </para>
+        </blockquote>
+        <para> [End Patient and Caregiver Education.] </para>
+        <para> [End Order Set: Colorectal Cancer Risk – Rectal Bleeding or Positive Screening Test.]
+        </para>
+      </section>
+    </section>
+    <section xml:id="order-set-colorectal-cancer-risk-fecal-immunochemical-test-fit">
+      <title>Order Set: Colorectal Cancer Risk – Fecal Immunochemical Test (FIT)</title>
+      <para> [Begin Order Set: Colorectal Cancer Risk – Fecal Immunochemical Test (FIT).] </para>
+      <section xml:id="knowledge-narrative-9">
+        <title>Knowledge Narrative</title>
+        <para> [Begin Knowledge Narrative.] </para>
+        <para> [See Clinical Context in Chapter 1.] </para>
+        <para> [End Knowledge Narrative.] </para>
+      </section>
+      <section xml:id="laboratory-tests-1">
+        <title>Laboratory Tests</title>
+        <para> [Begin Laboratory Tests.] </para>
+        <blockquote>
+          <para>☐ Fecal immunochemical test 1 time (routine) </para>
+        </blockquote>
+        <para> [End Laboratory Tests.] </para>
+      </section>
+      <section xml:id="consults-and-referrals-3">
+        <title>Consults and Referrals</title>
+        <para> [Begin Consults and Referrals.] </para>
+        <blockquote>
+          <para>☐ Referral to gastroenterology to evaluate colorectal cancer risk (routine) </para>
+        </blockquote>
+        <para> [End Consults and Referrals.] </para>
+      </section>
+      <section xml:id="patient-and-caregiver-education-3">
+        <title>Patient and Caregiver Education</title>
+        <para> [Begin Patient and Caregiver Education.] </para>
+        <blockquote>
+          <para>☐ Colorectal cancer screening education (routine) </para>
+        </blockquote>
+        <para> [End Patient and Caregiver Education.] </para>
+        <para> [End Order Set: Colorectal Cancer Risk – Fecal Immunochemical Test (FIT).] </para>
+        <para> [End Diagnostic Order Set: Colorectal Risk.] </para>
+      </section>
+    </section>
+  </chapter>
+  <chapter xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:id="surveillance-order-sets-colorectal-cancer-risk">
+    <title>Surveillance Order Sets: Colorectal Cancer Risk</title>
+    <para> [Begin Surveillance Order Sets: Colorectal Risk.] </para>
+    <section xml:id="knowledge-narrative-10">
+      <title>Knowledge Narrative</title>
+      <para> [Begin Knowledge Narrative.] </para>
+      <para> [See Clinical Context in Chapter 1.] </para>
+      <para> [End Knowledge Narrative.] </para>
+    </section>
+    <section xml:id="order-set-colorectal-cancer-risk-personal-history-of-colon-cancer-or-polyp">
+      <title>Order Set: Colorectal Cancer Risk – Personal History of Colon Cancer or Polyp</title>
+      <para> [Begin Order Set: Colorectal Cancer Risk – Personal History of Colon Cancer or Polyp.] </para>
+      <section xml:id="knowledge-narrative-11">
+        <title>Knowledge Narrative</title>
+        <para> [Begin Knowledge Narrative.] </para>
+        <para> [See Clinical Context in Chapter 1.] </para>
+        <para> [End Knowledge Narrative.] </para>
+      </section>
+      <section xml:id="consults-and-referrals-4">
+        <title>Consults and Referrals</title>
+        <para> [Begin Consults and Referrals.] </para>
+        <para> [Technical Note: This section should be available for all patients.] </para>
+        <blockquote>
+          <para>☐ Referral gastroenterology evaluate for colonoscopy and treatment (routine) </para>
+        </blockquote>
+        <para> [End Consults and Referrals.] </para>
+      </section>
+      <section xml:id="patient-and-caregiver-education-4">
+        <title>Patient and Caregiver Education</title>
+        <para> [Begin Patient and Caregiver Education.] </para>
+        <para> [Technical Note: This section should be available for all patients.] </para>
+        <blockquote>
+          <para>☐ Colorectal cancer surveillance education (routine) </para>
+          <para>☐ Bowel prep for colonoscopy education (routine) </para>
+        </blockquote>
+        <para> [End Patient and Caregiver Education.] </para>
+        <para> [End Order Set: Gastroenterology: Colorectal Cancer Risk – Personal History of Colon
+          Cancer or Polyp.] </para>
+      </section>
+    </section>
+    <section xml:id="order-set-colorectal-cancer-risk-inflammatory-bowel-disease">
+      <title>Order Set: Colorectal Cancer Risk – Inflammatory Bowel Disease</title>
+      <para> [Begin Order Set: Colorectal Cancer Risk – Inflammatory Bowel Disease.] </para>
+      <section xml:id="knowledge-narrative-12">
+        <title>Knowledge Narrative</title>
+        <para> [Begin Knowledge Narrative.] </para>
+        <para> [See Clinical Context in Chapter 1.] </para>
+        <para> [End Knowledge Narrative.] </para>
+      </section>
+      <section xml:id="consults-and-referrals-5">
+        <title>Consults and Referrals</title>
+        <para> [Begin Consults and Referrals.] </para>
+        <para> [Technical Note: This section should be available for all patients.] </para>
+        <blockquote>
+          <para>☐ Referral gastroenterology evaluate for colonoscopy and treatment (routine) </para>
+        </blockquote>
+        <para> [End Consults and Referrals.] </para>
+      </section>
+      <section xml:id="patient-and-caregiver-education-5">
+        <title>Patient and Caregiver Education</title>
+        <para> [Begin Patient and Caregiver Education.] </para>
+        <para> [Technical Note: This section should be available for all patients.] </para>
+        <blockquote>
+          <para>☐ Colonoscopy education (routine) </para>
+          <para>☐ Bowel prep for colonoscopy education (routine) </para>
+        </blockquote>
+        <para> [End Patient and Caregiver Education.] </para>
+        <para> [End Order Set: Colorectal Cancer Risk – Inflammatory Bowel Disease.] </para>
+      </section>
+    </section>
+    <section xml:id="order-set-colorectal-cancer-risk-other-issues">
+      <title>Order Set: Colorectal Cancer Risk – Other Issues</title>
+      <para> [Begin Order Set: Colorectal Cancer Risk – Other Issues.] </para>
+      <section xml:id="knowledge-narrative-13">
+        <title>Knowledge Narrative</title>
+        <para> [Begin Knowledge Narrative.] </para>
+        <para> [See Clinical Context in Chapter 1.] </para>
+        <para> [End Knowledge Narrative.] </para>
+      </section>
+      <section xml:id="consults-and-referrals-6">
+        <title>Consults and Referrals</title>
+        <para> [Begin Consults and Referrals.] </para>
+        <para> [Technical Note: This section should be available for all patients.] </para>
+        <blockquote>
+          <para>☐ Referral gastroenterology evaluate for colonoscopy and treatment (routine) </para>
+        </blockquote>
+        <para> [End Consults and Referrals.] </para>
+      </section>
+      <section xml:id="patient-and-caregiver-education-6">
+        <title>Patient and Caregiver Education</title>
+        <para> [Begin Patient and Caregiver Education.] </para>
+        <para> [Technical Note: This section should be available for all patients.] </para>
+        <blockquote>
+          <para>☐ Colonoscopy education (routine) </para>
+          <para>☐ Bowel prep for colonoscopy education (routine) </para>
+        </blockquote>
+        <para> [End Patient and Caregiver Education.] </para>
+        <para> [End Order Set: Colorectal Cancer Risk – Other Issues.] </para>
+        <para> [End Surveillance Order Sets: Colorectal Risk.] </para>
+      </section>
+    </section>
+  </chapter>
+  <bibliography>
+    <title>Bibliography/Evidence</title>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Giardiello</surname><firstname>FM</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Allen</surname><firstname>JI</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Axilbund</surname><firstname>JE et al</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">Guidelines on genetic evaluation and management of Lynch
+        syndrome: a consensus statement by the US Multi-Society Task Force on colorectal
+        cancer</citetitle>
+      <citetitle pubwork="journal">Am J Gastroenterol</citetitle>
+      <pubdate>August 2014</pubdate>
+      <volumenum>109</volumenum>
+      <issuenum>8</issuenum>
+      <pagenums>1159-79</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Johnson</surname><firstname>DA</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Barkun</surname><firstname>AN</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Cohen</surname><firstname>LB et al</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">US Multi-Society Task Force on Colorectal Cancer. Optimizing
+        adequacy of bowel cleansing for colonoscopy: recommendations from the US multi-society task
+        force on colorectal cancer</citetitle>
+      <citetitle pubwork="journal">Gastroenterology</citetitle>
+      <pubdate>2014</pubdate>
+      <volumenum>147</volumenum>
+      <issuenum>4</issuenum>
+      <pagenums>903-924</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Levin</surname><firstname>B</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Lieberman</surname><firstname>DA</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>McFarland</surname><firstname>B et al</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">American Cancer Society Colorectal Cancer Advisory Group; US
+        Multi-Society Task Force; American College of Radiology Colon Cancer Committee. Screening
+        and surveillance for the early detection of colorectal cancer and adenomatous polyps, 2008:
+        a joint guideline from the American Cancer Society, the US Multi-Society Task Force on
+        Colorectal Cancer, and the American College of Radiology</citetitle>
+      <citetitle pubwork="journal">CA Cancer J Clin</citetitle>
+      <pubdate>2008</pubdate>
+      <volumenum>58</volumenum>
+      <issuenum>3</issuenum>
+      <pagenums>130-160</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Lieberman</surname><firstname>DA</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Rex</surname><firstname>DK</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Winawer</surname><firstname>SJ</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Giardiello</surname><firstname>FM</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Johnson</surname><firstname>DA</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Levin</surname><firstname>TR</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">Guidelines for colonoscopy surveillance after screening and
+        polypectomy: a consensus update by the US Multi-Society Task Force on Colorectal
+        Cancer</citetitle>
+      <citetitle pubwork="journal">Gastroenterology</citetitle>
+      <pubdate>2012</pubdate>
+      <volumenum>143</volumenum>
+      <issuenum>3</issuenum>
+      <pagenums>844-857</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">National Center for Health Promotion and Disease Prevention. Get
+        Recommended Screening Tests and Immunizations for Men</citetitle>
+      <citetitle pubwork="journal">National Center for Health Promotion and Disease Prevention
+        website</citetitle>
+      <pubdate>Accessed August 25, 2017</pubdate>
+      <pagenums>https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Men.asp</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">National Center for Health Promotion and Disease Prevention. Get
+        Recommended Screening Tests and Immunizations for Women</citetitle>
+      <citetitle pubwork="journal">National Center for Health Promotion and Disease Prevention
+        website. </citetitle>
+      <pubdate>Accessed August 25, 2017</pubdate>
+      <pagenums>https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Women.asp</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Rex</surname><firstname>DK</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Boland</surname><firstname>CR</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Dominitz</surname><firstname>JA et al</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">Colorectal cancer screening: recommendations for physicians and
+        patients from the U.S. Multi-Society Task Force on Colorectal Cancer</citetitle>
+      <citetitle pubwork="journal">Gastroenterology</citetitle>
+      <pubdate>2017</pubdate>
+      <volumenum>153</volumenum>
+      <issuenum>1</issuenum>
+      <pagenums>307-323</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Shaukat</surname><firstname>A</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Mongin</surname><firstname>SJ</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Geisser</surname><firstname>MS et al</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">Long-term mortality after screening for colorectal
+        cancer</citetitle>
+      <citetitle pubwork="journal">N Engl J Med</citetitle>
+      <pubdate>2013</pubdate>
+      <volumenum>369</volumenum>
+      <issuenum>12</issuenum>
+      <pagenums>1106-1114</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="journal">U.S. Department of Veterans Affairs. Colorectal cancer
+        screening/surveillance (CRCS/S): reminder system</citetitle>
+      <pubdate>Jason Dominitz, MD, email communication, November 2, 2017</pubdate>
+      <volumenum>PowerPoint</volumenum>
+      <pagenums>CRCS-S CR F2F 20171018 KGALPIN.pptx</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. Preventive Services Task Force. Final Recommendation
+        Statement: Colorectal Cancer</citetitle>
+      <citetitle pubwork="journal">U.S. Preventive Services Task Force website</citetitle>
+      <pubdate>Reviewed June 2016</pubdate>
+      <pagenums>https://www.uspreventiveservicestaskforce.org/Page/Document/RecommendationStatementFinal/colorectal-cancer-screening2</pagenums>
+    </biblioentry>
+  </bibliography>
+  <appendix xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:id="appendix-a---existing-sample-va-artifacts">
+    <title>Existing Sample VA Artifacts</title>
+    <figure><title>Colorectal Cancer Screening - ECA Rule</title>
+    <screen>691 CRS-INITIAL SCREENING-V050914                            	No. 711
+--------------------------------------------------------------------------------
+ 
+ 
+Print Name:         	Colorectal Ca Screening
+ 
+Class:              	LOCAL
+ 
+Sponsor:            	LEEO
+ 
+Review Date:        	
+ 
+Rescission Date:    	
+ 
+Usage:                  CPRS, REPORTS
+ 
+Related VA-* Reminder: 
+ 
+Reminder Dialog:    	691 CRS-INITIAL SCREENING
+ 
+Priority:           	
+ 
+Description:
+ 
+ 
+ 
+Technical Description:
+ 
+  02/23/12 - Designed to replace the current CRS screening reminider
+ 
+ 
+Baseline Frequency:
+ 
+  	Do In Advance Time Frame:  Do if DUE within 3 months
+              	Sex Specific: 
+             	Ignore on N/A: 
+       Frequency for Age Range:  1 year for ages 50 to 75
+                	Match Text:  Screening for colorectal cancer is
+                             	recommended for patients between the ages 50
+                             	and 75 years old. 
+             	No Match Text:  Screening for colorectal cancer is
+                             	recommended for patients between the ages 50
+                             	and 75 years old. 
+       Frequency for Age Range:  0Y - Not indicated for ages 1 to 49
+                	Match Text:  Routine colorectal cancer screening starts
+                             	at the age of 50-75 yo. 
+             	No Match Text: 
+       Frequency for Age Range:  0Y - Not indicated for ages 76 to 120
+                	Match Text: 
+             	No Match Text: 
+ 
+ 
+Findings:         	
+ 
+  ---- Begin: VA-PROGRESS NOTE (FI(1)=CF(22)) ------------------------------
+              	Finding Type: REMINDER COMPUTED FINDING
+       Use in Resolution Logic: OR
+    Computed Finding Parameter: `6216
+                	Found Text: Patient is a current participant in GI's
+                             	CONFIRM Study
+  ---- End: VA-PROGRESS NOTE -----------------------------------------------
+ 
+  ---- Begin: 691 TR CRS RESOLVING HFs (FI(2)=RT(550)) ---------------------
+                  Finding Type: REMINDER TERM
+           Match Frequency/Age: 12 months for all ages
+       Use in Resolution Logic: OR
+           Beginning Date/Time: T-12M
+          Within Category Rank: 3
+                	Found Text: Patient already scheduled for screening
+                             	procedure
+ 
+                	Mapped Findings: HF.CRS-SCREENING SCHEDULED     	
+             Health Factor Category: COLON CA-SCREENING HF
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: HF.ACUTE ILLNESS               	
+             Health Factor Category: HIV RELATED
+                Beginning Date/Time: T-1M
+ 
+  ---- End: 691 TR CRS RESOLVING HFs ---------------------------------------
+ 
+  ---- Begin: 691 CRS EXCLUSION-HX OF CA (FI(3)=RT(922)) -------------------
+              	Finding Type: REMINDER TERM
+   Use in Patient Cohort Logic: AND NOT
+                	Found Text: Patient has hx of colon ca or total colectomy
+ 
+                    Mapped Findings: TX.ZZVA-COLORECTAL CA          	
+                Beginning Date/Time: T-24M
+ 
+                	Mapped Findings: HF.CRS-HX OF TOTAL COLECTOMY   	
+             Health Factor Category: REMINDER FACTORS
+               Within Category Rank: 0
+ 
+                	Mapped Findings: HF.LIFE EXPECTANCY &lt; 6 MONTHS  	
+             Health Factor Category: REMINDER FACTORS
+                Beginning Date/Time: T-12M
+               Within Category Rank: 0
+ 
+                	Mapped Findings: HF.CRS-NO FURTHER SCREENING NEEDED
+             Health Factor Category: COLON CA-SCREENING HF
+               Within Category Rank: 0
+ 
+                	Mapped Findings: HF.CRS-COMORB OR LIMITED LIFE  	
+                                     EXPECTANCY                        
+             Health Factor Category: CRS-HEALTH FACTORS
+               Within Category Rank: 0
+ 
+  ---- End: 691 CRS EXCLUSION-HX OF CA -------------------------------------
+ 
+  ---- Begin: XYZ 691 CSP 577 CONFIRM - CRS RE-ENABLE (FI(4)=RT(1195)) -----
+              	Finding Type: REMINDER TERM
+ 	Use Status/Cond in Search: YES
+    Computed Finding Parameter: `6217
+                	Found Text: Patient no longer active in GI's CONFIRM Study
+ 
+                	Mapped Findings: CF.VA-PROGRESS NOTE            	
+         Computed Finding Parameter: `6217
+ 
+                	Mapped Findings: CF.VA-PROGRESS NOTE            	
+         Computed Finding Parameter: CSP 577 CONFIRM TRIAL TRACKING NOTE
+ 
+  ---- End: XYZ 691 CSP 577 CONFIRM - CRS RE-ENABLE ------------------------
+ 
+  ---- Begin: 691 CRS COLONOSCOPY PREV DONE (FI(5)=RT(643)) ----------------
+              	Finding Type: REMINDER TERM
+           Match Frequency/Age: 10 years for ages 50 to 75
+                Rank Frequency: 1
+       Use in Resolution Logic: OR
+          Within Category Rank: 0
+                	Found Text: Patient had colonoscopy done within the past
+                             	10 years
+ 
+                	Mapped Findings: TX.VA-MHV COLONOSCOPY          	
+ 
+                	Mapped Findings: HF.CRS-NORMAL COLONOSCOPY      	
+             Health Factor Category: COLON CA-SCREENING HF
+  
+                	Mapped Findings: HF.CRS-COLONOSCOPY PREV DONE   	
+             Health Factor Category: COLON CA-SCREENING HF
+ 
+                	Mapped Findings: HF.CRS-ABNORMAL COLONOSCOPY    	
+             Health Factor Category: CRS-HEALTH FACTORS
+ 
+                	Mapped Findings: HF.CRS-KNOWN FOBT POSITIVE-W/U 	
+                                     COMPLETED                         
+             Health Factor Category: COLON CA-SCREENING HF
+ 
+  ---- End: 691 CRS COLONOSCOPY PREV DONE ----------------------------------
+ 
+  ---- Begin: OCCULT BLOOD, STOOL (FI(6)=LT(145)) --------------------------
+              	Finding Type: LABORATORY TEST
+                Rank Frequency: 5
+           Beginning Date/Time: T-1Y
+   	              Condition: I V["POS"!(V["NEG")
+      Condition Case Sensitive: NO
+  ---- End: OCCULT BLOOD, STOOL --------------------------------------------
+ 
+  ---- Begin: 691 CRS-FAMILY HX OF GI CA (FI(7)=TX(691027)) ----------------
+              	Finding Type: REMINDER TAXONOMY
+           Beginning Date/Time: T-36M
+                	Found Text: Patient has hx of close relative with colon
+                             	ca. 
+  ---- End: 691 CRS-FAMILY HX OF GI CA -------------------------------------
+ 
+  ---- Begin: FIT (FI(8)=LT(10243)) ----------------------------------------
+              	Finding Type: LABORATORY TEST
+       Use in Resolution Logic: OR
+           Beginning Date/Time: T-12M
+  ---- End: FIT ------------------------------------------------------------
+ 
+  ---- Begin: 691 CRS SCREENING DONE (FI(11)=RT(926)) ----------------------
+              	Finding Type: REMINDER TERM
+                Rank Frequency: 3
+       Use in Resolution Logic: OR
+           Beginning Date/Time: T-12M
+                	Found Text: Pt recently had Colorectal Cancer Screening
+                             	done
+ 
+                	Mapped Findings: TX.ZZVA-COLORECTAL CANCER SCREEN  
+ 
+                	Mapped Findings: HF.CRS-FOBT PREV DONE          	
+             Health Factor Category: COLON CA-SCREENING HF
+                Beginning Date/Time: T-12M
+               Within Category Rank: 0
+ 
+  ---- End: 691 CRS SCREENING DONE -----------------------------------------
+ 
+  ---- Begin: 691 CRS GI CONSULT PENDING (FI(12)=RT(691018)) ---------------
+              	Finding Type: REMINDER TERM
+       Use in Resolution Logic: OR
+           Beginning Date/Time: T-2M
+              Ending Date/Time: +2M
+               	Status List: ACTIVE
+                            	COMPLETE
+                            	PARTIAL RESULTS
+                            	PENDING
+                   	         SCHEDULED
+                	Found Text: GI consult submitted. 
+ 
+                	Mapped Findings: OI.SCREENING FLEX SIG PRIMARY  	
+                                     CARE-SACC                         
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.ZZZGI SCREENING             	
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.GI OPT COLONOSCOPY SCR/SURV 0905
+                Beginning Date/Time: T-2M
+ 
+                    Mapped Findings: OI.SCREENING FLEX/SIG-BACC     	
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.PRIMARY CARE SCREENING      	
+                                     FLEX/SIG-BACC                     
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.GI GENERAL OUTPATIENT - WLA 	
+                Beginning Date/Time: T-2M
+ 
+              	  Mapped Findings: OI.GI GENERAL OUTPATIENT       	
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.ZZZGI OTHER PROCEDURES - WLA	
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.GI GENERAL OUTPT-(SACC)     	
+                Beginning Date/Time: T-9M
+                    	Status List: COMPLETE
+                                 	PARTIAL RESULTS
+                                 	PENDING
+                         	        SCHEDULED
+ 
+                	Mapped Findings: OI.GASTROENTEROLOGY-SACC       	
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.GI OUTPT FLEXSIG -GLA 0905  	
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.GI OUTPT ROUTINE -GLA 0905  	
+                Beginning Date/Time: T-2M
+ 
+                	Mapped Findings: OI.GI OPT(SAM) COLONOSCOPY SCR/SURV
+                Beginning Date/Time: T-2M
+                    	Status List: ACTIVE
+                                 	PENDING
+ 
+                	Mapped Findings: OI.GI COLONOSCOPY SURVEILLANCE 	
+ 
+                	Mapped Findings: OI.GI OPT SO CAL CONTRACT      	
+                                     COLONOSCOPY                    	
+ 
+                	Mapped Findings: OI.GI FOBT+ DIAGNOSTIC COLONOSCOPY
+                                 	OUTPT                          	
+ 
+                	Mapped Findings: OI.CSP 577 CONFIRM COLORECTAL  	
+                                 	CANCER SCREENING OUTPT STUDY   	
+                Beginning Date/Time: T-30
+               	Ending Date/Time: T+30
+          Use Status/Cond in Search: YES
+ 
+                	Mapped Findings: OI.CP COLONOSCOPY SCREENING    	
+                                     PROCEDURE                         
+ 
+  ---- End: 691 CRS GI CONSULT PENDING -------------------------------------
+ 
+  ---- Begin: 691 CRS OCCULT BLOOD TEST ORDERS (FI(14)=RT(921)) ------------
+              	Finding Type: REMINDER TERM
+           Match Frequency/Age: 12 months for ages 75 and younger
+                Rank Frequency: 3
+       Use in Resolution Logic: OR
+           Beginning Date/Time: T-1W
+              Ending Date/Time: T+4W
+               	Status List: ACTIVE
+                            	PENDING
+                	Found Text: Pending stool occult blood test pending
+ 
+                	Mapped Findings: OI.FIT              	           
+                    	Status List: ACTIVE
+                                 	COMPLETE
+                                 	PENDING
+ 
+                	Mapped Findings: OI.FIT SCREEN                  	
+                    	Status List: ACTIVE
+                                 	PENDING
+ 
+                	Mapped Findings: OI.OCCULT BLOOD, STOOL         	
+                                     PANEL-Cancer Screen               
+                    	Status List: ACTIVE
+                                 	PENDING
+ 
+                	Mapped Findings: HF.CRS-FOBT CARDS GIVEN        	
+             Health Factor Category: COLON CA-SCREENING HF
+                Beginning Date/Time: T-7
+               Within Category Rank: 0
+ 
+                	Mapped Findings: HF.CRS-FOBT CARDS RECEIVED FROM	
+                                     NURSE/MAIL                        
+             Health Factor Category: REMINDER FACTORS
+                Beginning Date/Time: T-7
+               Within Category Rank: 0
+ 
+                	Mapped Findings: HF.CRS-FOBT ORDERED            	
+             Health Factor Category: REMINDER FACTORS
+                Beginning Date/Time: T-7
+               Within Category Rank: 0
+ 
+  ---- End: 691 CRS OCCULT BLOOD TEST ORDERS -------------------------------
+ 
+  ---- Begin: OCCULT BLOOD, STOOL # 2 (FI(24)=LT(9351)) --------------------
+              	Finding Type: LABORATORY TEST
+                Rank Frequency: 5
+           Beginning Date/Time: T-12M
+                 	Condition: I V["POS"!(V["NEG")
+      Condition Case Sensitive: NO
+  ---- End: OCCULT BLOOD, STOOL # 2 ----------------------------------------
+ 
+  ---- Begin: OCCULT BLOOD, STOOL # 3 (FI(25)=LT(9352)) --------------------
+              	Finding Type: LABORATORY TEST
+                Rank Frequency: 5
+           Beginning Date/Time: T-12M
+                 	Condition: I V["POS"!(V["NEG")
+      Condition Case Sensitive: NO
+  ---- End: OCCULT BLOOD, STOOL # 3 ----------------------------------------
+ 
+  ---- Begin: 691 CRS DECLINED (FI(29)=RT(535)) ----------------------------
+              	Finding Type: REMINDER TERM
+       Use in Resolution Logic: OR
+           Beginning Date/Time: T-6M
+                	Found Text: Patient previously declined colorectal ca
+                             	screening
+ 
+                	Mapped Findings: HF.CRS-SCREENING DECLINED      	
+             Health Factor Category: COLON CA-SCREENING HF
+  
+  ---- End: 691 CRS DECLINED -----------------------------------------------
+ 
+  ---- Begin: 691 TR CRS FLEXSIG/SIGMOID/BARIUM/V.COLO PREV DONE
+  (FI(30)=RT(517)) ---------------------------------------------------------
+              	Finding Type: REMINDER TERM
+           Match Frequency/Age: 5 years for ages 50 to 75
+                Rank Frequency: 2
+       Use in Resolution Logic: OR
+           Beginning Date/Time: T-5Y
+ 
+                	Mapped Findings: HF.CRS-FLEXSIG PREV DONE  	     
+             Health Factor Category: COLON CA-SCREENING HF
+                Beginning Date/Time: T-5Y
+               Within Category Rank: 0
+ 
+                	Mapped Findings: HF.CRS-NORMAL FLEXSIG          	
+             Health Factor Category: COLON CA-SCREENING HF
+                Beginning Date/Time: T-5Y
+               Within Category Rank: 0
+ 
+                	Mapped Findings: TX.691 CRS SIGMOIDOSCOPY CODES 	
+                Beginning Date/Time: T-5Y
+ 
+                	Mapped Findings: HF.CRS-VIRTUAL COLONOSCOPY PREV	
+                                 	DONE                           	
+             Health Factor Category: COLON CA-SCREENING HF
+                Beginning Date/Time: T-5Y
+   	        Within Category Rank: 0
+ 
+                	Mapped Findings: HF.CRS-BARIUM ENEMA PREV DONE  	
+             Health Factor Category: COLON CA-SCREENING HF
+                Beginning Date/Time: T-5Y
+               Within Category Rank: 0
+ 
+  ---- End: 691 TR CRS FLEXSIG/SIGMOID/BARIUM/V.COLO PREV DONE -------------
+ 
+  ---- Begin: 691 CRS NEEDS SURV COLONOSCOPY (FI(34)=RT(636)) --------------
+              	Finding Type: REMINDER TERM
+       Use in Resolution Logic: OR
+           Beginning Date/Time: T-10Y
+                	Found Text: Colorectal Screening reminder is turned
+                             	off.Pt's 'surveillance' reminder has been
+                             	turned on. 
+ 
+                	Mapped Findings: HF.CRS-NEEDS COLONOSCOPY IN 3YRS  
+             Health Factor Category: COLON CA-SCREENING HF
+ 
+                	Mapped Findings: HF.CRS-NEEDS COLONOSCOPY IN 1YR	
+             Health Factor Category: COLON CA-SCREENING HF
+ 
+                	Mapped Findings: HF.CRS-NEEDS COLONOSCOPY IN 2YRS  
+             Health Factor Category: COLON CA-SCREENING HF
+ 
+                	Mapped Findings: HF.CRS-NEEDS COLONOSCOPY IN 5YRS  
+             Health Factor Category: COLON CA-SCREENING HF
+ 
+  ---- End: 691 CRS NEEDS SURV COLONOSCOPY ---------------------------------
+ 
+ Function Findings:
+ 
+  ---- Begin: FF(1)---------------------------------------------------------
+               Function String: MRD(29)>MRD(5,12,34,14,11,30,2)
+      Expanded Function String:
+       MRD(691 CRS DECLINED)>MRD(691 CRS COLONOSCOPY PREV DONE,
+       691 CRS GI CONSULT PENDING,691 CRS NEEDS SURV COLONOSCOPY,
+       691 CRS OCCULT BLOOD TEST ORDERS,691 CRS SCREENING DONE,
+       691 TR CRS FLEXSIG/SIGMOID/BARIUM/V.COLO PREV DONE,
+       691 TR CRS RESOLVING HFs)
+           Match Frequency/Age: 6 months for all ages
+                Rank Frequency: 5
+                	Found Text: Patient previously declined, freq changed to
+                                 q6 months
+  ---- End: FF(1) ----------------------------------------------------------
+ 
+ 
+  ---- Begin: FF(2)---------------------------------------------------------
+               Function String: MRD(1)>MRD(4)
+      Expanded Function String:
+       MRD(VA-PROGRESS NOTE)>MRD(XYZ 691 CSP 577 CONFIRM - CRS RE-ENABLE)
+           Match Frequency/Age: 10 years for all ages
+       Use in Resolution Logic: OR
+  ---- End: FF(2) ----------------------------------------------------------
+ 
+                             	
+ 
+Default PATIENT COHORT LOGIC to see if the Reminder applies to a patient:
+ (SEX)&amp;(AGE)&amp;'FI(3)
+ 
+Expanded Patient Cohort Logic:
+ (SEX)&amp;(AGE)&amp;'FI(691 CRS EXCLUSION-HX OF CA)
+ 
+Customized RESOLUTION LOGIC defines findings that resolve the Reminder:
+ FI(8)!FI(5)!FI(14)!FI(30)!FI(2)!(FI(1)&amp;FF(2))
+ 
+Expanded Resolution Logic:
+ FI(FIT)!FI(691 CRS COLONOSCOPY PREV DONE)!
+ FI(691 CRS OCCULT BLOOD TEST ORDERS)!
+ FI(691 TR CRS FLEXSIG/SIGMOID/BARIUM/V.COLO PREV DONE)!
+ FI(691 TR CRS RESOLVING HFs)!(FI(VA-PROGRESS NOTE)&amp;FF(2))
+    </screen></figure>
+    <para> Figures 2-4 for the GI Colorectal Cancer Risk – Personal history of colon cancer or polyp
+      – Order Sets are from the Portland VAMC </para>
+
+    <figure>
+      <title>GI Colonoscopy Request Menu</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%201.png" width="6.5in" depth="7.00833in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reason for Request: GI Clinic – Colonoscopy Outpt</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%202.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Order a Consult</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%203.png" width="6.39583in" depth="4.60417in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para> Figures 5-7 for the GI Colorectal Cancer Risk – Family history of colon cancer, colon
+      cancer syndrome, or advanced adenoma – Order Sets are from the Portland VAMC </para>
+    <para> Figure 5: </para>
+    <figure>
+      <title>Colonoscopy Screening for Family Hx</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%204.png" width="6.5in" depth="7.00833in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para> Figure 6: </para>
+    <figure>
+      <title>GI Clinic - Colonoscopy Outpt</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%205.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+
+    <figure>
+      <title>Order a Consult</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%206.png" width="6.39583in" depth="4.60417in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para> Figures 8-9 for the GI Colorectal Cancer Risk – Inflammatory bowel disease – Order Sets
+      are from the Portland VAMC</para>
+
+    <figure>
+      <title>GI Clinic - Colonoscopy Outpt</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%207.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para> Figure 9: </para>
+    <figure>
+      <title>Order a Consult</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%208.png" width="6.39583in" depth="4.60417in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para> Figures 10-11 for the GI Colorectal Cancer Risk – Iron deficiency – Order Sets are from
+      the Portland VAMC </para>
+
+    <figure>
+      <title>Reason for Request: GI Clinic - Colonoscopy Outpt</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%209.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Order a Consult</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2010.png" width="6.39583in" depth="4.60417in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para> Figures 12-13 for the GI Colorectal Cancer Risk – Rectal bleeding, or positive screening
+      test– Order Sets are from the Portland VAMC </para>
+
+    <figure>
+      <title>GI Clinic - Colonoscopy Outpt</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2011.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Order a Consult</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2012.png" width="6.39583in" depth="4.60417in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para> Figures 14-16 for the GI Colorectal Cancer Risk – Other Issues– Order Sets are from the
+      Portland VAMC </para>
+
+    <figure>
+      <title>Reason for Request: GI Clinic - Colonoscopy Output</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2013.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reason for Request GI Clinic - Colonoscopy Output</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2014.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Order a Consult</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2015.png" width="6.39583in" depth="4.60417in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para> Figures 17-21 for the GI Colorectal Cancer Risk – Average risk screening– Order Sets are
+      from the Portland VAMC</para>
+
+    <figure>
+      <title>GI Colonoscopy Request Menu</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2016.png" width="6.5in" depth="7.00833in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Template CHOICE-FIRST screening colonoscopy</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2017.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>CHOICE-FIRST screening colonoscopy</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2018.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>CHOICE-FIRST screening colonoscopy</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2019.png" width="6.5in" depth="5.84931in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Order a Consult</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2020.png" width="6.39583in" depth="4.60417in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Figure 22 is for the GI Colorectal Cancer Risk – Fecal Immunochemical Test (FIT)– Order
+      Sets are from the Portland VAMC </para>
+    <figure>
+      <title>Order a Lab Test</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/Fig%2021.png" width="6.01042in" depth="4.01042in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>TEST METHOD IS IA **USE OC-Auto Personal Use Kit for FIT FOBT** No special drug or dietary
+      restriction. This test is intended only for the detection of hemoglobin in feces. Patients
+      with the following conditions should not be considered for testing, as these conditions may
+      interfere with test results: Bleeding hemorrhoids Menstrual bleeding Constipation bleeding
+      Urinary bleeding Once the bleeding has ceased, collection may occur and testing can be
+      performed. Testing will be routinely performed Monday through Friday 8am to 3:30 pm. If fecal
+      occult blood testing is needed outside of these hours, submit guaiac occult blood card or send
+      fresh </para>
+  </appendix>
+  <appendix xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="acronymsabbreviations">
+    <title>Acronyms/Abbreviations</title>
+    <informaltable>
+      <tgroup cols="2">
+        <colspec align="left"/>
+        <colspec align="left"/>
+        <thead>
+          <row>
+            <entry> CCWP </entry>
+            <entry> Clinical Content White Paper </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry> CCWP </entry>
+            <entry> Clinical Content White Paper </entry>
+          </row>
+          <row>
+            <entry> CDS </entry>
+            <entry> Clinical Decision Support </entry>
+          </row>
+          <row>
+            <entry> CT </entry>
+            <entry> Computed Tomography </entry>
+          </row>
+          <row>
+            <entry> DNA </entry>
+            <entry> Deoxyribonucleic Acid </entry>
+          </row>
+          <row>
+            <entry> ECA </entry>
+            <entry> Event Condition Action </entry>
+          </row>
+          <row>
+            <entry> FIT </entry>
+            <entry> Fecal Immunochemical Test </entry>
+          </row>
+          <row>
+            <entry> GI </entry>
+            <entry> Gastroenterology </entry>
+          </row>
+          <row>
+            <entry> HL7 </entry>
+            <entry> Health Level 7 </entry>
+          </row>
+          <row>
+            <entry> IBD </entry>
+            <entry> Inflammatory Bowel Disease </entry>
+          </row>
+          <row>
+            <entry> KBS </entry>
+            <entry> Knowledge Based Systems </entry>
+          </row>
+          <row>
+            <entry> KNART </entry>
+            <entry> Knowledge Artifact </entry>
+          </row>
+          <row>
+            <entry> OIIG </entry>
+            <entry> Office of Informatics and Information Governance </entry>
+          </row>
+          <row>
+            <entry> PCP </entry>
+            <entry> Primary Care Provider </entry>
+          </row>
+          <row>
+            <entry> SME </entry>
+            <entry> Subject Matter Expert </entry>
+          </row>
+          <row>
+            <entry> TO </entry>
+            <entry> Task Order </entry>
+          </row>
+          <row>
+            <entry> VA </entry>
+            <entry> Department of Veterans Affairs </entry>
+          </row>
+          <row>
+            <entry> VAMC </entry>
+            <entry> VA Medical Center </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </appendix>
+</book>
