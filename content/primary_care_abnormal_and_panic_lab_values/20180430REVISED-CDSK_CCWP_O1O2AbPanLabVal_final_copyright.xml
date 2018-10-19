@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Primary Care: Abnormal and Panic Laboratory Value Alerts Clinical Content White
+            Paper</subtitle>
+        <copyright>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname><surname>Department of Veterans Affairs (VA)</surname></personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center"
+                                fileref="../../../../../Resources/VASealColor.jpg"
+                                contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: Primary Care: Abnormal and Panic Laboratory
+                        Value Alerts</title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <entry valign="middle" align="left"> KNART Name</entry>
+                                <entry valign="middle" align="left">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Abnormal Laboratory Value Alert - Event Condition Action
+                                    (ECA) Rule </entry>
+                                <entry>CLIN0007AA</entry>
+                            </row>
+                            <row>
+                                <entry>Panic Laboratory Value Alert - ECA Rule </entry>
+                                <entry>CLIN0007AA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>April 2018</pubdate>
+        <volumenum>Version 1.2</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.2</revnumber>
+                <date>4/30/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>revised Final DocBook per PO comments</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.1</revnumber>
+                <date>2/22/2017</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>Final DocBook transformation with revised ECA logic diagram</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>12/5/2017</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>DocBook transformation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.95</revnumber>
+                <date>12/4/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Updated per Program Office comments</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.9</revnumber>
+                <date>11/30/2017</date>
+                <authorinitials>Program Office</authorinitials>
+                <revremark>PO Approval</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.9</revnumber>
+                <date>11/28/2017</date>
+                <authorinitials>Program Office</authorinitials>
+                <revremark>Comments provided</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.9</revnumber>
+                <date>11/8/2017</date>
+                <authorinitials/>
+                <revremark>Updated document submitted to Program Office</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>11/3/2017</date>
+                <authorinitials>Program Office</authorinitials>
+                <revremark>Comments provided</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>10/31/2017</date>
+                <authorinitials/>
+                <revremark>Initial Submission to Program Office</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>10/27/2017</date>
+                <authorinitials>Jennifer Reed, Wendelyn Bradley</authorinitials>
+                <revremark>Updated for initial formal revision submission</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>10/09/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Update with Dr. Icardi review comments</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>10/02/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Review and edit outline</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>09/27/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template revision per PO recommendation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>09/26/2017</date>
+                <authorinitials>SME Team</authorinitials>
+                <revremark>SME Approval</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>09/15/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Clinical Notes added per VHA Directive 1088</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>09/11/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Draft Final Review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>09/07/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Review and edit for release to SME team review.</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>09/07/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Draft populated with reviewed Motive evidence</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <informaltable xml:id="va.SME.List" frame="all">
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Angela Denietolis, MD</entry>
+                        <entry>Primary Care Physician, James A. Haley Veterans Hospital, Tampa VAMC,
+                            Tampa, FL 33612</entry>
+                        <entry>SME, Primary</entry>
+                    </row>
+                    <row>
+                        <entry>Pat Dumas, RN</entry>
+                        <entry>Clinical Program Director, VACO, 810 Vermont Ave NW, Washington, DL
+                            20420</entry>
+                        <entry>SME, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry>Manish Merchant, MD</entry>
+                        <entry>Health Informatician, Albany VAMC, 113 Holland Ave., Albany, NY
+                            12208</entry>
+                        <entry>SME</entry>
+                    </row>
+                    <row>
+                        <entry>Timothy Dresselhaus, MD</entry>
+                        <entry>Chief, Primary Care Service, San Diego VAMC - MEDS, 3350 La Jolla
+                            Village Drive, San Diego, CA 92161</entry>
+                        <entry>SME</entry>
+                    </row>
+                    <row>
+                        <entry>Michael Icardi, MD</entry>
+                        <entry>Pathologist, Iowa City VAMC, 601 Highway 6 West, Iowa City, IA
+                            52246</entry>
+                        <entry>Laboratory Expert</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+
+    </preface>
+    <preface>
+        <title>Introduction</title>
+        <para>The VA is committed to improving the ability of clinicians to provide care for patients
+            while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the Health Level 7 (<acronym><glossterm>HL7</glossterm></acronym>)
+            Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+            Artifacts, referred to as (<acronym><glossterm>KNARTs</glossterm></acronym>), enable the
+            structuring and encoding of clinical knowledge so the knowledge can be integrated with
+            electronic health records to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context and intent
+            of <acronym><glossterm>KNART</glossterm></acronym> use cases in sufficient detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team with the
+            clinical source material to construct the corresponding knowledge artifacts using the HL7
+            Knowledge Artifact Specification. This paper has been developed using material from a
+            variety of sources: VA artifacts, clinical practice guidelines, evidence in the body of
+            medical literature, and clinical expertise. After reviewing these sources, the material has
+            been synthesized and harmonized under the guidance of VA subject matter experts to reflect
+            clinical intent for this use case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is beyond
+            the scope of this work.</para>
+    </preface>
+    <preface>
+        <title>Conventions Used</title>
+        <para>Conventions used within the knowledge artifact descriptions include:</para>
+        <itemizedlist mark="none" spacing="compact">
+            <listitem>
+                <para>&lt;obtain&gt;: Indicates a prompt to obtain the
+                    information listed <itemizedlist mark="bullet"
+                        spacing="compact">
+                        <listitem>
+                            <para>If possible, the requested information
+                                should be obtained from the underlying system(s).
+                                Otherwise, prompting the user for information may
+                                be required</para>
+                        </listitem>
+                        <listitem>
+                            <para>Default Values: Unless otherwise noted,
+                                &lt;obtain&gt; indicates to obtain the most recent
+                                observation. It is recognized that this default
+                                time-frame value may be altered by future
+                                implementations</para>
+                        </listitem>
+                    </itemizedlist></para> </listitem>
+            
+            <listitem>
+                <para>[...]: Square brackets enclose explanatory text that indicates some
+                    action on the part of the clinical user, or general guidance to the clinical or technical
+                    teams. Examples include, but are not limited to:</para>
+                
+                <itemizedlist mark="none" spacing="normal">
+                    <listitem>
+                        <para>[Begin ...], [End
+                            ...]: Indicates the start and end of specific areas to
+                            clearly delineate them for technical purposes.</para>
+                        
+                        <para>[Activate ...]: Initiates another
+                            knowledge artifact or knowledge artifact section.</para>
+                        
+                        <para>[Section Prompt: ...]: If this section is
+                            applicable, then the following prompt should be displayed to the
+                            user.</para>
+                        
+                        <para>[Section Behavior: ...]:
+                            Indicates technical constraints or considerations
+                            for the selection of items outlined in the section
+                            prompt.</para>
+                        
+                        <para>[Attach: ...]: Indicates that the
+                            specified item (e.g. procedure or result
+                            interpretation) should be attached to the
+                            documentation template if available.</para>
+                        
+                        <para>[Link: ...]: Indicates that
+                            rather than attaching an item (e.g. image), a link
+                            should be included in the documentation
+                            template.</para>
+                        
+                        <para>[Clinical Comment: ...]:
+                            Indicates technical considerations or notes to be
+                            utilized for KNART authoring and at time of
+                            implementation planning.</para>
+                        
+                        <para>[Technical Note: ...]: Indicates
+                            technical considerations or notes to be utilized
+                            for KNART authoring and at time of implementation
+                            planning.</para>
+                        
+                        <para>[If ...]: Indicates the beginning of a
+                            conditional section.</para>
+                        
+                        <para>[Else, ...]: Indicates the beginning of
+                            the alternative branch of a conditional section.</para>
+                        
+                        <para>[End if ...]: Indicates the end of a
+                            conditional section.</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            
+            <listitem>
+                <para>☐ [Check box]: Indicates items that should be
+                    selected based upon the section selection behavior.</para>
+            </listitem>
+        </itemizedlist>
+    </preface>
+    <chapter>
+        <title>Primary Care: Abnormal and Panic Laboratory Value Alerts</title>
+        <section xml:id="definition">
+            <title>Clinical Context</title>
+            <para>[Begin Clinical Context]</para>
+            <para>Physician workflow could be facilitated by the use of clinical decision support to
+                follow up on abnormal and panic-level test results. The consequences of non-timely
+                follow-up include: delays in treatment, missed diagnoses, and preventable morbidity
+                and mortality “(Callen 2012); VA/VHA 2015 VHA Directive 1088).” Implementing a
+                systematic approach to this problem across the VA has the potential to improve
+                patient care and patient safety, while improving resource utilization by enabling
+                clinicians to intervene at an earlier stage of disease.</para>
+            <para>[Clinical Comments:</para>
+            <para>According to the 2015 VHA Directive 1088, three types of abnormal test results
+                require action or therapeutic intervention; these are defined as follows:<itemizedlist>
+                    <listitem>
+                        <para>Critical Life Threatening: Abnormal test results that are deemed
+                            "Critical Life Threatening" are defined as "Any diagnostic finding which
+                            must be acted upon by the ordering provider or their designee
+                            immediately or within a short window of time and could result in severe
+                            morbidity or mortality if left untreated. (Example: critically elevated
+                            Potassium)."</para>
+                    </listitem>
+                    <listitem>
+                        <para>Urgent Non Life Threatening: Abnormal test results that are deemed
+                            "Urgent Non Life Threatening" are defined as "Any diagnostic finding
+                            which must be acted upon by the ordering provider or their designee
+                            within a relatively urgent timeframe (as clinically indicated to ensure
+                            timeline, appropriate and effective therapeutic action). An example of
+                            urgent matters is a Chest x-ray with newly discovered nodule, which is
+                            categorized as "Critical Not Life Threatening" with an Equivalent
+                            Radiology code such as 1001-Significant abnormality - attention needed
+                            or 1003-Possible malignancy."</para>
+                    </listitem>
+                    <listitem>
+                        <para>Clinically Significant: Abnormal test results that are deemed
+                            "Clinically Significant" are defined as "A diagnostic finding that
+                            requires action by the ordering provider, or their designee, but not
+                            necessarily in an immediate or urgent time-frame. (Example: High
+                            Cholesterol)."]</para>
+                    </listitem>
+                </itemizedlist></para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry>Includes all clinical providers </entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry>All Patients</entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry>Routine unless otherwise stated</entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry>All</entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry>All</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>[End Clinical Context]</para>
+        </section>
+
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts]</para>
+            <para>This section describes the CDS knowledge artifacts that are intended for users
+                caring for adult patients who present to a Primary Care Clinic.</para>
+            <para>One type of knowledge artifact will define these clinical use cases and is
+                described in detailed in the following sections. The artifacts consist of two Event
+                Condition Action (ECA) Rules. The Abnormal Laboratory Value and the Panic Laboratory
+                Value Alert ECA Rules are:</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>(1) Primary Care: Abnormal Laboratory Value Alert - ECA Rule KNART:<itemizedlist>
+                                <listitem>
+                                    <para>Rule logic describes the behavior of abnormal laboratory
+                                        values and communications to the care team for
+                                        follow-up.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Action: Communicate abnormal lab result to the clinical
+                                        provider for the abnormal lab value KNART.</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>(2) Primary Care: Panic Laboratory Value Alert - ECA Rule KNART:<itemizedlist>
+                                <listitem>
+                                    <para>Rule logic describes the behavior of critical laboratory
+                                        values and communication to the care team for
+                                        follow-up.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Action: Communicate panic lab value result to the clinical
+                                        provider for the panic lab value KNART.</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Knowledge Artifacts]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Abnormal Laboratory Value Alert - Event Condition Action (ECA) Rule </title>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[End Knowledge Narrative]</para>
+
+        </section>
+        <section>
+            <title>Abnormal Laboratory Value Alert - Event Condition Action (ECA) Rule</title>
+            <para>[Begin Abnormal Laboratory Value Alert - ECA Rule.]</para>
+            <para>[Clinical Comments: Current rules for urgency of response required for each
+                laboratory test result are determined by local hospital policy in accordance with
+                VHA Directive 1088 – see definitions of urgency in <xref linkend="definition"/> of
+                this white paper.]</para>
+            <bridgehead renderas="sect4">Event</bridgehead>
+            <para>[Begin Event.]</para>
+            <para>Any receipt of a laboratory result by the laboratory management system.</para>
+            <para>[End Event.]</para>
+            <bridgehead renderas="sect4">Conditions</bridgehead>
+            <para>[Begin Conditions.]</para>
+            <para>The received laboratory result meets the following criterion:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Value is defined as outside the defined normal reference range for test as
+                        established by local hospital policy as either “Urgent Non Life Threatening”
+                        or “Clinically Significant”.</para>
+                </listitem>
+            </itemizedlist>
+            <para>Received laboratory tests results meeting the following criterion are
+                excluded:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Value is defined as outside the defined normal reference range for test as
+                        established by local hospital policy as “Critical Life Threatening”.</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Conditions.]</para>
+           <bridgehead renderas="sect4">Actions</bridgehead>
+            <para>[Begin Actions.]</para>
+            <para>
+                <orderedlist>
+                    <listitem>
+                        <para>Notify the clinical provider of the noncritical abnormal laboratory
+                            test result through the laboratory management system. </para>
+                        <para>[Technical Note: In most cases, the laboratory management system is
+                            used synonymously with the Laboratory Information System (i.e.
+                            computer).]</para>
+                        <para>[Technical Note: Policy and procedure by facility for Abnormal
+                            Laboratory Values. Reference Appendix.]</para>
+                    </listitem>
+                </orderedlist>
+            </para>
+            <para>[End Actions.]</para>
+            <para>[End Abnormal Laboratory Value Alert - ECA Rule.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Panic Laboratory Value Alert - Event Condition Action (ECA) Rule</title>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[End Knowledge Narrative]</para>
+        </section>
+        <section>
+            <title>Panic Laboratory Value Alert - Event Condition Action (ECA) Rule</title>
+            <para>[Begin Panic Laboratory Value Alert - ECA Rule.]</para>
+            <bridgehead renderas="sect4">Event</bridgehead>
+            <para>[Begin Event.]</para>
+            
+            <para>Any receipt of a laboratory test result by the laboratory management
+                system.</para>
+            <para>[End Event.]</para>
+            <bridgehead renderas="sect4">Conditions</bridgehead>
+            <para>[Begin Conditions.]</para>
+            
+            <para>The received laboratory result meets both of the following criteria:</para> <itemizedlist>
+                    <listitem>
+                        <para>Value outside of defined normal reference range for the test.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Value beyond the critical threshold (i.e., having critical/panic lab
+                            value).</para>
+                    </listitem>
+                </itemizedlist>
+            <para>[End Conditions.]</para>
+            <bridgehead renderas="sect4">Actions</bridgehead>
+            <para>[Begin Actions.]</para>
+            
+
+                <orderedlist>
+                    <listitem>
+                        <para>Notify the clinical provider of the critical threshold laboratory test
+                            result through the laboratory management system.</para>
+                    </listitem>
+                </orderedlist>
+                        <para>[Clinical Comment: The laboratory is required to communicate critical/panic values
+                            via a telephone call. Per VHA Directive 1088: Diagnostic provider is responsible for
+                            documenting in the medical record the time and means of communication of critical
+                            life-threatening results and the name of the ordering provider or designee informed
+                            of these results.”]</para>
+                        <para>[Technical Note: In most cases, the laboratory management system is used
+                            synonymously with the Laboratory Information System (i.e. computer).]</para>
+                        <para>[Technical Note: Policy and procedure by facility for Critical/Panic
+                Laboratory Values. <emphasis role="italic"><link
+                        xlink:href="https://www1.va.gov/vhapublications/ViewPublication.asp?pub_ID=3148"
+                        >VHA Directive 1088</link></emphasis>.]</para>
+            <para>[End Actions.]</para>
+
+
+            <para>[End Panic Laboratory Value Alert - ECA Rule.]</para>
+        </section>
+    </chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <abbrev>Callen, 2012</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Callen</surname><firstname>JL</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Westbrook</surname><firstname>JI</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Georgiou</surname><firstname>A</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Li</surname><firstname>J</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Failure to follow-up test results for ambulatory patients:
+                a systematic review</citetitle>
+            <citetitle pubwork="journal">J Gen Intern Med</citetitle>
+            <pubdate>2012</pubdate>
+            <volumenum>27</volumenum>
+            <issuenum>10</issuenum>
+            <pagenums>1334-1348</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Hickner, 2005</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Hickner</surname><firstname>JM</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Fernald</surname><firstname>DH</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Harris</surname><firstname>DM</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Poon</surname><firstname>EG</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Elder</surname><firstname>NC</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Mold</surname><firstname>JW</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Issues and initiatives in the testing process in primary
+                care physician offices</citetitle>
+            <citetitle pubwork="journal">Jt Comm J Qual Patient Saf</citetitle>
+            <pubdate>2005</pubdate>
+            <volumenum>31</volumenum>
+            <issuenum>2</issuenum>
+            <pagenums>81-89</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. Department of Veterans Affairs; Veterans Health Administration,
+                    Communicating Test Results to Providers and Patients</orgname>
+            </author>
+            <citetitle pubwork="webpage">VHA Directive 1088</citetitle>
+            <pubdate>October 7, 2015</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://www1.va.gov/vhapublications/ViewPublication.asp?pub_ID=3148"
+                /></bibliomisc>
+            <pubdate>Accessed October 16, 2017</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. Department of Veterans Affairs; Veterans Health
+                    Administration</orgname>
+            </author>
+            <citetitle pubwork="webpage">VHA Handbook 1106.01: Pathology and Laboratory Medicine
+                Service (P&amp;LMS) procedures</citetitle>
+            <pubdate> January 29, 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3169"
+                /></bibliomisc>
+            <pubdate>Accessed August 29, 2017</pubdate>
+        </biblioentry>
+    </bibliography>
+    <appendix>
+        <title>Existing Sample VA Artifacts</title>
+        <para>See FAQs on the Communication of Test Results Toolkit SharePoint Site. NOTE: This is
+            an internal VA Web site and is not available to the public.</para>
+        <para><link
+                xlink:href="http://vaww.vha.vaco.portal.va.gov/sites/DUSHOM/10NC/10NC3/CTR/default.aspx."
+            /></para>
+        <para>The following site is available to the public:</para>
+        <para><link xlink:href="https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3148."
+            /></para>
+    </appendix>
+    <appendix>
+        <title>Basic Laboratory Panel Definition</title>
+        <itemizedlist>
+            <listitem>
+                <para>Blood Urea Nitrogen</para>
+            </listitem>
+            <listitem>
+                <para>Calcium</para>
+            </listitem>
+            <listitem>
+                <para>Chloride</para>
+            </listitem>
+            <listitem>
+                <para>CO2 (Carbon Dioxide, Bicarbonate)</para>
+            </listitem>
+            <listitem>
+                <para>Creatinine</para>
+            </listitem>
+            <listitem>
+                <para>Glucose</para>
+            </listitem>
+            <listitem>
+                <para>Potassium</para>
+            </listitem>
+            <listitem>
+                <para>Sodium</para>
+            </listitem>
+        </itemizedlist>
+    </appendix>
+    <appendix>
+        <title>Logic Diagrams</title>
+        <figure>
+            <title>Abnormal and Panic Laboratory Value Alerts Event Condition Action Rule</title>
+            
+            <mediaobject>
+                <alt>Abnormal and Panic Laboratory Value Alerts Event Condition Action Rule</alt>                
+                <imageobject>
+                    <imagedata align="center" contentdepth="100%"
+                        fileref="ECA%20Rule%20diagrams/ECA_ABNORMAL%20AND%20PANIC%20LABORATORY%20VALUE%20ALERT.png"
+                        scalefit="1" width="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+    <appendix>
+        <title>Acronyms</title>
+        <informaltable>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Acronym</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>CDS</entry>
+                        <entry>Clinical Decision Support</entry>
+                    </row>
+                    <row>
+                        <entry>CO2</entry>
+                        <entry>Carbon Dioxide</entry>
+                    </row>
+                    <row>
+                        <entry>ECA</entry>
+                        <entry>Event Condition Action</entry>
+                    </row>
+                    <row>
+                        <entry>HL7</entry>
+                        <entry>Health Level 7</entry>
+                    </row>
+                    <row>
+                        <entry>OIIG</entry>
+                        <entry>Office of Informatics and Information Governance</entry>
+                    </row>
+                    <row>
+                        <entry>KBS</entry>
+                        <entry>Knowledge Based Systems</entry>
+                    </row>
+                    <row>
+                        <entry>KNART</entry>
+                        <entry>Knowledge Artifact</entry>
+                    </row>
+                    <row>
+                        <entry>SME</entry>
+                        <entry>Subject Matter Expert</entry>
+                    </row>
+                    <row>
+                        <entry>TO</entry>
+                        <entry>Task Order</entry>
+                    </row>
+                    <row>
+                        <entry>VA</entry>
+                        <entry>Department of Veteran Affairs</entry>
+                    </row>
+                    <row>
+                        <entry>VAMC</entry>
+                        <entry>VA Medical Center</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </appendix>
+</book>
