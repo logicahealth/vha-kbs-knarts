@@ -1,0 +1,3483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.1"><info xmlns:d="http://docbook.org/ns/docbook">
+    <title xmlns:ns="http://docbook.org/ns/docbook">Clinical Decision Support (CDS) Content and
+      Health Level 7 (HL7)-Compliant Knowledge Artifacts (KNARTs)</title>
+    <subtitle xmlns:ns="http://docbook.org/ns/docbook">Mental Health: Opioids and Chronic Noncancer
+      Pain Clinical Content White Paper </subtitle>
+    <copyright xmlns:xlink="http://www.w3.org/1999/xlink">
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright xmlns:xlink="http://www.w3.org/1999/xlink">
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+    <authorgroup xmlns:ns="http://docbook.org/ns/docbook">
+      <author>
+        <personname>Department of Veterans Affairs (VA)</personname>
+      </author>
+      <author>
+        <orgname><inlinemediaobject>
+            <ns:alt>VA Seal</ns:alt>
+            <imageobject>
+              <imagedata fileref="images/VASealColor.jpg"/>
+            </imageobject>
+          </inlinemediaobject></orgname>
+      </author>
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+      <author>
+        <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+      </author>
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+    <abstract xmlns:ns="http://docbook.org/ns/docbook">
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+      </info>
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Relevant KNART Information: Mental Health: Opioids and Chronic Noncancer Pain
+            KNARTs</title>
+          <tgroup align="left" cols="2">
+            <colspec colnum="1" colname="c1" colwidth="297pt"/>
+            <colspec colnum="2" colname="c2" colwidth="91.13pt"/>
+            <thead>
+              <row valign="bottom">
+                <entry valign="middle">Mental Health KNART</entry>
+                <entry valign="middle">Associated CLIN</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Opioids and Chronic Noncancer Pain OTRR/STORM Query – Documentation
+                  Template</entry>
+                <entry>CLIN0009BA</entry>
+              </row>
+              <row>
+                <entry>Chronic Noncancer Pain – Documentation Template</entry>
+                <entry>CLIN0009DA</entry>
+              </row>
+              <row>
+                <entry>Chronic Noncancer Pain – Order Set</entry>
+                <entry>CLIN0008BA</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+    <pubdate xmlns:ns="http://docbook.org/ns/docbook">June 2018</pubdate>
+    <volumenum xmlns:ns="http://docbook.org/ns/docbook">Version 1.0</volumenum>
+  </info><preface version="5.1"><info xmlns:d="http://docbook.org/ns/docbook">
+        <title xmlns:xlink="http://www.w3.org/1999/xlink">VA Subject Matter Expert (SME) Panel</title>
+    </info>
+    
+    <para xmlns:xlink="http://www.w3.org/1999/xlink">      <table frame="all">
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                <colspec colname="c1" colnum="1" colwidth="1*"/>
+                <colspec colname="c2" colnum="2" colwidth="2.29*"/>
+                <colspec colname="c3" colnum="3" colwidth="1.71*"/>
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+            <row>
+              <entry>Ilene Robeck, MD</entry>
+              <entry>
+                <para>Physician</para>
+                <para>Richmond VA Medical Center (VAMC)</para>
+                <para>Richmond, VA</para>
+              </entry>
+              <entry>SME, Primary</entry>
+            </row>
+            <row>
+              <entry>Jodie Trafton, MD</entry>
+              <entry>
+                <para>Director, VA Program Evaluation and Resource Center</para>
+                <para>VA Palo Alto Health Care System</para>
+                <para>Menlo Park, CA</para>
+              </entry>
+              <entry>SME, Secondary</entry>
+            </row>
+            <row>
+              <entry>Friedhelm Sandbrink, MD</entry>
+              <entry>
+                <para>Acting Director of Pain Management Program Office</para>
+                <para>Department of VA</para>
+                <para>Washington, DC</para>
+              </entry>
+              <entry>SME, Secondary</entry>
+            </row>
+            <row>
+              <entry>Elizabeth Oliva, MD</entry>
+              <entry>
+                <para>VA National Opioid Overdose Education &amp; Naloxone Distribution (OEND)
+                  Coordinator</para>
+                <para>VA Palo Alto Health Care System</para>
+                <para>Menlo Park, CA</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Eleanor Lewis, MD</entry>
+              <entry>
+                <para>Deputy Director, VA Program Evaluation and Resource Center</para>
+                <para>VA Palo Alto Health Care System</para>
+                <para>Menlo Park, CA</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Kendall Browne, MD</entry>
+              <entry>
+                <para>Clinical Psychologist</para>
+                <para>Seattle Puget Sound Health Care System</para>
+                <para>Seattle, WA</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Alicia Heapy, MD</entry>
+              <entry>
+                <para>Mental Health</para>
+                <para>VA New England Healthcare System</para>
+                <para>West Haven, CT</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Karen Drexler, MD</entry>
+              <entry>
+                <para>National Mental Health Program Director -Substance Use Disorders</para>
+                <para>VA Central Office</para>
+                <para>Atlanta, GA</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Andrew Saxon, MD</entry>
+              <entry>
+                <para>Physician</para>
+                <para>Seattle Health Care System</para>
+                <para>Seattle, WA</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Henri Roca, MD</entry>
+              <entry>
+                <para>Co-Chair UAMS, Leadership and Education Program for Students in Integrative
+                  Medicine</para>
+                <para>Central Arkansas Veterans Healthcare</para>
+                <para>North Little Rock, AR</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Melissa Christopher, MD</entry>
+              <entry>
+                <para>National Director, Academic Detailing VACO Pharmacy Benefits Management
+                  (PBM)</para>
+                <para>Mission Valley Annex VISN 22</para>
+                <para>San Diego, CA</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Daina Wells</entry>
+              <entry>United States</entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Lucille Burgo</entry>
+              <entry>
+                <para>Firm Chief, Primary Care</para>
+                <para>VA New England Healthcare System</para>
+                <para>West Haven, CT</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+            <row>
+              <entry>Julianne Himstreet</entry>
+              <entry>
+                <para>Pharmacist</para>
+                <para>Eugene, OR</para>
+              </entry>
+              <entry>SME</entry>
+            </row>
+          </tbody>
+            </tgroup>
+    </table></para>
+</preface><preface version="5.0"><info xmlns:d="http://docbook.org/ns/docbook">
+    <title xmlns:xlink="http://www.w3.org/1999/xlink">Introduction</title>
+  </info>
+  
+<para xmlns:xlink="http://www.w3.org/1999/xlink">
+  The VA is committed to improving the ability of clinicians to provide
+  care for patients while increasing quality, safety, and efficiency.
+  Recognizing the importance of standardizing clinical knowledge in
+  support of this goal, VA is implementing the Health Level 7 (HL7)
+  Knowledge Artifact Specification for a wide range of VA clinical use
+  cases. Knowledge Artifacts, referred to as (KNARTs), enable the
+  structuring and encoding of clinical knowledge so the knowledge can be
+  integrated with electronic health records to enable clinical decision
+  support.
+</para>
+<para xmlns:xlink="http://www.w3.org/1999/xlink">
+  The purpose of this Clinical Content White Paper (CCWP) is to capture
+  the clinical context and intent of KNART use cases in sufficient
+  detail to provide the KNART authoring team with the clinical source
+  material to construct the corresponding knowledge artifacts using the
+  HL7 Knowledge Artifact Specification. This paper has been developed
+  using material from a variety of sources: VA artifacts, clinical
+  practice guidelines, evidence in the body of medical literature, and
+  clinical expertise. After reviewing these sources, the material has
+  been synthesized and harmonized under the guidance of VA subject
+  matter experts to reflect clinical intent for this use case.
+</para>
+<para xmlns:xlink="http://www.w3.org/1999/xlink">
+  Unless otherwise noted, items within this white paper (e.g.,
+  documentation template fields, orderable items, etc.) are chosen to
+  reflect the clinical intent at the time of creation. To provide an
+  exhaustive list of all possible items and their variations is beyond
+  the scope of this work.
+</para>
+</preface><preface version="5.1"><info xmlns:d="http://docbook.org/ns/docbook">
+    <title xmlns:xlink="http://www.w3.org/1999/xlink">Conventions Used</title>
+  </info>
+  
+<para xmlns:xlink="http://www.w3.org/1999/xlink">
+  Conventions used within the knowledge artifact descriptions include:
+</para>
+<para xmlns:xlink="http://www.w3.org/1999/xlink">
+  &lt;obtain&gt;: Indicates a prompt to obtain the information listed
+</para>
+<itemizedlist xmlns:xlink="http://www.w3.org/1999/xlink">
+  <listitem>
+    <para>
+      If possible, the requested information should be obtained from the underlying system(s). Otherwise, prompting the user for information may be required
+    </para>
+  </listitem>
+      <listitem>
+        <para>The technical and clinical notes associated with a section should be consulted for
+          specific constraints on the information (e.g., time-frame, patient interview, etc.)</para>
+      </listitem>
+  <listitem>
+    <para>
+      Default Values: Unless otherwise noted, &lt;obtain&gt; indicates to obtain the most recent observation. It is recognized that this default time-frame value may be altered by future implementations
+    </para>
+  </listitem>
+</itemizedlist>
+<para xmlns:xlink="http://www.w3.org/1999/xlink">
+  [...]: Square brackets enclose explanatory text that indicates some action on the part of the clinical user, or general guidance to the clinical or technical teams. Examples include, but are not limited to:
+</para>
+<blockquote xmlns:xlink="http://www.w3.org/1999/xlink">
+  <para>
+    [Begin ...], [End ...]: Indicates the start and end of specific areas to clearly delineate them for technical purposes.
+  </para>
+  <para>
+    [Activate ...]: Initiates another knowledge artifact or knowledge artifact section.
+  </para>
+  <para>
+    [Section Prompt: ...]: If this section is applicable, then the following prompt should be displayed to the user.
+  </para>
+  <para>
+    [Section Selection Behavior: ...]: Indicates technical constraints or considerations for the selection of items within the section.
+  </para>
+  <para>
+    [Attach: ...]: Indicates that the specified item should be attached to the documentation template if available.
+  </para>
+  <para>
+    [Link: ...]: Indicates that rather than attaching an item, a link should be included in the documentation template.
+  </para>
+  <para>
+    [Clinical Comment: ...]: Indicates clinical rationale or guidance.
+  </para>
+  <para>
+    [Technical Note: ...]: Indicates technical considerations or notes.
+  </para>
+  <para>
+    [If ...]: Indicates the beginning of a conditional section.
+  </para>
+  <para>
+    [Else, ...]: Indicates the beginning of the alternative branch of a conditional section.
+  </para>
+  <para>
+    [End if ...]: Indicates the end of a conditional section.
+  </para>
+</blockquote>
+<para xmlns:xlink="http://www.w3.org/1999/xlink">
+  ☐: Indicates items that should be selected based upon the section selection behavior.
+</para>
+</preface>
+  
+<chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Mental Health: Opioids and Noncancer Pain</title>
+
+<section>
+  <title>Clinical Context</title>
+
+<para>
+  [Begin Clinical Context.]
+</para>
+<para>Opioid use is widespread in the United States, with a prevalence that is increasingly
+        described as epidemic. Opioid use and misuse are particularly prevalent among veterans, many
+        of whom suffer from chronic pain secondary to service-related injuries and mental health
+        problems, as well as opioid-related substance use disorders, with opioid-related morbidity
+        and mortality that have increased in tandem with growing rates of prescriptions for opioid
+        medications [VA/Department of Defense (DoD), 2017]. In addition to the addictive potential
+        of opioids and the risk of overdose, the problem of widespread opioid use is further
+        compounded by the limited benefit of opioids in managing chronic pain and the adverse events
+        associated with long-term opioid use. The development and use of the Stratification Tool for
+        Opioid Risk Mitigation (STORM) and the Opioid Therapy Risk Report (OTRR) have provided VA
+        with instruments for predicting and managing risk associated with the use of opioids in the
+        veteran population (STORM: Patient Detail Dashboard: Stratification Tool for Opioid Risk
+        Mitigation; Opioid Therapy Risk Report patient details). Ongoing work within VA Pharmacy
+        Benefits Management (PBM) Services has the potential to further support and advance efforts
+        in this area by defining a standardized approach for documenting findings and planning
+        information related to veterans’ pain, function, and needs (PBM CPPO pain PhARMD template:
+        frequently asked questions). Additional work is needed to structure this foundational
+        documentation template for computability and to optimize it for use within primary care
+        settings, with an emphasis on reducing rates of opioid prescription in favor of
+        nonpharmacologic therapy and nonopioid medications, while seeking to identify and address
+        opioid addiction in veterans in a supportive and nonjudgmental way. </para>
+    <para>
+      <table>
+        <title>Clinical Context Domains</title>
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Target User</entry>
+              <entry> Primary Care Provider (PCP) </entry>
+            </row>
+            <row>
+              <entry>Patient</entry>
+              <entry> Adult </entry>
+            </row>
+            <row>
+              <entry>Priority</entry>
+              <entry> Routine unless otherwise identified </entry>
+            </row>
+            <row>
+              <entry>Specialty</entry>
+              <entry> Primary Care </entry>
+            </row>
+            <row>
+              <entry>Location</entry>
+              <entry> Outpatient </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+<para>
+  [End Clinical Context.]
+</para></section>
+<section><title>Knowledge Artifacts</title>
+
+<para>
+  [Begin Knowledge Artifacts.]
+</para>
+<para>
+  This section describes the CDS knowledge artifacts that are part of the Mental Health Opioids and Noncancer Pain group, and include:
+</para>
+<para>
+  Documentation Template: Mental Health: Opioids and Chronic Noncancer Pain OTRR/STORM Query KNART
+</para>
+<itemizedlist>
+  <listitem>
+    <para>
+      Documents the information required for input to a OTRR/STORM query
+    </para>
+  </listitem>
+</itemizedlist>
+<para>
+  Documentation Template: Opioid and Noncancer Pain KNART
+</para>
+<itemizedlist>
+  <listitem>
+    <para>
+      Documents the information gathered in the screening, evaluation, and documentation of findings and decisions for chronic noncancer pain
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      Includes logic for appropriate display of documentation sections
+    </para>
+  </listitem>
+</itemizedlist>
+<para>
+  An Order Set: Mental Health: Chronic Noncancer Pain KNART
+</para>
+<itemizedlist>
+  <listitem>
+    <para>
+      Orders that support management of chronic noncancer pain
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      Includes logic for appropriate display of the order set
+    </para>
+  </listitem>
+</itemizedlist>
+<para>
+  [End Knowledge Artifacts.]
+</para>
+</section>
+</chapter>
+<chapter xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="documentation-template-mental-health---opioids-and-chronic-noncancer-pain-ottrstorm-query">
+  <title>Documentation Template: Mental Health - Opioids and Chronic Noncancer Pain OTTR/STORM Query</title>
+  <para>
+    [Begin Documentation Template: Opioids and Chronic Noncancer Pain OTRR/STORM Query.]
+  </para>
+  <para>
+    [Technical Note: This documentation template is part of a coordinated set of KNARTs that are intended to support risk screening, evaluation and documentation of findings and decisions, and initiation of appropriate clinical orders for veterans with chronic noncancer pain. All of the KNARTs in this coordinated set are intended for use by primary care providers, as well as mental health providers who are embedded in primary care practice settings, in caring for patients with chronic noncancer pain. As part of this coordinated set of KNARTs, this documentation template is intended to enable users to query the OTRR and the STORM systems using a structured format. VA-provided documentation regarding OTRR and STORM are the preferred sources informing the structure and contents of this KNART.]
+  </para>
+  <para>
+    [Technical Note: Throughout this documentation template, text boxes should be converted to drop-down menus where a set list of options can be specified.]
+  </para>
+  <section xml:id="knowledge-narrative">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="opioid-therapy-risk-report-ottr-query">
+    <title>Opioid Therapy Risk Report (OTTR) Query</title>
+    <para>
+      [Begin Opioid Therapy Risk Report (OTTR) Query.]
+    </para>
+    <para>
+      [Technical Note: This section should be made available for all clinical providers using this documentation template.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; District – VA Integrated Service Network (VISN)
+      </para>
+      <para>
+        &lt;obtain&gt; Parent station
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Provider Group]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Mental Health
+      </para>
+      <para>
+        ☐ Primary Care
+      </para>
+      <para>
+        ☐ Last opioid prescriber
+      </para>
+      <para>
+        ☐ Last benzodiazepine prescriber
+      </para>
+      <para>
+        &lt;obtain&gt; Team(s)
+      </para>
+      <para>
+        &lt;obtain&gt; Provider(s)
+      </para>
+      <para>
+        &lt;obtain&gt; Opioid group(s)
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Patients’ opioid use status]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Long-term opioid therapy (LTOT)
+      </para>
+      <para>
+        ☐ Active opioid prescription
+      </para>
+      <para>
+        ☐ Opioid prescription in past year
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Opioid use category.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ All opioids
+      </para>
+      <para>
+        ☐ Exclude buprenorphine/naloxone only patients
+      </para>
+      <para>
+        ☐ Exclude tramadol only patients
+      </para>
+      <para>
+        ☐ Exclude tramadol and buprenorphine/naloxone only patients
+      </para>
+      <para>
+        ☐ Buprenorphine/naloxone only patients
+      </para>
+      <para>
+        ☐ Tramadol only patients
+      </para>
+    </blockquote>
+    <para>
+      [End Opioid Therapy Risk Report (OTTR) Query.]
+    </para>
+  </section>
+  <section xml:id="stratification-tool-for-opioid-risk-mitigation-storm-query">
+    <title>Stratification Tool for Opioid Risk Mitigation (STORM) Query</title>
+    <para>
+      [Begin Stratification Tool for Opioid Risk Mitigation (STORM) Query.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Station
+      </para>
+      <para>
+        &lt;obtain&gt; Prescriber
+      </para>
+      <para>
+        &lt;obtain&gt; Risk group
+      </para>
+      <para>
+        &lt;obtain&gt; Group type
+      </para>
+      <para>
+        &lt;obtain&gt; Measures not met
+      </para>
+      <para>
+        &lt;obtain&gt; STORM cohort
+      </para>
+      <para>
+        &lt;obtain&gt; Social Security number (optional)
+      </para>
+    </blockquote>
+    <para>
+      [End Stratification Tool for Opioid Risk Mitigation (STORM) Query.]
+    </para>
+    <para>
+      [End Documentation Template: Opioids and Chronic Noncancer Pain OTRR/STORM Query.]
+    </para>
+  </section>
+</chapter>
+<chapter xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="documentation-template-mental-health-chronic-noncancer-pain">
+  <title>Documentation Template: Mental Health – Chronic Noncancer Pain</title>
+  <para>
+    [Begin Documentation Template: Chronic Noncancer Pain.]
+  </para>
+  <para>
+    [Technical Note: This documentation template is part of a coordinated set of KNARTs that are intended to support risk screening, evaluation and documentation of findings and decisions, and initiation of appropriate clinical orders for veterans with chronic noncancer pain. All of the KNARTs in this coordinated set are intended for use by primary care providers, as well as mental health providers who are embedded in primary care practice settings, in caring for patients with chronic noncancer pain. As part of this coordinated set of KNARTs, this documentation template is intended to support users in the screening, evaluation, and documentation of findings and decisions for chronic noncancer pain. Management of these patients is a constantly changing and complex process for health care providers Follow-up visits frequently focus on patient progress or lack thereof, or on patient concerns. For follow-up visits, a menu is included that helps providers to highlight primary areas of concern and to ask questions that move the conversation in a positive direction: 1) Questions related to level of functioning since the last visit; 2) Questions related to goals outlined by the patient; 3) Questions related to nonpharmacologic therapies tried and being contemplated; and 4) Questions related to medications, including all issues related to opioid safety. The VA-provided document "PBM PhARMD Pain Documentation Template Version 1" (PhARMD Pain Mgmt Note Template_Install Screenshots_28AUG2017.pptx) is the preferred source informing the structure and contents of this KNART, with changes to the content of this VA document as specified by the VA SME team on November 29, 2017, and December 6, 2017.]
+  </para>
+  <section xml:id="knowledge-narrative-1">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="visit-information">
+    <title>Visit Information</title>
+    <para>
+      [Begin Visit Information.]
+    </para>
+    <para>
+      [Section Prompt: Visit Information]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Telehealth encounter; patient gave verbal consent for telehealth
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: Autopopulate the Patient Name Object value, the Patient Age Object value, the Patient Race Object value, and the Patient Gender Object value in the form component below.]
+    </para>
+
+      <blockquote>
+        <para>
+          &lt;obtain&gt; [Patient Name] is a [Patient Age] year-old [Patient Race] [Patient Gender] Veteran who is being evaluated for:
+        </para>
+      </blockquote>
+
+    <para>
+      [Technical Note: Autopopulate the Subjective and Objective Active Medical Problems field and allow users to edit it.]
+    </para>
+
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Subjective and objective active medical problems
+        </para>
+      </blockquote>
+    
+    <para>
+      [Section Prompt: Initial or follow-up visit?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Initial visit
+      </para>
+      <para>
+        ☐ Follow-up visit
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Focus of follow-up
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Technical Note: Autopopulate the Pertinent Surgical History field and allow users to edit it.]
+    </para>
+
+      <blockquote>
+        <para> &lt;obtain&gt; Pertinent surgical history </para>
+      </blockquote>
+    
+    <para>
+      [Technical Note: Autopopulate the Medications field and allow users to edit it.]
+    </para>
+    <blockquote>
+      <para> &lt;obtain&gt; Medications </para>
+    </blockquote>
+    <para>
+      [End Visit Information.]
+    </para>
+  </section>
+  <section xml:id="physical-exam">
+    <title>Physical Exam</title>
+    <para>
+      [Begin Physical Exam.]
+    </para>
+    <para>
+      [Technical Note: Provide link (or links) to future physical exam KNART (or KNARTs). Information collected in the physical exam should be made available and editable for users completing this section.]
+    </para>
+
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Relevant findings
+        </para>
+      </blockquote>
+    
+    <para>
+      [End Physical Exam.]
+    </para>
+  </section>
+  <section xml:id="pain-description">
+    <title>Pain Description</title>
+    <para>
+      [Begin Pain Description.]
+    </para>
+    <para>
+      [Section prompt: Impact of pain on function]
+    </para>
+    <para>
+      [Technical Note: Provide link to future KNART for comprehensive functional assessment]
+    </para>
+    <blockquote>
+      <para> &lt;obtain&gt; Functional impact of pain </para>
+      <para>
+        &lt;obtain&gt; Functional impact of treatment for pain (positive or negative impact)
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Type of pain.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Neuropathic pain
+      </para>
+      <para>
+        ☐ Somatic pain
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Pain location.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Back
+      </para>
+      <para>
+        [Section Selection Behavior: Select one or more. Required.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Lower
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Middle
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Upper
+        </para>
+      </blockquote>
+      <para>
+        ☐ Neck
+      </para>
+      <para>
+        ☐ Joints
+      </para>
+      <para>
+        [Section Selection Behavior: Select one or more. Required.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Knee
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Hip
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Shoulder
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Other
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+      <para>
+        ☐ Abdominal
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Aggravating factors.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Cold weather/climate change
+      </para>
+      <para>
+        ☐ Diabetes
+      </para>
+      <para>
+        ☐ Hormone imbalance
+      </para>
+      <para>
+        ☐ Infectious disease
+      </para>
+      <para>
+        ☐ Inflammatory process
+      </para>
+      <para>
+        ☐ Mental health–related problems
+      </para>
+      <para>
+        [Section Selection Behavior: Select one or more. Required.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Anxiety
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Depression
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Technical Note: If "Depression" is selected, link to Documentation Template: Mental Health - Consult Request: Consult for Depression.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Military sexual trauma
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: If "Military sexual trauma" is selected, link to Documentation Template: Mental Health - Military Sexual Trauma.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Posttraumatic stress disorder
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: If "Posttraumatic stress disorder" is selected, link to Documentation Template: Mental Health - PTSD Screening and Assessment.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Other mental health-related problems
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+      <para>
+        ☐ Movement
+      </para>
+      <para>
+        ☐ Poor nutrition
+      </para>
+      <para>
+        ☐ Poor sleep
+      </para>
+      <para>
+        ☐ Prolonged sitting
+      </para>
+      <para>
+        ☐ Prolonged standing
+      </para>
+      <para>
+        ☐ Risky behaviors related to opioid use
+      </para>
+    </blockquote>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Concurrent use of other substances that increase risk (e.g., alcohol, cannabis)
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+      <para>
+        ☐ Early refills
+      </para>
+      <para>
+        ☐ Multiple prescribers
+      </para>
+      <para>
+        ☐ Use of opioids for sleep
+      </para>
+      <para>
+        ☐ Use of opioids for stress
+      </para>
+      <para>
+        ☐ Use of opioids in a manner other than prescribed
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+      <para>
+        ☐ Use of opioids not prescribed to patient
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+      <para>
+        ☐ Stress
+      </para>
+      <para>
+        ☐ Structural imbalance (e.g. scoliosis, leg length discrepancy, hip tilt, strength imbalances)
+      </para>
+      <para>
+        ☐ Substance use (current or former)
+      </para>
+      <para>           ☐ Alcohol </para>
+    </blockquote>
+    <para>                                        [Technical Note: If "Alcohol" is selected, provide
+        link to AUDIT-C.] </para>
+    <para>                                        [Section Selection Behavior: Select one.
+        Required.] </para>
+    <blockquote>
+      <para>                       ☐ Current user </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Amount and frequency of use
+        </para>
+      </blockquote>
+      <para>                       ☐ Former user </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Quit date (if date unknown, indicate year)
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Additional details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Cannabis
+      </para>
+    </blockquote>
+    <para>                             [Technical Note: If "Cannabis" is selected, provide link to
+        brief cannabis screener.] </para>
+    <para>                              [Section Selection Behavior: drop down box. Optional.] </para>
+    <blockquote>
+      <para>            ☐ Type of cannabis used </para>
+      <para>            ☐ CBD products </para>
+      <para>            ☐ THC products </para>
+      <para>            ☐ Combined products </para>
+    </blockquote>
+    <para>                              [Section Selection Behavior: Select one. Required.] </para>
+    <blockquote>
+      <para>            ☐ Legal recreational </para>
+    </blockquote>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>                       ☐ Current user </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Amount and frequency of use
+        </para>
+      </blockquote>
+      <para>                       ☐ Former user </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Quit date (if date unknown, indicate year)
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Additional details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Illicit recreational
+      </para>
+    </blockquote>
+    <para>                             [Section Selection Behavior: Select one. Required.] </para>
+    <blockquote>
+      <para>            ☐ Current user </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Amount and frequency of use
+        </para>
+      </blockquote>
+      <para>            ☐ Former user </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Quit date (if date unknown, indicate year)
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Additional details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Medical
+      </para>
+    </blockquote>
+    <para>                             [Section Selection Behavior: Select one. Required.] </para>
+    <blockquote>
+      <para>            ☐ Current user </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Amount and frequency of use </para>
+        </blockquote>
+      <para>            ☐ Former user </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Quit date (if date unknown, indicate year) </para>
+          <para> &lt;obtain&gt; Additional details </para>
+        </blockquote>
+      <para>
+        ☐ Illicit drugs
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: Allow the user to enter any number of drugs, with a separate Drug field and its constituent form components for each drug.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Drug
+      </para>
+    </blockquote>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Current user
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Amount and frequency of use </para>
+        </blockquote>
+      <para>
+        ☐ Former user
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Quit date (if date unknown, indicate year) </para>
+          <para> &lt;obtain&gt; Additional details </para>
+        </blockquote>
+      <para>
+        ☐ Tobacco
+      </para>
+    </blockquote>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <para>
+      [Technical Note: If "Tobacco" is selected, provide link to Documentation Template: Primary Care - Tobacco Assessment and Cessation Counseling.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Current user
+      </para>
+      <para>
+        ☐ Every day
+      </para>
+      <para>
+        ☐ Some days
+      </para>
+      <para>
+        ☐ Not at all
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Amount and frequency of use </para>
+        </blockquote>
+      <para>
+        ☐ Former user
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Quit date (if date unknown, indicate year) </para>
+          <para> &lt;obtain&gt; Additional details </para>
+        </blockquote>
+      <para>
+        ☐ Toxic exposure
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Alleviating factors.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Lying down
+      </para>
+      <para>
+        ☐ Rest
+      </para>
+      <para>
+        ☐ Heat
+      </para>
+      <para>
+        ☐ Ice
+      </para>
+      <para>
+        ☐ Limb elevation
+      </para>
+      <para>
+        ☐ Movement
+      </para>
+      <para>
+        ☐ Complementary integrative health (e.g., mindfulness)
+      </para>
+      <para>
+        ☐ Cognitive behavioral approaches (e.g., meeting with friends, music)
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [End Pain Description.]
+    </para>
+  </section>
+  <section xml:id="relevant-vitals">
+    <title>Relevant Vitals</title>
+    <para>
+      [Begin Relevant Vitals.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Body mass index
+      </para>
+      <para>
+        &lt;obtain&gt; Blood pressure
+      </para>
+      <para>
+        &lt;obtain&gt; Respiratory rate
+      </para>
+      <para>
+        &lt;obtain&gt; Heart rate
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [End Relevant Vitals.]
+    </para>
+  </section>
+  <section xml:id="relevant-laboratory-values">
+    <title>Relevant Laboratory Values</title>
+    <para>
+      [Begin Relevant Laboratory Values.]
+    </para>
+    <para>
+      [Technical Note: Autopopulate laboratory test results with most recent values and dates of values. Allow user to edit information.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Complete blood count
+      </para>
+      <para>
+        &lt;obtain&gt; Comprehensive metabolic panel
+      </para>
+      <para>
+        &lt;obtain&gt; Hemoglobin A1c
+      </para>
+      <para>
+        &lt;obtain&gt; Toxicology screen
+      </para>
+      <para>
+        &lt;obtain&gt; 25-hydroxyvitamin D
+      </para>
+      <para>
+        &lt;obtain&gt; CRP
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [End Relevant Laboratory Values.]
+    </para>
+  </section>
+  <section xml:id="medication-profile">
+    <title>Medication Profile</title>
+    <para>
+      [Begin Medication Profile.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Allergies/adverse drug reactions
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: Autopopulate allergies/adverse drug reactions based on available system data. Allow user to edit information.]
+    </para>
+    <para>
+      [Section Prompt: History of overdose and opioid-related emergency department visits and hospital admissions]
+    </para>
+    <para>
+      [Section Selection Behavior: Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ History of overdose and opioid-related emergency department visits and hospital admissions
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: Provide a link to the national naloxone use note.]
+    </para>
+    <para>
+      [Technical Note: Autopopulate information for history of overdose and opioid-related emergency department visits and hospital admissions with most recent values and dates of values. Allow user to edit information.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Prior overdose(s)
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date(s) </para>
+          <para> &lt;obtain&gt; Drug(s) </para>
+          <para> &lt;obtain&gt; Additional details </para>
+        </blockquote>
+      <para>
+        ☐ Prior opioid-related emergency department visit(s)
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date(s) </para>
+          <para> &lt;obtain&gt; Drug(s) </para>
+          <para> &lt;obtain&gt; Additional details </para>
+        </blockquote>
+      <para>
+        ☐ Prior opioid-related hospital admission(s)
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Date(s) </para>
+          <para> &lt;obtain&gt; Drug(s) </para>
+          <para> &lt;obtain&gt; Additional details </para>
+        </blockquote>
+    </blockquote>
+    <para>
+      [Link: Link to full report from Opioid Therapy Risk Report (OTRR) query.]
+    </para>
+    <para>
+      [Technical Note: Automatically link to OTRR query report.]
+    </para>
+    <para>
+      [Link: Link to full report from Stratification Tool for Opioid Risk Mitigation (STORM) query.]
+    </para>
+    <para>
+      [Technical Note: Automatically link to STORM query report.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Current medications
+      </para>
+      <para>
+        &lt;obtain&gt; Non-VA medications
+      </para>
+      <para>
+        &lt;obtain&gt; Previous pain-related medications
+      </para>
+    </blockquote>
+    <para>
+      [End Medication Profile.]
+    </para>
+  </section>
+  <section xml:id="nonpharmacologic-treatment">
+    <title>Nonpharmacologic treatment</title>
+    <para>
+      [Begin nonpharmacologic treatment]
+    </para>
+    <para>
+      [Section prompt: Nonpharmacologic treatment/complementary integrative health]
+    </para>
+    <para>
+      [Section Selection Behavior: select any or none. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Physical therapy
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Dates </para>
+          <para> &lt;obtain&gt; Detail </para>
+        </blockquote>
+      <para>
+        ☐ Chiropractic therapy
+      </para>
+      <blockquote>      <para>
+        &lt;obtain&gt; Dates
+      </para>
+<para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Massage therapy
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Dates </para>
+          <para> &lt;obtain&gt; Detail </para>
+        </blockquote>
+      <para>
+        ☐ Whole health interventions
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Dates </para>
+          <para> &lt;obtain&gt; Detail </para>
+        </blockquote>
+      <para>
+        [Section Selection Behavior: Optional.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Acupuncture
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Tai chi
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Yoga
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Mindfulness
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Meditation
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Guided imagery
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Hypnotherapy
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Biofeedback
+        </para>
+      </blockquote>
+      <para>
+        ☐ Other nonpharmacologic treatment
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; details </para>
+        </blockquote>
+    </blockquote>
+    <para>
+      [End nonpharmacologic treatment]
+    </para>
+  </section>
+  <section xml:id="patient-education">
+    <title>Patient Education</title>
+    <para>
+      [Begin patient education.]
+    </para>
+    <para>
+      [Section prompt: Patient education]
+    </para>
+    <para>
+      [Section selection behavior: select any or none. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Disease state education
+      </para>
+      <blockquote>      <para>
+        &lt;obtain&gt; Dates
+      </para>
+<para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Lifestyle counseling and education
+      </para>
+      <blockquote>      <para>
+        &lt;obtain&gt; Dates
+      </para>
+<para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [End patient education.]
+    </para>
+  </section>
+  <section xml:id="activities-of-daily-living">
+    <title>Activities of Daily Living</title>
+    <para>
+      [Begin Activities of Daily Living.]
+    </para>
+    <para>
+      [Section Prompt: Energy level.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Low
+      </para>
+      <para>
+        ☐ Medium
+      </para>
+      <para>
+        ☐ High
+      </para>
+      <para>
+        &lt;obtain&gt; Sleep (average continuous hours per night)
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Early Awakening?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: If “yes” is selected, display the following question:]
+    </para>
+    <para>
+      [Section prompt: Cause of early awakening]
+    </para>
+    <para>
+      [Section Selection Behavior: Select any or none. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Pain
+      </para>
+      <para>
+        ☐ Nightmares
+      </para>
+      <para>
+        ☐ Restless leg syndrome
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Uses continuous positive airway pressure (CPAP)?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Changes in level of functioning since previous visit?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ No
+      </para>
+      <para>
+        ☐ Not applicable
+      </para>
+      <para>
+        &lt;obtain&gt; Other activities of daily living information
+      </para>
+    </blockquote>
+    <para>
+      [End Activities of Daily Living.]
+    </para>
+  </section>
+  <section xml:id="affectmood">
+    <title>Affect/Mood</title>
+    <para>
+      [Begin Affect/Mood.]
+    </para>
+    <para>
+      [Section prompt: Affect/Mood]
+    </para>
+    <para>
+      [Section Selection Behavior: Select any or none. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Anxiety
+      </para>
+      <para>
+        ☐ Depression
+      </para>
+      <para>
+        ☐ Thoughts of suicidality
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: If "Thoughts of suicidality" is selected, link to Documentation Template: Mental Health - Suicide Risk Assessment KNART.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Thoughts of homicidality
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: If "Thoughts of homicidality" is selected, link to future KNART.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [End Affect/Mood.]
+    </para>
+  </section>
+  <section xml:id="risk-mitigation-strategies">
+    <title>Risk Mitigation Strategies</title>
+    <para>
+      [Begin Risk Mitigation]
+    </para>
+    <para>
+      [Section prompt: Risk mitigation strategies]
+    </para>
+    <para>
+      [Section Selection Behavior: Select any or none. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Informed consent for opioid therapy
+      </para>
+      <blockquote>
+        <para>
+          ☐ Yes
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ No
+        </para>
+      </blockquote>
+      <para>
+        ☐ Toxicology screen
+      </para>
+      <para>
+        [Technical Note: Autopopulate toxicology screen information from Stratification Tool for Opioid Risk Mitigation (STORM).]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Toxicology results as expected
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Toxicology results not as expected
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Not done; needs to be ordered
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Presence of alcohol
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Absence of prescribed medication
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Further follow-up needed
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ No further follow-up needed at this time
+        </para>
+      </blockquote>
+      <para>
+        ☐ Query of the State Prescription Drug Monitoring Program (PDMP)
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Overdose education provided, and naloxone distributed
+      </para>
+      <para>
+        ☐ Pill counts
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [End Risk Mitigation]
+    </para>
+  </section>
+  <section xml:id="assessment">
+    <title>Assessment</title>
+    <para>
+      [Begin Assessment.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Pain diagnoses
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [End Assessment.]
+    </para>
+  </section>
+  <section xml:id="plan">
+    <title>Plan</title>
+    <para>
+      [Begin Plan.]
+    </para>
+    <para>
+      [Section prompt: Plan]
+    </para>
+    <para>
+      [Section prompt: Interventions in this section are presented in order of recommended sequence in the VA.]
+    </para>
+    <para>
+      [Technical Note: Users should be prompted to consider items in the Plan section in the sequence in which they are presented, based on VA preference for nonpharmacologic rather than pharmacologic interventions and nonopioid rather than opioid medication therapies.]
+    </para>
+    <para>
+      [Technical Note: To ensure that users understand the available options, links to standard VA definitions should be provided for all interventions if available.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Goals of therapy (established by patient)
+      </para>
+    </blockquote>
+    <para>
+      [Section prompt: Self-care]
+    </para>
+    <para>
+      [Section Selection Behavior: Select any or none. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Movement and stretching
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Nutrition
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Sleep and rest
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Stress resilience
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Social connection
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [Section prompt: Nonpharmacologic interventions]
+    </para>
+    <para>
+      [Section Selection Behavior: Any or None. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Physical therapy
+      </para>
+      <para>
+        ☐ Whole health interventions
+      </para>
+      <para>
+        [Section Selection Behavior: Optional.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Acupuncture
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Tai chi
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Yoga
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Mindfulness
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Meditation
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Guided imagery
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Hypnotherapy
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Biofeedback
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Disease state education
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Lifestyle counseling and education
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Psychotherapy
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Cognitive behavioral therapy
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Acceptance and commitment therapy
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Substance use disorder interventions
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Tobacco cessation interventions
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Other
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+      <para>
+        ☐ Follow-up on toxicology screen
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+      <para>
+        ☐ Medication interventions
+      </para>
+      <para>
+        [Section Selection Behavior: Select at least one. Required.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Nonopioid pain medication
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Opioid pain medication
+        </para>
+      </blockquote>
+      <para>
+        [Section Selection Behavior: Select at least one. Required.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Query State PDMP
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Technical Note: Automatically link to the State Prescription Drug Monitoring Program if the “Query State PDMP” checkbox is selected.]
+    </para>
+    <blockquote>
+      <blockquote>
+        <para>
+          ☐ Sign or Initiate consent for opioid therapy
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Technical Note: Automatically link to the consent form if the “Sign or Initiate consent for opioid therapy” checkbox is selected.]
+    </para>
+    <blockquote>
+      <blockquote>
+        <para>
+          ☐ Management/prevention of opioid-induced constipation
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Overdose education and naloxone distribution
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Technical Note: Note that it may be desirable to add a link to the national naloxone use note in the Plan section as part of a future implementation; however, no link should be provided in the Plan section now.]
+    </para>
+    <blockquote>
+      <blockquote>
+        <para>
+          ☐ Medication monitoring/diagnostic evaluation
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Manage adverse drug reaction related to pain medication
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Detail
+        </para>
+      </blockquote>
+      <para>
+        ☐ Follow-up
+      </para>
+      <para>
+        &lt;obtain&gt; Date and time
+      </para>
+      <blockquote><para>
+        &lt;obtain&gt; Detail
+      </para></blockquote>
+    </blockquote>
+    <para>
+      [Technical Note: Link to Order Set: Mental Health - Chronic Noncancer Pain KNART.]
+    </para>
+    <para>
+      [End Plan.]
+    </para>
+    <para>
+      [End Documentation Template: Chronic Noncancer Pain.]
+    </para>
+  </section>
+</chapter>
+<chapter xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="order-set-mental-health-chronic-noncancer-pain">
+  <title>Order Set: Mental Health – Chronic Noncancer Pain</title>
+  <para>
+    [Begin Order Set: Chronic Noncancer Pain.]
+  </para>
+  <section xml:id="knowledge-narrative-2">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [Technical Note: This order set is part of a coordinated set of KNARTs that are intended to support risk screening, evaluation and documentation of findings and decisions, and initiation of appropriate clinical orders for veterans with chronic noncancer pain. All of the KNARTs in this coordinated set are intended for use by primary care providers, as well as mental health providers who are embedded in primary care practice settings, in caring for patients with chronic noncancer pain. As part of this coordinated set of KNARTs, this order set is intended to provide orders that reflect the plan items identified in the Chronic Noncancer Pain documentation template (KNART O34). The VA-provided document "PBM PhARMD Pain Documentation Template Version 1" (PhARMD Pain Mgmt Note Template_Install Screenshots_28AUG2017.pptx) is the preferred source informing the structure and contents of this KNART, with changes to the content of this VA document as specified by the VA SME team on November 29, 2017, and December 6, 2017.]
+    </para>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="medications">
+    <title>Medications</title>
+    <para>
+      [Begin Medications.]
+    </para>
+    <para>
+      [Section prompt: Medications]
+    </para>
+    <para>
+      [Section Prompt: Oral Medications.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Ibuprofen 200 mg tablet oral every 4 to 6 hours as needed for pain 100 tablets 2 refills
+      </para>
+      <para>
+        ☐ Naproxen 250 mg tablet oral 2 times daily as needed for pain 100 tablets 2 refills
+      </para>
+      <para>
+        ☐ Acetaminophen 325 mg tablet oral 2 tablets every 6 hours as needed for pain; may increase dose frequency to 2 tablets every 4 hours; do not take more than 10 tablets per day 100 tablets 2 refills
+      </para>
+      <para>
+        ☐ Celecoxib 100 mg capsule oral 2 times a day 60 capsules 2 refills
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: The following orders may be considered for patients who tolerate lower doses but whose pain control remains inadequate on lower doses.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Ibuprofen 400 mg tablet oral every 4 to 6 hours as needed for pain 100 tablets 2 refills
+      </para>
+      <para>
+        ☐ Naproxen 375 mg tablet oral 2 times daily as needed for pain 100 tablets 2 refills
+      </para>
+      <para>
+        ☐ Celecoxib 200 mg capsule oral 2 times a day 60 capsules 2 refills
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: The following orders may be considered for patients who tolerate lower doses but whose pain control remains inadequate on lower doses.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Ibuprofen 600 mg tablet oral every 6 hours as needed for pain 100 tablets 2 refills
+      </para>
+      <para>
+        ☐ Naproxen 500 mg tablet oral 2 times daily as needed for pain 100 tablets 2 refills
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Topical Medications]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Capsaicin 0.1% cream topical 3 times a day apply to affected area 1 tube 0 refills routine
+      </para>
+      <para>
+        ☐ Diclofenac sodium 1% 2 g gel topical 4 times a day apply to affected area 1 tube 0 refills routine
+      </para>
+      <para>
+        ☐ Lidocaine 5% patch topical apply to intact skin to cover most painful area; apply prescribed number of patches (maximum of 3); apply only 1 time for a maximum of 12 hours within a 24-hour period 30 patches 0 refills routine
+      </para>
+      <para>
+        ☐ Menthol 10%/methyl salicylate 15% cream topical 3 times a day apply to affected area 1 tube 0 refills routine
+      </para>
+    </blockquote>
+    <para>
+      [End Medications.]
+    </para>
+  </section>
+  <section xml:id="laboratory-tests">
+    <title>Laboratory Tests</title>
+    <para>
+      [Begin Laboratory Tests.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Complete blood count 1 time routine
+      </para>
+      <para>
+        ☐ Comprehensive metabolic panel 1 time routine
+      </para>
+      <para>
+        ☐ Hemoglobin A1c 1 time routine
+      </para>
+      <para>
+        ☐ Toxicology screen 1 time routine
+      </para>
+      <para>
+        ☐ 25-hydroxyvitamin D 1 time routine
+      </para>
+      <para>
+        ☐ Erythrocyte sedimentation rate 1 time routine
+      </para>
+      <para>
+        ☐ C-reactive protein 1 time routine
+      </para>
+    </blockquote>
+    <para>
+      [End Laboratory Tests.]
+    </para>
+  </section>
+  <section xml:id="consults-and-referrals">
+    <title>Consults and Referrals</title>
+    <para>
+      [Begin Consults and Referrals.]
+    </para>
+    <para>
+      [Section prompt: Consults and Referrals]
+    </para>
+    <para>
+      [Section selection behavior: Any or none. Optional]
+    </para>
+    <para>
+      [Section Prompt: In management of chronic pain it is important to address comorbidities, including medical, mental health, and substance use disorders. To the greatest extent appropriate, comorbidities should be treated in the primary care setting, using resources available to primary care, including mental health providers who are embedded in primary care.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Referral care management services evaluate needs related to chronic pain routine
+      </para>
+      <para>
+        ☐ Referral social services evaluate for needs related to chronic pain routine
+      </para>
+      <para>
+        ☐ Referral clinical nurse specialist evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral mental health evaluate for mental health interventions related to chronic pain routine
+      </para>
+      <para>
+        ☐ Referral mental health evaluate for psychotherapy related to chronic pain routine
+      </para>
+      <para>
+        ☐ Referral mental health evaluate for cognitive behavioral therapy related to chronic pain routine
+      </para>
+      <para>
+        ☐ Referral mental health evaluate for acceptance and commitment therapy related to chronic pain routine
+      </para>
+      <para>
+        ☐ Referral addiction evaluate for substance use disorder with chronic pain routine
+      </para>
+      <para>
+        ☐ Referral addiction evaluate for tobacco cessation with chronic pain routine
+      </para>
+      <para>
+        ☐ Referral pain management evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral pain management evaluate for opioid management with chronic pain routine
+      </para>
+      <para>
+        ☐ Referral pharmacy evaluate for needs related to chronic pain routine
+      </para>
+      <para>
+        ☐ Referral physical therapy evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral acupuncture evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral tai chi evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral yoga evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral mindfulness evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral meditation evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral guided imagery evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral hypnotherapy evaluate for chronic pain routine
+      </para>
+      <para>
+        ☐ Referral biofeedback evaluate for chronic pain routine
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Only applicable if referring to an outside facility. To inform appropriate opioid and chronic noncancer pain treatment for this patient, please provide the following information.]
+    </para>
+    <para>
+      Goal of Consult: &lt;details&gt;
+    </para>
+    <para>
+      Clinical Findings: &lt;details&gt;
+    </para>
+    <para>
+      Priority: Routine unless otherwise specified
+    </para>
+      <blockquote>
+        <para> &lt;obtain&gt; Referring Physician </para>
+        <para> &lt;obtain&gt; Referring Physician Contact Information </para>
+      </blockquote>
+    <para>
+      [End Consults and Referrals.]
+    </para>
+  </section>
+  <section xml:id="patient-and-caregiver-education">
+    <title>Patient and Caregiver Education</title>
+    <para>
+      [Begin Patient and Caregiver Education.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Chronic pain management education routine
+      </para>
+    </blockquote>
+    <para>
+      [End Patient and Caregiver Education]
+    </para>
+    <para>
+      [End Order Set: Chronic Noncancer Pain.]
+    </para>
+  </section>
+</chapter>
+  <bibliography>
+    <info>
+      <title>Bibliography/Evidence</title>
+    </info>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Oliva</surname><firstname>EM</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Bowe</surname><firstname>T</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Tayakoli</surname><firstname>S</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">Development and applications of the Veterans Health
+        Administration's Stratification Tool for Opioid Risk Mitigation (STORM) to improve opioid
+        safety and prevent overdose and suicide</citetitle>
+      <citetitle pubwork="journal">Psychol Serv</citetitle>
+      <pubdate>2017</pubdate>
+      <volumenum>14</volumenum>
+      <issuenum>1</issuenum>
+      <pagenums>34-49</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Materials provided by
+            Trafton</surname><firstname>Jodie</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">Opioid risk stratification and mitigation tool: supporting
+        targeted efforts to encourage and track use of recommended strategies for prevention of
+        adverse events in patients with opioid prescriptions or opioid use disorders (panel
+        presentation for clearance 2 </citetitle>
+      <citetitle pubwork="journal">AAPM</citetitle>
+      <pubdate>2015</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Materials provided by Sanders</surname><firstname>William
+              J.</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">Opioid Therapy Risk Report patient details (Office of Health
+        Informatics - Opioid KNARTs Harmonization Project - OTRR Screenshots </citetitle>
+      <citetitle pubwork="journal">OTRR Screenshots </citetitle>
+      <pubdate>2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Materials provided by Robeck</surname><firstname>Ilene
+            R.</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">PBM PhARMD pain documentation template version 1: installation
+        instructions</citetitle>
+      <citetitle pubwork="journal">PhARMD Pain Mgmt Note Template Install Screenshots</citetitle>
+      <pubdate>2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Materials provided by Robeck</surname><firstname>Ilene
+            R.</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">PBM CPPO pain PhARMD template: frequently asked questions </citetitle>
+      <citetitle pubwork="journal">PBM Pain PhARMD Template FAQ Document</citetitle>
+      <pubdate>2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <authorgroup>
+        <author>
+          <personname><surname>Materials provided by
+            Trafton</surname><firstname>Jodie</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">STORM: Patient Detail Dashboard: Stratification Tool for Opioid
+        Risk Mitigation </citetitle>
+      <citetitle pubwork="journal">STORMde-idesceenshot</citetitle>
+      <pubdate>2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. Department of Veterans Affairs; U.S. Department of Defense.
+        VA/DoD Clinical Practice Guideline for Opioid Therapy for Chronic Pain, Version 3.0 – 2017.
+        U.S. Department of Veterans Affairs website</citetitle>
+      <citetitle pubwork="journal">VA/DoD Clinical Practice Guidelines</citetitle>
+      <pubdate>February 8, 2018</pubdate>
+      <pagenums>.
+        https://www.healthquality.va.gov/guidelines/Pain/cot/VADoDOTCPG022717.pdf</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. Department of Veterans Affairs; Veterans Health
+        Administration. Querying State Prescription Drug Monitoring Programs (PDMP). </citetitle>
+      <citetitle pubwork="journal">VHA Publications website</citetitle>
+      <pubdate>Published October 19, 2016. Accessed February 8, 2018</pubdate>
+      <volumenum>VHA Directive 1306</volumenum>
+      <pagenums>https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3283</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. Department of Veterans Affairs; Veterans Health
+        Administration. Informed Consent for Long-Term Opioid Therapy for Pain</citetitle>
+      <citetitle pubwork="journal">VHA Publications website</citetitle>
+      <pubdate>Published May 6, 2014. Accessed February 8, 2018</pubdate>
+      <volumenum>VHA Directive 1005</volumenum>
+      <pagenums>https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3005. </pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. BENGAY GREASELESS PAIN
+        RELIEVING- menthol, unspecified form and methyl salicylate cream </citetitle>
+      <citetitle pubwork="journal">Johnson &amp; Johnson Consumer Inc., Daily Med
+        Website</citetitle>
+      <pubdate>Revised April 2016</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=0d75b27f-496e-495d-b788-0dd3c0f5a32f&amp;type=displays</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. CAPSAICIN ARTHRITIS PAIN
+        RELIEF CREAM- capsaicin cream</citetitle>
+      <citetitle pubwork="journal">McCure Health Solutions Inc, DailyMed website</citetitle>
+      <pubdate>Revised April 2015</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7c31736c-edaa-4390-a2fb-eab2fd495f7d</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. CELECOXIB - celecoxib
+        capsule</citetitle>
+      <citetitle pubwork="journal">Jubilant Cadista Pharmaceuticals Inc, DailyMed
+        website</citetitle>
+      <pubdate>Revised April 2017</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=27d813ea-7798-09cb-734b-b970d7248f1f</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. DICLOFENAC SODIUM- diclofenac </citetitle>
+      <citetitle pubwork="journal">Amneal Pharmaceuticals LLC, DailyMed website</citetitle>
+      <pubdate>Revised January 2017</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f64b68a5-d6d2-4e92-87e7-90af04c1f9db</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. IBU- ibuprofen tablet </citetitle>
+      <citetitle pubwork="journal">Dr. Reddy's Laboratories Limited, DailyMed website</citetitle>
+      <pubdate>Revised October 2016</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=24731405-219c-79b4-ecf0-7d5fbfda94ba</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. LIDODERM- lidocaine patch </citetitle>
+      <citetitle pubwork="journal">Endo Pharmaceuticals, Inc, DailyMed website</citetitle>
+      <pubdate>evised January 2015</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f1c40164-4626-4290-9012-c00e33420a33</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. NAPROSYN- naproxen tablet;
+        EC-NAPROSYN- naproxen tablet, delayed release; NAPROSYN- naproxen suspension; ANAPROX-
+        naproxen sodium tablet; ANAPROX DS- naproxen sodium tablet </citetitle>
+      <citetitle pubwork="journal">Genentech, Inc, DailyMed website</citetitle>
+      <pubdate>Revised January 2018</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68848217-03c9-4377-9be6-6f567e629129</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. REDICARE IBUPROFEN- ibuprofen
+        200mg tablet, film coated </citetitle>
+      <citetitle pubwork="journal">Redicare LLC, DailyMed website</citetitle>
+      <pubdate>Revised January 2017</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=45eb33f0-71e2-11d5-e054-00144ff88e88</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="article">U.S. National Library of Medicine. TYLENOL REGULAR STRENGTH-
+        acetaminophen tablet </citetitle>
+      <citetitle pubwork="journal">Johnson &amp; Johnson COnsumer Inc., McNeil Consumer Healthcare
+        Division, DailyMed Website</citetitle>
+      <pubdate>Revised October 2016</pubdate>
+      <pagenums>https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1622f694-4d63-4c56-8737-fae31f0ecfb7</pagenums>
+    </biblioentry>
+  </bibliography>
+  <appendix><info><title>Existing Sample VA Artifacts</title></info>
+    <para><emphasis role="bold">Figure A.1. V21 Chronic Opioid Therapy
+        Ongoing Monitoring Reminder Dialog (image 1 of 3)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image002_931485099.gif" depth="544" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.2. V21 Chronic Opioid Therapy
+        Ongoing Monitoring Reminder Dialog (image 2 of 3)</emphasis><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image004_1631888503.gif" depth="546" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.3. V21 Chronic Opioid Therapy
+        Ongoing Monitoring Reminder Dialog (image 3 of 3)</emphasis></para>
+    <para><anchor xml:id="d0e2953"/><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image006_663780166.gif" depth="449" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.4. VA Stratification Tool for
+        Opioid Risk Mitigation (STORM) Patient Detail Dashboard</emphasis></para>
+    <para><anchor xml:id="d0e2964"/><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image008_-589478747.jpg" depth="327" width="626"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.5. PhARMD Pain Mgmt Note Template
+        (image 1 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image010_-441956800.jpg" depth="309" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.6. PhARMD Pain Mgmt Note Template
+        (image 2 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image012_46913501.jpg" depth="463" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.7. PhARMD Pain Mgmt Note Template
+        (image 3 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image014_920144352.jpg" depth="469" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.8. PhARMD Pain Mgmt Note Template
+        (image 4 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image016_-1611859281.jpg" depth="468" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.9. PhARMD Pain Mgmt Note Template
+        (image 5 of 18)</emphasis></para>
+    <para><anchor xml:id="d0e3019"/><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image018_1531803799.jpg" depth="471" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.10. PhARMD Pain Mgmt Note
+        Template (image 6 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image020_-901918795.jpg" depth="469" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.11. PhARMD Pain Mgmt Note
+        Template (image 7 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image022_-679922494.jpg" depth="467" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.12. PhARMD Pain Mgmt Note
+        Template (image 8 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image024_1474361768.jpg" depth="467" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.13. PhARMD Pain Mgmt Note
+        Template (image 9 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image026_-50740435.jpg" depth="471" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.14. PhARMD Pain Mgmt Note
+        Template (image 10 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image028_526522141.jpg" depth="469" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.15. PhARMD Pain Mgmt Note
+        Template (image 11 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image030_-2110589194.jpg" depth="492" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.16. PhARMD Pain Mgmt Note
+        Template (image 12 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image032_872159523.jpg" depth="468" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.17. PhARMD Pain Mgmt Note
+        Template (image 13 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image034_1517300787.jpg" depth="469" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.18. PhARMD Pain Mgmt Note
+        Template (image 14 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image036_-1896486661.jpg" depth="471" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.19. PhARMD Pain Mgmt Note
+        Template (image 15 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image038_-677958316.jpg" depth="468" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.20. PhARMD Pain Mgmt Note
+        Template (image 16 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image040_-1386869172.jpg" depth="467" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.21. PhARMD Pain Mgmt Note
+        Template (image 17 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image042_2024703796.jpg" depth="468" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.22. PhARMD Pain Mgmt Note
+        Template (image 18 of 18)</emphasis></para>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image044_-1595470082.jpg" depth="467" width="624"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.23: PBM Pain PhARMD Template FAQ</emphasis></para>
+    <para>The PBM CPPO Pain PhARMD template is a voluntary initiative of the PBM Clinical Pharmacy
+      Practice Office (CPPO) and the CPPO Pain Subject Matter Expert (SME) Workgroup where Clinical
+      Pharmacy Specialist (CPS) at a local facility utilize a pre-defined note template to document
+      their clinical pharmacy encounters for patients in which they are providing comprehensive
+      medication management services in pain. All guidance and educational documents for the PBM
+      Pain PhARMD template can be found on the Clinical Pharmacy SharePoint site at</para>
+    <para><link xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="https://vaww.infoshare.va.gov/sites/ClinicalPharmacy/PainManagementSME/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2FClinicalPharmacy%2FPainManagementSME%2FShared%20Documents%2FFY17%2DDocumentation%20and%20Outcomes%20Subgroup&amp;FolderCTID=0x0120002AD1D94329882441AB4A1134B8CA2184&amp;View=%7B130A15D7%2D003D%2D40EA%2D9319%2DE11F040598B9%7D&amp;InitialTabId=Ribbon%2EDocument&amp;VisibilityContext=WSSTabPersistence"
+        >Pain SME Workgroup Outcomes Subgroup SharePoint</link>.</para>
+    <para><emphasis role="bold">Links to important information:</emphasis></para>
+    <para>Pain PhARMD</para>
+    <itemizedlist>
+      <listitem>
+        <para>Template link: <link
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="https://vaww.infoshare.va.gov/sites/ClinicalPharmacy/PainManagementSME/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2FClinicalPharmacy%2FPainManagementSME%2FShared%20Documents%2FFY17%2DDocumentation%20and%20Outcomes%20Subgroup&amp;FolderCTID=0x0120002AD1D94329882441AB4A1134B8CA2184&amp;View=%7B130A15D7%2D003D%2D40EA%2D9319%2DE11F040598B9%7D&amp;InitialTabId=Ribbon%2EDocument&amp;VisibilityContext=WSSTabPersistence"
+            >Pain SME Workgroup Outcomes Subgroup SharePoint Folder</link></para>
+      </listitem>
+      <listitem>
+        <para>Template install instructions for CAC link: <link
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="https://vaww.infoshare.va.gov/sites/ClinicalPharmacy/PainManagementSME/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2FClinicalPharmacy%2FPainManagementSME%2FShared%20Documents%2FFY17%2DDocumentation%20and%20Outcomes%20Subgroup&amp;FolderCTID=0x0120002AD1D94329882441AB4A1134B8CA2184&amp;View=%7B130A15D7%2D003D%2D40EA%2D9319%2DE11F040598B9%7D&amp;InitialTabId=Ribbon%2EDocument&amp;VisibilityContext=WSSTabPersistence"
+            >Pain SME Workgroup Outcomes Subgroup SharePoint Folder</link></para>
+      </listitem>
+      <listitem>
+        <para>Template national database link: <link
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="https://vaww.infoshare.va.gov/sites/ClinicalPharmacy/PainManagementSME/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2FClinicalPharmacy%2FPainManagementSME%2FShared%20Documents%2FFY17%2DDocumentation%20and%20Outcomes%20Subgroup&amp;FolderCTID=0x0120002AD1D94329882441AB4A1134B8CA2184&amp;View=%7B130A15D7%2D003D%2D40EA%2D9319%2DE11F040598B9%7D&amp;InitialTabId=Ribbon%2EDocument&amp;VisibilityContext=WSSTabPersistence"
+            >Pain SME Workgroup Outcomes Subgroup SharePoint Folder</link></para>
+      </listitem>
+    </itemizedlist>
+    <para><emphasis role="bold">General Helpful Hints:</emphasis></para>
+    <para>The PBM Pain PhARMD template is a standardized template used for documenting elements and
+      interventions associated with clinical pharmacy patient care encounters. This template is used
+      to document the progress note for the pharmacist who is providing direct patient care and
+      practicing under a scope of practice that includes pain management activities. The template
+      includes embedded PhARMD health factors that are currently contained within the PhARMD Version
+      9 tool, as well as other documentation elements necessary for the pharmacist to complete their
+      progress note. The goal of the Pain PhARMD template is to replace all other existing
+      pharmacist pain templates for face-to-face, telehealth, and telephone visits to create a
+      uniform pain template that will allow for health factor analysis and assistance in training
+      pharmacists in pain management.</para>
+    <para>All health factors embedded within the Pain PhARMD template are unique to the PhARMD
+      project. The template includes embedded PhARMD health factors therefore allowing the CPS to
+      easily document all elements of their note in addition to interventions without having to open
+      the PhARMD Version 9 tool separately.</para>
+    <para><emphasis role="italic">PhARMD Intervention=PhARMD Health Factor</emphasis></para>
+    <para>Health Factor – a data element that can be customized to document elements not readily
+      retrievable from the Veterans Information Systems and Technology Architecture
+      (VistA)/Computerized Patient Record System (CPRS). For the Pain PhARMD template, health
+      factors are used to capture the interventions, identified goals, and indicators of the end of
+      active treatment selected by the provider using the Pain PhARMD template.</para>
+    <para>It is important that your facility does not modify the Pain PhARMD template health Factors
+      in any way as this may result in the interventions not being captured on the PhARMD reports.
+      The use of this template does not refute the need for the CPS to resolve other clinical
+      reminders. Clinical Reminders that are pertinent to the visit will need to be completed after
+      you have documented your progress note with the Pain PhARMD template.</para>
+    <para>All PhARMD Interventions contained within the Pain PhARMD template will be captured on the
+      PhARMD Project Reports. It is important to note that these reports will capture any PhARMD
+      interventions made by a Pharmacist Provider which is a primary or secondary provider on an
+      encounter with a classification of ‘pharmacist’ and not capture interventions made by other
+      types of providers.</para>
+    <para>In the event that the pharmacist has completed their progress note using the Pain PhARMD
+      Template but needed to document additional care or interventions, they should do so by making
+      an addendum to the original note. If interventions are made, these interventions should be
+      recorded using the PhARMD Version 9 tool rather than starting a new progress note using the
+      Pain template.</para>
+    <para>Use of the Pain PhARMD template will help us characterize the patient care outcomes as
+      well as types and volume of interventions made by Pain CPS. Please attempt to document all the
+      interventions you are making accurately and concisely.</para>
+    <para>Pharmacists should follow the below step-wise approach for documenting patient care
+      activities using the Pain PhARMD template:</para>
+    <para>Step 1. Choose the appropriate clinic location for the visit</para>
+    <para>Step 2: Choose the facility specific note title created by the clinical applications
+      coordinator (CAC) that links to the Pain PhARMD template</para>
+    <para>NOTE: If a note title was not chosen by the CAC, then choose a different note title. Then
+      go to the reminders tab and open the Pain PhARMD template</para>
+    <para>Step 3: Fill out all appropriate elements contained within the template (see documentation
+      tips below for more information).</para>
+    <para>NOTE: There are required elements of the Pain PhARMD template, such as the PEG score. You
+      must complete this required element before you will be able to finish your note.</para>
+    <para>Step 4: Click finish button on Pain PhARMD template. See FAQ section if cannot click the
+      finish button for additional troubleshooting</para>
+    <para>Step 5: Record your encounter information. The health factor information will already be
+      complete as a result of filling out the Pain PhARMD template</para>
+    <para>NOTE: To delete any health factor or intervention you selected in error, you must go to
+      the health factors tab within the encounter, highlight the intervention you want removed, and
+      then click remove</para>
+    <para>Step 6: Sign your note and complete the documentation process</para>
+    <para>NOTE: If you forget to document an intervention prior to signing your note, go back and
+      add an addendum to your signed note. Then go to the reminders tab and select the PhARMD
+      Version 9 tool and fill out the tool for the interventions that were not recorded.</para>
+    <para><emphasis role="italic">Documentation tips for the Pain PhARMD template</emphasis></para>
+    <para>Time In/Out (REQUIRED ELEMENT): Click the corresponding box and enter the time you started
+      the patient visit and the time you ended the visit. NOTE: This does NOT include the time you
+      started the note or the time you finished it, only the time you were conducting the patient
+      visit.</para>
+    <para>Initial/Follow-Up visit (REQUIRED ELEMENT): Click the corresponding box and then click if
+      patient is an initial or follow-up visit</para>
+    <para><anchor xml:id="d0e3291"/><mediaobject>
+        <alt>Click the corresponding box and then click if patient is an initial or follow-up
+          visit</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image046_-1365925543.jpg" depth="386" width="589"/>
+        </imageobject>
+      </mediaobject></para>
+    <para>Past Medical History (REQUIRED ELEMENT), Past Surgical History, Pertinent Medications:
+      Click on the corresponding box and enter as free text</para>
+    <para>Pain Description/Location (OPTIONAL ELEMENT): Click on the corresponding box and you have
+      the option to enter free text also</para>
+    <para><mediaobject>
+        <alt>Click on the corresponding box and you have the option to enter free text</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image048_529825054.jpg" depth="384" width="512"/>
+        </imageobject>
+      </mediaobject></para>
+    <para>Aggravating/Alleviating Factors (OPTIONAL ELEMENT): Click on the corresponding box and you
+      have the option to enter free text also for the “other” box</para>
+    <para><anchor xml:id="d0e3314"/><mediaobject>
+        <alt>Click on the corresponding box and you have the option to enter free text also for the
+          “other” box</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image050_1181090076.jpg" depth="337" width="512"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><mediaobject>
+        <alt>Click on the corresponding box and you have the option to enter free text also for the
+          “other” box</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image052_745579108.jpg" depth="373" width="561"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><mediaobject>
+        <alt>Click on the corresponding box and you have the option to enter free text also for the
+          “other” box</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image054_-179110325.jpg" depth="389" width="568"/>
+        </imageobject>
+      </mediaobject><alt>Click on the corresponding box and you have the option to enter free text
+        also for the “other” box</alt></para>
+    <para>Relevant Vital Signs/Laboratory Values/Diagnostic Procedures/Imaging (OPTIONAL ELEMENT):
+      Click on the corresponding box next to the vital sign or laboratory value you want to include
+      in you note. You also have an option to click the “other” box and enter as free text. The
+      objects will need to be installed by your local clinical applications coordinator</para>
+    <para><anchor xml:id="d0e3335"/><mediaobject>
+        <alt>Click on the corresponding box next to the vital sign or laboratory value you want to
+          include in you note. You also have an option to click the “other” box and enter as free
+          text.</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image056_165615008.jpg" depth="315" width="482"/>
+        </imageobject>
+      </mediaobject><alt>Click on the corresponding box next to the vital sign or laboratory value
+        you want to include in you note. You also have an option to click the “other” box and enter
+        as free text.</alt></para>
+    <para><mediaobject>
+        <alt>Click on the corresponding box next to the vital sign or laboratory value you want to
+          include in you note. You also have an option to click the “other” box and enter as free
+          text.</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image058_2117597240.jpg" depth="367" width="489"/>
+        </imageobject>
+      </mediaobject></para>
+    <para>Medication Profile (REQUIRED ELEMENT for face-to-face, telehealth visits): Click on the
+      box next to the item you wish to include in your note. Some items will need to be installed by
+      your local clinical applications coordinator. Enter in your previous pain medications and
+      non-pharmacological treatments as free text</para>
+    <para><mediaobject>
+        <alt>Click on the box next to the item you wish to include in your note. Some items will
+          need to be installed by your local clinical applications coordinator. Enter in your
+          previous pain medications and non-pharmacological treatments as free text</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image060_-1825594472.jpg" depth="426" width="568"/>
+        </imageobject>
+      </mediaobject></para>
+    <para>PEG tool (REQUIRED ELEMENT): For each question, click on only one box in front of the
+      number you which to place into your note. Remember only whole numbers should be used!</para>
+    <para>NOTE: For the last question, you will need to manually calculate the average PEG score by
+      adding up the total of the first three questions and dividing by three. Then round to the
+      nearest whole number and click on the box in front of the number you wish to select.</para>
+    <para><anchor xml:id="d0e3362"/><mediaobject>
+        <alt>Click on the box next to the item you wish to include in your note. Some items will
+          need to be installed by your local clinical applications coordinator. Enter in your
+          previous pain medications and non-pharmacological treatments as free text</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image062_-380390232.jpg" depth="356" width="554"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><mediaobject>
+        <alt>Click on the box next to the item you wish to include in your note. Some items will
+          need to be installed by your local clinical applications coordinator. Enter in your
+          previous pain medications and non-pharmacological treatments as free text</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image064_602109409.jpg" depth="294" width="561"/>
+        </imageobject>
+      </mediaobject></para>
+    <para>Activities of Daily Living/Sleep/Mood (OPTIONAL ELEMENT): Check the box next to the item
+      you want to include in your note. For sleep and other boxes there is an optional free
+      text.</para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image066_-1898392868.jpg" depth="326" width="624"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image068_569068964.jpg" depth="350" width="624"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image068_-1718950741.jpg" depth="350" width="624"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image070_-51920579.jpg" depth="419" width="558"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>Assessment (REQUIRED ELEMENT): Enter your assessment as free text. A large free text box
+      is included in the template Plan (REQUIRED ELEMENT): Similar to the pain management portion of
+      Version 9 of the PhARMD tool with the following difference. Addition of mental health clinic
+      intervention section to the plan section of the Pain PhARMD template</para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image072_-83239903.jpg" depth="397" width="530"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image074_-971253284.jpg" depth="397" width="530"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image076_1308910148.jpg" depth="398" width="531"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image078_234726960.jpg" depth="398" width="531"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image080_-415681641.jpg" depth="393" width="524"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image082_1425977215.jpg" depth="395" width="527"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image084_1242329227.jpg" depth="395" width="527"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="italic">Additional Pain PhARMD template Frequently Asked Questions
+        (FAQs):</emphasis></para>
+    <para>Q: Can I use any note title to associate with the Pain PhARMD Template?</para>
+    <para>A: No, only use the note title provided by your clinical applications coordinator which
+      will link directly the Pain PhARMD Template. If a note title was not chosen by the CAC, then
+      choose any appropriate note title. Once the note title has opened, you would then go to the
+      reminders tab and open the Pain PhARMD template</para>
+    <para>Q: What types of visits should I use the Pain PhARMD Template (e.g., chart consult, Face
+      to Face, telephone, initial, follow-up)?</para>
+    <para>A: The Pain PhARMD Template should only be used for Face to Face, telephone, and
+      telehealth clinic visits. A separate template should be used for notes based only on chart
+      consultation (e.g.: electronic consults)</para>
+    <para>Q: Can I save my work and then return to the Pain PhARMD Template if I were to be
+      interrupted while documenting my progress note?</para>
+    <para>A: No, unfortunately the Pain PhARMD Template cannot be saved until you have completed the
+      template and hit the finish button on the template. However, once you have finished the
+      template you can save you progress note in CPRS.</para>
+    <para>Q: If I have started documenting my note using the Pain PhARMD template, can I switch to
+      another tab to review other information in CPRS?</para>
+    <para>A: Yes, you can by clicking on the top of the template (see below) to drag the template to
+      a different position on the screen or can click on the bottom right hand corner of the
+      template (see below) to shrink the Pain PhARMD Template. This will allow you to see other
+      information as needed in CPRS.</para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image086_-17225955.jpg" depth="451" width="626"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>Q: What happens if I click off my current note title in CPRS while using the Pain PhARMD
+      Template? How do I fix it?</para>
+    <para>A: Clicking on a different note title in CPRS (e.g.: want to search a different note while
+      using the template) will cause your finish button to grey out so you cannot finish and sign
+      your note. To fix this, click back on the current note title in being edited in the notes
+      section of CPRS. Your finish button should then be functional again and should be able to
+      finish the note</para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image088_1799511466.jpg" depth="474" width="626"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>Q: After filling out and finishing the Pain PhARMD Template, why is there no spacing in my
+      documented plan and what can I do about it to make it more reader friendly before I sign the
+      progress note?</para>
+    <para>A: The plan portion of Pain PhARMD Template reflects the previous version of the PhARMD
+      tool with a few slight modifications. It is recommended but not required to enter a single or
+      double space in between the different sections of your plan after finishing the Pain PhARMD
+      Template before signing your progress note.</para>
+    <para>Q: Does the Pain PhARMD Template contain all the interventions included in Version 9 of
+      the PhARMD tool?</para>
+    <para>A: No, the Pain PhARMD Template only contains interventions most commonly made for pain
+      management patients, this includes pain interventions as well as those in key interventions in
+      mental health, and smoking cessation. In the event that you make additional interventions
+      during the visit, e.g., changing a HTN medication, you would need to open up the PhARMD
+      Version 9 tool once you have finished your documentation with the Pain template.</para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image090_-305318728.jpg" depth="500" width="626"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>Q: Once I have completed my progress note using the Pain PhARMD Template, do I need to
+      open up the PhARMD Version 9 tool to document my interventions?</para>
+    <para>A: You only need to document interventions with the PhARMD Version 9 tool if you forgot to
+      document an intervention before clicking the finish button on the Pain PhARMD Template or if
+      you need to document other interventions not contained with the Pain PhARMD template. This
+      would be done once you have finished your documentation process with the Pain PhARMD
+      Template</para>
+    <para>Q: How do I go back and document the interventions? Do I open up the Pain PhARMD Template
+      again or simply write an addendum? Do I need to use the PhARMD tool to document the
+      interventions associated with the items I missed?</para>
+    <para>A: Yes, by following the steps outlined below:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Make an addendum to your progress note</para>
+      </listitem>
+      <listitem>
+        <para>Open up the PhARMD Version 9 tool from the reminders section under the notes tab in
+          CPRS</para>
+      </listitem>
+      <listitem>
+        <para>Documents your intervention(s)</para>
+      </listitem>
+      <listitem>
+        <para>Click finish</para>
+      </listitem>
+      <listitem>
+        <para>Sign your addendum</para>
+      </listitem>
+    </itemizedlist>
+    <para>Q: Is the PEG tool required to complete for each visit as part of the Pain PhARMD
+      Template?</para>
+    <para>A: Yes, the PEG tool (average level of pain, pain interference with quality of life, pain
+      interference with movement, average of the three scores) is required to complete before you
+      can finish the Pain PhARMD Template.</para>
+    <para>Q: What sections of the Pain PhARMD Template are mandatory to fill out and which are
+      optional?</para>
+    <para>A: Currently, <emphasis role="underline">the only required portions of the Pain PhARMD
+        Template is the PEG scores and is notified with an asterix (*)</emphasis> in front of the
+      box. You must also fill out the assessment and plan portions of the Pain PhARMD Template as
+      this is required for encounter credit. All other portions of the template are optional based
+      on your clinical judgement, this is subject to change as PBM aims to collect more pain
+      management data to derive and analyze outcomes.</para>
+    <para>Q: How do I correctly enter the PEG scores so that the outcomes data is correct when being
+      analyzed?</para>
+    <para>A: Make sure you only click <emphasis role="underline">one</emphasis> box for each PEG
+      question. Please double check to make sure you have only 1 box checked for each of the 4
+      questions before you click finish on the Pain PhARMD Template. You will also have to manually
+      average the three scores together and <emphasis role="underline">round to the nearest whole
+        number</emphasis> for the composite score you enter.</para>
+    <para>Q: What happens if I make a mistake when entering the PEG scores into the Pain PhARMD
+      Template?</para>
+    <para>A: If you realized you made a mistake after you signed the note, please follow the steps
+      below:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Make an addendum to your note</para>
+      </listitem>
+      <listitem>
+        <para>Select the PhARMD Version 9 tool reminder dialog in the reminders section</para>
+      </listitem>
+      <listitem>
+        <para>In the PhARMD Version 9 tool, select the pain management box</para>
+      </listitem>
+      <listitem>
+        <para>Fill out the PEG scores again with the correct information</para>
+      </listitem>
+      <listitem>
+        <para>This will update the database to reflect your most recent PEG score submission</para>
+      </listitem>
+    </itemizedlist>
+    <para><emphasis role="bold">Figure A.24: Office of Health Informatics – Opioid KNARTs
+        Harmonization</emphasis></para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image092_-1160546097.gif" depth="3" width="812"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Column Abbreviations and Representation</emphasis></para>
+    <para><emphasis role="bold">Documented Diagnosis</emphasis> that Influence Patient Risk</para>
+    <para><emphasis role="italic">Note: For listed Dx with ++ Providers will not be filtered so as
+        to so not exclude social work, clinical nurse specialist, psychologist, and other mental
+        health providers</emphasis></para>
+    <para>Depressoin (DEP)++</para>
+    <itemizedlist>
+      <listitem>
+        <para>Serious Mental Illness (SMI)</para>
+      </listitem>
+      <listitem>
+        <para>Other Mental Disorder (OMD)</para>
+      </listitem>
+      <listitem>
+        <para>Post-Traumatic Stress Disorder (PTSD) ++</para>
+      </listitem>
+      <listitem>
+        <para>Substance Use Disorder (SUD)</para>
+      </listitem>
+      <listitem>
+        <para>Obstructive Sleep Apnea (OSA)</para>
+      </listitem>
+      <listitem>
+        <para>Palliative Care (PalCare)</para>
+      </listitem>
+      <listitem>
+        <para>Cancer Pain (CA Pain)</para>
+      </listitem>
+      <listitem>
+        <para>Palliative Care (PalCare)<itemizedlist>
+            <listitem>
+              <para>Palliative care diagnosis column will only appear if a patient with a palliative
+                care diagnosis is in the selected patient cohort</para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist>
+      <listitem>
+        <para>CA Pain Dx<itemizedlist>
+            <listitem>
+              <para>Diagnosis of CA Pain column will appear only if a patient with Neoplasm Related
+                Pain is identified for any patient in the selected patient cohort</para>
+            </listitem>
+            <listitem>
+              <para>Must be documented in patient chart as NEOPLASM RELATED PAIN</para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+    </itemizedlist>
+    <para>Medication Activity Quick Look</para>
+    <itemizedlist>
+      <listitem>
+        <para>Active Opioid Rx</para>
+      </listitem>
+      <listitem>
+        <para>Active Benzo Rx</para>
+      </listitem>
+      <listitem>
+        <para>Opioid Agonist Treatment (OAT)</para>
+      </listitem>
+      <listitem>
+        <para>Last Opioid Substitution Visit</para>
+      </listitem>
+      <listitem>
+        <para>Last Naloxone Dispensed</para>
+      </listitem>
+      <listitem>
+        <para>Last Opioid Rx, Prescriber, Location</para>
+      </listitem>
+      <listitem>
+        <para>Last Benzo Rx, Prescriber, Location<itemizedlist>
+            <listitem>
+              <para>Opioid Agonist Treatment (OAT) &amp; Opioid Agonist Treatment (OAT)<itemizedlist>
+                  <listitem>
+                    <para>Columns are only visible when a patient is in selected cohort</para>
+                  </listitem>
+                </itemizedlist></para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+    </itemizedlist>
+    <para><emphasis role="bold">Parameter Selection </emphasis>(User selections are saved and will
+      auto-populate next time user runs the report)</para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image100_1605426384.jpg" depth="97" width="652"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Select Desired Site(s)</emphasis></para>
+    <itemizedlist>
+      <listitem>
+        <para>Select Multiple Divisions or Entire Parent Station</para>
+      </listitem>
+    </itemizedlist>
+    <para><emphasis role="bold">Choose Providers / Prescribers / Teams</emphasis></para>
+    <itemizedlist>
+      <listitem>
+        <para>Individual or Multiple Provider(s) &amp;/or Team(s)</para>
+      </listitem>
+      <listitem>
+        <para>Include *Unassigned*</para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image102_-68621808.gif" depth="3" width="224"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Choose Desired Opioid Group(s)</emphasis></para>
+    <itemizedlist>
+      <listitem>
+        <para>Long-Term Opioid Therapy (LTOT), and /or</para>
+      </listitem>
+      <listitem>
+        <para>Active Rx, and /or</para>
+      </listitem>
+      <listitem>
+        <para>Any Opioid in Past Year</para>
+      </listitem>
+    </itemizedlist>
+    <para><emphasis role="bold">Choose the Opioid Population</emphasis></para>
+    <itemizedlist>
+      <listitem>
+        <para>All Opioids</para>
+      </listitem>
+      <listitem>
+        <para>Exclude Buprenorphine/Naloxone Only Patients</para>
+      </listitem>
+      <listitem>
+        <para>Exclude Tramadol Only Patients</para>
+      </listitem>
+      <listitem>
+        <para>Exclude Tramadol and Buprenorphine/Naloxone Only Patients</para>
+      </listitem>
+      <listitem>
+        <para>Buprenorphine/Naloxone Only Patients</para>
+      </listitem>
+      <listitem>
+        <para>Tramadol Only Patients</para>
+      </listitem>
+    </itemizedlist>
+    <para><mediaobject>
+        <imageobject>
+          <imagedata fileref="images/clip_image104_-1076902063.jpg" depth="1" width="513"/>
+        </imageobject>
+      </mediaobject><emphasis role="bold">Figure A.25. American Academy of Pain Medicine (AAPM) 2015
+        Panel Presentation for Clearance 2 (image 1 of 22)</emphasis></para>
+    <para>
+      <mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image106_94430690.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Figure A.26. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 2 of 22)</emphasis></para>
+    <para>
+      <mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image108_914571023.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Figure A.27. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 3 of 22)</emphasis></para>
+    <para>
+      <mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image110_-1161196660.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Figure A.28. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 4 of 22)</emphasis></para>
+    <para>
+      <mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image112_290556023.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Figure A.29. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 5 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image110_-324544832.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.30. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 6 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image114_-847841210.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.31. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 7 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image116_766294019.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.32. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 8 of 22)</emphasis></para>
+    <para>
+      <mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image118_-286818333.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Figure A.33. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 9 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image120_-893924097.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.34. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 10 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image122_-96028895.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.35. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 11 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image124_-514977986.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.36. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 12 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image126_-669633655.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.37. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 13 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image128_955366729.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.38. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 14 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image130_968901005.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.39. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 15 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image132_1341612925.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.40. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 16 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image134_-988558308.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.41. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 17 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image136_697445519.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.42. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 18 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image138_-2010014860.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.43. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 19 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image140_-1721237343.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.44. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 20 of 22)</emphasis><mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image142_-680893854.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject></para>
+    <para><emphasis role="bold">Figure A.45. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 21 of 22)</emphasis></para>
+    <para>
+      <mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image144_372910140.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para><emphasis role="bold">Figure A.46. American Academy of Pain Medicine (AAPM) 2015 Panel
+        Presentation for Clearance 2 (image 22 of 22)</emphasis></para>
+    <para>
+      <mediaobject>
+        <alt>American Academy of Pain Medicine (AAPM) 2015 Panel Presentation for Clearance 2</alt>
+        <imageobject>
+          <imagedata fileref="images/clip_image146_-1467811989.jpg" depth="360" width="480"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>Document 1: An Item Bank for Abuse of Prescription Pain Medication from the
+      Patient-Reported Outcomes Measurement Information System (PROMISV R) (published October
+      2016)</para>
+    <para>https://www.ncbi.nlm.nih.gov/pubmed/28339555</para>
+  
+  
+  </appendix>
+  <appendix>
+    <title>Basic Laboratory Panel Definition</title>
+    <itemizedlist>
+      <listitem>
+        <para>Blood Urea Nitrogen</para>
+      </listitem>
+      <listitem>
+        <para>Calcium</para>
+      </listitem>
+      <listitem>
+        <para>Chloride</para>
+      </listitem>
+      <listitem>
+        <para>CO2 (Carbon Dioxide, Bicarbonate)</para>
+      </listitem>
+      <listitem>
+        <para>Creatinine</para>
+      </listitem>
+      <listitem>
+        <para>Glucose</para>
+      </listitem>
+      <listitem>
+        <para>Potassium</para>
+      </listitem>
+      <listitem>
+        <para>Sodium</para>
+      </listitem>
+    </itemizedlist>
+  </appendix>
+  <appendix>
+    <title>Acronyms</title>
+    <informaltable>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry>Acronym</entry>
+            <entry>Definition</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>CCWP</entry>
+            <entry>Clinical Content White Paper</entry>
+          </row>
+          <row>
+            <entry>CPAC</entry>
+            <entry>Continuous Positive Airway Pressure</entry>
+          </row>
+          <row>
+            <entry>CPRS</entry>
+            <entry>Computerized Patient Record System</entry>
+          </row>
+          <row>
+            <entry>CDS</entry>
+            <entry>Clinical Decision Support</entry>
+          </row>
+                    <row>
+            <entry>CO2</entry>
+            <entry>Carbon Dioxide</entry>
+          </row>
+          <row>
+            <entry>DoD</entry>
+            <entry>Department of Defense</entry>
+          </row>
+                    <row>
+            <entry>HL7</entry>
+            <entry>Health Level 7</entry>
+          </row>
+          <row>
+            <entry>KBS</entry>
+            <entry>Knowledge Based Systems</entry>
+          </row>
+          <row>
+            <entry>KNART</entry>
+            <entry>Knowledge Artifact</entry>
+          </row>
+          <row>
+            <entry>LTOT</entry>
+            <entry>Long-term Opioid Therapy</entry>
+          </row><row>
+            <entry>OEND</entry>
+            <entry>Opioid Overdose Education and Naloxone Distribution</entry>
+          </row><row>
+            <entry>OIIG</entry>
+            <entry>Office of Informatics and Information Governance</entry>
+          </row><row>
+            <entry>OTRR</entry>
+            <entry>Opioid Therapy Risk Report</entry>
+          </row><row>
+            <entry>PBM</entry>
+            <entry>Pharmacy Benefits Management</entry>
+          </row><row>
+            <entry>PCP</entry>
+            <entry>Primary Care Provider</entry>
+          </row><row>
+            <entry>PDMP</entry>
+            <entry>Prescription Drug Monitoring Program</entry>
+          </row>       
+            <row>
+            <entry>SME</entry>
+            <entry>Subject Matter Expert</entry>
+          </row>
+          <row>
+            <entry>STORM</entry>
+            <entry>Stratification Tool for Opioid Risk Mitigation</entry>
+          </row>
+            <row>
+            <entry>TO</entry>
+            <entry>Task Order</entry>
+          </row>
+          <row>
+            <entry>VA</entry>
+            <entry>Department of Veterans Affairs</entry>
+          </row>          <row>
+            <entry>VAMC</entry>
+            <entry>VA Medical Center</entry>
+          </row>          <row>
+            <entry>VistA</entry>
+            <entry>Veterans Information Systems and Technology Architecture</entry>
+          </row>          <row>
+            <entry>VISN</entry>
+            <entry>Veterans Integrated Service Network</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </appendix>
+</book>
