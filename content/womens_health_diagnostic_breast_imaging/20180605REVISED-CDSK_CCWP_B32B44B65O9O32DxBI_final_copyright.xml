@@ -1,0 +1,2905 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+      Artifacts (KNARTs)</title>
+    <subtitle> Women’s Health: Diagnostic Breast Imaging Clinical Content White Paper </subtitle>
+    <copyright>
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright>
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+    <authorgroup>
+      <author>
+        <personname>Department of Veterans Affairs (VA)</personname>
+      </author>
+      <author>
+        <orgname><inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/VALOGO.jpg"/>
+            </imageobject>
+          </inlinemediaobject></orgname>
+      </author>
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+      <author>
+        <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+      </author>
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+    <abstract>
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+      </info>
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Relevant KNART Information: Women’s Health: Diagnostic Breast Imaging KNARTs </title>
+          <tgroup align="left" cols="2">
+            <thead>
+              <row>
+                <entry>Women's Health KNART</entry>
+                <entry>Associated CLIN</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Diagnostic Breast Imaging – Event-Condition-Action (ECA) Rule</entry>
+                <entry>CLIN0007CA</entry>
+              </row>
+              <row>
+                <entry>Diagnostic Breast Imaging – Documentation Template</entry>
+                <entry>CLIN0009CA</entry>
+              </row>
+              <row>
+                <entry>Diagnostic Breast Imaging – Documentation Template/Consult Request</entry>
+                <entry>CLIN0005AB</entry>
+              </row>
+              <row>
+                <entry>Diagnostic Breast Imaging – Order Set</entry>
+                <entry>CLIN0004AA</entry>
+              </row>
+              <row>
+                <entry>Diagnostic Breast Imaging – Composite/Consult Request</entry>
+                <entry>N/A</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+    <pubdate>June 2018</pubdate>
+    <volumenum>Version 1.0</volumenum>
+  </info>
+  <preface><info>
+    <title>VA Subject Matter Expert (SME) Panel</title>
+  </info>
+    <para>      <table frame="all">
+      <title>VA Subject Matter Expert (SME) Panel</title>
+      <tgroup cols="3" align="left" colsep="1" rowsep="1">
+        <colspec colname="c1" colnum="1" colwidth="1*"/>
+        <colspec colname="c2" colnum="2" colwidth="2.29*"/>
+        <colspec colname="c3" colnum="3" colwidth="1.71*"/>
+        <thead>
+          <row>
+            <entry>Name</entry>
+            <entry>Title</entry>
+            <entry>Project Role</entry>
+          </row>
+        </thead>
+        <tbody>
+            <row>
+              <entry>C. Yvette Williams-Harris, MD, MPH</entry>
+              <entry>Physician, 1670 Clairmont Rd Atlanta, GA 30033</entry>
+              <entry>SME, Primary</entry>
+            </row>
+            <row>
+              <entry>Megan Gerber, MD, MPH</entry>
+              <entry>Physician, VA Boston HealthCare System, 150 South Huntington Ave Boston, MA
+                02130</entry>
+              <entry>SME, Secondary</entry>
+            </row>
+            <row>
+              <entry>Caitlin M. Cusack, MD, MPH</entry>
+              <entry>Contractor - Physician Informaticist, Office of Women's Health Services, 8455
+                Colesville Rd, 12th Floor Silver Spring, MD 20910</entry>
+              <entry>SME</entry>
+            </row>
+        </tbody>
+      </tgroup>
+    </table></para></preface>
+  <preface> <info>
+    <title>Introduction</title>
+  </info>
+    <para>
+      The VA is committed to improving the ability of clinicians to provide
+      care for patients while increasing quality, safety, and efficiency.
+      Recognizing the importance of standardizing clinical knowledge in
+      support of this goal, VA is implementing the Health Level 7 (HL7)
+      Knowledge Artifact Specification for a wide range of VA clinical use
+      cases. Knowledge Artifacts, referred to as (KNARTs), enable the
+      structuring and encoding of clinical knowledge so the knowledge can be
+      integrated with electronic health records to enable clinical decision
+      support.
+    </para>
+    <para>
+      The purpose of this Clinical Content White Paper (CCWP) is to capture
+      the clinical context and intent of KNART use cases in sufficient
+      detail to provide the KNART authoring team with the clinical source
+      material to construct the corresponding knowledge artifacts using the
+      HL7 Knowledge Artifact Specification. This paper has been developed
+      using material from a variety of sources: VA artifacts, clinical
+      practice guidelines, evidence in the body of medical literature, and
+      clinical expertise. After reviewing these sources, the material has
+      been synthesized and harmonized under the guidance of VA subject
+      matter experts to reflect clinical intent for this use case.
+    </para>
+    <para>
+      Unless otherwise noted, items within this white paper (e.g.,
+      documentation template fields, orderable items, etc.) are chosen to
+      reflect the clinical intent at the time of creation. To provide an
+      exhaustive list of all possible items and their variations is beyond
+      the scope of this work.
+    </para></preface>
+  <preface><info>
+    <title>Conventions Used</title>
+  </info>
+    <para>
+      Conventions used within the knowledge artifact descriptions include:
+    </para>
+    <para>
+      &lt;obtain&gt;: Indicates a prompt to obtain the information listed
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          If possible, the requested information should be obtained from the underlying system(s). Otherwise, prompting the user for information may be required
+        </para>
+      </listitem>
+      <listitem>
+        <para>The technical and clinical notes associated with a section should be consulted for
+          specific constraints on the information (e.g., time-frame, patient interview, etc.)</para>
+      </listitem>
+      <listitem>
+        <para>
+          Default Values: Unless otherwise noted, &lt;obtain&gt; indicates to obtain the most recent observation. It is recognized that this default time-frame value may be altered by future implementations
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [...]: Square brackets enclose explanatory text that indicates some action on the part of the clinical user, or general guidance to the clinical or technical teams. Examples include, but are not limited to:
+    </para>
+    <blockquote>
+      <para>
+        [Begin ...], [End ...]: Indicates the start and end of specific areas to clearly delineate them for technical purposes.
+      </para>
+      <para>
+        [Activate ...]: Initiates another knowledge artifact or knowledge artifact section.
+      </para>
+      <para>
+        [Section Prompt: ...]: If this section is applicable, then the following prompt should be displayed to the user.
+      </para>
+      <para>
+        [Section Selection Behavior: ...]: Indicates technical constraints or considerations for the selection of items within the section.
+      </para>
+      <para>
+        [Attach: ...]: Indicates that the specified item should be attached to the documentation template if available.
+      </para>
+      <para>
+        [Link: ...]: Indicates that rather than attaching an item, a link should be included in the documentation template.
+      </para>
+      <para>
+        [Clinical Comment: ...]: Indicates clinical rationale or guidance.
+      </para>
+      <para>
+        [Technical Note: ...]: Indicates technical considerations or notes.
+      </para>
+      <para>
+        [If ...]: Indicates the beginning of a conditional section.
+      </para>
+      <para>
+        [Else, ...]: Indicates the beginning of the alternative branch of a conditional section.
+      </para>
+      <para>
+        [End if ...]: Indicates the end of a conditional section.
+      </para>
+    </blockquote>
+    <para>
+      &#9744;: Indicates items that should be selected based upon the section selection behavior.
+    </para></preface>
+<chapter xml:id="womens-health-diagnostic-breast-imaging">
+  <title>Women’s Health: Diagnostic Breast Imaging</title>
+  <section xml:id="clinical-context">
+    <title>Clinical Context</title>
+    <para>
+      [Begin Clinical Context.]
+    </para>
+    <para>
+      Breast cancer is the most common malignancy in women, affecting approximately one in eight women in the United States (American Cancer Society, 2017). Diagnostic imaging for breast cancer, therefore, is a topic of importance to all women and is a public health priority for the nation. Controversy has arisen around the appropriate balance between diagnostic vigilance and over-detection, with increasing attention being placed on the adverse effects of surgery, radiation, and chemotherapy for tumors that would be unlikely to develop into life-threatening cancers. Striking the right balance between these competing concerns will be achieved through evidence-based recommendations curated by authoritative professional societies such as the National Comprehensive Cancer Network (https://www.nccn.org/).
+    </para>
+    <para>
+      The Diagnostic Breast Imaging KNART set is intended to be used to initiate next steps in the follow-up of abnormal breast cancer screening, and management of women with breast abnormalities or complaints.
+    </para>
+    <para>
+      It is targeted to primary care providers, including designated women's health providers and gynecologists, their proxies (other providers, mammography coordinators, other coordinators), surgeons, and oncologists. The patient cohort includes adult women with abnormal breast imaging results or with breast abnormalities or complaints who do not have an active diagnosis of malignancy.
+    </para>
+      <table>
+        <title>Clinical Context Domains</title>
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Target User</entry>
+              <entry>The target users are primary care providers and gynecologists. These providers
+                may refer the patients to specialists and request specialist review of outside
+                findings as appropriate. Surgeons and oncologists are not among the target users,
+                but may be recipients of referrals/consult requests. </entry>
+            </row>
+            <row>
+              <entry>Patient</entry>
+              <entry>Adult females </entry>
+            </row>
+            <row>
+              <entry>Priority</entry>
+              <entry>Routine unless otherwise specified </entry>
+            </row>
+            <row>
+              <entry>Specialty</entry>
+              <entry>Primary Care, Gynecology, Interventional Radiology, Pathology, Oncology,
+                Surgery </entry>
+            </row>
+            <row>
+              <entry>Location</entry>
+              <entry>Outpatient </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    <para>
+      [End Clinical Context.]
+    </para>
+  </section>
+  <section xml:id="knowledge-artifacts">
+    <title>Knowledge Artifacts</title>
+    <para>
+      [Begin Knowledge Artifacts.]
+    </para>
+    <para>
+      This section describes the CDS knowledge artifacts that are intended to ensure a minimum workup is initiated prior to a diagnostic breast imaging consultation. Specific constraints for these artifacts are:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para> They apply to female adult outpatients with abnormal breast cancer screening, breast
+            abnormalities, or breast complaints. </para>
+      </listitem>
+      <listitem>
+        <para>
+          All imaging studies and treatment modalities are documented, and appropriate results are accessible for consultation.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      Five knowledge artifacts define this clinical use case. These artifacts include the Composite/Consult Request, the ECA Rule, the Documentation Template, the Documentation Template/Consult Request, and the Order Set KNART, which the following sections describe in detail.
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Composite/Consult Request: Women’s Health: Diagnostic Breast Imaging KNART
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              High level, encompassing artifact
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Relies upon the documentation template, documentation template/consult request, and order set artifacts
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>
+          ECA Rule: Women’s Health: Diagnostic Breast Imaging KNART
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              Rule logic for results notifications, follow-up care, and activation of the Diagnostic Breast Imaging Documentation Template
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>
+          Documentation Template: Women’s Health: Diagnostic Breast Imaging KNART
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              Documents information gathered from the electronic medical record and entered by the provider during patient interview and exam
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Includes logic for appropriate display of documentation sections
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>
+          Order Set: Women’s Health: Diagnostic Breast Imaging KNART
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para> Orderable items, including breast imaging, consult requests, and education for
+                patients with abnormal screening mammography, breast symptoms, or abnormal breast
+                findings. </para>
+          </listitem>
+          <listitem>
+            <para>
+              Includes logic for appropriate display of the order set
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>
+          Documentation Template/Consult Request: Women’s Health: Diagnostic Breast Imaging KNART
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              Documents relevant patient information for consulting specialists
+            </para>
+          </listitem>
+          <listitem>
+            <para> Includes guidance for appropriate use of documentation sections </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [End Knowledge Artifacts.]
+    </para>
+  </section>
+</chapter>
+<chapter xml:id="compositeconsult-request-diagnostic-breast-imaging">
+  <title>Composite/Consult Request: Diagnostic Breast Imaging</title>
+  <para>
+    [Begin Composite/Consult Request: Diagnostic Breast Imaging.]
+  </para>
+  <section xml:id="knowledge-narrative">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [Clinical Comment: The Composite/Consult Request allows users to quickly and efficiently order follow-up care for an abnormal breast imaging result, breast symptoms, or clinical breast findings.]
+    </para>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="consult-request">
+    <title>Consult Request</title>
+    <para>
+      [Begin Consult Request.]
+    </para>
+    <para>
+      [Clinical Comment: This consult request should be made available to the provider for patients whose need for specialty consultation is identified, by screening or diagnostic breast imaging or clinical assessment, during documentation template and documentation template-consult request completion by a clinical provider.]
+    </para>
+    <para>
+      [Technical Note: The following list provides the basic components of the consult request. This is the high-level, encompassing artifact and must be combined with the documentation template—consult request template and order set to form a fully functional knowledge artifact.]
+    </para>
+    <para>
+      [Technical Note: Data should be pulled automatically from the consult request documentation template whenever possible.]
+    </para>
+    <para> [Section Prompt: Consult orders for review of outside breast imaging [mammography,
+        ultrasound, and magnetic resonance imaging (MRI)] for pathology, and for breast consultation
+        services within and outside of VA.] </para>
+    <para>
+      [Section Prompt: Please identify consult specialty.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Radiology
+      </para>
+      <para>
+        ☐ Pathology
+      </para>
+      <para>
+        ☐ Interventional Radiology
+      </para>
+      <para>
+        ☐ Surgery
+      </para>
+      <para>
+        ☐ Oncology
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Reason for Consult.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Breast Imaging Interpretation
+      </para>
+      <para>
+        ☐ Breast Biopsy Interpretation
+      </para>
+      <para>
+        ☐ Evaluation of Abnormal Breast Imaging
+      </para>
+      <para>
+        ☐ Evaluate for Breast Biopsy
+      </para>
+      <para>
+        ☐ Other
+      </para>
+    </blockquote>
+    <itemizedlist>
+      <listitem>
+        <blockquote>
+          <para>
+            &lt;obtain&gt; Details
+          </para>
+        </blockquote>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [Section Prompt: Relevant Clinical History.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Relevant Clinical History
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Goal of Consult.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Provide recommendation and return to Primary Care Provider (PCP) for therapy
+      </para>
+      <para>
+        ☐ Start treatment and return to PCP for follow up and maintenance
+      </para>
+      <para>
+        ☐ Start treatment, monitor for effect and when on stable therapy return to PCP
+      </para>
+      <para>
+        ☐ Provide recommendations and treat as long as necessary (or indefinitely)
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Priority.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Stat: response within 24 hours
+      </para>
+      <para> ☐ Routine </para>
+      <para> ☐ Routine with Scheduling Instructions: response time-frame specified by ordering
+          provider  </para>
+    </blockquote>
+    <para>
+      [Technical Note: Obtain referring physician information from Documentation Template or input by ordering provider.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Referring Physician
+      </para>
+      <para>
+        &lt;obtain&gt; Referring Physician Contact Information
+      </para>
+    </blockquote>
+    <para>
+      [End Consult Request.]
+    </para>
+    <para> [End Composite/Consult Request: Diagnostic Breast Imaging.] </para>
+  </section>
+</chapter>
+  <chapter xml:id="event-condition-action-eca-rule-diagnostic-breast-imaging">
+  <title>Event-Condition-Action (ECA) Rule: Diagnostic Breast Imaging</title>
+  <para>
+    [Begin Event-Condition-Action (ECA) Rule: Diagnostic Breast Imaging.]
+  </para>
+  <section xml:id="knowledge-narrative-1">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [Clinical Comment: The ECA Rule alerts clinical providers and/or their proxies (other providers, mammography coordinators, coordinators) regarding appropriate next steps for a patient they are managing subsequent to abnormal breast imaging results, breast symptoms, or abnormal clinical breast findings.
+    </para>
+    <para>
+      [Clinical Comment: Clinicians will have access to the current guidelines at the point of care to guide their next steps.]
+    </para>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="primary-level-trunk-cohort-identification">
+    <title>Diagnostic Breast Imaging</title>
+      <para>[Begin Diagnostic Breast Imaging.]</para>
+    <para>
+        <emphasis><emphasis role="strong">Events</emphasis></emphasis>
+      </para>
+    <para>
+      [Begin Events.]
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          A screening mammogram result is recorded; or
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Recording of breast symptoms in the patient record; or
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Recording of breast findings in the patient record.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      [End Events.]
+    </para>
+    <para>
+      <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+    </para>
+    <para>
+      [Begin Conditions.]
+    </para>
+    <para>
+      The population of this rule consists of adult women.
+    </para>
+    <para>
+      [Technical Note: Additional conditions are described in the branches below.]
+    </para>
+    <para>
+      [End Conditions.]
+    </para>
+    <para>
+      <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+    </para>
+    <para>
+      [Begin Actions.]
+    </para>
+    <para>
+      [Technical note: The actions are determined in the subbranches.]
+    </para>
+    <para>
+      [End Actions.] [End Diagnostic Breast Imaging.]
+    </para>
+      <section xml:id="section-3.2.1-follow-up-to-screening-mammogram">
+        <title>Follow-up to Screening Mammogram</title>
+        <para> [Begin Follow-up to Screening Mammogram.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Events</emphasis></emphasis>
+        </para>
+        <para> [Begin Events.] </para>
+        <itemizedlist>
+          <listitem>
+            <para>Screening mammogram result with BI-RADS Category 0 or Category 3 or Higher is
+              recorded; or</para>
+          </listitem>
+          <listitem>
+            <para>Abnormal screening mammogram result without BI-RADS Category is Recorded.</para>
+          </listitem>
+        </itemizedlist>
+        <para> [End Events.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+        </para>
+        <para> [Begin Conditions.] </para>
+        <para> Women whose screening mammograms are categorized as: </para>
+        <itemizedlist>
+          <listitem>
+            <para> BI-RADS Category 0 (Incomplete/Needs additional imaging and/or comparison films);
+              or </para>
+          </listitem>
+          <listitem>
+            <para> BI-RADS Category 3 or higher; or </para>
+          </listitem>
+          <listitem>
+            <para> Abnormal result without the BI-RAD Category recorded. </para>
+          </listitem>
+        </itemizedlist>
+        <para> [End Conditions.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+        </para>
+        <para> [Begin Actions.] </para>
+        <orderedlist numeration="arabic">
+          <listitem>
+            <para> Send mammography results to the clinical provider; and </para>
+          </listitem>
+          <listitem>
+            <para> Notify the patient of need for follow up; and </para>
+          </listitem>
+          <listitem>
+            <para> Schedule patient for follow-up appointment with clinical provider; and </para>
+          </listitem>
+          <listitem>
+            <para> Make sure guideline recommendations are available to clinical provider; and
+            </para>
+          </listitem>
+          <listitem>
+            <para> Open Diagnostic Breast Imaging Documentation Template when patient record is
+              opened during a patient encounter </para>
+          </listitem>
+        </orderedlist>
+        <para> [End Actions.] </para>
+        <para> [End Follow-up to Screening Mammogram.] </para>
+      </section>
+      <section xml:id="section-3.2.3-clinical-breast-findings">
+        <title>Clinical Breast Findings</title>
+        <para> [Begin Clinical Breast Findings.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Events</emphasis></emphasis>
+        </para>
+        <para> [Begin Events.] </para>
+        <itemizedlist>
+          <listitem>
+            <para> Visit with clinical provider in which breast symptoms and/or abnormal clinical
+              breast findings are recorded. </para>
+          </listitem>
+        </itemizedlist>
+        <para> [End Events.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+        </para>
+        <para> [Begin Conditions.] </para>
+        <itemizedlist>
+          <listitem>
+            <para> This subgroup consists of women whose clinicians record breast symptoms and/or
+              abnormal clinical breast findings during an exam. </para>
+          </listitem>
+        </itemizedlist>
+        <para> [End Conditions.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+        </para>
+        <para> [Begin Actions.] </para>
+        <orderedlist numeration="arabic">
+          <listitem>
+            <para> Make sure guideline recommendations are available to clinical provider; and
+            </para>
+          </listitem>
+          <listitem>
+            <para> Open the Diagnostic Breast Imaging Documentation Template </para>
+          </listitem>
+        </orderedlist>
+        <para> [End Actions.] </para>
+        <para> [End Clinical Breast Findings.] </para>
+        <para> [End Event-Condition-Action (ECA) Rule: Diagnostic Breast Imaging.] </para>
+      </section>
+      <section xml:id="section-3.2.2-breast-symptoms">
+        <title>Breast Symptoms</title>
+        <para> [Begin Breast Symptoms.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Events</emphasis></emphasis>
+        </para>
+        <para> [Begin Events.] </para>
+        <itemizedlist>
+          <listitem>
+            <para> Opening of female patient electronic health record during visit with clinical
+              provider for the evaluation of breast symptoms. </para>
+          </listitem>
+        </itemizedlist>
+        <para> [End Events.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Conditions</emphasis></emphasis>
+        </para>
+        <para> [Begin Conditions.] </para>
+        <itemizedlist>
+          <listitem>
+            <para> This subgroup consists of women who have scheduled an appointment for evaluation
+              of breast symptoms. </para>
+          </listitem>
+        </itemizedlist>
+        <para> [End Conditions.] </para>
+        <para>
+          <emphasis><emphasis role="strong">Actions</emphasis></emphasis>
+        </para>
+        <para> [Begin Actions.] </para>
+        <orderedlist numeration="arabic">
+          <listitem>
+            <para> Make sure guideline recommendations are available to clinical provider; and
+            </para>
+          </listitem>
+          <listitem>
+            <para> Open the Diagnostic Breast Imaging Documentation Template </para>
+          </listitem>
+        </orderedlist>
+        <para> [End Actions.] </para>
+        <para> [End Breast Symptoms.] </para>
+      </section>
+  </section>
+</chapter>
+  <chapter xml:id="documentation-template-diagnostic-breast-imaging">
+  <title>Documentation Template: Diagnostic Breast Imaging</title>
+  <para>
+    [Begin Documentation Template: Diagnostic Breast Imaging.]
+  </para>
+  <section xml:id="knowledge-narrative-2">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="reason-for-visit">
+    <title>Reason for Visit</title>
+    <para>
+      [Begin Reason for Visit.]
+    </para>
+    <para>
+      [Technical Note: Data housed in the electronic health record will populate the fields below if available.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Patient age in years
+      </para>
+      <para>
+        &lt;obtain&gt; Reason for visit
+      </para>
+    </blockquote>
+    <para>
+      [End Reason for Visit.]
+    </para>
+  </section>
+  <section xml:id="breast-imaging-history">
+    <title>Breast Imaging History</title>
+    <para>
+      [Begin Breast Imaging History.]
+    </para>
+    <para>
+      [Technical Note: Data housed in the electronic health record will populate the fields below if available.]
+    </para>
+    <para>
+      [Technical Note: &quot;Screening Mammography Results&quot; and its subordinate questions should be made available only for patients with abnormal imaging results.]
+    </para>
+    <para>
+      [Technical Note: Image links to be available for image viewing along with the text transcription for all imaging results when possible.]
+    </para>
+    <para>
+      [Section Prompt: Most Recent Screening Mammography Results.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Date
+      </para>
+      <para>
+        &lt;obtain&gt; BI-RADS Category
+      </para>
+      <para>
+        &lt;obtain&gt; General breast composition
+      </para>
+      <para>
+        &lt;obtain&gt; Important findings
+      </para>
+      <para>
+        &lt;obtain&gt; Mammography comparison to prior imaging
+      </para>
+      <para>
+        &lt;obtain&gt; Management recommendations
+      </para>
+      <para>
+        [Section Prompt: Patient or Proxy notification completed?]
+      </para>
+      <para>
+        ☐ Yes
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Date
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Method
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Notification recipient
+        </para>
+      </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Prior Breast Imaging?]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: Display section below if “Yes” is selected for “Prior Breast Imaging”.]
+    </para>
+    <para>
+      [Section Prompt: Is a written report available?]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Please send a copy of the report to the radiology department to record result in electronic health record and to document result.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Normal image (no evidence of malignancy)
+      </para>
+      <para>
+        ☐ Abnormal image
+      </para>
+      <para>
+        ☐ Incomplete image needing additional image
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Additional Details?]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; BI-RADS Categories
+      </para>
+      <para>
+        &lt;obtain&gt; Dates
+      </para>
+      <para>
+        &lt;obtain&gt; Locations
+      </para>
+      <para>
+        &lt;obtain&gt; Results
+      </para>
+      <para>
+        [Technical Note: Enable recording of multiple prior imaging results.]
+      </para>
+      <para>
+        ☐ No
+      </para>
+      <para>
+        ☐ No Prior Imaging
+      </para>
+    </blockquote>
+    <para>
+      [End Breast Imaging History.]
+    </para>
+  </section>
+  <section xml:id="focused-history">
+    <title>Focused History</title>
+    <para>
+      [Begin Focused History.]
+    </para>
+    <para>
+      [Technical Note: Data housed in the electronic health record will populate the fields below if available.]
+    </para>
+    <para>
+      [Section Prompt: Patient Breast Symptoms?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Distinct breast mass
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Location
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Indistinct breast tissue thickening or nodularity
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Location
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Nipple discharge
+      </para>
+      <para>
+        ☐Normal lactation
+      </para>
+      <para>
+        ☐Nonspontaneous
+      </para>
+      <para>
+        ☐Suspicious
+      </para>
+      <para>
+        &lt;obtain&gt; Details
+      </para>
+      <para>
+        ☐ Skin Changes
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Location
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Breast Pain
+      </para>
+      <blockquote>
+        <para>
+          ☐ Cyclic
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Focal
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Location
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Other breast symptoms
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No breast symptoms
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Breast Cancer Risk Factors?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Dense breast tissue
+      </para>
+      <para>
+        ☐ Radiation therapy to chest before age of 30 years
+      </para>
+      <para>
+        ☐ BRCA mutation carrier
+      </para>
+      <para>
+        ☐ First degree relative is a BRCA mutation carrier
+      </para>
+      <para>
+        ☐ Prior proliferative breast disease on biopsy
+      </para>
+      <para>
+        ☐ Personal history of breast cancer
+      </para>
+      <para>
+        ☐ Family history of breast cancer
+      </para>
+      <para>
+        ☐ Significant family history of other cancers
+      </para>
+      <para>
+        ☐ Other
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Overall Breast Cancer Risk?]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Details of overall breast cancer risk
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: Include link to the National Cancer Institute’s Breast Cancer Risk Assessment Tool (https://www.cancer.gov/bcrisktool/).]
+    </para>
+    <para>
+      [Section Prompt: Breast Implants?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Prior Breast Surgeries or Biopsies Not Addressed Above?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Surgical procedure(s)
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Date(s)
+        </para>
+      </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Current Therapy for Breast Conditions?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Diagnosis of breast condition
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Current therapy for breast condition description(s)
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Enter additional condition?]
+    </para>
+    <blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Reproductive Status?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Postmenopausal
+      </para>
+      <para>
+        ☐ Pregnant
+      </para>
+      <para>
+        ☐ Premenopausal, Not pregnant
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Contraceptive Status?]
+    </para>
+    <blockquote>
+      <para>
+        [Section Selection Behavior: Select one. Required.]
+      </para>
+      <para>
+        ☐ Not applicable
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ Tubal ligation or permanent implanted birth control
+      </para>
+      <para>
+        ☐ Using contraceptives
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ Attempting to conceive
+      </para>
+      <para>
+        ☐ Not attempting to conceive, not using contraception
+      </para>
+    </blockquote>
+    <para>
+      [End Focused History.]
+    </para>
+  </section>
+  <section xml:id="problem-list">
+    <title>Problem List</title>
+    <para>
+      [Begin Problem List.]
+    </para>
+    <para>
+      [Technical Note: Data housed in the electronic health record will populate the fields below if available.]
+    </para>
+    <para>
+      [Section Prompt: Problem List.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Problem List
+      </para>
+      <para>
+        &lt;obtain&gt; Relevant comorbidities to breast cancer risk
+      </para>
+    </blockquote>
+    <para>
+      [End Problem List.]
+    </para>
+  </section>
+  <section xml:id="surgical-history">
+    <title>Surgical History</title>
+    <para>
+      [Begin Surgical History.]
+    </para>
+    <para>
+      [Technical Note: Data housed in the electronic health record will populate the fields below if available.]
+    </para>
+    <para>
+      [Section Prompt: Surgical History.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Relevant Surgical History Not Addressed Above
+      </para>
+    </blockquote>
+    <para>
+      [End Surgical History.]
+    </para>
+  </section>
+  <section xml:id="medication-list">
+    <title>Medication List</title>
+    <para>
+      [Begin Medical List.]
+    </para>
+    <para>
+      [Technical Note: Data housed in the electronic health record will populate the fields below if available.]
+    </para>
+    <para>
+      [Section Prompt: Medication List.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Current Medication List
+      </para>
+    </blockquote>
+    <para>
+      [End Medication List.]
+    </para>
+  </section>
+  <section xml:id="clinical-breast-exam">
+    <title>Clinical Breast Exam</title>
+    <para>
+      [Begin Clinical Breast Exam.]
+    </para>
+    <para>
+      [Section Prompt: Breast Exam Findings?]
+    </para>
+    <para>
+      [Section Prompt: Include Location and Distance from Nipple for Positive Findings.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Appearance
+      </para>
+      <para>
+        &lt;obtain&gt; Findings on breast palpation
+      </para>
+      <para>
+        &lt;obtain&gt; Lymph node findings
+      </para>
+      <para>
+        &lt;obtain&gt; Other findings
+      </para>
+    </blockquote>
+    <para>
+      [End Clinical Breast Exam.]
+    </para>
+  </section>
+  <section xml:id="patientproxy-discussion">
+    <title>Patient/Proxy Discussion</title>
+    <para>
+      [Begin Patient/Proxy Discussion.]
+    </para>
+    <para>
+      [Section Prompt: Imaging results reviewed, and next steps/plan of care discussed with:]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Patient
+      </para>
+      <para>
+        ☐ Proxy
+      </para>
+      <para> [Section Prompt: Relationship] </para>
+    </blockquote>
+      <blockquote>
+        <para> [Section Selection Behavior: Select one. Required.] </para>
+      </blockquote>
+    <blockquote>
+      <para>
+        ☐ Spouse
+      </para>
+      <para>
+        ☐ Significant other
+      </para>
+      <para>
+        ☐ Medical power of attorney
+      </para>
+      <para>
+        ☐ Other
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+          <para> &lt;obtain&gt; Legal status, if applicable </para>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Patient aware of need for extended follow-up?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Potential need for extended follow-up addressed
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: If checkbox “Potential need for extended follow up addressed” is selected, then display the following questions.]
+    </para>
+    <para>
+      [Section Prompt: Is patient likely to be available for extended follow up?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <para>
+        ☐ No
+      </para>
+      <para>
+        &lt;obtain&gt; Details
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Patient/Proxy Preferences Discussed?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Yes
+      </para>
+      <para>
+        [Section Prompt: Patient Preferences:]
+      </para>
+    </blockquote>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Active pursuit of diagnosis
+      </para>
+      <para>
+        ☐ Monitoring only
+      </para>
+      <para>
+        ☐ Aggressive treatment
+      </para>
+      <para>
+        ☐ Palliation only
+      </para>
+      <para>
+        ☐ Other
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+      <para>
+        ☐ No
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Patient Contact Preference?]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Phone call
+      </para>
+      <para>
+        ☐ In person
+      </para>
+      <para>
+        ☐ Non-registered letter
+      </para>
+      <para>
+        ☐ Secure messaging
+      </para>
+      <para>
+        ☐ Other
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt; Details </para>
+        </blockquote>
+    </blockquote>
+    <para>
+      [End Patient/Proxy Discussion.]
+    </para>
+  </section>
+  <section xml:id="plan-of-care">
+    <title>Plan of Care</title>
+    <para>
+      [Begin Plan of Care.]
+    </para>
+    <para>
+      [Section Prompt: Plan of Care]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Continue Standard Screening Mammography
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Recommended for BI-RADS Category 1 or 2 Screening Mammography result.]
+    </para>
+    <blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Date next mammogram due
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Diagnostic Mammography in 6 months from today
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Recommended for evaluation of BI-RADS Category 3 Screening Mammography result.]
+    </para>
+    <blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Date next mammogram due
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Diagnostic Mammography Now
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Recommended for Patients Age 30 Years or Older with a Breast Mass, Asymmetric Thickening or Nodularity, Persistent Focal Breast Pain, Skin Changes, or Suspicious Nipple Discharge; an Option for Patients Younger than Age 30 Years with Asymmetric Thickening or Nodularity, Skin Changes, or Suspicious Nipple Discharge.]
+    </para>
+    <blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Breast Ultrasound Imaging Now
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Recommended for Patients Younger Than Age 30 Years with a Breast Mass, Asymmetric Thickening or Nodularity, Persistent Focal Breast Pain, Skin Changes, or Suspicious Nipple Discharge; Recommended in Conjunction with Diagnostic Mammography for Patients Age 30 Years or Older with Asymmetric Thickening or Nodularity, Skin Changes, or Suspicious Nipple Discharge; an Option in Conjunction with Diagnostic Mammography for Patients Age 30 Years or Older with Persistent Focal Breast Pain; an Option as the Initial Diagnostic Evaluation for Patients Age 30 to 39 Years Old with a Suspected Cyst or a Breast Mass or Asymmetric Thickening or Nodularity Where the Clinical Suspicion is Low.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Details
+      </para>
+      <para>
+        ☐ Referral for Breast Biopsy Now
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Recommended for Evaluation of BI-RADS Category 4 or 5 Screening Mammography Result; Recommended for Evaluation of BI-RADS Category 3 Screening Mammography Result in Patients Unlikely to Return for Follow-Up; an Option for Evaluation of BI-RADS Category 3 Screening Mammography Result in Patients with a Strong Preference for More Immediate Evaluation.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Details
+      </para>
+      <para>
+        ☐ Reassurance and Patient Education with or without Symptomatic Therapy
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Recommended for Patients with Cyclic, Diffuse Pain, Whose Clinical Breast Exams Are Otherwise Normal and Whose Mammograms Are Up-to-Date and Normal.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Details
+      </para>
+      <para>
+        ☐ Observation and Patient Education
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Recommended for Patients with Bilateral or Multiple-Duct Nonspontaneous Nipple Discharge Whose Clinical Breast Exams Are Otherwise Normal and Whose Screening Mammograms, If Recommended, Are Up-to-Date and Normal.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Observation and Patient Education
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Recommended for Patients Younger Than Age 30 Years with a Palpable Breast Mass or Asymmetric Thickening or Nodularity Where the Clinical Suspicion Is Low.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Evaluate Medications for Potential Causes of Galactorrhea
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Obtain Prior External Breast Imaging Results and/or Films
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Plan Reviewed with and Agreed to by Patient/Proxy
+      </para>
+      <para>
+        ☐ Other
+      </para>
+        <blockquote>
+          <para> &lt;obtain&gt;Details </para>
+        </blockquote>
+    </blockquote>
+    <para>
+      [End Plan of Care.]
+    </para>
+    <para>
+      [Technical Note: Completion of the Diagnostic Breast Imaging Documentation template results in activation of the Diagnostic Breast Imaging Order set.]
+    </para>
+    <para>
+      [End Documentation Template: Diagnostic Breast Imaging.]
+    </para>
+  </section>
+</chapter>
+  <chapter xml:id="order-set-diagnostic-breast-imaging">
+  <title>Order Set: Diagnostic Breast Imaging</title>
+  <para>
+    [Begin Order Set: Diagnostic Breast Imaging.]
+  </para>
+  <para>
+    [Technical Note: This order set is activated by completion of the diagnostic breast imaging documentation template or by provider request.]
+  </para>
+  <para>
+    [Technical Note: This order set should be completed automatically to the extent possible by pulling data entered in the plan section of the diagnostic breast imaging documentation template.]
+  </para>
+  <section xml:id="knowledge-narrative-3">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [Clinical Comment: The order set allows users to quickly address the issues revealed by abnormal breast imaging and to efficiently aide in the management of breast abnormalities and complaints.]
+    </para>
+    <para>
+      [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="obtain-prior-films">
+    <title>Obtain Prior Films</title>
+    <para>
+      [Begin Obtain Prior Films.]
+    </para>
+    <para>
+      [Section Prompt: Obtain Prior Films]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Request prior films
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Location of prior films
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Consent from patient to obtain
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [End Obtain Prior Films.]
+    </para>
+  </section>
+  <section xml:id="obtain-prior-pathology-specimens">
+    <title>Obtain Prior Pathology Specimens</title>
+    <para>
+      [Begin Obtain Prior Pathology Specimens.]
+    </para>
+    <para>
+      [Section Prompt: Obtain Prior Pathology Specimens.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Request prior pathology specimens
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Location of pathology specimens
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Consent from patient to obtain
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [End Obtain Prior Pathology Specimens.]
+    </para>
+  </section>
+  <section xml:id="imaging">
+    <title>Imaging</title>
+    <para>
+      [Begin Imaging.]
+    </para>
+    <para>
+      [Section Prompt: Imaging.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Screening Mammography
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: Screening mammogram to be scheduled when next due if no criteria for diagnostic imaging are met.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Right breast
+      </para>
+      <para>
+        ☐ Left breast
+      </para>
+      <para>
+        ☐ Bilateral breasts
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Indications: Screening mammogram
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Priority –Routine
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Additional details
+        </para>
+      </blockquote>
+      <para>
+        ☐ Diagnostic Mammography in six months from today
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: For evaluation of BI-RADS Category 3 screening mammography in 6 months.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Right breast
+      </para>
+      <para>
+        ☐ Left breast
+      </para>
+      <para>
+        ☐ Bilateral breasts
+      </para>
+      <para>
+        &lt;obtain&gt; Indications: Follow up BI-RADS Category 3 screening mammography
+      </para>
+      <para>
+        &lt;obtain&gt; Priority-Routine
+      </para>
+      <para>
+        &lt;obtain&gt; Additional details
+      </para>
+      <para>
+        ☐ Diagnostic Mammography
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: For immediate evaluation of breast symptoms/clinical exam findings.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Right breast
+      </para>
+      <para>
+        ☐ Left breast
+      </para>
+      <para>
+        ☐ Bilateral breasts
+      </para>
+      <para>
+        &lt;obtain&gt; Indications: Evaluate breast symptoms/clinical exam findings
+      </para>
+      <para>
+        &lt;obtain&gt; Priority-Now
+      </para>
+      <para>
+        &lt;obtain&gt; Specify symptoms, prior result, and/or exam findings
+      </para>
+      <para>
+        &lt;obtain&gt; Additional details
+      </para>
+      <para>
+        ☐ Ultrasound Breast
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: For immediate evaluation of breast symptoms/clinical exam findings.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Right breast
+      </para>
+      <para>
+        ☐ Left breast
+      </para>
+      <para>
+        ☐ Bilateral breasts
+      </para>
+      <para>
+        &lt;obtain&gt; Indications: Abnormal breast symptoms, clinical exam findings, and/or abnormal mammogram
+      </para>
+      <para>
+        &lt;obtain&gt; Priority-Now
+      </para>
+      <para>
+        &lt;obtain&gt; Specify symptoms, prior result, and/or exam findings
+      </para>
+      <para>
+        &lt;obtain&gt; Additional details
+      </para>
+      <para>
+        ☐ MRI Breast
+      </para>
+    </blockquote>
+    <para>
+      [Section Prompt: For immediate evaluation of breast symptoms/clinical exam findings.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Required.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Right Breast
+      </para>
+      <para>
+        ☐ Left Breast
+      </para>
+      <para>
+        ☐ Bilateral Breasts
+      </para>
+      <para>
+        &lt;obtain&gt; Indications: Abnormal breast symptoms, clinical exam findings, and/or abnormal mammogram
+      </para>
+      <para>
+        &lt;obtain&gt; Priority Now
+      </para>
+      <para>
+        &lt;obtain&gt; Specify symptoms, prior result, and/or exam findings
+      </para>
+      <para>
+        &lt;obtain&gt; Additional Details
+      </para>
+      <para>
+        ☐ External Breast Imaging
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Outside breast imaging results and import into VA system
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Priority-Now
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Section Prompt: Specify location, date, and type of imaging for this order.]
+    </para>
+    <blockquote>
+      <para>
+        &lt;obtain&gt; Location
+      </para>
+      <para>
+        &lt;obtain&gt; Date
+      </para>
+      <para>
+        &lt;obtain&gt; Type of imaging
+      </para>
+    </blockquote>
+    <para>
+      [End Imaging.]
+    </para>
+  </section>
+  <section xml:id="consult-requests">
+    <title>Consult Requests</title>
+    <para>
+      [Begin Consult Requests.]
+    </para>
+    <para>
+      [Section Prompt: Consult Requests]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Consult Interventional Radiology evaluate for breast biopsy now
+      </para>
+      <para>
+        ☐ Consult Surgery evaluate for breast biopsy now
+      </para>
+      <para>
+        ☐ Consult Oncology evaluate for breast biopsy now
+      </para>
+      <para>
+        ☐ Consult Radiology for review of outside breast imaging study or studies
+      </para>
+      <para>
+        ☐ Consult Pathology for review of outside specimen(s)
+      </para>
+    </blockquote>
+    <para>
+      [Technical Note: Launch Diagnostic Breast Imaging Documentation Template Consult Request when any consult box selected.]
+    </para>
+    <para>
+      [End Consult Request.]
+    </para>
+  </section>
+  <section xml:id="patient-and-caregiver-education">
+    <title>Patient and Caregiver Education</title>
+    <para>
+      [Begin Patient and Caregiver Education.]
+    </para>
+    <para>
+      [Section Prompt: Patient and Caregiver Education.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional]
+    </para>
+    <para>
+      [Technical Note: All orders below are to be executed with “Priority Now.”]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Abnormal mammogram education (patient-appropriate materials)
+      </para>
+      <para>
+        ☐ Breast symptom education (patient-appropriate materials)
+      </para>
+      <para>
+        ☐ Clinical breast exam finding education (patient-appropriate materials)
+      </para>
+      <para>
+        ☐ Diagnostic breast imaging education (patient-appropriate materials)
+      </para>
+      <para>
+        ☐ Breast biopsy education (patient-appropriate materials)
+      </para>
+    </blockquote>
+    <para>
+      [End Patient and Caregiver Education.]
+    </para>
+    <para>
+      [End Order Set: Diagnostic Breast Imaging.]
+    </para>
+  </section>
+</chapter>
+  <chapter xml:id="documentation-template-consult-request-diagnostic-breast-imaging">
+  <title>Documentation Template Consult Request: Diagnostic Breast Imaging</title>
+  <para>
+    [Begin Documentation Template Consult Request: Diagnostic Breast Imaging.]
+  </para>
+  <section xml:id="knowledge-narrative-4">
+    <title>Knowledge Narrative</title>
+    <para>
+      [Begin Knowledge Narrative.]
+    </para>
+    <para>
+      [See Clinical Context in Chapter 1.]
+    </para>
+    <para>
+      [Clinical Comment: This documentation template-consult request should be made available to clinical providers following the work-up ordered within the Diagnostic Breast Imaging Order set.]
+    </para>
+    <para>
+      The proposed use of the Documentation Template--Consult Request is for follow-up on Diagnostic Breast imaging orders. Follow-up includes:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Review of prior films
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Review of additional imaging, unilateral and bilateral (mammography, ultrasound, and MRI
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Review of prior pathology
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Review of additional breast biopsies
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Consult request for evaluation and management, to surgeon, interventional radiologist, or oncologist
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      Schedule follow up. [End Knowledge Narrative.]
+    </para>
+  </section>
+  <section xml:id="consult-request-radiology">
+    <title>Consult Request: Radiology</title>
+    <para>
+      [Begin Consult Request: Radiology.]
+    </para>
+    <para>
+      [Section Prompt: For review of outside breast imaging study or studies please provide the following information.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Consult: Radiology
+      </para>
+      <para>
+        [Section Selection Behavior: Select one. Optional.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Screening mammogram interpretation
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Diagnostic mammogram interpretation
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Breast ultrasound interpretation
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Other breast imaging interpretation
+        </para>
+      </blockquote>
+      <para>
+        [Technical Note: Display questions below for each of the options selected.]
+      </para>
+      <para>
+        [Technical Note: Links should be attached automatically if text is provided for the Radiology Interpretation fields.]
+      </para>
+      <blockquote>
+        <para>
+          Priority: Routine
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Full report
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;link&gt; Images
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Date
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; BI-RADS category
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; General breast composition
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Important findings
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Comparison to prior imaging
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Management recommendations
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [End Consult Request: Radiology.]
+    </para>
+  </section>
+  <section xml:id="consult-request-pathology">
+    <title>Consult Request: Pathology</title>
+    <para>
+      [Begin Consult Request: Pathology.]
+    </para>
+    <para>
+      [Section Prompt: For review of outside specimen(s) please provide the following information.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Consult: Pathology
+      </para>
+      <para>
+        [Section Selection Behavior: Select one. Optional.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Breast biopsy interpretation
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Full pathology report: Breast biopsy
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;link&gt; Pathology images: Breast biopsy
+        </para>
+      </blockquote>
+      <para>
+        [Technical Note: Links should be attached automatically if text is provided for the Breast Biopsy Interpretation field.]
+      </para>
+      <blockquote>
+        <para>
+          Priority: Routine
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Date
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Biopsy type
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Gross description
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Microscopic description
+        </para>
+      </blockquote>
+      <para>
+        [Section Prompt: Concordant with imaging?]
+      </para>
+      <para>
+        [Section Selection Behavior: Select one. Required.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Yes
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Details
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ No
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Additional Details
+        </para>
+      </blockquote>
+      <para>
+        [Section Prompt: Additional Breast Biopsies?]
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Type of biopsy
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Location, date
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Key findings
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Concordance with Imaging
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Additional detail as appropriate
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [End Consult Request: Pathology.]
+    </para>
+  </section>
+  <section xml:id="consult-request-evaluation-of-abnormal-breast-imaging">
+    <title>Consult Request: Evaluation of Abnormal Breast Imaging</title>
+    <para>
+      [Begin Consult Request: Evaluation of Abnormal Breast Imaging.]
+    </para>
+    <para>
+      [Section Prompt: For abnormal imaging result BI-RADS Category 4 or 5, or abnormal result with symptoms or exam finding requiring urgent evaluation].
+    </para>
+    <para>
+      [Section Prompt: Consult Specialty.]
+    </para>
+    <para>
+      [Section Selection Behavior: Select one or more. Optional.]
+    </para>
+    <blockquote>
+      <para>
+        ☐ Oncology
+      </para>
+      <para>
+        ☐ Surgery
+      </para>
+      <para>
+        ☐ Interventional Radiology
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Reason for Consult: Evaluate for abnormal breast imaging
+        </para>
+      </blockquote>
+      <para>
+        [Section Prompt: Goal of Consult.]
+      </para>
+      <para>
+        [Section Selection Behavior: Select one. Required.]
+      </para>
+      <blockquote>
+        <para>
+          ☐ Provide recommendation and return to primary care provider (PCP) for therapy
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Start treatment and return to PCP for follow up and maintenance
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Start treatment, monitor for effect and when on stable therapy return to PCP
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          ☐ Provide recommendations and treat as long as necessary (or indefinitely)
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          Priority: Urgent
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Date desired
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Referring physician
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Referring physician contact information
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Most recent breast imaging abnormal result
+        </para>
+      </blockquote>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Prior breast imaging results
+        </para>
+      </blockquote>
+      <para>
+        [Section Prompt: Clinical History.]
+      </para>
+      <blockquote>
+        <para>
+          &lt;obtain&gt; Relevant clinical history
+        </para>
+      </blockquote>
+    </blockquote>
+    <para>
+      [Technical Note: Auto filled via Documentation Template or input by ordering provider.]
+    </para>
+    <para>
+      [End Consult Request: Evaluation of Abnormal Breast Imaging.]
+    </para>
+    <para>
+      [End Documentation Template Consult Request: Diagnostic Breast Imaging.]
+    </para>
+  </section>
+</chapter>
+  <bibliography>
+    <title>Bibliography/Evidence</title>
+    <biblioentry>
+      <citetitle pubwork="webpage">American Cancer Society. Lifetime Probability of Developing and
+        Dying from Cancer, 2011-2013. American Cancer Society, Surveillance Research, 2017. Cancer
+        Facts &amp; Figures 2017 website. </citetitle>
+      <bibliomisc>
+        <link xlink:href="https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-	facts-and-figures/2017/lifetime-probability-of-developing-and-dying-from-cancer-2011-2013.pdf"/>
+      </bibliomisc>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="webpage">American College of Radiology, Quality and Safety Resources –
+        Breast Imaging - Reporting and Data Systems (BI-RADS) Atlas</citetitle>
+      <bibliomisc>
+        <link xlink:href="https://www.acr.org/Quality-Safety/Resources/BIRADS"/>
+      </bibliomisc>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="webpage">Radiopedia - 5-tier ACR system of radiologic breast
+        findings</citetitle>
+      <bibliomisc>
+        <link
+          xlink:href="https://radiopaedia.org/articles/5-tier-acr-system-of-radiologic-breast-findings"
+        />
+      </bibliomisc>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="webpage">Radiology Assistant - BI-RADS Final Assessment </citetitle>
+      <bibliomisc>
+        <link
+          xlink:href="http://www.radiologyassistant.nl/en/p53b4082c92130/bi-rads-for-mammography-and-ultrasound-2013.html#in53b4389d91374"
+        />
+      </bibliomisc>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>American College of Radiology</orgname>
+      </author>
+      <citetitle pubwork="webpage">ACR BI-RADS Atlas 5th Edition – Mammography: Reporting System.
+        American College of Radiology website</citetitle>
+      <bibliomisc>
+        <link
+          xlink:href="https://www.acr.org/~/media/ACR/Documents/PDF/QualitySafety/Resources/BIRADS/01-Mammography/02--BIRADS-Mammography-Reporting.pdf?la=en"
+        />
+      </bibliomisc>
+      <pubdate>Published 2013</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>American College of Radiology</orgname>
+      </author>
+      <citetitle pubwork="webpage">ACR BI-RADS Atlas 5th Edition – Ultrasound: Reporting System.
+        American College of Radiology website</citetitle>
+      <bibliomisc>
+        <link
+          xlink:href="https://www.acr.org/~/media/ACR/Documents/PDF/QualitySafety/Resources/BIRADS/02-Ultrasound/05--BIRADS-US-Reporting.pdf?la=en"
+        />
+      </bibliomisc>
+      <pubdate>Published 2013</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>National Comprehensive Cancer Network</orgname>
+      </author>
+      <citetitle pubwork="webpage"> NCCN Clinical Practice Guidelines in Oncology (NCCN Guidelines):
+        Breast Cancer Screening and Diagnosis, Version 1.2017. National Comprehensive Cancer Network
+        Guidelines website</citetitle>
+      <bibliomisc>
+        <link xlink:href="https://www.nccn.org/professionals/physician_gls/pdf/breast-screening.pdf"
+        />
+      </bibliomisc>
+      <pubdate>Revised June 2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <abbrev>Oeffinger, 2015</abbrev>
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Oeffinger</surname>
+            <firstname>KC</firstname>
+          </personname>
+        </author>
+        <author>
+          <personname>
+            <surname>Fontham</surname>
+            <firstname>ETH</firstname>
+          </personname>
+        </author>
+        <author>
+          <personname>
+            <surname>Etzioni</surname>
+            <firstname>R</firstname>
+          </personname>
+        </author>
+        <author>
+          <personname>et al</personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">Breast Cancer Screening for Women at Average Risk: 2015 Guideline
+        Update From the American Cancer Society</citetitle>
+      <citetitle pubwork="journal">JAMA</citetitle>
+      <pubdate>2015</pubdate>
+      <volumenum>314</volumenum>
+      <issuenum>15</issuenum>
+      <pagenums>1599-1614</pagenums>
+    </biblioentry>
+  </bibliography>
+  <appendix>
+    <title>Existing VA Artifacts</title>
+    <figure>
+      <title>Non-VA Care Mammogram Consult (completed in conjunction with the imaging order
+        set)</title>
+      <mediaobject>
+        <alt>VA Screenshot: Mammogram Order Set</alt>
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig1MammogramOrderSet.jpg" scalefit="1"
+            width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Reason for Consult Request</title>
+      <mediaobject>
+        <alt>VA Screenshot: Reason for Requset: Mammogram Diagnostic Unilateral from the Order
+          Set.</alt>
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig2ReasonForRequest.jpg" scalefit="1"
+            width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Order an Imaging Procedure</title>
+      <mediaobject>
+        <alt>VA Screenshot: Ordering Mammogram, Diagnostic Unilateral</alt>
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig3ImagingProcedure.jpg" scalefit="1"
+            width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Breast Imaging – Reporting and Data Systems (BI-RAD) Category 0 SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: BI-RAD 0 SMART Template stating to document/order follow up actions and
+          patient notification</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig4BI-RAD%200%20SMART%20Template.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Breast Imaging – Reporting and Data Systems (BI-RAD) Category 3 SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: BI-RAD 3 SMART Template stating "Probably begign, short interval follow
+          up suggested."</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig5BI-RAD%203%20SMART%20Template.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Breast Imaging – Reporting and Data Systems (BI-RAD) Category 4 SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: BI-RAD 4 SMART Template: Suspicious Abnormality: there is a mammographic
+          appearance which is suspicious for malignancy, biopsy should be considered for such a
+          lesion</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig6BI-RAD%204%20SMART%20Template.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Breast Imaging – Reporting and Data Systems (BI-RAD) Category 5 SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: BI-RAD 5 SMART Template: Action needed: there is a mammographic
+          appearance which is highly suggestive of malignancy</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig7BI-RAD%205%20SMART%20Template.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Breast Imaging – Reporting and Data Systems (BI-RAD) Category 6 SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: BI-RAD 6 SMART Template: known biopsy proven malignancy</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig8BI-RAD%206%20SMART%20Template.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Additional Imaging SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Additional Imaging SMART Template stating to Order Diagnostic Mammogram
+          within 1 month, Order Diagnostic Ultrasound and Order Diagnostic MRI</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig9AdditionalImagingSMARTTemplate.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Biopsy SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Obtain Prior Films, Biopsy SMART Template</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig10BiopsySMARTTemplate.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Referrals/Consults SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Referrals/Consults SMART Template to refer for biopsy to surgeon and
+          oncologist then order consult.</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig11Referrals-Consult%20SMART%20Template.png" scalefit="1" width="100%"
+          />
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Breast Imaging – Reporting and Data Systems (BI-RAD) Definitions</title>
+      <mediaobject>
+        <alt>VA Screenshot: BI-RAD Definitions explaining the BI-RAD 0, 1, 2, 3, 4, 5, and 6.</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig12BI-RAD%20Definitions.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Patient Notification SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Patient Notification SMART Template stating to document how the patient
+          was notified of the result.</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig13PatientNotificationSMARTTemplate.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Patient Notification Details SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Patient Notification Details SMART Template stating that the patient was
+          notified of the result via phone call.</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig14PatientNotificatioinDetailsSMARTTemplate.png" scalefit="1"
+            width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Non-Registered Letter Details SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Non-Registered Letter Details SMART Template stating the patient was
+          notified by non-registered letter.</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig15Non-RegisteredLetter.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Report Written Outside Report SMART Template</title>
+      <mediaobject>
+        <alt>VA Screeshot: Report Written Outside Report SMART Template stating record prior or
+          outside mammogram and the written report is available</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig16ReportOutsideSMARTTemplate.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Verbal Outside Report SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Verbal Outside Report SMART Template stating record prior or outside
+          mammogram: written report not available</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig17VerbalOutsideReportSMARTTemplate.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Abnormal Mammogram SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Abnormal Mammogram SMART Template</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig18AbnormalMammogramSMARTTemplate.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Incomplete Mammogram SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Incomplete Mammogram SMART Template stating that an incomplete mammogram
+          that needs additional imaging</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig19IncompleteMammogramSMARTTemplate.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Verbal Outside Report Normal SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Verbal Outside Report Normal SMART Template stating the written report
+          is not available and patient reports that outside mammogram was normal/NEM (No Evidence of
+          Malignancy)</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig20VerbalOutsideReportNormalSMARTTemplate.png" scalefit="1"
+            width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Record Multiple Tests SMART Template</title>
+      <mediaobject>
+        <alt>VA Screenshot: Record Multiple Tests SMART Template. Reminder Dialog Template: SMART
+          Breast Imaging Follow-Up</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig21ReminderDialogTemplate.png" scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+<appendix xml:id="appendix-c-basic-laboratory-panel-definition">
+  <title>Basic Laboratory Panel Definition</title>
+  <itemizedlist>
+    <listitem>
+      <para>
+        Blood Urea Nitrogen
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Calcium
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Chloride
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        CO2 (Carbon Dioxide, Bicarbonate)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Creatinine
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Glucose
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Potassium
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Sodium
+      </para>
+    </listitem>
+  </itemizedlist>
+</appendix>
+<appendix xml:id="acronyms">
+  <title>Acronyms</title>
+  <informaltable>
+    <tgroup cols="2">
+      <colspec align="left"/>
+      <colspec align="left"/>
+      <thead>
+        <row>
+          <entry>
+            <emphasis role="strong">Acronym</emphasis>
+          </entry>
+          <entry>
+            <emphasis role="strong">Definition</emphasis>
+          </entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>
+            ACR
+          </entry>
+          <entry>
+            American College of Radiology
+          </entry>
+        </row>
+        <row>
+          <entry>
+            BI-RADS
+          </entry>
+          <entry>
+            Breast Imaging-Reporting and Data Systems
+          </entry>
+        </row>
+        <row>
+          <entry>
+            BRCA
+          </entry>
+          <entry>
+            Either of two genes (BRCA1 or BRCA2) that, if inherited in a mutated form, may predispose some carriers to develop breast or ovarian cancer
+          </entry>
+        </row>
+        <row>
+          <entry>
+            CCWP
+          </entry>
+          <entry>
+            Clinical Content White Paper
+          </entry>
+        </row>
+        <row>
+          <entry>
+            CDS
+          </entry>
+          <entry>
+            Clinical Decision Support
+          </entry>
+        </row>
+        <row>
+          <entry>
+            CO2
+          </entry>
+          <entry>
+            Carbon dioxide
+          </entry>
+        </row>
+        <row>
+          <entry>
+            ECA
+          </entry>
+          <entry>
+            Event-Condition-Action
+          </entry>
+        </row>
+        <row>
+          <entry>
+            HL7
+          </entry>
+          <entry>
+            Health Level 7
+          </entry>
+        </row>
+        <row>
+          <entry>
+            KBS
+          </entry>
+          <entry>
+            Knowledge Based Systems
+          </entry>
+        </row>
+        <row>
+          <entry>
+            KNART
+          </entry>
+          <entry>
+            Knowledge Artifact
+          </entry>
+        </row>
+        <row>
+          <entry>
+            MRI
+          </entry>
+          <entry>
+            Magnetic Resonance Imaging
+          </entry>
+        </row>
+        <row>
+          <entry>
+            NCCN
+          </entry>
+          <entry>
+            National Comprehensive Cancer Network
+          </entry>
+        </row>
+        <row>
+          <entry>
+            OIIG
+          </entry>
+          <entry>
+            Office of Informatics and Information Governance
+          </entry>
+        </row>
+        <row>
+          <entry>
+            PCP
+          </entry>
+          <entry>
+            Primary Care Provider
+          </entry>
+        </row>
+        <row>
+          <entry>
+            SME
+          </entry>
+          <entry>
+            Subject Matter Expert
+          </entry>
+        </row>
+        <row>
+          <entry>
+            TO
+          </entry>
+          <entry>
+            Task Order
+          </entry>
+        </row>
+        <row>
+          <entry>
+            VA
+          </entry>
+          <entry>
+            Department of Veterans Affairs
+          </entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </informaltable>
+</appendix>
+</book>
