@@ -1,0 +1,1179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7) - Compliant Knowledge
+      Artifacts (KNARTs)</title>
+    <subtitle>Women's Health: Cervical Cancer Screening Clinical Content White Paper</subtitle>
+    <copyright>
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright>
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+    <authorgroup>
+      <author>
+        <personname>Department of Veterans Affairs (VA)</personname>
+      </author>
+      <author>
+        <orgname><inlinemediaobject>
+            <alt>Department of Veterans Affairs Logo</alt>
+            <imageobject>
+              <imagedata
+                fileref="file:/G:/My%20Drive/VA%20KNART%20External/Working/vacds-knart-authoring/Womens%20Health/O22SADT%20-%20Cervical%20Cancer%20Screening/clinical-white-paper-draft/images/VASealColor.jpg"
+              />
+            </imageobject>
+          </inlinemediaobject></orgname>
+      </author>
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+      <author>
+        <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+      </author>
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+    <abstract>
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+      </info>
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Relevant KNART Information</title>
+          <tgroup align="left" cols="2">
+            <thead>
+              <row valign="bottom">
+                <entry valign="middle">Women's Health KNART</entry>
+                <entry valign="middle">Associated CLIN</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Cervical Cancer Screening - Event Condition Action (ECA) Rule</entry>
+                <entry>CLIN0007BA</entry>
+              </row>
+              <row>
+                <entry>Cervical Cancer Screening - Order Set</entry>
+                <entry>CLIN0008AA</entry>
+              </row>
+              <row>
+                <entry>Cervical Cancer Screening - Documentation Template</entry>
+                <entry>CLIN0008CA</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+    <pubdate>June 2018</pubdate>
+    <volumenum>Version 1.0</volumenum>
+  </info>
+  <preface>
+    <title>VA Subject Matter Expert (SME) Panel</title>
+    <informaltable>
+      <tgroup cols="3">
+        <colspec align="left"/>
+        <colspec align="left"/>
+        <colspec align="left"/>
+        <thead>
+          <row>
+            <entry> Name</entry>
+            <entry> Title</entry>
+            <entry> Project Role</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>C. Yvette Williams-Harris, MD, MPH</entry>
+            <entry>Physician, 1670 Clairmont Rd Atlanta, GA 30033</entry>
+            <entry>SME, Primary</entry>
+          </row>
+          <row>
+            <entry>Megan Gerber, MD, MPH</entry>
+            <entry>Physician, VA Boston Healthcare System, 150 South Huntington Ave Boston, MA 02130</entry>
+            <entry>SME, Secondary</entry>
+          </row>
+          <row>
+            <entry>Caitlin M. Cusack, MD, MPH</entry>
+            <entry>Contractor- Physician Informaticist, Office of Women's Health Services, 8455
+              Colesville Rd, 12th Floor Silver Spring, MD 20910</entry>
+            <entry>SME</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </preface>
+  <preface>
+    <title>Introduction</title>
+    <para>The <glossterm>VA</glossterm> is committed to improving the ability of clinicians to provide
+      care for patients while increasing quality, safety, and efficiency. Recognizing the importance
+      of standardizing clinical knowledge in support of this goal, VA is implementing the HL7
+      Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+      Artifacts, referred to as <glossterm>KNARTs</glossterm>, enable the structuring and encoding of
+      clinical knowledge so the knowledge can be integrated with electronic health records to enable
+      clinical decision support. </para>
+    <para>The purpose of this Clinical Content White Paper (<glossterm>CCWP</glossterm>) is to capture
+      the clinical context and intent of KNART use cases in sufficient detail to provide the
+        <glossterm>KNART</glossterm> authoring team with the clinical source material to construct the
+      corresponding knowledge artifacts using the <glossterm>HL7</glossterm> Knowledge Artifact
+      Specification. This paper has been developed using material from a variety of sources: VA
+      artifacts, clinical practice guidelines, evidence in the body of medical literature, and
+      clinical expertise. After reviewing these sources, the material has been synthesized and
+      harmonized under the guidance of VA subject matter experts to reflect clinical intent for this
+      use case. </para>
+    <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+      fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+      creation. To provide an exhaustive list of all possible items and their variations is beyond
+      the scope of this work. </para>
+  </preface>
+  <preface>
+      <title>Conventions Used</title>
+    
+    <para>Conventions used within the knowledge artifact descriptions include: <itemizedlist
+        mark="none" spacing="compact">
+        <listitem>
+          <para>&lt;obtain&gt; : Indicates a prompt to obtain the information listed <itemizedlist
+              mark="bullet" spacing="compact">
+              <listitem>
+                <para>If possible, the requested information should be obtained from the underlying
+                  system(s). Otherwise, prompting the user for information may be required</para>
+              </listitem>
+              <listitem>
+                <para>Default Values: Unless otherwise noted, &lt;obtain&gt; indicates to obtain the
+                  most recent observation. It is recognized that this default time-frame value may
+                  be altered by future implementations</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+
+        <listitem>
+          <para>[...]: Square brackets enclose explanatory text that indicates some action on the
+            part of the clinical user, or general guidance to the clinical or technical teams.
+            Examples include, but are not limited to:</para>
+
+          <itemizedlist mark="none" spacing="normal">
+            <listitem>
+              <para>[Begin ...], [End ...]: Indicates the start and end of specific areas to clearly
+                delineate them for technical purposes.</para>
+
+              <para>[Activate ...]: Initiates another knowledge artifact or knowledge artifact
+                section.</para>
+
+              <para>[Section Prompt: ...]: If this section is applicable, then the following prompt
+                should be displayed to the user.</para>
+
+              <para>[Section Behavior: ...]: Indicates technical constraints or considerations for
+                the selection of items outlined in the section prompt.</para>
+
+              <para>[Attach: ...]: Indicates that the specified item (e.g. procedure or result
+                interpretation) should be attached to the documentation template if
+                available.</para>
+
+              <para>[Link: ...]: Indicates that rather than attaching an item (e.g. image), a link
+                should be included in the documentation template.</para>
+
+              <para>[Clinical Comment: ...]: Indicates technical considerations or notes to be
+                utilized for KNART authoring and at time of implementation planning.</para>
+
+              <para>[Technical Note: ...]: Indicates technical considerations or notes to be
+                utilized for KNART authoring and at time of implementation planning.</para>
+
+              <para>[If ...]: Indicates the beginning of a conditional section.</para>
+
+              <para>[Else, ...]: Indicates the beginning of the alternative branch of a conditional
+                section.</para>
+
+              <para>[End if ...]: Indicates the end of a conditional section.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>☐ [Check box]: Indicates items that should be selected based upon the section
+            selection behavior.</para>
+        </listitem>
+      </itemizedlist></para>
+
+  </preface>
+  <chapter>
+    <title>Women's Health: Cervical Cancer Screening</title>
+    <para>[Begin Women’s Health: Cervical Cancer Screening.]</para>
+    <section>
+      <title>Clinical Context</title>
+      <para>[Begin Clinical Context.]</para>
+      <para>Cervical cancer is largely a preventable disease due to the success of early treatment
+        enabled by appropriate preventive screening (ACOG 2016). Therefore, it is imperative that
+        women be screened according to evidence-based guidelines. Screening is particularly
+        important, as secular trends indicate decreasing levels of screening among women and the
+        persistence of health care disparities among certain groups of women based on race,
+        ethnicity, and socioeconomic factors.</para>
+      <para>The Cervical Cancer Screening KNART set is intended to prompt providers to identify a
+        woman's cervical cancer risk category; counsel her about that risk; identify her screening
+        preferences; screen based on age, risk, and patient preference; and document the entire
+        process.</para>
+      <table>
+        <title>Clinical Context Domains</title>
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Target User</entry>
+              <entry>Provider to include Primary Care, Designated Women’s Health Providers, and
+                Gynecologists</entry>
+            </row>
+            <row>
+              <entry>Patient</entry>
+              <entry>Female that is at least 21 years of age or older</entry>
+            </row>
+            <row>
+              <entry>Priority</entry>
+              <entry>Routine</entry>
+            </row>
+            <row>
+              <entry>Specialty</entry>
+              <entry>Primary Care, Designated Women’s Health Providers, and Gynecology</entry>
+            </row>
+            <row>
+              <entry>Location</entry>
+              <entry>Outpatient</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>[End Clinical Context.]</para>
+    </section>
+    <section>
+      <title>Knowledge Artifacts</title>
+      <para>[Begin Knowledge Artifacts.]</para>
+      <para>This section describes the Clinical Decision Support (CDS) knowledge artifacts specific
+        to cervical cancer screening. These knowledge artifacts are intended for users providing
+        primary and preventative care to women to ensure that timely cervical cancer screening is
+        performed and that women’s preferences are incorporated into the decision-making process.
+        Target clinical users include primary care providers, women's health clinical providers and
+        gynecologists. The patient cohort includes women aged 21 years and older with an intact
+        cervix and without cervical cancer risk factors.</para>
+      <para>Women with the following risk factors are excluded from the patient cohort as they are
+        followed in accordance with alternative protocols:</para>
+      <itemizedlist>
+        <listitem>
+          <para> Women who have an immune disorder such as being Human Immunodeficiency Virus
+              (<glossterm>HIV</glossterm>) positive. </para>
+        </listitem>
+        <listitem>
+          <para> Women with a history of high-grade precancerous cervical lesion(s) or cervical
+            cancer. </para>
+        </listitem>
+        <listitem>
+          <para> Women with in utero exposure to diethylstilbestrol. </para>
+        </listitem>
+      </itemizedlist>
+      <para>This section describes the CDS knowledge artifacts that are part of the Cervical Cancer
+        Screening group, and include:</para>
+      <itemizedlist>
+        <listitem>
+          <para> An Event-Condition-Action (<glossterm>ECA</glossterm>) Rule: Cervical Cancer
+            Screening </para>
+          <itemizedlist>
+            <listitem>
+              <para>Rule logic that describes the activation of the documentation template and order
+                set.</para>
+            </listitem>
+            <listitem>
+              <para>Actions may include activating documentation templates or order sets.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para> A Documentation Template: Cervical Cancer Screening </para>
+          <itemizedlist>
+            <listitem>
+              <para>A template that facilitates documentation of the management of a patient’s
+                cervical cancer screening.</para>
+            </listitem>
+            <listitem>
+              <para>Includes logic for the appropriate display of the documentation sections.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para> An Order Set: Cervical Cancer Screening </para>
+          <itemizedlist>
+            <listitem>
+              <para>Orderable items associated with management of cervical cancer screening.</para>
+            </listitem>
+            <listitem>
+              <para>Includes logic for the appropriate display of the order set.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+      <para>[End Knowledge Artifacts.]</para>
+      <para>[End Women’s Health: Cervical Cancer Screening.]</para>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Event-Condition-Action (<glossterm>ECA</glossterm>) Rule: Women's Health: Cervical Cancer
+      Screening</title>
+    <para>[Begin ECA Rule.]</para>
+    <section>
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.]</para>
+      <para>[See Clinical Context in Chapter 1.]</para>
+      <para>The Event-Condition-Action Rule will assure:</para>
+      <itemizedlist>
+        <listitem>
+          <para> Clinicians have access to the current guidelines at the point of care to guide
+            their counseling; and </para>
+        </listitem>
+        <listitem>
+          <para> Patients are notified when they are due for cervical cancer screening either during
+            or outside of in-person clinical visits. </para>
+        </listitem>
+      </itemizedlist>
+      <para>[Clinical Comment: The purpose of the <glossterm>ECA</glossterm> rule for cervical
+        cancer screening is to assess the patient’s cervical cancer screening status and if
+        warranted, to document cervical cancer risk and screening desires as well as to order the
+        recommended test/screen.</para>
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+    <section>
+      <title>Primary Level (trunk) cohort identification</title>
+      <para>[Begin Primary Level (trunk) cohort identification.]</para>
+      <bridgehead>Event</bridgehead>
+      <para>[Begin Event]</para>
+      <itemizedlist>
+        <listitem>
+          <para>Opening of the patient record during an outpatient visit to primary care provider,
+            designated women’s health provider or gynecologist</para>
+          <para>OR</para>
+        </listitem>
+        <listitem>
+          <para>System run of preventive screening rules, run monthly.</para>
+        </listitem>
+      </itemizedlist>
+      <para>[End Event]</para>
+      
+        <bridgehead renderas="sect4">Conditions</bridgehead>
+        <para>[Begin Conditions]</para>
+        <itemizedlist>
+          <listitem>
+            <para>Include female patients aged 21 years or older. </para>
+          </listitem>
+          <listitem>
+            <para>Exclude women who have had a total hysterectomy (cervix + uterus), women who have
+              congenital absence of the cervix, and women who meet any of the following high-risk
+              criteria:</para>
+            <itemizedlist>
+              <listitem>
+                <para> Immunosuppression; or</para>
+              </listitem>
+              <listitem>
+                <para> Presence of <glossterm>HIV</glossterm> infection; or</para>
+              </listitem>
+              <listitem>
+                <para> Exposure to diethylstilbestrol in utero; or</para>
+              </listitem>
+              <listitem>
+                <para> A history of high-grade dysplasia or prior treatment for Cervical
+                Intra-epithelial Neoplasia (<glossterm>CIN</glossterm>) 2,
+                  CIN 3, or cervical cancer; or</para>
+              </listitem>
+              <listitem>
+              <para> Women in whom screening has been discontinued due to:</para>
+              <itemizedlist>
+                <listitem>
+                  <para>life expectancy less than 10 years</para>
+                </listitem>
+                <listitem>
+                  <para>history of adequate screening among women over 65</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+            </itemizedlist>
+          </listitem>
+        </itemizedlist>
+      <para>[Technical Note: Adequate negative prior screening results are defined as 3 consecutive negative cytology results or 2 consecutive negative co-test results within the previous 10 years, with the most recent test performed within the past 5 years.]</para>
+        <para>[End Conditions]</para>
+      <bridgehead renderas="sect4">Actions</bridgehead>
+        <para>[Begin Actions]</para>
+        <itemizedlist spacing="compact">
+          <listitem>
+          <para>Activate Chapter 2, sections 2.2.1- 2.2.6</para>
+        </listitem>
+        </itemizedlist>
+        <para>[End Actions]</para>
+      <para>[End Primary Level (trunk) cohort identification.]</para>
+      
+      <section>
+        <title>Cervical Cancer Screening for 21-29 Years of Age: In Person</title>
+        <para>[Begin Cervical Cancer Screening for 21-29 years of age: In Person.]</para>
+        <bridgehead renderas="sect4">Event</bridgehead>
+          <para>[Begin Event]</para>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Opening of the patient record during an outpatient visit to primary care
+                provider, designated women’s health provider or gynecologist.</para>
+            </listitem>
+          </itemizedlist>
+          <para>[End Event]</para>
+
+        <bridgehead renderas="sect4">Conditions</bridgehead>
+          <para>[Begin Conditions]</para>
+          <itemizedlist spacing="compact">
+            <listitem>
+            <para>Patient age is ≥ 21 to &lt; 30 years old</para>
+          </listitem>
+          <listitem>
+            <para>No cervical cytology exam within the past 3 years or patient coming due in the
+              next 60 days.</para>
+          </listitem>
+          </itemizedlist>
+        <para>[Technical Note: If Due Date > Today + 60 Days, stop.]</para>
+          <para>[End Conditions]</para>
+                  <bridgehead renderas="sect4">Actions</bridgehead>
+          <para>[Begin Actions]</para>
+          <itemizedlist>
+            <listitem>
+              <para>Open the Cervical Cancer Screening Documentation Template</para>
+            </listitem>
+            <listitem>
+              <para>Open the Cervical Cancer Screening Order Set</para>
+            </listitem>
+          </itemizedlist>
+        <para>[Technical Note: Make sure the associated recommendations and guidelines for the age
+          group are available to the provider.]</para>
+          <para>[End Actions]</para>
+          <para>[End Cervical Cancer Screening for 21-29 years of age: In Person .]</para>
+        </section>
+      <section>
+        <title>Cervical Cancer Screening for 21-29 Years of Age: Reporting</title>
+        <para>[Begin Cervical Cancer Screening for 21-29 years of age: Reporting.]</para>
+        <bridgehead renderas="sect4">Event</bridgehead>
+          <para>[Begin Event]</para>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Monthly system run of preventative screening rules</para>
+            </listitem>
+          </itemizedlist>
+          <para>[End Event]</para>
+                  <bridgehead renderas="sect4">Conditions</bridgehead>
+          <para>[Begin Conditions]</para>
+          <itemizedlist spacing="compact">
+            <listitem>
+            <para>Patient is ≥ 21 to &lt; 30 years old</para>
+          </listitem>
+          <listitem>
+            <para>Has had no cervical cytology exam within the past 3 years</para>
+          </listitem>
+          </itemizedlist>
+        <itemizedlist>
+          <listitem>
+            <para>Due Date is within 30 days in the past and 60 days in the future of the system run
+              date</para>
+          </listitem>
+        </itemizedlist>
+        <para>[Technical Note: Given a monthly system run, this condition results in 3 notifications
+          being sent to the patient.]</para>
+          <para>[End Conditions]</para>
+                  <bridgehead renderas="sect4">Actions</bridgehead>
+          <para>[Begin Actions]</para>
+          <itemizedlist>
+            <listitem>
+              <para>Send patient cervical cancer screening <quote>due</quote> notification</para>
+            </listitem>
+          </itemizedlist>
+        <para>[Technical Note: Make sure the associated recommendations and guidelines for the age
+          group are available to the care team.]</para>
+          <para>[End Actions]</para>
+          <para>[End Cervical Cancer Screening for 21-29 years of age: Reporting.]</para>
+        </section>
+
+      <section>
+        <title>Cervical Cancer Screening for 30 to 65 Years of Age: In Person</title>
+        <para>[Begin Cervical Cancer Screening for 30-65 Years of Age: In Person.]</para>
+        <bridgehead renderas="sect4">Event</bridgehead>
+          <para>[Begin Event]</para>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Opening of the patient record during an outpatient visit to primary care
+                provider, designated women’s health provider or gynecologist.</para>
+            </listitem>
+          </itemizedlist>
+          <para>[End Event]</para>
+                  <bridgehead renderas="sect4">Conditions</bridgehead>
+          <para>[Begin Conditions]</para>
+          <itemizedlist>
+            <listitem>
+            <para>Patient age is ≥ 30 and ≤ 65 years old</para>
+          </listitem>
+          <listitem>
+            <para>Has had none of the following screens:</para>
+            <itemizedlist>
+              <listitem>
+                <para>Cervical Cytology within the past 3 years, or</para>
+              </listitem>
+              <listitem>
+                <para>Cotesting (cervical cytology and cervical Human Papillomavirus
+                    (<glossterm>HPV</glossterm>) screen) within the past 5 years</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+          </itemizedlist>
+        <para>[Technical Note: If Due Date > Today + 60 Days, stop.]</para>
+          <para>[End Conditions]</para>
+                  <bridgehead renderas="sect4">Actions</bridgehead>
+          <para>[Begin Actions]</para>
+          <itemizedlist>
+            <listitem>
+              <para>Open Cervical Cancer Screening Documentation Template.</para>
+            </listitem>
+            <listitem>
+              <para>Open Cervical Cancer Screening Order Set</para>
+            </listitem>
+          </itemizedlist>
+        <para>[Technical Note: Make sure the associated recommendations and guidelines for the age
+          group are available to the provider.] </para>
+          <para>[End Actions]</para>
+          <para>[End Cervical Cancer Screening for 30-65 Years of Age: In Person.]</para>
+        </section>
+
+      <section>
+        <title>Cervical Cancer Screening for 30 to 65 Years of Age: Reporting</title>
+        <para>[Begin Cervical Cancer Screening for 30-65 Years of Age: Reporting.]</para>
+        <bridgehead renderas="sect4">Event</bridgehead>
+          <para>[Begin Event]</para>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Monthly system run of preventative screening rules</para>
+            </listitem>
+          </itemizedlist>
+          <para>[End Event]</para>
+                  <bridgehead renderas="sect4">Conditions</bridgehead>
+          <para>[Begin Conditions]</para>
+          <itemizedlist>
+          <listitem>
+            <para>Patient age is ≥ 30 and ≤ 65 years old</para>
+          </listitem>
+          <listitem>
+            <para>Has had none of the following screens:</para>
+            <itemizedlist>
+              <listitem>
+                <para>Cervical Cytology within the past 3 years, or</para>
+              </listitem>
+              <listitem>
+                <para>Cotesting (cervical cytology and cervical Human Papillomavirus
+                    (<glossterm>HPV</glossterm>) screen) within the past 5 years</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+          </itemizedlist>
+        <para>Due Date is within 30 days in the past and 60 days in the future of the system run
+          date.</para>
+        <para>[Technical Note: Given a monthly system run, this condition results in 3 notifications
+          being sent to the patient.]</para>
+          <para>[End Conditions]</para>
+                  <bridgehead renderas="sect4">Actions</bridgehead>
+          <para>[Begin Actions]</para>
+          <itemizedlist>
+            <listitem>
+              <para>Send patient cervical cancer screening <quote>due</quote> notification</para>
+            </listitem>
+          </itemizedlist>
+          <para>[Technical Note: Make sure the associated recommendations and guidelines for the age
+          group are available to the care team.]</para>
+        <para>[End Actions]</para>
+          <para>[End Cervical Cancer Screening for 30-65 Years of Age: Reporting.]</para>
+        </section>
+
+      <section>
+        <title>Cervical Cancer Screening for Older than 65 Years of Age: In Person</title>
+        <para>[Begin Cervical Cancer Screening for Older than 65 Years of Age: In Person.]</para>
+        <bridgehead renderas="sect4">Event</bridgehead>
+          <para>[Begin Event]</para>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Opening of the patient record during an outpatient visit to primary care
+                provider, designated women’s health provider or gynecologist.</para>
+            </listitem>
+          </itemizedlist>
+          <para>[End Event]</para>
+                  <bridgehead renderas="sect4">Conditions</bridgehead>
+          <para>[Begin Conditions]</para>
+          <itemizedlist>
+          <listitem>
+            <para>Patient age > 65 years old</para>
+          </listitem>
+          <listitem>
+            <para>Has had none of the following screens:</para>
+            <itemizedlist>
+              <listitem>
+                <para>Cervical Cytology within the past 3 years, or</para>
+              </listitem>
+              <listitem>
+                <para>Cotesting (cervical cytology and cervical Human Papillomavirus
+                    (<glossterm>HPV</glossterm>) screen) within the past 5 years</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </itemizedlist>
+        <para>[Technical Note: If Due Date > Today + 60 Days, stop.]</para>
+          <para>[End Conditions]</para>
+                  <bridgehead renderas="sect4">Actions</bridgehead>
+          <para>[Begin Actions]</para>
+          <itemizedlist>
+            <listitem>
+              <para>Open Cervical Cancer Screening Documentation Template</para>
+            </listitem>
+            <listitem>
+              <para>Open Cervical Cancer Screening Order Set</para>
+            </listitem>
+          </itemizedlist>
+ 
+          <para>[Technical Note: Make sure the associated recommendations and guidelines for the age
+          group are available to the provider.]</para>
+
+          <para>[End Actions]</para>
+          <para>[End Cervical Cancer Screening for Older than 65 Years of Age: In Person.]</para>
+        </section>
+
+      <section>
+        <title>Cervical Cancer Screening for Older than 65 Years of Age: Reporting</title>
+        <para>[Begin Cervical Cancer Screening for Older than 65 Years of Age: Reporting.]</para>
+        <bridgehead renderas="sect4">Event</bridgehead>
+          <para>[Begin Event]</para>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Monthly system run of preventative screening rules</para>
+            </listitem>
+          </itemizedlist>
+          <para>[End Event]</para>
+                  <bridgehead renderas="sect4">Conditions</bridgehead>
+          <para>[Begin Conditions]</para>
+          <itemizedlist>
+          <listitem>
+            <para>Patient age > 65 years old</para>
+          </listitem>
+          <listitem>
+            <para>Has had none of the following exams:</para>
+            <itemizedlist>
+              <listitem>
+                <para>Cervical Cytology within the past 3 years, or</para>
+              </listitem>
+              <listitem>
+                <para>Cotesting (cervical cytology and cervical Human Papillomavirus
+                    (<glossterm>HPV</glossterm>) screen) within the past 5 years</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </itemizedlist>
+        <itemizedlist>
+          <listitem>
+            <para>Due Date is within 30 days in the past and 60 days in the future of the system run
+              date</para>
+          </listitem>
+        </itemizedlist>
+        <para>[Technical Note: Given a monthly system run, this condition results in 3 notifications
+          being sent to the patient.]</para>
+          <para>[End Conditions]</para>
+                  <bridgehead renderas="sect4">Actions</bridgehead>
+          <para>[Begin Actions]</para>
+          <itemizedlist>
+            <listitem>
+              <para>Send patient cervical cancer screening <quote>due</quote> notification</para>
+            </listitem>
+          </itemizedlist>
+        <para>[Technical Note: Make sure the associated recommendations and guidelines for the age
+          group are available to the care team.] </para>
+        
+          <para>[End Actions]</para>
+          <para>[End Cervical Cancer Screening for Older than 65 Years of Age: Reporting.]</para>
+        <para>[End ECA Rule.]</para>
+        </section>
+    </section>
+
+  </chapter>
+  <chapter>
+    <title>Documentation Template: Women's Health: Cervical Cancer Screening</title>
+    <para>[Begin Documentation Template.]</para>
+    <para>[Technical Note: This documentation template should be made available for patients for
+      whom Cervical Cancer Screening <glossterm>ECA</glossterm> Rule KNART is activated (i.e.,
+      criteria met).]</para>
+    <section>
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.]</para>
+      <para>[See Clinical Context in Chapter 1.]</para>
+      <para>[Clinical Comment: The Cervical Cancer Screening Documentation Template will guide
+        clinicians in their conversations with a woman based upon her age and risk-based screening
+        preferences as well as allow for the efficient documentation of those conversations and
+        capture the woman's personal preferences.]</para>
+      <para>[Technical Note: Discrete data elements will be acquired through a series of questions
+        and answers. Any information that can be obtained from the system should pre-populate the
+        field in a manner that is apparent to the user.]</para>
+      <para>[Technical Note: The template should automatically adjust to be specific to the
+        following age groups: 21-29, 30-65 and older than 65 years of age.]</para>
+      <para>[Technical Note: The template should allow for the documentation of prior cervical
+        cancer screening and results from outside of the organization.]</para>
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+    <section>
+      <title>History</title>
+      <para>[Begin History section.]</para>
+      <para>[Section Prompt: Patient Age.]</para>
+      <blockquote>
+        <para>&lt;obtain&gt; Age in years</para>
+      </blockquote>
+      <para>[Section Prompt: History of high-grade dysplasia or prior treatment for Cervical
+        Intraepithelial Neoplasia (<glossterm>CIN</glossterm>) 2 or higher?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <blockquote>
+        <para>☐ Yes <blockquote>
+            <para>&lt;obtain> Details</para>
+          </blockquote></para>
+        <para>☐ No</para>
+      </blockquote>
+      <para>[Previously treated for <glossterm>CIN</glossterm> 2, <glossterm>CIN</glossterm> 3, or
+        Cervical Cancer?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <blockquote>
+        <para>☐ Yes <blockquote>
+            <para>&lt;obtain> Details</para>
+          </blockquote></para>
+        <para>☐ No</para>
+      </blockquote>
+      <para>[Section Prompt: Exposed to Diethylstilbestrol in Utero?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <blockquote>
+        <para>☐ Yes <blockquote>
+            <para>&lt;obtain> Details</para>
+          </blockquote></para>
+        <para>☐ No</para>
+      </blockquote>
+      <para>[Section Prompt: Hysterectomy with Removal of Cervix (Total Hysterectomy)?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <blockquote>
+        <para>☐ Yes <blockquote>
+            <para>&lt;obtain> Details</para>
+          </blockquote></para>
+        <para>☐ No</para>
+      </blockquote>
+      <para>[Section Prompt: Infected with <glossterm>HIV</glossterm>?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <blockquote>
+        <para>☐ Yes <blockquote>
+            <para>&lt;obtain> Details</para>
+          </blockquote></para>
+        <para>☐ No</para>
+      </blockquote>
+      <para>[Section Prompt: Immunocompromised (Other Than <glossterm>HIV</glossterm>)?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <blockquote>
+        <para>☐ Yes <blockquote>
+            <para>&lt;obtain> Details</para>
+          </blockquote></para>
+        <para>☐ No</para>
+      </blockquote>
+      <para>[Section Prompt: Significant Comorbidity Limits Life Span to &lt; 10 Years?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <blockquote>
+        <para>☐ Yes <blockquote>
+            <para>&lt;obtain> Details</para>
+          </blockquote></para>
+        <para>☐ No</para>
+      </blockquote>
+      <para>[End History section.]</para>
+    </section>
+    <section>
+      <title>Laboratory Studies</title>
+      <para>[Begin Laboratory Studies section.]</para>
+      <section>
+        <title>Laboratory Studies: Aged 21–29 Years.</title>
+        <para>[This section of the documentation template should be made available when the ECA Rule
+          Cervical Cancer Screening for 21-29 Years of Age: In Person is executed.]</para>
+        <para>[Section Prompt: Most Recent Cervical Cytology.]</para>
+        <blockquote>
+          <para> &lt;obtain> Results</para>
+          <para> &lt;obtain> Date</para>
+        </blockquote>
+      </section>
+      <section>
+        <title>Laboratory Studies: Aged 30–65 Years</title>
+        <para>[This section of the documentation template should be made available when the ECA Rule
+          Cervical Cancer Screening for 30 to 65 Years of Age: In Person is executed.]</para>
+        <para>[Section Prompt: Most Recent Cervical Cytology.]</para>
+        <blockquote>
+          <para> &lt;obtain> Results</para>
+          <para> &lt;obtain> Date</para>
+        </blockquote>
+        <para>[Section Prompt: Most Recent Cervical <glossterm>HPV</glossterm> Screening.]</para>
+        <blockquote>
+          <para> &lt;obtain> Results</para>
+          <para> &lt;obtain> Date</para>
+        </blockquote>
+      </section>
+      <section>
+        <title>Laboratory Studies: Aged Older Than 65 Years</title>
+        <para>[This section of the documentation template should be made available when the ECA Rule
+          Cervical Cancer Screening for Older than 65 Years of Age: In Person is executed.]</para>
+        <para>[Section Prompt: Most Recent Cervical Cytology.]</para>
+        <blockquote>
+          <para> &lt;obtain> Results</para>
+          <para> &lt;obtain> Date</para>
+        </blockquote>
+        <para>[Section Prompt: Second-Most Recent Cervical Cytology.]</para>
+        <blockquote>
+          <para> &lt;obtain> Results</para>
+          <para> &lt;obtain> Date</para>
+        </blockquote>
+        <para>[Section Prompt: Third-Most Recent Cervical Cytology.]</para>
+        <blockquote>
+          <para> &lt;obtain> Results</para>
+          <para> &lt;obtain> Date</para>
+        </blockquote>
+        <para>[Section Prompt: Most Recent Cervical <glossterm>HPV</glossterm> Screen.]</para>
+        <blockquote>
+          <para> &lt;obtain> Results</para>
+          <para> &lt;obtain> Date</para>
+        </blockquote>
+        <para>[Section Prompt: Second-Most Recent Cervical <glossterm>HPV</glossterm>
+          Screen.]</para>
+        <blockquote>
+          <para> &lt;obtain> Results</para>
+          <para> &lt;obtain> Date</para>
+        </blockquote>
+        <para>[End Laboratory Studies section.]</para>
+      </section>
+    </section>
+    <section>
+      <title>Plan of Care</title>
+      <para>[Begin Plan of Care.]</para>
+      <para>[Section Prompt: Due Date for Cervical Cancer Screening.]</para>
+      <blockquote>
+        <para>&lt;obtain> Due Date</para>
+        <para>[Technical Note: Due Date is calculated per patient-relevant ECA rule.]</para>
+      </blockquote>
+      <section>
+        <title>Plan: Aged 21–29 Years</title>
+        <para>[This section of the documentation template should be made available when the ECA Rule
+          Cervical Cancer Screening for 21-29 Years of Age: In Person is executed.]</para>
+        <para>[Section Prompt: Cervical Cancer Preventive Screening Plan.]</para>
+        <para>[Section Selection Behavior: Select one. Required.]</para>
+        <blockquote>
+          <para>☐ Continue Screening Every Three Years with Cervical Cytology Alone</para>
+          <para>☐ Discontinue Screening Due to Life Expectancy &lt; 10 Years</para>
+          <para>☐ Other <blockquote>
+              <para> &lt;obtain> Details</para>
+            </blockquote></para>
+        </blockquote>
+        <para>[Section Prompt: Plan Discussed with and Agreed to by Patient?]</para>
+        <para>[Section Selection Behavior: Select one. Required.]</para>
+        <blockquote>
+          <para>☐ Yes</para>
+          <para>☐ No<blockquote>
+              <para> &lt;obtain> Explanation </para>
+            </blockquote></para>
+        </blockquote>
+      </section>
+      <section>
+        <title>Plan: Aged 30–65 Years</title>
+        <para>[This section of the documentation template should be made available when the ECA Rule
+          Cervical Cancer Screening for 30 to 65 Years of Age: In Person is executed.]</para>
+        <para>[Section Prompt: Cervical Cancer Preventive Screening Plan.]</para>
+        <para>[Section Selection Behavior: Select one. Required.]</para>
+        <blockquote>
+          <para>☐ Continue Screening Every Three Years with Cervical Cytology Alone</para>
+          <para>☐ Continue Screening Every Five Years with Cotesting (Cervical Cytology Plus
+            Cervical <glossterm>HPV</glossterm> Screening) </para>
+          <para>☐ Discontinue Screening Due to Life Expectancy &lt; 10 Years</para>
+          <para>☐ Other <blockquote>
+              <para>&lt;obtain> Details</para>
+            </blockquote></para>
+        </blockquote>
+        <para>[Section Prompt: Plan Discussed with and Agreed to by Patient?]</para>
+        <para>[Section Selection Behavior: Select one. Required.]</para>
+        <blockquote>
+          <para>☐ Yes</para>
+          <para>☐ No<blockquote>
+              <para>&lt;obtain> Explanation</para>
+            </blockquote></para>
+        </blockquote>
+      </section>
+      <section>
+        <title>Plan: Aged Older Than 65 Years</title>
+        <para>[This section of the documentation template should be made available when the ECA Rule
+          Cervical Cancer Screening for Older than 65 Years of Age: In Person is executed.]</para>
+        <para>[Section Prompt: Cervical Cancer Screening Plan.]</para>
+        <para>[Section Selection Behavior: Select one. Required.]</para>
+        <blockquote>
+          <para>☐ Continue Screening Every Three Years with Cervical Cytology Alone</para>
+          <para>☐ Continue Screening Every Five Years with Cotesting (Cervical Cytology Plus
+            Cervical <glossterm>HPV</glossterm> Screening) </para>
+          <para>☐ Discontinue Screening Due to Life Expectancy &lt; 10 Years</para>
+          <para>☐ Discontinue Screening because adequate screening has been completed (Three
+            Consecutive Negative Cytology Results within the Last 10 Years OR Two Consecutive
+            Negative Cotesting Results within the Last 10 Years, with the Most Recent Screening of
+            either type Performed within the Past 5 Years) </para>
+          <para>☐ Other <blockquote>
+              <para>&lt;obtain> Details</para>
+            </blockquote></para>
+        </blockquote>
+        <para>[Section Prompt: Plan Discussed with and Agreed to by Patient?]</para>
+        <para>[Section Selection Behavior: Select one. Required.]</para>
+        <blockquote>
+          <para>☐ Yes</para>
+          <para>☐ No<blockquote>
+              <para>&lt;obtain> Explanation</para>
+            </blockquote></para>
+        </blockquote>
+        <para>[End Plan of Care.]</para>
+        <para>[End Documentation Template.]</para>
+      </section>
+    </section>
+  </chapter>
+  <chapter>
+    <title>Order Set: Women's Health: Cervical Cancer Screening</title>
+    <para>[Begin Order Set.]</para>
+    <para>[Technical Note: This Order Set is to be made available for patients for whom Cervical
+      Cancer Screening <glossterm>ECA</glossterm> Rule KNART was positive.]</para>
+    <section>
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.]</para>
+      <para>[See Clinical Context in Chapter 1.]</para>
+      <para>[Clinical Comment: The order set allows users to order cervical cancer screening,
+        including cervical cytology and <glossterm>HPV</glossterm> co-testing, quickly and
+        efficiently.]</para>
+      <para>[Technical Note: Currently, VA users can enter orders directly or they can order from
+        within the clinical reminder dialog (see Appendix A).]</para>
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+    <section>
+      <title>Cervical Cancer Screening</title>
+      <para>[Begin Cervical Cancer Screening.]</para>
+      <para>[Section Prompt: Laboratory Studies.]</para>
+      <para>[Section Selection Behavior: Select one or more. Optional.]</para>
+      <blockquote>
+        <para>☐ Papanicolaou test cervical cells for cervical cancer screening routine</para>
+        <para>☐ Liquid-based cytology cervical cells for cervical cancer screening routine</para>
+        <para>[Section Prompt: If Age >= 30, then co-testing for HPV and cervical cytology is
+          recommended, although cervical cytology alone is an option if patient prefers.]</para>
+        <para>☐ <glossterm>HPV</glossterm> screen cervical cells as part of cervical cancer
+          cotesting routine</para>
+      </blockquote>
+      <para>[Section Prompt: Patient and Caregiver Education.]</para>
+      <para>[Selection Behavior: Select one. Optional.]</para>
+      <blockquote>
+        <para>☐ Cervical cancer screening education (Pap smear testing, liquid-based cervical
+          cytology, <glossterm>HPV</glossterm> testing, and cervical cancer) routine</para>
+      </blockquote>
+      <para>[End Cervical Cancer Screening.]</para>
+      <para>[End Order Set.]</para>
+    </section>
+  </chapter>
+  <bibliography>
+    <info>
+      <title>Bibliography/Evidence</title>
+    </info>
+    <biblioentry>
+      <author>
+        <orgname>Committee on Practice Bulletins—Gynecology.</orgname>
+      </author>
+      <citetitle pubwork="webpage">Practice Bulletin No. 168: Cervical Cancer Screening and
+        Prevention</citetitle>
+      <citetitle pubwork="journal">Obstet Gynecol</citetitle>
+      <pubdate>2016</pubdate>
+      <volumenum>128</volumenum>
+      <issuenum>(4)</issuenum>
+      <pagenums>e111-e130</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>Health Promotion and Disease Prevention.</orgname>
+      </author>
+      <citetitle pubwork="webpage">Provider Fact Sheet: Cervical Cancer Screening. National Center
+        for Health Promotion and Disease Prevention website</citetitle>
+      <bibliomisc>https://www.prevention.va.gov/docs/CervicalCProvider.pdf.</bibliomisc>
+      <pubdate>June 2013</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="webpage">Cervical Cancer Screening Guidelines for Average Risk
+        Women</citetitle>
+      <bibliomisc>https://www.cdc.gov/cancer/cervical/pdf/guidelines.pdf</bibliomisc>
+      <pubdate>July 2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <author>
+        <orgname>Committee on Gynecologic Practice</orgname>
+      </author>
+      <citetitle pubwork="webpage">Committee Opinion No. 534: Well-Woman Visit. Obstetrics and
+        Gynecology</citetitle>
+      <pubdate>August 2012</pubdate>
+      <volumenum>120</volumenum>
+      <issuenum>(2 Pt 1)</issuenum>
+      <pagenums>421</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="webpage">Department of Veteran Affairs National Center for Health
+        Promotion and Disease Prevention, Cervical Cancer Screening</citetitle>
+      <bibliomisc>https://www.prevention.va.gov/Preventing_Diseases/Screening_for_Cervical_Cancer.asp#frequency</bibliomisc>
+      <pubdate>July 2017</pubdate>
+    </biblioentry>
+    <biblioentry>
+      <abbrev>Massad, 2013</abbrev>
+      <authorgroup>
+        <author>
+          <personname><surname>Massad</surname><firstname>LS</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Einstein</surname><firstname>MH</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Huh</surname><firstname>WK</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Katki</surname><firstname>HA</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Kinney</surname><firstname>WK</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Schiffman</surname><firstname>M</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Solomon</surname><firstname>D</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Wentzensen</surname><firstname>N</firstname></personname>
+        </author>
+        <author>
+          <personname><surname>Lawson</surname><firstname>HW.</firstname></personname>
+        </author>
+      </authorgroup>
+      <citetitle pubwork="article">2012 Updated Consensus Guidelines For The Management Of Abnormal
+        Cervical Cancer Screening Tests And Cancer Precursors</citetitle>
+      <citetitle pubwork="journal">stetrics and Gynecology</citetitle>
+      <pubdate>April 1, 2013</pubdate>
+      <volumenum>121</volumenum>
+      <issuenum>(4)</issuenum>
+      <pagenums>829-46</pagenums>
+    </biblioentry>
+    <biblioentry>
+      <citetitle pubwork="webpage">United States Preventive Task Force (USPTF) Cervical Cancer
+        Screening Guidelines</citetitle>
+      <bibliomisc>https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/cervical-cancer-screening</bibliomisc>
+      <pubdate>July 2017</pubdate>
+    </biblioentry>
+  </bibliography>
+
+  <appendix>
+    <info>
+      <title>Existing VA Artifacts</title>
+    </info>
+    <figure>
+      <title>Pap Smear Screening Clinical Reminder</title>
+      <mediaobject>
+        <alt>VA Screenshot of Reminder Resolution: PAP Smear Screening</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig3PapSmearScreening.png"
+            scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Pap Smear Screening Clinical Reminder with Record Outside Pap section expanded</title>
+      <mediaobject>
+        <alt>VA Screenshot of Reminder Resolution: PAP Smear Screening showing record prior or
+          outside Pap and/or HPV results</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig4PapSmearScreeningWithRecord.png"
+            scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>HPV orders</title>
+      <mediaobject>
+        <alt>VA Screenshot of HPV orders</alt>
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+            fileref="images/Fig1HPVOrders.png"
+            scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+  
+  <glossary role="auto">
+    <info>
+      <title>Acronyms</title>
+    </info>
+  </glossary>
+</book>
