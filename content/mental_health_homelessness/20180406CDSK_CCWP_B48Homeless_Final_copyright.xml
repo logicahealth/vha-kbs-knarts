@@ -1,0 +1,817 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:ns="http://docbook.org/ns/docbook">
+    <info>
+        <title>Clinical Decision Support (<acronym><glossterm>CDS</glossterm></acronym>) Content and
+            Health Level 7 (HL7)-Compliant Knowledge Artifacts (KNARTs)</title>
+        <subtitle>Mental Health: Homelessness Clinical Content White Paper</subtitle>
+        <copyright>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname><surname>Department of Veterans Affairs (VA)</surname></personname>
+            </author>
+            <author>
+                <orgname>
+                    <inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center" contentdepth="2in" contentwidth="2in"
+                                fileref="images/VASealColor.jpg" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject>
+                </orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance
+                            (<acronym><glossterm>OIIG</glossterm></acronym>)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support
+                    (<acronym><glossterm>CDS</glossterm></acronym>)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table colsep="1" frame="all" rowsep="1">
+                    <title>Relevant KNART Information: Mental Health: Homelessness</title>
+                    <tgroup align="left" cols="2">
+                        <thead>
+                            <row valign="middle">
+                                <entry><emphasis role="bold">Mental Health KNART</emphasis></entry>
+                                <entry><emphasis role="bold">Associated CLIN</emphasis></entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Homelessness – Documentation Template</entry>
+                                <entry>CLIN0005AA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>March 2018</pubdate>
+        <volumenum>Version 1.0</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>3/27/2018</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>Alignment to standardized format, content. XML transformation and QA.
+                    Final submission.</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>03/06/2018</date>
+                <authorinitials>VA PO</authorinitials>
+                <revremark>PO formal review approval to proceed with Final</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>02/02/2018</date>
+                <authorinitials>Charles Motsinger, Lindsey Birt</authorinitials>
+                <revremark>Initial submission for PO formal review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>01/24/2018</date>
+                <authorinitials>VA SMEs</authorinitials>
+                <revremark>SME approval date</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <informaltable>
+            <tgroup cols="3">
+                <colspec colname="c1" colwidth="1*"/>
+                <colspec colname="c2" colwidth="2.03*"/>
+                <colspec colname="c3" colwidth="1.56*"/>
+                <thead valign="top">
+                    <row>
+                        <entry>
+                            <para xml:id="va_SME_List"><emphasis role="bold">Name</emphasis></para>
+                        </entry>
+                        <entry>
+                            <para><emphasis role="bold">Title</emphasis></para>
+                        </entry>
+                        <entry>
+                            <para><emphasis role="bold">Project Role</emphasis></para>
+                        </entry>
+                    </row>
+                </thead>
+                <tbody valign="top">
+                    <row>
+                        <entry>
+                            <para>Mike Wilson, MD</para>
+                        </entry>
+                        <entry>
+                            
+                                    <para>Medical Director, Homeless Programs Company</para>
+                            <para>VA Central Office (VACO)</para>
+                            <para>1601 E. Fourth Plain Blvd.</para>
+                            <para>Vancouver, WA 98661</para>
+
+                        </entry>
+                        <entry>
+                            <para>SME, Primary</para>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <para>Roger Casey</para>
+                        </entry>
+                        <entry>
+                            <para>Director, Education-Dissemination, National Center on
+                                Homelessness, Veteran Health Administration (VHA)</para>
+                        </entry>
+                        <entry>
+                            <para>SME, Secondary</para>
+                        </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface>
+        <title>Introduction</title>
+
+        <para>The VA is committed to improving the ability of clinicians to provide care for
+            patients while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the HL7
+            Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+            Artifacts, referred to as <acronym><glossterm>KNARTs</glossterm></acronym>, enable the
+            structuring and encoding of clinical knowledge so the knowledge can be integrated with
+            electronic health records to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper
+                (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context
+            and intent of <acronym><glossterm>KNART</glossterm></acronym> use cases in sufficient
+            detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team
+            with the clinical source material to construct the corresponding knowledge artifacts
+            using the HL7 Knowledge Artifact Specification. This paper has been developed using
+            material from a variety of sources: VA artifacts, clinical practice guidelines, evidence
+            in the body of medical literature, and clinical expertise. After reviewing these
+            sources, the material has been synthesized and harmonized under the guidance of VA
+            subject matter experts to reflect clinical intent for this use case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work.</para>
+    </preface>
+    <preface>
+        <title>Conventions Used</title>
+        <para>Conventions used within the knowledge artifact descriptions
+            include:
+            
+            <itemizedlist mark="none" spacing="compact">
+                <listitem>
+                    <para>&lt;obtain&gt;: Indicates a prompt to obtain the
+                        information listed <itemizedlist mark="bullet"
+                            spacing="compact">
+                            <listitem>
+                                <para>If possible, the requested information
+                                    should be obtained from the underlying system(s).
+                                    Otherwise, prompting the user for information may
+                                    be required</para>
+                            </listitem>
+                            <listitem>
+                                <para>Default Values: Unless otherwise noted,
+                                    &lt;obtain&gt; indicates to obtain the most recent
+                                    observation. It is recognized that this default
+                                    time-frame value may be altered by future
+                                    implementations</para>
+                            </listitem>
+                        </itemizedlist></para> </listitem>
+                
+                <listitem>
+                    <para>[...]: Square brackets enclose explanatory text that indicates some
+                        action on the part of the clinical user, or general guidance to the clinical or technical
+                        teams. Examples include, but are not limited to:</para>
+                    
+                    <itemizedlist mark="none" spacing="normal">
+                        <listitem>
+                            <para>[Begin ...], [End
+                                ...]: Indicates the start and end of specific areas to
+                                clearly delineate them for technical purposes.</para>
+                            
+                            <para>[Activate ...]: Initiates another
+                                knowledge artifact or knowledge artifact section.</para>
+                            
+                            <para>[Section Prompt: ...]: If this section is
+                                applicable, then the following prompt should be displayed to the
+                                user.</para>
+                            
+                            <para>[Section Behavior: ...]:
+                                Indicates technical constraints or considerations
+                                for the selection of items outlined in the section
+                                prompt.</para>
+                            
+                            <para>[Attach: ...]: Indicates that the
+                                specified item (e.g. procedure or result
+                                interpretation) should be attached to the
+                                documentation template if available.</para>
+                            
+                            <para>[Link: ...]: Indicates that
+                                rather than attaching an item (e.g. image), a link
+                                should be included in the documentation
+                                template.</para>
+                            
+                            <para>[Clinical Comment: ...]:
+                                Indicates technical considerations or notes to be
+                                utilized for KNART authoring and at time of
+                                implementation planning.</para>
+                            
+                            <para>[Technical Note: ...]: Indicates
+                                technical considerations or notes to be utilized
+                                for KNART authoring and at time of implementation
+                                planning.</para>
+                            
+                            <para>[If ...]: Indicates the beginning of a
+                                conditional section.</para>
+                            
+                            <para>[Else, ...]: Indicates the beginning of
+                                the alternative branch of a conditional section.</para>
+                            
+                            <para>[End if ...]: Indicates the end of a
+                                conditional section.</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                
+                <listitem>
+                    <para>☐ [Check box]: Indicates items that should be
+                        selected based upon the section selection behavior.</para>
+                </listitem>
+            </itemizedlist></para>
+        
+        
+    </preface>
+    <chapter>
+        <title>Mental Health: Homelessness</title>
+        <section>
+            <title>Clinical Context </title>
+            <para>[Begin Clinical Context.]</para>
+            <para>[Clinical Comment: Intended to support decision-making and documentation related
+                to annual homelessness and food insecurity screening for veterans, and to promote
+                appropriate ordering based on patient-specific risk factors and preferences.]</para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry>Mental Health Providers; Primary Care Providers (PCPs)</entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry>All patients</entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry>Routine</entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry>Mental Health; Primary Care</entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry>All locations</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table><para>[End Clinical Context.]</para>
+        </section>
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+            <para>This section describes the CDS knowledge artifact that is
+                intended to support documentation of homelessness and food insecurity
+                screening-related findings and decisions. The existing VA national clinical reminder
+                is regarded as the preferred source.</para>
+            <para>The knowledge artifact defines this clinical use case. The artifact is the
+                Documentation Template and is described in detail in the following sections.</para>
+            <itemizedlist>
+                <listitem>
+                    <para>A Documentation Template: Mental Health: Homelessness KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Documents screening for homelessness</para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of documentation
+                                sections</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>[End Knowledge Artifacts.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Documentation Template - Homelessness</title>
+        <para>[Begin Documentation Template – Homelessness.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>Veterans are at increased risk of homelessness compared with the civilian
+                population; yet clinical decision support for homelessness in the Veteran
+                population, such as clinical practice guidelines and validated screening and
+                evaluation instruments, remain undeveloped compared with other areas of health care
+                for the Veteran population. VA has identified the end of homelessness among Veterans
+                as a major initiative. An essential step in advancing this objective is the
+                identification of Veterans who are either homeless or at increased risk of near-term
+                homelessness; identified Veterans should be referred to available programs and
+                services as appropriate (VA, 2017).</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>Screening</title>
+            <para>[Begin Screening.]</para>
+            <para>[Section Prompt: All Veterans should be screened for homelessness (and near-future
+                risk) annually, unless the Veteran is a long-term resident of a nursing
+                home/long-term care facility.]</para>
+            <para>[Section Prompt: Homelessness Screening:]</para>
+            <para>[Section Selection Behavior: Select one. Required.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Homeless screen performed</para>
+                    <para>[Section Prompt: Ask Patient: “In the past 2 months, have you been living
+                        in stable housing? By that, we mean housing that is affordable, permanent,
+                        safe, decent, and livable.”]</para>
+                    <itemizedlist mark="none">
+                        <listitem>
+                            <para>☐ Yes, living in stable housing</para>
+                        
+                    <para>[Technical Note: Display the next 2 options only if “yes” is
+                                selected”.]</para>
+                    <para>[Section Prompt: Ask Patient: “Are you confident that you will continue
+                        living in stable housing for at least the next 60 days?”]</para>
+                            <para>☐ Yes, confident in continuing to live in stable housing</para>
+                     
+                            <para>☐ No, not confident in continuing to live in stable housing</para>
+                            <para>&lt;obtain&gt; Other details</para>
+                       
+                            <para>☐ No, not living in stable housing</para>
+                      
+                    <para>[Technical Note: Display the following only if “No, not living in stable
+                                housing” or “No, not confident in continuing to live in stable
+                                housing” is selected.]</para></listitem>
+                   <listitem><para>[Section Selection Behavior: Select one. Required.]</para>
+                    <para>[Section Prompt: Ask Patient “Where have you lived for MOST of the past 2
+                        months?”]
+                    <itemizedlist mark="none">
+                        <listitem>
+                            <para>☐ Apartment/house/room, no government subsidy</para>
+                       
+                            <para>☐ Apartment/house/room, with government subsidy</para>
+                      
+                            <para>☐ With friend/family</para>
+                     
+                            <para>☐ Motel/hotel</para>
+                     
+                            <para>☐ Short-term institution, such as hospital, rehab center, drug
+                                treatment center</para>
+                      
+                            <para>☐ Homeless shelter</para>
+                       
+                            <para>☐ Anywhere outside, such as street, vehicle, abandoned
+                                building</para>
+                      
+                            <para>☐ Other</para>
+                            <para>&lt;obtain&gt; Detail</para>
+                        </listitem>
+                    </itemizedlist></para></listitem><listitem>
+                    <para>[Technical Note: Display the following only if “No, not living in stable
+                                housing” or “No, not confident in continuing to live in stable
+                                housing” is selected.]</para>
+                    <para>[Section Prompt: Ask Patient: "Would you like to be referred to talk more
+                        about your housing situation?"]</para>
+                    <para>[Section Prompt: Select one. Required.]</para>
+                    <itemizedlist mark="none">
+                        <listitem>
+                            <para>☐ Patient agrees to referral for homelessness services or
+                                assistance</para>
+ 
+                            <para>☐ Patient declines referral at this time; given information for
+                                future reference </para>
+                        </listitem>
+                    </itemizedlist></listitem>
+                   <listitem><para>[Technical Note: Display the following only if “No, not living in stable housing” or “No, not
+                                confident in continuing to live in stable housing” is
+                                selected.]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Ask Patient: " What is the best way to reach you?"]</para>
+            <para>&lt;obtain&gt; Contact information for patient</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Homeless screen not performed</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: The following options should only be displayed when “Homeless
+                        screen not performed” is selected.]</para>
+            <para>[Section Selection Behavior: Select one. Required.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Already receiving homelessness services or assistance </para>
+             
+                    <para>☐ Long-term resident of nursing home/long-term care facility</para>
+           
+                    <para>☐ Declines screening at this time</para>
+              
+                    <para>☐ Veteran/caregiver unable to answer</para>
+            
+                    <para>☐ Other</para>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: End Screening IF “Long-term resident of nursing home/long-term
+                        care facility” is selected.]</para>
+            <para>[Section Prompt: All Veterans should be screened for food insecurity unless the
+                Veteran is a resident of a nursing home/long-term care facility.]</para>
+            <para>[Section Selection Behavior: Select one. Required.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Food insecurity screen performed</para>
+                    <para>[Section Prompt: Ask Patient “In the past 3 months, did you ever run out
+                        of food and you were not able to access more food or have the money to buy
+                        more food?”]</para>
+                    <itemizedlist mark="none">
+                        <listitem>
+                            <para>☐ Yes, food shortage and no money to buy food or access to
+                                food</para>
+                        </listitem>
+                        <listitem>
+                            <para>☐ No food shortage</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Display the following options only if “No food shortage” is
+                        chosen.]</para>
+            <para>[Section Prompt: Ask patient “Are you confident that you will continue to have
+                enough food or money to buy food for at least the next 3 months?’]</para>
+            <para>[Section Selection Behavior: Select one. Required.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Yes, confident in continued access to food</para>
+                </listitem>
+                <listitem>
+                    <para>☐ No, not confident in continued access to food</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Display the following choices only if “Yes, food shortage and no
+                        money to buy food or access to food” or “No, not confident in continued
+                        access to food” is selected.]</para>
+            <para>[Section Prompt: Ask Patient: "Would you like to be referred to talk more about
+                your food shortage situation?"]</para>
+            <para>[Section Selection Behavior: Select any that apply. Required.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Patient agrees to referral to social services</para>
+
+                    <para>☐ Patient agrees to referral to nutrition and food services</para>
+ 
+                    <para>☐ Patient declines referral at this time; given information for future
+                        reference </para>
+                </listitem>
+            </itemizedlist>
+            <para>☐ Food Insecurity Screen not performed</para>
+            <para>[Technical Note: The following options should only be displayed when “Food
+                        Insecurity Screen not performed” is selected.]</para>
+            <para>[Section Selection Behavior: Select one. Required.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Already receiving services or assistance to address known food insecurity
+                        issue</para>
+       
+                    <para>☐ Resident of nursing home/long-term care facility</para>
+  
+                    <para>☐ Declines screening at this time </para>
+        
+                    <para>☐ Veteran/caregiver unable to answer</para>
+    
+                    <para>☐ Other</para>
+                    <para>&lt;obtain&gt; Detail</para>
+                </listitem>
+            </itemizedlist></listitem></itemizedlist>
+            <para>[End Screening.]</para>
+        </section>
+        <section>
+            <title>Plan</title>
+            <para>[Begin Plan.]</para>
+            <para>[Technical Note: Include in Future Implementation Concerns: Separate KNART order
+                set to address items included in this “plan” section.]</para>
+            <para>[Technical Note: Only display the “Plan” section if any of the following items are
+                selected above “Patient agrees to referral for homelessness services or assistance”
+                or “Patient agrees to referral to social services” or “Patient agrees to referral
+                for nutrition and food services”.]</para>
+            <para>[Section Prompt: Provide homelessness educational materials: <link
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="http://www.va.gov/homeless/"
+                >http://www.va.gov/homeless/</link>.]</para>
+            <para>[Section Prompt: Order consult for homeless program.]</para>
+            <para>[Section Prompt: Reason for request.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Veteran has been identified as being currently homeless or homeless within
+                        the past 2 months</para>
+       
+                    <para>☐ Veteran has been identified as being at risk of homelessness within the
+                        next 60 days</para>
+                </listitem>
+            </itemizedlist>
+            <para>&lt;obtain&gt; Describe in detail the Veteran’s current living situation</para>
+            <para>[Section Prompt: Order consult for social work or for nutrition and food
+                services.]</para>
+            <para>[Section Prompt: Reason for request.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>☐ Veteran has been identified as having a current food shortage or a food
+                        shortage within the past 3 months</para>
+  
+                    <para>☐ Veteran has been identified as being at risk of a food shortage within the
+                        next 90 days</para>
+                </listitem>
+            </itemizedlist>
+            <para>&lt;obtain&gt; Describe in detail the Veteran’s current food situation</para>
+            <para>&lt;obtain&gt; Other details</para>
+            <para>[End Plan.]</para>
+            <para>[End Documentation Template – Homelessness.]</para>
+        </section>
+    </chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <abbrev>Byrne, 2015</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Byrne</surname><firstname>T</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Fargo</surname><firstname>JD</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Montgomery</surname><firstname>AE</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Roberts</surname><firstname>CB</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Culhane</surname><firstname>DP</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Kane</surname><firstname>V</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Screening for homelessness in the Veterans Health Administration
+                (VHA): monitoring housing stability through repeat screening</citetitle>
+            <citetitle pubwork="journal">Public Health Rep</citetitle>
+            <pubdate>2015</pubdate>
+            <volumenum>130</volumenum>
+            <issuenum>6</issuenum>
+            <pagenums>684-692</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Chhabra, 2018</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Chhabra</surname><firstname>M</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Cusack</surname><firstname>C</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Dichter</surname><firstname>M</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Montgomery</surname><firstname>AE</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>True</surname><firstname>G</firstname></personname>
+                </author>
+            </authorgroup>
+            <pubdate>Screening for homelessness: VA provider reflections on addressing a social
+                determinant of health. Poster presented at: Academy Health Annual Research Meeting
+                2017</pubdate>
+            <pubdate>June 25-27, 2017</pubdate>
+            <bibliomisc><link
+                xlink:href="https://academyhealth.confex.com/academyhealth/2017arm/meetingapp.cgi/Paper/18938"
+            /></bibliomisc>
+            <pubdate>Accessed January 30, 2018</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Fargo, 2017</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Fargo</surname><firstname>JD</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Montgomery</surname><firstname>AE</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Byrne</surname><firstname>T</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Brignone</surname><firstname>E</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Cusack</surname><firstname>M</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Gundlapalli</surname><firstname>AV</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Needles in a haystack: screening and healthcare system evidence
+                for homelessness</citetitle>
+            <citetitle pubwork="journal">Stud Health Technol Inform</citetitle>
+            <pubdate>2017</pubdate>
+            <volumenum>235</volumenum>
+            <pagenums>574-578</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Montgomery, 2014</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Montgomery</surname><firstname>AE</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Fargo</surname><firstname>JD</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Kane</surname><firstname>V</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname> Culhane</surname><firstname>DP</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Development and validation of an instrument to assess imminent
+                risk of homelessness among veterans</citetitle>
+            <citetitle pubwork="journal">Public Health Rep</citetitle>
+            <pubdate>2014</pubdate>
+            <volumenum>129</volumenum>
+            <issuenum>5</issuenum>
+            <pagenums>428-436</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>O'Toole, 2017</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>O'Toole</surname><firstname>TP</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Roberts</surname><firstname>CB</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Johnson </surname><firstname>EE</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Screening for Food Insecurity in Six Veterans Administration
+                Clinics for the Homeless, June-December 2015</citetitle>
+            <citetitle pubwork="journal">Prev Chronic Dis</citetitle>
+            <pubdate>2017</pubdate>
+            <volumenum>14</volumenum>
+            <pagenums>E04</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <citetitle pubwork="webpage">Reminder resolution: homelessness screening</citetitle>
+            <bibliomisc><link xlink:href="Homelessness Screening.docx"/></bibliomisc>
+            <pubdate>August 31, 2017, Microsoft Word document (David Douglas, MD, provided
+                documentation from Portland VA)</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. Department of Veterans Affairs</orgname>
+            </author>
+            <citetitle pubwork="webpage">Homeless Veterans Website</citetitle>
+            <bibliomisc><link xlink:href="https://www.va.gov/homeless/index.asp"/></bibliomisc>
+            <pubdate>Accessed October 12, 2017</pubdate>
+        </biblioentry>
+        </bibliography>
+
+    <appendix>
+        <title>Existing Sample VA Artifacts</title>
+        <para>The following Figures 1-3 are from the National Homelessness Reminder. </para>
+        <figure>
+            <title>VA National Homelessness and Food Insecurity Screening (Image 1 of 3)</title>
+            <mediaobject>
+                <alt>Reminder Resolution: Homelessness Screening displaying that all veterans should
+                    be screened for homelessness (and near-future risk) annually, unless the Veteran
+                    is a long-term resident of a nursing home/LTC facility.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig%201%20Reminder%20Homelessness%20screening.png"
+                        contentwidth="624" contentdepth="293"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>VA National Homelessness and Food Insecurity Screening (Image 2 of 3)</title>
+            <mediaobject>
+                <alt>Reason for Request: CRRC - Homeless Program Oupt displaying Veteran has been
+                    identified as being at risk of homelessness within the next 60 days.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig%202%20Outpatient%20screen%20for%20Homelessness.png" contentwidth="624" contentdepth="293"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>VA National Homelessness and Food Insecurity Screening (Image 3 of 3)</title>
+            <mediaobject>
+                <alt>Order a Consult screenshot. Reason for request being Veteran has been
+                    identified as being at risk of homelessness within the next 60 days. Please
+                    describe in detail veteran's current living situation.</alt>
+                <imageobject>
+                    <imagedata fileref="images/Fig%203%20Consult%20ordering%20for%20Homelessness.png"
+                        contentwidth="624" contentdepth="293"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+    <glossary role="auto">
+        <title>Acronyms</title>
+    </glossary>
+</book>
