@@ -1,0 +1,978 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <titleabbrev>Clinical Decision Support Content and HL7-Compliant KNARTs</titleabbrev>
+        <subtitle>Rheumatology: Psoriatic Arthritis Clinical Content White Paper</subtitle>
+        <copyright>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>
+                    <surname>Department of Veterans Affairs (VA)</surname>
+                </personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center" fileref="images/VASealColor.jpg"
+                                contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: Rheumatology: Psoriatic Arthritis</title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <entry valign="middle">KNART Name</entry>
+                                <entry valign="middle">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Psoriatic Arthritis - Order Set</entry>
+                                <entry>CLIN0008CA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>December 2017</pubdate>
+        <edition>Version 1.0</edition>
+        <revhistory>
+            <revision>
+                <revnumber>1.1</revnumber>
+                <date>4/30/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Revised Final per PO comments</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>12/15/2017</date>
+                <authorinitials>Jennifer Reed</authorinitials>
+                <revremark>DocBook QA</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>9/29/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Added Updated Motive data from 9/28</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>9/26/2017</date>
+                <authorinitials>Lindsey Birt</authorinitials>
+                <revremark>Added Updated Motive evidence, formatting</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>9/20/2017</date>
+                <authorinitials>B3 Group Inc.</authorinitials>
+                <revremark>Addition of comments captured from SME feedback and Clinical
+                    Notes</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>9/18/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Initial Draft plus Motive data added</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <informaltable xml:id="va.SME.List" frame="all">
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Amy M. Joseph, MD</entry>
+                        <entry>Chief of Rheumatology, St Louis VA Medical Center (VAMC), 915 N.
+                            Grand, St. Louis, MO 63106 Professor of Medicine, Washington University
+                            School of Medicine </entry>
+                        <entry>SME, Primary</entry>
+                    </row>
+                    <row>
+                        <entry>John S. Richards, MD</entry>
+                        <entry>Chief of Rheumatology, Pittsburgh VAMC, University Drive C,
+                            Pittsburgh, PA 15240 Clinical Professor Medicine, University of
+                            Pittsburgh </entry>
+                        <entry>SME, Secondary</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface>
+        <title>Introduction</title>
+        <para>The VA is committed to improving the ability of clinicians to provide
+            care for patients while increasing quality, safety, and efficiency.
+            Recognizing the importance of standardizing clinical knowledge in support of
+            this goal, VA is implementing the Health Level 7
+            (<acronym><glossterm>HL7</glossterm></acronym>) Knowledge Artifact
+            Specification for a wide range of VA clinical use cases. Knowledge
+            Artifacts, referred to as (<acronym>
+                <glossterm>KNARTs</glossterm></acronym>), enable the structuring and
+            encoding of clinical knowledge so the knowledge can be integrated with
+            electronic health records to enable clinical decision support.</para>
+        
+        <para>The purpose of this Clinical Content White Paper
+            (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical
+            context and intent of <acronym><glossterm>KNART</glossterm></acronym> use
+            cases in sufficient detail to provide the
+            <acronym><glossterm>KNART</glossterm></acronym> authoring team with the
+            clinical source material to construct the corresponding knowledge artifacts
+            using the HL7 Knowledge Artifact Specification. This paper has been
+            developed using material from a variety of sources: VA artifacts, clinical
+            practice guidelines, evidence in the body of medical literature, and
+            clinical expertise. After reviewing these sources, the material has been
+            synthesized and harmonized under the guidance of VA subject matter experts
+            to reflect clinical intent for this use case.</para>
+        
+        <para>Unless otherwise noted, items within this white paper (e.g.,
+            documentation template fields, orderable items, etc.) are chosen to reflect
+            the clinical intent at the time of creation. To provide an exhaustive list
+            of all possible items and their variations is beyond the scope of this
+            work.</para>
+    </preface>
+    <preface>
+        <title>Conventions Used</title>
+        <para>Conventions used within the knowledge artifact descriptions
+            include:</para>
+        
+        <itemizedlist mark="none">
+            <listitem>
+                <para><emphasis>&lt;obtain&gt;</emphasis>: Indicates a prompt to obtain
+                    the information listed <itemizedlist mark="bullet">
+                        <listitem>
+                            <para>If possible, the requested information should be obtained
+                                from the underlying system(s). Otherwise, prompting the user for
+                                information may be required</para>
+                        </listitem>
+                        
+                        <listitem>
+                            <para>The technical and clinical notes associated with a section
+                                should be consulted for specific constraints on the information
+                                (e.g., time-frame, patient interview, etc.)</para>
+                        </listitem>
+                        
+                        <listitem>
+                            <para>Default Values: Unless otherwise noted, &lt;obtain&gt;
+                                indicates to obtain the most recent observation. It is recognized
+                                that this default time-frame value may be altered by future
+                                implementations</para>
+                        </listitem>
+                    </itemizedlist></para>
+            </listitem>
+            
+            <listitem>
+                <para><emphasis>[...]</emphasis>: Square brackets enclose explanatory text that indicates some
+                    action on the part of the clinical user, or general guidance to the clinical or technical
+                    teams. Examples include, but are not limited to:</para>
+                
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para><emphasis>[Begin ...]</emphasis>, <emphasis>[End
+                            ...]</emphasis>: Indicates the start and end of specific areas to
+                            clearly delineate them for technical purposes.</para>
+                        
+                        <para><emphasis>[Activate ...]</emphasis>: Initiates another
+                            knowledge artifact or knowledge artifact section.</para>
+                        
+                        <para><emphasis>[Section Prompt: ...]</emphasis>: If this section is
+                            applicable, then the following prompt should be displayed to the
+                            user.</para>
+                        
+                        <para><emphasis>[Section Selection Behavior: ...]</emphasis>:
+                            Indicates technical constraints or considerations for the selection
+                            of items within the section.</para>
+                        
+                        <para><emphasis>[Attach: ...]</emphasis>: Indicates that the
+                            specified item should be attached to the documentation template if
+                            available.</para>
+                        
+                        <para><emphasis>[Link: ...]</emphasis>: Indicates that rather than
+                            attaching an item, a link should be included in the documentation
+                            template.</para>
+                        
+                        <para><emphasis>[Clinical Comment: ...]</emphasis>: Indicates
+                            clinical rationale or guidance.</para>
+                        
+                        <para><emphasis>[Technical Note: ...]</emphasis>: Indicates
+                            technical considerations or notes.</para>
+                        
+                        <para><emphasis>[If ...]</emphasis>: Indicates the beginning of a
+                            conditional section.</para>
+                        
+                        <para><emphasis>[Else, ...]</emphasis>: Indicates the beginning of
+                            the alternative branch of a conditional section.</para>
+                        
+                        <para><emphasis>[End if ...]</emphasis>: Indicates the end of a
+                            conditional section.</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            
+            <listitem>
+                <para>☐ <emphasis>[Check box]</emphasis>: Indicates items that should be
+                    selected based upon the section selection behavior.</para>
+            </listitem>
+        </itemizedlist>
+    </preface>
+    <chapter>
+        <title>Psoriatic Arthritis</title>
+        <section>
+            <title>Clinical Context</title>
+            <para>[Begin Clinical Context.]</para>
+            <para>Psoriatic arthritis is a common comorbidity among patients with psoriasis. As a
+                seronegative spondyloarthropathy, psoriatic arthritis requires clinical acumen for
+                accurate diagnosis. Clinical suspicions can be confirmed through a careful history
+                and physical exam with support from laboratory and radiographic studies.
+                Nonsteroidal anti-inflammatory drugs are the mainstay of therapy to alleviate
+                painful symptoms. Early referral to a rheumatologist for evaluation and initiation
+                of disease-modifying antirheumatic drugs (DMARDs) is recommended. “This order set
+                may be used to assist a primary care or other clinical provider with evaluation,
+                early treatment, and referral to rheumatology for a patient with possible psoriatic
+                arthritis.” </para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry>Provider to include Primary Care</entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry>Adult Patients</entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry>Routine</entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry>Primary Care</entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry>Outpatient</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>[End Clinical Context.]</para>
+        </section>
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+            <para>This section describes the CDS knowledge artifact of the Psoriatic
+                Arthritis/Rheumatology group: <itemizedlist>
+                    <listitem>
+                        <para>Order Set: Rheumatology: Psoriatic Arthritis KNART<itemizedlist>
+                                <listitem>
+                                    <para>Orderable items </para>
+                                </listitem>
+                                <listitem>
+                                    <para>Includes logic for appropriate display of the order set
+                                    </para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Knowledge Artifacts.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Rheumatology: Psoriatic Arthritis - Order Set</title>
+        <para>[Begin Rheumatology: Psoriatic Arthritis - Order Set.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context Chapter 1.]</para>
+        </section>
+        <section>
+            <title>Medications</title>
+            <para>[Begin Medications.]</para>
+            <para>[Section Prompt: Consider one of the following medications for alleviation of
+                pain.</para>
+            <para>Note that nonsteroidal anti-inflammatory drugs (NSAIDs) may be contraindicated in
+                patients with certain renal, gastrointestinal, or cardiovascular conditions.]</para>
+            <para>[Technical Note: Medications that display may need to be revised to match
+                availability in local formularies.]</para>
+            <para>[Technical Note: If a user attempts to submit an order with more than 1 month's
+                supply, the user should be prompted to consider that monitoring labs are required
+                for > 1 month’s supply.] </para>
+            <para>[Section Selection Behavior: Select one only. Optional.]</para>
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; Ibuprofen 600 mg tablet oral every 6 hours as needed for pain 120
+                        tablets 0 refills routine</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Ibuprofen 800 mg tablet oral every 8 hours as needed for pain 90
+                        tablets 0 refills routine</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Meloxicam 15 mg tablet oral daily 30 tablets 0 refills
+                        routine</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Naproxen 500 mg tablet oral twice a day as needed for pain 60
+                        tablets 0 refills routine</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Medications.]</para>
+        </section>
+        <section>
+            <title>Laboratory Studies </title>
+            <para>[Begin Laboratory Studies.]</para>
+            <para>[Technical Note: This section should be available for primary care providers and
+                dermatologists performing pre-diagnostic workup for suspected psoriatic arthritis.] </para>
+            <para>[Section Prompt: Laboratory Studies.</para>
+            <para>[Section Prompt: The following laboratory studies will display below for you to
+                order only if the patient has not had the study done in the last 3 months.</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Complete blood count 1 time routine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Complete metabolic panel 1 time routine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; C-reactive protein 1 time routine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Erythrocyte sedimentation rate 1 time routine</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: The following laboratory studies will display below for you to
+                order only if the patient has never had this study done at any time in the past:]
+                    <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Anti-cyclic citrullinated peptide 1 time routine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Human leukocyte antigen B27 1 time routine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Rheumatoid factor 1 time routine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Uric acid 1 time routine</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Laboratory Studies.]</para>
+        </section>
+        <section>
+            <title>Imaging and Diagnostic Studies</title>
+            <para>[Begin Imaging and Diagnostic Studies.]</para>
+            <para>[Technical Note: This section should be available for primary care providers and
+                dermatologists performing pre-diagnostic workup for suspected psoriatic arthritis.] </para>
+            <para>[Section Prompt: To avoid unnecessary imaging, please order imaging for only the
+                most severely affected joints based upon history and clinical examination.]
+                    <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; X-ray symptomatic joints to evaluate for possible psoriatic
+                            arthritis, routine <itemizedlist mark="none">
+                                <listitem>
+                                    <para>&#x2610; Hand-Left</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Hand-Right</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Foot-Left</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Foot-Right</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Knee-Left</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Knee-Right</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Other &lt;obtain&gt; joints</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: The following should be ordered for patients with complaint of
+                low back pain.] <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; X-ray sacroiliac joint to evaluate for possible psoriatic
+                            arthritis, routine </para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Imaging and Diagnostic Studies.]</para>
+        </section>
+        <section>
+            <title>Consult Request</title>
+            <para>[Begin Consult Request.]</para>
+            <para>[Section Prompt: Consult request.]</para>
+            <para>&#x2610; Referral to rheumatology evaluate for possible psoriatic arthritis </para>
+            <para>[Section Prompt: Reason For Consult: Suspected Psoriatic Arthritis.]<itemizedlist
+                    mark="none">
+                    <listitem>
+                        <para>&lt;obtain&gt; Details</para>
+                    </listitem>
+            </itemizedlist></para>
+            <para>[Technical Note: Reason for Consult “rheumatology” should be selected
+                automatically and displayed.]</para>
+            <para>Goal of Consult: Would you please provide your recommendations and:</para>
+              <para>
+                    <itemizedlist>
+                        
+                    <listitem>
+                        <para>
+                            <itemizedlist mark="none">
+                                <listitem>
+                                    <para>&#x2610; Return to PCP for therapy</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Start treatment and return to PCP for follow up
+                                        and maintenance</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Start treatment, monitor for effect and when on
+                                        stable therapy return to PCP</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Treat as long as necessary (or
+                                        indefinitely)</para>
+                                </listitem>
+                            </itemizedlist>
+                        </para>
+                    </listitem>
+                    </itemizedlist>
+              </para>
+            <para>[Section Prompt: Consult Specialty: Rheumatology]</para>
+            <para>[Section Prompt: Priority: Routine]</para>
+            <para> [Technical Note: Priority “routine” should be selected automatically and
+                displayed.]</para>
+            <para>[Section Select Behavior: Select one or more. Optional.] </para>
+            <para><itemizedlist>
+                    <listitem>
+                        <para>
+                            <itemizedlist mark="none">
+                                <listitem>
+                                    <para>&#x2610; Morning Stiffness > 1 hour</para>
+                                </listitem>
+                                <listitem>
+                                    <para> &lt;obtain&gt; number of affected joints</para>
+                                    <itemizedlist mark="none">
+                                        <listitem>
+                                            <para/>
+                                        </listitem>
+                                    </itemizedlist>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Diagnosis of Psoriasis confirmed</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Presence of back pain that improves with
+                                        use</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Presence of joint swelling</para>
+                                </listitem>
+                            </itemizedlist>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>&lt;obtain&gt; Referring Physician</para>
+                    </listitem>
+                    <listitem>
+                        <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Consult Request.]</para>
+        </section>
+        <section>
+            <title>Patient and Caregiver Education</title>
+            <para>[Begin Patient and Caregiver Education.]</para>
+            <para>[Section Prompt: Consider the following links as examples of patient educational
+                material: http://www.arthritis.org/living-with-arthritis/;
+                https://www.rheumatology.org/I-Am-A/Patient-Caregiver.] <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Psoriatic arthritis education </para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Patient and Caregiver Education.]</para>
+        </section>
+        <section>
+            <title>Reference for Provider Use</title>
+            <para>[Begin Reference for Provider Use.]</para>
+            <para>[Section Prompt: The following links contains clinical practice guidelines for
+                education for the clinical provider:]</para>
+            <para> http://www.arthritis.org/;
+                https://www.rheumatology.org/Practice-Quality/Clinical-Support/Clinical-Practice-Guidelines/Psoriatic-Arthritis.</para>
+            <para>[End Reference for Provider Use.]</para>
+            <para>[End Rheumatology: Psoriatic Arthritis - Order Set.]</para>
+        </section>
+    </chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <abbrev>Coates, 2016</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Coates</surname><firstname>LC</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Kavanaugh</surname><firstname>A</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Mease</surname><firstname>PJ,et
+                        al.</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Group for Research and Assessment of Psoriasis and
+                Psoriatic Arthritis 2015 treatment recommendations for psoriatic
+                arthritis</citetitle>
+            <citetitle pubwork="journal">Arthritis Rheumatol</citetitle>
+            <pubdate>2016</pubdate>
+            <volumenum>68</volumenum>
+            <issuenum>(5)</issuenum>
+            <pagenums>1060-1071.</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Coates, 2013</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Coates</surname><firstname>LC</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Tillett</surname><firstname>W</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Chandler</surname><firstname>D, et
+                        al.</firstname></personname>
+                </author>
+                <author>
+                    <personname>BSR Clinical Affairs Committee and Standards, Audit and Guidelines
+                        Working Group and the BHPR.</personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">The 2012 BSR and BHPR guideline for the treatment of
+                psoriatic arthritis with biologics</citetitle>
+            <citetitle pubwork="journal">Rheumatology (Oxford)</citetitle>
+            <pubdate>2013</pubdate>
+            <volumenum>52</volumenum>
+            <issuenum>(10)</issuenum>
+            <pagenums>1754-1757.</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Combe, 2017</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Combe</surname><firstname>B</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Landewe</surname><firstname>R</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Daien</surname><firstname>CI, et
+                        al.</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">2016 update of the EULAR recommendations for the management
+                of early arthritis</citetitle>
+            <citetitle pubwork="journal">Ann Rheum Dis</citetitle>
+            <pubdate>2017</pubdate>
+            <volumenum>6</volumenum>
+            <issuenum>(6)</issuenum>
+            <pagenums>948-959.</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Mandl, 2015</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Mandl</surname><firstname>P</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Navarro-Compán
+                        </surname><firstname>V</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Terslev</surname><firstname>L, et
+                        al</firstname></personname>
+                </author>
+                <author>
+                    <personname>European League Against Rheumatism (EULAR).</personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">EULAR recommendations for the use of imaging in the
+                diagnosis and management of spondyloarthritis in clinical practice</citetitle>
+            <citetitle pubwork="journal">Ann Rheum Dis</citetitle>
+            <pubdate>2015</pubdate>
+            <volumenum>74</volumenum>
+            <issuenum>(7)</issuenum>
+            <pagenums>1327-1339.</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">CELECOXIB - celecoxib capsule [Jubilant Cadista
+                Pharmaceuticals Inc.]. DailyMed website</citetitle>
+            <pubdate>Revised April 2017</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=27d813ea-7798-09cb-734b-b970d7248f1f"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">DICLOFENAC POTASSIUM- diclofenac potassium tablet, film
+                coated [Mylan Pharmaceuticals Inc.]. DailyMed website</citetitle>
+            <pubdate>Revised August 2017</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fac1f8e7-f2b4-4de3-bd5c-d798d12273c1"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">ETODOLAC- etodolac capsule ETODOLAC- etodolac tablet, film
+                coated [Taro Pharmaceuticals U.S.A., Inc.]. DailyMed website</citetitle>
+            <pubdate>Revised December 2015</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ec82b108-6a6f-4d1b-82cb-831d4ed36c80"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">FELDENE- piroxicam capsule [Keltman Pharmaceuticals Inc.].
+                DailyMed website</citetitle>
+            <pubdate>Revised February 2010</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9d3e528b-a748-4bc5-b604-e7e9c5ab9183"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">FLURBIPROFEN- flurbiprofen tablet [Caraco Pharmaceutical
+                Laboratories, Ltd.]. DailyMed website</citetitle>
+            <pubdate>Revised August 2007</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f56be63c-88e4-4b78-b12d-d80e3e8b3893"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">IBU- ibuprofen tablet [Dr. Reddy's Laboratories Limited].
+                DailyMed website. </citetitle>
+            <pubdate>Revised October 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=24731405-219c-79b4-ecf0-7d5fbfda94ba"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">INDOMETHACIN - indomethacin capsule [Jubilant Cadista
+                Pharmaceuticals Inc.]. DailyMed website</citetitle>
+            <pubdate>Revised August 2017</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e65948c-489c-4a32-65ce-60441fb23dd9"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">KETOPROFEN- ketoprofen capsule [Teva Pharmaceuticals USA,
+                Inc.]. DailyMed website. </citetitle>
+            <pubdate>Revised May 2017</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c2c99853-1268-4998-a44b-2bf0c0b70fd2"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">MELOXICAM- meloxicam tablet [Apotex Corp]. DailyMed
+                website</citetitle>
+            <pubdate>Revised May 2010</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6513e46b-3229-685b-c83b-2209454fae71"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">NABUMETONE- nabumentone tablet [Eon Labs, Inc.]. DailyMed
+                website</citetitle>
+            <pubdate>Revised October 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e21f89cf-ec07-4b07-9c9b-796b0111df39"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">NAPROSYN- naproxen tablet; EC-NAPROSYN- naproxen tablet,
+                delayed release; NAPROSYN- naproxen suspension; ANAPROX- naproxen sodium tablet;
+                ANAPROX DS- naproxen sodium tablet [Genentech, Inc.]. DailyMed website</citetitle>
+            <pubdate>Revised March 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68848217-03c9-4377-9be6-6f567e629129"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">OXAPROZIN- oxaprozin tablet [Amneal Pharmaceuticals LLC].
+                DailyMed website</citetitle>
+            <pubdate>Revised May 2017</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d9b0ca6c-4c53-4f6e-918b-02a8c472a194"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">REDICARE IBUPROFEN- ibuprofen 200mg tablet, film coated
+                [Redicare LLC]. DailyMed website</citetitle>
+            <pubdate>Revised January 2017</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=45eb33f0-71e2-11d5-e054-00144ff88e88"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">SULINDAC- sulindac tablet [Actavis Pharma, Inc.]. DailyMed
+                website</citetitle>
+            <pubdate>Revised May 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d8b9d517-5dd4-4c6b-8aa0-736bce87e7b4"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">TYLENOL REGULAR STRENGTH- acetaminophen tablet [Johnson and
+                Johnson Consumer Inc., McNeil Consumer Healthcare Division]. DailyMed
+                Website</citetitle>
+            <pubdate>Revised October 2016</pubdate>
+            <bibliomisc><link/></bibliomisc>
+        </biblioentry>
+    </bibliography>
+    <appendix>
+        <title>Appendix A: Psoriatic Arthritis Guidelines</title>
+        <para>The following links should be available for provider reference:
+            http://www.arthritis.org/;
+            https://www.rheumatology.org/Practice-Quality/Clinical-Support/Clinical-Practice-Guidelines/Psoriatic-Arthritis.
+        </para>
+    </appendix>
+    <appendix>
+        <title>Appendix B: Basic Laboratory Panel Definition</title>
+        <itemizedlist>
+            <listitem>
+                <para>Blood Urea Nitrogen</para>
+            </listitem>
+            <listitem>
+                <para>Calcium</para>
+            </listitem>
+            <listitem>
+                <para>Chloride</para>
+            </listitem>
+            <listitem>
+                <para>CO2 (Carbon Dioxide, Bicarbonate)</para>
+            </listitem>
+            <listitem>
+                <para>Creatinine</para>
+            </listitem>
+            <listitem>
+                <para>Glucose</para>
+            </listitem>
+            <listitem>
+                <para>Potassium</para>
+            </listitem>
+            <listitem>
+                <para>Sodium</para>
+            </listitem>
+        </itemizedlist>
+    </appendix>
+    <glossary>
+        <title>Acronyms</title>
+        <informaltable>
+            <tgroup cols="2">
+                <tbody>
+                    <row>
+                        <entry><emphasis role="bold">Acronyms</emphasis></entry>
+                        <entry><emphasis role="bold">Description</emphasis></entry>
+                    </row>
+                    <row>
+                        <entry>CCWP</entry>
+                        <entry>Clinical Content White Paper</entry>
+                    </row>
+                    <row>
+                        <entry>CDS</entry>
+                        <entry>Clinical Decision Support</entry>
+                    </row>
+                    <row>
+                        <entry>DMARDs</entry>
+                        <entry>Disease-modifying antirheumatic drugs</entry>
+                    </row>
+                    <row>
+                        <entry>HL7</entry>
+                        <entry>Health Level 7</entry>
+                    </row>
+                    <row>
+                        <entry>KBS</entry>
+                        <entry>Knowledge Based Systems</entry>
+                    </row>
+                    <row>
+                        <entry>KNART</entry>
+                        <entry>Knowledge Artifact</entry>
+                    </row>
+                    <row>
+                        <entry>NSAIDs</entry>
+                        <entry>Nonsteroidal anti-inflammatory drugs</entry>
+                    </row>
+                    <row>
+                        <entry>OIIG</entry>
+                        <entry>Office of Informatics and Information Governance</entry>
+                    </row>
+                    <row>
+                        <entry>SME</entry>
+                        <entry>Subject Matter Expert</entry>
+                    </row>
+                    <row>
+                        <entry>TO</entry>
+                        <entry>Task Order</entry>
+                    </row>
+                    <row>
+                        <entry>VA</entry>
+                        <entry>Department of Veteran Affairs</entry>
+                    </row>
+                    <row>
+                        <entry>VAMC</entry>
+                        <entry>VA Medical Center</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </glossary>
+</book>
