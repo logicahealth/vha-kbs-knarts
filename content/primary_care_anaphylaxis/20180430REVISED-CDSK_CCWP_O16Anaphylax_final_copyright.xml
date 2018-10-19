@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+   <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <titleabbrev>Clinical Decision Support Content and HL7-compliant KNARTs</titleabbrev>
+        <subtitle>Primary Care: Anaphylaxis Treatment Protocol Clinical Content White
+            Paper</subtitle>
+        <copyright>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <releaseinfo>
+            <annotation>
+                <para>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</para>
+            </annotation>
+        </releaseinfo>
+        <authorgroup>
+            <author>
+                <personname>
+                    <surname>Department of Veterans Affairs (VA)</surname>
+                </personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center"
+                                fileref="../../../../../../Resources/VASealColor.jpg"
+                                contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: Primary Care: Anaphylaxis Treatment
+                        Protocol</title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <entry valign="middle">KNART Name</entry>
+                                <entry valign="middle">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Anaphylaxis Treatment Protocol - Order Set</entry>
+                                <entry>CLIN0008BA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>November, 2017</pubdate>
+        <volumenum>Version 1.0</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>11/14/2017</date>
+                <authorinitials>Jennifer Reed</authorinitials>
+                <revremark>Final comment reviews and DocBook transformation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>10/09/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template revisions per PO recommendation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>10/06/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Review and sent to SME team for approval of clinical content</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>9/30/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template update-per PO recommendations</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>9/19/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Initial Draft-Motive data added</revremark>
+            </revision>
+        </revhistory>
+    </info>
+   <preface>
+       <title>VA Subject Matter Expert (SME) Panel</title>
+       <informaltable xml:id="va.SME.List" frame="all">
+           <tgroup cols="3">
+               <thead>
+                   <row>
+                       <entry>Name</entry>
+                       <entry>Title</entry>
+                       <entry>Project Role</entry>
+                   </row>
+               </thead>
+               <tbody>
+                   <row>
+                       <entry>Angela Denietolis, MD</entry>
+                       <entry>James A. Haley Veterans Hospital Tampa VAMC, Tampa, FL</entry>
+                       <entry>SME, Primary</entry>
+                   </row>
+                   <row>
+                       <entry>Pat Dumas</entry>
+                       <entry>Clinical Program Director, Washington, DC</entry>
+                       <entry>SME, Secondary</entry>
+                   </row>
+                   <row>
+                       <entry>Manish Merchant, MD</entry>
+                       <entry>Chief of Primary Care, Health Informaticist, Albany VAMC, Albany, NY</entry>
+                       <entry>SME</entry>
+                   </row>
+                   <row>
+                       <entry>Adrian D'Amico, MD</entry>
+                       <entry>Pittsburgh VAMC, VA Pittsburgh Healthcare System, Pittsburgh,
+                            PA</entry>
+                       <entry>SME</entry>
+                   </row>
+                   <row>
+                       <entry>Joshua Geiger, MD</entry>
+                       <entry>Health System Specialist, Gainesville VAMC, Gainesville, FL</entry>
+                       <entry>SME</entry>
+                   </row>
+                   <row>
+                       <entry>Chad Kessler, MD</entry>
+                       <entry>Durham VAMC, Durham, NC</entry>
+                       <entry>SME</entry>
+                   </row>
+               </tbody>
+           </tgroup>
+       </informaltable>
+   </preface>
+   <preface>
+       <title>Introduction</title>
+       <para>The VA is committed to improving the ability of clinicians to provide care for patients
+            while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the HL7
+            Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+            Artifacts, referred to as <acronym><glossterm>KNARTs</glossterm></acronym>,
+            enable the structuring and encoding of clinical knowledge so the knowledge can be integrated
+            with electronic health records to enable clinical decision support.</para>
+       <para>The purpose of this Clinical Content White Paper (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context and intent
+            of KNART use cases in sufficient detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team with the
+            clinical source material to construct the corresponding knowledge artifacts using the HL7
+            Knowledge Artifact Specification. This paper has been developed using material from a
+            variety of sources: VA artifacts, clinical practice guidelines, evidence in the body of
+            medical literature, and clinical expertise. After reviewing these sources, the material has
+            been synthesized and harmonized under the guidance of VA subject matter experts to reflect
+            clinical intent for this use case.</para>
+       <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is beyond
+            the scope of this work.</para>
+   </preface>
+   <preface>
+       <title>Conventions Used</title>
+       <para>Conventions used within the knowledge artifact descriptions include:</para>
+       <itemizedlist mark="none">
+           <listitem><para><emphasis>&lt;obtain&gt;</emphasis> : Indicates a prompt to
+                obtain the information listed</para>
+               <itemizedlist mark="bullet">
+                   <listitem>
+                       <para>If possible, the requested information should be obtained from the
+                            underlying system(s). Otherwise, prompting the user for information may
+                            be required.</para>
+                   </listitem>
+                   <listitem>
+                       <para>The technical and clinical notes associated with a section should be
+                            consulted for specific constraints on the information (e.g., time-frame,
+                            patient interview, etc.).</para>
+                   </listitem>
+                   <listitem>
+                       <para>Unless otherwise noted, &lt;obtain&gt; indicates to obtain the most
+                            recent observation. It is recognized that this default time-frame value
+                            may be altered by future implementations.</para>
+                   </listitem>
+               </itemizedlist>
+           </listitem>
+           <listitem>
+               <para><emphasis>[...]</emphasis>: Square brackets enclose explanatory text that
+                    indicates some action on the part of the user, or general guidance to the
+                    clinical or technical teams. Examples include, but are not limited to:</para>
+               <itemizedlist mark="none">
+                    
+                   <listitem><para><emphasis>[Begin ...]</emphasis> ,
+                       <emphasis>[End ...]</emphasis> : Indicates the start and end of specific areas to clearly delineate
+                        them for technical purposes.</para></listitem>
+                   <listitem>
+                       <para><emphasis>[Activate ...]</emphasis> : Initiates another knowledge artifact or knowledge artifact
+                            section.</para>
+                        
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[Section Prompt: ...]</emphasis> : If this section is applicable, then the following prompt should be
+                            displayed to the user.</para>
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[Section Selection Behavior:
+                            ...]</emphasis> : Indicates technical constraints or considerations for the
+                            selection of items within the section.</para>                       
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[Attach: ...]</emphasis> : Indicates that the specified item should be attached to the
+                            documentation template if available.</para>
+                        
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[Link: ...]</emphasis> : Indicates that rather than attaching an item, a link should be
+                            included in the documentation template.</para>
+                        
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[Clinical Comment: ...]</emphasis> : Indicates clinical rationale or guidance.</para>
+                        
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[Technical Note: ...]</emphasis> : Indicates technical considerations or notes.</para>
+                        
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[If ...]</emphasis> : Indicates the beginning of a conditional section.</para>
+                        
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[Else, ...]</emphasis> : Indicates the beginning of the alternative branch of a conditional
+                            section.</para>
+                        
+                   </listitem>
+                   <listitem>
+                       <para><emphasis>[End if ...]</emphasis> : Indicates the end of a conditional section.</para>
+                        
+                   </listitem>
+               </itemizedlist>
+           </listitem>
+           <listitem>
+               <para>[&#x2610;]<emphasis> [Check boxes]</emphasis> : Indicates items that should be selected based upon the section selection behavior.</para>
+           </listitem>
+       </itemizedlist>
+   </preface>
+   <chapter>
+       <title>Anaphylaxis Treatment Protocol</title>
+       <section>
+           <title>Clinical Context</title>
+           <para>Anaphylaxis is a moderately common and immediately life-threatening condition.
+                Prompt access to guideline-endorsed treatments is essential for successful
+                resuscitation, and appropriate patient education is a critical part of follow-up to
+                reduce the risk of future anaphylactic events. Disseminating best practices
+                regarding anaphylaxis across the VA has the potential to enhance patient safety and
+                improve patient outcomes.</para>
+           <table>
+               <title>Clinical Context Domains</title>
+               <tgroup cols="2">
+                   <tbody>
+                       <row>
+                           <entry>Target User</entry>
+                           <entry>Provider to include Emergency Medicine</entry>
+                       </row>
+                       <row>
+                           <entry>Patient</entry>
+                           <entry>Adult patient</entry>
+                       </row>
+                       <row>
+                           <entry>Priority</entry>
+                           <entry>Routine</entry>
+                       </row>
+                       <row>
+                           <entry>Specialty</entry>
+                           <entry>Emergency Medicine</entry>
+                       </row>
+                       <row>
+                           <entry>Location</entry>
+                           <entry>Outpatient</entry>
+                       </row>
+                   </tbody>
+               </tgroup>
+           </table>
+       </section>
+       <section>
+           <title>Knowledge Artifacts</title>
+           <para>This section describes the knowledge artifact that is intended to facilitate
+                initiation of appropriate orders for follow-up after an anaphylactic event. The
+                order set includes appropriate follow-up of a stable adult patient with a recent
+                diagnosis of anaphylaxis, including allergy consult, epinephrine auto-injector
+                (Epi-Pen), and epinephrine auto-injector training device.</para>
+           <para>The knowledge artifact defines this clinical use case and is described in detail
+                in the following section is:</para>
+           <itemizedlist>
+               <listitem>
+                   <para>Order Set</para>
+                   <itemizedlist>
+                       <listitem>
+                           <para>Orderable items</para>
+                       </listitem>
+                       <listitem>
+                           <para>Includes logic for appropriate display of the order set</para>
+                       </listitem>
+                   </itemizedlist>
+               </listitem>
+           </itemizedlist>
+       </section>
+   </chapter>
+   <chapter>
+       <title>Order Set</title>
+       <para>[Begin Order Set.]</para>
+       <section>
+           <title>Knowledge Narrative</title>
+           <para>[See Clinical Context in Chapter 1.]</para>
+       </section>
+       <section>
+           <title>Medications</title>
+           <para>[Begin Medications.]</para>
+           <para>[Clinical Comment: This section is applicable to stable adult patients with a
+                recent diagnosis of anaphylaxis.]</para>
+           <para>[Section Selection Behavior: Select only one. Optional.]</para>
+           <itemizedlist>
+               <listitem>
+                   <para>&#x2610; epinephrine auto-injector 0.3 mg solution intramuscular 1 time
+                        inject into anterolateral thigh as needed; repeat once if needed; seek
+                        medical care immediately upon use. Quantity 2 auto-injectors with 2 refills
+                        (routine)</para>
+               </listitem>
+               <listitem>
+                   <para>&#x2610; epinephrine auto-injector 0.3 mg solution subcutaneous 1 time
+                        inject into anterolateral thigh as needed; repeat once if needed; seek
+                        medical care immediately upon use. Quantity 2 auto-injectors with 2 refills
+                        (routine)</para>
+               </listitem>
+           </itemizedlist>
+           <para>[End Medications.]</para>
+       </section>
+       <section>
+           <title>Consults and Referrals</title>
+           <para>[Begin Consults and Referrals.]</para>
+           <para>[Clinical Comment: This section is applicable to stable adult patients with a
+                recent diagnosis of anaphylaxis.]</para>
+           <para>[Section Selection Behavior: Select any or none. Optional.]<itemizedlist>
+                   <listitem>
+                       <para>&#x2610; consult Allergy and Immunology Service to evaluate patient
+                            following episode of anaphylaxis (routine)</para>
+                   </listitem>
+               </itemizedlist></para>
+           <para>[End Consults and Referrals.]</para>
+       </section>
+       <section>
+           <title>Patient and Caregiver Education</title>
+           <para>[Begin Patient and Caregiver Education.]</para>
+           <para>[Clinical Comment: This section is applicable to stable adult patients with a
+                recent diagnosis of anaphylaxis.]</para>
+           <para>[Section Selection Behavior: Select any or none. Optional.]<itemizedlist>
+                   <listitem>
+                       <para>&#x2610; Use of epinephrine autoinjector education (routine)</para>
+                   </listitem>
+                   <listitem>
+                       <para>&#x2610; Anaphylaxis action plan education (routine)</para>
+                   </listitem>
+                   <listitem>
+                       <para>&#x2610; Medications that can interfere with anaphylaxis treatment
+                            education (routine)</para>
+                   </listitem>
+                   <listitem>
+                       <para>&#x2610; Avoidance of potential anaphylaxis triggers education
+                            (routine)</para>
+                   </listitem>
+                   <listitem>
+                       <para>&#x2610; Medical identification jewelry education (routine)</para>
+                   </listitem>
+                   <listitem>
+                       <para>&#x2610; Medication cross-reactivity education (routine)</para>
+                   </listitem>
+                   <listitem>
+                       <para>&#x2610; Food cross-reactivity education (routine)</para>
+                   </listitem>
+               </itemizedlist></para>
+           <para>[End Patient and Caregiver Education.]</para>
+           <para>[End Order Set.]</para>
+       </section>
+   </chapter>
+    
+       <bibliography><title>Bibliography/Evidence</title>
+           <biblioentry>
+               <author>
+                   <orgname>U.S. National Library of Medicine.</orgname>
+               </author>
+               <citetitle pubwork="webpage">EPIPEN- epinephrine injection; EPIPEN JR- epinephrine
+                    injection [Mylan Specialty L.P.]. DailyMed website</citetitle>
+               <pubdate>Updated February 2017</pubdate>
+               <bibliomisc><link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7560c201-9246-487c-a13b-6295db04274a"/></bibliomisc>
+           </biblioentry>
+            
+           <biblioentry>
+               <abbrev>Lieberman, 2015</abbrev>
+               <authorgroup>
+               <author>
+                   <personname><surname>Lieberman</surname><firstname>P</firstname></personname>
+               </author>
+               <author>
+                   <personname><surname>Nicklas</surname><firstname>RA</firstname></personname>
+               </author>
+               <author>
+                   <personname><surname>Randolph</surname><firstname>C</firstname></personname>
+               </author>
+               <author>
+                   <personname>et al</personname>
+               </author>
+           </authorgroup>
+               <citetitle pubwork="article">Anaphylaxis--a practice parameter update 2015</citetitle>
+               <citetitle pubwork="journal">Ann Allergy Asthma Immunol</citetitle>
+               <pubdate>2015;</pubdate>
+               <volumenum>115</volumenum>
+               <issuenum>(5);</issuenum>
+               <pagenums>341-384.</pagenums>
+           </biblioentry>
+            
+           <biblioentry>
+               <abbrev>Campbell, 2014</abbrev>
+               <authorgroup>
+               <author>
+                   <personname><surname>Campbell</surname><firstname>RL</firstname></personname>
+               </author>
+               <author>
+                   <personname><surname>Li</surname><firstname>JT</firstname></personname>
+               </author>
+               <author>
+                   <personname><surname>Nicklas</surname><firstname>RA</firstname></personname>
+               </author>
+               <author>
+                   <personname><surname>Sadosty</surname><firstname>AT</firstname></personname>
+               </author>
+               <author>
+                   <personname>Members of the Joint Task Force</personname>
+               </author>
+               <author>
+                   <personname>Practice Parameter Workgroup</personname>
+               </author>
+           </authorgroup>
+               <citetitle pubwork="article">Emergency department diagnosis and treatment of
+                    anaphylaxis: a practice parameter</citetitle>
+               <citetitle pubwork="journal">Ann Allergy Asthma Immunol</citetitle>
+               <pubdate>2014;</pubdate>
+               <volumenum>113</volumenum>
+               <issuenum>(6);</issuenum>
+               <pagenums>599-608.</pagenums>
+           </biblioentry>
+       </bibliography>
+   <appendix>
+       <title>Acronyms/Abbreviations</title>
+       <informaltable>
+           <tgroup cols="2">
+               <tbody>
+                   <row>
+                       <entry>Acronyms</entry>
+                       <entry>Description</entry>
+                   </row>
+                   <row>
+                       <entry>CDS</entry>
+                       <entry>Clinical Decision Support</entry>
+                   </row>
+                   <row>
+                       <entry>HL7</entry>
+                       <entry>Health Level 7</entry>
+                   </row>
+                   <row>
+                       <entry>KBS</entry>
+                       <entry>Knowledge Based Systems</entry>
+                   </row>
+                   <row>
+                       <entry>KNART</entry>
+                       <entry>Knowledge Artifact</entry>
+                   </row>
+                   <row>
+                       <entry>OIIG</entry>
+                       <entry>Office of Informatics and Information Governance</entry>
+                   </row>
+                   <row>
+                       <entry>SME</entry>
+                       <entry>Subject Matter Expert</entry>
+                   </row>
+                   <row>
+                       <entry>TO</entry>
+                       <entry>Task Order</entry>
+                   </row>
+                   <row>
+                       <entry>VA</entry>
+                       <entry>Department of Veteran Affairs</entry>
+                   </row>
+               </tbody>
+           </tgroup>
+       </informaltable>
+   </appendix>
+</book>
