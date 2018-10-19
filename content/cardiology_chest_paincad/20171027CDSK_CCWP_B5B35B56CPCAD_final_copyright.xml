@@ -1,0 +1,1597 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ns="http://docbook.org/ns/docbook">
+  <info>
+      <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-compliant Knowledge
+          Artifacts (KNARTs)</title>
+      <subtitle>Cardiology: Chest Pain (CP) / Coronary Artery Disease (CAD) Clinical Content White
+          Paper </subtitle>
+        <copyright>
+            <year>March</year>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+      <authorgroup>
+          <author>
+              <personname>
+                  <surname>Department of Veterans Affairs (VA)</surname>
+              </personname>
+          </author>
+          <author>
+              <orgname><inlinemediaobject>
+                  <alt>Department of Veteran's Affairs Logo</alt>
+                  <imageobject>
+                      <imagedata align="center" fileref="../resources/VASealColor.jpg"
+                          contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                  </imageobject>
+              </inlinemediaobject></orgname>
+          </author>
+          <author>
+              <orgname>Knowledge Based Systems (KBS)</orgname>
+          </author>
+          <author>
+              <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+          </author>
+          <author>
+              <orgname>Clinical Decision Support (CDS)</orgname>
+          </author>
+      </authorgroup>
+      <abstract><info><title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title></info><para>
+          <table frame="all" rowsep="1" colsep="1">
+              <title>Relevant KNART Information</title>
+              <tgroup cols="2" align="left">
+                  <thead>
+                      <row valign="bottom">
+
+                          <entry valign="middle">KNART Name</entry>
+                          <entry valign="middle">Associated CLIN</entry>
+                      </row>
+                  </thead>
+                  <tbody>
+                      <row>
+
+                          <entry>Cardiology: CP/CAD - Order Set</entry>
+                          <entry>CLIN0004AA</entry>
+                      </row>
+                      <row>
+
+                          <entry>Cardiology: CP/CAD - Documentation Template</entry>
+                          <entry>CLIN0005AC</entry>
+                      </row>
+                      <row>
+
+                          <entry>Cardiology: CP/CAD - Consult Request/Composite</entry>
+                          <entry>CLIN0006AB</entry>
+                      </row>
+                  </tbody>
+              </tgroup>
+              
+          </table>
+          
+          </para></abstract>
+        <pubdate>October, 2017</pubdate>
+        <volumenum>1.3</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.3</revnumber>
+                <date>10/27/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Comments from 9/28 KBS feedback resolved; no response per SME outreach
+                    for remaining questions; document finalized</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.2</revnumber>
+                <date>09/26/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Comments from 9/25 KBS feedback</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.1</revnumber>
+                <date>08/21/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Comments from KBS feedback and meeting resolved, incorporated and
+                    reviewed with KBS</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>08/07/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Final comments from 8/7/2017 meeting; verbal Primary SME approval
+                    provided from Dr. Bray at 8/7/2017</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>07/29/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Incorporation of feedback from 7/28/2017 meeting</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>07/27/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Incorporation of feedback from 7/24/2017 meeting</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>07/23/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Incorporation of feedback from initial SME review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>07/18/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Updates; preparation for initial SME review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>07/17/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Peer reviewed; comments embedded</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>07/12/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Motive data entered</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>06/29/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Initial draft</revremark>
+            </revision>
+        </revhistory>
+    </info>
+
+  <preface>
+    <title>VA Subject Matter Expert (SME) Panel</title>
+
+    <informaltable frame="all" xml:id="va.SME.List">
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry>Name</entry>
+
+            <entry>Title</entry>
+
+            <entry>Project Role</entry>
+          </row>
+        </thead>
+
+        <tbody>
+          <row>
+            <entry align="left">Bruce Bray, MD</entry>
+
+            <entry align="left">Professor, Cardiovascular Medicine, University of Utah School of
+                            Medicine; Staff Cardiologist, Salt Lake City VA Medical Center
+                            (VAMC)</entry>
+
+            <entry align="left">SME, Primary</entry>
+          </row>
+
+          <row>
+            <entry align="left">Scott Wall, MD</entry>
+
+            <entry align="left">Assistant Professor, Cardiovascular Medicine, University of Utah;
+                            School of Medicine Staff Cardiologist, Electrophysiology, Salt Lake City
+                            VAMC</entry>
+
+            <entry align="left">SME, Secondary</entry>
+          </row>
+
+          <row>
+            <entry align="left">Aiden Abidov, MD, PhD</entry>
+
+            <entry align="left">Professor of Medicine, Wayne State University; Section Chief,
+                            Cardiology, John Dingell VAMC</entry>
+
+            <entry align="left">SME</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </preface>
+
+  <preface>
+    <title>Introduction</title>
+
+      <para>The VA is committed to improving the ability of clinicians to provide care for patients
+          while increasing quality, safety, and efficiency. Recognizing the importance of
+          standardizing clinical knowledge in support of this goal, VA is implementing the HL7
+          Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+          Artifacts, referred to as <acronym><glossterm xml:id="knarts">KNARTS</glossterm></acronym>,
+          enable the structuring and encoding of clinical knowledge so the knowledge can be integrated
+          with electronic health records to enable clinical decision support.</para>
+      <para>The purpose of this Clinical Content White Paper (<glossterm xml:id="ccwp"
+          ><acronym>CCWP</acronym></glossterm>) is to capture the clinical context and intent
+          of KNART use cases in sufficient detail to provide the KNART authoring team with the
+          clinical source material to construct the corresponding knowledge artifacts using the HL7
+          Knowledge Artifact Specification. This paper has been developed using material from a
+          variety of sources: VA artifacts, clinical practice guidelines, evidence in the body of
+          medical literature, and clinical expertise. After reviewing these sources, the material has
+          been synthesized and harmonized under the guidance of VA subject matter experts to reflect
+          clinical intent. </para>
+      <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+          fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+          creation. To provide an exhaustive list of all possible items and their variations is beyond
+          the scope of this work. </para>
+  </preface>
+    <preface>
+        <title>Conventions Used</title>
+        <para>Conventions used within the knowledge artifact descriptions include:</para>
+        <para>&lt;obtain><emphasis>: Indicates a prompt to obtain the information listed </emphasis><itemizedlist>
+            <listitem>
+                <para>If possible, the requested information should be obtained from the underlying
+                    system(s). Otherwise, prompting the user for information may be required.</para>
+            </listitem>
+            <listitem>
+                <para>The technical and clinical notes associated with a section should be consulted
+                    for specific constraints on the information (e.g., time-frame, patient
+                    interview, etc.)</para>
+            </listitem>
+            <listitem>
+                <para>Unless otherwise noted, &lt;obtain> indicates to obtain the most recent
+                    observation. It is recognized that this default time-frame value may be altered
+                    by future implementations </para>
+            </listitem>
+        </itemizedlist></para>
+        <para>[...]: <emphasis>Square brackets enclose explanatory text that indicates some action on
+            the part of the user, or general guidance to the clinical or technical teams</emphasis>.
+            Examples include, but are not limited to:<itemizedlist>
+                <listitem>
+                    <para>[Begin ...], [End ...]: Indicates the start and end of specific areas to
+                        clearly delineate them for technical purposes.</para>
+                </listitem>
+                <listitem>
+                    <para>[Activate ...]: Initiates another knowledge artifact or knowledge artifact
+                        section.</para>
+                </listitem>
+                <listitem>
+                    <para>[Section Prompt: ...]: If this section is applicable, then the following
+                        prompt should be displayed to the user.</para>
+                </listitem>
+                <listitem>
+                    <para>[Section Selection Behavior: ...]: Indicates technical constraints or
+                        considerations for the selection of items within the section.</para>
+                </listitem>
+                <listitem>
+                    <para>[Attach: ...]: Indicates that the specified item should be attached to the
+                        documentation template if available.</para>
+                </listitem>
+                <listitem>
+                    <para>[Link: ...]: Indicates that rather than attaching an item, a link should be
+                        included in the documentation template.</para>
+                </listitem>
+                <listitem>
+                    <para>[Clinical Comment: ...]: Indicates clinical rationale or guidance.</para>
+                </listitem>
+                <listitem>
+                    <para>[Technical Note: ...]: Indicates technical considerations or notes.</para>
+                </listitem>
+                <listitem>
+                    <para>[If ...]: Indicates the beginning of a conditional section.</para>
+                </listitem>
+                <listitem>
+                    <para>[Else, ...]: Indicates the beginning of the alternative branch of a
+                        conditional section.</para>
+                </listitem>
+                <listitem>
+                    <para>[End if ...]: Indicates the end of a conditional section.</para>
+                </listitem>
+            </itemizedlist></para>
+        
+        <para>&#x2610;<emphasis>Check boxes: Indicates items that should be selected
+            based upon the section selection behavior.</emphasis></para>
+    </preface>
+
+  <chapter>
+    <title>Chest Pain (CP)/Coronary Artery Disease (CAD)</title>
+
+    <section>
+      <title>Clinical Context</title>
+
+      <para>Patients often present in the primary care setting with chest pain (CP) that is thought,
+                possibly, to be cardiac in origin. This poses the problem of separating those with
+                non-cardiac CP from those with cardiac CP and separating unstable from stable
+                patients. Unstable patients with cardiac CP [e.g., those suspected with acute
+                coronary syndrome (ACS), ST-segment elevation or non–ST-segment elevation myocardial
+                infarction] require triage to appropriate emergent care, such as to the emergency
+                department. Stable patients with cardiac CP require risk stratification,
+                office-based workup, initiation of disease-specific medications, and subspecialty
+                referral to a cardiologist. The care of patients with clearly non-cardiac CP (e.g.,
+                chest pain secondary to gastrointestinal, musculoskeletal or pulmonary causes) is a
+                separate clinical problem not addressed herein. Patients should be risk-stratified
+                to estimate their 10-year cardiovascular disease risk (<citation>D’Agostino
+                    2008</citation>) and guideline-based options for the ordering of diagnostic
+                tests and therapeutic interventions to facilitate efficient resource utilization and
+                subspecialty referral (<citation>Finh 2014</citation>).</para>
+
+      <para>The Cardiology CP/CAD group of KNARTs are intended to assist primary care providers in
+                the management of adult patients with stable CP (with or without known CAD); aid in
+                determining when a cardiology consultation is appropriate; provide guidance for
+                initial noninvasive diagnostic orders (stress testing) and provide a structured
+                documentation template for the process. Stable patients with cardiac chest pain
+                require risk stratification, office-based workup, initiation of disease-specific
+                medications, and subspecialty referral to a cardiologist.</para>
+
+      <para>This context excludes emergent patients (new/ongoing/unstable pattern CP). Included are
+        those patients with stable CP with or without known CAD, to be considered for evaluation by
+        cardiology. These context domains are summarized below:</para>
+
+      <para>
+        <table>
+          <title>Clinical Context Domains</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry><emphasis role="bold">Target User</emphasis></entry>
+
+                <entry>Provider in a Primary Care Clinic</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">Patient</emphasis></entry>
+
+                <entry>Adult with stable CP being considered for cardiology consultation (excluding
+                                    unstable symptoms and ACS)</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">Priority</emphasis></entry>
+
+                <entry>Routine</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">Specialty</emphasis></entry>
+
+                <entry>Primary Care</entry>
+              </row>
+
+              <row>
+                <entry><emphasis role="bold">Location</emphasis></entry>
+
+                <entry>Outpatient</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </section>
+
+    <section>
+      <title>Knowledge Artifacts</title>
+
+      <para>This section describes the knowledge artifacts that are intended for users caring for
+                adult patients who might present to a Primary Care Clinic with stable CP/CAD. The
+                intent of these artifacts is to ensure a minimum workup is initiated prior to a
+                Cardiology Consultation. Specific constraints for these artifacts are that:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>They apply to outpatients with stable CP with or without prior documented CAD
+                        needing cardiology Consultation</para>
+        </listitem>
+
+        <listitem>
+          <para>They exclude emergent patients [new/ongoing/unstable pattern CP suggestive of acute
+                        coronary syndrome (ACS)]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>There are three knowledge artifacts that define this clinical use case, and are
+        described in detail in the following sections. They are:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Consult Request</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>High-level, encompassing artifact meant to communicate the request for
+                cardiology consultation</para>
+            </listitem>
+
+            <listitem>
+              <para>Relies upon the documentation template and order set artifacts</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>Documentation Template</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Documents the information provided by the referring provider</para>
+            </listitem>
+
+            <listitem>
+              <para>Includes logic for appropriate display of documentation sections</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>Order Set</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Orderable items associated with the consult request</para>
+            </listitem>
+
+            <listitem>
+              <para>Includes logic for appropriate display of the order set</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Composite</title>
+
+    <section>
+      <title>Knowledge Narrative</title>
+
+      <para>[See Clinical Context in Chapter 1.]</para>
+    </section>
+
+    <section>
+      <title>Consult Request</title>
+
+      <para>[Technical Note: The following list provides the basic components of the consult
+                request. This is the high-level, encompassing artifact, and must be combined with
+                the documentation template and order set to form a fully functional knowledge
+                artifact.]</para>
+
+      <para>[Section Prompt: To request a cardiology consult to evaluate CP in a stable patient with
+                or without known history of CAD, please provide the following information.]</para>
+
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Reason for Consult: CP evaluation (with or without known history of CAD)</para>
+          </listitem>
+
+          <listitem>
+            <para>Consult Specialty: Cardiology</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+
+      <para>[Technical Note: Routine priority, as defined by the implementing institution, is the
+        default for this consult. Other priority levels may need to be defined (e.g., stat, today,
+        urgent, emergent, etc.).]</para>
+
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Priority: Routine</para>
+          </listitem>
+
+          <listitem>
+            <para>&lt;obtain&gt; Referring Physician</para>
+          </listitem>
+
+          <listitem>
+            <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+
+      <para>[Activate associated documentation template]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+        <title>Documentation Template</title>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context in Chapter 1.]</para>
+        </section>
+        <section>
+            <title>Clinical Stability</title>
+            <para>[Section Prompt: This documentation template is not applicable for use with
+                patients who are unstable based on clinician judgement. Examples of unstable
+                patients include, but are not limited to, patients with CP pattern suggestive of ACS
+                [e.g., those with new onset resting CP, CP with minimal exertion, new unstable
+                angina pattern, ST-segment elevation, non–ST-segment elevation myocardial infarction
+                on electrocardiogram (ECG), or suspected aortic dissection], and patients with any
+                of the following symptoms or findings:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Ongoing resting chest pain for &gt; 20 minutes with ST elevation or
+                        depression on ECG</para>
+                </listitem>
+                <listitem>
+                    <para>Onset of new resting chest pain episodes within the past week</para>
+                </listitem>
+                <listitem>
+                    <para>New onset, recurrent chest pain with minimal exertion over the past 2
+                        months</para>
+                </listitem>
+                <listitem>
+                    <para>Previously stable exertional angina now occurring with minimal activity
+                        over the past 2 months.</para>
+                </listitem>
+            </orderedlist>
+            <para>[Consider transferring unstable patients to the nearest emergency department
+                immediately.]</para>
+        </section>
+        <section>
+            <title>Coronary Artery Disease (CAD) Risk</title>
+            <para>[Clinical Note: For this documentation template, please assess the patient’s
+                10-year cardiovascular disease risk using either clinical judgement or a risk
+                calculator such as that provided by the American Heart Association (AHA).]</para>
+            <para>[Technical Note: Provide a link to the calculator at: <link
+                    xlink:href="http://static.heart.org/riskcalc/app/index.html#!/baseline-risk"
+                />.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Patient’s 10-Year Cardiovascular Disease Risk</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>History and Physical</title>
+            <para>[Technical Note: For this documentation template, the following information should
+                be included, if available.] </para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; History, Brief - describing symptoms, history of present
+                        illness (HPI)</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; History of prior cardiac evaluations [e.g., prior
+                        hospitalization or evaluations for: chest pain, rule/out myocardial
+                        infacrtion (MI), angina, heart failure, etc.]</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Results of prior cardiac diagnostic procedures performed
+                        [resting ECG, echocardiogram, stress testing (echo, nuclear, magnetic
+                        resonance imaging (MRI), CCT or angiography]</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Physical Exam, Pertinent Positive and Negative
+                        Findings</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Details of previous invasive diagnostic procedures and
+                        resulting interventions [e.g., angiography, Percutaneous Coronary
+                        Intervention (PCI)/Stents, or coronary artery bypass grafting (CABG)]</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Treatment Provided</title>
+            <para>[Technical Note: For this documentation template, the following information should
+                be included, if available.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Pharmacologic Therapy</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Other Pertinent Therapy</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Laboratory Studies</title>
+            <para>[Technical Note: For this documentation template, the following information should
+                be included (latest value within the past 2 years), if available.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Basic Metabolic Profile Lab Result</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Complete Blood Count Lab Result</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Lipid Profile Lab Result</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Thyroid Function Testing Lab Result</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Troponin Lab Result</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Brain Natriuretic Peptide Lab Result</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; D-dimer Lab Result</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Imaging and Diagnostic Studies</title>
+            <para>[Clinical Note: Images and diagnostic studies older than one year are not
+                considered for inclusion in this documentation template.]</para>
+            <para>[Technical Note: For this documentation template, the following information should
+                be included, if available from the prior 1 year.]</para>
+            <para>[Technical Note: Image and result text should be attached automatically if they
+                are is provided for the 12-Lead Electrocardiogram Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; resting 12-Lead Electrocardiogram Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Attach or link Images: 12-Lead Electrocardiogram]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Results should be attached automatically if text is provided for
+                the Stress Electrocardiography Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Stress Electrocardiography Interpretation </para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Stress Electrocardiography]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Results should be attached automatically if text is provided for
+                the Resting Echocardiogram/Doppler Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Resting Echocardiogram/Doppler Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Resting Echocardiogram/Doppler Electrocardiography]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Results should be attached automatically if text is provided for
+                the Stress Echocardiogram Interpretation field. This includes treadmill and
+                dobutamine stress echo.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Stress Echocardiogram Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Stress Echocardiogram]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Results should be attached automatically if text is provided for
+                the Stress Myocardial Perfusion Imaging (MPI) Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Stress MPI Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Stress MPI]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Results should be attached automatically if text is provided for
+                the Rest/Stress MRI Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Rest/Stress MRI Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Rest/Stress MRI]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Result text should be attached automatically if it is provided
+                for the Chest/Coronary/Cardiac CT Angiography (CTA) Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Chest CT or Coronary/Cardiac CTA Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Chest CT or Coronary/Cardiac CTA]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Result text should be attached automatically if it is provided
+                for the X-Ray Chest Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; X-Ray Chest Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: X-Ray Chest]</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Link to Order set</title>
+            <para>[Activate order set]</para>
+            <para>[End Documentation Template.]</para>
+        </section>
+    </chapter>
+
+  <chapter>
+        <title>Order Set</title>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context in Chapter 1.]</para>
+        </section>
+        <section>
+            <title>Clinical Stability</title>
+            <para>[Section Prompt: This order set is not applicable for use with patients who are
+                unstable based on clinician judgement. Examples of unstable patients include, but
+                are not limited to, patients with chest pain pattern suggestive of ACS (e.g., those
+                with new onset resting CP, CP with minimal exertion, new unstable angina pattern,
+                ST-segment elevation, non–ST-segment elevation myocardial infarction on ECG, or
+                suspected aortic dissection), and patients with any of the following symptoms or findings:<orderedlist>
+                    <listitem>
+                        <para>Ongoing resting chest pain for &gt; 20 minutes with ST elevation or
+                            depression on ECG</para>
+                    </listitem>
+                    <listitem>
+                        <para>Onset of new resting chest pain episodes within the past week</para>
+                    </listitem>
+                    <listitem>
+                        <para>New onset, recurrent chest pain with minimal exertion over the past 2
+                            months.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Previously stable exertional angina now occurring with minimal
+                            activity over the past 2 months. </para>
+                        <para>Consider transferring unstable patients to the nearest emergency
+                            department immediately.]</para>
+                    </listitem>
+                </orderedlist></para>
+        </section>
+        <section>
+            <title>Consults and Referrals</title>
+            <para>[Section Prompt: Cardiology consult order.]</para>
+            <para>[Technical Note: Consider other consult modalities that might be available (e.g.,
+                e-consult, telephone call or other rapidly iterative consult method. A simple
+                consult is included here as the overarching clinical intent.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Referral to cardiology to evaluate chest pain (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title>Reason for Consultation</title>
+                <para>[Technical note: If the patient, though stable, requires expedited evaluation
+                    based upon clinical presentation or test results, placement of the consult
+                    request through routine channels should be augmented with prompt direct
+                    communication with the cardiology team to effect timely specialty evaluation of
+                    the patient.</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Only one may be selected. At least one must be
+                selected.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Typical angina</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Atypical chest pain</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Gradually progressive angina symptoms in a stable patient with
+                        known CAD (if the patient is unstable based upon clinical or test results,
+                        direct physician-to-physician communication is required)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: If other is selected, the reason must be obtained.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Other: &lt;obtain&gt;Reason for cardiology consultation</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Specific goal of the cardiology consultations (e.g., cardiology
+                to manage patient, cardiology to risk stratify and recommend management, etc.).] </para>
+            <itemizedlist>
+                <listitem>
+                    <para>Goal of cardiology consultation: &lt;obtain&gt; goal of cardiology
+                        consultation</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Imaging and ECG</title>
+            <formalpara>
+                <title>Electrocardiogram/Chest X-ray</title>
+                <para>[Section Prompt: Consider ordering prior to the cardiology consultation.
+                    Resting 12-lead electrocardiogram is required if it has not been obtained within
+                    the past two months.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: More than one may be selected. Optional]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Resting 12-lead electrocardiogram to evaluate chest pain
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; X-ray chest to evaluate chest pain(routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title>Coronary CTA</title>
+                <para>[Section Prompt: Consider ordering prior to the cardiology
+                    consultation.]</para>
+            </formalpara>
+            <para>[Technical Note: Coronary CTA (cCTA) is included for completeness, but its
+                availability will be facility dependent.]</para>
+            <para>[Section Selection Behavior: Optional]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Coronary CTA angiogram (cCTA) chest to evaluate chest pain
+                        (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title>Echocardiogram</title>
+                <para>[Section Prompt: Consider for patients with suspected pericarditis,
+                    myocarditis, hypertrophic cardiomyopathy, or pulmonary hypertension.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Optional]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Resting echocardiogram to evaluate chest pain (routine)</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Laboratory Tests</title>
+            <para>[Section Prompt: Consider the following tests to be completed prior to the
+                cardiology consultation.]</para>
+            <para>[Section Selection Behavior: More than one may be selected. Optional]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Basic metabolic profile (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Complete blood count (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Fasting lipid profile (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Thyroid function testing (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Brain natriuretic peptide (routine)</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Cardiac Risk Stratification</title>
+            <para>[Section Prompt: For stable patients, these orders may assist in cardiac risk
+                stratification.]</para>
+            <para>[A link to the American College of Cardiology (ACC)/AHA clinical practice
+                guideline for stress testing (<citation>Gibbon 2002</citation>) should be made
+                available to ordering providers: <link
+                    xlink:href="http://circ.ahajournals.org/content/106/14/1883.long"/>.]</para>
+            <para>[Section Prompt: Assess for contraindications to stress testing such as: Acute
+                Congestive Heart Failure (CHF), acute MI or unstable angina, severe aortic stenosis,
+                unstable rhythm, aortic aneurysm/dissection, endocarditis, acute pericarditis, acute
+                pulmonary embolus/infarction, acute systemic illness/infection, severe hypertension,
+                inability to cooperate, inability to exercise (&lt;5 METs), left bundle branch block
+                (LBBB), etc.]</para>
+            <formalpara>
+                <title>Exercise Stress Testing</title>
+                <para>[Section Prompt: Consider for patients with no known or prior coronary artery
+                    disease, low probability for coronary artery disease, ability to exercise,
+                    normal electrocardiogram, and heart rate &gt; 60 beats per minute.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Exercise ECG (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title>Stress Testing with Echocardiography</title>
+                <para>[Section Prompt: Consider for patients with no known or prior coronary artery
+                    disease, low to intermediate probability for coronary artery disease, ability to
+                    exercise, and no evidence of significant regional wall motion abnormalities or
+                    conduction abnormalities [Interventricular Conduction Delay (IVCD)/bundle branch
+                    block or pacing] of 12-lead electrocardiogram.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Exercise echocardiography (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title>Dobutamine Stress Testing with MPI</title>
+                <para>[Section Prompt: Consider for patients with no known or prior coronary artery
+                    disease, intermediate probability for coronary artery disease, inability to
+                    exercise, and normal electrocardiogram.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Dobutamine stress myocardial perfusion imaging (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title>Exercise Stress Testing with MPI</title>
+                <para>[Section Prompt: Consider for patients with known or prior CAD, ability to
+                    exercise, and normal ST-T.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Exercise stress myocardial perfusion imaging (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title>Vasodilator Stress Testing with MPI</title>
+                <para>[Section Prompt: Consider for patients with known or prior CAD and abnormal
+                    electrocardiogram/permanent pacemaker (PPM). This subsection should also be made
+                    available to the provider for patients with known or prior CAD, abnormal
+                    electrocardiogram, and history of prior myocardial infarction or regional wall
+                    motion abnormalities.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Only one should be selected. Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Regadenoson (Lexiscan) stress myocardial perfusion imaging
+                        (routine) </para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Adenosine stress testing myocardial perfusion imaging
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Dipyridamole stress testing myocardial perfusion imaging
+                        (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title>Dobutamine Stress Testing with Echocardiography or MPI</title>
+                <para>[Section Prompt: Consider for patients with known or prior CAD, inability to
+                    exercise, normal electrocardiogram, and no prior myocardial infarction. Only one
+                    should be selected.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Only one should be selected. Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Dobutamine stress testing echocardiography (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Dobutamine stress testing myocardial perfusion imaging
+                        (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <formalpara>
+                <title> Coronary CT Angiogram</title>
+                <para>[Section Prompt: Consider for patients without known coronary artery disease,
+                    who have low or intermediate probability for coronary artery disease, especially
+                    in presence of a history of any of the following: prior inconclusive or
+                    discrepant diagnostic testing results, recurrent symptoms or significant family
+                    history of CAD/multiple risk factors in young patients. Additional
+                    postprocessing (computed tomography-fractional flow reserve, CT-FFR) or CTA
+                    stress perfusion may be ordered where available.] </para>
+            </formalpara>
+            <para>[Section Selection Behavior: Optional.] </para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Coronary CT angiogram (routine) </para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>Medications</title>
+            <para>[Section Prompt: Based upon clinical judgement, consider initiating a new order
+                for one or more of the following medications prior to the cardiology consultation,
+                if not otherwise contraindicated.] </para>
+            <para>[Section Selection Behavior: Medications from more than one category may be
+                selected. However, only one from each category may be selected. Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Antianginal Therapy</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>&#x2610; Metoprolol tartrate 25 mg tablet oral twice daily
+                                (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Metoprolol tartrate 50 mg tablet oral twice daily
+                                (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Amlodipine 5 mg tablet oral daily (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Nitroglycerin 0.4 mg tablet sub-lingual every 5 minutes
+                                as needed for chest pain; maximum 3 tablets (routine)</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>&#x2610;Antiplatelet Therapy</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>&#x2610; Aspirin 81 mg enteric coated tablet oral daily
+                                (routine)</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Risk Factor Reduction</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>&#x2610; Atorvastatin 20 mg tablet oral daily (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Atorvastatin 40 mg tablet oral daily (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Simvastatin 20 mg tablet oral daily (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Simvastatin 40 mg tablet oral daily (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Rosuvastatin 5 mg tablet oral daily (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Rosuvastatin 10 mg tablet oral daily (routine)</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; Rosuvastatin 20 mg tablet oral daily (routine)</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+        </section>
+    </chapter>
+    <bibliography><title>Bibliography/Evidence</title>
+        <biblioentry>
+            <orgname>Framingham Heart Study</orgname>
+            <citetitle pubwork="webpage">Cardiovascular Disease (10-year risk)</citetitle>
+            <bibliomisc>
+                <link
+                    xlink:href="https://www.framinghamheartstudy.org/risk-functions/cardiovascular-disease/10-year-risk.php"
+                />
+            </bibliomisc>
+            <date>July 10, 2017</date>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>D’Agostino 2008</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>D'Agostino</surname>
+                        <firstname>RB</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Vasan</surname>
+                        <firstname>RS</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Pencina</surname>
+                        <firstname>MJ</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">General cardiovascular risk profile for use in primary
+                care: the Framingham Heart Study</citetitle>
+            <citetitle pubwork="journal">Circulation</citetitle>
+            <pubdate>2008</pubdate>
+            <volumenum>117</volumenum>
+            <issuenum>6</issuenum>
+            <pagenums>743-753</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Finh 2014</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Fihn</surname>
+                        <firstname>SD</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Blankenship</surname>
+                        <firstname>JC</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Alexander</surname>
+                        <firstname>KP</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">2014 ACC/AHA/AATS/PCNA/SCAI/STS focused update of the
+                guideline for the diagnosis and management of patients with stable ischemic heart
+                disease: a report of the American College of Cardiology/American Heart Association
+                Task Force on Practice Guidelines, and the American Association for Thoracic
+                Surgery, Preventive Cardiovascular Nurses Association, Society for Cardiovascular
+                Angiography and Interventions, and Society of Thoracic Surgeons</citetitle>
+            <citetitle pubwork="journal">Circulation</citetitle>
+            <pubdate>2014</pubdate>
+            <volumenum>130</volumenum>
+            <issuenum>19</issuenum>
+            <pagenums>1749-1767</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Gibbons 2002</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Gibbons</surname>
+                        <firstname>RJ</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Balady</surname>
+                        <firstname>GJ</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Bricker</surname>
+                        <firstname>JT</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">2002 ACC/AHA guideline update for exercise testing: summary
+                article: a report of the American College of Cardiology/American Heart Association
+                Task Force on Practice Guidelines (Committee to Update the 1997 Exercise Testing
+                Guidelines)</citetitle>
+            <citetitle pubwork="journal">Circulation</citetitle>
+            <pubdate>2002</pubdate>
+            <volumenum>106</volumenum>
+            <issuenum>14</issuenum>
+            <pagenums>1883-1892</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">ASPIRIN 81MG (aspirin), tablet coated [DOLGENCORP,
+                LLC]</citetitle>
+            <pubdate>January 10, 2017</pubdate>
+            <bibliomisc>
+                <link
+                    xlink:href="http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">CLOPIDOGREL - clopidogrel bisulfate tablet, film coated
+                [Apotex Corp.]</citetitle>
+            <pubdate>November 30, 2016</pubdate>
+            <bibliomisc>
+                <link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">LIPITOR - atorvastatin calcium tablet, film coated [Aphena
+                Pharma Solutions - Tennessee, LLC]</citetitle>
+            <pubdate>May 10, 2013</pubdate>
+            <bibliomisc>
+                <link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7fe85155-bc00-406b-b097-e8aece187a8a"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">METOPROLOL SUCCINATE EXTENDED-RELEASE - metoprolol
+                succinate tablet, film coated, extended release [Ethex Corporation]</citetitle>
+            <pubdate>November 1, 2009</pubdate>
+            <bibliomisc>
+                <link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2d948600-35d8-4490-983b-918bdce488c8"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">NITROGLYCERIN - nitroglycerin tablet [Ingenus
+                Pharmaceuticals NJ, LLC]</citetitle>
+            <pubdate>August 26, 2016</pubdate>
+            <bibliomisc>
+                <link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=67bf2a15-b115-47ac-ae28-ce2dafd6b5c9"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">NORVASC - amlodipine besylate tablet [Pfizer Laboratories
+                Div Pfizer Inc]</citetitle>
+            <pubdate>April 19, 2017</pubdate>
+            <bibliomisc>
+                <link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=abd6a2ca-40c2-485c-bc53-db1c652505ed"
+                />
+            </bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">SIMVASTATIN - simvastatin tablet [Micro Labs
+                Limited]</citetitle>
+            <pubdate>January 3, 2017</pubdate>
+            <bibliomisc>
+                <link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c1c694c-4b08-469e-b538-08e69df06146"
+                />
+            </bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Skinner, 2010</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Skinner</surname>
+                        <firstname>JS</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Smeeth</surname>
+                        <firstname>L</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Kendall</surname>
+                        <firstname>JM</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Adams</surname>
+                        <firstname>PC</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Timmis</surname>
+                        <firstname>A</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Chest Pain Guideline Development Group. NICE guidance.
+                Chest pain of recent onset: assessment and diagnosis of recent onset chest pain or
+                discomfort of suspected cardiac origin</citetitle>
+            <citetitle pubwork="journal">Heart</citetitle>
+            <pubdate>2010</pubdate>
+            <volumenum>96</volumenum>
+            <issuenum>12</issuenum>
+            <pagenums>974-978</pagenums>
+        </biblioentry>
+    </bibliography>
+
+  <appendix>
+    <title>
+        Existing VA Artifacts</title>
+
+    <para>These artifacts consist of screenshots from the VA Portland Health Care System (Oregon)
+            Cardiology, Chest Pain/Coronary Artery Disease consult request.</para>
+
+    <figure>
+      <title>Cardiology - General</title>
+
+      <mediaobject>
+        <alt>Cardiology - General screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig1CardiologyGeneral.png" scalefit="1"
+                        width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Chest Pain (CP)/Coronary Artery Disease (CAD) Screenshot</title>
+
+      <mediaobject>
+        <alt>Chest Pain (CP)/Coronary Artery Disease (CAD) Screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig2CardiologyChestPainCADScreen.png"
+                        scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Chest Pain (CP)/Coronary Artery Disease (CAD) Screenshot with Contraindications</title>
+
+      <mediaobject>
+        <alt>Chest Pain (CP)/Coronary Artery Disease [CAD] Screenshot with Contraindications</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                        fileref="images/Fig3CardiologyChestPainCADScreenContraInd.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Cardiology ETT Procedure</title>
+
+      <mediaobject>
+        <alt>Figure depicts a Cardiology ETT Procedure screen and shows a Providers Note: Exclusion
+                    Criteria</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig4CardiologyETTProcedure.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Order a Procedure</title>
+
+      <mediaobject>
+        <alt>Order a Procedure Screen</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig5OrderProcedure.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>ETT Request Screenshot</title>
+
+      <mediaobject>
+        <alt>Figure depicts an ETT - Request Screen with a reminder indicating "Be sure to enter an
+                    admin order so your facilitator/clerk will know to schedule an
+                    appointment"</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig6ETTRequest.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reason for Request: Cardiology - General Output</title>
+
+      <mediaobject>
+        <alt>Figure depicts Reason for Request Screen, specific to Chest Pain/CAD</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig7ReasonForRequest.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Order a Consult Screenshot for Cardiology</title>
+
+      <mediaobject>
+        <alt>Figure depicts an application window with title "Order a Consult", with Cardiology -
+                    General Output selected</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig8ConsultOrder.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Consult to Service/Specialty Screen</title>
+
+      <mediaobject>
+        <alt>Figure depicts an application window with title "Order a Consult", with GI-E-Consult
+                    Output selected</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig9ConsultOrderOutpt.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+    <appendix>
+        <title>Glossary</title>
+        <informaltable>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Acronym/Term</entry>
+                        <entry>Description</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>ACC</entry>
+                        <entry>American College of Cardiology</entry>
+                    </row>
+                    <row>
+                        <entry>ACS</entry>
+                        <entry>Acute coronary syndrome</entry>
+                    </row>
+                    <row>
+                        <entry>AHA</entry>
+                        <entry>American Heart Association</entry>
+                    </row>
+                    <row>
+                        <entry>CABG</entry>
+                        <entry>Coronary artery bypass grafting</entry>
+                    </row>
+                    <row>
+                        <entry>CAD</entry>
+                        <entry>Coronary Artery Disease</entry>
+                    </row>
+                    <row>
+                        <entry>CDS</entry>
+                        <entry>Clinical Decision Support</entry>
+                    </row>
+                    <row>
+                        <entry>CHF</entry>
+                        <entry>Congestive Heart Failure</entry>
+                    </row>
+                    <row>
+                        <entry>CP</entry>
+                        <entry>Chest Pain</entry>
+                    </row>
+                    <row>
+                        <entry>cCTA</entry>
+                        <entry>Coronary Computed Tomography Angiography</entry>
+                    </row>
+                    <row>
+                        <entry>CTA</entry>
+                        <entry>Computed tomography angiography</entry>
+                    </row>
+                    <row>
+                        <entry>CT-FFR</entry>
+                        <entry>Computed tomography-fractional flow reserve</entry>
+                    </row>
+                    <row>
+                        <entry>ECG</entry>
+                        <entry>Electrocardiogram</entry>
+                    </row>
+                    <row>
+                        <entry>HL7</entry>
+                        <entry>Health Level 7</entry>
+                    </row>
+                    <row>
+                        <entry>HPI</entry>
+                        <entry>History of present illness</entry>
+                    </row>
+                    <row>
+                        <entry>IVCD</entry>
+                        <entry>Interventricular Conduction Delay</entry>
+                    </row>
+                    <row>
+                        <entry>LBBB</entry>
+                        <entry>Left bundle branch block </entry>
+                    </row>
+                    <row>
+                        <entry>KBS</entry>
+                        <entry>Knowledge Based Systems</entry>
+                    </row>
+                    <row>
+                        <entry>KNART</entry>
+                        <entry>Knowledge Artifact</entry>
+                    </row>
+                    <row>
+                        <entry>MI</entry>
+                        <entry>Myocardial infarction</entry>
+                    </row>
+                    <row>
+                        <entry>MPI</entry>
+                        <entry>Myocardial Perfusion Imaging</entry>
+                    </row>
+                    <row>
+                        <entry>OIIG</entry>
+                        <entry>Office of Informatics and Information Governance</entry>
+                    </row>
+                    <row>
+                        <entry>PCI</entry>
+                        <entry>Percutaneous Coronary Intervention</entry>
+                    </row>
+                    <row>
+                        <entry>PPM</entry>
+                        <entry>Permanent pacemaker</entry>
+                    </row>
+                    <row>
+                        <entry>SME</entry>
+                        <entry>Subject Matter Expert</entry>
+                    </row>
+                    <row>
+                        <entry>TO</entry>
+                        <entry>Task Order</entry>
+                    </row>
+                    <row>
+                        <entry>VA</entry>
+                        <entry>Department of Veteran Affairs</entry>
+                    </row>
+                    <row>
+                        <entry>VAMC</entry>
+                        <entry>VA Medical Center</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </appendix>
+</book>
