@@ -1,0 +1,1975 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Cardiology: Venous Thromboembolism (VTE) Prophylaxis Clinical Content White
+            Paper</subtitle>
+        <copyright>
+            <year>March</year>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>
+                    <surname>Department of Veterans Affairs (VA)</surname>
+                </personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center"
+                                fileref="../../../../../Resources/VASealColor.jpg"
+                                contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: Cardiology: Venous Thromboembolism (VTE)
+                        Prophylaxis</title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <entry valign="middle" align="left"> KNART Name</entry>
+                                <entry valign="middle" align="left">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>VTE Prophylaxis - Order Set</entry>
+                                <entry>CLIN0008CA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>April 2018</pubdate>
+        <edition>Version 1.1</edition>
+        <revhistory>
+            <revision>
+                <revnumber>1.1</revnumber>
+                <date>4/30/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Revised Final per PO comments</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>12/21/2017</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>Final DocBook transformation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.15</revnumber>
+                <date>12/15/2017</date>
+                <authorinitials>Steve Mahalec</authorinitials>
+                <revremark>DocBook QA</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.14</revnumber>
+                <date>10/16/2017</date>
+                <authorinitials>Steve Mahalec</authorinitials>
+                <revremark>Technical QA review; prep for formal review submission</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.13</revnumber>
+                <date>10/16/2017</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>QA review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.12</revnumber>
+                <date>10/13/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Incorporated edits per clinical review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.11</revnumber>
+                <date>10/13/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Clinical review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.10</revnumber>
+                <date>10/06/2017</date>
+                <authorinitials>Nicholas Rains</authorinitials>
+                <revremark>Clinical review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.9</revnumber>
+                <date>09/24/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template revision per PO recommendations</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>09/05/2017</date>
+                <authorinitials>Vida Dunie</authorinitials>
+                <revremark>QA/Tech Writer review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>09/05/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Clinical review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>08/18/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Incorporation of SME input</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>08/17/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>SME Review/Approval of CCWP Draft</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>08/11/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Technical Edit</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>08/09/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Motive Data added</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>08/01/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template update</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>07/24/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Initial draft</revremark>
+            </revision>
+        </revhistory>
+    </info>
+
+  <preface>
+    <title>VA Subject Matter Expert (SME) Panel</title>
+
+    <informaltable frame="all" xml:id="va.SME.List">
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry>Name</entry>
+
+            <entry>Title</entry>
+
+            <entry>Project Role</entry>
+          </row>
+        </thead>
+
+        <tbody>
+          <row>
+            <entry>Bruce Bray, MD</entry>
+
+            <entry>Professor, Cardiovascular Medicine, University of Utah
+            School of Medicine; Staff Cardiologist, Salt Lake City VA Medical
+            Center (<glossterm>VAMC</glossterm>)</entry>
+
+            <entry>SME, Primary</entry>
+          </row>
+
+          <row>
+            <entry>Scott Wall, MD</entry>
+
+            <entry>Assistant Professor, Cardiovascular Medicine, University of Utah; School of
+                            Medicine Staff Cardiologist, Electrophysiology, Salt Lake City VAMC,
+                            Salt Lake City, UT 84148</entry>
+
+            <entry>SME, Secondary</entry>
+          </row>
+
+          <row>
+            <entry>Aiden Abidov, MD, PhD</entry>
+
+            <entry>Professor of Medicine, Wayne State University; Section Chief, Cardiology, John
+                            Dingell VAMC, 4646 John R St, Detroit, MI 48201</entry>
+
+            <entry>SME</entry>
+          </row>
+
+          <row>
+            <entry>Claibe Yarbrough, MD</entry>
+
+            <entry>National Program Director, North Texas VHCS, Pulmonary/Critical Care/Sleep
+                            Medicine, Dallas, TX, 4500 S Lancaster, Dallas, TX 75216</entry>
+
+            <entry>SME</entry>
+          </row>
+
+          <row>
+            <entry>Benjamin Brooke,MD</entry>
+
+            <entry>Attending SLC VAMC, Surgery Services, Salt Lake City, UT, 508 Fulton St, Durham,
+                            NC 27705</entry>
+
+            <entry>SME</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </preface>
+
+  <preface>
+    <title>Introduction</title>
+
+      <para>The VA is committed to improving the ability of clinicians to provide
+          care for patients while increasing quality, safety, and efficiency.
+          Recognizing the importance of standardizing clinical knowledge in support of
+          this goal, VA is implementing the Health Level 7
+          (<acronym><glossterm>HL7</glossterm></acronym>) Knowledge Artifact
+          Specification for a wide range of VA clinical use cases. Knowledge
+          Artifacts, referred to as (<acronym>
+              <glossterm>KNARTs</glossterm></acronym>), enable the structuring and
+          encoding of clinical knowledge so the knowledge can be integrated with
+          electronic health records to enable clinical decision support.</para>
+      
+      <para>The purpose of this Clinical Content White Paper
+          (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical
+          context and intent of <acronym><glossterm>KNART</glossterm></acronym> use
+          cases in sufficient detail to provide the
+          <acronym><glossterm>KNART</glossterm></acronym> authoring team with the
+          clinical source material to construct the corresponding knowledge artifacts
+          using the HL7 Knowledge Artifact Specification. This paper has been
+          developed using material from a variety of sources: VA artifacts, clinical
+          practice guidelines, evidence in the body of medical literature, and
+          clinical expertise. After reviewing these sources, the material has been
+          synthesized and harmonized under the guidance of VA subject matter experts
+          to reflect clinical intent for this use case.</para>
+      
+      <para>Unless otherwise noted, items within this white paper (e.g.,
+          documentation template fields, orderable items, etc.) are chosen to reflect
+          the clinical intent at the time of creation. To provide an exhaustive list
+          of all possible items and their variations is beyond the scope of this
+          work.</para>
+  </preface>
+
+  <preface>
+    <title>Conventions Used</title>
+      <para>Conventions used within the knowledge artifact descriptions
+          include:</para>
+      
+      <itemizedlist mark="none">
+          <listitem>
+              <para><emphasis>&lt;obtain&gt;</emphasis>: Indicates a prompt to obtain
+                  the information listed <itemizedlist mark="bullet">
+                      <listitem>
+                          <para>If possible, the requested information should be obtained
+                              from the underlying system(s). Otherwise, prompting the user for
+                              information may be required</para>
+                      </listitem>
+                      
+                      <listitem>
+                          <para>The technical and clinical notes associated with a section
+                              should be consulted for specific constraints on the information
+                              (e.g., time-frame, patient interview, etc.)</para>
+                      </listitem>
+                      
+                      <listitem>
+                          <para>Default Values: Unless otherwise noted, &lt;obtain&gt;
+                              indicates to obtain the most recent observation. It is recognized
+                              that this default time-frame value may be altered by future
+                              implementations</para>
+                      </listitem>
+                  </itemizedlist></para>
+          </listitem>
+          
+          <listitem>
+              <para><emphasis>[...]</emphasis>: Square brackets enclose explanatory text that indicates some
+                  action on the part of the clinical user, or general guidance to the clinical or technical
+                  teams. Examples include, but are not limited to:</para>
+              
+              <itemizedlist mark="none">
+                  <listitem>
+                      <para><emphasis>[Begin ...]</emphasis>, <emphasis>[End
+                          ...]</emphasis>: Indicates the start and end of specific areas to
+                          clearly delineate them for technical purposes.</para>
+                      
+                      <para><emphasis>[Activate ...]</emphasis>: Initiates another
+                          knowledge artifact or knowledge artifact section.</para>
+                      
+                      <para><emphasis>[Section Prompt: ...]</emphasis>: If this section is
+                          applicable, then the following prompt should be displayed to the
+                          user.</para>
+                      
+                      <para><emphasis>[Section Selection Behavior: ...]</emphasis>:
+                          Indicates technical constraints or considerations for the selection
+                          of items within the section.</para>
+                      
+                      <para><emphasis>[Attach: ...]</emphasis>: Indicates that the
+                          specified item should be attached to the documentation template if
+                          available.</para>
+                      
+                      <para><emphasis>[Link: ...]</emphasis>: Indicates that rather than
+                          attaching an item, a link should be included in the documentation
+                          template.</para>
+                      
+                      <para><emphasis>[Clinical Comment: ...]</emphasis>: Indicates
+                          clinical rationale or guidance.</para>
+                      
+                      <para><emphasis>[Technical Note: ...]</emphasis>: Indicates
+                          technical considerations or notes.</para>
+                      
+                      <para><emphasis>[If ...]</emphasis>: Indicates the beginning of a
+                          conditional section.</para>
+                      
+                      <para><emphasis>[Else, ...]</emphasis>: Indicates the beginning of
+                          the alternative branch of a conditional section.</para>
+                      
+                      <para><emphasis>[End if ...]</emphasis>: Indicates the end of a
+                          conditional section.</para>
+                  </listitem>
+              </itemizedlist>
+          </listitem>
+          
+          <listitem>
+              <para>☐ <emphasis>[Check box]</emphasis>: Indicates items that should be
+                  selected based upon the section selection behavior.</para>
+          </listitem>
+      </itemizedlist>
+  </preface>
+
+  <chapter>
+    <title>Cardiology: Venous Thromboembolism Prophylaxis</title>
+
+    <section>
+      <title>Clinical Context</title>
+            <para>[Begin Clinical Context.]</para>
+
+      <para>The Venous Thromboembolism (<acronym><glossterm>VTE</glossterm></acronym>) Prophylaxis KNART is intended
+                for users caring for hospitalized adult patients. This KNART is designed to
+                facilitate ordering for mechanical and/or pharmacological VTE prophylaxis in medical
+                and surgical inpatients without known VTE.</para>
+
+        <para>The American Academy of Orthopedic Surgeons
+                    (<acronym><glossterm>AAOS</glossterm></acronym>) and the American College of
+                Chest Physicians (<acronym><glossterm>ACCP</glossterm></acronym>) are the primary
+                sources for this KNART:<itemizedlist>
+                    <listitem>
+                        <para>American Academy of Orthopaedic Surgeons. Preventing venous
+                            thromboembolic disease in patients undergoing elective hip and knee
+                            arthroplasty: evidence-based guideline and evidence report, second
+                            edition. American Academy of Orthopaedic Surgeons website.
+                            https://www.aaos.org/research/guidelines/VTE/VTE_full_guideline.pdf.
+                            Published 2011.</para>
+                    </listitem>
+                </itemizedlist></para>
+
+       <itemizedlist>
+
+        <listitem>
+          <para>Gould MK, Garcia DA, Wren SM, et al. Prevention of VTE in
+          nonorthopedic surgical patients: Antithrombotic Therapy and
+          Prevention of Thrombosis, 9th ed: American College of Chest
+          Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012
+          Feb;141(2 Suppl):e227S-e277S.</para>
+        </listitem>
+
+        <listitem>
+          <para>Kahn SR, Lim W, Dunn AS, et al. Prevention of VTE in
+          nonsurgical patients: Antithrombotic Therapy and Prevention of
+          Thrombosis, 9th ed: American College of Chest Physicians
+          Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2
+          Suppl):e195S-e226S.</para>
+        </listitem>
+                <listitem>
+                    <para>VA Pharmacy Benefits Management Services, Medical Advisory Panel, and VISN
+                        Pharmacist Executives, Direct Oral Anticoagulants (DOACs) (formerly called
+                        TSOACs), Rivaroxaban (Xarelto), Apixaban (Eliquis), and Dabigatran
+                        (Pradaxa), Criteria for Use for VTE Prophylaxis for Total Hip or Total Knee
+                        Replacement Surgery. February 2015</para>
+                </listitem>
+      </itemizedlist>
+
+      <para>This KNART also includes a link to the American College of Chest Physicians Pregnancy
+                Anticoagulation Guidelines in Appendix C (<link
+                    xlink:href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/"/>), although
+                pregnancy shall not be a primary focus of the KNART. The clinical context domains
+                are summarized in Table 1, below.</para>
+
+      <para>
+        <table>
+          <title>Clinical Context Domains</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Target User</entry>
+
+                <entry>Hospitalist, residents, and other ordering providers
+                involved in managing the patient cohort, and nurses</entry>
+              </row>
+
+              <row>
+                <entry>Patient</entry>
+
+                <entry>Adult inpatients without known VTE and not pregnant</entry>
+              </row>
+
+              <row>
+                <entry>Priority</entry>
+
+                <entry>Routine</entry>
+              </row>
+
+              <row>
+                <entry>Specialty</entry>
+
+                <entry>Medical and/or Surgical Service</entry>
+              </row>
+
+              <row>
+                <entry>Location</entry>
+
+                <entry>Inpatient</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+            <para>[End Clinical Context.]</para>
+    </section>
+
+    <section>
+      <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+
+      <para>The CDS knowledge artifact that defines the clinical use case is described in detail in
+                the following sections:</para>
+
+       <itemizedlist>
+        <listitem>
+          <para>Order Set: VTE KNART</para>
+
+           <itemizedlist>
+            <listitem>
+              <para>Orderable items</para>
+            </listitem>
+
+            <listitem>
+              <para>Logic for appropriate display of the order set</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+            <para>[End Knowledge Artifacts.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>VTE Prophylaxis - Order Set</title>
+        <para>[Begin VTE Prophylaxis - Order Set.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+
+      <para>[See Clinical Context in Chapter 1, Section 1.1.]</para>
+
+      <para>Venous thromboembolism (VTE) is a common medical problem that results in substantial
+                morbidity and mortality. Despite its prevalence, physicians often fail to appreciate
+                the risks for VTE and often fail to recognize its signs and symptoms; this has led
+                the National Academy of Sciences to cite it as a frequent cause of diagnostic error
+                (National Academies of Sciences 2015). The problem of diagnostic error in VTE is
+                compounded by therapeutic error—largely involving anticoagulants, which are
+                perennially among the medications most often associated with adverse drug events
+                (Shehab 2016). Remediating the problem requires the adoption of evidence-based
+                guidelines, notably those of the American College of Chest Physicians for medical
+                patients and nonorthopedic surgery patients and those of the American College of
+                Orthopedic Surgeons for orthopedic surgery patients, across an entire health system.
+                Rendering such guidelines operational requires meticulous curation of an array of
+                granular elements across the full spectrum of clinical conditions (e.g., medical
+                versus surgical patients, orthopedic versus nonorthopedic surgical patients,
+                intracranial/spinal surgery, etc.) and the management of numerous comorbidities and
+                factors that have potential to complicate care and predispose patients to iatrogenic
+                bleeding (hemorrhagic diathesis, renal failure, etc.). Deploying such decision
+                support within the VA system offers the potential for significant cost savings,
+                improvement in patient care, and avoidance of preventable morbidity and
+                mortality.</para>
+            <para>[End Knowledge Narrative.]</para>
+    </section>
+        <section>
+            <title>Resources and Risk Stratification: Medical Patients</title>
+            <para>[Begin Resources and Risk Stratification: Medical Patients.]</para>
+            <para>[Section Prompt: This section should be available for all medical
+                patients.]</para>
+            <para>[Technical Note: A link to the Padua prediction scoring algorithm
+                (https://www.mdcalc.com/padua-prediction-score-risk-vte) should be provided.]</para>
+            <para>[End Resources and Risk Stratification: Medical Patients.]</para>
+        </section>
+
+    <section>
+            <title>Medications: Medical Patients</title>
+            <para>[Begin Medications: Medical Patients.]</para>
+            <para>[Section Prompt: Medications: Medical Patients.]</para>
+            <para>[Technical Note: This section should be available for all medical patients
+                requiring pharmacological VTE prophylaxis.]</para>
+            <para>[Section Prompt: Acutely Ill Patients - This subsection applies to all acutely ill
+                medical patients at increased risk of thrombosis who are not bleeding or at high
+                risk for bleeding.]</para>
+             <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Heparin 5000 Units solution subcutaneous three times daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Fondaparinux 2.5 mg solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Critically Ill Patients - This subsection applies to all
+                critically ill medical patients at increased risk of thrombosis who are not bleeding
+                or at high risk for bleeding.]</para>
+             <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                        (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Medications: Medical Patients.]</para>
+        </section>
+        <section>
+            <title>Procedures: Medical Patients</title>
+            <para>[Begin Procedures: Medical Patients.]</para>
+            <para>[Section Prompt: Mechanical VTE Prophylaxis, Medical Patients]</para>
+            <para>[Technical Note: This section should be available for all medical patients
+                requiring mechanical VTE prophylaxis, particularly those who are at increased risk
+                of bleeding events.]</para>
+            <para>[Section Prompt: Acutely Ill Patients - This subsection applies to all acutely ill
+                medical patients at increased risk of thrombosis who are bleeding or at high risk
+                for major bleeding.] <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Graduated compression stockings (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Critically Ill Patients - This subsection applies to all
+                critically ill medical patients at increased risk of thrombosis who are bleeding or
+                at high risk for major bleeding.]</para>
+            <para>
+                 <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Graduated compression stockings (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Procedures: Medical Patients.]</para>
+        </section>
+
+    <section>
+      <title>Resources and Risk Stratification: Nonorthopedic Surgical Patients</title>
+
+      <para>[Begin Resources and Risk Stratification: Nonorthopedic Surgical Patients.]</para>
+            <para>[Section Prompt: VTE Risk Stratification for surgical patients]</para>
+            <para>[Technical Note: This section should be available for all nonorthopedic surgical
+                patients.]</para>
+
+      <para>[Technical Note: A link to the Rogers scoring algorithm (<link
+                    xlink:href="http://www.journalacs.org/article/S1072-7515(07)00327-4/fulltext"
+                    >http://www.journalacs.org/article/S1072-7515(07)00327-4/fulltext</link>) should
+                be provided.]</para>
+            <para>[Technical Note: A link to the Caprini scoring algorithm (<link
+                    xlink:href="http://venousdisease.com/caprini-dvt-risk-assessment/"
+                    >http://venousdisease.com/caprini-dvt-risk-assessment/</link>) should be
+                provided.]</para>
+            <para>[Technical Note: A link to the American College of Chest Physicians pregnancy
+                anticoagulation guidelines (<link
+                    xlink:href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/"
+                    >https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/</link>) should be
+                provided.] </para>
+            <para>[End Resources and Risk Stratification: Nonorthopedic Surgical Patients.]</para>
+    </section>
+        <section>
+            <title>Activity: Nonorthopedic Surgical Patients</title>
+            <para>[Begin Activity: Nonorthopedic Surgical Patients.]</para>
+            <para/>
+            <para>[Section Prompt: Activity Order for nonorthopedic surgical patients]</para>
+            <para>[Technical Note: This section should be available for all nonorthopedic surgery
+                patients requiring VTE prophylaxis.]</para>
+            <para>[Section Prompt: General and Abdominal-Pelvic Surgery Patients at Very Low Risk
+                for VTE]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Ambulate with assistance 1 time per shift (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Bed to chair 1 time per shift (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Up ad lib now</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Activity: Nonorthopedic Surgical Patients.]</para>
+        </section>
+        <section>
+            <title>Medications: Nonorthopedic Surgical Patients</title>
+            <para>[Begin Medication: Nonorthopedic Surgical Patients.]</para>
+            <para>[Section Prompt: Medications – Nonorthopedic Surgical Patients]</para>
+            <para>[Technical Note: This section should be available for all nonorthopedic surgery
+                patients requiring pharmacological VTE prophylaxis.]</para>
+            <para>[Section Prompt: General and Abdominal-Pelvic Surgery Patients at Moderate Risk
+                for VTE - This subsection applies to all general and abdominal-pelvic surgery
+                patients at moderate risk for VTE who are not at high risk for major bleeding
+                complications.]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Dalteparin 2500 Units solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                            (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: General and Abdominal-Pelvic Surgery Patients at High Risk for
+                VTE - This subsection applies toall general and abdominal-pelvic surgery patients at
+                high risk for VTE who are not at high risk for major bleeding complications.]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                            (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: General and Abdominal-Pelvic Surgery Patients at High Risk for
+                VTE with Inability to Use Either LMWH or UFH - This subsection applies to all
+                general and abdominal-pelvic surgery patients at high risk for VTE for whom both
+                LMWH and UFH are contraindicated or unavailable and who are not at high risk for
+                major bleeding complications.]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Fondaparinux 2.5 mg solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Aspirin 160 mg tablet oral once daily (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Cardiac Surgery Patients with Nonhemorrhagic Surgical
+                Complications - This subsection applies to all cardiac surgery patients whose
+                inpatient stay is prolonged by nonhemorrhagic surgical complications.] </para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Thoracic Surgery Patients at Moderate Risk for VTE - This
+                subsection applies to all thoracic surgery patients at moderate risk for VTE who are
+                not at high risk for perioperative bleeding.</para>
+             <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Thoracic Surgery Patients at High Risk for VTE - This subsection
+                applies to all thoracic surgery patients at high risk for VTE who are not at high
+                risk for perioperative bleeding.]</para>
+             <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Craniotomy Patients at Very High Risk for VTE - This subsection
+                applies to all craniotomy patients at very high risk for VTE once adequate
+                hemostasis is established and the risk of bleeding decreases.]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Fondaparinux 2.5 mg solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Spinal Surgery Patients at High Risk for VTE - This subsection
+                applies to all spinal surgery patients at high risk for VTE once adequate hemostasis
+                is established and the risk of bleeding decreases.]</para>
+             <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Fondaparinux 2.5 mg solution subcutaneous once daily
+                        (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Major Trauma Patients - This subsection applies to all major
+                trauma patients without contraindication.]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Heparin 5000 Units solution subcutaneous two times daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Enoxaparin 40 mg solution subcutaneous daily once 1 time
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Medications: Nonorthopedic Surgical Patients.]</para>
+        </section>
+        <section>
+            <title>Procedures: Nonorthopedic Surgical Patients</title>
+            <para>[Begin Procedures: Nonorthopedic Surgical Patients.]</para>
+            <para>[Section Prompt: This section applies to all nonorthopedic surgical patients
+                requiring mechanical VTE prophylaxis, particularly those who are at increased risk
+                of bleeding events.]</para>
+            <para>[Technical Note: This section should be available for all nonorthopedic surgical
+                patients requiring mechanical VTE prophylaxis, particularly those who are at
+                increased risk of bleeding events.]</para>
+            <para>[Section Prompt: General and Abdominal-Pelvic Surgery Patients at Low Risk for
+                VTE]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: General and Abdominal-Pelvic Surgery Patients at Moderate Risk
+                for VTE]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: General and Abdominal-Pelvic Surgery Patients at High Risk for
+                VTE]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Graduated compression stockings (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Cardiac Surgery Patients]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Thoracic Surgery Patients at Moderate Risk for VTE - This
+                subsection applies to all thoracic surgery patients at moderate risk for VTE who are
+                not at high risk for perioperative bleeding.] </para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Thoracic Surgery Patients at High Risk for VTE]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Graduated compression stockings (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Craniotomy Patients]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Spinal Surgery Patients]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Major Trauma Patients - This subsection applies to all major
+                trauma patients without contraindication due to lower-extremity injury.]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Procedures: Nonorthopedic Surgical Patients.]</para>
+        </section>
+
+    <section>
+      <title>Activity: Orthopedic Surgical Patients</title>
+
+      <para>[Begin Activity: Orthopedic Surgical Patients.]</para>
+            <para>[Section Prompt: Activity Orders for Orthopedic Surgical Patients]</para>
+            <para>[Technical Note: This section should be available for all orthopedic surgical
+                patients requiring VTE prophylaxis.]</para>
+            <para>[Section Prompt: Consider early postoperative mobilization as indicated for the
+                given surgery, context, and objectives related to weightbearing status.]</para>
+            <para>[End Activity: Orthopedic Surgical Patients.]</para>
+      
+    </section>
+        <section>
+            <title>Medications: Orthopedic Surgical Patients</title>
+            <para>[Begin Medications: Orthopedic Surgical Patients.]</para>
+            <para>[Section Prompt: VTE Prophylaxis Medication Orders for Orthopedic Surgical
+                Patients]</para>
+            <para>[Technical Note: This section should be available for all orthopedic surgery
+                patients requiring pharmacological VTE prophylaxis.]</para>
+            <para>[Section Prompt: Total Hip Arthroplasty, Total Knee Arthroplasty, and Hip Fracture
+                Surgery Patients]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Enoxaparin 30 mg solution subcutaneous every 12 hours
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Enoxaparin 40 mg solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Dalteparin 5000 Units solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Fondaparinux 2.5 mg solution subcutaneous once daily
+                            (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Warfarin tablet oral per protocol (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Apixaban 2.5 mg tablet oral two times daily (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Rivaroxaban 10 mg tablet oral once daily (routine)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Aspirin 81 mg tablet oral once daily time with intermittent
+                            pneumatic compression device begun intraoperatively and continued
+                            postoperatively through duration of hospital stay (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Medications: Orthopedic Surgical Patients.]</para>
+        </section>
+        <section>
+            <title>Procedures: Orthopedic Surgical Patients</title>
+            <para>[Begin Procedures: Orthopedic Surgical Patients.]</para>
+            <para>[Technical Note: This section should be available for all orthopedic surgical
+                patients requiring mechanical VTE prophylaxis, particularly those who are at
+                increased risk of bleeding events.]</para>
+            <para>[Section Prompt: Total Hip Arthroplasty, Total Knee Arthroplasty, and Hip Fracture
+                Surgery Patients]</para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Intermittent pneumatic compression (routine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Procedures: Orthopedic Surgical Patients.]</para>
+        </section>
+
+    <section>
+            <title>Laboratory Tests</title>
+            <para>[Begin Laboratory Tests.]</para>
+            <para>[Technical Note: This section should be available for all patients requiring VTE
+                prophylaxis.]</para>
+            <para>[Section Prompt: The following laboratory studies should be considered for
+                patients who will receive warfarin. These laboratory studies may also be indicated
+                for patients on other medications for VTE prophylaxis if clinically indicated per
+                clinician judgment.]</para>
+             <itemizedlist mark="none">
+                <listitem>
+                    <para>&#x2610; Complete blood count once daily (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Basic metabolic panel once daily (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Activated partial thromboplastin time once daily (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; International normalized ratio once daily (routine)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Laboratory Tests.]</para>
+            <para>[End VTE Prophylaxis - Order Set.]</para>
+        </section>
+  </chapter>
+
+  <bibliography>
+    <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <author>
+                <orgname>American Academy of Orthopedic Surgeons</orgname>
+            </author>
+            <citetitle pubwork="webpage">Preventing venous thromboembolic disease in patients
+                undergoing elective hip and knee arthroplasty: evidence-based guideline and evidence
+                report, second edition</citetitle>
+            <pubdate>Published 2011</pubdate>
+            <bibliomisc>
+                <link xlink:href="https://www.aaos.org/research/guidelines/VTE/VTE_full_guideline.pdf"/>
+            </bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Bates, 2012</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Bates</surname>
+                        <firstname>SM</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Greer</surname>
+                        <firstname>IA</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Middledrop</surname>
+                        <firstname>S</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Veenstra</surname>
+                        <firstname>DL</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Prabulos</surname>
+                        <firstname>AM</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Vandrik</surname>
+                        <firstname>PO</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">VTE, Thrombophilia, Antithrombotic Therapy, and Pregnancy:
+                Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of
+                Chest Physicians Evidence-Based Clinical Practice Guidelines</citetitle>
+            <citetitle pubwork="journal">Chest</citetitle>
+            <pubdate>2012</pubdate>
+            <volumenum>141</volumenum>
+            <issuenum>2 Suppl</issuenum>
+            <pagenums>e691S-e736S</pagenums>
+        </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>Caprini score: DVT risk assessment</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">Venous Resource Center website</citetitle>
+
+      <pubdate>August 8, 2017.</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="http://venousdisease.com/caprini-dvt-risk-assessment/"/>
+      </bibliomisc>
+    </biblioentry>
+        <biblioentry>
+            <abbrev>Douketis, 2012</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Douketis</surname>
+                        <firstname>JD</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Spyropoulos</surname>
+                        <firstname>AC</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Spencer</surname>
+                        <firstname>FA</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Perioperative Management of Antithrombotic Therapy:
+                Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of
+                Chest Physicians Evidence-Based Clinical Practice Guidelines</citetitle>
+            <citetitle pubwork="journal"> Chest</citetitle>
+            <pubdate>2012</pubdate>
+            <volumenum>141</volumenum>
+            <issuenum>(2 Suppl)</issuenum>
+            <pagenums>e326S-e350S</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Gould, 2012</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Gould</surname>
+                        <firstname>MK</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Garcia</surname>
+                        <firstname>DA</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Wren</surname>
+                        <firstname>SM</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Prevention of VTE in nonorthopedic surgical patients:
+                Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of
+                Chest Physicians Evidence-Based Clinical Practice Guidelines</citetitle>
+            <bibliomisc>Chest</bibliomisc>
+            <pubdate>February, 2012</pubdate>
+            <volumenum>141</volumenum>
+            <issuenum>(2 Suppl)</issuenum>
+            <pagenums>e227S-e277S</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Kahn, 2012</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Kahn</surname>
+                        <firstname>SR</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Lim</surname>
+                        <firstname>W</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Dunn</surname>
+                        <firstname>AS</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="webpage">Prevention of VTE in nonsurgical patients: Antithrombotic
+                Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians
+                Evidence-Based Clinical Practice Guidelines</citetitle>
+            <bibliomisc>Chest</bibliomisc>
+            <pubdate>February 2012</pubdate>
+            <volumenum>141</volumenum>
+            <issuenum>(2 Suppl)</issuenum>
+            <pagenums>e195S-e226S</pagenums>
+        </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>National Academies of Sciences, Engineering, and
+        Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">Improving Diagnosis in Health Care.
+      Washington, DC: The National Academies Press</citetitle>
+
+      <pubdate>2015</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://doi.org/10.17226/21794"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>Padua Prediction Score for Risk of VTE</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">MDCalc website</citetitle>
+
+      <pubdate>August 8, 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.mdcalc.com/padua-prediction-score-risk-vte"/>
+      </bibliomisc>
+    </biblioentry>
+        <biblioentry>
+            <abbrev>Rogers, 2007</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Rogers</surname>
+                        <firstname>SO,Jr</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Kilaru</surname>
+                        <firstname>RK</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Hosokawa</surname>
+                        <firstname>P</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <author>
+                <personname>
+                    <surname>Henderson</surname>
+                    <firstname>WG</firstname>
+                </personname>
+            </author>
+            <author>
+                <personname>
+                    <surname>Zinner</surname>
+                    <firstname>MJ</firstname>
+                </personname>
+            </author>
+            <author>
+                <personname>
+                    <surname>Khuri</surname>
+                    <firstname>SF</firstname>
+                </personname>
+            </author>
+            <citetitle pubwork="webpage">Multivariable predictors of postoperative venous
+                thromboembolic events after general and vascular surgery: results from the patient
+                safety in surgery study</citetitle>
+            <bibliomisc> J Am Coll Surg.</bibliomisc>
+            <pubdate>2007</pubdate>
+            <volumenum>204</volumenum>
+            <issuenum>(6)</issuenum>
+            <pagenums>1211-1221</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Shehab, 2016</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Shehab</surname>
+                        <firstname>N</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Lovegrove</surname>
+                        <firstname>MC</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Geller</surname>
+                        <firstname>AI</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <author>
+                <personname>
+                    <surname>Rose</surname>
+                    <firstname>KO</firstname>
+                </personname>
+            </author>
+            <author>
+                <personname>
+                    <surname>Weidle</surname>
+                    <firstname>NJ</firstname>
+                </personname>
+            </author>
+            <author>
+                <personname>
+                    <surname>Budnitz</surname>
+                    <firstname>DS</firstname>
+                </personname>
+            </author>
+            <citetitle pubwork="webpage">US Emergency Department Visits for Outpatient Adverse Drug
+                Events</citetitle>
+            <bibliosource>JAMA</bibliosource>
+            <pubdate>2016</pubdate>
+            <volumenum>316</volumenum>
+            <issuenum>(20)</issuenum>
+            <pagenums>2115-2125</pagenums>
+        </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">ARIXTRA- fondaparinux sodium injection,
+      solution [Mylan Institutional LLC]</citetitle>
+
+      <pubdate>Revised October 2015</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d3b30c68-cf45-4b46-8ba6-72090f7ba01a"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library </orgname>
+      </author>
+
+      <citetitle pubwork="webpage">ASPIRIN 81 MG- aspirin tablet, coated
+      [DOLGENCORP, LLC]</citetitle>
+
+      <pubdate>Revised January 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">ELIQUIS- apixaban tablet, film coated
+      [Cardinal Health]</citetitle>
+
+      <pubdate>Revised March 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">ENOXAPARIN SODIUM- enoxaparin sodium
+      injection [Amphastar Pharmaceuticals, Inc.]</citetitle>
+
+      <pubdate>Revised June 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ab8118dc-aca8-478b-8290-a468cbe36ae1"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">FRAGMIN- dalteparin sodium injection,
+      solution [Pfizer, Inc.]</citetitle>
+
+      <pubdate>Revised March 2009</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=529711c6-6029-4e50-8ece-c0e59b06ff38"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">HEPARIN SODIUM- heparin sodium injection
+      [Pfizer Laboratories Div Pfizer Inc]</citetitle>
+
+      <pubdate>Revised August 2016</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=56dc3074-f1c5-45a3-b923-f1d14858e06d"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">PRADAXA- dabigatran etexilate mesylate
+      capsule [Boehringer Ingelheim Pharmaceuticals Inc.]</citetitle>
+
+      <pubdate>Revised July 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ba74e3cd-b06f-4145-b284-5fd6b84ff3c9"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">WARFARIN SODIUM- warfarin tablet [Exelan
+      Pharmaceuticals Inc.]</citetitle>
+
+      <pubdate>Revised May 2016</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c0cc4511-e656-4b6d-96cd-e02e76173b9d"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">XARELTO- rivaroxaban tablet, film coated
+      [Avera McKennan Hospital]</citetitle>
+
+      <pubdate>Revised December 2015</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1166231a-b23a-4c86-8cda-45d41b724e57"/>
+      </bibliomisc>
+    </biblioentry>
+  </bibliography>
+
+  <appendix>
+    <title>Existing Sample VA Artifacts</title>
+        <para>The following sample artifacts are referenced from the Portland VAMC.</para>
+
+    <figure>
+      <title>Surgical Inpatient Menu</title>
+
+      <mediaobject>
+        <alt>Screenshot of surgical inpatient menu for all of the surgical
+        specialties.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig1Surgicalinpatientmenu.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>General Surgery Inpatient Orders</title>
+
+      <mediaobject>
+        <alt>Screenshot of surgery inpatient admit, preoperative, and
+        postoperative orders.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig2Generalsurgeryinpatient.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>DVT Surgical Prophylaxis Orders</title>
+
+      <mediaobject>
+        <alt>Screenshot of DVT surgical prophylaxis preoperative and general
+        prophylaxis.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig3DVTsurgicalprohylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Cardiothoracic Surgery DVT Preoperative Prophylaxis Options</title>
+
+      <mediaobject>
+        <alt>Prophylaxis options, early ambulation, TED use, and heparin
+        dosing.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig4Prohylaxisoptions.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Early Ambulation Order - Preoperative Low DVT Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of early ambulation for preoperative low risk, up out
+        of bed.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig5Earlyambulation.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reason for Request for Mechanical DVT</title>
+
+      <mediaobject>
+        <alt>Screenshot of check boxes for a reason for request for mechanical
+        DVT.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig6ReasonforrequestmechanicalDVT.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>ENT DVT Preoperative Prophylaxis - Low and Medium Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of ENT DVT prohylaxis low and medium risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig7ENTDVTprohylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Early Ambulation Orders - Preoperative Low DVT Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of preoperative low risk DVT nursing screen.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig8preoplowdvtrisk.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>General Surgery Preoperative DVT Prophylaxis Options</title>
+
+      <mediaobject>
+        <alt>Screenshot of general surgery preoperative prophylaxis, average
+        risk, and patients older than 60 years.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig9Generalsurgeryprohylaxisoptions.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>OB-GYN Preoperative DVT Prophylaxis - Low, Medium, and High Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of OB-GYN preoperative prophylaxis with low, medium,
+        and high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig10obgynpreoperativeprohylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Hospital Specialty Medicine DVT Prophylaxis - Low, Medium, and High Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of hospital speciality medicine DVT prophylaxis with
+        low, medium, and high risk,plus contraindications</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig11hospitalspecialitymedicineprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Exemplar Alert Contraindication for Pharmacologic DVT</title>
+
+      <mediaobject>
+        <alt>Screenshot of DVT recent hemorrhage and contraindications within
+        the last 6 months.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig12dvtrecenthemorrhage.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Neurology Preoperative DVT Prophylaxis - Low, Medium, and High
+      Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of neurology preoperative DVT prophylaxis with low,
+        medium, and high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig13neurologypreopprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Neurosurgery Preoperative DVT Prophylaxis - Low, Medium, High, and Very High
+                Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of neurosurgery DVT prophylaxis with low, medium,
+        high, and very high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig14neurosurgerydvtprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Orthopedic DVT Preoperative Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot of Orthopedic DVT preoperative prophylaxis hip fracture patient and renal
+                    insufficiency.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig15orthopedicpreoperativeprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Urologic Surgery Preoperative DVT Prophylaxis - Low, Medium, and High Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of urologic surgery DVT prophylaxis with low, medium,
+        and high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig16urologicsurgeryprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Vascular Surgery Preoperative DVT Prophylaxis - Very Low, Low, Medium, and High
+                Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of vascular surgery DVT prophylaxis with very low,
+        low, medium, and high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig17vascularsurgerydvtprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Vascular Surgery Preoperative DVT Prophylaxis - Very Low, Low, Medium, and High
+                Risk</title>
+
+      <mediaobject>
+        <alt>Screenshot of vascular surgery DVT prophylaxis with very low,
+        low, medium, and high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig18vascularsurgerylowmediumhighrisk.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Postoperative DVT Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot of postoperative DVT prophylaxis options for specialty
+        surgeries.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig19postoperativedvtprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Cardiothoracic Surgery Postoperative DVT Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot of cardiothoracic surgery DVT prophylaxis with
+        contraindication choices.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig20cardiothoracicdvtprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>DVT Prophylaxis in Presence of a Bleeding Diathesis</title>
+
+      <mediaobject>
+        <alt>Screenshot of reason for request DVT bleed diathesis.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig21dvtbleedingdiathesis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>ENT DVT Postoperative Prophylaxis </title>
+
+      <mediaobject>
+        <alt>Screenshot for ENT DVT postoperative prophylaxis patients with
+        very low, low, medium, and high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig22entdvtprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>General Surgery DVT Postoperative Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot of general surgery DVT prophylaxis patients with
+        comorbidities, high risk for obesity or malignancy.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig23generalsurgerydvtprophylaxis.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>OB-GYN DVT Postoperative Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot of OB-GYN postoperative DVT prophylaxis for low,
+        medium, and high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig24obgynlowmediumhighrisk.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Neurosurgery DVT Postoperative Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot of neurosurgery DVT postoperative prophylaxis options,
+        including recent postoperative.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig25neurosurgeryoptions.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Orthopedic Surgery DVT Postoperative Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot of orthopedic surgery option for DVT prophylaxis, hip
+        fracture, and arthroplasty.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig26orthopedicsurgeryoptions.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Urologic Surgery DVT Postoperative Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot for urologic surgery DVT prophylaxis for low, medium,
+        high, and very high risk.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+                     fileref="images/Fig27urologicsurgerylowmediumhighrisk.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Vascular Surgery DVT Postoperative Prophylaxis</title>
+
+      <mediaobject>
+        <alt>Screenshot for vascular surgery DVT prophylaxis options for
+        patients with comorbidities.</alt>
+
+        <imageobject>
+          <imagedata align="center" fileref="images/Fig28vascularsurgeryoptions.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+    <appendix>
+        <title>Basic Laboratory Panel Definition</title>
+        <itemizedlist>
+            <listitem>
+                <para>Blood Urea Nitrogen</para>
+            </listitem>
+            <listitem>
+                <para>Calcium</para>
+            </listitem>
+            <listitem>
+                <para>Chloride</para>
+            </listitem>
+            <listitem>
+                <para>CO2 (Carbon Dioxide, Bicarbonate)</para>
+            </listitem>
+            <listitem>
+                <para>Creatinine</para>
+            </listitem>
+            <listitem>
+                <para>Glucose</para>
+            </listitem>
+            <listitem>
+                <para>Potassium</para>
+            </listitem>
+            <listitem>
+                <para>Sodium</para>
+            </listitem>
+        </itemizedlist>
+    </appendix>
+
+  <appendix>
+    <title>VTE Guidelines</title>
+
+    <para>American College of Chest Physicians pregnancy anticoagulation
+    guidelines (<link
+    xlink:href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3278054/"/>&gt;</para>
+  </appendix>
+
+    <glossary role="auto"><title>Acronyms</title></glossary>
+</book>
