@@ -1,0 +1,2851 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:ns="http://docbook.org/ns/docbook">
+  <info>
+    <title>Clinical Decision Support (CDS) Content and Health Level 7
+    (HL7)-Compliant Knowledge Artifacts (KNARTs)</title>
+
+    <subtitle>Cardiology: Electrophysiology (EP) Arrhythmias Clinical Content White Paper </subtitle>
+    <copyright>
+      <year>March</year>
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright>
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <personname>Department of Veterans Affairs (VA)</personname>
+      </author>
+
+      <author>
+        <orgname>
+          <inlinemediaobject>
+            <alt>Department of Veteran's Affairs Logo</alt>
+            <imageobject>
+              <imagedata align="center" contentdepth="2in" contentwidth="2in"
+                fileref="../../../../../Resources/VASealColor.jpg" scalefit="0"/>
+            </imageobject>
+          </inlinemediaobject>
+        </orgname>
+      </author>
+
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+
+      <author>
+        <orgname>Office of Informatics and Information Governance
+        (OIIG)</orgname>
+      </author>
+
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+
+    <abstract>
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO):
+        VA-118-16-F-1008-0007</title>
+      </info>
+
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Relevant KNART Information: Cardiology: Electrophysiology (EP) Arrhythmias</title>
+
+          <tgroup align="left" cols="2">
+            <thead>
+              <row valign="bottom">
+                <!--<entry valign="middle">ID</entry>-->
+
+                <entry align="left" valign="middle"> KNART Name</entry>
+
+                <entry align="left" valign="middle">Associated CLIN</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry> Cardiology: Electrophysiology (EP) - Composite/Consult Request </entry>
+
+                <entry>N/A</entry>
+              </row>
+
+              <row>
+                <!--<entry>B5</entry>-->
+
+                <entry>Cardiology: Electrophysiology (EP) - Documentation Template</entry>
+
+                <entry>CLIN0005AC</entry>
+              </row>
+
+              <row>
+                <entry> Cardiology: Electrophysiology (EP): Atrial Fibrillation/Atrial Flutter -
+                  Order Set </entry>
+
+                <entry>CLIN0004AB</entry>
+              </row>
+
+              <row>
+                <entry> Cardiology: Electrophysiology (EP): Supraventricular Tachycardia (SVT) -
+                  Order Set</entry>
+
+                <entry>CLIN0004AB</entry>
+              </row>
+
+              <row>
+                <entry> Cardiology: Electrophysiology (EP): Syncope/Bradycardia - Order Set </entry>
+
+                <entry>CLIN0004AB</entry>
+              </row>
+
+              <row>
+                <entry> Cardiology: Electrophysiology (EP): Other - Order Set </entry>
+
+                <entry>CLIN0004AB</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+
+    <pubdate>December 2017</pubdate>
+
+    <volumenum>Version 1.0</volumenum>
+
+    <revhistory>
+      <revision>
+        <revnumber>1.0</revnumber>
+
+        <date>12/8/2017</date>
+
+        <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+
+        <revremark>Final DocBook updates and transformation</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.10</revnumber>
+
+        <date>08/22/2017</date>
+
+        <authorinitials>Rocky Reston</authorinitials>
+
+        <revremark>Comments from KBS feedback and meeting resolved
+        incorporated</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.9</revnumber>
+
+        <date>08/16/2017</date>
+
+        <authorinitials>Vida Dunie</authorinitials>
+
+        <revremark>QA review</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.8</revnumber>
+
+        <date>08/14/2017</date>
+
+        <authorinitials>Rocky Reston</authorinitials>
+
+        <revremark>Clinical review for submission; SME approval provided
+        during meeting</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.7</revnumber>
+
+        <date>08/13/2017</date>
+
+        <authorinitials>Rocky Reston</authorinitials>
+
+        <revremark>Clinical review for SME panel review of draft
+        CCWP</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.6</revnumber>
+
+        <date>08/11/2017</date>
+
+        <authorinitials>Rocky Reston</authorinitials>
+
+        <revremark>Clinical review for SME panel clinical content
+        approval</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.5</revnumber>
+
+        <date>08/09/2017</date>
+
+        <authorinitials>Wendelyn Bradley</authorinitials>
+
+        <revremark>Review for consolidation</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.4</revnumber>
+
+        <date>08/09/2017</date>
+
+        <authorinitials>Ralph Ruocco</authorinitials>
+
+        <revremark>Updated combined data</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.3</revnumber>
+
+        <date>08/08/2017</date>
+
+        <authorinitials>Wendelyn Bradley</authorinitials>
+
+        <revremark>Combined applicable orders</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.2</revnumber>
+
+        <date>08/03/2017</date>
+
+        <authorinitials>Ralph Ruocco</authorinitials>
+
+        <revremark>Template update/Motive data entered</revremark>
+      </revision>
+
+      <revision>
+        <revnumber>0.1</revnumber>
+
+        <date>07/18/2017</date>
+
+        <authorinitials>Ralph Ruocco</authorinitials>
+
+        <revremark>Initial draft</revremark>
+      </revision>
+    </revhistory>
+  </info>
+
+  <preface>
+    <title>VA Subject Matter Expert (<acronym>
+        <glossterm>SME</glossterm>
+      </acronym>) Panel</title>
+
+    <informaltable frame="all">
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry>Name</entry>
+
+            <entry>Title</entry>
+
+            <entry>Project Role</entry>
+          </row>
+        </thead>
+
+        <tbody>
+          <row>
+            <entry>Bruce Bray, MD</entry>
+
+            <entry>Professor, Cardiovascular Medicine, University of Utah
+            School of Medicine; Staff Cardiologist, Salt Lake City VA Medical
+            Center (<acronym>
+                <glossterm>VAMC</glossterm>
+              </acronym>), 500 Foothill Drive, Salt Lake City, Utah
+            84148</entry>
+
+            <entry>SME, Primary</entry>
+          </row>
+
+          <row>
+            <entry>Scott Wall, MD</entry>
+
+            <entry>Assistant Professor, Cardiovascular Medicine, University of Utah; School of
+              Medicine Staff Cardiologist, , Salt Lake City VAMC, 500 Foothill Drive, Salt Lake
+              City, Utah 84148</entry>
+
+            <entry>SME, Secondary</entry>
+          </row>
+
+          <row>
+            <entry>Aiden Abidov, MD, PhD</entry>
+
+            <entry>Professor of Medicine, Wayne State University; Section
+            Chief, Cardiology, John Dingell VAMC</entry>
+
+            <entry>SME</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </preface>
+
+  <preface>
+    <info>
+      <title>Introduction</title>
+    </info>
+
+    <para>The VA is committed to improving the ability of clinicians to
+    provide care for patients while increasing quality, safety, and
+    efficiency. Recognizing the importance of standardizing clinical knowledge
+    in support of this goal, VA is implementing the Health Level 7 (<acronym>
+        <glossterm>HL7</glossterm>
+      </acronym>) Knowledge Artifact Specification for a wide range of VA
+    clinical use cases. Knowledge Artifacts, referred to as (<acronym>
+        <glossterm>KNARTs</glossterm>
+      </acronym>), enable the structuring and encoding of clinical knowledge
+    so the knowledge can be integrated with electronic health records to
+    enable clinical decision support.</para>
+
+    <para>The purpose of this Clinical Content White Paper (<acronym>
+        <glossterm>CCWP</glossterm>
+      </acronym>) is to capture the clinical context and intent of <acronym>
+        <glossterm>KNART</glossterm>
+      </acronym> use cases in sufficient detail to provide the <acronym>
+        <glossterm>KNART</glossterm>
+      </acronym> authoring team with the clinical source material to construct
+    the corresponding knowledge artifacts using the HL7 Knowledge Artifact
+    Specification. This paper has been developed using material from a variety
+    of sources: VA artifacts, clinical practice guidelines, evidence in the
+    body of medical literature, and clinical expertise. After reviewing these
+    sources, the material has been synthesized and harmonized under the
+    guidance of VA subject matter experts to reflect clinical intent for this
+    use case.</para>
+
+    <para>Unless otherwise noted, items within this white paper (e.g.,
+    documentation template fields, orderable items, etc.) are chosen to
+    reflect the clinical intent at the time of creation. To provide an
+    exhaustive list of all possible items and their variations is beyond the
+    scope of this work.</para>
+  </preface>
+
+  <preface>
+    <info>
+      <title>Conventions Used</title>
+    </info>
+
+    <para>Conventions used within the knowledge artifact descriptions
+      include:</para>
+    
+    <itemizedlist mark="none">
+      <listitem>
+        <para><emphasis>&lt;obtain&gt;</emphasis>: Indicates a prompt to obtain
+          the information listed <itemizedlist mark="bullet">
+            <listitem>
+              <para>If possible, the requested information should be obtained
+                from the underlying system(s). Otherwise, prompting the user for
+                information may be required</para>
+            </listitem>
+            
+            <listitem>
+              <para>The technical and clinical notes associated with a section
+                should be consulted for specific constraints on the information
+                (e.g., time-frame, patient interview, etc.)</para>
+            </listitem>
+            
+            <listitem>
+              <para>Default Values: Unless otherwise noted, &lt;obtain&gt;
+                indicates to obtain the most recent observation. It is recognized
+                that this default time-frame value may be altered by future
+                implementations</para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+      
+      <listitem>
+        <para><emphasis>[...]</emphasis>: Square brackets enclose explanatory text that indicates some
+          action on the part of the clinical user, or general guidance to the clinical or technical
+          teams. Examples include, but are not limited to:</para>
+        
+        <itemizedlist mark="none">
+          <listitem>
+            <para><emphasis>[Begin ...]</emphasis>, <emphasis>[End
+              ...]</emphasis>: Indicates the start and end of specific areas to
+              clearly delineate them for technical purposes.</para>
+            
+            <para><emphasis>[Activate ...]</emphasis>: Initiates another
+              knowledge artifact or knowledge artifact section.</para>
+            
+            <para><emphasis>[Section Prompt: ...]</emphasis>: If this section is
+              applicable, then the following prompt should be displayed to the
+              user.</para>
+            
+            <para><emphasis>[Section Selection Behavior: ...]</emphasis>:
+              Indicates technical constraints or considerations for the selection
+              of items within the section.</para>
+            
+            <para><emphasis>[Attach: ...]</emphasis>: Indicates that the
+              specified item should be attached to the documentation template if
+              available.</para>
+            
+            <para><emphasis>[Link: ...]</emphasis>: Indicates that rather than
+              attaching an item, a link should be included in the documentation
+              template.</para>
+            
+            <para><emphasis>[Clinical Comment: ...]</emphasis>: Indicates
+              clinical rationale or guidance.</para>
+            
+            <para><emphasis>[Technical Note: ...]</emphasis>: Indicates
+              technical considerations or notes.</para>
+            
+            <para><emphasis>[If ...]</emphasis>: Indicates the beginning of a
+              conditional section.</para>
+            
+            <para><emphasis>[Else, ...]</emphasis>: Indicates the beginning of
+              the alternative branch of a conditional section.</para>
+            
+            <para><emphasis>[End if ...]</emphasis>: Indicates the end of a
+              conditional section.</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      
+      <listitem>
+        <para>☐ <emphasis>[Check box]</emphasis>: Indicates items that should be
+          selected based upon the section selection behavior.</para>
+      </listitem>
+    </itemizedlist>
+  </preface>
+
+  <chapter>
+    <title>Cardiology:  Arrhythmias</title>
+
+    <section>
+      <title>Clinical Context</title>
+
+      <para>[Begin Clinical Context.]</para>
+
+      <para>Atrial fibrillation (<acronym><glossterm>AF</glossterm></acronym>) is the most common
+        arrhythmia in the United States. As such, it accounts for substantial morbidity,
+        particularly in the form of preventable cerebrovascular accidents, and expense, with the
+        annual cost of caring for patients with atrial fibrillation estimated to be between $6
+        billion and $26 billion. Syncope and other arrhythmias are also highly prevalent conditions
+        that have been associated with substantial practice variation. Operationalizing
+        evidence-based practice guidelines, therefore, has the potential to improve outcomes among a
+        large number of patients while delivering more cost-effective care. </para>
+
+      <para>This set of Cardiology - KNARTs is intended for users caring for stable adult patients
+        who present to a primary care clinic for evaluation of atrial fibrillation/atrial flutter,
+        supraventricular tachycardia (<acronym><glossterm>SVT</glossterm></acronym>), bradycardia,
+        near syncope, syncope or other arrhythmias needing evaluation by cardiology. The objective
+        of this KNART group is to ensure that a minimum workup is initiated prior to a cardiology
+        consultation and a common set of documentation elements are provided to the consulting
+        cardiologist. This context excludes emergent patients (unstable arrhythmias). Stable
+        patients with an arrhythmia, to be considered for evaluation by cardiology are included. The
+        context domains are summarized in the table below. </para>
+
+      <para>
+        <table>
+          <title>Clinical Context Domains</title>
+
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>Target User</entry>
+
+                <entry>Provider in a Primary Care Clinic</entry>
+              </row>
+
+              <row>
+                <entry>Patient</entry>
+
+                <entry>Adult outpatient needing Cardiology consult for
+                arrhythmia evaluation</entry>
+              </row>
+
+              <row>
+                <entry>Priority</entry>
+
+                <entry>Routine</entry>
+              </row>
+
+              <row>
+                <entry>Specialty</entry>
+
+                <entry>Primary Care</entry>
+              </row>
+
+              <row>
+                <entry>Location</entry>
+
+                <entry>Outpatient</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+
+      <para>[End Clinical Context.]</para>
+    </section>
+
+    <section>
+      <title>Knowledge Artifacts</title>
+
+      <para>[Begin Knowledge Artifacts.]</para>
+
+      <para>This section describes the CDS KNARTs intended for clinical
+      providers caring for adult patients who present to a Primary Care Clinic
+      for evaluation of atrial fibrillation, atrial flutter, SVT, bradycardia,
+      syncope, or near syncope. The intent of these artifacts is to ensure a
+      minimum workup is initiated prior to a Cardiology Consultation. Specific
+      constraints for these artifacts are that they: </para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>Apply to outpatients with arrhythmias needing cardiology
+          Consultation </para>
+        </listitem>
+
+        <listitem>
+          <para>Exclude emergent or unstable patients based on Clinician
+          judgement</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The knowledge artifacts that define the arrhythmias clinical use
+      case, and that are described in detail in the following sections
+      include: </para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Consult Request: Cardiology: Electrophysiology (<acronym>
+              <glossterm>EP</glossterm>
+            </acronym>) Arrhythmias</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>High-level, encompassing artifact meant to communicate the
+              request for cardiology consultation</para>
+            </listitem>
+
+            <listitem>
+              <para>Relies upon the documentation template and order set
+              artifacts</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>Documentation Template: Cardiology: Electrophysiology (<acronym>
+              <glossterm>EP</glossterm>
+            </acronym>) Arrhythmias</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Documents the information provided by the referring
+              provider</para>
+            </listitem>
+
+            <listitem>
+              <para>Includes logic for appropriate display of documentation
+              sections</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>Order Sets: Cardiology: Electrophysiology (<acronym>
+              <glossterm>EP</glossterm>
+            </acronym>) Arrhythmias</para>
+
+          <itemizedlist>
+            <listitem>
+              <para>Orderable items associated with the consult request</para>
+            </listitem>
+
+            <listitem>
+              <para>Includes logic for appropriate display of the order
+              set</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+
+      <para> [End Knowledge Artifacts.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Composite:  Arrhythmias Consult Request</title>
+
+    <para>[Begin Composite.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+
+      <para>[Begin Knowledge Narrative.]</para>
+
+      <para>[See Clinical Context in Chapter 1.]</para>
+
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Consult Request</title>
+
+      <para>[Begin Consult Request.]</para>
+
+      <para>[Technical Note: The following list provides the basic components
+      of the consult request. This is the high-level, encompassing artifact,
+      and must be combined with the documentation template and the order sets
+      to form a fully functional knowledge artifact.] </para>
+
+      <para>[Section Prompt: Please provide the following information for a
+      cardiology consult to evaluate arrhythmias in a stable patient.]</para>
+
+      <para>[Section Prompt: Reason for Consult?]</para>
+
+      <para>&lt;obtain&gt; Consult reason details</para>
+
+      <para>Goal of Consult: Would you please provide your recommendations and:<itemizedlist
+          mark="none">
+          <listitem>
+            <para>☐ Return to PCP for therapy</para>
+          </listitem>
+          <listitem>
+            <para>☐ Start treatment and return to PCP for follow up and maintenance</para>
+          </listitem>
+          <listitem>
+            <para>☐ Start treatment, monitor for effect and when on stable therapy return to
+              PCP</para>
+          </listitem>
+          <listitem>
+            <para>☐ Treat as long as necessary (or indefinitely)</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[Section Prompt: Consult Specialty?]</para>
+
+      <para>&lt;obtain&gt; Consult Specialty</para>
+
+      <para>Priority: Routine </para>
+
+      <para>[Section Prompt: Referring Physician Information?]</para>
+
+      <para>&lt;obtain&gt; Referring Physician Name</para>
+
+      <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+
+      <para>&lt;obtain&gt; Information required by receiving facility</para>
+
+      <para>[End Consult Request.]</para>
+
+      <para>[End Composite.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Documentation Template:  Arrhythmias</title>
+
+    <para>[Begin Documentation Template.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+
+      <para>[Begin Knowledge Narrative.]</para>
+
+      <para>[See Clinical Context in Chapter 1.]</para>
+
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Clinical Stability</title>
+
+      <para>[Begin Clinical Stability.]</para>
+
+      <para>[Section Prompt: This documentation template is not applicable for
+      use with patients who are unstable based on clinician judgement.
+      Examples of unstable patients include, but are not limited to, patients
+      with chest pain pattern suggestive of Acute Coronary Syndrome (<acronym>
+          <glossterm>ACS</glossterm>
+        </acronym>), symptomatic hypotension, or unstable arrhythmia.</para>
+
+      <para>Consider transferring unstable patients to the nearest emergency
+      department immediately.]</para>
+
+      <para>[End Clinical Stability.]</para>
+    </section>
+
+    <section>
+      <title>History and Physical</title>
+
+      <para>[Begin History and Physical.]</para>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">History</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Technical Note: For this documentation template, the following
+      information should be included, if available.] </para>
+
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&lt;obtain&gt; History, Brief </para>
+          </listitem>
+
+          <listitem>
+            <para>&lt;obtain&gt; History of prior cardiac evaluations (e.g.,
+            prior hospitalization or evaluations for: chest pain, rule/out MI,
+            angina, heart failure, etc.)</para>
+          </listitem>
+
+          <listitem>
+            <para>&lt;obtain&gt; Results of prior cardiac diagnostic
+            procedures performed (resting ECG, echocardiogram, stress testing
+            (echo, nuclear, MRI), Cardiac CT (<acronym>
+                <glossterm>CCT</glossterm>
+              </acronym>) and Coronary CT Angiography (<acronym>
+                <glossterm>CCTA</glossterm>
+              </acronym>)</para>
+          </listitem>
+
+          <listitem>
+            <para>&lt;obtain&gt; Physical Exam, Pertinent Positive and
+            Negative Findings</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+
+      <para>[Section Selection Behavior: Optional. More than one may be
+      selected.]<itemizedlist mark="none">
+          <listitem>
+            <para>☐ Family History of Sudden Unexplained Death or
+            Drowning</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Prior Radiofrequency Catheter Ablation</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Implanted Device History</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Selection Behavior: Select at most one (most recent).]
+      <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Prior Implantable Cardioverter-Defibrillator (<acronym>
+                <glossterm>ICD</glossterm>
+              </acronym>) Device Implantation </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Prior Cardiac Resynchronization Therapy plus Implantable
+            Cardioverter-Defibrillator (<acronym>
+                <glossterm>CRT-D</glossterm>
+              </acronym>) Device Implantation </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Prior Cardiac Pacemaker Implantation </para>
+
+            <para>[If a device is selected, then &lt;obtain&gt; Current
+            arrhythmia device programmer interrogation report.]</para>
+
+            <para>[Technical Note: As interrogation report is generated when
+            an implanted device is queried by its corresponding
+            programmer.]</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End History and Physical.]</para>
+    </section>
+
+    <section>
+      <title>Treatment Provided</title>
+
+      <para>[Begin Treatment Provided.]</para>
+
+      <para>[Technical Note: For this documentation template, the following
+      information should be included, if available.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Pharmacologic Therapy</para>
+        </listitem>
+
+        <listitem>
+          <para>&lt;obtain&gt; Other Pertinent Therapy</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Treatment Provided.]</para>
+    </section>
+
+    <section>
+      <title>Laboratory Studies</title>
+
+      <para>[Begin Laboratory Studies.]</para>
+
+      <para>[Technical Note: For this documentation template, the following
+      information should be included (latest value within the past 2 years),
+      if available.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Basic Metabolic Panel Lab Result</para>
+        </listitem>
+
+        <listitem>
+          <para>&lt;obtain&gt; Complete Blood Count Lab Result</para>
+        </listitem>
+
+        <listitem>
+          <para>&lt;obtain&gt; Lipid Panel Lab Result</para>
+        </listitem>
+
+        <listitem>
+          <para>&lt;obtain&gt; Thyroid Function Testing Lab Result</para>
+        </listitem>
+
+        <listitem>
+          <para>&lt;obtain&gt; Troponin Lab Result</para>
+        </listitem>
+
+        <listitem>
+          <para>&lt;obtain&gt; Brain Natriuretic Peptide Lab Result</para>
+        </listitem>
+
+        <listitem>
+          <para>&lt;obtain&gt; D-dimer Lab Result</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Laboratory Studies.]</para>
+    </section>
+
+    <section>
+      <title>Imaging and Diagnostic Studies</title>
+
+      <para>[Begin Imaging and Diagnostics Studies.]</para>
+
+      <para>[Clinical Comment: Images and diagnostic studies older than one
+      year are not considered for inclusion in this documentation template.]
+      </para>
+
+      <para>[Technical Note: For this documentation template, the following
+      information should be included, if available from the prior 1 year.]
+      </para>
+
+      <para>[Technical Note: Image and result text should be attached automatically if they are
+        provided for the 12-Lead Electrocardiogram Interpretation field.] </para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; resting 12-Lead Electrocardiogram
+          Interpretation</para>
+        </listitem>
+
+        <listitem>
+          <para>[Attach or link Images: 12-Lead Electrocardiogram]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[Technical Note: Results should be attached automatically if text
+      is provided for the Stress Electrocardiography Interpretation
+      field.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Stress Electrocardiography Interpretation
+          </para>
+        </listitem>
+
+        <listitem>
+          <para>[Link Images: Stress Electrocardiography]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[Technical Note: Results should be attached automatically if text
+      is provided for the Resting Echocardiogram/Doppler Interpretation
+      field.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Resting Echocardiogram/Doppler
+          Interpretation</para>
+        </listitem>
+
+        <listitem>
+          <para>[Link Images: Resting Echocardiogram/Doppler
+          Electrocardiography]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[Technical Note: Results should be attached automatically if text
+      is provided for the Stress Echocardiogram Interpretation field. This
+      includes treadmill and dobutamine stress echo.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Stress Echocardiogram Interpretation</para>
+        </listitem>
+
+        <listitem>
+          <para>[Link Images: Stress Echocardiogram]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[Technical Note: Results should be attached automatically if text
+      is provided for the Stress Myocardial Perfusion Imaging (MPI)
+      Interpretation field.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Stress MPI Interpretation</para>
+        </listitem>
+
+        <listitem>
+          <para>[Link Images: Stress MPI]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[Technical Note: Results should be attached automatically if text
+      is provided for the Rest/Stress MRI Interpretation field.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Rest/Stress MRI Interpretation</para>
+        </listitem>
+
+        <listitem>
+          <para>[Link Images: Rest/Stress MRI]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[Technical Note: Result text should be attached automatically if
+      it is provided for the Chest/Coronary/Cardiac CT Angiography (CTA)
+      Interpretation field.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; Chest CT or Coronary/Cardiac CTA
+          Interpretation</para>
+        </listitem>
+
+        <listitem>
+          <para>[Link Images: Chest CT or Coronary/Cardiac CTA]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[Technical Note: Result text should be attached automatically if
+      it is provided for the X-Ray Chest Interpretation field.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&lt;obtain&gt; X-Ray Chest Interpretation</para>
+        </listitem>
+
+        <listitem>
+          <para>[Link Images: X-Ray Chest]</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Imaging and Diagnostics Studies.]</para>
+    </section>
+
+    <section>
+      <title>Reason for Cardiology Arrhythmia Consult</title>
+
+      <para>[Begin Reason for Cardiology Arrhythmia Consult.]</para>
+
+      <para>[Section Selection Behavior: Select One.] </para>
+
+      <para>[Section Prompt: Reason for Consult:] <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Atrial Fibrillation/Atrial Flutter Evaluation </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Bradycardia Evaluation </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Supraventricular Tachycardia Evaluation </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Syncope/Presyncope Evaluation </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Other Arrhythmia Evaluation </para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[Technical Note: The following 3 are to be implemented by
+      inserting here a link to the implanted device order set KNARTs.]
+      <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Pacemaker/ICD follow-up </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Pacemaker/ICD generator change </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Primary prevention pacemaker/ICD implant ] </para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End Reason for Cardiology Arrhythmia Consult.]</para>
+    </section>
+
+    <section>
+      <title>Stroke and Bleeding Risk</title>
+
+      <para>[Begin Stroke and Bleeding Risk.]</para>
+
+      <para>[Technical Note: If atrial fibrillation/atrial flutter selected,
+      then:] </para>
+
+      <para>[Begin stroke risk assessment.] <itemizedlist mark="none">
+          <listitem>
+            <para>[Section Prompt: Ask the following questions and check any
+            of the following that apply to the patient.] </para>
+          </listitem>
+
+          <listitem>
+            <para>[Section Selection Behavior: None or as many as all may be
+            selected.] </para>
+
+            <table>
+              <title>Stroke Risk Assessment</title>
+
+              <tgroup cols="3">
+                <thead>
+                  <row>
+                    <entry>Question</entry>
+
+                    <entry>Check</entry>
+
+                    <entry>Score</entry>
+                  </row>
+                </thead>
+
+                <tbody>
+                  <row>
+                    <entry> Active problem of congestive heart failure or
+                    active problem of left ventricular systolic dysfunction?
+                    </entry>
+
+                    <entry>☐ </entry>
+
+                    <entry>1</entry>
+                  </row>
+
+                  <row>
+                    <entry>Active problem of hypertension?</entry>
+
+                    <entry>☐ </entry>
+
+                    <entry>1</entry>
+                  </row>
+
+                  <row>
+                    <entry>Age ≥ 75 years? </entry>
+
+                    <entry>☐ </entry>
+
+                    <entry>2</entry>
+                  </row>
+
+                  <row>
+                    <entry>Active problem of diabetes mellitus?</entry>
+
+                    <entry>☐ </entry>
+
+                    <entry>1</entry>
+                  </row>
+
+                  <row>
+                    <entry>History of stroke or of problem of transient
+                    ischemic attack or thromboembolism? </entry>
+
+                    <entry>☐ </entry>
+
+                    <entry>2</entry>
+                  </row>
+
+                  <row>
+                    <entry>Active problem of vascular disease? </entry>
+
+                    <entry>☐ </entry>
+
+                    <entry>1</entry>
+                  </row>
+
+                  <row>
+                    <entry>Age ≥ 65 years and age ≤ 74 years?</entry>
+
+                    <entry>☐ </entry>
+
+                    <entry>1</entry>
+                  </row>
+
+                  <row>
+                    <entry>Female?</entry>
+
+                    <entry>☐ </entry>
+
+                    <entry>1</entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+          </listitem>
+        </itemizedlist><itemizedlist mark="none">
+          <listitem>
+            <para>[Technical Note: For each checkbox, total the associated
+            score. This is the CHA2DS2-VASc Score. This should be displayed to
+            the user.] </para>
+          </listitem>
+
+          <listitem>
+            <para>[Activate Atrial Fibrillation/Atrial Flutter Order Set.]
+            </para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End Stroke and Bleeding Risk.]</para>
+
+      <para>[If Bradycardia selected, then activate Bradycardia Order Set.]
+      </para>
+
+      <para>[If Syncope/Presyncope selected, then activate Syncope/Presyncope
+      Order Set in the Bradycardia Order Set.] </para>
+
+      <para>[If Supraventricular Tachycardia selected, then activate
+      Supraventricular Tachycardia Order Set.] </para>
+
+      <para>[If Other Arrhythmia selected, then activate Other Arrhythmia
+      Order Set.] </para>
+
+      <para>[End Documentation Template.] </para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Order Set: Atrial Fibrillation/Atrial Flutter</title>
+
+    <para>[Begin Atrial Fibrillation/Atrial Flutter Order Set.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+
+      <para>[Begin Knowledge Narrative.]</para>
+
+      <para>Atrial fibrillation is the most common arrhythmia in the United
+      States. As such, it accounts for substantial morbidity, particularly in
+      the form of preventable cerebrovascular accidents, and expense, with the
+      annual cost of caring for patients with atrial fibrillation estimated to
+      be between $6 billion and $26 billion. Syncope and other arrhythmias are
+      also highly prevalent conditions that have been associated with
+      substantial practice variation. Operationalizing evidence-based practice
+      guidelines, therefore, has the potential to improve outcomes among a
+      large number of patients while delivering more cost-effective care.
+      </para>
+
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Consults and Referrals</title>
+
+      <para>[Begin Consult and Referrals.]</para>
+
+      <para>[Section Prompt: Cardiology consult order.] </para>
+
+      <para>[Technical Note: Consider other consult modalities which may be
+      available (e.g., e-consult or other rapidly iterative consult method. A
+      simple consult is included here as the overarching clinical intent.]
+      <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Referral to cardiology to evaluate atrial
+            fibrillation/atrial flutter</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[Section Prompt: Specific goal of the cardiology consultation
+      (e.g., cardiology to manage patient, cardiology to risk stratify and
+      recommend management, etc.).] </para>
+
+      <para>&lt;obtain&gt; Goal of cardiology consultation</para>
+
+      <para>[End Consults and Referrals.]</para>
+    </section>
+
+    <section>
+      <title>Imaging and ECG</title>
+
+      <para>[Begin Imaging and ECG.]</para>
+
+      <para>[Section Prompt: Consider ordering prior to the cardiology
+      consultation. Resting 12-lead electrocardiogram is required if it has
+      not been obtained within the past two months.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Resting 12-lead electrocardiogram to evaluate for arrhythmia
+          now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Echocardiogram to evaluate for left ventricular function
+          now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ X-ray chest to evaluate for heart failure now</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Imaging and ECG.]</para>
+    </section>
+
+    <section>
+      <title>Laboratory Tests</title>
+
+      <para>[Begin Laboratory Tests.]</para>
+
+      <para>[Section Prompt: Consider the following tests to be completed
+      prior to the cardiology consultation.]</para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Basic metabolic panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Complete blood count now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Lipid panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Thyroid function testing now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Troponin now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Brain natriuretic peptide now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ D-dimer now</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Laboratory Tests.]</para>
+    </section>
+
+    <section>
+      <title>Medications</title>
+
+      <para>[Begin Medications.]</para>
+
+      <para>[Section Prompt: Based upon clinical judgement, consider
+      initiating a new order for one or more of the following medications
+      prior to the cardiology consultation, if not otherwise contraindicated.]
+      </para>
+
+      <para>[Section Selection Behavior: More than one category may be
+      selected. Only one from each category may be selected. Optional.]
+      </para>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Rate Control Drugs</emphasis>
+        </emphasis>
+      </para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Metoprolol tartrate 50 mg tablet oral daily 2 times 60
+          tablets 2 refills</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Metoprolol XL (succinate) 25 mg tablet oral daily 1 time 30
+          tablets 2 refills </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Diltiazem 30 mg tablet oral daily 4 times 120 tablets 2
+          refills </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Diltiazem ER 120 mg capsule oral daily 1 time 30 capsules 2
+          refills </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Digoxin 125 micrograms tablet oral daily 1 time 30 tablets 2
+          refills </para>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Antiplatelet Agents</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Technical Note: If the CHA2DS2-VASc score &lt; 2, then display
+      the list of antiplatelet medications.]</para>
+
+      <para>[Section Selection Behavior: Select at most one.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Aspirin 81 mg tablet oral daily 1 time 30 tablets 2 refills
+          </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Clopidogrel 75 mg tablet oral daily 1 time 30 tablets 2
+          refills </para>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Anticoagulants</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Technical Note: If the CHA2DS2-VASc score ≥ 2, then display the
+      list of anticoagulants.]</para>
+
+      <para>[Section Prompt: For patients with a CHA2DS2-VASc score of 2 or
+      greater, consider initiating anticoagulation therapy.]</para>
+
+      <para>[Section Selection Behavior: Select at most one.] <itemizedlist
+          mark="none">
+          <listitem>
+            <para>☐ Apixaban 5 mg tablet oral daily 2 times 60 tablets 2
+            refills </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Apixaban 2.5 mg tablet oral daily 2 times 60 tablets 2
+            refills </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Dabigatran 150 mg capsule oral daily 2 times 60 capsules 2
+            refills </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Dabigatran 75 mg capsule oral daily 2 times 60 capsules 2
+            refills </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Rivaroxaban 20 mg tablet oral daily 1 time 30 tablets 2
+            refills </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Rivaroxaban 15 mg tablet oral daily 1 time 30 tablets 2
+            refills </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Warfarin 2 mg tablet oral daily 1 time 30 tablets 2
+            refills </para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[Section Prompt: If warfarin is ordered, the following laboratory
+      test should also be ordered.] <itemizedlist mark="none">
+          <listitem>
+            <para>☐ International normalized ratio (INR) now and then every 1
+            month routine </para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End Medications.]</para>
+
+      <para>[End Atrial Fibrillation/Atrial Flutter Order Set.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Order Set: Supraventricular Tachycardia (SVT)</title>
+
+    <para>[Begin Supraventricular Tachycardia Order Set.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+
+      <para>[Begin Knowledge Narrative.]</para>
+
+      <para>The Supraventricular Tachycardia (<acronym>
+          <glossterm>SVT</glossterm>
+        </acronym>) KNART order set is intended for users caring for adult
+      patients who present to a primary care clinic with an initial diagnosis
+      of supraventricular tachycardia to ensure that a minimum workup is
+      initiated prior to Cardiology consultation, including initial evaluation
+      guidance for non-invasive evaluation of a patient, initiating
+      antiarrhythmic drug management and knowing when to refer for more
+      definitive treatment modalities. Patients with a history of SVT should
+      be seen by a general cardiologist or electrophysiologist. The typical
+      workup of patients with SVT involves getting an echocardiogram performed
+      in order for the physician to search for structural heart disease.
+      Patients with prominent symptoms of angina, or risk factors for coronary
+      artery disease, may need stress testing or even a coronary angiography.
+      Patients who may be treated with antiarrhythmic drugs need blood tests
+      for the physician to assess renal and hepatic function. Patients with
+      SVT have four general options for therapy: <orderedlist>
+          <listitem>
+            <para>Doing nothing to prevent or cure SVT (though recognize that
+            there is a subset that do not have “benign” SVT). </para>
+          </listitem>
+
+          <listitem>
+            <para>Taking medications </para>
+          </listitem>
+
+          <listitem>
+            <para>Having a percutaneous ablation for cure performed </para>
+          </listitem>
+
+          <listitem>
+            <para>Having open-heart surgery (extremely rare). </para>
+          </listitem>
+        </orderedlist></para>
+
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Consults and Referrals</title>
+
+      <para>[Begin Consults and Referrals.]</para>
+
+      <para>[Section Prompt: Cardiology consult order.] </para>
+
+      <para>[Consider other consult modalities which may be available (e.g.,
+      e-consult or other rapidly iterative consult method. A simple consult is
+      included here as the overarching clinical intent.] <itemizedlist
+          mark="none">
+          <listitem>
+            <para>☐ Referral to cardiology to evaluate supraventricular
+            tachycardia</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[Section Prompt: Specific goal of the cardiology consultation
+      (e.g., cardiology to manage patient, cardiology to risk stratify and
+      recommend management, etc.).] </para>
+
+      <para>&lt;obtain&gt; Goal of cardiology consultation</para>
+
+      <para>[End Consults and Referrals.]</para>
+    </section>
+
+    <section>
+      <title>Imaging and ECG</title>
+
+      <para>[Begin Imaging and ECG.]</para>
+
+      <para>[Section Prompt: Consider ordering prior to the cardiology
+      consultation. Resting 12-lead electrocardiogram is required if it has
+      not been obtained within the past two months.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Resting 12-lead electrocardiogram to evaluate for arrhythmia
+          now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Echocardiogram to evaluate for left ventricular function
+          now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ X-ray chest to evaluate for heart failure now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐  study for possible ablation</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Imaging and ECG.]</para>
+    </section>
+
+    <section>
+      <title>Laboratory Tests</title>
+
+      <para>[Begin Laboratory Tests.]</para>
+
+      <para>[Section Prompt: Consider the following tests to be completed
+      prior to the cardiology consultation.]</para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Basic metabolic panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Complete blood count now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Lipid panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Thyroid function testing now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Troponin now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Brain natriuretic peptide now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ D-dimer now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Flecainide level</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Laboratory Tests.]</para>
+    </section>
+
+    <section>
+      <title>Medications</title>
+
+      <para>[Begin Medications.]</para>
+
+      <para>[Section Prompt: Based upon clinical judgement, consider
+      initiating a new order for one or more of the following medications
+      prior to the cardiology consultation, if not otherwise contraindicated.
+      The clinical provider that orders the medication(s) should provide
+      appropriate follow-up for medication management including titration as
+      applicable and monitoring of adverse effects if any, until and unless
+      the ordering provider establishes that the consultant specialist is
+      going to provide ongoing medication management and surveillance.]</para>
+
+      <para>[Section Selection Behavior: More than one category may be
+      selected. Only one from each category may be selected. Optional.]
+      </para>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Medications to Control Rapid Heart
+          Rate</emphasis>
+        </emphasis>
+      </para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Metoprolol tartrate 50 mg tablet oral daily 2 times 60
+          tablets 2 refills </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Metoprolol XL (succinate) 25 mg tablet oral daily 1 time 30
+          tablets 2 refills</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Diltiazem 30 mg tablet oral daily 4 times 120 tablets 2
+          refills </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Diltiazem ER 120 mg capsule oral daily 1 time 30 capsules 2
+          refills</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Verapamil SR 180 mg tablet oral daily 1 time 30 tablets 2
+          refills </para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Medications.]</para>
+    </section>
+
+    <section>
+      <title>Patient and Caregiver Education</title>
+
+      <para>[Begin Patient and Caregiver Education.]</para>
+
+      <para>[Section Prompt: Consider the following patient education order.]
+      </para>
+
+      <para>[Section Selection Behavior: Optional.] <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Provide vagal maneuver education</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[Technical Note: Provide a link consistent with facility guidance,
+      such as:
+      http://5minuteconsult.com/collectioncontent/3-197921/patient-handouts/vagal-maneuvers-and-their-responses.]</para>
+
+      <para>[End Patient and Caregiver Education.]</para>
+
+      <para>[End Supraventricular Tachycardia Order Set.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Order Set: Bradycardia and Syncope/Presyncope</title>
+
+    <para>[Begin Bradycardia and Syncope/Presyncope Order Set.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+
+      <para>[Begin Knowledge Narrative.]</para>
+
+      <para>This section describes the knowledge artifacts that are intended
+      for use by clinical providers caring for adult patients who present to a
+      primary care clinic with bradycardia, presyncope or syncope. The intent
+      of this artifact is to ensure a minimum workup is initiated prior to a
+      Cardiology Consultation. Specific constraints for these artifacts are
+      that: <itemizedlist>
+          <listitem>
+            <para>This order set applies to outpatients with bradycardia,
+            presyncope or syncope episode needing cardiology Consultation
+            </para>
+          </listitem>
+
+          <listitem>
+            <para>They exclude emergent/unstable patients. </para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Bradycardia</title>
+
+      <para>[Begin Bradycardia.]</para>
+
+      <para>[Begin bradycardia section of order set.]</para>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Consults and Referrals</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Prompt: Cardiology consult order.]</para>
+
+      <para>[Consider other consult modalities which may be available (e.g.,
+      e-consult or other rapidly iterative consult method. A simple consult is
+      included here as the overarching clinical intent.] <itemizedlist
+          mark="none">
+          <listitem>
+            <para>☐ Referral to cardiology to evaluate bradycardia</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[Section Prompt: Specific goal of the cardiology consultation
+      (e.g., cardiology to manage patient, cardiology to risk stratify and
+      recommend management, etc.).]</para>
+
+      <para>&lt;obtain&gt; Goal of cardiology consultation</para>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Imaging and ECG</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Prompt: Consider ordering prior to the cardiology
+      consultation. Resting 12-lead electrocardiogram is required if it has
+      not been obtained within the past two months.]</para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Resting 12-lead electrocardiogram to evaluate for
+          bradycardia now </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Holter monitor to evaluate for bradycardia now </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Cardiac event monitor to evaluate for bradycardia now
+          </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ X-ray chest to evaluate for heart failure now </para>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Laboratory Tests</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Prompt: Consider the following tests to be completed
+      prior to the cardiology consultation.]</para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Basic metabolic panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Complete blood count now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Lipid panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Thyroid function testing now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Troponin now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Brain natriuretic peptide now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ D-dimer now</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Medications</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Prompt: Consider discontinuation of nonessential negative
+      chronotropic drugs (e.g., beta-blockers, calcium channel blockers,
+      etc.).]</para>
+
+      <para>[End Bradycardia.]</para>
+    </section>
+
+    <section>
+      <title>Syncope/Presyncope</title>
+
+      <para>[Begin Syncope/Presyncope.]</para>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Consults and Referrals</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Prompt: Cardiology consult order.]</para>
+
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Referral to cardiology to evaluate
+            syncope/presyncope</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Imaging and ECG</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Prompt: Consider ordering prior to the cardiology
+      consultation. Resting 12-lead electrocardiogram is required if one has
+      not been obtained within the past two months.]</para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Resting 12-lead electrocardiogram to evaluate for
+          syncope/presyncope now </para>
+        </listitem>
+
+        <listitem>
+          <para>☐ echocardiogram to evaluate for left ventricular function
+          now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Holter monitor to evaluate for syncope/presyncope now
+          <itemizedlist mark="none">
+              <listitem>
+                <para>☐ 24 hours</para>
+              </listitem>
+
+              <listitem>
+                <para>☐ 48 hours</para>
+              </listitem>
+
+              <listitem>
+                <para>☐ Other &lt;obtain&gt; duration of evaluation</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Cardiac event monitor to evaluate for syncope/presyncope now
+          </para>
+
+          <itemizedlist mark="none">
+            <listitem>
+              <para>☐ 24 hours</para>
+            </listitem>
+
+            <listitem>
+              <para>☐ 48 hours</para>
+            </listitem>
+
+            <listitem>
+              <para>☐ Other &lt;obtain&gt; duration of evaluation</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+
+        <listitem>
+          <para>☐ X-ray chest to evaluate for heart failure now <itemizedlist
+              mark="none">
+              <listitem>
+                <para>☐ PA and lateral views</para>
+              </listitem>
+
+              <listitem>
+                <para>☐ Other &lt;obtain&gt; views</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Laboratory Tests</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Prompt: Consider the following tests to be completed
+      prior to the cardiology consultation.]</para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional.]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Basic metabolic panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Complete blood count now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Lipid panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Thyroid function testing now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Troponin now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Brain natriuretic peptide now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ D-dimer now</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+        <emphasis>
+          <emphasis role="bold">Medications</emphasis>
+        </emphasis>
+      </para>
+
+      <para>[Section Prompt: Consider discontinuation of nonessential negative
+      chronotropic drugs (e.g., beta-blockers, calcium channel blockers, etc.)
+      or other nonessential medications that may contribute to the patient's
+      symptoms.]</para>
+
+      <para>[End Syncope/Presyncope.]</para>
+
+      <para>[End Bradycardia and Syncope/Presyncope Order Set.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Order Set: Other Arrhythmia</title>
+
+    <para>[Begin Other Arrhythmia Order Set.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+
+      <para>[Begin Knowledge Narrative.]</para>
+
+      <para>This section provides a general order set to capture situations
+      not included in the other arrhythmia order sets and to include guidance
+      on electrophysiology consultation for pharmacologic therapy and
+      procedural management of dysrhythmias by an electrophysiologist. </para>
+
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Consults and Referrals</title>
+
+      <para>[Begin Consults and Referrals.]</para>
+
+      <para>[Section Prompt: Cardiology consult order.] </para>
+
+      <para>[Select Selection Behavior: Select one and only one.]</para>
+
+      <para>[Consider other consult modalities which may be available (e.g.,
+      e-consult or other rapidly iterative consult method. A simple consult is
+      included here as the overarching clinical intent.] <itemizedlist
+          mark="none">
+          <listitem>
+            <para>☐ Referral to cardiology to evaluate for arrhythmia</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Referral to cardiology to manage antiarrhythmic
+            therapy</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Other (specify)</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[Section Prompt: Specific goal of the cardiology consultation
+      (e.g., cardiology to manage patient, cardiology to risk stratify and
+      recommend management, etc.).] </para>
+
+      <para>&lt;obtain&gt; Goal of cardiology consultation</para>
+
+      <para>[End Consults and Referrals.]</para>
+    </section>
+
+    <section>
+      <title>Imaging and ECG</title>
+
+      <para>[Begin Imaging and ECG.]</para>
+
+      <para>[Section Prompt: Consider ordering prior to the cardiology
+      consultation. Resting 12-lead electrocardiogram is required if it has
+      not been obtained within the past two months.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Resting 12-lead electrocardiogram to evaluate for arrhythmia
+          now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Echocardiogram to evaluate for left ventricular function
+          now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Cardiac event monitor to evaluate for arrhythmia now
+          <itemizedlist mark="none">
+              <listitem>
+                <para>☐ 24 hours</para>
+              </listitem>
+
+              <listitem>
+                <para>☐ 48 hours</para>
+              </listitem>
+
+              <listitem>
+                <para>☐ Other &lt;obtain&gt; duration of evaluation</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+
+        <listitem>
+          <para>☐ X-ray chest to evaluate for heart failure now <itemizedlist
+              mark="none">
+              <listitem>
+                <para>☐ PA and lateral views</para>
+              </listitem>
+
+              <listitem>
+                <para>☐ Other &lt;obtain&gt; views</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Imaging and ECG.]</para>
+    </section>
+
+    <section>
+      <title>Laboratory Tests</title>
+
+      <para>[Begin Laboratory Tests.]</para>
+
+      <para>[Section Prompt: Consider the following tests to be completed
+      prior to the cardiology consultation.]</para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional]</para>
+
+      <itemizedlist mark="none">
+        <listitem>
+          <para>☐ Basic metabolic panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Complete blood count now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Lipid panel now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Thyroid function testing now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Troponin now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ Brain natriuretic peptide now</para>
+        </listitem>
+
+        <listitem>
+          <para>☐ D-dimer now</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>[End Laboratory Tests.]</para>
+    </section>
+
+    <section>
+      <title>Medications</title>
+
+      <para>[Begin Medications.]</para>
+
+      <para>[Section Prompt: Consider discontinuation of nonessential
+      medications that may contribute to the patient's symptoms.]</para>
+
+      <para>[End Medications.]</para>
+
+      <para>[End Other Order Set.]</para>
+    </section>
+  </chapter>
+
+  <bibliography>
+    <title>Bibliography/Evidence</title>
+
+    <biblioentry>
+      <abbrev>Heidenreich, 2016</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Heidenreich</surname>
+
+            <firstname>PA</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Solis</surname>
+
+            <firstname>P</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Estes</surname>
+
+            <firstname>NAM, et al.</firstname>
+          </personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article"> 2016 ACC/AHA Clinical Performance and
+      Quality Measures for Adults With Atrial Fibrillation or Atrial
+      Flutter</citetitle>
+
+      <citetitle pubwork="journal">Circulation: Cardiovascular Quality and
+      Outcomes</citetitle>
+
+      <pubdate>2016</pubdate>
+
+      <volumenum>9</volumenum>
+
+      <issuenum>(4)</issuenum>
+
+      <pagenums>443-488</pagenums>
+    </biblioentry>
+
+    <biblioentry>
+      <abbrev>Holbrook, 2012</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Holbrook</surname>
+
+            <firstname>A</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Schulman</surname>
+
+            <firstname>S</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Witt</surname>
+
+            <firstname>DM, et al; American College of Chest
+            Physicians</firstname>
+          </personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article">Evidence-based management of anticoagulant
+      therapy: antithrombotic therapy and prevention of thrombosis, 9th ed:
+      American College of Chest Physicians evidence-based clinical practice
+      guidelines</citetitle>
+
+      <citetitle pubwork="journal">Chest</citetitle>
+
+      <pubdate>2012</pubdate>
+
+      <volumenum>141</volumenum>
+
+      <issuenum>(2 suppl)</issuenum>
+
+      <pagenums>e152S-e1584S</pagenums>
+    </biblioentry>
+
+    <biblioentry>
+      <abbrev>January, 2014</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>January</surname>
+
+            <firstname>CT</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Wann</surname>
+
+            <firstname>LS</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Alpert</surname>
+
+            <firstname>JS, et. al</firstname>
+          </personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article">2014 AHA/ACC/HRS guideline for the
+      management of patients with atrial fibrillation: a report of the
+      American College of Cardiology/American Heart Association Task Force on
+      practice guidelines and the Heart Rhythm Society</citetitle>
+
+      <citetitle pubwork="journal">Circulation</citetitle>
+
+      <pubdate>2014</pubdate>
+
+      <volumenum>130</volumenum>
+
+      <issuenum>(23)</issuenum>
+
+      <pagenums>e199-e267</pagenums>
+    </biblioentry>
+
+    <biblioentry>
+      <abbrev>Kearon, 2016</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Kearon</surname>
+
+            <firstname>C</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Akl</surname>
+
+            <firstname>EA</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Ornelas</surname>
+
+            <firstname>J, et. al</firstname>
+          </personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article">Antithrombotic therapy for VTE disease:
+      CHEST guideline and expert panel report</citetitle>
+
+      <citetitle pubwork="journal">Chest</citetitle>
+
+      <pubdate>2016</pubdate>
+
+      <volumenum>149</volumenum>
+
+      <issuenum>(2)</issuenum>
+
+      <pagenums>315-352</pagenums>
+    </biblioentry>
+
+    <biblioentry>
+      <abbrev>Page, 2016</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Page</surname>
+
+            <firstname>RL</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Joglar</surname>
+
+            <firstname>JA</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Caldwell</surname>
+
+            <firstname>MA, et. al</firstname>
+          </personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article">2015 ACC/AHA/HRS guideline for the
+      management of adult patients with supraventricular tachycardia: A Report
+      of the American College of Cardiology/American Heart Association Task
+      Force on Clinical Practice Guidelines and the Heart Rhythm
+      Society</citetitle>
+
+      <citetitle pubwork="journal">Heart Rhythm</citetitle>
+
+      <pubdate>2016</pubdate>
+
+      <volumenum>13</volumenum>
+
+      <issuenum>(4)</issuenum>
+
+      <pagenums>e136-e221</pagenums>
+    </biblioentry>
+
+    <biblioentry>
+      <abbrev>Shen, 2017</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Shen</surname>
+
+            <firstname>W-K</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Sheldon</surname>
+
+            <firstname>RS</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Benditt</surname>
+
+            <firstname>DG, et. al</firstname>
+          </personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article"> 2017 ACC/AHA/HRS Guideline for the
+      Evaluation and Management of Patients With Syncope: A Report of the
+      American College of Cardiology/American Heart Association Task Force on
+      Clinical Practice Guidelines, and the Heart Rhythm Society</citetitle>
+
+      <citetitle pubwork="journal">Circulation</citetitle>
+
+      <pubdate>2017</pubdate>
+
+      <pagenums>CIR.0000000000000499</pagenums>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">AMIODARONE HCL (amiodarone hydrochloride)
+      tablet [Libertas Pharma, Inc]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=08641e51-abca-4c1c-ba19-d24435332018</link>
+      </bibliomisc>
+
+      <pubdate>October 2016</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage"> ASPIRIN 81 MG (aspirin) tablet, coated
+      [DOLGENCORP, LLC]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b4064039-2345-4227-b83d-54dc13a838d3</link>
+      </bibliomisc>
+
+      <pubdate>January 2017</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">CARDIZEM (diltiazem hydrochloride) tablet,
+      coated [Valeant Pharmaceuticals North America LLC]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f3e7ecef-f360-4987-a4f5-933214130ab2
+        </link>
+      </bibliomisc>
+
+      <pubdate>November 2016</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">CLOPIDOGREL- clopidogrel bisulfate tablet,
+      film coated [Apotex Corp.]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=edae8df1-caf9-ff72-1304-5ae8b355f8e7</link>
+      </bibliomisc>
+
+      <pubdate>November 2016</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">COUMADIN (warfarin sodium) tablet
+      [Bristol-Myers Squibb Pharma Company]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d91934a0-902e-c26c-23ca-d5accc4151b6</link>
+      </bibliomisc>
+
+      <pubdate>April 2017</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">DIGOXIN- digoxin tablet [Impax
+      Generics]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dfac7f13-28be-423d-9389-9089da29da17</link>
+      </bibliomisc>
+
+      <pubdate>February 2016</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">DILTIAZEM HCL CD (diltiazem hydrochloride)
+      capsule, coated, extended release [Oceanside
+      Pharmaceuticals]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5e39be50-ea17-4077-a2dc-668267049f6a.
+        </link>
+      </bibliomisc>
+
+      <pubdate>June 2016</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">ELIQUIS (apixaban) tablet, film coated
+      [E.R. Squibb &amp; Sons, L.L.C.]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e9481622-7cc6-418a-acb6-c5450daae9b0.
+        </link>
+      </bibliomisc>
+
+      <pubdate>July 2016</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">FLECAINIDE ACETATE- flecainide tablet
+      [Ranbaxy Laboratories Inc.]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa68b35e-9f50-408b-9e70-e84cecf3fd6e</link>
+      </bibliomisc>
+
+      <pubdate>January 2012</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage"> ISOPTIN SR- verapamil hydrochloride
+      tablet, coated [Ranbaxy Laboratories Inc.]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6ae13cb4-0316-40d1-9216-c7d5556aaed3.
+        </link>
+      </bibliomisc>
+
+      <pubdate>March 2008</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">LOPRESSOR (metoprolol tartrate) tablet
+      [Validus Pharmaceuticals LLC]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0283bc9d-6998-493a-824a-d4c85f704111</link>
+      </bibliomisc>
+
+      <pubdate>August 2015</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">PRADAXA (dabigatran etexilate mesylate)
+      capsule [Boehringer Ingelheim Pharmaceuticals Inc.]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ba74e3cd-b06f-4145-b284-5fd6b84ff3c9</link>
+      </bibliomisc>
+
+      <pubdate>November 2015</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">PROPAFENONE HCL- propafenone hydrochloride
+      tablet, film coated [Actavis Pharma, Inc.]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a313c111-e539-47bc-9d57-c3767f74bcca</link>
+      </bibliomisc>
+
+      <pubdate>February 2017</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage"> TOPROL XL (metoprolol succinate) tablet,
+      extended release [AstraZeneca LP]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4a5762c6-d7a2-4e4c-10b7-8832b36fa5f4</link>
+      </bibliomisc>
+
+      <pubdate>June 2016</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <author>
+        <orgname>U.S. National Library of Medicine</orgname>
+      </author>
+
+      <citetitle pubwork="webpage">XARELTO (rivaroxaban) tablet, film coated
+      [Janssen Pharmaceuticals, Inc.]</citetitle>
+
+      <bibliomisc>
+        <link
+        xlink:href="URL">http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610</link>
+      </bibliomisc>
+
+      <pubdate>April 2017</pubdate>
+    </biblioentry>
+  </bibliography>
+
+  <appendix>
+    <title>Existing Sample VA Artifacts</title>
+
+    <para>Cardiology-  (EP)- Documentation Template- Portland VA Screenshots</para>
+
+    <figure>
+      <title>Reason for Request: Holter</title>
+
+      <mediaobject>
+        <alt>Holter Monitor Request screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+                     fileref="images/Fig1ReasonForRequest.png" scalefit="1"
+                     width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+      Consult</title>
+
+      <mediaobject>
+        <alt>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+        Consult Screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+                     fileref="images/Fig2ReminderDialogTemplate.png"
+                     scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+      Consult Continued</title>
+
+      <mediaobject>
+        <alt>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+        Consult Interpretation questionaire Screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+                     fileref="images/Fig3ReminderDialogTemplate.png"
+                     scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+      Consult Continued</title>
+
+      <mediaobject>
+        <alt>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+        Consult ICD function Screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+                     fileref="images/Fig4ReminderDialogTemplate.png"
+                     scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+      Consult Continued</title>
+
+      <mediaobject>
+        <alt>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+        Consult High Risk Features Screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+                     fileref="images/Fig5ReminderDialogTemplate.png"
+                     scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Reminder Dialog Template: Cardiology Ambulatory ECG Monitoring
+      Consult Continued</title>
+
+      <mediaobject>
+        <alt>Reminder Dialog Template: Cardiology Ambulatory ECG Monitor
+        Consult Disposition Screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+                     fileref="images/Fig6ReminderDialogTemplate.png"
+                     scalefit="1" width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>GLA Screenshot</title>
+
+      <mediaobject>
+        <alt>Cardiology- (EP): Atrial Fibrillation/Atrial Flutter-Order Set-Portland and GLA VA
+          Screenshot</alt>
+
+        <imageobject>
+          <imagedata align="center" contentdepth="100%"
+                     fileref="images/Fig7GLAScreenshot.png" scalefit="1"
+                     width="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+
+  <appendix>
+    <title>Basic Laboratory Panel Definition</title>
+
+    <itemizedlist>
+      <listitem>
+        <para>Blood Urea Nitrogen</para>
+      </listitem>
+
+      <listitem>
+        <para>Calcium</para>
+      </listitem>
+
+      <listitem>
+        <para>Chloride</para>
+      </listitem>
+
+      <listitem>
+        <para>CO2 (Carbon Dioxide, Bicarbonate)</para>
+      </listitem>
+
+      <listitem>
+        <para>Creatinine</para>
+      </listitem>
+
+      <listitem>
+        <para>Glucose</para>
+      </listitem>
+
+      <listitem>
+        <para>Potassium</para>
+      </listitem>
+
+      <listitem>
+        <para>Sodium</para>
+      </listitem>
+    </itemizedlist>
+  </appendix>
+
+  <glossary role="auto">
+    <title>Acronyms</title>
+  </glossary>
+</book>
