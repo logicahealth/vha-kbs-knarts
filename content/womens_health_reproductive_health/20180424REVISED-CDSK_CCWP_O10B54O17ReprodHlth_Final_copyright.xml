@@ -1,0 +1,1869 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Women's Health: Reproductive Health Clinical Content White Paper </subtitle>
+        <copyright>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname><surname>Department of Veterans Affairs (VA)</surname></personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center" contentdepth="2in" contentwidth="2in"
+                                fileref="images/VASealColor.jpg" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance
+                            (<acronym><glossterm>OIIG</glossterm></acronym>)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support
+                    (<acronym><glossterm>CDS</glossterm></acronym>)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table colsep="1" frame="all" rowsep="1">
+                    <title>Relevant KNART Information: Women's Health: Reproductive Health</title>
+                    <tgroup align="left" cols="2">
+                        <thead>
+                            <row valign="middle">
+                                <entry><emphasis role="bold">Women's Health KNART</emphasis></entry>
+                                <entry><emphasis role="bold">Associated CLIN</emphasis></entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Reproductive Health - Event Condition Action (ECA)
+                                    Rule</entry>
+                                <entry>CLIN0007CA</entry>
+                            </row>
+                            <row>
+                                <entry>Reproductive Health - Order Set</entry>
+                                <entry>CLIN0008BA</entry>
+                            </row>
+                            <row>
+                                <entry>Reproductive Health - Documentation Template</entry>
+                                <entry>CLIN0005AC</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>April 2018</pubdate>
+        <volumenum>Version 1.0</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>04/13/2018</date>
+                <authorinitials>Jennifer Reed, Steve Mahalec, Kathleen Keating</authorinitials>
+                <revremark>PO Final comments addressed; Final submission</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.11</revnumber>
+                <date>03/28/2018</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Final comments received from Program Office</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.10</revnumber>
+                <date>09/01/2017</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Initial submission</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.9</revnumber>
+                <date>08/23/2017</date>
+                <authorinitials>Vida Dunie</authorinitials>
+                <revremark>QA/Tech Writer Review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>08/21/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Input with VA revisions</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>08/16/2017</date>
+                <authorinitials>Vida Dunie</authorinitials>
+                <revremark>QA review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>08/15/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Clinical review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>08/13/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Merge old content into new format</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>07/27/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Motive materials incorporated</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>07/20/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Revised based on QA review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>07/13/2017</date>
+                <authorinitials>Vida Dunie</authorinitials>
+                <revremark>Initial QA review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>06/23/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Initial draft</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <informaltable xml:id="va.SME.List" frame="all">
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>C. Yvette Williams-Harris, MD, MPH</entry>
+                        <entry>Physician, 1670 Clairmont Rd Atlanta, GA 30033 </entry>
+                        <entry>SME, Primary</entry>
+                        
+                    </row>
+                    <row>
+                        <entry>Megan Geber, MD, MPH</entry>
+                        <entry>Physician, VA Boston HealthCare System, 150 South Huntington Ave
+                            Boston, MA 02130</entry>
+                        <entry>SME, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry>Caitlin M. Cusack, MD, MPH</entry>
+                        <entry>Contractor - Physician Informaticist, Office of Women's Health
+                            Services, 8455 Colesville Rd, 12th Floor Silver Spring, MD 20910</entry>
+                        <entry>SME</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface>
+        <title>Introduction</title>
+        <para>The VA is committed to improving the ability of clinicians to provide care for
+            patients while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the Health
+            Level 7 (<acronym><glossterm>HL7</glossterm></acronym>) Knowledge Artifact Specification
+            for a wide range of VA clinical use cases. Knowledge Artifacts, referred to as
+                    (<acronym><glossterm>KNARTs</glossterm></acronym>), enable the structuring and
+            encoding of clinical knowledge so the knowledge can be integrated with electronic health
+            records to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper
+                (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context
+            and intent of <acronym><glossterm>KNART</glossterm></acronym> use cases in sufficient
+            detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team
+            with the clinical source material to construct the corresponding knowledge artifacts
+            using the HL7 Knowledge Artifact Specification. This paper has been developed using
+            material from a variety of sources: VA artifacts, clinical practice guidelines, evidence
+            in the body of medical literature, and clinical expertise. After reviewing these
+            sources, the material has been synthesized and harmonized under the guidance of VA
+            subject matter experts to reflect clinical intent for this use case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work.</para>
+    </preface>
+    <preface>
+        <title>Conventions Used</title>
+        <para>Conventions used within the knowledge artifact descriptions include: <itemizedlist
+                mark="none" spacing="compact">
+                <listitem>
+                    <para><emphasis>&lt;obtain&gt;</emphasis>: Indicates a prompt to obtain the
+                        information listed <itemizedlist mark="bullet" spacing="compact">
+                            <listitem>
+                                <para>If possible, the requested information should be obtained from
+                                    the underlying system(s). Otherwise, prompting the user for
+                                    information may be required</para>
+                            </listitem>
+                            <listitem>
+                                <para>Default Values: Unless otherwise noted, &lt;obtain&gt;
+                                    indicates to obtain the most recent observation. It is
+                                    recognized that this default time-frame value may be altered by
+                                    future implementations</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para><emphasis>[...]</emphasis>: Square brackets enclose explanatory text that
+                        indicates some action on the part of the clinical user, or general guidance
+                        to the clinical or technical teams. Examples include, but are not limited
+                        to:</para>
+                    <itemizedlist mark="none" spacing="normal">
+                        <listitem>
+                            <para><emphasis>[Begin ...]</emphasis>, <emphasis>[End ...]</emphasis>:
+                                Indicates the start and end of specific areas to clearly delineate
+                                them for technical purposes.</para>
+                            <para><emphasis>[Activate ...]</emphasis>: Initiates another knowledge
+                                artifact or knowledge artifact section.</para>
+                            <para><emphasis>[Section Prompt: ...]</emphasis>: If this section is
+                                applicable, then the following prompt should be displayed to the
+                                user.</para>
+                            <para><emphasis>[Section Selection Behavior: ...]</emphasis>: Indicates
+                                technical constraints or considerations for the selection of items
+                                outlined in the section prompt.</para>
+                            <para><emphasis>[Attach: ...]</emphasis>: ndicates that the specified
+                                item (e.g. procedure or result interpretation) should be attached to
+                                the documentation template if available.</para>
+                            <para><emphasis>[Link: ...]</emphasis>: Indicates that rather than
+                                attaching an item (e.g. image), a link should be included in the
+                                documentation template.</para>
+                            <para><emphasis>[Clinical Comment: ...]</emphasis>: Indicates technical
+                                considerations or notes to be utilized for KNART authoring and at
+                                time of implementation planning.</para>
+                            <para><emphasis>[Technical Note: ...]</emphasis>: Indicates technical
+                                considerations or notes to be utilized for KNART authoring and at
+                                time of implementation planning.</para>
+                            <para><emphasis>[If ...]</emphasis>: Indicates the beginning of a
+                                conditional section.</para>
+                            <para><emphasis>[Else, ...]</emphasis>: Indicates the beginning of the
+                                alternative branch of a conditional section.</para>
+                            <para><emphasis>[End if ...]</emphasis>: Indicates the end of a
+                                conditional section.</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>☐ <emphasis>[Check box]</emphasis>: Indicates items that should be
+                        selected based upon the section selection behavior.</para>
+                </listitem>
+            </itemizedlist></para>
+    </preface>
+    <chapter>
+        <title>Women's Health: Reproductive Health</title>
+        <para>[Begin Women's Health: Reproductive Health.]</para>
+        <section>
+            <title>Clinical Context</title>
+            <para>[Begin Clinical Context.]</para>
+            <para>Reproductive health is an important concern for most women. Many factors (e.g.,
+                emotional, cultural, and gender identity) can have a bearing upon the reproductive
+                health encounter. Often the focus of the reproductive health visit is to determine
+                the most appropriate method of delaying or preventing pregnancy. Each woman has
+                priorities that impact her contraceptive choices. Some women prefer long-acting
+                reversible contraceptives such as intrauterine devices or contraceptive implants.
+                Although these methods are highly effective, some women prefer shorter-acting, yet
+                still highly effective hormonal contraceptives such as the depot medroxyprogesterone
+                acetate birth control shot, combined oral contraceptive pills, the combined
+                contraceptive vaginal ring, or the progestin-only contraceptive pill. Still other
+                women prefer nonhormonal barrier methods such as condoms, the diaphragm, the
+                cervical cap, spermicides, or the sponge. Although barrier methods are less
+                effective than other birth control methods, they are immediately reversible and,
+                especially in the case of condoms, offer protection against sexually transmitted
+                infections. Other methods of birth control, such as periodic abstinence and the
+                lactational amenorrhea method, may be appropriate for some women. Dual method,
+                consisting of condoms plus a more effective birth control method, is recommended for
+                women who wish to have the combined benefit of sexually transmitted infection
+                protection plus effective contraception. Authoritative guidance from clinicians can
+                assist patients in achieving their goals for reproductive health (ACOG Committee
+                Opinion 699 2017).<itemizedlist>
+                    <listitem>
+                        <para>The target users are primary care providers (PCPs), including
+                            designated women's health providers and gynecologists. The patient
+                            cohort is women the system has classified as medically able to conceive
+                            and being seen as outpatients.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Women who are medically able to conceive:<itemizedlist>
+                                <listitem>
+                                    <para>Are under the age of 52.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Do not have International Classification of Diseases
+                                        (ICD), Systematized Nomenclature of Medicine (SNOMED), or
+                                        Current Procedural Terminology (CPT) codes consistent with
+                                        hysterectomy, bilateral oophorectomy, tubal ligation, or
+                                        menopause.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Have not been previously designated as medically unable to
+                                        conceive by their provider.</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <table frame="all" rowheader="firstcol">
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry>Provider to include Primary Care, designated women's health
+                                providers, and gynecologists </entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry>Females of reproductive potential</entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry>Routine</entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry>Primary Care, Women's Health Providers, Gynecology</entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry>Outpatient</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>[End Clinical Context.]</para>
+        </section>
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+            <para>The CDS knowledge artifacts that define this clinical use case are described in
+                detail in the following sections. They are:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>An Event Condition Action (ECA) Rule: Reproductive Health KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Prompt providers to have conversations with women of reproductive
+                                age to assess their:</para>
+                            <itemizedlist>
+                                <listitem>
+                                    <para>Pregnancy and lactation status.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Ability to conceive.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Desire to be pregnant now and in the future.</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Method of pregnancy avoidance when pregnancy is not
+                                        desired. </para>
+                                </listitem>
+                            </itemizedlist>
+                        </listitem>
+                        <listitem>
+                            <para>Rule logic for activating documentation templates or order
+                                sets</para>
+                        </listitem>
+                        <listitem>
+                            <para>Actions may include activating documentation templates or order
+                                sets</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>A Documentation Template: Reproductive Health KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Documents the reproductive health focused clinical
+                                encounter</para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of documentation
+                                sections</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>An Order Set: Reproductive Health </para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Provides the order clinician with a reproductive health focused
+                                order set</para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of the order set to manage
+                                specific patients in accordance with their desires</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>[End Knowledge Artifacts.]</para>
+            <para>[End Women's Health: Reproductive Health.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Event Condition Action (ECA) Rule</title>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>ECA Rule: Reproductive Health</title>
+            <para>[Begin ECA Rule.]</para>
+            <section>
+                <title>Event</title>
+                <para>[Begin Event.]</para>
+                <para>Access of patient record at time of female visit to primary care clinic or an
+                    Obstetrician/Gynecologist (OB/GYN) or women's health outpatient visit.</para>
+                <para>[End Event.]</para>
+            </section>
+            <section>
+                <title>Conditions</title>
+                <para>[Begin Conditions.]<itemizedlist>
+                        <listitem>
+                            <para>Patient is at least 13 years of age but less than 52 years of age;
+                                and</para>
+                        </listitem>
+                        <listitem>
+                            <para>Patient is not postmenopausal; and</para>
+                        </listitem>
+                        <listitem>
+                            <para>Patient has not been diagnosed as unable to conceive, and</para>
+                        </listitem>
+                        <listitem>
+                            <para>Patient has not had any of the following:<itemizedlist>
+                                    <listitem>
+                                        <para>Hysterectomy; or</para>
+                                    </listitem>
+                                    <listitem>
+                                        <para>Bilateral oophorectomy; or</para>
+                                    </listitem>
+                                    <listitem>
+                                        <para>Tubal ligation.</para>
+                                    </listitem>
+                                </itemizedlist></para>
+                        </listitem>
+                    </itemizedlist></para>
+                <para>[End Conditions.]</para>
+            </section>
+            <section>
+                <title>Actions</title>
+                <para>[Begin Actions.]<itemizedlist>
+                        <listitem>
+                            <para>Notify the provider the patient is a candidate for a discussion
+                                regarding reproductive health; and</para>
+                        </listitem>
+                        <listitem>
+                            <para>Activate the Reproductive Health KNART Documentation Template;
+                                and</para>
+                        </listitem>
+                        <listitem>
+                            <para>Activate the Reproductive Health KNART Order Set.</para>
+                        </listitem>
+                    </itemizedlist></para>
+                <para>[End Actions.]</para>
+                <para>[End ECA Rule.]</para>
+            </section>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Documentation Template</title>
+        <para>[Begin Documentation Template.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[Section Prompt: Reason for visit?]</para>
+            <para>&lt;obtain&gt; Details</para>
+            <para>&lt;obtain&gt; Patient age</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>Menstrual History</title>
+            <para>[Begin Menstrual History.]</para>
+            <para>[Section Prompt: Menstrual History.]<itemizedlist>
+                    <listitem>
+                        <para>[Section Prompt: Age of Menarche?]<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Age</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>[Section Prompt: Date of Last Menstrual Period (LMP)?]<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Date</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>[Section Prompt: Menstrual Cycle Pattern?]<itemizedlist>
+                                <listitem>
+                                    <para>☐ Regular</para>
+                                    <para>&lt;obtain&gt; Cycle duration (days)</para>
+                                    <para>&lt;obtain&gt; Flow duration (days)</para>
+                                </listitem>
+                                <listitem>
+                                    <para>☐ Irregular</para>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>[Section Prompt: Menstrual Symptoms.]<itemizedlist>
+                                <listitem>
+                                    <para>[Section Selection Behavior: Select one. Optional.]</para>
+                                    <itemizedlist>
+                                        <listitem>
+                                            <para>☐ Yes</para>
+                                            <para>&lt;obtain&gt; Details</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para>☐ No</para>
+                                        </listitem>
+                                    </itemizedlist>
+                                </listitem>
+                            </itemizedlist><itemizedlist>
+                                <listitem>
+                                    <para>[Additional Menstrual History.]</para>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Menstrual History.]</para>
+        </section>
+        <section>
+            <title>Medical Ability to Conceive</title>
+            <para>[Begin Medical Ability to Conceive.] </para>
+            <para>[Section Prompt: Does this patient have a medical reason that makes her
+                permanently unable to conceive?] </para>
+            <para>[Section Selection Behavior: Select yes or no. If yes is selected, a reason must
+                also be selected.] <itemizedlist>
+                    <listitem>
+                        <para>☐ Yes<itemizedlist>
+                                <listitem>
+                                    <para>☐ Hysterectomy</para>
+                                </listitem>
+                                <listitem>
+                                    <para>☐ Menopause</para>
+                                </listitem>
+                                <listitem>
+                                    <para>☐ Bilateral Oophorectomy</para>
+                                </listitem>
+                                <listitem>
+                                    <para>☐  Tubal Ligation</para>
+                                </listitem>
+                                <listitem>
+                                    <para>☐ Other</para>
+                                    <para>&lt;obtain> Reason</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Technical Note: If yes is selected, then documentation template is complete.] </para>
+            <para>[End Medical Ability to Conceive.] </para>
+        </section>
+        <section>
+            <title>Reproductive History</title>
+            <para>[Begin Reproductive History.]</para>
+            <para>[Section Prompt: Prior pregnancies?]</para>
+            <para>[Section Selection Behavior: Select one. Required.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Yes</para>
+                        <para>&lt;obtain&gt; Total number</para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Technical Note: For “Yes” responses, create one instance of the Pregnancy
+                History: Pregnancy # subsection for each prior pregnancy, based on the answer to
+                “Total number” under the “Yes” answer choice above. Replace the character “#” with
+                the numeral representation of the pregnancy number to be recorded in the created
+                subsection (“Pregnancy 1,” “Pregnancy 2,” etc.). These Pregnancy History: Pregnancy
+                # subsections should be autopopulated and updated with any new pregnancies.]</para>
+            <para>[Section Prompt: Pregnancy Outcome.]</para>
+            <para>[Section Selection Behavior: Select any. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Vaginal delivery</para>
+                        <para>☐ Cesarean section</para>
+                        <para>☐ Stillbirth</para>
+                        <para>☐ Spontaneous abortion</para>
+                        <para>☐ Elective abortion</para>
+                        <para>☐ Ectopic pregnancy<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Medical treatment</para>
+                                    <para>&lt;obtain&gt; Surgical treatment</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Other pregnancy outcome details?]<itemizedlist>
+                    <listitem>
+                        <para>&lt;obtain&gt; Other details</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Currently breastfeeding?]<itemizedlist>
+                    <listitem>
+                        <para>☐ Yes</para>
+                        <para>☐ No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Prior contraceptive use?]</para>
+            <para>[Section Selection Behavior: Select all that apply. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Intrauterine device</para>
+                        <para>☐ Contraceptive implant</para>
+                        <para>☐ Contraceptive shot</para>
+                        <para>☐ Contraceptive ring, pill, or patch</para>
+                        <para>☐ Male condom</para>
+                        <para>☐ Female condom</para>
+                        <para>☐ Diaphragm</para>
+                        <para>☐ Cervical cap</para>
+                        <para>☐ Contraceptive sponge</para>
+                        <para>☐ Spermicide</para>
+                        <para>☐ Natural family planning (e.g., lactational amenorrhea, rhythm,
+                            calendar, or cervical mucus methods)</para>
+                        <para>☐ Nothing</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Current contraceptive use?]</para>
+            <para>[Section Selection Behavior: Select all that apply. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Intrauterine device</para>
+                        <para>☐ Contraceptive implant</para>
+                        <para>☐ Contraceptive shot</para>
+                        <para>☐ Contraceptive ring, pill, or patch</para>
+                        <para>☐ Male condom</para>
+                        <para>☐ Female condom</para>
+                        <para>☐ Diaphragm</para>
+                        <para>☐ Cervical cap</para>
+                        <para>☐ Contraceptive sponge</para>
+                        <para>☐ Spermicide</para>
+                        <para>☐ Natural family planning (e.g., lactational amenorrhea, rhythm,
+                            calendar, or cervical mucus methods)</para>
+                        <para>☐ Nothing</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Prior emergency contraception use?]</para>
+            <para>[Section Selection Behavior: Select only one. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Yes<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>☐ No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Reproductive History.]</para>
+        </section>
+        <section>
+            <title>Sexual History</title>
+            <para>[Begin Sexual History.]</para>
+            <para>[Section Prompt: Sexual History.]<itemizedlist>
+                    <listitem>
+                        <para>[Section Prompt: Sexually Active?]</para>
+                        <para>&lt;obtain&gt; Sexually Active</para>
+                        <para>[Section Selection Behavior: Select One. Required.]<itemizedlist>
+                                <listitem>
+                                    <para>☐ Yes</para>
+                                    <para>☐ No</para>
+                                    <para>[Section Selection Behavior: If yes to "Sexually Active"
+                                        then display questions below.]</para>
+                                    <para>&lt;obtain&gt; Gender Identity</para>
+                                    <para>&lt;obtain&gt; Sexual Orientation</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>[Section Selection Behavior: If no to "Sexually Active," then skip
+                            questions below.]</para>
+                        <para>[Section Prompt: Sexual practices?]<itemizedlist>
+                                <listitem>
+                                    <para>[Section Selection Behavior: Select any. Optional.]<itemizedlist>
+                                            <listitem>
+                                                <para>☐ Vaginal sex</para>
+                                                <para>☐ Anal sex</para>
+                                                <para>☐ Oral sex</para>
+                                                <para>☐ Other</para>
+                                            </listitem>
+                                        </itemizedlist></para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>[Section Prompt: Types of Sexual Partner(s)?]<itemizedlist>
+                                <listitem>
+                                    <para>[Section Selection Behavior: Select any. Optional.]<itemizedlist>
+                                            <listitem>
+                                                <para>☐ Men</para>
+                                                <para>☐ Women</para>
+                                                <para>☐ Both</para>
+                                                <para>☐ None</para>
+                                                <para>&lt;obtain&gt; Number of Sexual
+                                                  Partners</para>
+                                            </listitem>
+                                        </itemizedlist></para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>[Section Prompt: Prior sexually transmitted infections?]</para>
+                        <para>[Section Selection Behavior: Select one. Required.]<itemizedlist>
+                                <listitem>
+                                    <para>☐ Yes<itemizedlist>
+                                            <listitem>
+                                                <para>&lt;obtain&gt; Details</para>
+                                            </listitem>
+                                        </itemizedlist></para>
+                                    <para>☐ No<itemizedlist>
+                                            <listitem>
+                                                <para>&lt;obtain&gt; Types of
+                                                  Contraceptives/Sexually Transmitted Infection
+                                                  Prevention Used</para>
+                                            </listitem>
+                                        </itemizedlist></para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>[Section Prompt: High-risk sexual behaviors?]<itemizedlist>
+                                <listitem>
+                                    <para>[Clinical Comment: High-risk sexual behaviors are defined
+                                        as having multiple or casual sex partners without the use of
+                                        protective behaviors (e.g., condom use) as well as sex in
+                                        exchange for money or drugs.]</para>
+                                    <para>[Section Selection Behavior: Select one. Optional.]<itemizedlist>
+                                            <listitem>
+                                                <para>☐ Yes<itemizedlist>
+                                                  <listitem>
+                                                  <para>&lt;obtain&gt; Details</para>
+                                                  </listitem>
+                                                  </itemizedlist></para>
+                                                <para>☐ No</para>
+                                            </listitem>
+                                        </itemizedlist></para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Sexual History.]</para>
+        </section>
+        <section>
+            <title>Medical/Surgical History</title>
+            <para>[Begin Medical/Surgical History.]</para>
+            <para>[Section Prompt: Current or prior medical problems?]</para>
+            <para>[Section Selection Behavior: Select only one. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Yes<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Description</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>☐ No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Mental Health History?]</para>
+            <para>[Section Selection Behavior: Select any. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Anxiety</para>
+                        <para>☐ Depression</para>
+                        <para>☐ Eating Disorder</para>
+                        <para>☐ Schizophrenia</para>
+                        <para>☐ Bi-Polar Disorder</para>
+                        <para>☐ Other<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Description</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Prior surgeries?]</para>
+            <para>[Section Selection Behavior: Select only one. Optional.]</para>
+            <para>[Technical Note: Enable entry of multiple surgeries for a patient.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Yes<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Date</para>
+                                    <para>&lt;obtain&gt; Surgical Description</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>☐ No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Medical/Surgical History.]</para>
+        </section>
+        <section>
+            <title>Social History</title>
+            <para>[Begin Social History.]</para>
+            <para>[Section Prompt: Social History.]</para>
+            <para>[Section Prompt: Substance Use History.]</para>
+            <para>[Section Selection Behavior: Select one or more. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Current or former tobacco user<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Link to Tobacco Screening and Cessation
+                                        Counseling KNART</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>[Technical Note: Link to Tobacco Assessment and Cessation Counseling
+                            Documentation Template KNART.]</para>
+                        <para>☐ Alcohol Use<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>[Technical Note: Link to Substance Use KNART (not currently
+                            available).]</para>
+                        <para>☐ Rehabilitation or detoxification<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>☐ Cocaine Use<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>[Technical Note: Link to Substance Use KNART (not currently
+                            available).]</para>
+                        <para>☐ Other substance use history<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>[Technical Note: Link to Substance Use KNART (not currently
+                            available).]</para>
+                        <para>☐ Homeless<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>☐ Unstable Home Environment<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>☐ Geographically Remote (40+ Mile Drive to Medical Care)<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Details</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Neglect and Abuse History.]</para>
+            <para>[Section Selection Behavior: Select one or more. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Yes<itemizedlist>
+                                <listitem>
+                                    <para>☐ Sexual<itemizedlist>
+                                            <listitem>
+                                                <para>&lt;obtain&gt; Details</para>
+                                            </listitem>
+                                        </itemizedlist></para>
+                                    <para>☐ Physical<itemizedlist>
+                                            <listitem>
+                                                <para>&lt;obtain&gt; Details</para>
+                                            </listitem>
+                                        </itemizedlist></para>
+                                    <para>☐ Emotional<itemizedlist>
+                                            <listitem>
+                                                <para>&lt;obtain&gt; Details</para>
+                                            </listitem>
+                                        </itemizedlist></para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>☐ No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Additional Social History.]<itemizedlist>
+                    <listitem>
+                        <para>&lt;obtain&gt; Details</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Social History.]</para>
+        </section>
+        <section>
+            <title>Pertinent Family Medical History</title>
+            <para>[Begin Pertinent Family Medical History.]</para>
+            <para>[Section Prompt: Pertinent Family Health History.]</para>
+            <para>[Link to Primary Care: Family Health History Documentation Template KNART.]</para>
+            <para>[Technical Note: In the future, use the following list of conditions to populate
+                the conditions of interest in the linked family health history documentation
+                template.]</para>
+            <para>[Section Selection Behavior: Select any. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Endometriosis</para>
+                        <para>☐ Polycystic Ovarian Syndrome </para>
+                        <para>☐ Uterine Fibroids</para>
+                        <para>☐ Other Gynecological Conditions</para>
+                        <para>☐ Diabetes Mellitus</para>
+                        <para>☐ Hypertension</para>
+                        <para>☐ Cardiovascular Disease</para>
+                        <para>☐ Venous Thromboembolism</para>
+                        <para>☐ Colorectal, Breast, Ovarian, or Uterine Cancer</para>
+                        <para>☐ Alcohol or substance abuse</para>
+                        <para>☐ Mental Illness</para>
+                        <para>[Technical Note: For each condition selected in the "Pertinent Family
+                            Health History" section, provider should be presented with the following
+                            "Family Members" section.]</para>
+                        <para>[Technical Note: In the future, this list of family members should be
+                            removed because the provider will be presented with the "Family Members"
+                            section in the Family Health History KNART.]</para>
+                        <para>☐ Sister</para>
+                        <para>☐ Brother</para>
+                        <para>☐ Daughter</para>
+                        <para>☐ Son</para>
+                        <para>☐ Mother</para>
+                        <para>☐ Maternal Grandmother</para>
+                        <para>☐ Maternal Grandfather</para>
+                        <para>☐ Maternal Half-Sister</para>
+                        <para>☐ Maternal Half-Brother</para>
+                        <para>☐ Maternal Aunt</para>
+                        <para>☐ Maternal Uncle</para>
+                        <para>☐ Father</para>
+                        <para>☐ Paternal Grandmother</para>
+                        <para>☐ Paternal Grandfather</para>
+                        <para>☐ Paternal Half-Sister</para>
+                        <para>☐ Paternal Half-Brother</para>
+                        <para>☐ Paternal Aunt</para>
+                        <para>☐ Paternal Uncle</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Other family members.]</para>
+            <para>[Technical Note: Each time a family member is selected display for
+                completion.]</para>
+            <para>[Technical Note: In the future, this section should be removed because the
+                provider will be presented with the Family Health History KNART.]<itemizedlist>
+                    <listitem>
+                        <para>&lt;obtain&gt; Age at Diagnosis</para>
+                        <para>&lt;obtain&gt; Detail</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Pertinent Family Medical History.]</para>
+        </section>
+        <section>
+            <title>Reproductive Goals Assessment</title>
+            <para>[Begin Reproductive Goals Assessment.]</para>
+            <para>[Section Prompt: Please ask the patient, "Do you want to become pregnant within
+                the next year?"]</para>
+            <para>[Section Selection Behavior: Select only one. Required.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Yes</para>
+                        <para>☐ No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Technical Note: If "Yes" is selected, the Documentation Template is complete.
+                Provide link to Preconception Counseling KNART if available.]</para>
+            <para>[Technical Note: If "No" is selected display questions below.]</para>
+            <para>[Section Prompt: Contraceptive priorities?]</para>
+            <para>[Section Selection Behavior: Select any. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Permanence</para>
+                        <para>☐ Reversibility</para>
+                        <para>☐ Short-acting</para>
+                        <para>☐ Long-acting</para>
+                        <para>☐ High efficacy</para>
+                        <para>☐ High safety</para>
+                        <para>☐ Ease of use</para>
+                        <para>☐ Noncontraceptive benefits</para>
+                        <para>☐ Nonhormonal</para>
+                        <para>☐ Personal control</para>
+                        <para>☐ Prevention of sexually transmitted infections</para>
+                        <para>☐ Declines contraceptive counseling</para>
+                        <para>☐ Other<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Description</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Technical Note: If "Declines contraceptive counseling" is selected, then
+                Documentation Template is complete.]</para>
+            <para>[End Reproductive Goals Assessment.]</para>
+        </section>
+        <section>
+            <title>Same Day Start Criteria for Contraceptives</title>
+            <para>[Begin Same Day Start Criteria for Contraceptives.]</para>
+            <para>[Section Prompt: Criteria for beginning immediate contraception (to include ring,
+                patch, pill or the injectable).]</para>
+            <para>[Section Selection Behavior: Select any. Required.]<itemizedlist>
+                    <listitem>
+                        <para>☐ First day of the LMP occurred less than or equal to 7 days
+                            ago</para>
+                        <para>☐ No intercourse since start of the LMP</para>
+                        <para>☐ Negative pregnancy test</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Same Day Start Criteria for Contraceptives.]</para>
+        </section>
+        <section>
+            <title>Plan</title>
+            <para>[Begin Plan.]</para>
+            <para>[Section Prompt: Review with patient the contraceptive options and the associated
+                levels of effectiveness of those methods:<itemizedlist>
+                    <listitem>
+                        <para>Permanent methods (less than 1 pregnancy per year among 100 women with
+                            typical use)<itemizedlist>
+                                <listitem>
+                                    <para>Tubal ligation (female sterilization)</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Tubal implant</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Vasectomy (male sterilization)</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>Highly effective methods (1 or fewer pregnancies per year among 100
+                            women with typical use)<itemizedlist>
+                                <listitem>
+                                    <para>Intrauterine device</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Progesterone implant</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Progesterone shot</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>Very effective methods (about 5 pregnancies per year among 100 women
+                            with typical use)<itemizedlist>
+                                <listitem>
+                                    <para>Contraceptive ring, pill, or patch</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>Less effective methods (about 15 to 32 pregnancies per year among 100
+                            women with typical use)<itemizedlist>
+                                <listitem>
+                                    <para>Diaphragm with spermicide</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Cervical cap with spermicide</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Contraceptive sponge</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Male condom</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Female condom</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Spermicide alone</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Natural family planning (e.g., lactational amenorrhea,
+                                        rhythm, calendar, or cervical mucus methods)</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>Not effective<itemizedlist>
+                                <listitem>
+                                    <para>Nothing.]</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Review with patient emergency contraceptives in case of
+                unprotected sex.<itemizedlist>
+                    <listitem>
+                        <para>Emergency contraceptive (less than 1 pregnancy per year among 100
+                            women if used within 72 hours)]</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: If appropriate, address sexually transmitted infection risk
+                reduction with use of barrier methods.]<itemizedlist>
+                    <listitem>
+                        <para>[Section Prompt: Contraceptive plan?]<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Description</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>[Section Prompt: Sexually transmitted infection risk reduction plan?]<itemizedlist>
+                                <listitem>
+                                    <para>&lt;obtain&gt; Description</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Plan.]</para>
+            <para>[End Documentation Template.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Order Set</title>
+        <para>[Begin Order Set.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>Laboratory Tests</title>
+            <para>[Begin Laboratory Tests.]</para>
+            <para>[Section Prompt: If the patient is not known to be pregnant, then consider
+                ordering a pregnancy test.]</para>
+            <para>[Section Selection Behavior: Select one. Optional.] <itemizedlist>
+                    <listitem>
+                        <para>☐ Quantitative human chorionic gonadotropin-serum now </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Qualitative human chorionic gonadotropin-urine now </para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Sexually Transmitted Infection Screening.] </para>
+            <para>[Section Selection Behavior: Select any. Optional.] </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>☐ Chlamydia nucleic acid amplification testing vaginal swab now </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Gonorrhea nucleic acid amplification testing vaginal swab now </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ HIV screen-serum now </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Laboratory Tests.]</para>
+        </section>
+        <section>
+            <title>Point of Care Tests</title>
+            <para>[Begin Point of Care Tests.]<itemizedlist>
+                    <listitem>
+                        <para>☐ Point of Care Urine pregnancy test now</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Point of Care Tests.]</para>
+        </section>
+        <section>
+            <title>Medications and Devices</title>
+            <para>[Begin Medications and Devices.]</para>
+            <para>[Section Prompt: If the patient is not known to be pregnant, then consider
+                ordering a pregnancy test prior to ordering any contraceptive options.]<itemizedlist>
+                    <listitem>
+                        <para>[Section Prompt: Please consider the following contraception
+                            options.]</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>☐ Etonogestrel 68 mg implant subdermal for implantation now</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>☐ Levonorgestrel 20 micrograms/day device intrauterine for insertion
+                            now </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Levonorgestrel 14 micrograms/day device intrauterine for insertion
+                            now </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Copper T 380A device intrauterine for insertion now </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para><emphasis role="bold">Contraceptive Injection</emphasis></para>
+            <para>[Section Prompt: Contraceptive Injection.]</para>
+            <para>[Section Selection Behavior: Select one. Optional.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>☐ Medroxyprogesterone acetate injectable suspension 150 mg/mL. Give 1
+                            mL solution intramuscular every 3 months, first dose now </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para><emphasis role="bold">Combined Oral Contraceptives</emphasis></para>
+            <para>[Section Prompt: Select Oral Contraceptives from the following list for patients
+                where "same day criteria" for contraceptives are met.]</para>
+            <para>[Section Selection Behavior: Select only one. Optional.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>☐ Desogestrel 0.15 mg/ethinyl estradiol 0.03 mg. Take 1 tablet oral
+                            daily. Take pills in sequence; do not skip pills. Dispense 3 kits. 3
+                            refills. </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Ethinyl estradiol 0.02 mg/levonorgestrel 0.1 mg. Take 1 tablet oral
+                            daily. Take pills in sequence; do not skip pills. Dispense 3 kits. 3
+                            refills.</para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Ethinyl estradiol 0.03 mg/levonorgestrel 0.15 mg. Take 1 tablet oral
+                            daily. Take pills in sequence; do not skip pills. Dispense 3 kits. 3
+                            refills.</para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Ethinyl estradiol 0.03 mg/levonorgestrel 0.05 mg, ethinyl estradiol
+                            0.04 mg/levonorgestrel 0.075 mg, ethinyl estradiol 0.03
+                            mg/levonorgestrel 0.125 mg (triphasic). Take 1 tablet oral daily. Take
+                            pills in sequence; do not skip pills. Dispense 3 kits. 3 refills. </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Ethinyl estradiol 0.035 mg/norethindrone 1 mg. Take 1 tablet oral
+                            daily. Take pills in sequence; do not skip pills. Dispense 3 kits. 3
+                            refills.</para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Ethinyl estradiol 0.035 mg/norethindrone 0.5 mg, ethinyl estradiol
+                            0.035 mg/norethindrone 0.75 mg, ethinyl estradiol 0.035 mg/norethindrone
+                            1 mg (triphasic). Take 1 tablet oral daily. Take pills in sequence; do
+                            not skip pills. Dispense 3 kits. 3 refills.</para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Ethinyl estradiol 0.035 mg/norgestimate 0.25 mg. Take 1 tablet oral
+                            daily. Take pills in sequence; do not skip pills. Dispense 3 kits. 3
+                            refills. </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Ethinyl estradiol 0.035 mg/norgestimate 0.18 mg, ethinyl estradiol
+                            0.035 mg/norgestimate 0.215 mg, ethinyl estradiol 0.035 mg/norgestimate
+                            0.25 mg (triphasic). Take 1 tablet oral daily. Take pills in sequence;
+                            do not skip pills. Dispense 3 kits. 3 refills. </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Mestranol 0.05 mg/norethindrone 1 mg. Take 1 tablet oral daily. Take
+                            pills in sequence; do not skip pills. Dispense 3 kits. 3 refills. </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Ethinyl estradiol 0.03 mg/levonorgestrel 0.15 mg, ethinyl estradiol
+                            0.01 mg. Take 1 tablet oral daily. Take pills in sequence; do not skip
+                            pills. Dispense 3 kits. 3 refills. </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para><emphasis role="bold">Combined Contraceptive Vaginal Ring</emphasis></para>
+            <para>[Section Prompt: Select Combined Contraceptive Vaginal Ring from the following
+                list.]</para>
+            <para>[Section Selection Behavior: Select one. Optional.]<itemizedlist>
+                    <listitem>
+                        <para>Ethinyl estradiol 0.015 mg/day/etonogestrel ethinyl 0.120 mg/day. 1
+                            vaginal ring. Insert ring into vagina. Leave in place continuously for 3
+                            weeks. Remove for 1 week. Then immediately replace. Dispense 1 box. 3
+                            refills </para>
+                    </listitem>
+                </itemizedlist></para>
+            <para><emphasis role="bold">Progestin-Only Contraceptive Pill</emphasis></para>
+            <para>[Section Prompt: Select Progestin-Only Contraceptive Pill from the following
+                list.]</para>
+            <para>[Section Selection Behavior: Select one. Optional.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>☐ Norethindrone 0.35 mg. Take 1 tablet oral daily. Take pills in
+                            sequence; do not skip pills. Dispense 3 kits. 3 refills. </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para><emphasis role="bold">Emergency Contraceptive </emphasis></para>
+            <para>[Section Prompt: Select Emergency Contraceptive from the following list.]</para>
+            <para>[Section Selection Behavior: Select one. Optional.]</para>
+            <para>[Clinical Comment: "1 refill now" allows the patient to take home medications for
+                future emergency use when indicated.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>☐ Levonorgestrel 0.75 mg tablet. Take one tablet oral every 12 hours.
+                            Take first tablet as soon as possible after and within 72 hours of
+                            unprotected intercourse. Take second tablet 12 hours after first tablet.
+                            Dispense 1 box containing 2 tablets. 1 refill now </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Levonorgestrel 1.5 mg tablet oral 1 time. Take as soon as possible
+                            after and within 72 hours of unprotected intercourse. Dispense 1 box
+                            containing 1 tablet. 1 refill now </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Medications and Devices.]</para>
+        </section>
+        <section>
+            <title>Procedures</title>
+            <para>[Begin Procedures.]</para>
+            <para>[Section Prompt: Select procedures from the following list. All procedures are
+                priority of "now" unless otherwise specified.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>☐ Essure permanent contraceptive device schedule for insertion now.</para>
+                </listitem>
+                <listitem>
+                    <para>☐ Contraceptive implant implantation </para>
+                </listitem>
+                <listitem>
+                    <para>☐ Intrauterine device insertion</para>
+                </listitem>
+                <listitem>
+                    <para>☐ Diaphragm fitting </para>
+                </listitem>
+                <listitem>
+                    <para>☐ Cervical cap fitting  </para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Procedures.]</para>
+            <para>[End Order Set.]</para>
+        </section>
+    </chapter>
+        
+        <bibliography>
+            <title>Bibliography/Evidence</title>
+            <biblioentry>
+            <author>
+                <orgname>American College of Obstetricians and Gynecologists Committee on Adolescent
+                    Health Care</orgname>
+            </author>
+            <citetitle pubwork="webpage">Committee Opinion No 699: Adolescent Pregnancy,
+                Contraception, and Sexual Activity</citetitle>
+            <citetitle pubwork="journal">Obstet Gynecol</citetitle>
+            <pubdate>2017</pubdate>
+            <volumenum>129</volumenum>
+            <issuenum>(5)</issuenum>
+            <pagenums>e142-e149</pagenums>
+        </biblioentry>
+        
+            <biblioentry>
+            <author>
+                <orgname>American College of Obstetricians and Gynecologists</orgname>
+            </author>
+            <pubdate>ACOG Committee Opinion no. 598: Committee on Adolescent Health Care: The
+                initial reproductive health visit</pubdate>
+            <pubdate>2014</pubdate>
+            <volumenum>123</volumenum>
+            <issuenum>(5)</issuenum>
+            <pagenums>1143-1147</pagenums>
+        </biblioentry>
+        
+            <biblioentry>
+            <author>
+                <orgname>Bayer Pharma AG</orgname>
+            </author>
+            <citetitle pubwork="webpage">Essure: Permanent Birth Control</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >http://labeling.bayerhealthcare.com/html/products/pi/essure_ifu.pdf</link></bibliomisc>
+            <pubdate>Berlin, Germany: 2002</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Bellanca, 2013</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Bellanca</surname><firstname>Helen
+                        K.</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Hunter</surname><firstname>Michele
+                        Stranger</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">"ONE KEY QUESTION®: preventive reproductive health is part
+                of high quality primary care."</citetitle>
+            <citetitle pubwork="journal">Contraceptive 88.1</citetitle>
+            <pubdate>2013</pubdate>
+            <pagenums>3-6</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>Center for Disease Control</orgname>
+            </author>
+            <citetitle pubwork="webpage">US Medical Eligibility Criteria (US MEC) for Contraceptive
+                Use</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                >https://www.cdc.gov/reproductivehealth/unintendedpregnancy/pdf/legal_summary-chart_english_final_tag508.pdf</link></bibliomisc>
+            <pubdate>July 2017</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">BREVICON- norethindrone and ethinyl estradiol; NORINYL-
+                norethindrone and ethinyl estradiol; NORINYL- norethindrone and mestranol [Actavis
+                Pharma, Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=aaaf32ea-045b-436c-b125-767f95f4cf0e</link></bibliomisc>
+            <pubdate>August 2014</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">IMPLANON- etonogestrel implant [Organon USA
+                Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=50ed7e31-b9b7-4f0a-8e36-91ed5af86b81</link></bibliomisc>
+            <pubdate>May 2017</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">LUTERA- levonorgestrel and ethinyl estradiol [Watson
+                Pharma, Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=435f565c-771d-44ff-88b7-4e089767c25f</link></bibliomisc>
+            <pubdate>March 2012</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">MEDROXYPROGESTERONE ACETATE- medroxyprogesterone acetate
+                injection, suspension [Teva Parenteral Medicines, Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d279981c-e9e4-4989-bafb-1e184a6d3dd2</link></bibliomisc>
+            <pubdate>January 2017</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">MIRENA- levonorgestrel intrauterine device [Bayer
+                HealthCare Pharmaceuticals Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=92231d6f-f4d8-43b0-aa95-f7cec1cc18c5</link></bibliomisc>
+            <pubdate>February 2013</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage"> MONONESSA- norgestimate and ethinyl estradiol; TRINESSA-
+                norgestimate and ethinyl estradiol [Actavis Pharma, Inc]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=704ba4ae-edd0-4298-a399-03a49f8411c7</link></bibliomisc>
+            <pubdate>December 2015</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage"> NECON 777- norethindrone and ethinyl estradiol [Watson
+                Pharma Inc]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=db3b28a4-15d3-43e0-bb65-e625300c452c</link></bibliomisc>
+            <pubdate>November 2013</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage"> NOR QD- norethindrone tablet [Watson Pharma,
+                Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=aa34bfca-06c3-4916-bb51-4bfbfc0ee371</link></bibliomisc>
+            <pubdate>June 2012</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">NUVARING- etonogestrel and ethinyl estradiol insert,
+                extended release [Organon USA Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=017343fb-86c4-45ab-9c47-52cc5b9f3a02</link></bibliomisc>
+            <pubdate>May 2017</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">PARAGARD T 380A- copper intrauterine device [Teva Women's
+                Health, Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2b009ddb-378e-40d8-a8d8-00211f10e06c</link></bibliomisc>
+            <pubdate>August 2015</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">PLAN B - levonorgestrel tablet [Physicians Total Care,
+                Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fffebd01-3815-425f-8293-1ad909d0d0ab</link></bibliomisc>
+            <pubdate>April 2012</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">PLAN B ONE-STEP- levonorgestrel tablet [Teva Women's
+                Health, Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ce3ccc4-23f2-4e0a-9650-856cf026c72c</link></bibliomisc>
+            <pubdate>May 2016</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">RECLIPSEN 28 DAY- desogestrel and ethinyl estradiol [Teva
+                Pharmaceuticals USA, Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a1e00bc6-7487-4057-9dcc-d0e2327d1d12
+                </link></bibliomisc>
+            <pubdate>May 2017</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">SEASONIQUE- levonorgestrel / ethinyl estradiol and ethinyl
+                estradiol [Teva Women's Health, Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=95e06935-8788-420c-b4a4-dc6ea339c7d0</link></bibliomisc>
+            <pubdate>November 2016</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage"> SKYLA- levonorgestrel intrauterine device [Bayer
+                HealthCare Pharmaceuticals Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9f44ff35-e052-49cd-a1c2-0bfd87d49309</link></bibliomisc>
+            <pubdate>March 2017</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">TRIVORA- levonogestrel and ethinyl estradiol [Watson
+                Pharma, Inc.]</citetitle>
+            <bibliomisc><link xlink:href="URL"
+                    >https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae220f22-24b0-41a8-a10d-28839b300fe1</link></bibliomisc>
+            <pubdate>February 2010</pubdate>
+        </biblioentry>
+            <biblioentry>
+            <citetitle pubwork="webpage"> US Selected Practice Recommendations (US SPR) for
+                Contraceptive Use, 2016</citetitle>
+            <pubdate>July 2017</pubdate>
+        </biblioentry>
+        </bibliography>
+    <appendix>
+        <title>Existing Sample VA Artifacts</title>
+        <figure>
+            <title>Reminder Resolution</title>
+            <mediaobject>
+                <alt>Screenshot of a Reminder Resolution: Pregnancy/Intentions/Contraception.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig2ReminderResolution.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Contraceptive Resources</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care for Contraceptive Resources.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig3ContraceptiveResources.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Medically Unable to Conceive? (image 1 of 2)</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram answering "yes" to
+                    the question of medical unable to conceive.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig4MedicallyUnableToConceive.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Medically Unable to Conceive? (image 2 of 2)</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram answering "no" to the
+                    question of medical unable to conceive.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig5MedicallyUnableToConceive.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Pregnancy Status (image 1 of 3)</title>
+            <mediaobject>
+                <alt>For 'yes' pregnancy status, once LMP is entered the EDD is automatically
+                    calculated. The same form may be used to update the EDD and document the reason
+                    for a date change.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig6PregnancyStatus.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Pregnancy Status (image 2 of 3)</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for pregnancy status
+                    being "not pregnant". Option to order pregnancy test or emergency contraception
+                    when appropriate.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig7PregnancyStatus.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Pregnancy Status (image 2 of 3)</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for pregnancy status
+                    being "yes" pregnant. Common pregnancy codes may be chosen from a drop down, and
+                    ICD codes added to the problem list.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig7PregnancyStatus.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Pregnancy Status (image 3 of 3)</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for pregnancy status
+                    being "not pregnant". Option to order pregnancy test or emergency contraception
+                    when appropriate.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig8PregnancyStatus.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Pregnancy Intentions</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for pregnancy
+                    intentions.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig9PregnancyIntentions.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Pregnancy Status</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for pregnancy status
+                    being "yes"; medication and imaging review, documentation of the review.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig10PregnancyStatus.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Contraceptive Methods (image 1 of 3)</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for contraceptive
+                    methods - female sterilization, extremey effective methods.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig16FemaleSterilization.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Contraceptive Methods (image 2 of 3)</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for highly effective,
+                    very effective, and effective methods</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig11FemaleSterilization.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Contraceptive Methods (image 3 of 3)</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for female
+                    sterilization, extremely effective, highly effective, very effective, effective
+                    methods - ability to multi-select methods.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig12FemaleSterilization.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+               <figure>
+            <title>Notes Resulting from Template Use</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for resulting notes
+                    of women using an IUD and pregnant patient with a medication/imaging
+                    review.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig13ResultingNotes.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Clinical Reminder Dialog</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care of the diagram for clinical reminder
+                    dialog. The dialog is available for use in the reminder drawer for all
+                    women.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig14ClinicalReminderDialog.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Pregnancy Prevention</title>
+            <mediaobject>
+                <alt>Screenshot From Women Veterans Health Care noting that 1) contraceptive methods
+                    are broken down by effectiveness, 2) lists pregnancies per year among 100 women
+                    typical use, 3) included choices (partner inability to conceive; same sex
+                    partner; not sexually active).</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig15PregnancyPrevention.jpg"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+    <appendix>
+        <title>Basic Laboratory Panel Definition </title>
+        <itemizedlist>
+            <listitem>
+                <para>Blood Urea Nitrogen </para>
+            </listitem>
+            <listitem>
+                <para>Calcium</para>
+            </listitem>
+            <listitem>
+                <para>Chloride</para>
+            </listitem>
+            <listitem>
+                <para>CO2 (Carbon Dioxide, Bicarbonate)</para>
+            </listitem>
+            <listitem>
+                <para>Creatinine</para>
+            </listitem>
+            <listitem>
+                <para>Glucose</para>
+            </listitem>
+            <listitem>
+                <para>Potassium</para>
+            </listitem>
+            <listitem>
+                <para>Sodium</para>
+            </listitem>
+        </itemizedlist>
+    </appendix>
+    <appendix>
+        <info>
+            <title>Reproductive Health Logic Diagram</title>
+        </info>
+        <figure>
+            <title>Reproductive Health<glossterm>ECA</glossterm> Rule Diagram</title>
+            <mediaobject>
+                <alt>Screenshot of a Reproductive Health ECA Rule Flow Chart.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig16ECADiagram.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+    <glossary role="auto">
+        <title>Acronyms</title>
+    </glossary>
+</book>
