@@ -1,0 +1,989 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Rheumatology: Rheumatoid Arthritis Clinical Content White Paper</subtitle>
+        <copyright>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>
+                    <surname>Department of Veterans Affairs (VA)</surname>
+                </personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                    <alt>Department of Veteran's Affairs Logo</alt>
+                    <imageobject>
+                        <imagedata align="center" fileref="../../../../../Resources/VASealColor.jpg" contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                    </imageobject>
+                </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information to this White Paper</title>
+                    <tgroup cols="3" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <entry valign="middle">KNART Type</entry>
+                                <entry valign="middle">KNART ID - Name</entry>
+                                <entry valign="middle">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Order Set</entry>
+                                <entry>Rheumatoid Arthritis</entry>
+                                <entry>CLIN0004AB</entry>
+                            </row>
+                            <row>
+                                <entry>Documentation Template</entry>
+                                <entry>Rheumatoid Arthritis</entry>
+                                <entry>CLIN0005AB</entry>
+                            </row>
+                            <row>
+                                <entry>Consult Request</entry>
+                                <entry>Rheumatoid Arthritis</entry>
+                                <entry>N/A</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+
+        <pubdate>October, 2017</pubdate>
+        <volumenum>Version 1.0</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>10/27/2017</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>DocBook transformation and QA for final submission</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.9</revnumber>
+                <date>10/16/2017</date>
+                <authorinitials>Lindsey Birt</authorinitials>
+                <revremark>Common issues, edits</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>09/27/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template revisions per PO recommendations</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>08/25/2017</date>
+                <authorinitials>Vida Dunie</authorinitials>
+                <revremark>QA/Tech Writer Review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>08/24/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Clinical content review and acceptance by SME team</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>08/22/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Clinical Review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>08/17/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Review and revise Draft CCWP</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>08/11/2017</date>
+                <authorinitials>Wendelyn Bradley </authorinitials>
+                <revremark>Revised based on deliverables </revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>08/10/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Review and input into CCWP template for review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>08/07/2017</date>
+                <authorinitials>Elizabeth Van Blargan</authorinitials>
+                <revremark>Review SME Content and consolidate</revremark>
+            </revision>
+        </revhistory>
+    </info>
+
+    <preface>
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <informaltable xml:id="va.SME.List" frame="all">
+            <tgroup cols="3" align="left">
+                <colspec colname="c1" colnum="1" colwidth="107.25pt"/>
+                <colspec colname="c2" colnum="2" colwidth="290.63pt"/>
+                <colspec colname="c3" colnum="3" colwidth="78.75pt"/>
+                <thead>
+                    <row>
+                        <entry align="center">Name</entry>
+                        <entry align="center">Title</entry>
+                        <entry align="center">Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry morerows="1">Amy Joseph, MD</entry>
+                        <entry rowsep="0">Chief of Rheumatology, St Louis VA Medical Center (VAMC),
+                            915 N. Grand, St. Louis, MO 63106 </entry>
+                        <entry morerows="1">SME, Primary</entry>
+                    </row>
+                    <row>
+                        <entry rowsep="1">Professor of Medicine, Washington University School of
+                            Medicine</entry>
+                    </row>
+                    <row>
+                        <entry morerows="1">J. Steuart Richards, MD</entry>
+                        <entry rowsep="0">Chief of Rheumatology, Pittsburgh VAMC, University Drive
+                            C, Pittsburgh, PA 15240</entry>
+                        <entry morerows="1">SME, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry rowsep="0">Clinical Professor Medicine, University of
+                            Pittsburgh</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface>
+        <title>Introduction</title>
+        <para>The VA is committed to improving the ability of clinicians to provide care for
+            patients while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the HL7
+            Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+            Artifacts, referred to as <acronym><glossterm xml:id="knarts"
+                >KNARTs</glossterm></acronym>, enable the structuring and encoding of clinical
+            knowledge so the knowledge can be integrated with electronic health records to enable
+            clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper (<glossterm xml:id="ccwp"
+                    ><acronym>CCWP</acronym></glossterm>) is to capture the clinical context and
+            intent of KNART use cases in sufficient detail to provide the KNART authoring team with
+            the clinical source material to construct the corresponding knowledge artifacts using
+            the HL7 Knowledge Artifact Specification. This paper has been developed using material
+            from a variety of sources: VA artifacts, clinical practice guidelines, evidence in the
+            body of medical literature, and clinical expertise. After reviewing these sources, the
+            material has been synthesized and harmonized under the guidance of VA subject matter
+            experts to reflect clinical intent. </para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work. </para>
+    </preface>
+    <preface>
+        <title>Conventions Used</title>
+        <para>Conventions used within the knowledge artifact descriptions include:</para>
+        <itemizedlist mark="none">
+            <listitem><para><emphasis>&lt;obtain&gt;</emphasis> : Indicates a prompt to
+                obtain the information listed</para>
+                <itemizedlist mark="bullet">
+                    <listitem>
+                        <para>If possible, the requested information should be obtained from the
+                            underlying system(s). Otherwise, prompting the user for information may
+                            be required</para>
+                    </listitem>
+                    <listitem>
+                        <para>The technical and clinical notes associated with a section should be
+                            consulted for specific constraints on the information (e.g., time-frame,
+                            patient interview, etc.)</para>
+                    </listitem>
+                    <listitem>
+                        <para>Unless otherwise noted, &lt;obtain&gt; indicates to obtain the most
+                            recent observation. It is recognized that this default time-frame value
+                            may be altered by future implementations</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>
+                <para><emphasis>[...]</emphasis> : Square brackets enclose
+                    explanatory text that indicates some action on the part of the user, or general
+                    guidance to the clinical or technical teams. Examples include, but are not limited
+                    to:</para>
+                <itemizedlist mark="none">
+                    
+                    <listitem><para><emphasis>[Begin ...]</emphasis> ,
+                        <emphasis>[End ...]</emphasis> : Indicates the start and end of specific areas to clearly delineate
+                        them for technical purposes.</para></listitem>
+                    <listitem>
+                        <para><emphasis>[Activate ...]</emphasis> : Initiates another knowledge artifact or knowledge artifact
+                            section.</para>
+                        
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[Section Prompt: ...]</emphasis> : If this section is applicable, then the following prompt should be
+                            displayed to the user.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[Section Selection Behavior:
+                            ...]</emphasis> : Indicates technical constraints or considerations for the
+                            selection of items within the section.</para>                       
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[Attach: ...]</emphasis> : Indicates that the specified item should be attached to the
+                            documentation template if available.</para>
+                        
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[Link: ...]</emphasis> : Indicates that rather than attaching an item, a link should be
+                            included in the documentation template.</para>
+                        
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[Clinical Comment: ...]</emphasis> : Indicates clinical rationale or guidance.</para>
+                        
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[Technical Note: ...]</emphasis> : Indicates technical considerations or notes.</para>
+                        
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[If ...]</emphasis> : Indicates the beginning of a conditional section.</para>
+                        
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[Else, ...]</emphasis> : Indicates the beginning of the alternative branch of a conditional
+                            section.</para>
+                        
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>[End if ...]</emphasis> : Indicates the end of a conditional section.</para>
+                        
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>
+                <para>&#x2610;<emphasis> [Check boxes]</emphasis> : Indicates items that should be selected based upon the section selection behavior.</para>
+            </listitem>
+        </itemizedlist>
+    </preface>
+    <chapter>
+        <title>Rheumatoid Arthritis</title>
+        <section>
+            <title>Clinical Context</title>
+            <para>Rheumatoid arthritis is the most prevalent autoimmune inflammatory arthritis and
+                is a disease that is associated with substantial disability and impacts quality of
+                life, morbidity, and mortality. Its diagnosis and management, however, remain
+                unclear to many primary care providers who generate the majority of referrals to
+                rheumatologists. Exposing the basic American College of Rheumatology recommendations
+                to primary care providers and integrating them into their workflow can decrease
+                practice variability and increase the efficiency and appropriateness of subspecialty
+                management (<citation>Singh 2016</citation>).</para>
+            <para>
+                <table>
+                    <title>Clinical Context Domains</title>
+                    <tgroup cols="2" align="left">
+                        <tbody>
+                            <row>
+                                <entry align="left">Target User</entry>
+                                <entry align="left">Provider to include Primary Care</entry>
+                            </row>
+                            <row>
+                                <entry align="left">Patient</entry>
+                                <entry align="left">Adult Patients</entry>
+                            </row>
+                            <row>
+                                <entry align="left">Priority</entry>
+                                <entry align="left">Routine</entry>
+                            </row>
+                            <row>
+                                <entry align="left">Specialty</entry>
+                                <entry align="left">Primary Care</entry>
+                            </row>
+                            <row>
+                                <entry align="left">Location</entry>
+                                <entry align="left">Outpatient</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </section>
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>This section describes the knowledge artifacts that are intended for users caring
+                for adult patients who present to a Primary Care Clinic with joint pain or
+                inflammatory arthritis. The intent of these artifacts is to ensure a minimum workup
+                is initiated prior to a Rheumatology Consultation.</para>
+            <para>Three knowledge artifacts define this clinical use case and are described in
+                detail in the following sections. They are:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Consult Request </para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>High-level, encompassing artifact meant to communicate the request
+                                for a rheumatology consultation</para>
+                        </listitem>
+                        <listitem>
+                            <para>Relies upon the documentation template and order set
+                                artifacts</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>Documentation Template</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Documents the information provided by the referring
+                                provider</para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of documentation
+                                sections</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>Order Set</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Orderable items associated with the consult request</para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of the order set</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Composite</title>
+        <para>[Begin Composite.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context in Chapter 1.]</para>
+        </section>
+        <section>
+            <title>Consult Request</title>
+            <para>[Technical Note: The following list provides the basic components of the consult
+                request. This is the high-level, encompassing artifact, and must be combined with
+                the documentation template and order set to form a fully functional knowledge
+                artifact. The information for the consult request can be obtained as part of the
+                composite or within the corresponding order set component in the consult section. If
+                obtained within the composite, this information should pre-populate the respective
+                order set component.]</para>
+            <para>[Section Prompt: In order to initiate a rheumatology consult, please provide the
+                following information.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Reason for Consult: Joint Pain</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Patient identification</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Patient demographics</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Information required by receiving facility</para>
+                </listitem>
+                <listitem>
+                    <para>Consult Specialty: Rheumatology </para>
+                </listitem>
+                <listitem>
+                    <para>Priority: Routine</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Referring Physician</para>
+                </listitem>
+                <listitem>
+                    <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Activate documentation template.]</para>
+            <para>[End Composite.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Documentation Template</title>
+        <para>[Begin Documentation Template.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[Section Prompt: This documentation template is intended for primary care
+                physicians documenting findings for outpatients with joint pain or inflammatory
+                arthritis in preparation for their referral to rheumatology.]</para>
+        </section>
+        <section>
+            <title>History</title>
+            <para>[Begin History section.]</para>
+            <para>[Section Selection Behavior: Yes or no should be selected for each
+                question.]</para>
+            <para>[Section Prompt: Please ask the patient the following questions:]</para>
+            <para>Is the duration of joint pain greater than 6 weeks?</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Yes</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; No</para>
+                </listitem>
+            </itemizedlist>
+            <para>Are hands or wrists involved?</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Yes</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; No</para>
+                </listitem>
+            </itemizedlist>
+            <para>Is morning stiffness present?</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Yes</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; No</para>
+                </listitem>
+            </itemizedlist>
+            <para>Did the pain have a gradual onset?</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Yes</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; No</para>
+                </listitem>
+            </itemizedlist>
+
+
+            <para>&lt;obtain&gt; Optional additional information</para>
+            <para>[End History section.]</para>
+        </section>
+        <section>
+            <title>Physical Exam</title>
+            <para>[Begin Physical Examination section.]</para>
+            <para>[Section Selection Behavior: Yes or no should be selected for each
+                question.]</para>
+            <para>[Section Prompt: Please answer the following questions and provide any required
+                additional details.]</para>
+            <para>Are there greater than four joints involved?</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Yes &lt;obtain&gt; Specific Joints Affected</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; No</para>
+                </listitem>
+            </itemizedlist>
+            <para>Are there signs of joint inflammation (e.g., warmth, soft tissue swelling, or
+                tenderness)?</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Yes &lt;obtain&gt; Specific Joints Affected</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; No</para>
+                </listitem>
+            </itemizedlist>
+            <para>[If yes, then present the list of signs.]</para>
+            <para>[Begin list of signs.]</para>
+            <para>[Section Prompt: Check all signs that are applicable.]</para>
+            <para>[Selection Behavior: Any or none may be selected.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Warmth</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Soft Tissue Swelling</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Tenderness</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End list of signs.]</para>
+            <para>[End if Yes.]</para>
+            <para>[End Physical Exam section.]</para>
+        </section>
+        <section>
+            <title>Medication History</title>
+            <para>[Begin Medication History section.]</para>
+            <para>[Technical Note: Consider automatically including the information in this section
+                if it is available.]</para>
+            <para>[Section Prompt: Please answer the following questions and provide any required
+                additional details.]</para>
+            <para>[Section Selection Behavior: If Yes to a given question, then display the
+                subcategories that follow it.]</para>
+            <para>Current or prior use of disease-modifying anti-rheumatic drugs?</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; No</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Yes</para>
+                    <para>[Technical Note: If Yes then display DMARDs Section.]</para>
+                    <para>[Begin DMARDs section.]</para>
+                    <para>[Section Selection Behavior: Select at least one.]</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>&#x2610; adalimumab</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; etanercept</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; hydroxychloroquine</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; infliximab</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; leflunomide</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; methotrexate</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; rituximab</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; sulfasalazine</para>
+                        </listitem>
+                        <listitem>
+                            <para>&#x2610; other &lt;obtain&gt; Detail</para>
+                        </listitem>
+                    </itemizedlist>
+                    <para>[End DMARDs.]</para>
+                </listitem>
+            </itemizedlist>
+            <para>Was there prior use of prednisone or other glucocorticoids?</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Yes</para>
+                    <para>[If Yes to “Was there prior use of prednisone or other glucocorticoids?”
+                        then display the subcategories of information related to the prior use.] </para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>&lt;obtain&gt; Drug name</para>
+                        </listitem>
+                        <listitem>
+                            <para>&lt;obtain&gt; Date initiated</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>If there are any other medication history details, please include them
+                here:</para>
+            <para>&lt;obtain&gt; Patients current medications list</para>
+            <para>[End Medication History section.]</para>
+        </section>
+        <section>
+            <title>Laboratory Studies</title>
+            <para>[Begin Laboratory Studies section.]</para>
+            <para>[Technical Note: If available, the most recent results and associated dates from
+                within the past 3 months only should be included for the following: C-reactive
+                protein, erythrocyte sedimentation rate, hepatitis C antibody screen, complete blood
+                count, and complete metabolic panel. If available, the most recent results and
+                associated dates from any time should be included for the following: rheumatoid
+                factor and anti-cyclic citrullinated peptide antibody (ACPA/Anti-CCP).] </para>
+            <itemizedlist>
+                <listitem>
+                    <para>ACPA/Anti-CCP &lt;obtain> Results and date</para>
+                </listitem>
+                <listitem>
+                    <para>C-Reactive Protein &lt;obtain&gt; Results and date</para>
+                </listitem>
+                <listitem>
+                    <para>Erythrocyte Sedimentation Rate &lt;obtain&gt; Results and date</para>
+                </listitem>
+                <listitem>
+                    <para>Rheumatoid Factor &lt;obtain&gt; Results and date</para>
+                </listitem>
+                <listitem>
+                    <para>Hepatitis C Antibody Screen &lt;obtain&gt; Results and date</para>
+                </listitem>
+                <listitem>
+                    <para>Complete Blood Count &lt;obtain&gt; Results and date</para>
+                </listitem>
+                <listitem>
+                    <para>Complete Metabolic Panel &lt;obtain&gt; Results and date</para>
+                </listitem>
+                <listitem>
+                    <para>Other &lt;obtain&gt; Test &lt;obtain&gt; Results &lt;obtain&gt;
+                        Date</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Laboratory Studies section.]</para>
+        </section>
+        <section>
+            <title>Imaging and Diagnostic Studies</title>
+            <para>[Begin Imaging and Diagnostic Studies section.]</para>
+            <para>[Technical Note: Results text should be attached automatically if it is provided
+                for the hand radiograph interpretation field. Include any studies performed within
+                the past year.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Hand Radiograph Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Hand Radiograph] </para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Imaging and Diagnostic Studies Section.]</para>
+            <para>[End documentation template.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Order Set</title>
+        <para>[Begin Order Set.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[Clinical Comment: This order set applies to any adult outpatients presenting to a
+                primary care provider with joint pain or equivalent symptoms of inflammatory
+                arthritis. All orders are routine unless otherwise specified.]</para>
+        </section>
+        <section>
+            <title>Medications</title>
+            <para>[Begin Medications section.]</para>
+            <para>[Section Prompt: No medications are required prior to a rheumatology consult.
+                However, if prednisone is considered prior to the rheumatology consult, be aware
+                that prednisone can potentially mask symptoms that would be evaluated by
+                rheumatology.] </para>
+            <para>[End Medications section.]</para>
+        </section>
+        <section>
+            <title>Laboratory Studies</title>
+            <para>[Begin Laboratory Studies section.]</para>
+            <para>[Section Prompt: Consider ordering the following laboratory studies if they have
+                not been ordered within the last three months. Note: The Anti-Nuclear Antibody (ANA)
+                test is not considered appropriate to be ordered for suspected rheumatoid
+                arthritis.] </para>
+            <para>[Section Selection Behavior: Optional. Any or none may be selected.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Rheumatoid Factor</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Anti-cyclic citrullinated peptide antibody (ACPA/Anti-CCP)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Hepatitis C antibody screen</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Complete blood count</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Complete metabolic panel</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; C-reactive protein</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Erythrocyte sedimentation rate</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Laboratory Studies section.]</para>
+        </section>
+        <section>
+            <title>Imaging and Diagnostic Studies</title>
+            <para>[Begin Imaging and Diagnostic Studies section.]</para>
+            <para>[Section Prompt: Consider ordering the following imaging study if it has not been
+                done within the past year.]</para>
+            <para>[Section Selection Behavior: Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; x-ray hands, bilateral, to evaluate for possible rheumatoid
+                        arthritis</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Imaging and Diagnostic Studies section.]</para>
+            <para>[End Order Set.]</para>
+        </section>
+    </chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <abbrev>Aletaha, 2010</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Aletaha</surname>
+                        <firstname>D</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Neogi</surname>
+                        <firstname>T</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Silman</surname>
+                        <firstname>AJ</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">2010 Rheumatoid arthritis classification criteria: an
+                American College of Rheumatology/European League Against Rheumatism collaborative
+                initiative</citetitle>
+            <citetitle pubwork="journal">Arthritis Rheum</citetitle>
+            <pubdate>2010</pubdate>
+            <volumenum>62</volumenum>
+            <issuenum>9</issuenum>
+            <pagenums>2569-2581</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Singh, 2016</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Singh</surname>
+                        <firstname>JA</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Saag</surname>
+                        <firstname>KG</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Bridges</surname>
+                        <firstname>SL</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">American College of Rheumatology. 2015 American College of
+                Rheumatology Guideline for the Treatment of Rheumatoid Arthritis</citetitle>
+            <citetitle pubwork="journal">Arthritis and Rheumatology (Hoboken, NJ)</citetitle>
+            <pubdate>2016</pubdate>
+            <volumenum>68</volumenum>
+            <issuenum>1</issuenum>
+            <pagenums>1-26</pagenums>
+        </biblioentry>
+    </bibliography>
+
+    <appendix>
+        <info><title>Existing VA Artifacts</title></info>
+        <figure>
+            <title>Rheumatology Provider's Note</title>
+            <mediaobject>
+                <alt>Figure 1 is a screen capture of a dialog of the following: Laboratory Tests,
+                    Resources, Rheumatoid Factor, and Anti-CCP.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig1RALabTestsResources.png" scalefit="1" width="100%" contentdepth="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Rheumatology Consult</title>
+            <mediaobject>
+                <alt>Figure 2 is a screen capture of a dialog of the following: Symptoms raising the
+                    possibility of a Rheumatological Syndrome.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig2RASymptoms.png" scalefit="1" width="100%" contentdepth="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Rheumatology Outpatient</title>
+            <mediaobject>
+                <alt>Figure 3 is a screen capture of a dialog of the following: Medications,
+                    Laboratory, Imaging, Nuclear Medicine, Ultrasound, and Links. </alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig3RAMedsLabImaging.png" scalefit="1" width="100%" contentdepth="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Rheumatology Medications</title>
+            <mediaobject>
+                <alt>Figure 4 is a screen capture of a dialog of the following: Gout, Rheumatoid
+                    Arthritis Medications, Osteoporosis, nonsteroidal anti-inflammatory drug
+                    (NSAIDs), Other, Information Guidelines, and Links.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig4RAGoutMedsOsteo.png" scalefit="1" width="100%" contentdepth="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Rheumatology Lab Menu</title>
+            <mediaobject>
+                <alt>Figure 5 is a screen capture of a dialog of the following: General Rheumatoid
+                    Arthritis, Systemic Lupus Erythematosus (SLE) and APLs, Other, Synovial
+                    Analysis, Vasculitis, Endocrine Metabolic, Followup Appointments, and
+                    Information and Guidelines.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig5RAGeneralSLEAPLs.png" scalefit="1" width="100%" contentdepth="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+    <appendix><info><title>Acronyms</title></info>
+        <informaltable>
+            <tgroup cols="2" align="left">
+                 <tbody>
+                    <row>
+                        <entry align="left"><emphasis role="bold">Acronym</emphasis></entry>
+                        <entry align="left"><emphasis role="bold">Definition</emphasis></entry>
+                    </row>
+                    <row>
+                        <entry>ACPA/Anti-CCP</entry>
+                        <entry>Anti-cyclic Citrullinated Peptide Antibody</entry>
+                    </row>
+                    <row>
+                        <entry>ANA</entry>
+                        <entry>Anti-Nuclear Antibody</entry>
+                    </row>
+                    <row>
+                        <entry>CDS</entry>
+                        <entry>Clinical Decision Support</entry>
+                    </row>
+                    <row>
+                        <entry>DMARDs</entry>
+                        <entry>Disease-Modifying Antirheumatic Drugs</entry>
+                    </row>
+                    <row>
+                        <entry>HL7</entry>
+                        <entry>Health Level 7</entry>
+                    </row>
+                    <row>
+                        <entry>KBS</entry>
+                        <entry>Knowledge Based Systems</entry>
+                    </row>
+                    <row>
+                        <entry>KNART</entry>
+                        <entry>Knowledge Artifact</entry>
+                    </row>
+                    <row>
+                        <entry>NSAID</entry>
+                        <entry>Nonsteroidal anti-inflammatory drug</entry>
+                    </row>
+                    <row>
+                        <entry>OIIG</entry>
+                        <entry>Office of Informatics and Information Governance</entry>
+                    </row>
+                    <row>
+                        <entry>SLE</entry>
+                        <entry>Systemic Lupus Erythematosus</entry>
+                    </row>
+                    <row>
+                        <entry>SME</entry>
+                        <entry>Subject Matter Expert</entry>
+                    </row>
+                    <row>
+                        <entry>TO</entry>
+                        <entry>Task Order</entry>
+                    </row>
+                    <row>
+                        <entry>VA</entry>
+                        <entry>Department of Veteran Affairs</entry>
+                    </row>
+                    <row>
+                        <entry>VACO</entry>
+                        <entry>VA Central Office</entry>
+                    </row>
+                    <row>
+                        <entry>VAMC</entry>
+                        <entry>VA Medical Center</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </appendix>
+</book>
