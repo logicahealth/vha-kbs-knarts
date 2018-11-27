@@ -1,0 +1,1332 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+  <info>
+    <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+      Artifacts (KNARTs)</title>
+    <subtitle>Primary Care: Tobacco Assessment and Cessation Counseling Clinical Content White
+      Paper</subtitle>
+    <copyright>
+      <year>June</year>
+      <year>2018</year>
+      <holder>B3 Group, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>B3 Group, Inc.</title>
+      <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link
+          xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+          >http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>Portions of this content are derivative works from content produced by Cognitive Medical
+        Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0.</para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to
+        copyright.</para>
+      <para>See: <link xlink:href="https://www.usa.gov/government-works">https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+        VA11817F10080007.</para>
+    </legalnotice>
+    <copyright>
+      <year>2018</year>
+      <holder>Cognitive Medical Systems, Inc.</holder>
+    </copyright>
+    <legalnotice>
+      <title>Cognitive Medical Systems, Inc.</title>
+      <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License.</para>
+      <para>You may obtain a copy of the License at <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</link>
+      </para>
+      <para>Unless required by applicable law or agreed to in writing, software distributed under
+        the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language governing
+        permissions and limitations under the License.</para>
+      <para>This and related content produced by Cognitive Medical Systems, Inc. licensed under the
+        Apache License, Version 2.0 is available at: <link
+          xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+          >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+      </para>
+      <para>Additional portions of this content are derivative works from content contributed by
+        Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike 4.0. <link
+          xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+          >https://bitbucket.org/cogmedsys/kas-source-material</link>
+      </para>
+      <para>Contributions from 2013-2018 were performed either by US Government employees, or under
+        US Veterans Health Administration contracts.</para>
+      <para>US Veterans Health Administration contributions by government employees are work of the
+        U.S. Government and are not subject to copyright protection in the United States. Portions
+        contributed by government employees are USGovWork (17USC §105). Not subject to copyright.
+        See: <link xlink:href="https://www.usa.gov/government-works"
+          >https://www.usa.gov/government-works</link>
+      </para>
+      <para>Contribution by contractors to the US Veterans Health Administration during this period
+        are contractually contributed under the Apache License, Version 2.0 and US Government
+        sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+    </legalnotice>
+    <authorgroup>
+      <author>
+        <personname>
+          <surname>Department of Veterans Affairs (VA)</surname>
+        </personname>
+      </author>
+      <author>
+        <orgname>
+          <inlinemediaobject>
+            <alt>Department of Veteran's Affairs Logo</alt>
+            <imageobject>
+              <imagedata align="center" contentdepth="2in" contentwidth="2in" fileref="../../doc/images/VASealColor.jpg" scalefit="0"/>
+            </imageobject>
+          </inlinemediaobject>
+        </orgname>
+      </author>
+      <author>
+        <orgname>Knowledge Based Systems (KBS)</orgname>
+      </author>
+      <author>
+        <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+      </author>
+      <author>
+        <orgname>Clinical Decision Support (CDS)</orgname>
+      </author>
+    </authorgroup>
+    <abstract>
+      <info>
+        <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+      </info>
+      <para>
+        <table colsep="1" frame="all" rowsep="1">
+          <title>Relevant KNART Information: Primary Care: Tobacco Assessment and Cessation
+            Counseling KNART</title>
+          <tgroup align="left" cols="2">
+            <thead>
+              <row valign="bottom">
+                <entry valign="middle">Primary Care KNART</entry>
+                <entry valign="middle">Associated CLIN</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>Documentation Template </entry>
+                <entry>CLIN0009AA</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+    </abstract>
+    <pubdate>March 2018</pubdate>
+    <volumenum>Version 1.0</volumenum>
+    <revhistory>
+      <revision>
+        <revnumber>1.0</revnumber>
+        <date>3/16/2018</date>
+        <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+        <revremark>Final Docbook transformation and QA</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.9</revnumber>
+        <date>3/6/2018</date>
+        <authorinitials>Diane Montella</authorinitials>
+        <revremark>Final PO Comments and Approval received</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.8</revnumber>
+        <date>11/02/2017</date>
+        <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+        <revremark>Docbook transformation and QA</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.7</revnumber>
+        <date>10/30/2017</date>
+        <authorinitials>Nicholas Rains and Wendelyn Bradley</authorinitials>
+        <revremark>Motive updated to included and reviewed for final submission</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.6</revnumber>
+        <date>10/18/2017</date>
+        <authorinitials>Wendelyn Bradley, Jane Kim and K. Berry</authorinitials>
+        <revremark>Reviewed by clinical SME and pack year history requested to be added by
+          Motive</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.5</revnumber>
+        <date>10/10/2017</date>
+        <authorinitials>Wendelyn Bradley</authorinitials>
+        <revremark>Review by clinical SME and approved</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.4</revnumber>
+        <date>10/02/2017</date>
+        <authorinitials>Wendelyn Bradley</authorinitials>
+        <revremark>Edit and review</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.3</revnumber>
+        <date>10/02/2017</date>
+        <authorinitials>Lindsey Birt</authorinitials>
+        <revremark>Common issues addressed, updated motive data, edits</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.2</revnumber>
+        <date>09/30/2017</date>
+        <authorinitials>Ralph Ruocco</authorinitials>
+        <revremark>Template revisions per PO recommendations</revremark>
+      </revision>
+      <revision>
+        <revnumber>0.1</revnumber>
+        <date>09/13/2017</date>
+        <authorinitials>Dr. Berry and Wendelyn Bradley</authorinitials>
+        <revremark>Initial Draft</revremark>
+      </revision>
+    </revhistory>
+  </info>
+
+  <preface>
+    <title>VA Subject Matter Expert (SME) Panel</title>
+
+    <informaltable frame="all" xml:id="va.SME.List">
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry>Name</entry>
+
+            <entry>Title</entry>
+
+            <entry>Project Role</entry>
+          </row>
+        </thead>
+
+        <tbody>
+          <row>
+            <entry>Angela Denietolis, MD</entry>
+
+            <entry>Primary Care Physician James A. Haley Veterans Hospital VA Medical Center  (VAMC)
+              Tampa, FL 33612 </entry>
+
+            <entry>SME, Primary</entry>
+          </row>
+
+          <row>
+            <entry>Pat Dumas, RN</entry>
+
+            <entry>Clinical Program Director VA Central Office (VACO) 810 Vermont Ave NW Washington,
+              DL 20420 </entry>
+
+            <entry>SME, Secondary</entry>
+          </row>
+
+          <row>
+            <entry>Manish Merchant, MD</entry>
+
+            <entry>Health Informatician Albany VAMC 113 Holland Avenue Albany, NY 12208 </entry>
+
+            <entry>SME</entry>
+          </row>
+
+          <row>
+            <entry>Timothy Dresselhaus, MD</entry>
+
+            <entry>San Diego VAMC - MEDS 3350 La Jolla Village Drive San
+            Diego, CA 92161 </entry>
+
+            <entry>SME</entry>
+          </row>
+
+          <row>
+            <entry>Kim Hamlett-Berry, PhD</entry>
+
+            <entry>National Program Director Tobacco and Health: Policy and Programs Mental Health
+              Services, Office of Mental Health and Suicide Prevention, VACO 810 Vermont Avenue. NW
+              Washington, DC 20420 </entry>
+
+            <entry>SME</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </preface>
+
+  <preface>
+    <title>Introduction</title>
+
+    <para>The VA is committed to improving the ability of clinicians to
+    provide care for patients while increasing quality, safety, and
+    efficiency. Recognizing the importance of standardizing clinical knowledge
+    in support of this goal, VA is implementing the Health Level 7 (<acronym><glossterm>HL7</glossterm></acronym>) Knowledge Artifact Specification for a wide range of VA
+    clinical use cases. Knowledge Artifacts, referred to as (<acronym><glossterm>KNARTs</glossterm></acronym>), enable the structuring and encoding of clinical knowledge
+    so the knowledge can be integrated with electronic health records to
+    enable clinical decision support.</para>
+
+    <para>The purpose of this Clinical Content White Paper (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context and intent of <acronym><glossterm>KNART</glossterm></acronym> use cases in sufficient detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team with the clinical source material to construct
+    the corresponding knowledge artifacts using the <acronym><glossterm>HL7</glossterm></acronym> Knowledge Artifact Specification. This paper has been
+    developed using material from a variety of sources: VA artifacts, clinical
+    practice guidelines, evidence in the body of medical literature, and
+    clinical expertise. After reviewing these sources, the material has been
+    synthesized and harmonized under the guidance of VA subject matter experts
+    to reflect clinical intent for this use case.</para>
+
+    <para>Unless otherwise noted, items within this white paper (e.g.,
+    documentation template fields, orderable items, etc.) are chosen to
+    reflect the clinical intent at the time of creation. To provide an
+    exhaustive list of all possible items and their variations is beyond the
+    scope of this work.</para>
+  </preface>
+
+  <preface>
+    <title>Conventions Used</title>
+
+    <para>Conventions used within the knowledge artifact descriptions
+      include:
+      
+      <itemizedlist mark="none" spacing="compact">
+        <listitem>
+          <para>&lt;obtain&gt;: Indicates a prompt to obtain the
+            information listed <itemizedlist mark="bullet"
+              spacing="compact">
+              <listitem>
+                <para>If possible, the requested information
+                  should be obtained from the underlying system(s).
+                  Otherwise, prompting the user for information may
+                  be required</para>
+              </listitem>
+              <listitem>
+                <para>Default Values: Unless otherwise noted,
+                  &lt;obtain&gt; indicates to obtain the most recent
+                  observation. It is recognized that this default
+                  time-frame value may be altered by future
+                  implementations</para>
+              </listitem>
+            </itemizedlist></para> </listitem>
+        
+        <listitem>
+          <para>[...]: Square brackets enclose explanatory text that indicates some
+            action on the part of the clinical user, or general guidance to the clinical or technical
+            teams. Examples include, but are not limited to:</para>
+          
+          <itemizedlist mark="none" spacing="normal">
+            <listitem>
+              <para>[Begin ...], [End
+                ...]: Indicates the start and end of specific areas to
+                clearly delineate them for technical purposes.</para>
+              
+              <para>[Activate ...]: Initiates another
+                knowledge artifact or knowledge artifact section.</para>
+              
+              <para>[Section Prompt: ...]: If this section is
+                applicable, then the following prompt should be displayed to the
+                user.</para>
+              
+              <para>[Section Behavior: ...]:
+                Indicates technical constraints or considerations
+                for the selection of items outlined in the section
+                prompt.</para>
+              
+              <para>[Attach: ...]: Indicates that the
+                specified item (e.g. procedure or result
+                interpretation) should be attached to the
+                documentation template if available.</para>
+              
+              <para>[Link: ...]: Indicates that
+                rather than attaching an item (e.g. image), a link
+                should be included in the documentation
+                template.</para>
+              
+              <para>[Clinical Comment: ...]:
+                Indicates technical considerations or notes to be
+                utilized for KNART authoring and at time of
+                implementation planning.</para>
+              
+              <para>[Technical Note: ...]: Indicates
+                technical considerations or notes to be utilized
+                for KNART authoring and at time of implementation
+                planning.</para>
+              
+              <para>[If ...]: Indicates the beginning of a
+                conditional section.</para>
+              
+              <para>[Else, ...]: Indicates the beginning of
+                the alternative branch of a conditional section.</para>
+              
+              <para>[End if ...]: Indicates the end of a
+                conditional section.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        
+        <listitem>
+          <para>☐ [Check box]: Indicates items that should be
+            selected based upon the section selection behavior.</para>
+        </listitem>
+      </itemizedlist></para>
+    
+  </preface>
+
+  <chapter>
+    <title>Primary Care: Tobacco Assessment and Cessation Counseling</title>
+
+    <section>
+      <title>Clinical Context</title>
+
+      <para>[Begin Clinical Context.]</para>
+
+      <para>Tobacco use continues to be one of the leading causes of preventable death and disease
+        in the U.S., accounting for approximately 480,000 deaths each year (U.S. Department of
+        Health and Human Services 2014). It is incumbent upon clinicians to adhere to evidence-based
+        practices in assisting patients who use tobacco to quit.</para>
+
+      <para>This knowledge artifact is intended to support the clinical provider's evaluation of
+        tobacco use, counseling regarding tobacco cessation, and documentation of findings and
+        clinical decisions from the evaluation and counseling process. The screening and counseling
+        questions for the template are drawn from the Healthcare Effectiveness Data and Information
+        Set (<acronym><glossterm>HEDIS</glossterm></acronym>), a tool published by the National
+        Committee for Quality Assessment (<acronym><glossterm>NCQA</glossterm></acronym>) and used
+        by more than 90 percent of America's health plans to measure performance on important
+        dimensions of care and service (<link
+          xlink:href="https://www.ncqa.org/report-cards/health-plans/state-of-health-care-quality/2016-table-of-contents/smoking-cessation"
+          >NCQA HEDIS 2018</link>). </para>
+
+      <para>While the <acronym><glossterm>HEDIS</glossterm></acronym> tobacco measure is based on patient responses on a survey,
+      the Veterans Health Administration (<acronym><glossterm>VHA</glossterm></acronym>) HEDIS-based national performance measure relies on
+      documentation of once-a-year screening and counseling and documentation
+      by primary care health care professionals. Work is currently underway to
+      develop a national electronic clinical reminder to support the <acronym><glossterm>VHA</glossterm></acronym> HEDIS-based tobacco measure. </para>
+
+      <para>[Clinical Comment: <acronym><glossterm>VHA</glossterm></acronym> Tobacco Assessment
+        Screening is based on the <acronym><glossterm>HEDIS</glossterm></acronym> survey measure
+          <emphasis>Medical Assistance With Smoking and Tobacco Use Cessation</emphasis>, which
+        consists of multiple component measures to assess rates of medical assistance for tobacco
+        cessation (NCQA HEDIS 2018). Components of the measure include: </para>
+
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Advising Smokers and Tobacco Users to Quit: Adults 18 years of age and older who
+              are current smokers or tobacco users and who received cessation advice during the
+              measurement year</para>
+          </listitem>
+
+          <listitem>
+            <para>Discussing Cessation Medications (HEDIS label) or Offering Medications (VHA
+              label): Adults 18 years of age and older who are current smokers or tobacco users and
+              who discussed or were recommended cessation medications during the measurement
+              year</para>
+          </listitem>
+
+          <listitem>
+            <para>Discussing Cessation Strategies (HEDIS label) or Offering Behavioral Counseling
+              (VHA label): Adults 18 years of age and older who are current smokers or tobacco users
+              who discussed or were provided cessation methods or strategies during the measurement
+              year.]</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+
+      <para>For the purposes of this knowledge artifact, tobacco products are
+      defined as follows:</para>
+
+      <para>Includes cigarettes, pipe, cigars, and smokeless tobacco, such as
+      dip, chew, snuff, and snus</para>
+
+      <para>Excludes e-cigarettes, Electronic Nicotine Delivery Systems (ENDS) and vaping
+        devices</para>
+
+      <table>
+        <title>Clinical Context Domains</title>
+
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Target User</entry>
+
+              <entry>Any clinical provider is able to screen for current tobacco use, including
+                physicians, Advanced Practice Nurses (APNs), Physician Assistants (PAs), Registered
+                Nurses (RNs), Licensed Practical Nurses (LPNs), pharmacists, psychologists, social
+                workers, dentists, and substance abuse counselors</entry>
+            </row>
+
+            <row>
+              <entry>Patient</entry>
+
+              <entry>Adult patients </entry>
+            </row>
+
+            <row>
+              <entry>Priority</entry>
+
+              <entry>Routine</entry>
+            </row>
+
+            <row>
+              <entry>Specialty</entry>
+
+              <entry>Any clinical setting (ambulatory, impatient, etc.)</entry>
+            </row>
+
+            <row>
+              <entry>Location</entry>
+
+              <entry>Any clinical setting </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+      <para>[End Clinical Context.]</para>
+    </section>
+
+    <section>
+      <title>Knowledge Artifacts</title>
+
+      <para>[Begin Knowledge Artifacts.]</para>
+
+      <para>This section describes a single CDS knowledge artifact that addresses Tobacco Screening:<itemizedlist>
+          <listitem>
+            <para>A Documentation Template: Tobacco Assessment and Cessation Counseling KNART<itemizedlist>
+                <listitem>
+                  <para>Provides a structured template to document tobacco assessment and
+                    counseling</para>
+                </listitem>
+                <listitem>
+                  <para>Includes logic for the appropriate display of documentation sections </para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End Knowledge Artifacts.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Documentation Template: Tobacco Assessment and Cessation Counseling</title>
+
+    <para>[Begin Documentation Template.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+      <para>[Begin Knowledge Narrative.]</para>
+
+      <para>[See Clinical Context in Chapter 1.]</para>
+      <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Tobacco Use History</title>
+      <para>[Begin Tobacco Use History.]</para>
+      <para>[Technical Note: Pre-populate with existing data and make available for editing.] </para>
+      <section>
+        <title>Current Tobacco Use </title>
+        <para>[Begin Current Tobacco Use.]</para>
+        <para>[Section Prompt: Do you currently use tobacco?] </para>
+        <para>[Section Prompt: Tobacco includes cigarettes, pipe, cigars, and smokeless tobacco,
+          such as dip, chew, snuff, and snus. Excludes e-cigarettes, ENDS, and vaping
+          devices.]</para>
+        <para>[Section Selection Behavior: Select one. Required.]</para>
+        <para>
+          <itemizedlist mark="none">
+            <listitem>
+              <para>&#x2610; Every day</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; Some days</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; Not at all</para>
+            </listitem>
+          </itemizedlist>
+        </para>
+        <para>[Technical Note: Those patients reporting tobacco use every day or some days will be
+          considered a Current Tobacco User.]</para>
+        <para>[End Current Tobacco Use.]</para>
+      </section>
+      <section>
+        <title>Length of Tobacco Use History</title>
+        <para>[Begin Length of Tobacco Use History.]</para>
+        <para>[Section Prompt: How long have you been using tobacco?]</para>
+      
+        <para>[Section Selection Behavior: Select one. Required.]</para>
+        <para>
+          <itemizedlist mark="none">
+            <listitem>
+              <para>&#x2610; &lt;1 year</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; >= 1 year to &lt;5 years</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; >= 5 years to &lt;= 15 years</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; >15 years to &lt;30 years</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; >= 30 years</para>
+            </listitem>
+          </itemizedlist>
+        </para>
+        <para>[Section Prompt: If you are a smokeer, for how many years have you smoked?]<itemizedlist>
+            <listitem>
+              <para>&lt;obtain&gt; Years you have smoked</para>
+              <para>[Technical Note: Enter a number here, allowing 2 digits to the right of the
+                decimal point.]</para>
+            </listitem>
+          </itemizedlist></para>
+        <para>[Section Prompt: If you are a smoker, how many cigarettes have you smoked per day on average?]<itemizedlist>
+            <listitem>
+              <para>&lt;obtain&gt; Number of cigarettes smoked per day on average</para>
+            </listitem>
+          </itemizedlist></para>
+        <para>[End Length of Tobacco Use History.]</para>
+
+    </section>
+      <section>
+        <title>Former Smoking History </title>
+        <para>[Begin Former Smoking History.]</para>
+        <para>[Technical Note: Display the following only if "Not at all" is selected in section "Do
+          you currently use tobacco?".]</para>
+        <para>[Section Prompt: Have you ever used tobacco?]</para>
+        <para>[Section Selection Behavior: Select only one. Required.]<itemizedlist mark="none">
+            <listitem>
+              <para>&#x2610; Yes</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; No</para>
+            </listitem>
+          </itemizedlist></para>
+        <para>[End Former Smoking History.]</para>
+      </section>
+      <section>
+        <title>Quit Using Tobacco History</title>
+        <para>[Begin Quit Using Tobacco History.]</para>
+        <para>[Technical Note: Display the following only if "Former user" is selected in the
+          section "Have you ever used tobacco?".]</para>
+        <para>[Section Prompt: How long ago did you quit using tobacco?]</para>
+        <para>[Section Prompt: Previous guidance recommended providing relapse prevention counseling
+          for those who had quit for less than 1 year. This is not required by HEDIS, and there is
+          limited evidence basis for relapse counseling. The provider should use clinical judgement
+          regarding how to advise or support a patient who has only recently quit.]</para>
+        <para>[Section Selection Behavior: Select one. Required.]<itemizedlist mark="none">
+            <listitem>
+              <para>&#x2610; &lt; 1 year</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; >= 1 year and &lt; 5 years</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; >= 5 years and &lt;= 15 years</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; > 15 years to &lt;= 30 years</para>
+            </listitem>
+            <listitem>
+              <para>&#x2610; >= 30 years</para>
+            </listitem>
+          </itemizedlist></para>
+        <para>[Section Prompt: If you were a smoker, for how many years did you smoke?]<itemizedlist>
+            <listitem>
+              <para>&lt;obtain&gt; Number of years</para>
+              <para>[Technical Note: Enter a number here, allowing 2 digits to the right of the
+                decimal point.]</para>
+            </listitem>
+          </itemizedlist></para>
+        <para>[Section Prompt: If you were a smoker, how many cigarettes did you smoke per day on average?]<itemizedlist mark="none">
+            <listitem>
+              <para>&lt;obtain&gt; Number of cigarettes smoked per day on average</para>
+            </listitem>
+          </itemizedlist></para>
+        <para>[End Quit Using Tobacco History.]</para>
+      </section>
+      <section>
+        <title>Calculate Pack Years</title>
+        <para>[Begin Calculate Pack Years.]</para>
+        <para>[Technical Note: Display this section for both current users and former users.]</para>
+        <para>[Section Prompt: Number of pack years smoking?]</para>
+        <para>[Section Prompt: Calculate pack years using data entered in this template and display
+          in this section. Currently there is no ability to automatically calculate pack years in
+          Computerized Patient Record System (CPRS). Number of pack years = (number of cigarettes
+          smoked per day/20) x number of years smoked. Note that 20 cigarettes = 1
+            pack.]<itemizedlist mark="none">
+            <listitem>
+              <para>&lt;obtain&gt; Pack years</para>
+            </listitem>
+          </itemizedlist></para>
+        <para>[End Calculate Pack Years.]</para>
+        <para>[End Tobacco Use History.]</para>
+      </section>
+    </section>
+    <section>
+      <title>Advising Users to Quit</title>
+      <para>[Begin Advising Users to Quit.]</para>
+      <para>[Technical Note: Display the following only for current tobacco users as defined in
+        chapter 2, section 2.]</para>
+      <para>[Section Prompt: Advise tobacco user to quite.]</para>
+      <para>[Section Prompt: Quitting smoking or tobacco use is one of the most important things
+        patients can do to protect their health, and the VA has resources to support them. Advise
+        the patient to set a quit date; get support from family and friends; encourage the patient
+        to review past quit attempts (What helped? What didn’t?); anticipate triggers and/or
+        challenges and plan how to cope with them; advise the patient to remove all tobacco products
+        from home, car, work when ready to quit; include message that the combination of behavioral
+        counseling plus the use of the United States Food and Drug Administration (FDA)-approved
+        medications is the most effective way to quit tobacco use [U.S. Public Health Service
+        Clinical Practice Guideline (CPG), 2008; https://bphc.hrsa.gov/buckets/treatingtobacco.pdf].
+        (Items above are consistent with Joint Commission Practical Counseling language).] </para>
+      <itemizedlist mark="none">
+        <listitem>
+          <para>&#x2610; Current Smoker Advised to Quit</para>
+        </listitem>
+      </itemizedlist>
+      <para>[Section Prompt: Resources for VHA clinical providers.]<itemizedlist>
+        <listitem>
+          <para>Internet site - https://www.mentalhealth.va.gov/quit-tobacco/</para>
+        </listitem>
+        <listitem>
+          <para>Intranet site (accessible to VA staff only) - http://vaww.publichealth.va.gov/smoking/index.asp</para>
+        </listitem>
+          <listitem>
+            <para>Additional links within intranet site (accessible to VA staff only) : Clinical Topics -
+              http://vaww.publichealth.va.gov/smoking/clinical.asp</para>
+          </listitem>
+          <listitem>
+            <para>Tobacco and Health SharePoint site (accessible to VA staff only) -
+              https://vaww.portal.va.gov/sites/tobacco/default.aspx.</para>
+          </listitem>
+          <listitem>
+            <para>Tobacco Use Treatment PULSE site (accessible to VA staff only) -
+              https://www.vapulse.net/community/care-topics/tobacco-use-treatment</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Advising Users to Quit.]</para>
+    </section>
+    <section>
+      <title>Cessation Strategies - Counseling</title>
+      <para>[Begin Cessation Strategies - Counseling.]</para>
+      <para>[Technical Note: Display the following only for current tobacco user as defined in
+        chapter 2, section 2.]</para>
+      <para>[Section Prompt: Advise patient: Counseling increases your chances of successfully
+        quitting tobacco use. VA can help you to develop a plan and provide support, guidance, and
+        tools to help you quit, such as a tobacco cessation clinic or group, a national quit line for veterans who receive their healthcare through VA
+        (1-855-QUIT-VET), and information about community options. Would you like more information
+        about how to use any of these treatment options today?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes</para>
+          </listitem>
+        </itemizedlist>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Technical Note: Display the following only if "yes" is selected in "Advise
+        Patient".]</para>
+      <para>[Section Prompt: Patient educational materials available in English and Spanish.]<itemizedlist>
+          <listitem>
+            <para>VA Patient educational site - https://www.mentalhealth.va.gov/quit-tobacco/ </para>
+          </listitem>
+          <listitem>
+            <para>Patient education on treatment options
+              -https://www.drugabuse.gov/publications/tobacco-nicotine-e-cigarettes/what-are-treatments-tobacco-dependence </para>
+          </listitem>
+        </itemizedlist></para>
+      <para>[End Cessation Strategies - Counseling.]</para>
+    </section>
+    <section>
+      <title>Cessation Strategies - Medications</title>
+      <para>[Begin Cessation Strategies - Medications.]</para>
+      <para>[Technical Note: Display the following only for current tobacco users as defined in
+        chapter 2, section 2.]</para>
+      <para>[Technical Note: Display the following prompt for all clinical roles screening
+        patient.]</para>
+      <para>[Section Prompt: Adivise Patient: The use of FDA-approved medications, such as nicotine
+        replacement therapy including the patch, gum and lozenge, and other medications such as
+        varenicline, play an important role in the initial weeks and months after you quit tobacco.
+        Medications help you cope with cravings and withdrawal symptoms and increase your chances of
+        successfully quitting tobacco use.] </para>
+      <para>[Technical Note: Display the following prompt for MD, DO, NP, and PA credentialed
+        clinical provider roles screening patient.]</para>
+      <para>[Section Prompt (Prescribing Provider): Advise Patient: The VA can provide you with
+        FDA-approved tobacco cessation medications to help you quit. Would you like more information
+        on how to use these medications and a prescription for tobacco cessation medications
+        today?]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Technical Note: If "yes" is selected above, then the corresponding tobacco cessation
+        order set should be made available for ordering providers, when such an order set is created
+        in the future.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Technical Note: Display the following prompt for all non-prescribing providers
+        screening the patient.]</para>
+      <para>[Section Prompt (Nonprescribing Provider): The VA can provide you with FDA-approved
+        tobacco cessation medications to help you quit. "Would you like to receive medication to
+        assist with quitting tobacco use?"]</para>
+      <para>[Section Selection Behavior: Select one. Required.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Yes</para>
+            <para>[Technical Note: Message sent to prescribing provider if "yes" is
+              selected.]</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; No</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[End Cessation Strategies - Medications.]</para>
+    </section>
+    <section>
+      <title>Screening for Smoking Related Medical Conditions</title>
+      <para>[Begin Screening for Smoking Related Medical Conditions.]</para>
+      <para>[Technical Note: Orders and order sets referenced in this section do not yet exist as
+        KNARTs.]</para>
+      <para>[Technical Note: Display the following section only for male patients age >= 65 and
+        &lt;= 75 years who have ever smoked.] </para>
+      <para>[Section prompt: The United States Preventive Services Task Force (USPSTF) recommends
+        one-time screening for Abdominal Aortic Aneurysm (AAA) by ultrasonography in men aged 65-75
+        who have ever smoked. The USPSTF makes no recommendation for or against screening for AAA in
+        asymptomatic men aged 65-75 who have never smoked.)]</para>
+      <para>&lt;obtain&gt; Date and results of all prior abdominal aortic aneurysm screening exams
+        [abdominal ultrasound, abdominal Computed Tomography (CT) with or without contrast,
+        abdominal angiogram, abdominal Magnetic Resonance Imaging (MRI)]</para>
+      <para>[Technical Note: Most clinicians completing this documentation template will not have
+        authority to write orders, thus we are providing options for both non-prescribing and
+        prescribing clinicians. The non-prescribing providers must choose the second option]</para>
+      <para>[Section Selection Behavior: Select any or none - only one may be selected.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Abdominal aortic aneurysm screening</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Message to prescribing provider suggesting abdominal aortic aneurysm
+              screening</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Reference: <link
+          xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/abdominal-aortic-aneurysm-screening"
+          >USPSTF guidance</link>.] </para>
+      <para>[Technical Note: Display this section only for patients who meet all of the following
+        criteria: current smokers or former smokers who quit &lt;= 15 years ago, age >= 55 and &lt;=
+        80 years, with a 30-pack year history or more, and who have not had Low-dose chest CT &lt;=
+        1 year ago.]</para>
+      <para>[Section prompt: The USPSTF recommends annual screening for lung cancer with Low-dose
+        Computed Tomography (LDCT) in adults aged 55 to 80 years who have a 30 pack-year smoking
+        history and currently smoke or have quit within the past 15 years, and who do not have a
+        history of lung cancer.] </para>
+      <para>&lt;obtain&gt; Date and results for all prior chest imaging studies (chest CT, chest
+        X-Ray, chest MRI), as well as any history of lung cancer</para>
+      <para>[Technical Note: Most clinicians completing this documentation template will not have
+        authority to write orders, thus we are providing options for both non-prescribing and
+        prescribing clinicians. The non-prescribing providers would choose the second option]</para>
+      <para>[Section selection behavior: Select one only or none.]</para>
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+            <para>&#x2610; Low-dose chest CT for lung cancer screening order (for prescribing
+              provider use only)</para>
+          </listitem>
+          <listitem>
+            <para>&#x2610; Message to prescribing provider suggesting Low-dose chest CT for lung
+              cancer screening order</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>[Reference: <link
+          xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/abdominal-aortic-aneurysm-screening"
+          >USPSTF guidance</link>.] </para>
+      <para>[End Screening for Smoking Related Medical Conditions.]</para>
+      <para>[End Documentation Template.]</para>
+    </section>
+  </chapter>
+
+  <bibliography>
+    <title>Bibliography/Evidence</title>
+
+    <biblioentry>
+      <abbrev>Fiore, 2017</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Fiore</surname>
+
+            <firstname>MC</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Jaén </surname>
+
+            <firstname>TB</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>et al</personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article">Treating Tobacco Use and Dependence: 2008
+      Update</citetitle>
+
+      <citetitle pubwork="journal">Agency for Healthcare Research and
+      Quality</citetitle>
+
+      <pubdate>Accessed October 20, 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="http://www.ahrq.gov/professionals/clinicians-providers/guidelines-recommendations/tobacco/index.html"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <abbrev>Goff, 2014</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Goff</surname>
+
+            <firstname>DC Jr</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Lloyd-Jones</surname>
+
+            <firstname>DM</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Bennett</surname>
+
+            <firstname>G</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>et al</personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article">American College of Cardiology/American
+      Heart Association Task Force on Practice Guidelines. 2013 ACC/AHA
+      guideline on the assessment of cardiovascular risk: a report of the
+      American College of Cardiology/American Heart Association Task Force on
+      Practice Guidelines</citetitle>
+
+      <citetitle pubwork="journal">J Am Coll Cardiol</citetitle>
+
+      <pubdate>2014</pubdate>
+
+      <volumenum>63</volumenum>
+
+      <issuenum>25 Pt B</issuenum>
+
+      <pagenums>2935-2959</pagenums>
+    </biblioentry>
+
+    <biblioentry>
+      <orgname>National Center for Health Promotion and Disease
+      Prevention</orgname>
+
+      <citetitle pubwork="webpage">Get Recommended Screening Tests and
+      Immunizations for Men</citetitle>
+
+      <citetitle pubwork="journal">National Center for Health Promotion and
+      Disease Prevention website</citetitle>
+
+      <pubdate>Accessed August 29, 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Men.asp"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <orgname>National Center for Health Promotion and Disease
+      Prevention</orgname>
+
+      <citetitle pubwork="webpage">Get Recommended Screening Tests and
+      Immunizations for Women</citetitle>
+
+      <citetitle pubwork="journal">National Center for Health Promotion and
+      Disease Prevention website</citetitle>
+
+      <pubdate>Accessed August 29, 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.prevention.va.gov/Healthy_Living/Get_Recommended_Screening_Tests_and_Immunizations_for_Women.asp"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <orgname>National Center for Health Promotion and Disease
+      Prevention</orgname>
+
+      <citetitle pubwork="webpage">Screening for Abdominal Aortic
+      Aneurysm</citetitle>
+
+      <citetitle pubwork="journal">National Center for Health Promotion and
+      Disease Prevention website</citetitle>
+
+      <pubdate>Published July 15, 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="http://store.ncqa.org/index.php/performance-measurement.html"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <orgname>National Center for Health Promotion and Disease
+      Prevention</orgname>
+
+      <citetitle pubwork="webpage">Screening for Lung Cancer</citetitle>
+
+      <citetitle pubwork="journal">National Center for Health Promotion and
+      Disease Prevention website</citetitle>
+
+      <pubdate>Accessed August 29, 2017</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.prevention.va.gov/preventing_diseases/screening_for_lung_cancer.asp"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <orgname>National Committee for Quality Assurance (NCQA)</orgname>
+      <citetitle pubwork="webpage">Healthcare Effectiveness Data and Information Set (HEDIS) 2018
+        Volume 2: Technical Specification for Health Plans</citetitle>
+      <pubdate>Published July 15, 2017</pubdate>
+      <bibliomisc>
+        <link xlink:href="http://store.ncqa.org/index.php/performance-measurement.html"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <citetitle>U.S. Department of Health</citetitle>
+      <citetitle pubwork="journal">The Health Consequences of Smoking: 50 Years of Progress. A
+        Report of the Surgeon General. Atlanta, GA: U.S. Department of Health and Human Services,
+        Centers for Disease Control and Prevention, National Center for Chronic Disease Prevention
+        and Health Promotion, Office on Smoking and Health, 2014</citetitle>
+      <pubdate>Printed with corrections, January 2014</pubdate>
+    </biblioentry>
+
+    <biblioentry>
+      <citetitle>U.S. Department of Veterans Affairs, Veterans Health
+      Administration, Clinical Public Health</citetitle>
+
+      <citetitle pubwork="journal">Primary Care and Tobacco Cessation
+      Handbook: A Resource for Providers. U.S. Department of Veterans Affairs
+      Public Health website</citetitle>
+
+      <pubdate>Published May 2014</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.publichealth.va.gov/smoking/professionals/tools-publications.asp"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <citetitle>U.S. Preventive Services Task Force</citetitle>
+
+      <citetitle pubwork="journal">Bladder Cancer in Adults: Screening. U.S.
+      Preventive Services Task Force website</citetitle>
+
+      <pubdate>Published August 2011</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/bladder-cancer-in-adults-screening"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <citetitle>U.S. Preventive Services Task Force</citetitle>
+
+      <citetitle pubwork="journal">Chronic Obstructive Pulmonary Disease: U.S.
+      Preventive Services Task Force website</citetitle>
+
+      <pubdate>Published April 2016</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/chronic-obstructive-pulmonary-disease-screening"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <citetitle>U.S. Preventive Services Task Force</citetitle>
+      <citetitle pubwork="journal">Final Recommendation Statement: Peripheral Arterial Disease (PAD)
+        and Cardiovascular disease (CVD) in Adults: Risk Assessment with Ankle Brachial Index U.S.
+        Preventive Services Task Force website</citetitle>
+      <pubdate>Published September 2013</pubdate>
+      <bibliomisc>
+        <link
+          xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/RecommendationStatementFinal/peripheral-arterial-disease-pad-and-cvd-in-adults-risk-assessment-with-ankle-brachial-index"
+        />
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <citetitle>U.S. Preventive Services Task Force</citetitle>
+
+      <citetitle pubwork="journal">Oral Cancer: Screening. U.S. Preventive
+      Services Task Force website</citetitle>
+
+      <pubdate>Published November 2013</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/oral-cancer-screening1"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <citetitle>U.S. Preventive Services Task Force</citetitle>
+
+      <citetitle pubwork="journal">Tobacco Smoking Cessation in Adults,
+      Including Pregnant Women: Behavioral and Pharmacotherapy Interventions.
+      U.S. Preventive Services Task Force website</citetitle>
+
+      <pubdate>Published September 2015</pubdate>
+
+      <bibliomisc>
+        <link xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/tobacco-use-in-adults-and-pregnant-women-counseling-and-interventions1"/>
+      </bibliomisc>
+    </biblioentry>
+
+    <biblioentry>
+      <abbrev>Wilson, 1998</abbrev>
+
+      <authorgroup>
+        <author>
+          <personname>
+            <surname>Wilson</surname>
+
+            <firstname>PW</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>D'Agostino</surname>
+
+            <firstname>RB</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Levy</surname>
+
+            <firstname>D</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Belanger</surname>
+
+            <firstname>AM</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Silbershatz</surname>
+
+            <firstname>H</firstname>
+          </personname>
+        </author>
+
+        <author>
+          <personname>
+            <surname>Kannel</surname>
+
+            <firstname>WB</firstname>
+          </personname>
+        </author>
+      </authorgroup>
+
+      <citetitle pubwork="article">A Prediction of coronary heart disease
+      using risk factor categories</citetitle>
+
+      <citetitle pubwork="journal">Circulation</citetitle>
+
+      <pubdate>1998</pubdate>
+
+      <volumenum>97</volumenum>
+
+      <issuenum>18</issuenum>
+
+      <pagenums>1837-1847</pagenums>
+    </biblioentry>
+  </bibliography>
+
+  <glossary>
+    <title>Acronyms</title>
+    <informaltable>
+      <tgroup cols="2">
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              <emphasis role="strong">Acronym</emphasis>
+            </entry>
+            <entry>
+              <emphasis role="strong">Definition</emphasis>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>AAA</entry>
+            <entry>Abdominal Aortic Aneurysm</entry>
+          </row>
+          <row>
+            <entry>APN</entry>
+            <entry>Advanced Practice Nurses</entry>
+          </row>
+          <row>
+            <entry>CCWP</entry>
+            <entry>Clinical Content White Paper</entry>
+          </row>
+          <row>
+            <entry>CPG</entry>
+            <entry>Clinical Practice Guideline</entry>
+          </row>
+          <row>
+            <entry>CPRS</entry>
+            <entry>Computerized Patient Record System</entry>
+          </row>
+          <row>
+            <entry>CT</entry>
+            <entry>Computed Tomography</entry>
+          </row>
+          <row>
+            <entry>CVD</entry>
+            <entry>Cardiovascular Disease</entry>
+          </row>
+          <row>
+            <entry>ENDS</entry>
+            <entry>Electronic Nicotine Delivery Systems</entry>
+          </row>
+          <row>
+            <entry>FDA</entry>
+            <entry>United States Food and Drug Administration</entry>
+          </row>
+          <row>
+            <entry>HEDIS</entry>
+            <entry>Healthcare Effectiveness Data and Information Set</entry>
+          </row>
+          <row>
+            <entry>HL7</entry>
+            <entry>Health Level 7</entry>
+          </row>
+          <row>
+            <entry>KBS</entry>
+            <entry>Knowledge Based Systems</entry>
+          </row>
+          <row>
+            <entry>KNART</entry>
+            <entry>Knowledge Artifact</entry>
+          </row>
+          <row>
+            <entry>LDCT</entry>
+            <entry>Low-dose Computed Tomography</entry>
+          </row>
+          <row>
+            <entry>LPN</entry>
+            <entry>Licensed Practical Nurse</entry>
+          </row>
+          <row>
+            <entry>MRI</entry>
+            <entry>Magnetic Resonance Imaging</entry>
+          </row>
+          <row>
+            <entry>NCQA</entry>
+            <entry>National Committee for Quality Assessment</entry>
+          </row>
+          <row>
+            <entry>OIIG</entry>
+            <entry>Office of Informatics and Information Governance</entry>
+          </row>
+          <row>
+            <entry>PA</entry>
+            <entry>Physician Assistant</entry>
+          </row>
+          <row>
+            <entry>PAD</entry>
+            <entry>Peripheral Arterial Disease</entry>
+          </row>
+          <row>
+            <entry>RN</entry>
+            <entry>Registered Nurse</entry>
+          </row>
+          <row>
+            <entry>SME</entry>
+            <entry>Subject Matter Expert</entry>
+          </row>
+          <row>
+            <entry>TO</entry>
+            <entry>Task Order</entry>
+          </row>
+          <row>
+            <entry>USPSTF</entry>
+            <entry>United States Preventive Services Task Force</entry>
+          </row>
+          <row>
+            <entry>VA</entry>
+            <entry>Department of Veterans Affairs</entry>
+          </row>
+          <row>
+            <entry>VACO</entry>
+            <entry>VA Central Office</entry>
+          </row>
+          <row>
+            <entry>VAMC</entry>
+            <entry>VA Medical Center</entry>
+          </row>
+          <row>
+            <entry>VHA</entry>
+            <entry>Veterans Health Administration</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </glossary>
+</book>
