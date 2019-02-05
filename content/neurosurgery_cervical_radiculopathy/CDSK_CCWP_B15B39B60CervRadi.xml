@@ -1,0 +1,1505 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Neurosurgery: Radiculopathy (Cervical) Clinical Content White Paper </subtitle>
+        <releaseinfo>
+            <annotation>
+                <para>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</para>
+            </annotation>
+        </releaseinfo>
+        <copyright>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>
+                    <surname>Department of Veterans Affairs (VA)</surname>
+                </personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center" fileref="../../doc/images/VASealColor.jpg"
+                                contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems (KBS)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance (OIIG)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support (CDS)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information</title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <!--<entry valign="middle">ID</entry>-->
+                                <entry valign="middle">KNART Name</entry>
+                                <entry valign="middle">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <!--<entry>B5</entry>-->
+                                <entry>Radiculopathy (Cervical) - Order Set</entry>
+                                <entry>CLIN0004AB</entry>
+                            </row>
+                            <row>
+                                <!--<entry>B35</entry>-->
+                                <entry>Radiculopathy (Cervical) - Documentation Template</entry>
+                                <entry>CLIN0005AC</entry>
+                            </row>
+                            <row>
+                                <!--<entry>B35</entry>-->
+                                <entry>Radiculopathy (Cervical) - Composite/Consult Request</entry>
+                                <entry>N/A</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>April 2018</pubdate>
+        <volumenum>Version 1.1</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.1</revnumber>
+                <date>04/30/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Revised per PO comments; revised final version</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>10/31/2017</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>DocBook transformation and QA; final version</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>09/24/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template revisions per PO recommendations</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>08/28/2017</date>
+                <authorinitials>Vida Dunie</authorinitials>
+                <revremark>QA/Tech writer review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>08/28/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>SME approval</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>08/27/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark> Clinical review and incorporation of VA SME clinical content feedback
+                </revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>08/15/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark> SME Review and Input </revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>08/14/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark> Motive data added </revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>08/01/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark> Update Template format </revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>07/17/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Initial Draft</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (SME) Panel</title>
+        <informaltable xml:id="va.SME.List" frame="all">
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>David (Cory) Adamson, MD</entry>
+                        <entry align="left">Physician, 1670 Clairmont Rd, Atlanta, GA 30033</entry>
+                        <entry>SME, Primary</entry>
+                    </row>
+                    <row>
+                        <entry>Jacob Rachlin, MD</entry>
+                        <entry align="left">Chief of Neurosurgery, VA Boston Health Care System,
+                            1400 VFW Parkway, Boston, MA 02132</entry>
+                        <entry>SME, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry>Joseph King, MD</entry>
+                        <entry align="left">Physician, Surgical Service, VA New England/Connecticut
+                            Healthcare System, 950 Campbell Ave, West Haven, CT 06516</entry>
+                        <entry>SME</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface>
+        <title>Introduction</title>
+        <para>The VA is committed to improving the ability of clinicians to provide care for
+            patients while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the HL7
+            Knowledge Artifact Specification for a wide range of VA clinical use cases. Knowledge
+            Artifacts, referred to as KNARTs, enable the structuring and encoding of clinical
+            knowledge so the knowledge can be integrated with electronic health records to enable
+            clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper is to capture the clinical context
+            and intent of KNART use cases in sufficient detail to provide the KNART authoring team
+            with the clinical source material to construct the corresponding knowledge artifacts
+            using the HL7 Knowledge Artifact Specification. This paper has been developed using
+            material from a variety of sources: VA artifacts, clinical practice guidelines, evidence
+            in the body of medical literature, and clinical expertise. After reviewing these
+            sources, the material has been synthesized and harmonized under the guidance of VA
+            subject matter experts to reflect clinical intent for this use case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work. </para>
+    </preface>
+    <preface>
+        <title>Conventions Used</title>
+        <para>Conventions used within the knowledge artifact descriptions include: <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt;: Indicates a prompt to obtain the information listed</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>If possible, the requested information should be obtained from the
+                                underlying system(s). Otherwise, prompting the user for information
+                                may be required. </para>
+                        </listitem>
+                        <listitem>
+                            <para>The technical and clinical notes associated with a section should
+                                be consulted for specific constraints on the information (e.g.,
+                                time-frame, patient interview, etc.).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Default values: unless otherwise noted, &lt;obtain&gt; indicates
+                                to obtain the one most recent observation. It is recognized that
+                                this default time-frame value may be altered by future
+                                implementations</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>[...]: Square brackets enclose explanatory text that indicates some action
+                        on the part of the user, or general guidance to the clinical or technical
+                        teams. Examples include, but are not limited to: <itemizedlist>
+                            <listitem>
+                                <para>[Begin...], [End...]: Indicates the start and end of specific
+                                    areas to clearly delineate them for technical purposes. </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Activate...]: Initiates another knowledge artifact or
+                                    knowledge artifact section. </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Section Prompt: ...]: If this section is applicable, then the
+                                    following prompt should be displayed to the user. </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Section Selection Behavior: ...]: Indicates technical
+                                    constraints or considerations for the selection of items within
+                                    the section. </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Attach: ...]: Indicates the specified item should be attached
+                                    to the documentation template if available. </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Link: ...]: Indicates that, rather than attaching, a link to
+                                    the item should be included in the documentation template.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Clinical Comments: ...]: Indicates clinical rationale or
+                                    guidance. </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Technical Note: ...]: Indicates technical considerations or
+                                    notes. </para>
+                            </listitem>
+                            <listitem>
+                                <para>[If...]: Indicates the beginning of a conditional section.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Else, ...]: Indicates the beginning of the alternative branch
+                                    of a conditional section. </para>
+                            </listitem>
+                            <listitem>
+                                <para>[Else if...] Indicates the end of a conditional
+                                    section.</para>
+                            </listitem>
+                        </itemizedlist></para>
+                </listitem>
+                <listitem>
+                    <para>Check boxes: Indicates items that should be selected based upon the
+                        section selection behavior. </para>
+                </listitem>
+            </itemizedlist></para>
+    </preface>
+    <chapter>
+        <title>Radiculopathy (Cervical)</title>
+        <section>
+            <title>Clinical Context</title>
+            <para>The Neurosurgery Radiculopathy (Cervical) KNART set is intended for referring
+                providers (Primary Care, Pain Clinic, Anesthesiologist, Physical Therapist and
+                sometimes Emergency Department Physicians) performing an initial workup for adult
+                outpatients with symptoms prior to requesting a Neurosurgery Consultation.
+                Diagnostic and treatment modalities include Magnetic Resonance Imaging (MRI),
+                Computed Tomography (CT) Myelogram, medication, physical therapy, acupuncture,
+                steroid injections and pain clinic visits. The provider should also consider both a
+                mental health evaluation and a substance abuse evaluation (alcohol, smoking,
+                opioids/narcotics) where appropriate. The clinical context for this consultation
+                includes only routine, non-urgent referrals to neurosurgery. Spinal surgery is
+                performed by orthopedic surgeons as well, but since orthopedic surgery was not
+                involved in development of this knowledge artifact it should be reviewed by
+                orthopedic surgery before it is used in the context of consults to orthopedic
+                surgery.</para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry>Provider in Primary Care, Emergency Medicine, Anesthesiology,
+                                Pain Clinic, Physical Therapy</entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry>Adult outpatient being referred to Neurosurgery for Radiculopathy
+                                (Cervical)</entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry>Routine/Non-urgent</entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry>Primary Care</entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry>Outpatient</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section>
+            <title>Knowledge Artifacts</title>
+            <para>This section describes the CDS knowledge artifacts that are specific to
+                Neurosurgery Radiculopathy (Cervical) and is intended for users caring for adult
+                patients who may require a Neurosurgery referral for surgery. Target clinical users
+                include Primary Care physicians, Emergency Department physicians, Physical
+                Therapist, Pain Clinic or Anesthesiologists. Patient cohort includes adult
+                outpatients being referred to Neurosurgery.</para>
+            <para>The intent of these artifacts is to ensure a minimum workup is initiated prior to
+                a Neurosurgery Consultation. Specific constraints for these artifacts are
+                that:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>They apply to adult outpatients being considered for Neurosurgery
+                        referral.</para>
+                </listitem>
+                <listitem>
+                    <para>All imaging studies and treatment modalities are documented and
+                        appropriate results are accessible for Neurosurgery consultation.</para>
+                </listitem>
+            </itemizedlist>
+            <para>There are three knowledge artifacts that define this clinical use case. These
+                artifacts are the Consult Request, the Documentation Template and the Order Set and
+                are described in detail in the following sections.</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Consult Request </para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>This is a high-level, encompassing artifact.</para>
+                        </listitem>
+                        <listitem>
+                            <para>It relies upon the documentation template and order set
+                                artifacts.</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>Documentation Template</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>This is a template used to document the information provided by
+                                the referring provider.</para>
+                        </listitem>
+                        <listitem>
+                            <para>It includes logic for appropriate display of documentation
+                                sections.</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para> Order Set</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>This is the set of orderable items associated with the consult
+                                request.</para>
+                        </listitem>
+                        <listitem>
+                            <para>It includes logic for appropriate display of the order set.</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Composite</title>
+        <para>[Begin Composite.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>Cervical radiculopathy is a common problem that exerts a significant impact on
+                functional impairment, chronic pain, disability, absenteeism, and other parameters
+                that negatively affect quality of life. Referring physicians, most commonly primary
+                care physicians and mid-level providers, often respond to the frustration of a
+                patient with cervical radiculopathy by ordering advanced imaging tests and
+                prematurely referring patients to subspecialists before exhausting the full array of
+                conservative treatment modalities that are within their scope of practice.
+                Implementation of an evidence-based approach consistent with the recommendations of
+                authoritative professional societies, such as the American Association of
+                Neurological Surgeons and the Congress of Neurological Surgeons, can optimize
+                resource allocation and facilitate use of appropriate treatment modalities based on
+                clinical presentation.</para>
+        </section>
+        <section>
+            <title>Consult and Referrals</title>
+            <para>[Begin Consult and Referrals.]</para>
+            <para>[Technical Note: The following list provides the basic components of the consult
+                request. This is the high-level, encompassing artifact, and must be combined with
+                the documentation template and order set to form a fully functional knowledge
+                artifact. The information for the consult request can be obtained as part of the
+                composite or within the corresponding order set component in the consult section. If
+                obtained within the composite, this information should pre-populate the respective
+                order set component.] </para>
+            <para>[Section Prompt: To request a neurosurgery consult for evaluation of cervical
+                radiculopathy, please provide the following information.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Reason for Consult: Evaluate patient with cervical radiculopathy for
+                            surgery</para>
+                    </listitem>
+                    <listitem>
+                        <para>Consult Specialty: Neurosurgery</para>
+                    </listitem>
+                    <listitem>
+                        <para>Priority: Routine</para>
+                    </listitem>
+                    <listitem>
+                        <para>&lt;obtain> Referring Physician</para>
+                    </listitem>
+                    <listitem>
+                        <para>&lt;obtain> Referring Physician Contact Information</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Activate Documentation Template.]</para>
+            <para>[End Consult and Referrals.]</para>
+            <para>[End Composite.]</para>
+        </section>
+    </chapter>
+    <chapter>
+            <title>Documentation Template</title>
+        <para>[Begin Documentation Template.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[Section Prompt: This documentation template should be completed by the provider
+                requesting neurosurgical evaluation for a patient with cervical
+                radiculopathy.]</para>
+        </section>
+        <section>
+            <title>Chief Complaint</title>
+            <para>[Begin Chief Complaint section.]</para>
+            <para>[Section Prompt: Chief Complaint.] </para>
+            <para>[Section Selection Behavior: Select at least one.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Pain</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Numbness</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Weakness</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Other &lt;obtain&gt;</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Location of symptoms.]</para>
+            <para>[Section Selection Behavior: Select at least one.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Neck</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Left Arm</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Right Arm</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Other &lt;obtain&gt; Location</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: If pain is not a chief complaint, then skip to Duration of
+                Symptoms.]</para>
+            <para>[Section Prompt: Please provide details regarding the character of the
+                pain.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Burning</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Shooting/Electric</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Aching</para>
+                </listitem>
+            </itemizedlist>
+            <para>&lt;obtain&gt; Details</para>
+            <para>[Section Prompt: Duration of Symptoms?]</para>
+            <para>[Section Selection Behavior: Select only one.] <itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Acute (Less than 2 weeks)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Subacute (Greater than or equal to 2 weeks and less than or equal to 3
+                            months)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Chronic (Greater than 3 months)</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Chief Complaint section.]</para>
+        </section>
+        <section>
+            <title>Prior Conservative Therapies</title>
+            <para>[Begin Prior Conservative Therapies section.]</para>
+            <para>[Section Prompt: Which conservative therapies have been tried?]</para>
+            <formalpara>
+                <title>Medications</title>
+                <para>[Subsection Prompt: Medications.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Select any. Optional.]</para>
+            <para>[Technical Note: Details for this subsection include: name of medication, dose,
+                date started, and date ended.]<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Nonsteroidal anti-inflammatory drug (NSAIDs) &lt;obtain&gt;
+                            Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Opioids &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Antiepileptics &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Tricyclic antidepressants &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Muscle relaxants &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Other &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; None</para>
+                    </listitem>
+                </itemizedlist></para>
+            <formalpara>
+                <title>Other Therapies</title>
+                <para>[Subsection Prompt: Other Therapies.]</para>
+            </formalpara>
+            <para>[Section Selection Behavior: Select any. Optional.]</para>
+            <para>[Technical Note: Details for this subsection include: therapy summary, date
+                started, date ended, number of times and outcome.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Occupational Therapy &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Cervical traction &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Acupuncture &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Spinal Manipulation &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Cognitive behavioral therapy &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Pain clinic &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Selective nerve root blocks &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Epidural steroid injections &lt;obtain&gt; Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Other &lt;obtain&gt; Details</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Prior Conservative Therapies section.]</para>
+        </section>
+        <section>
+            <title>Medical History</title>
+            <para>[Begin Medical History section.]</para>
+            <para>[Section Prompt: Applicable Medical History.]</para>
+            <para>[Section Selection Behavior: Select any. Optional.]</para>
+            <para>[Technical Note: Details for this section include: summary, consult date, consult
+                results, current status.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Other chronic pain &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Posttraumatic stress disorder &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Anxiety &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Depression &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Other mental conditions &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Oncological conditions &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Obesity &lt;obtain&gt; Body Mass Index (BMI)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Cardiovascular conditions &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Other relevant medical history &lt;obtain&gt; Details</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Provide link to full medical history.]</para>
+            <para>[End Medical History section.]</para>
+        </section>
+        <section>
+            <title>Surgical History</title>
+            <para>[Begin Surgical History section.]</para>
+            <para>[Section Prompt: Applicable Surgical History.]</para>
+            <para>[Section Selection Behavior: Select any. Optional.]</para>
+            <para>[Technical Note: Details for this section include: surgical summary and surgery
+                date.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Spinal surgery &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Other prior surgeries &lt;obtain&gt; Details</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Technical Note: Provide link to full surgical history.]</para>
+            <para>[End Surgical History section.]</para>
+        </section>
+        <section>
+            <title>Social History</title>
+            <para>[Begin Social History section]</para>
+            <para> [Section Prompt: Social History.]</para>
+            <para> [Section Selection Behavior: Select any. Optional.]</para>
+            <para>[Technical Note: Details for this section include: summary, current status,
+                applicable dates.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Alcohol use/abuse &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Rehabilitation or detoxification &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Current or former tobacco user &lt;obtain&gt; Details
+                        &lt;obtain&gt; Pack years</para>
+                </listitem>
+                <listitem>
+                    <para>[Technical Note: Provide link to Tobacco Assessment and Cessation
+                        Counseling KNART.]</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Cocaine use/abuse &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Other substance use/abuse &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Homeless &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>[Technical Note: Provide link to Homelessness Documentation Template
+                        KNART.]</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Unstable home environment &lt;obtain&gt; Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Home environment conducive to healing &lt;obtain&gt;
+                        Details</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Geographically remote (40+mile drive to medical care)
+                        &lt;obtain&gt; Details</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Social History section.]</para>
+        </section>
+        <section>
+            <title>Imaging History</title>
+            <para>[Begin Imaging History section.]</para>
+            <para>[Section Prompt: Imaging History.]</para>
+            <para>[Section Prompt: The most recent imaging studies in each category should be
+                included.]</para>
+            <para>[Technical Note: Result text should be attached automatically if available for the
+                Cervical Spine X-Ray Interpretation field.]<itemizedlist>
+                    <listitem>
+                        <para>&lt;obtain&gt; Cervical Spine X-rays Interpretation with dynamic
+                            flexion and extension</para>
+                    </listitem>
+                    <listitem>
+                        <para>[Link Images: Cervical Spine X-Rays.]</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Technical Note: Result text should be attached automatically if available for the
+                Cervical Spine MRI Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Cervical Spine MRI Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Cervical Spine MRI.]</para>
+                </listitem>
+            </itemizedlist>
+            <para> [Technical Note: Result text should be attached automatically if available for
+                the Cervical Spine Myelogram Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Cervical Spine Myelogram Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Cervical Spine Myelogram.]</para>
+                </listitem>
+            </itemizedlist>
+            <para> [Technical Note: Result text should be attached automatically if available for
+                the Cervical Spine CT Interpretation field.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&lt;obtain&gt; Cervical Spine CT Interpretation</para>
+                </listitem>
+                <listitem>
+                    <para>[Link Images: Cervical Spine CT.]</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Imaging History section.]</para>
+        </section>
+        <section>
+            <title>Medications</title>
+            <para>[Begin Medications List section.]</para>
+            <para>&lt;obtain&gt; Current pain medication list</para>
+            <para>&lt;obtain&gt; Current anticoagulation and antiplatelet list</para>
+            <para>[End Medications List section.]</para>
+        </section>
+        <section>
+            <title>Surgical Candidacy</title>
+            <para>[Begin Surgical Candidacy section.] </para>
+            <para>[Section Prompt: Does patient want to be considered for surgery?<itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Yes</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; No &lt;obtain&gt; reason for neurosurgical consult</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Surgical Candidacy section.]</para>
+            <para>[End Documentation Template.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Order Set</title>
+        <para>[Begin Order Set.]</para>
+        <section>
+            <title>Knowledge Narrative</title>
+            <para>[See Clinical Context in Chapter 1.]</para>
+        </section>
+        <section>
+            <title>Medications</title>
+            <para>[Begin Medications section]</para>
+            <para>[Section Prompt: Based upon clinical judgment and if not otherwise
+                contraindicated, consider initiating a new order for one or more of the following
+                medications prior to the neurosurgery consultation.]</para>
+            <para>[Section Prompt: NSAIDs.]</para>
+            <para>[Section Prompt: NSAIDs increase the risk of serious gastrointestinal adverse
+                events including bleeding, ulceration, and perforation of the stomach or intestines,
+                which can be fatal. The prevailing recommendations in consensus-based clinical
+                guidelines recommend that NSAID/Cyclo-oxygenase-2 (COX-2) should be avoided in
+                Chronic Kidney Disease (CKD).]</para>
+            <para>[Technical Note: Provide link to <link
+                    xlink:href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3417055/#R6/link"
+                />]</para>
+            <para>[Section Selection Behavior: Select only one. Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Ibuprofen 400 mg tablet oral every 6 hours as needed for neck or
+                        arm pain; may increase dose frequency to one tablet every 4 hours 100
+                        tablets 2 refills</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Naproxen sodium 550 mg tablet oral every 12 hours as needed for
+                        neck or arm pain 100 tablets 2 refills</para>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Other Analgesics.]</para>
+            <para>[Section Selection Behavior: Select only one. Optional.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Acetaminophen 325 mg tablet oral two tablets every 6 hours as
+                            needed for neck or arm pain; may increase dose frequency to two tablets
+                            every 4 hours; do not take more than 10 tablets per day 100 tablets 2
+                            refills </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[Section Prompt: Glucocorticoids, Oral (For acute pain only)]</para>
+            <para>[Section Selection Behavior: Select only one. Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Methylprednisolone 4 mg tablet oral by taper: </para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>take 6 tablets at once on day 1</para>
+                        </listitem>
+                        <listitem>
+                            <para>On day 2 take one tablet before breakfast, one after lunch, one
+                                after dinner, and two at bedtime</para>
+                        </listitem>
+                        <listitem>
+                            <para>On day 3 take one tablet before breakfast, one after lunch, one
+                                after dinner, and one at bedtime</para>
+                        </listitem>
+                        <listitem>
+                            <para>On day 4 take one tablet before breakfast, one after lunch, and
+                                one at bedtime</para>
+                        </listitem>
+                        <listitem>
+                            <para>On day 5 take one tablet before breakfast and one at
+                                bedtime</para>
+                        </listitem>
+                        <listitem>
+                            <para>On day 6 take one tablet before breakfast. </para>
+                        </listitem>
+                        <listitem>
+                            <para>21 tablets 0 refills </para>
+                            <para>[End Medications section.]</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>[Section Prompt: Other Medications]</para>
+            <para>[Technical Note: Provide a link to institutional pharmacy orders]</para>
+        </section>
+        <section>
+            <title>Procedures</title>
+            <para>[Begin Procedures section.]</para>
+            <para>[Section Prompt: Consider ordering the following procedures in conjunction with
+                the neurosurgery consult. Typically for pain management, unless contraindicated for
+                any reason, one would order glucocorticoid injection from the list below first, and
+                if indicated, proceed to selective nerve block based on clinical outcome of
+                patient's symptoms following completion of the series of 3 glucocorticoid
+                injections.]</para>
+            <para>[Section Selection Behavior: Select any or none. Optional.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Epidural glucocorticoid injection under fluoroscopic or CT
+                            guidance per interventionist (series of three)</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Selective nerve root block per interventionist to distinguish
+                            symptomatic level(s) following identification of compressive lesions at
+                            multiple levels on MRI or CT myelography </para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Selective nerve root block per interventionist to distinguish
+                            symptomatic level(s) in patient with discordance between clinical
+                            symptoms and findings on MRI or CT myelography </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Procedures section.]</para>
+        </section>
+        <section>
+            <title>Imaging</title>
+            <para>[Begin Imaging section] </para>
+            <para> [Section Prompt: Consider ordering one of the following imaging studies in
+                conjunction with the neurosurgery consult.] </para>
+            <para>[Section Selection Behavior: Select only one. Optional.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; X-ray cervical spine anteroposterior (AP) and lateral for neck
+                        pain, flexion and extension views</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; MRI cervical spine without intravenous (IV) contrast (consider
+                        for: chronic neck pain, failed conservative management, candidate for
+                        surgical intervention) </para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; CT cervical spine without IV contrast (consider for: chronic neck
+                        pain, failed conservative management, candidate for surgical intervention,
+                        MRI contraindicated, IV contrast contraindicated) </para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; CT myelography cervical spine (consider for: chronic neck pain,
+                        failed conservative management, candidate for surgical intervention, MRI
+                        contraindicated)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; CT myelography cervical spine (consider for: chronic neck pain,
+                        failed conservative management, candidate for surgical intervention,
+                        clinical findings discordant with MRI findings) </para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Imaging Section.]</para>
+        </section>
+        <section>
+        <title>Additional Consults</title>
+        <para>[Begin Additional Consults section.] </para>
+        <para>[Section Prompt: Consider ordering the following consults in conjunction with the
+                neurosurgery consult.] </para>
+        <para>[Section Selection Behavior: Optional. Select as many as desired.] </para>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610; Consult physical therapy to evaluate for conservative therapy for
+                            cervical radiculopathy (e.g., cervical halter traction, electrical
+                            stimulation, acupuncture, exercise instruction) </para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Consult psychiatry to evaluate for depression and other
+                            psychological factors that may affect patient's perception of pain and
+                            ability to manage pain </para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Consult social services to evaluate social factors (e.g.,
+                            joblessness, homelessness, financial concerns) that may affect patient's
+                            ability to adhere to conservative treatment </para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Consult pain management to address modalities for treating
+                            chronic pain </para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Consult chiropractor for spinal manipulation
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610; Consult acupuncture</para>
+                </listitem>
+            </itemizedlist>
+        </para>
+            <para>[End Additional Consults section.]</para>
+    </section>
+    <section>
+        <title>Patient Education</title>
+        <para>[Begin Patient Education section.]</para>
+        <para>[Section Prompt: Consider ordering patient education in conjunction with the
+                neurosurgery consult.]</para>
+        <para>[Section Selection Behavior: Select any or none. Optional.] <itemizedlist>
+                    <listitem>
+                        <para>&#x2610; Cervical radiculopathy education (level-appropriate materials
+                            on natural progression, conservative management, and procedural
+                            management) </para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Patient Education section.]</para>
+            <para>[End Order Set.]</para>
+    </section>
+    </chapter>
+    <bibliography><info><title>Bibliography/Evidence</title></info>
+        <biblioentry>
+            <abbrev>Bono, 2011</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Bono</surname><firstname>CM</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Ghiselli</surname><firstname>G</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Gilbert</surname><firstname>TJ</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">An evidence-based clinical guideline for the diagnosis and
+                treatment of cervical radiculopathy from degenerative disorders</citetitle>
+            <citetitle pubwork="journal">Spine J</citetitle>
+            <pubdate>2011</pubdate>
+            <volumenum>11</volumenum>
+            <issuenum>1</issuenum>
+            <pagenums>64-72</pagenums>
+        </biblioentry>
+   
+        <biblioentry>
+            <author>
+                <orgname>Joint Section on Disorders of the Spine and Peripheral Nerves of the
+                    American Association of Neurological Surgeons and Congress of Neurological
+                    Surgeons</orgname>
+            </author>
+            <citetitle pubwork="webpage"> Guidelines for the surgical management of cervical
+                degenerative disease</citetitle>
+            <bibliomisc>J Neurosurg Spine</bibliomisc>
+            <pubdate>2009</pubdate>
+            <volumenum>11</volumenum>
+            <issuenum>2</issuenum>
+            <pubdate>97-252</pubdate>
+        </biblioentry>
+   
+        <biblioentry>
+            <abbrev>Kuijper, 2009</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Kuijper</surname><firstname>B</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Tans</surname><firstname>JTJ</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Beelen</surname><firstname>A</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Nollet</surname><firstname>F</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>de Visser</surname><firstname>M</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Cervical collar or physiotherapy versus wait and see policy
+                for recent onset cervical radiculopathy: randomised trial</citetitle>
+            <citetitle pubwork="journal">BMJ</citetitle>
+            <pubdate>2009</pubdate>
+            <volumenum>11</volumenum>
+            <pagenums>339-b3883</pagenums>
+        </biblioentry>
+    
+        <biblioentry>
+            <abbrev>Newman, 2013</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Newman</surname><firstname>JS</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Weissman</surname><firstname>BN</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Angevine</surname><firstname>PD</firstname></personname>
+                </author>
+                <author>
+                    <personname>et al</personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Expert Panel on Musculoskeletal Imaging. ACR
+                Appropriateness Criteria: Chronic Neck Pain</citetitle>
+            <citetitle pubwork="journal">American College of Radiology Website</citetitle>
+            <pubdate>2013</pubdate>
+            <bibliomisc><link xlink:href="https://acsearch.acr.org/docs/69426/Narrative/"
+                /></bibliomisc>
+        </biblioentry>
+    
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage"> IBU- ibuprofen tablet [Dr. Reddy's Laboratories
+                Limited]</citetitle>
+            <bibliomisc>DailyMed website</bibliomisc>
+            <pubdate> Revised October 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=24731405-219c-79b4-ecf0-7d5fbfda94ba"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage"> MEDROL- methylprednisolone tablet [Pharmacia and Upjohn
+                Company LLC]</citetitle>
+            <bibliomisc>DailyMed website</bibliomisc>
+            <pubdate>Revised November 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=39d5270b-d957-4821-93d6-501b7b9f02d4"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine.</orgname>
+            </author>
+            <citetitle pubwork="webpage">NAPROSYN- naproxen tablet; EC-NAPROSYN- naproxen tablet,
+                delayed release; NAPROSYN- naproxen suspension; ANAPROX- naproxen sodium tablet;
+                ANAPROX DS- naproxen sodium tablet [Genentech, Inc.]</citetitle>
+            <bibliomisc>DailyMed website</bibliomisc>
+            <pubdate>Revised March 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href=" https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68848217-03c9-4377-9be6-6f567e629129"
+                /></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>U.S. National Library of Medicine</orgname>
+            </author>
+            <citetitle pubwork="webpage">Tylenol Regular Strength-acetaminophen tablet[Johnson
+                &amp;Johnson Consumer Inc.,McNeil Consumer Healthcare Division]</citetitle>
+            <bibliomisc>DailyMed website</bibliomisc>
+            <pubdate>Revised March 2016</pubdate>
+            <bibliomisc><link
+                    xlink:href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68848217-03c9-4377-9be6-6f567e629129"
+                /></bibliomisc>
+        </biblioentry>
+    </bibliography>
+    <appendix>
+        <title>Appendix: Existing VA Artifacts</title>
+        <figure>
+            <title>Neurosurgery Consult</title>
+            <mediaobject>
+                <alt>Screenshot of a neurosurgery urgent consult criteria with required tests, quick
+                    orders, and provider notes.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig1neurosurgery.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Neurosurgery Spine Consults</title>
+            <mediaobject>
+                <alt>Screenshot of neurosurgery spine conults along with cranial and plastic
+                    surgery.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="file:images/Fig2neurosurgeryspineconsults.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Cervical/Thoracic Radiculopathy</title>
+            <mediaobject>
+                <alt>Screenshot of cervical/thoracic radicuolpathy with urgent criteria, required
+                    tests, and quick orders.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig3cervicalthoracicradiculopathy.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>MRI Orders</title>
+            <mediaobject>
+                <alt>Screenshot of MRI orders, provider's note, and quick notes.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig4mriorders.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> <figure>
+            <title>Myelogram Consult</title>
+            <mediaobject>
+                <alt>Screenshot of myelogram consult including provider's note and quick note.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig5myelogramconsult.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> <figure>
+            <title>Service Prerequisites for Imaging Myelogram Consult</title>
+            <mediaobject>
+                <alt>Screenshot of a consult that has one sentence to answer question.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig6imaging.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> <figure>
+            <title>Reason For Request Myelogram</title>
+            <mediaobject>
+                <alt>Screenshot of a myelogram request with six questions to be answered.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig7reasonforrequestmyelogram.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> <figure>
+            <title>Reason for Request Imaging Myelogram Consult</title>
+            <mediaobject>
+                <alt>Screenshot of myelogram consult that includes six questions that need
+                    answering.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig8reasonrequestimagingmyelogram.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> <figure>
+            <title>Reason for Request Short Stay Unit</title>
+            <mediaobject>
+                <alt>Screenshot of request for short stay unit post myelogram with eight nursing
+                    orders.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig9shortstay.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Order Consult Myelogram</title>
+            <mediaobject>
+                <alt>Screenshot of an order consult to specialty and reason for request.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig10orderaconsult.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> <figure>
+            <title>Short Stay Orders</title>
+            <mediaobject>
+                <alt>Screenshot of a consult for short stay unit post myelogram with four nursing
+                    orders.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/fig11consultrequestedsscu.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> <figure>
+            <title>Short Stay Care Unit Consult</title>
+            <mediaobject>
+                <alt>Screenshot of consult for services in short stay unit, post myelogram, and
+                    where to admit patient.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig12shortstaycareunitcons.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Service Prerequisite Questions</title>
+            <mediaobject>
+                <alt>Screenshot of one sentence asking to answer all questions.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig13serviceprerequisites.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Cervical/Thoracic Myelogram, Urgency Criteria and Required Tests</title>
+            <mediaobject>
+                <alt>Screenshot of cervical/thoracic myelogram urgent anf required tests needed,
+                    quick notes and provider notes.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig14cervicalthoracicmyelopathy.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>The Neurosurgery Service Prerequisites Cervical/Thoracic Myelopathy
+                Outpatient</title>
+            <mediaobject>
+                <alt>Screenshot of a neurosurgery team services prerequisites for cervical/thoracic
+                    myelogram as an outpatient.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig15theneurosurgeryteam.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Neurosurgery Consult Cervical/Thoracic Myelopathy</title>
+            <mediaobject>
+                <alt>Screenshot of a neurosurgery template for cervical /thoracic and questions
+                    needing to be answered.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig16templateneurosurgery.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Neurosurgery Consult Goals for Cervical/Thoracic Myelopathy</title>
+            <mediaobject>
+                <alt>Screenshot of a neurosurgery template for cervical/thoracic, required test,
+                    description of symptoms, and MRI results.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig17templateneurosurgerycervicalthoracic.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Neurosurgery Consult Order</title>
+            <mediaobject>
+                <alt>Screenshot of a consult service specialty and required tests, symptom
+                    description, physical exam, and MRI findings.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig18consulttoservicespecialty.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Neurosurgery Consult Request, Pre-requisite Tests not Completed</title>
+            <mediaobject>
+                <alt>Screenshot of a reason for neurosurgery consult and if tests not done and
+                    neurosurgery consult not appropriate.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/fig19reasonforrequestnoteditable.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Neurosurgery Consult Request</title>
+            <mediaobject>
+                <alt>Screenshot of a neurosurgery template cervical disease, consult will be denied
+                    until relevant imaging done within one year.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig20templateneurosurgerycervicalspineoutpt.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Neurosurgery Consult Request</title>
+            <mediaobject>
+                <alt>Screenshot of a neurosurgery disease for cervical stenosis and pertinent
+                    clinical questions.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig21neurosurgerycervicaldisease.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Neurosurgery Consult Request</title>
+            <mediaobject>
+                <alt>Screenshot of a neurosurgery consult for cervical disc disease and pertinent
+                    clinical questions.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/fig22rateddisabilities.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <figure>
+            <title>Service Prerequisites for Myelogram Consult</title>
+            <mediaobject>
+                <alt>Screenshot of a consult that has one sentence to answer question.</alt>
+                <imageobject>
+                    <imagedata align="center"
+                        fileref="file:images/Fig13serviceprerequisites.png"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+    </appendix>
+    <appendix>
+        <title>Acronyms</title>
+        <informaltable>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Acronym</entry>
+                        <entry>Definition</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>AP</entry>
+                        <entry>Anteroposterior</entry>
+                    </row>
+                    <row>
+                        <entry>BMI</entry>
+                        <entry>Body Mass Index</entry>
+                    </row>
+                    <row>
+                        <entry>CDS</entry>
+                        <entry>Clinical Decision Support</entry>
+                    </row>
+                    <row>
+                        <entry>CKD</entry>
+                        <entry>Chronic Kidney Disease</entry>
+                    </row>
+                    <row>
+                        <entry>COX-2</entry>
+                        <entry>Cyclo-oxygenase-2</entry>
+                    </row>
+                    <row>
+                        <entry>CT</entry>
+                        <entry>Computed Tomography</entry>
+                    </row>
+                    <row>
+                        <entry>HL7</entry>
+                        <entry>Health Level 7</entry>
+                    </row>
+                    <row>
+                        <entry>IV</entry>
+                        <entry>Intravenous</entry>
+                    </row>
+                    <row>
+                        <entry>KBS</entry>
+                        <entry>Knowledge Based Systems</entry>
+                    </row>
+                    <row>
+                        <entry>KNART</entry>
+                        <entry>Knowledge Artifact</entry>
+                    </row>
+                    <row>
+                        <entry>MRI</entry>
+                        <entry>Magnetic Resonance Imaging</entry>
+                    </row>
+                    <row>
+                        <entry>NSAID</entry>
+                        <entry>Nonsteroidal anti-inflammatory drug</entry>
+                    </row>
+                    <row>
+                        <entry>OIIG</entry>
+                        <entry>Office of Informatics and Information Governance</entry>
+                    </row>
+                    <row>
+                        <entry>SME</entry>
+                        <entry>Subject Matter Expert</entry>
+                    </row>
+                    <row>
+                        <entry>TO</entry>
+                        <entry>Task Order</entry>
+                    </row>
+                    <row>
+                        <entry>VA</entry>
+                        <entry>Department of Veterans Affairs</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </appendix>
+</book>

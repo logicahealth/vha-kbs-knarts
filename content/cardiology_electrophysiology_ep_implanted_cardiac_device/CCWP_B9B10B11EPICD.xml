@@ -1,0 +1,1397 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:ns="http://docbook.org/ns/docbook">
+  <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Cardiology: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>)
+            Implanted Cardiac Devices Clinical Content White Paper </subtitle>
+        <copyright>
+            <year>March</year>
+            <year>2018</year>
+            <holder>B3 Group, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>B3 Group, Inc.</title>
+            <para>NOTICE OF GOVERNMENT COPYRIGHT LICENSE AND UNLIMITED RIGHTS LICENSE</para>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>Portions of this content are derivative works from content produced by Cognitive
+                Medical Systems, Inc. licensed under the Apache License, Version 2.0.</para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0.</para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright.</para>
+            <para>See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008, Task Order
+                VA11817F10080007.</para>
+        </legalnotice>
+        <copyright>
+            <year>2018</year>
+            <holder>Cognitive Medical Systems, Inc.</holder>
+        </copyright>
+        <legalnotice>
+            <title>Cognitive Medical Systems, Inc.</title>
+            <para>Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+                this file except in compliance with the License.</para>
+            <para>You may obtain a copy of the License at <link
+                    xlink:href="http://www.apache.org/licenses/LICENSE-2.0"
+                    >http://www.apache.org/licenses/LICENSE-2.0</link>
+            </para>
+            <para>Unless required by applicable law or agreed to in writing, software distributed
+                under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+                CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+                language governing permissions and limitations under the License.</para>
+            <para>This and related content produced by Cognitive Medical Systems, Inc. licensed
+                under the Apache License, Version 2.0 is available at: <link
+                    xlink:href="https://bitbucket.org/cogmedsys/hl7-kas-examples"
+                    >https://bitbucket.org/cogmedsys/hl7-kas-examples</link>
+            </para>
+            <para>Additional portions of this content are derivative works from content contributed
+                by Motive Medical Intelligence Inc., under Creative Commons Attribution-ShareAlike
+                4.0. <link xlink:href="https://bitbucket.org/cogmedsys/kas-source-material"
+                    >https://bitbucket.org/cogmedsys/kas-source-material</link>
+            </para>
+            <para>Contributions from 2013-2018 were performed either by US Government employees, or
+                under US Veterans Health Administration contracts.</para>
+            <para>US Veterans Health Administration contributions by government employees are work
+                of the U.S. Government and are not subject to copyright protection in the United
+                States. Portions contributed by government employees are USGovWork (17USC §105). Not
+                subject to copyright. See: <link xlink:href="https://www.usa.gov/government-works"
+                    >https://www.usa.gov/government-works</link>
+            </para>
+            <para>Contribution by contractors to the US Veterans Health Administration during this
+                period are contractually contributed under the Apache License, Version 2.0 and US
+                Government sponsorship is acknowledged under Contract VA118-16-D-1008-0007.</para>
+        </legalnotice>
+        <authorgroup>
+            <author>
+                <personname>Department of Veterans Affairs
+                        (<acronym><glossterm>VA</glossterm></acronym>)</personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center" fileref="../../doc/images/VASealColor.jpg"
+                                contentwidth="2in" contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems
+                    (<acronym><glossterm>KBS</glossterm></acronym>)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance
+                            (<acronym><glossterm>OIIG</glossterm></acronym>)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support
+                    (<acronym><glossterm>CDS</glossterm></acronym>)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order
+                        (<acronym><glossterm>TO</glossterm></acronym>):
+                    VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: Cardiology: Electrophysiology
+                                (<acronym><glossterm>EP</glossterm></acronym>) Implanted Cardiac
+                        Devices </title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <!--<entry valign="middle">ID</entry>-->
+                                <entry valign="middle" align="left">
+                                    <acronym><glossterm>KNART</glossterm></acronym>Name</entry>
+                                <entry valign="middle" align="left">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <!--<entry>B5</entry>-->
+                                <entry><acronym><glossterm>EP</glossterm></acronym> Primary
+                                    Prevention Implantable cardioverter-defibrillator
+                                            (<acronym><glossterm>ICD</glossterm></acronym>) Implant
+                                    - Order Set</entry>
+                                <entry>CLIN0004AB</entry>
+                            </row>
+                            <row>
+                                <entry><acronym><glossterm>EP</glossterm></acronym>
+                                            Pacemaker/<acronym><glossterm>ICD</glossterm></acronym>
+                                    Follow Up - Order Set</entry>
+                                <entry>CLIN0004AB</entry>
+                            </row>
+                            <row>
+                                <entry><acronym><glossterm>EP</glossterm></acronym>
+                                            Pacemaker/<acronym><glossterm>ICD</glossterm></acronym>
+                                    Generator Change - Order Set</entry>
+                                <entry>CLIN0004AB</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>April 2018</pubdate>
+        <volumenum>Version 1.1</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.1</revnumber>
+                <date>4/30/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Revised Final per PO comments</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>1/10/2018</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>DocBook transformation for final delivery</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>12/6/2017</date>
+                <authorinitials>VA</authorinitials>
+                <revremark>PO approval</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>8/22/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Clinical review for submission</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>8/21/2017</date>
+                <authorinitials>VA SMEs</authorinitials>
+                <revremark>SME approval</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>8/17/2017</date>
+                <authorinitials>Rocky Reston</authorinitials>
+                <revremark>Preparation for SME clinical content approval</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>8/01/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Updated template format</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>7/21/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Motive data added</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>7/03/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Initial draft</revremark>
+            </revision>
+        </revhistory>
+    </info>
+
+  <preface>
+    <title>VA Subject Matter Expert (<acronym><glossterm>SME</glossterm></acronym>) Panel</title>
+        <informaltable frame="all">
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>Bruce Bray, MD</entry>
+                        <entry>Professor, Cardiovascular Medicine, University of Utah School of
+                            Medicine; Staff Cardiologist, Salt Lake City VA Medical Center
+                                    (<acronym><glossterm>VAMC</glossterm></acronym>), 500 Foothill
+                            Drive, Salt Lake City, Utah 84148</entry>
+                        <entry><acronym><glossterm>SME</glossterm></acronym>, Primary</entry>
+                    </row>
+                    <row>
+                        <entry>Scott Wall, MD</entry>
+                        <entry>Assistant Professor, Cardiovascular Medicine, University of Utah;
+                            School of Medicine Staff Cardiologist, Electrophysiology, Salt Lake City
+                                    <acronym><glossterm>VAMC</glossterm></acronym>, 500 Foothill
+                            Drive, Salt Lake City, Utah 84148</entry>
+                        <entry><acronym><glossterm>SME</glossterm></acronym>, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry>Aiden Abidov, MD, PhD</entry>
+                        <entry>Professor of Medicine, Wayne State University; Section Chief,
+                            Cardiology, John Dingell
+                            <acronym><glossterm>VAMC</glossterm></acronym></entry>
+                        <entry><acronym><glossterm>SME</glossterm></acronym></entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+  </preface>
+    <preface>
+        <info>
+            <title>Introduction</title>
+        </info>
+        <para>The <acronym><glossterm>VA</glossterm></acronym> is committed to improving the ability
+            of clinicians to provide care for patients while increasing quality, safety, and
+            efficiency. Recognizing the importance of standardizing clinical knowledge in support of
+            this goal, <acronym><glossterm>VA</glossterm></acronym> is implementing the Health Level
+            7 (<acronym><glossterm>HL7</glossterm></acronym>) Knowledge Artifact Specification for a
+            wide range of <acronym><glossterm>VA</glossterm></acronym> clinical use cases. Knowledge
+            Artifacts, referred to as KNARTs, enable the
+            structuring and encoding of clinical knowledge so the knowledge can be integrated with
+            electronic health records to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper
+                (<acronym><glossterm>CCWP</glossterm></acronym>) is to capture the clinical context
+            and intent of <acronym><glossterm>KNART</glossterm></acronym> use cases in sufficient
+            detail to provide the <acronym><glossterm>KNART</glossterm></acronym> authoring team
+            with the clinical source material to construct the corresponding knowledge artifacts
+            using the <acronym><glossterm>HL7</glossterm></acronym> Knowledge Artifact
+            Specification. This paper has been developed using material from a variety of sources:
+                    <acronym><glossterm>VA</glossterm></acronym> artifacts, clinical practice
+            guidelines, evidence in the body of medical literature, and clinical expertise. After
+            reviewing these sources, the material has been synthesized and harmonized under the
+            guidance of <acronym><glossterm>VA</glossterm></acronym>
+            <acronym><glossterm>SME</glossterm></acronym>s to reflect clinical intent for this use
+            case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work.</para>
+    </preface>
+    <preface>
+        <info>
+            <title>Conventions Used</title>
+        </info>
+        <para>Conventions used within the knowledge artifact descriptions
+            include:
+            
+            <itemizedlist mark="none" spacing="compact">
+                <listitem>
+                    <para><emphasis>&lt;obtain&gt;</emphasis>: Indicates a prompt to obtain the
+                        information listed <itemizedlist mark="bullet"
+                            spacing="compact">
+                            <listitem>
+                                <para>If possible, the requested information
+                                    should be obtained from the underlying system(s).
+                                    Otherwise, prompting the user for information may
+                                    be required</para>
+                            </listitem>
+                            <listitem>
+                                <para>The technical and clinical notes associated
+                                    with a section should be consulted for specific
+                                    constraints on the information (e.g., time-frame,
+                                    patient interview, etc.)</para>
+                            </listitem>
+                            <listitem>
+                                <para>Default Values: Unless otherwise noted,
+                                    &lt;obtain&gt; indicates to obtain the most recent
+                                    observation. It is recognized that this default
+                                    time-frame value may be altered by future
+                                    implementations</para>
+                            </listitem>
+                        </itemizedlist></para> </listitem>
+                
+                <listitem>
+                    <para><emphasis>[...]</emphasis>: Square brackets enclose explanatory text that indicates some
+                        action on the part of the clinical user, or general guidance to the clinical or technical
+                        teams. Examples include, but are not limited to:</para>
+                    
+                    <itemizedlist mark="none" spacing="normal">
+                        <listitem>
+                            <para><emphasis>[Begin ...]</emphasis>, <emphasis>[End
+                                ...]</emphasis>: Indicates the start and end of specific areas to
+                                clearly delineate them for technical purposes.</para>
+                            
+                            <para><emphasis>[Activate ...]</emphasis>: Initiates another
+                                knowledge artifact or knowledge artifact section.</para>
+                            
+                            <para><emphasis>[Section Prompt: ...]</emphasis>: If this section is
+                                applicable, then the following prompt should be displayed to the
+                                user.</para>
+                            
+                            <para><emphasis>[Section Selection Behavior: ...]</emphasis>:
+                                Indicates technical constraints or considerations for the selection
+                                of items within the section.</para>
+                            
+                            <para><emphasis>[Attach: ...]</emphasis>: Indicates that the
+                                specified item should be attached to the documentation template if
+                                available.</para>
+                            
+                            <para><emphasis>[Link: ...]</emphasis>: Indicates that rather than
+                                attaching an item, a link should be included in the documentation
+                                template.</para>
+                            
+                            <para><emphasis>[Clinical Comment: ...]</emphasis>: Indicates
+                                clinical rationale or guidance.</para>
+                            
+                            <para><emphasis>[Technical Note: ...]</emphasis>: Indicates
+                                technical considerations or notes.</para>
+                            
+                            <para><emphasis>[If ...]</emphasis>: Indicates the beginning of a
+                                conditional section.</para>
+                            
+                            <para><emphasis>[Else, ...]</emphasis>: Indicates the beginning of
+                                the alternative branch of a conditional section.</para>
+                            
+                            <para><emphasis>[End if ...]</emphasis>: Indicates the end of a
+                                conditional section.</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                
+                <listitem>
+                    <para>☐ <emphasis>[Check box]</emphasis>: Indicates items that should be
+                        selected based upon the section selection behavior.</para>
+                </listitem>
+            </itemizedlist></para>
+    </preface>
+
+  <chapter>
+    <title>Cardiology: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>): Implanted
+            Cardiac Devices</title>
+
+    <section>
+      <title>Clinical Context</title>
+            <para>[Begin Clinical Context.]</para>
+
+      <para>The Cardiology <acronym><glossterm>EP</glossterm></acronym>: Implanted Cardiac Devices
+                order set KNARTs are intended for clinical
+                providers caring for adult outpatients in the context of implanted cardiac devices
+                [e.g., pacemakers, implantable cardioverter-defibrillators
+                        (<acronym><glossterm>ICD</glossterm></acronym>), cardiac resynchronization
+                therapy (<acronym><glossterm>CRT</glossterm></acronym>) devices, etc.]. Specific
+                constraints for these artifacts are that they apply to: <itemizedlist mark="bullet">
+                    <listitem>
+                        <para>Outpatients with existing
+                                    pacemaker/<acronym><glossterm>CRT</glossterm></acronym>/<acronym><glossterm>ICD</glossterm></acronym>
+                            implants</para>
+                    </listitem>
+                    <listitem>
+                        <para>Outpatients being considered for
+                                <acronym><glossterm>ICD</glossterm></acronym>/<acronym><glossterm>CRT</glossterm></acronym>
+                            implants for primary prevention</para>
+                    </listitem>
+                </itemizedlist></para>
+
+      <para>These context domains are summarized in the table below. </para>
+
+      <table frame="all" rowheader="firstcol">
+        <title>Clinical Context Domains</title>
+
+        <tgroup cols="2">
+          <tbody>
+            <row>
+              <entry>Target User</entry>
+
+              <entry>Provider in a Primary Care Clinic or General
+              Cardiology</entry>
+            </row>
+
+            <row>
+              <entry>Patient</entry>
+
+              <entry>Adult patient with a
+                                        Pacemaker/<acronym><glossterm>CRT</glossterm></acronym>/<acronym><glossterm>ICD</glossterm></acronym>
+                                implant or adult patient being considered for an
+                                        <acronym><glossterm>ICD</glossterm></acronym>/<acronym><glossterm>CRT</glossterm></acronym>
+                                implant for primary prevention</entry>
+            </row>
+
+            <row>
+              <entry>Priority</entry>
+
+              <entry>Routine</entry>
+            </row>
+
+            <row>
+              <entry>Specialty</entry>
+
+              <entry>Primary Care/Cardiology</entry>
+            </row>
+
+            <row>
+              <entry>Location</entry>
+
+              <entry>Outpatient</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+            <para>[End Clinical Context.]</para>
+    </section>
+
+    <section>
+      <title>Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+
+      <para>This section describes the <acronym><glossterm>CDS</glossterm></acronym> knowledge
+                artifacts that are part of the Cardiology
+                    <acronym><glossterm>EP</glossterm></acronym>: Implanted Cardiac Device group.
+                They include:</para>
+
+        <itemizedlist mark="bullet">
+        <listitem>
+          <para>Order Sets: Cardiology: <acronym><glossterm>EP</glossterm></acronym> Primary
+                        Prevention <acronym><glossterm>ICD</glossterm></acronym> Implant,
+                                <acronym><glossterm>EP</glossterm></acronym>
+                                Pacemaker/<acronym><glossterm>ICD</glossterm></acronym> Follow Up,
+                        and <acronym><glossterm>EP</glossterm></acronym>
+                                Pacemaker/<acronym><glossterm>ICD</glossterm></acronym> Generator
+                        Change KNARTs</para>
+
+            <itemizedlist mark="bullet">
+            <listitem>
+              <para>Orderable items</para>
+            </listitem>
+
+            <listitem>
+              <para>Includes logic for appropriate display of the order set</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+            <para>[End Knowledge Artifacts.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>) Primary
+            Prevention Implantable Cardioverter-defibrillator
+                (<acronym><glossterm>ICD</glossterm></acronym>)</title>
+      <para>[Begin Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>) Primary Prevention Implantable
+          Cardioverter-defibrillator (<acronym><glossterm>ICD</glossterm></acronym>).]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+
+      <para>[See Clinical Context in Chapter 1.]</para>
+            <para>Implantable cardioverter-defibrillator
+                    (<acronym><glossterm>ICD</glossterm></acronym>) placement for primary prevention
+                of sudden death is recommended for high-risk patients with cardiomyopathy, even in
+                the absence of a prior life-threatening arrhythmia event.
+                        <acronym><glossterm>ICD</glossterm></acronym> placement for secondary
+                prevention of sudden cardiac death is appropriate after a cardiac arrest event
+                (Epstein 2008, Russo 2013). While <acronym><glossterm>ICD</glossterm></acronym>
+                placement is a proven, life-saving therapy (Epstein 2008), evidence suggests
+                        <acronym><glossterm>ICD</glossterm></acronym>s are often placed in patients
+                who do not meet guideline criteria (Al-Khatib 2011). Conversely, many patients who
+                meet criteria are not receiving <acronym><glossterm>ICD</glossterm></acronym>s (Hess
+                2016; Hess 2013). At a cost of roughly $30,000 to $50,000 per procedure (Owens 2011)
+                and with potential for serious complications (Al-Khatib 2011), the financial and
+                human costs of misallocation are considerable. </para>
+            <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Applicability</title>
+            <para>[Begin Applicability.]</para>
+
+      <para>[Section Prompt: This order set is applicable for adult
+      outpatients at increased risk of sudden cardiac death and under
+      consideration for: </para>
+
+      <para>
+          <itemizedlist mark="bullet">
+          <listitem>
+              <para><acronym><glossterm>ICD</glossterm></acronym> [e.g., ejection fraction
+                                    (<acronym><glossterm>EF</glossterm></acronym>) &lt;35%,
+                            hypertrophic cardiomyopathy, etc.]</para>
+          </listitem>
+
+          <listitem>
+            <para><acronym><glossterm>CRT</glossterm></acronym> (including patients that meet
+                            criteria for upgrade of their currently implanted device).]</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+
+      <para>[Technical Note: clinical providers should be directed to review the American College of
+                Cardiology (<acronym><glossterm>ACC</glossterm></acronym>)/Heart Rhythm Society
+                        (<acronym><glossterm>HRS</glossterm></acronym>)/American Heart Association
+                        (<acronym><glossterm>AHA</glossterm></acronym>)/American Society of
+                Echocardiography (<acronym><glossterm>ASE</glossterm></acronym>)/Heart Failure
+                Society of America (<acronym><glossterm>HFSA</glossterm></acronym>)/Society for
+                Cardiovascular Angiography and Interventions
+                    (<acronym><glossterm>SCAI</glossterm></acronym>)/Society of Cardiovascular
+                Computed Tomography (<acronym><glossterm>SCCT</glossterm></acronym>)/Society for
+                Cardiovascular Magnetic Resonance (<acronym><glossterm>SCMR</glossterm></acronym>)
+                2013 Appropriate Use Criteria for Implantable Cardioverter-Defibrillators and
+                Cardiac Resynchronization Therapy. The criteria can be accessed at
+                https://www.clinicalkey.com/service/content/pdf/watermarked/1-s2.0-S073510971206041X.pdf?locale=en_US.] </para>
+            <para>[End Applicability.]</para>
+    </section>
+
+    <section>
+      <title>Consults and Referrals</title>
+
+      <para>[Begin Consults and Referrals.]</para>
+            <para><emphasis><emphasis role="bold">Device Placement
+                Referral</emphasis></emphasis></para>
+
+      <para>[Section Prompt: Electrophysiology device placement
+      referral.]</para>
+
+      <para>[Technical Note: Display link to e-Consult if available.]</para>
+
+      <para>[Section Selection Behavior: Select only one.]</para>
+
+      <para>
+        <itemizedlist mark="none">
+          <listitem>
+              <para>☐ Referral electrophysiology placement of <acronym><glossterm>ICD</glossterm></acronym> device</para>
+          </listitem>
+
+          <listitem>
+              <para>☐ Referral electrophysiology placement of <acronym><glossterm>CRT</glossterm></acronym> device</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+        <para><emphasis><emphasis role="bold">Consultation Goal</emphasis></emphasis></para>
+        <para>[Section Prompt: Specific goal of the electrophysiology consultation (e.g.,
+            electrophysiology to manage patient, cardiology to evaluate and recommend
+            management, etc.).]
+            <itemizedlist mark="none">
+                <listitem>
+                    <para>[Section Prompt: Goal of Consult.]</para>
+                    <para>[Section Selection Behavior: Select one. Required.] </para>
+                    <para>
+                        <itemizedlist mark="none">
+                            <listitem>
+                                <para>&#x2610; Provide recommendation and return to Referring
+                                        Physician for therapy</para>
+                            </listitem>
+                            <listitem>
+                                <para>&#x2610; Start treatment and return to Referring Physician for
+                                        follow up and maintenance</para>
+                            </listitem>
+                            <listitem>
+                                <para>&#x2610; Start treatment, monitor for effect and when on
+                                        stable therapy return to Referring Physician</para>
+                            </listitem>
+                            <listitem>
+                                <para>&#x2610; Provide recommendations and treat as long as
+                                    necessary (or indefinitely)</para>
+                            </listitem>
+                        </itemizedlist></para></listitem></itemizedlist>
+                    
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>Consult Specialty: Electrophysiology</para>
+                        <para>Priority: Routine</para>
+                        <para>[Section Prompt: Referring Physician Information]</para>
+                        <para>&lt;obtain&gt; Referring Physician Name</para>
+                        <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                        <para>&lt;obtain&gt; Information required by receiving facility</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+
+      <para>[End Consults and Referrals.]</para>
+    </section>
+
+    <section>
+      <title>Imaging and Electrocardiogram (<acronym><glossterm>ECG</glossterm></acronym>)</title>
+
+        <para>[Begin Imaging and Electrocardiogram (<acronym><glossterm>ECG</glossterm></acronym>).]</para>
+
+      <para>[Section Prompt: Consider ordering prior to the electrophysiology consultation. Resting
+                12-lead electrocardiogram is required if it has not been obtained within the past
+                two months. Resting echocardiogram and chest x-ray are required if they have not
+                been obtained within the past six months.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected. Optional.] <itemizedlist
+                    mark="none">
+                    <listitem>
+                        <para>☐ Electrocardiogram to evaluate for potential
+                                    <acronym><glossterm>ICD</glossterm></acronym>/<acronym><glossterm>CRT</glossterm></acronym>
+                            device implantation</para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Echocardiogram to evaluate for potential
+                                    <acronym><glossterm>ICD</glossterm></acronym>/<acronym><glossterm>CRT</glossterm></acronym>
+                            device implantation</para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ X-ray chest to evaluate for potential
+                                    <acronym><glossterm>ICD</glossterm></acronym>/<acronym><glossterm>CRT</glossterm></acronym>
+                            device implantation</para>
+                    </listitem>
+                </itemizedlist></para>
+
+      <para>[End Imaging and Electrocardiogram (<acronym><glossterm>ECG</glossterm></acronym>).] </para>
+    </section>
+
+    <section>
+      <title>Laboratory Tests</title>
+
+      <para>[Begin Laboratory Tests.]</para>
+
+      <para>[Section Prompt: Consider the following tests to be completed
+      prior to the electrophysiology consultation.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional. Tests are routine unless otherwise specified.] <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Comprehensive metabolic panel </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Complete blood count </para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Brain natriuretic peptide </para>
+          </listitem>
+
+          <listitem>
+              <para>☐ Prothrombin Time/International Normalized Ratio (<acronym><glossterm>INR</glossterm></acronym>)</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End Laboratory Tests.]</para>
+        <para>[End Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>) Primary Prevention Implantable
+            Cardioverter-defibrillator (<acronym><glossterm>ICD</glossterm></acronym>).]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+    <title>Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>)
+            Pacemaker/Implantable Cardioverter-defibrillator
+                (<acronym><glossterm>ICD</glossterm></acronym>) Follow Up</title>
+      <para>[Begin Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>) Pacemaker/Implantable
+          Cardioverter-defibrillator (<acronym><glossterm>ICD</glossterm></acronym>) Follow Up.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+
+      <para>[See Clinical Context in Chapter 1.]</para>
+
+      <para>All patients with implanted cardiac devices require periodic and meticulous follow-up to
+                ensure safety and optimal device performance. The goals of
+                        <acronym><glossterm>ICD</glossterm></acronym> follow-up include monitoring
+                device system function, optimizing performance for maximal clinical effectiveness
+                and system longevity, minimizing complications, anticipating replacement of system
+                components, ensuring timely intervention for clinical problems, patient tracking,
+                education, and support, and maintenance of
+                    <acronym><glossterm>ICD</glossterm></acronym> system records. </para>
+            <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Applicability</title>
+            <para>[Begin Applicability.]</para>
+
+      <para>[Section Prompt: This order set is applicable to adult outpatients who have previously
+                received an <acronym><glossterm>ICD</glossterm></acronym>,
+                        <acronym><glossterm>CRT</glossterm></acronym>, or a similar device, and who
+                are not currently followed by electrophysiology.] </para>
+            <para>[End Applicability.]</para>
+    </section>
+
+    <section>
+      <title>Consults and Referrals</title>
+
+      <para>[Begin Consults and Referrals.]</para>
+            <para><emphasis><emphasis role="bold">EP Follow-up Referral</emphasis></emphasis></para>
+
+      <para>[Section Prompt: Electrophysiology follow-up consult
+      order.]<itemizedlist mark="none">
+          <listitem>
+            <para>☐ Referral to Electrophysiology</para>
+          </listitem>
+        </itemizedlist></para>
+            <para><emphasis><emphasis role="bold">Reason for
+                Consultation</emphasis></emphasis></para>
+            <para>[Section Prompt: Reason for Electrophysiology consultation.] </para>
+
+      <para>[Section Selection Behavior: Only one may be selected. At least
+      one must be selected.] </para>
+
+      <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>☐ Follow-up for <acronym><glossterm>ICD</glossterm></acronym></para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Follow-up for <acronym><glossterm>CRT</glossterm></acronym> device</para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Follow-up for pacer device</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+
+      <para>&lt;obtain&gt; Procedure report for device placement</para>
+            <para><emphasis><emphasis role="bold">Consultation Goal</emphasis></emphasis></para>
+        <para>[Section Prompt: Specific goal of the electrophysiology consultation (e.g.,
+            electrophysiology to manage patient, cardiology to evaluate and recommend
+            management, etc.).]
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>[Section Prompt: Goal of Consult.]</para>
+                        <para>[Section Selection Behavior: Select one. Required.] </para>
+                        <para>
+                            <itemizedlist mark="none">
+                                <listitem>
+                                    <para>&#x2610; Provide recommendation and return to Referring
+                                        Physician for therapy</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Start treatment and return to Referring Physician
+                                        for follow up and maintenance</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Start treatment, monitor for effect and when on
+                                        stable therapy return to Referring Physician</para>
+                                </listitem>
+                                <listitem>
+                                    <para>&#x2610; Provide recommendations and treat as long as
+                                        necessary (or indefinitely)</para>
+                                </listitem>
+                            </itemizedlist>
+                        </para>
+                        <para>Consult Specialty: Electrophysiology</para>
+                        <para>Priority: Routine</para>
+                        <para>[Section Prompt: Referring Physician Information]</para>
+                        <para>&lt;obtain&gt; Referring Physician Name</para>
+                        <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                        <para>&lt;obtain&gt; Information required by receiving facility</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+
+      <para>[End Consults and Referrals.]</para>
+    </section>
+
+    <section>
+      <title>Imaging and Electrocardiogram (<acronym><glossterm>ECG</glossterm></acronym>)</title>
+
+      <para>[Begin Imaging and Electrocardiogram (<acronym><glossterm>ECG</glossterm></acronym>).]</para>
+
+      <para>[Section Prompt: Consider ordering prior to the electrophysiology consultation. Resting
+                12-lead electrocardiogram is required if it has not been obtained within the past
+                two months. Resting echocardiogram and chest x-ray are required if they have not
+                been obtained within the past six months.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected. Optional.] <itemizedlist
+                    mark="none">
+                    <listitem>
+                        <para>☐ Resting 12-lead electrocardiogram to evaluate for antiarrhythmic
+                            benefit of previously implanted
+                                <acronym><glossterm>ICD</glossterm></acronym>/pacer/<acronym><glossterm>CRT</glossterm></acronym>
+                            device </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Echocardiogram to evaluate for antiarrhythmic benefit of previously
+                            implanted
+                                    <acronym><glossterm>ICD</glossterm></acronym>/pacer/<acronym><glossterm>CRT</glossterm></acronym>
+                            device </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ X-ray chest to evaluate for antiarrhythmic benefit of previously
+                            implanted
+                                    <acronym><glossterm>ICD</glossterm></acronym>/<acronym><glossterm>CRT</glossterm></acronym>/pacer
+                            device </para>
+                    </listitem>
+                </itemizedlist></para>
+
+      <para>[End Imaging and Electrocardiogram (<acronym><glossterm>ECG</glossterm></acronym>).]</para>
+    </section>
+
+    <section>
+      <title>Laboratory Tests</title>
+
+      <para>[Begin Laboratory Tests.]</para>
+
+      <para>[Section Prompt: Consider the following tests to be completed
+      prior to the electrophysiology consultation.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional. Tests are routine unless otherwise specified.] <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Comprehensive metabolic panel</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Complete blood count</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Brain natriuretic peptide</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Digoxin level</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End Laboratory Tests.] </para>
+        <para>[End Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>) Pacemaker/Implantable
+            Cardioverter-defibrillator (<acronym><glossterm>ICD</glossterm></acronym>) Follow Up.]</para>
+    </section>
+  </chapter>
+
+  <chapter>
+      <title>Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>) Pacemaker/Implantable Cardioverter-defibrillator (<acronym><glossterm>ICD</glossterm></acronym>)
+            Generator Change</title>
+      <para>[Begin Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>) Pacemaker/Implantable
+            Cardioverter-defibrillator (<acronym><glossterm>ICD</glossterm></acronym>) Generator Change.]</para>
+
+    <section>
+      <title>Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+
+      <para>[See Clinical Context in Chapter 1.]</para>
+
+      <para>Patients who have previously received an <acronym><glossterm>ICD</glossterm></acronym>,
+                cardiac resynchronization therapy plus <acronym><glossterm>ICD</glossterm></acronym>
+                        (<acronym><glossterm>CRT</glossterm></acronym>), or similar device, may be
+                identified as candidates for a generator change. If this identification occurs
+                outside of a routine electrophysiology follow-up, this order set provides a standard
+                framework for referring the patient to electrophysiology. </para>
+            <para>[End Knowledge Narrative.]</para>
+    </section>
+
+    <section>
+      <title>Applicability</title>
+            <para>[Begin Applicability.]</para>
+
+      <para>[Section Prompt: This order set is applicable to an adult outpatient who has previously
+                received an <acronym><glossterm>ICD</glossterm></acronym>, cardiac resynchronization
+                therapy plus <acronym><glossterm>ICD</glossterm></acronym>
+                        (<acronym><glossterm>CRT</glossterm></acronym>), or similar device, and has
+                been identified as a candidate for a generator change based upon the patient's
+                records or history.] </para>
+            <para>[End Applicability.]</para>
+    </section>
+
+    <section>
+      <title>Consults and Referrals</title>
+
+      <para>[Begin Consults and Referrals.]</para>
+
+      <para>[Section Prompt: Electrophysiology generator change consult order.]<itemizedlist mark="none">
+                    <listitem>
+                        <para>☐ Referral to electrophysiology for generator change</para>
+                    </listitem>
+                </itemizedlist></para>
+
+      <para>&lt;obtain&gt; Operative report for device placement</para>
+
+      <para>&lt;obtain&gt; Currently implanted device interrogation report</para>
+
+      <para>[Section Prompt: Specific goal of the electrophysiology consultation (e.g.,
+                electrophysiology to manage patient, cardiology to evaluate and recommend
+                management, etc.).] <itemizedlist mark="none">
+               
+                        <listitem>
+                            <para>[Section Prompt: Goal of Consult.]</para>
+                            <para>[Section Selection Behavior: Select one. Required.] </para>
+                            <para>
+                                <itemizedlist mark="none">
+                                    <listitem>
+                                        <para>&#x2610; Provide recommendation and return to
+                                        Referring Physician for therapy</para>
+                                    </listitem>
+                                    <listitem>
+                                        <para>&#x2610; Start treatment and return to Referring
+                                        Physician for follow up and maintenance</para>
+                                    </listitem>
+                                    <listitem>
+                                        <para>&#x2610; Start treatment, monitor for effect and when
+                                        on stable therapy return to Referring Physician</para>
+                                    </listitem>
+                                    <listitem>
+                                        <para>&#x2610; Provide recommendations and treat as long as
+                                            necessary (or indefinitely)</para>
+                                    </listitem>
+                                </itemizedlist>
+                            </para>
+                            <para>Consult Specialty: Electrophysiology</para>
+                            <para>Priority: Routine</para>
+                            <para>[Section Prompt: Referring Physician Information]</para>
+                            <para>&lt;obtain&gt; Referring Physician Name</para>
+                            <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                            <para>&lt;obtain&gt; Information required by receiving facility</para>
+                        </listitem>
+               
+                </itemizedlist></para>
+
+      <para>[End Consults and Referrals.]</para>
+    </section>
+
+    <section>
+        <title>Imaging and Electrocardiogram (<acronym><glossterm>ECG</glossterm></acronym>)</title>
+
+        <para>[Begin Imaging and Electrocardiogram
+                (<acronym><glossterm>ECG</glossterm></acronym>).]</para>
+
+      <para>[Section Prompt: Consider ordering prior to the electrophysiology consultation. Resting
+                12-lead electrocardiogram is required if it has not been obtained within the past
+                two months. Resting echocardiogram and chest x-ray are required if they have not
+                been obtained within the past six months.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected. Optional.] <itemizedlist
+                    mark="none">
+                    <listitem>
+                        <para>☐ Resting 12-lead electrocardiogram to evaluate for antiarrhythmic
+                            benefit of previously implanted
+                                <acronym><glossterm>ICD</glossterm></acronym>/pacer/<acronym><glossterm>CRT</glossterm></acronym>
+                            device </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ Echocardiogram to evaluate for antiarrhythmic benefit of previously
+                            implanted
+                                    <acronym><glossterm>ICD</glossterm></acronym>/pacer/<acronym><glossterm>CRT</glossterm></acronym>
+                            device </para>
+                    </listitem>
+                    <listitem>
+                        <para>☐ X-ray chest to evaluate for antiarrhythmic benefit of previously
+                            implanted
+                                    <acronym><glossterm>ICD</glossterm></acronym>/<acronym><glossterm>CRT</glossterm></acronym>/pacer
+                            device </para>
+                    </listitem>
+                </itemizedlist></para>
+
+        <para>[End Imaging and Electrocardiogram (<acronym><glossterm>ECG</glossterm></acronym>).]</para>
+    </section>
+
+    <section>
+      <title>Laboratory Tests</title>
+
+      <para>[Begin Laboratory Tests.]</para>
+
+      <para>[Section Prompt: Consider completing the following tests prior to
+      the electrophysiology consultation.] </para>
+
+      <para>[Section Selection Behavior: More than one may be selected.
+      Optional. Tests are routine unless otherwise specified.] <itemizedlist mark="none">
+          <listitem>
+            <para>☐ Comprehensive metabolic panel</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Complete blood count</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Brain natriuretic peptide</para>
+          </listitem>
+
+          <listitem>
+            <para>☐ Digoxin level</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <para>[End Laboratory Tests.] </para>
+        <para>[End Order Set: Electrophysiology (<acronym><glossterm>EP</glossterm></acronym>) Pacemaker/Implantable
+            Cardioverter-defibrillator (<acronym><glossterm>ICD</glossterm></acronym>) Generator Change.]</para>
+    </section>
+  </chapter>
+
+
+      <bibliography><info><title>Bibliography/Evidence</title></info>
+      <biblioentry>
+            <abbrev>Al-Khatib, 2011</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Al-Khatib</surname>
+                        <firstname>SM</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Hellkamp</surname>
+                        <firstname>A</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Curtis</surname>
+                        <firstname>J</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>et al</personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Non–Evidence-Based
+                    <acronym><glossterm>ICD</glossterm></acronym> Implantations in the United
+                States</citetitle>
+            <citetitle pubwork="journal">JAMA</citetitle>
+            <pubdate>2011</pubdate>
+            <volumenum>305</volumenum>
+            <issuenum>1</issuenum>
+            <pagenums>43-49</pagenums>
+        </biblioentry>
+
+      <biblioentry>
+            <abbrev>Epstein, 2008</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Epstein</surname>
+                        <firstname>AE</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>DiMarco</surname>
+                        <firstname>JP</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Ellenbogen</surname>
+                        <firstname>KA</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>et al</personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article"
+                        ><acronym><glossterm>ACC</glossterm></acronym>/<acronym><glossterm>AHA</glossterm></acronym>/<acronym><glossterm>HRS</glossterm></acronym>
+                2008 Guidelines for Device-Based Therapy of Cardiac Rhythm Abnormalities: a report
+                of the American College of Cardiology/American Heart Association Task Force on
+                Practice Guidelines [Writing Committee to Revise the
+                        <acronym><glossterm>ACC</glossterm></acronym>/<acronym><glossterm>AHA</glossterm></acronym>/National
+                Association for Sport and Physical Education
+                    (<acronym><glossterm>NASPE</glossterm></acronym>) 2002 Guideline Update for
+                Implantation of Cardiac Pacemakers and Antiarrhythmia Devices]: developed in
+                collaboration with the American Association for Thoracic Surgery and Society of
+                Thoracic Surgeons</citetitle>
+            <citetitle pubwork="journal">Circulation</citetitle>
+            <pubdate>2008</pubdate>
+            <volumenum>117</volumenum>
+            <issuenum>21</issuenum>
+            <pagenums>e350-e408</pagenums>
+        </biblioentry>
+            <biblioentry>
+                <abbrev>Hess, 2013</abbrev>
+                <authorgroup>
+                    <author>
+                        <personname>
+                            <surname>Hess</surname>
+                            <firstname>PL</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                        <personname>
+                            <surname>Grau-Sepulveda</surname>
+                            <firstname>MV</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                        <personname>
+                            <surname>Hernandez</surname>
+                            <firstname>AF</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                    <personname> et al</personname>
+                </author>
+                </authorgroup>
+                <citetitle pubwork="article">Get with The Guidelines Steering Committee and
+                    Hospitals. Age differences in the use of implantable cardioverter-defibrillators
+                    among older patients hospitalized with heart failure</citetitle>
+                <citetitle pubwork="journal">J Cardiovasc Electrophysiol</citetitle>
+                <pubdate>2013</pubdate>
+                <volumenum>24</volumenum>
+                <issuenum>6</issuenum>
+                <pagenums>664-671</pagenums>
+            </biblioentry>
+            <biblioentry>
+                <abbrev>Hess, 2016</abbrev>
+                <authorgroup>
+                    <author>
+                        <personname>
+                            <surname>Hess</surname>
+                            <firstname>PL</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                        <personname>
+                            <surname>Hernandez</surname>
+                            <firstname>AF</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                        <personname>
+                            <surname>Bhatt</surname>
+                            <firstname>DL</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                    <personname> et al</personname>
+                </author>
+                </authorgroup>
+                <citetitle pubwork="article">Sex and Race/Ethnicity Differences in Implantable
+                    Cardioverter-Defibrillator Counseling and Use Among Patients Hospitalized with
+                    Heart Failure: Findings from the Get with The Guidelines-Heart Failure
+                    Program</citetitle>
+                <citetitle pubwork="journal">Circulation</citetitle>
+                <pubdate>2016</pubdate>
+                <volumenum>134</volumenum>
+                <issuenum>7</issuenum>
+                <pagenums>517-526</pagenums>
+            </biblioentry>
+            <biblioentry>
+                <abbrev>Owens, 2011</abbrev>
+                <authorgroup>
+                    <author>
+                        <personname>
+                            <surname>Owens</surname>
+                            <firstname>DK</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                        <personname>
+                            <surname>Qaseem</surname>
+                            <firstname>A</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                        <personname>
+                            <surname>Chou</surname>
+                            <firstname>R</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                        <personname>
+                            <surname>Shekelle</surname>
+                            <firstname>P</firstname>
+                        </personname>
+                    </author>
+                    <author>
+                        <personname>Clinical Guidelines Committee of the American College of
+                            Physicians</personname>
+                    </author>
+                </authorgroup>
+                <citetitle pubwork="article">AHigh-value, cost-conscious health care: concepts for
+                    clinicians to evaluate the benefits, harms, and costs of medical
+                    interventions</citetitle>
+                <citetitle pubwork="journal">Ann Intern Med</citetitle>
+                <pubdate>2011</pubdate>
+                <volumenum>154</volumenum>
+                <issuenum>3</issuenum>
+                <pagenums>174-180</pagenums>
+            </biblioentry>
+
+      <biblioentry>
+            <abbrev>Russo, 2013</abbrev>
+            <authorgroup>
+                <author>
+                    <personname>
+                        <surname>Russo</surname>
+                        <firstname>AM</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Stainback</surname>
+                        <firstname>RF</firstname>
+                    </personname>
+                </author>
+                <author>
+                    <personname>
+                        <surname>Bailey</surname>
+                        <firstname>SR, et al.</firstname>
+                    </personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">American College of Cardiology Foundation
+                        (<acronym><glossterm>ACCF</glossterm></acronym>)/<acronym><glossterm>HRS</glossterm></acronym>/<acronym><glossterm>AHA</glossterm></acronym>/<acronym><glossterm>ASE</glossterm></acronym>/<acronym><glossterm>HFSA</glossterm></acronym>/<acronym><glossterm>SCAI</glossterm></acronym>/<acronym><glossterm>SCCT</glossterm></acronym>/<acronym><glossterm>SCMR</glossterm></acronym>
+                2013 appropriate use criteria for implantable cardioverter-defibrillators and
+                cardiac resynchronization therapy: a report of the American College of Cardiology
+                Foundation appropriate use criteria task force, Heart Rhythm Society, American Heart
+                Association, American Society of Echocardiography, Heart Failure Society of America,
+                Society for Cardiovascular Angiography and Interventions, Society of Cardiovascular
+                Computed Tomography, and Society for Cardiovascular Magnetic Resonance</citetitle>
+            <citetitle pubwork="journal">J Am Coll Cardiol</citetitle>
+            <pubdate>2013</pubdate>
+            <volumenum>61</volumenum>
+            <issuenum>12</issuenum>
+            <pagenums>1318-1368</pagenums>
+        </biblioentry>
+    </bibliography>
+
+
+  <appendix>
+    <title>Existing Sample <acronym><glossterm>VA</glossterm></acronym> Artifacts</title>
+
+    <figure>
+      <title>Cardiology Electrophysiology Guideline Links</title>
+
+      <mediaobject>
+        <alt>Cardiology EP: Pacemaker /ICD Follow Up. Portland VA Screenshot for Providers to review
+                    guidelines. </alt>
+
+        <imageobject>
+          <imagedata align="center"
+              fileref="images/Fig1ProvidersNote.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Pacemaker/Implantable cardioverter-defibrillator
+                    (<acronym><glossterm>ICD</glossterm></acronym>)  Follow Up Consult Order</title>
+
+      <mediaobject>
+        <alt>Cardiology EP: Pacemaker /ICD Follow Up. Portland VA Screenshot displaying the request
+                    for Consult Order.</alt>
+
+        <imageobject>
+            <imagedata align="center" fileref="images/Fig2ConsultOrder.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Template: Cardiology Consult for Arrhythmia (image 1 of 2)</title>
+
+      <mediaobject>
+        <alt>Cardiology EP: Pacemaker /ICD Follow Up. Portland VA Screenshot displaying the
+                    questions following a request for an in-clinic consult.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+              fileref="images/Fig3InClinicConsult.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Template: Cardiology Consult for Arrhythmia (image 2 of 2)</title>
+
+      <mediaobject>
+        <alt>Cardiology EP: Pacemaker/ICD Follow Up. Portland VA Screenshot displaying continuation
+                    of questions following a request for an in-clinic consult.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+              fileref="images/Fig4InClinicConsult.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Cardiology Consult Order for Implantable cardioverter-defibrillator
+                        (<acronym><glossterm>ICD</glossterm></acronym>)/Pacemaker Follow Up</title>
+
+      <mediaobject>
+        <alt>Cardiology EP: Pacemaker/ICD Follow Up. Portland VA Screenshot of a consult to
+                    service/specialty to cardiology-arrhythmia output.</alt>
+
+        <imageobject>
+          <imagedata align="center"
+              fileref="images/Fig5OrderAConsult.png" scalefit="1" width="100%" contentdepth="100%"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </appendix>
+    <appendix>
+        <title>Basic Laboratory Panel Definition</title>
+        <itemizedlist>
+            <listitem>
+                <para>Blood Urea Nitrogen</para>
+            </listitem>
+            <listitem>
+                <para>Calcium</para>
+            </listitem>
+            <listitem>
+                <para>Chloride</para>
+            </listitem>
+            <listitem>
+                <para><acronym><glossterm>CO2</glossterm></acronym> (Carbon Dioxide,
+                    Bicarbonate)</para>
+            </listitem>
+            <listitem>
+                <para>Creatinine</para>
+            </listitem>
+            <listitem>
+                <para>Glucose</para>
+            </listitem>
+            <listitem>
+                <para>Potassium</para>
+            </listitem>
+            <listitem>
+                <para>Sodium</para>
+            </listitem>
+        </itemizedlist>
+    </appendix>
+    <appendix><title>Acronyms</title>
+        <para>
+            <informaltable frame="all">
+                <tgroup cols="2">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="3.44*"/>
+                    <tbody>
+                        <row><entry>ACC</entry><entry>American College of Cardiology</entry></row>
+                        <row><entry>ACCF</entry><entry>American College of Cardiology Foundation</entry></row>
+                        <row><entry>AHA</entry><entry>American Heart Association</entry></row>
+                        <row><entry>ASE</entry><entry>American Society of Echocardiography</entry></row>
+                        <row><entry>CCWP</entry><entry>Clinical Content White Paper</entry></row>
+                        <row><entry>CDS</entry><entry>Clinical Decision Support</entry></row>
+                        <row><entry>CO2</entry><entry>Carbon Dioxide</entry></row>
+                        <row><entry>CRT</entry><entry>Cardiac Resynchronization Therapy</entry></row>
+                        <row><entry>ECG</entry><entry>Electrocardiogram</entry></row>
+                        <row><entry>EF</entry><entry>Ejection Fraction</entry></row>
+                        <row><entry>EP</entry><entry>Electrophysiology</entry></row>
+                        <row><entry>HFSA</entry><entry>Heart Failure Society of America</entry></row>
+                        <row><entry>HL7</entry><entry>Health Level 7</entry></row>
+                        <row><entry>HRS</entry><entry>Heart Rhythm Society</entry></row>
+                        <row><entry>ICD</entry><entry>Implantable Cardioverter-Defibrillator</entry></row>
+                        <row><entry>INR</entry><entry>International Normalized Ratio</entry></row>
+                        <row><entry>KBS</entry><entry>Knowledge Based Systems</entry></row>
+                        <row><entry>KNART</entry><entry>Knowledge Artifact</entry></row>
+                        <row><entry>KNARTs</entry><entry>Knowledge Artifacts</entry></row>
+                        <row><entry>NASPE</entry><entry>National Association for Sport and Physical Education</entry></row>
+                        <row><entry>OIIG</entry><entry>Office of Informatics and Information Governance</entry></row>
+                        <row><entry>PCP</entry><entry>Primary Care Provider</entry></row>
+                        <row><entry>SCAI</entry><entry>Society for Cardiovascular Angiography and Interventions</entry></row>
+                        <row><entry>SCCT</entry><entry>Society of Cardiovascular Computed Tomography</entry></row>
+                        <row><entry>SCMR</entry><entry>Society for Cardiovascular Magnetic Resonance</entry></row>
+                        <row><entry>SME</entry><entry>Subject Matter Expert</entry></row>
+                        <row><entry>TO</entry><entry>Task Order</entry></row>
+                        <row><entry>VA</entry><entry>Department of Veteran Affairs</entry></row>
+                        <row><entry>VAMC</entry><entry>VA Medical Center</entry></row>
+                    </tbody>
+                </tgroup>
+            </informaltable>
+        </para>
+    </appendix>
+</book>
