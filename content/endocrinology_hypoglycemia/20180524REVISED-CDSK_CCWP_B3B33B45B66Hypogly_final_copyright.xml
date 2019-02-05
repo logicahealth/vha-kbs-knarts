@@ -291,7 +291,7 @@
                             <entry>Emergency Department
                                     (<acronym><glossterm>ED</glossterm></acronym>), inpatient
                                 hospital, urgent care, ambulatory care clinic, community living
-                                center, or nursing home</entry>
+                                center, or nursing home, virtual care</entry>
                         </row>
                     </tbody>
                 </tgroup>
@@ -381,11 +381,14 @@
             <section xml:id="primary-trunk-cohort-identification">
                 <title>Global Conditions</title>
             <para>[Begin Global Conditions.] </para>
-            <para> The three global conditions for this ECA Rule set are: </para>
+            <para> The four global conditions for this ECA Rule set are: </para>
             <itemizedlist>
                 <listitem>
                     <para> Patient has an active diagnosis of diabetes mellitus, type 1 or 2, and
                     </para>
+                </listitem>
+                <listitem>
+                    <para>Patient is on active medication of insulin, sulfonylurea, or meglitinides; and</para>
                 </listitem>
                 <listitem>
                     <para> Patient's most recent hemoglobin A1c is &lt; 7%; and </para>
@@ -422,7 +425,8 @@
                     <para>Encounter in clinical provider's office for hypoglycemia</para>
                 </listitem>
                 <listitem>
-                    <para>Virtual encounter such as via telephone or telemedicine</para>
+                    <para>Virtual encounter such as via telephone or telemedicine for
+                        hypoglycemia</para>
                 </listitem>
             </itemizedlist>
             <para> Patient related conditions: </para>
@@ -660,14 +664,9 @@
             <para>[End Event.]</para>
             <bridgehead>Conditions</bridgehead>
             <para>[Begin Conditions.]</para>
-            <para>Patient meets all the following conditions:</para>
             <itemizedlist>
                 <listitem>
-                    <para>Patient is on active medications of insulin, sulfonylurea, or
-                        meglitinides; and</para>
-                </listitem>
-                <listitem>
-                    <para>Patient meets at least one of the following criteria: <itemizedlist>
+                    <para>Patient meets at least one of the following conditions: <itemizedlist>
                         <listitem>
                             <para>Prior episode of hypoglycemia</para>
                         </listitem>
@@ -956,6 +955,14 @@
                         </itemizedlist>
                     </listitem>
                     <listitem>
+                        <para>&#x2610; Seizures</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&lt;obtain&gt;Description</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                    <listitem>
                         <para>&#x2610; Major depression</para>
                         <itemizedlist>
                             <listitem>
@@ -1002,6 +1009,20 @@
                                         </itemizedlist></para>
                                 </listitem>
                             </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; Chronic liver disease</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>&lt;Obtain&gt;Description</para>
+                            </listitem>
+                            <listitem>
+                                <para>&lt;Obtain&gt;Most recent liver enzymes</para>
+                            </listitem>
+                            <listitem>
+                                <para>&lt;Obtain&gt;Date</para>
+                            </listitem>
+                        </itemizedlist>
                     </listitem>
                     <listitem>
                         <para>&#x2610; Fall history or risk</para>
@@ -1127,6 +1148,14 @@
                                 </listitem>
                             </itemizedlist></para>
                     </listitem>
+                <listitem>
+                    <para>&#x2610;Meglitinides</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>&lt;Obtain&gt;Prescription details</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
                     <listitem>
                         <para>&#x2610; Other glucose-lowering agents<itemizedlist mark="none">
                                 <listitem>
@@ -1149,6 +1178,9 @@
                     </listitem>
                 </itemizedlist></para>
             <para>&lt;obtain&gt; Other</para>
+            <para>&#x2610;Weight loss</para>
+            <para>&#x2610;Recently reduced carbohydrate intake</para>
+            <para>&#x2610;Delayed or missed meals</para>
             <para>[End Lifestyle.]</para>
         </section>
         <section>
@@ -1238,14 +1270,21 @@
             <para>[Technical Note: The Insulin subtitle of Medications should be available for any
                 patient with an active medication of regular insulin or isophane insulin
                         (<acronym><glossterm>NPH</glossterm></acronym>).]</para>
+            <para>[Section Prompt: It is recommended that insulin be reduced before modifications are made to other hypoglycemic agents.]</para>
             <para>[Section Selection Behavior: Select any or none. Optional.]<itemizedlist
                     mark="none">
                     <listitem>
                         <para>&#x2610; Discontinue regular insulin (now)</para>
                     </listitem>
+                <listitem>
+                    <para>&#x2610;Reduce regular insulin (now)</para>
+                </listitem>
                     <listitem>
                         <para>&#x2610; Discontinue NPH insulin (now)</para>
                     </listitem>
+                <listitem>
+                    <para>&#x2610;Reduce NPH insulin (now)</para>
+                </listitem>
                     <listitem>
                         <para>&#x2610; Insulin aspart solution subcutaneous 3 refills
                             (routine)</para>
@@ -1269,18 +1308,52 @@
                     <para>&#x2610; Discontinue glyburide (now)</para>
                 </listitem>
                 <listitem>
+                    <para>&#x2610;Reduce glyburide (now)</para>
+                </listitem>
+                <listitem>
                     <para>&#x2610; Glipizide 5 mg tablet oral 3 refills (routine)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610;Glimepiride</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610;Other non-sulfonylurea agent</para>
                 </listitem>
             </itemizedlist>
             <para>[End Sulfonylureas.]</para>
+            <para><emphasis role="bold">Meglitinides</emphasis></para>
+            <para>[Begin Meglitinides.]</para>
+            <para>[Technical Note: The Meglitinides subtitle in the Medications section should be made available for any patient with an active Meglitinides medication.]</para>
+            <itemizedlist>
+                <listitem>
+                    <para>&#x2610;Discontinue Nateglinide (now)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610;Reduce Nateglinide (now)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610;Discontinue Repaglinide (now)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610;Reduce Repaglinide (now)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610;Initiate Nateglinide (now)</para>
+                </listitem>
+                <listitem>
+                    <para>&#x2610;Initiate Repaglinide (now)</para>
+                </listitem>
+            </itemizedlist>
+            <para>[End Meglitinides.]</para>
             <para><emphasis role="bold">Glucagon</emphasis></para>
             <para>[Begin Glucagon.]</para>
+            <para>[Section Prompt: Be aware of risk of nausea with glucagon]</para>
             <para>[Technical Note: The Glucagon subtitle in the "Medications" section should be made
                 available for any patient without an active medication of glucagon.]</para>
             <para>[Section Selection Behavior: Select any or none. Optional.]<itemizedlist
                     mark="none">
                     <listitem>
-                        <para>&#x2610; Glucagon 1 mg solution subcutaneous; Use as needed for
+                        <para>&#x2610; Glucagon 1 mg solution subcutaneous or intramuscular; Use as needed for
                             clinically significant hypoglycemia when situationally appropriate
                             (e.g., blood glucose less than or equal to 54 mg/dL or other threshold
                             as specified in patient treatment plan, or as directed and required by
@@ -1289,6 +1362,9 @@
                             kits; 3 refills (routine)</para>
                     </listitem>
                 </itemizedlist></para>
+            <para>Other medication options for hypoglycemia</para>
+            <para>&#x2610;Glucose gel</para>
+            <para>&#x2610;Glucose tablets</para>
             <para>[End Glucagon.]</para>
             <para>[End Medications.]</para>
         </section>
@@ -1317,10 +1393,6 @@
                     </listitem>
                     <listitem>
                         <para>&#x2610; Alcohol swabs dispense 1 box; 3 refills</para>
-                    </listitem>
-                    <listitem>
-                        <para>&#x2610; Blood glucose monitoring control solution dispense 1 bottle;
-                            3 refills</para>
                     </listitem>
                 </itemizedlist></para>
             <para>[Section Prompt: Insulin Supplies.]</para>
@@ -1357,20 +1429,14 @@
                     <listitem>
                         <para>&#x2610; Serum creatinine</para>
                     </listitem>
+                <listitem>
+                    <para>&#x2610;eGFR</para>
+                </listitem>
                     <listitem>
                         <para>&#x2610; Urinary albumin-to-creatinine ratio</para>
                     </listitem>
                     <listitem>
-                        <para>&#x2610; Urinalysis</para>
-                    </listitem>
-                    <listitem>
-                        <para>&#x2610; Complete blood count</para>
-                    </listitem>
-                    <listitem>
                         <para>&#x2610; Liver function tests</para>
-                    </listitem>
-                    <listitem>
-                        <para>&#x2610; Fasting lipid profile</para>
                     </listitem>
                 </itemizedlist></para>
             <para>[End Laboratory Tests.]</para>
@@ -1379,6 +1445,7 @@
             <title>Point of Care Tests</title>
             <para>[Begin Point of Care Tests.]</para>
             <para>[Section Prompt: Point of Care Tests.]</para>
+            <para>[Section Prompt: Point of Care Hgb A1C Tests should be confirmed by a Hgb A1C test performed in a National Glycohemoglobin Standardization Program (NGSP) accredited laboratory.]</para>
             <para>[Technical Note: This section should be available to clinical providers for any
                 patient presenting for evaluation of a hypoglycemic episode or hypoglycemia
                 risk.]</para>
@@ -1393,6 +1460,9 @@
                     <listitem>
                         <para>&#x2610; Dipstick urine albumin 1 time (now)</para>
                     </listitem>
+                <listitem>
+                    <para>&#x2610;Hgb A1C 1 time (now)</para>
+                </listitem>
                 </itemizedlist></para>
             <para>[End Point of Care Tests.]</para>
         </section>
@@ -1437,8 +1507,9 @@
                             such as knowledge and skill deficiencies (routine)</para>
                     </listitem>
                     <listitem>
-                        <para>&#x2610; Consult psychiatry to evaluate mental health issues that may
-                            interfere with diabetes self-management (routine)</para>
+                        <para>&#x2610; Consult behavioral health psychiatry to evaluate mental
+                            health issues that may interfere with diabetes self-management
+                            (routine)</para>
                     </listitem>
                     <listitem>
                         <para>&#x2610; Consult geriatric medicine to evaluate hypoglycemia risk
@@ -1448,6 +1519,9 @@
                         <para>&#x2610; Consult clinical pharmacy to evaluate diabetic medication
                             therapy (routine)</para>
                     </listitem>
+                <listitem>
+                    <para>&#x2610;Consult ophthalmology/optometry to evaluate for visual barriers to self-management</para>
+                </listitem>
                 </itemizedlist></para>
             <para>[End Consults and Referrals.]</para>
         </section>
