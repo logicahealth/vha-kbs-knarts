@@ -1,4 +1,4 @@
-# Veterans Health Administration, Knowledge Based Systems (VHA KBS): Clinical Decision Support (CDS) Knowledge Artifacts (KNARTs)
+﻿# Veterans Health Administration, Knowledge Based Systems (VHA KBS): Clinical Decision Support (CDS) Knowledge Artifacts (KNARTs)
 
 **This is a working copy curated by VHA program staff with input from OSEHRA and clinical communities. Official artifact releases are made through [CDS Connect](https://cds.ahrq.gov/cdsconnect/explore)**
 
@@ -56,4 +56,9 @@ TODO OSEHRA webinar
 # Contact
 
 Program office is run by @kbsgitgal and @a-dru-desai in Clinical Decision Support, Knowledge Based Systems, Office of Informatics and Information Governance, Veterans Health Administration, Department of Veterans Affairs, United States. Repository management and curation is provided by @preston, College of Health Solutions, Arizona State University.
+
+
+
+
+
 
