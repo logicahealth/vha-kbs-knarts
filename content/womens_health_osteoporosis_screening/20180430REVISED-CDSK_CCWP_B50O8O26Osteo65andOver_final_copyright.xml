@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book version="5.1" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ns="http://docbook.org/ns/docbook">
+    <info>
+        <title>Clinical Decision Support (CDS) Content and Health Level 7 (HL7)-Compliant Knowledge
+            Artifacts (KNARTs)</title>
+        <subtitle>Women's Health: Osteoporosis Screening Age 65 and Older Clinical Content White Paper</subtitle>
+        
+        <authorgroup>
+            <author>
+                <personname>
+                    <surname>Department of Veterans Affairs
+                            (<acronym>VA</acronym>)</surname>
+                </personname>
+            </author>
+            <author>
+                <orgname><inlinemediaobject>
+                        <alt>Department of Veteran's Affairs Logo</alt>
+                        <imageobject>
+                            <imagedata align="center" fileref="../../doc/images/VASealColor.jpg" contentwidth="2in"
+                                contentdepth="2in" scalefit="0"/>
+                        </imageobject>
+                    </inlinemediaobject></orgname>
+            </author>
+            <author>
+                <orgname>Knowledge Based Systems
+                    (<acronym>KBS</acronym>)</orgname>
+            </author>
+            <author>
+                <orgname>Office of Informatics and Information Governance
+                            (<acronym>OIIG</acronym>)</orgname>
+            </author>
+            <author>
+                <orgname>Clinical Decision Support
+                    (<acronym>CDS</acronym>)</orgname>
+            </author>
+        </authorgroup>
+        <abstract>
+            <info>
+                <title>Contract: VA118-16-D-1008, Task Order
+                        (<acronym>TO</acronym>):
+                    VA-118-16-F-1008-0007</title>
+            </info>
+            <para>
+                <table frame="all" rowsep="1" colsep="1">
+                    <title>Relevant KNART Information: Women's Health: Women's Health: Osteoporosis Screening Age 65 and Older </title>
+                    <tgroup cols="2" align="left">
+                        <thead>
+                            <row valign="bottom">
+                                <entry valign="middle">Women's Health KNART</entry>
+                                <entry valign="middle">Associated CLIN</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Osteoporosis Screening Age 65 and Older - Event-Condition-Action (ECA) Rule </entry>
+                                <entry>CLIN0007BA</entry>
+                            </row>
+                            <row>
+                                <entry>Osteoporosis Screening Age 65 and Older - Documentation Template</entry>
+                                <entry>CLIN0005AB</entry>
+                            </row>
+                            <row>
+                                <entry>Osteoporosis Screening Age 65 and Older  - Order Set </entry>
+                                <entry>CLIN0008CA</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </para>
+        </abstract>
+        <pubdate>April 2018</pubdate>
+        <volumenum>Version 1.2</volumenum>
+        <revhistory>
+            <revision>
+                <revnumber>1.2</revnumber>
+                <date>4/30/2018</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>Revised Final per PO comments</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.1</revnumber>
+                <date>2/22/2018</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>Final DocBook transformation with revised ECA logic diagram</revremark>
+            </revision>
+            <revision>
+                <revnumber>1.0</revnumber>
+                <date>12/13/2017</date>
+                <authorinitials>Jennifer Reed and Steve Mahalec</authorinitials>
+                <revremark>Final DocBook transformation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.12</revnumber>
+                <date>12/11/2017</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Comments received</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.11</revnumber>
+                <date>12/7/2017</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>2nd Program Office CCWP Submission Date</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.10</revnumber>
+                <date>12/5/2017</date>
+                <authorinitials>Diane Montella</authorinitials>
+                <revremark>Comments received</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.9</revnumber>
+                <date>11/17/2017</date>
+                <authorinitials>Kathleen Keating</authorinitials>
+                <revremark>1st Program Office CCWP Submission Date</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.8</revnumber>
+                <date>11/7/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Harmonization and ECA Rule Diagrams</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.7</revnumber>
+                <date>11/6/2017</date>
+                <authorinitials>Nicholas Rains</authorinitials>
+                <revremark>Harmonization</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.6</revnumber>
+                <date>10/3/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Diagram ECA Rules and edit ECA section</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.5</revnumber>
+                <date>10/1/2017</date>
+                <authorinitials>Ralph Ruocco</authorinitials>
+                <revremark>Template revision per PO recommendation</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.4</revnumber>
+                <date>9/6/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Edit and review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.3</revnumber>
+                <date>9/4/2017</date>
+                <authorinitials>Yvette Harris-Williams, MD</authorinitials>
+                <revremark>SME review of clinical content and approved</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.2</revnumber>
+                <date>8/28/2017</date>
+                <authorinitials>Wendelyn Bradley</authorinitials>
+                <revremark>Input Motive data for review</revremark>
+            </revision>
+            <revision>
+                <revnumber>0.1</revnumber>
+                <date>8/8/2017</date>
+                <authorinitials>Cait Cusack</authorinitials>
+                <revremark>Initial Draft</revremark>
+            </revision>
+        </revhistory>
+    </info>
+    <preface>
+        <title>VA Subject Matter Expert (<acronym>SME</acronym>)
+            Panel</title>
+        <informaltable frame="all">
+            <tgroup cols="3">
+                <thead>
+                    <row>
+                        <entry>Name</entry>
+                        <entry>Title</entry>
+                        <entry>Project Role</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>C. Yvette Williams-Harris, MD, MPH</entry>
+                        <entry>Physician, Atlanta VA Healthcare System, 1670 Clairmont Rd, Atlanta, GA 30033</entry>
+                        <entry>SME, Primary</entry>
+                    </row>
+                    <row>
+                        <entry>Megan Gerber, MD, MPH</entry>
+                        <entry>Physician, VA Boston Health Care System, 150 South Huntington Ave,
+                            Boston, MA 02130</entry>
+                        <entry>SME, Secondary</entry>
+                    </row>
+                    <row>
+                        <entry>Caitlin M. Cusack, MD, MPH</entry>
+                        <entry>Contractor-Physician Informaticist, Office of Women's Health
+                            Services, 810 Vermont Avenue, Washington DC 20420 </entry>
+                        <entry>SME</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </preface>
+    <preface version="5.1">
+        <info>
+            <title>Introduction</title>
+        </info>
+        <para>The VA is committed to improving the ability of clinicians to provide care for
+            patients while increasing quality, safety, and efficiency. Recognizing the importance of
+            standardizing clinical knowledge in support of this goal, VA is implementing the Health
+            Level 7 (<acronym>HL7</acronym>) Knowledge Artifact Specification
+            for a wide range of VA clinical use cases. Knowledge Artifacts, referred to as
+                    (<acronym>KNARTs</acronym>), enable the structuring and
+            encoding of clinical knowledge so the knowledge can be integrated with electronic health
+            records to enable clinical decision support.</para>
+        <para>The purpose of this Clinical Content White Paper
+                (<acronym>CCWP</acronym>) is to capture the clinical context
+            and intent of <acronym>KNART</acronym> use cases in sufficient
+            detail to provide the <acronym>KNART</acronym> authoring team
+            with the clinical source material to construct the corresponding knowledge artifacts
+            using the HL7 Knowledge Artifact Specification. This paper has been developed using
+            material from a variety of sources: VA artifacts, clinical practice guidelines, evidence
+            in the body of medical literature, and clinical expertise. After reviewing these
+            sources, the material has been synthesized and harmonized under the guidance of VA
+            subject matter experts to reflect clinical intent for this use case.</para>
+        <para>Unless otherwise noted, items within this white paper (e.g., documentation template
+            fields, orderable items, etc.) are chosen to reflect the clinical intent at the time of
+            creation. To provide an exhaustive list of all possible items and their variations is
+            beyond the scope of this work.</para>
+    </preface>
+    <preface version="5.1">
+        <info>
+            <title>Conventions Used</title>
+        </info>
+        <para>Conventions used within the knowledge artifact descriptions include:</para>
+        <itemizedlist mark="none" spacing="compact">
+            <listitem>
+                <para>&lt;obtain&gt;: Indicates a prompt to obtain the
+                    information listed <itemizedlist mark="bullet"
+                        spacing="normal">
+                        <listitem>
+                            <para>If possible, the requested information
+                                should be obtained from the underlying system(s).
+                                Otherwise, prompting the user for information may
+                                be required</para>
+                        </listitem>
+                        <listitem>
+                            <para>Default Values: Unless otherwise noted,
+                                &lt;obtain&gt; indicates to obtain the most recent
+                                observation. It is recognized that this default
+                                time-frame value may be altered by future
+                                implementations</para>
+                            <para></para>
+                        </listitem>
+                    </itemizedlist></para> </listitem>
+            
+            <listitem>
+                <para>
+                    [...]: Square brackets enclose explanatory text that indicates some
+                    action on the part of the clinical user, or general guidance to the clinical or technical
+                    teams. Examples include, but are not limited to:</para>
+                
+                <itemizedlist mark="none" spacing="normal">
+                    <listitem>
+                        <para>[Begin ...], [End
+                            ...]: Indicates the start and end of specific areas to
+                            clearly delineate them for technical purposes.</para>
+                        
+                        <para>[Activate ...]: Initiates another
+                            knowledge artifact or knowledge artifact section.</para>
+                        
+                        <para>[Section Prompt: ...]: If this section is
+                            applicable, then the following prompt should be displayed to the
+                            user.</para>
+                        
+                        <para>[Section Behavior: ...]:
+                            Indicates technical constraints or considerations
+                            for the selection of items outlined in the section
+                            prompt.</para>
+                        
+                        <para>[Attach: ...]: Indicates that the
+                            specified item (e.g. procedure or result
+                            interpretation) should be attached to the
+                            documentation template if available.</para>
+                        
+                        <para>[Link: ...]: Indicates that
+                            rather than attaching an item (e.g. image), a link
+                            should be included in the documentation
+                            template.</para>
+                        
+                        <para>[Clinical Comment: ...]:
+                            Indicates technical considerations or notes to be
+                            utilized for KNART authoring and at time of
+                            implementation planning.</para>
+                        
+                        <para>[Technical Note: ...]: Indicates
+                            technical considerations or notes to be utilized
+                            for KNART authoring and at time of implementation
+                            planning.</para>
+                        
+                        <para>[If ...]: Indicates the beginning of a
+                            conditional section.</para>
+                        
+                        <para>[Else, ...]: Indicates the beginning of
+                            the alternative branch of a conditional section.</para>
+                        
+                        <para>[End if ...]: Indicates the end of a
+                            conditional section.</para>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            
+            <listitem>
+                <para>☐[Check box]: Indicates items that should be
+                    selected based upon the section selection behavior.</para>
+            </listitem>
+        </itemizedlist>
+    </preface>
+    <chapter>
+        <title>Women's Health: Osteoporosis Screening Age 65 and older</title>
+        <section>
+            <title>1.1 Clinical Context</title>
+            <para>[Begin Clinical Context.]</para>
+            <para>Osteoporosis is a highly prevalent condition with significant attendant morbidity.
+                As osteoporosis is generally silent until a fracture occurs, it is imperative that
+                patients who are at risk be screened according to evidence-based guidelines. Such
+                screening is consistent with public health initiatives and is highly cost-effective,
+                as the cost of care for preventable osteoporosis-related fractures is considerable
+                [American College of Obstetricians and Gynecologists
+                        (<glossterm><acronym>ACOG</acronym></glossterm>) 2012; US Preventive
+                Services Task Force (<glossterm><acronym>USPSTF</acronym></glossterm>) 2015].
+                Fostering adherence across the VA to guideline-recommended screening for
+                osteoporosis could improve resource utilization and promote good patient care. </para>
+            <para>The latest guidelines chosen by the VA will be used for these knowledge artifacts.
+                In addition, these artifacts are constrained to apply to: <itemizedlist mark="none">
+                    <listitem>
+                        <para>Women aged 65 and older, with no documented history of
+                            osteopenia/osteoporosis, who are outpatients.</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>Clinical context is summarized in the table below. </para>
+            <table>
+                <title>Clinical Context Domains</title>
+                <tgroup cols="2">
+                    <tbody>
+                        <row>
+                            <entry>Target User</entry>
+                            <entry>To include primary care and designated women's health
+                                providers.</entry>
+                        </row>
+                        <row>
+                            <entry>Patient</entry>
+                            <entry>Females aged 65 and older</entry>
+                        </row>
+                        <row>
+                            <entry>Priority</entry>
+                            <entry>Routine</entry>
+                        </row>
+                        <row>
+                            <entry>Specialty</entry>
+                            <entry>Primary Care and Gynecology</entry>
+                        </row>
+                        <row>
+                            <entry>Location</entry>
+                            <entry>Outpatient</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>[End Clinical Context.]</para>
+        </section>
+        <section>
+            <title>1.2 Knowledge Artifacts</title>
+            <para>[Begin Knowledge Artifacts.]</para>
+            <para>This section describes the CDS knowledge artifacts intended for clinical
+                providers, and include: </para>
+            <itemizedlist>
+                <listitem>
+                    <para>An (<glossterm><acronym>ECA</acronym></glossterm>)
+                        Rule: Women's Health: Osteoporosis Screening Age 65 and older KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Rule logic for activation of the documentation template and order set</para>
+                        </listitem>
+                        <listitem>
+                            <para>Actions that may include activating documentation templates and order sets</para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>A Documentation Template: Women's Health: Osteoporosis Screening Age 65 and Older
+                        KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Documents a patient's risk for osteoporosis
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of documentation sections
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+                <listitem>
+                    <para>An Order Set: Women's Health: Osteoporosis Screening Age 65 and Older KNART</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Orderable items associated with osteoporosis screening</para>
+                        </listitem>
+                        <listitem>
+                            <para>Includes logic for appropriate display of the order set </para>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </itemizedlist>
+            <para>[End Knowledge Artifacts.]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Event Condition Action (<glossterm><acronym>ECA</acronym></glossterm>) Rule: Osteoporosis Screening Age 65 and older</title>
+        <para>[Begin <glossterm><acronym>ECA</acronym></glossterm> Rule.]</para>
+        <section>
+            <title>2.1 Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[Technical Note: All female outpatients age 65 and older should be included.]</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>2.2 Outpatient Visit, 65 and Older Years of Age, No Prior Dual-Energy X-ray Absorptiometry
+                (<glossterm><acronym>DEXA</acronym></glossterm>)</title>
+            <para>[Begin Outpatient Visit, 65 an Older Years of Age, No Prior Dual-Energy X-ray
+                Absorptiometry (<glossterm><acronym>DEXA</acronym></glossterm>).]</para>
+            <bridgehead renderas="sect4">Event</bridgehead>
+            <para>[Begin Event.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Access of the patient record in a preventive care encounter at a
+                            primary care clinic or in an <glossterm><acronym>OB/GYN</acronym></glossterm> or women's
+                            health outpatient department.</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Event.]</para>
+            <bridgehead renderas="sect4">Conditions</bridgehead>
+            <para>[Begin Conditions.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Patient is aged 65 and older years; and</para>
+                    </listitem>
+                    <listitem>
+                        <para>There is no <glossterm><acronym>DEXA</acronym></glossterm> scan T-score &lt;= -1.0 in the patient's record; and</para>
+                    </listitem>
+                    <listitem>
+                        <para>Patient has not undergone <glossterm><acronym>DEXA</acronym></glossterm> scanning OR previous <glossterm><acronym>DEXA</acronym></glossterm> was before age 60</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Conditions.]</para>
+            <bridgehead renderas="sect4">Actions</bridgehead>
+            <para>[Begin Actions.]</para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Identify the patient as a potential osteoporosis screening candidate;
+                            and</para>
+                    </listitem>
+                    <listitem>
+                        <para>Open Documentation Template: Osteoporosis Screening Age 64 and Older; and</para>
+                    </listitem>
+                    <listitem>
+                        <para>Make screening guideline recommendations available for review.</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Actions.]</para>
+            <para>[End Outpatient Visit, 65 and Older Years of Age, No Prior <glossterm><acronym>DEXA</acronym></glossterm>OR previous <glossterm><acronym>DEXA</acronym></glossterm>
+            was before age 60.]</para>
+            <para>[End ECA rule]</para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Documentation Template: Osteoporosis Screening Age 65 and Older</title>
+        <para>[Begin Documentation Template.]</para>
+        <section>
+            <title>3.1 Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[Clinical Comment: The Osteoporosis Screening Age 65 and Older Documentation Template 
+            provides a mechanism for documenting a patient’s risk for osteoporosis. Although the template 
+            is a series of questions and answers, any information that can be obtained from the system 
+            should be pre-filled in a manner that is displayed to the user. Users should revise the 
+            information provided in the documentation template form as needed during the evaluation.]</para>
+            <para>[End Knowledge Narrative]</para>
+        </section>
+        <section>
+            <title>3.2 Pertinent Medical History</title>
+            <para>[Begin Pertinent Medical History]</para>
+            <para>[Section Prompt: Does patient report being previously diagnosed with osteoporosis?]</para>
+            <para>[Technical note: For “yes” response to diagnosis of either osteopenia or osteoporosis, 
+            system should not record a confirmed diagnosis until T-Score is provided, thus ECA rule will fire 
+            as if patient had never reported these diagnoses.  System can record that patient has verbally 
+            reported a diagnosis of either osteopenia or osteoporosis. <glossterm><acronym>KNART</acronym></glossterm>should still fire again every 
+            6 months until report/T-score is provided]</para>
+            <para>[Section Selection Behavior: Select only one. Required.]<itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Yes</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[Section Prompt: Does patient report being previously diagnosed with osteopenia?]?]</para>
+            <para>[Section Selection Behavior: Select only one. Required.]<itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Yes</para>
+                    </listitem>
+                    <listitem>
+                        <para>&#x2610; No</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[]End Pertinent Medical History.]</para>
+        </section>
+        <section>
+        <title>3.3. Imaging History Outside Electronic Medical Record</title>
+        <para>[Begin Imaging History Outside Electronic Medical Record.]</para>
+        <para>[Technical note: this section should be completed automatically, and results displayed if data is available.]</para>
+        <para>[Section Prompt: Screening for osteoporosis consists of: a <glossterm><acronym>DEXA</acronym></glossterm>scan in all women at age 65, in addition to 
+        identifying (and screening) post-menopausal women less than age 65 who are at higher than normal risk of fracture.]</para>
+        <para>[Section Prompt: Prior outside <glossterm><acronym>DEXA</acronym></glossterm>scanning done?]</para>
+        <para>[Section Selection Behavior: Select only one. Required.]</para>
+        <para>[Technical note: For “yes” response to “Prior outside <glossterm><acronym>DEXA</acronym></glossterm>scanning done?”, system should not record 
+        <glossterm><acronym>DEXA</acronym></glossterm>as done until T-Score is provided, thus <glossterm><acronym>ECA</acronym></glossterm>rule will fire as 
+        if <glossterm><acronym>DEXA</acronym></glossterm>had not been done.  System can record that patient has verbally reported 
+        <glossterm><acronym>DEXA</acronym></glossterm>results.  KNART should still fire again every 6 months until report/T-score is provided]
+        <itemizedlist>
+        	<listitem><para>&#x2610; Yes, prior outside <glossterm><acronym>DEXA</acronym></glossterm>scanning was done</para>
+        		<itemizedlist>
+        			<listitem><para>[Section prompt: IS full<glossterm><acronym>DEXA</acronym></glossterm> scan report provided for review?]</para></listitem>
+        			<listitem><para>[Section Selection Behavior: Select only one. Required.]</para></listitem>
+       				<listitem><para>&#x2610; Yes, full <glossterm><acronym>DEXA</acronym></glossterm>scan report is provided for review</para>
+       					<itemizedlist>
+       						<listitem><para>[Section Prompt: Was DEXA done before age 60?]</para></listitem>
+       						<listitem><para>[Section Selection Behavior: Select only one. Required.]</para>
+       							<itemizedlist>
+       								<listitem><para>&#x2610; Yes, DEXA was done before age 60</para>
+       									<itemizedlist>
+       										<listitem><para>&#x2610; Most recent T-score &gt;-1.0 (normal)</para>
+       											<itemizedlist>
+       											<listitem><para>[Technical note: Please prompt user that “Repeat DEXA screening is indicated 
+       											after age 65”, then continue documentation template to completion, then open Order Set:
+       											 Osteoporosis Screening Age 65 and Older]</para></listitem>
+       											 </itemizedlist>
+       										</listitem>
+       										<listitem><para>&#x2610; Most recent T-score &gt;-2.5 and &lt;= -1.0 (osteopenia)</para>
+       											<itemizedlist>
+       												<listitem><para>[Technical note: Please end documentation template and open future knowledge artifact for management of osteopenia and osteoporosis.</para>
+       												</listitem>
+       											</itemizedlist>
+       										</listitem>
+       										<listitem><para>&#x2610; Most recent T-score &lt;=-2.5 (osteoporosis)</para>
+       											<itemizedlist>
+       												<listitem><para>[Technical note: Please end documentation template and prompt user that “Treatment for osteoporosis is indicated”.  
+       												Open future knowledge artifact for management of osteopenia and osteoporosis.</para>
+       												</listitem>
+       											</itemizedlist>
+       										</listitem>
+       									</itemizedlist>
+       								</listitem>
+       								<listitem><para>&#x2610; No, DEXA was NOT done before age 60</para>
+       									<itemizedlist>
+       										<listitem><para>&#x2610; Most recent T-score &gt;-1.0 (normal)</para>
+       											<itemizedlist>
+       												<listitem>
+       													<para>[Technical note: Please end documentation template and prompt user that “DEXA screening is complete”]</para>
+       												</listitem>
+       											</itemizedlist>
+       										</listitem>
+       										<listitem>
+       											<para>&#x2610; Most recent T-score is &lt;=-2.5 (osterporosis)</para>
+       											<itemizedlist>
+       												<listitem>
+       													<para>[Technical note: Please end documentation template and prompt user that “Treatment for osteoporosis is indicated”. 
+       													Open future knowledge artifact for management of osteopenia and osteoporosis</para>
+       												</listitem>
+       											</itemizedlist>
+       										</listitem>
+       									</itemizedlist>
+       								</listitem>
+       						</itemizedlist>
+       					</listitem>
+       					</itemizedlist>
+       				</listitem>
+       				<listitem>
+       					<para>&#x2610;No, full <glossterm><acronym>DEXA</acronym></glossterm>scan report is not provided for review</para>
+       						<itemizedlist>
+         						<listitem>
+         							<para>[Section Prompt: Has a provider requested this report in the past, and has it been one year or more since the report was first requested?]</para>
+         						</listitem>
+         						<listitem>
+         							<para>[Section Selection Behavior: select only one. Required.]</para>
+        		 					<itemizedlist>
+         								<listitem><para>&#x2610; Yes</para>
+         									<itemizedlist>
+         										<listitem><para>[Technical note: Please prompt user that “Repeat DEXA screening is indicated”, then continue documentation template to completion, 
+        					 					then open Order Set: Osteoporosis Screening Age 65 and Older]</para>
+        										</listitem>
+        									</itemizedlist>
+        								</listitem>
+         								<listitem><para>&#x2610; No</para>
+         									<itemizedlist>
+         										<listitem><para>[Technical note: Please prompt provider to “Please request that patient provide outside <glossterm><acronym>DEXA</acronym></glossterm> 
+         											results”.]</para>
+         										</listitem>
+         									</itemizedlist>
+         								</listitem>
+        								<listitem><para>&lt;Obtain&gt; Any patient reported details</para>
+        								</listitem>
+        							</itemizedlist>
+        						</listitem>
+        					</itemizedlist>
+        				</listitem>
+         			<listitem><para>&#x2610; No, prior outside <glossterm><acronym>DEXA</acronym></glossterm> scanning was not done</para>
+         				<itemizedlist>
+         					<listitem>
+         						<para>[Technical note: Please continue documentation template to completion, then open Order Set: Osteoporosis Screening Age 65 and Older]</para>
+         					</listitem>
+         				</itemizedlist>
+         			</listitem>
+         		</itemizedlist>
+         	</listitem>
+         </itemizedlist>
+        </para>
+        <para>[End Imaging History Outside Electronic Medical Record.]</para>
+        </section>
+        <section>
+            <title>3.5 Patient Preference</title>
+            <para>[Begin Patient Preference]</para>
+            <para>[Section Prompt: Patient declines <glossterm><acronym>DEXA</acronym></glossterm> scanning?]</para>
+            <para>[Section Selection Behavior: Select only one. Required.]
+            	<itemizedlist mark="none">
+                	<listitem>
+                    	<para>&#x2610; Yes
+                    		<itemizedlist>
+                    			<listitem>
+                    				<para>[Technical note: Continue documentation template to completion, but do not open order 
+                    				set for patients who decline <glossterm><acronym>DEXA</acronym></glossterm> scanning.]</para>
+                    			</listitem>
+                    		</itemizedlist>
+                    	</para>
+                	</listitem>
+               	 	<listitem>
+                    	<para>&#x2610; No</para>
+                	</listitem>
+            	</itemizedlist>
+            </para>
+            <para>[End Patient Preference]</para>
+        </section>
+        <section>
+        	<title>3.6 Risk Factors</title>
+        	<para>[Begin Risk Factors]</para>
+        	<para>[Technical note: The “Risk Factors” section should only be displayed if “yes” is selected for “Patient declines DEXA scanning” in section 3.5.]</para>
+        	<para>[Section Prompt: Risk Factors for osteoporosis]</para>
+        	<para>[Section Prompt: History of fragility fracture (due to falls from standing height or lower)?]</para>
+        	<para>[Section Selection Behavior: Select only one. Required.]
+        		<itemizedlist>
+        			<listitem><para>&#x2610; Yes</para></listitem>
+        			<listitem><para>&#x2610; No</para></listitem>
+        		</itemizedlist>
+        	</para>
+        	<para>[Section Prompt: BMI (Body Mass Index) &lt;21?]</para>
+        	<para>&lt;obtain&gt; BMI
+        		<itemizedlist>
+        			<listitem><para>&#x2610; Yes</para></listitem>
+        			<listitem><para>&#x2610; No</para></listitem>
+        		</itemizedlist>
+        	</para>
+        	<para>[Section Prompt: Potential causes of bone loss?]</para>
+        	<para>[Section Selection Behavior: Select all applicable. Optional.]
+        		<itemizedlist>
+        			<listitem><para>&#x2610; Glucocorticoid therapy (5 mg per day for longer than 3 months)</para></listitem>
+        			<listitem><para>&#x2610; Anticonvulsant therapy greater than 2 years</para></listitem>
+        			<listitem><para>&#x2610; Hypogonadism</para></listitem>
+        			<listitem><para>&#x2610; History of gastrectomy </para></listitem>
+        			<listitem><para>&#x2610; History of malabsorption</para></listitem>
+        			<listitem><para>&#x2610; History of celiac disease</para></listitem>
+        			<listitem><para>&#x2610; History of metabolic surgery</para></listitem>
+        			<listitem><para>&#x2610; Rheumatoid arthritis</para></listitem>
+        			<listitem><para>&#x2610; Other</para>
+        					<para>&lt;obtain&gt;</para>
+        			</listitem>
+        		</itemizedlist>
+        	</para>
+        	<para>[Section Prompt: Parental hip fracture?]</para>
+        	<para>[Section Selection Behavior: Select one. Required.]
+        		<itemizedlist>
+        			<listitem>
+        				<para>&#x2610; Yes</para>
+        			</listitem>
+        			<listitem>
+        				<para>&#x2610; No</para>
+        			</listitem>	
+        		</itemizedlist>
+        	</para>
+        	<para>[Section Prompt: Tobacco use history and advice to quit]</para>
+        	<para>[Technical note: activate chapter 2.2, “Tobacco Use History”, and chapter 2.3, 
+        	“Advising users to quit” in the “Tobacco Assessment and Cessation Counseling” documentation
+        	 template KNART.  Pull the following data from that KNART into this one]</para>
+        	 <para>[Section Prompt: Do you currently use tobacco?]
+        	 	<itemizedlist>
+        	 		<listitem><para>&#x2610; Every day</para></listitem>
+        	 		<listitem><para>&#2610; Some days</para></listitem>
+        	 		<listitem><para>&#2610; Not at all</para></listitem>
+        	 	</itemizedlist>
+        	 </para>
+        	 <para>[Section Prompt: Have you ever used tobacco?]</para>
+        	 <para>[Technical Note: Display this question only if current tobacco use is “not at all”.]
+        	 <itemizedlist>
+        			<listitem>
+        				<para>&#x2610; Yes</para>
+        			</listitem>
+        			<listitem>
+        				<para>&#x2610; No</para>
+        			</listitem>	
+        		</itemizedlist>
+        	 </para>
+        	 <para>[Section Prompt: Daily alcohol use/Alcoholism?]</para>
+        	 <para>[Section Selection Behavior: Select one. Required.]
+        	 	 <itemizedlist>
+        			<listitem>
+        				<para>&#x2610; Yes</para>
+        			</listitem>
+        			<listitem>
+        				<para>&#x2610; No</para>
+        			</listitem>	
+        		</itemizedlist>
+        	 </para>
+        	 <para>[Section Prompt: If there are any risk factors for osteoporosis noted then ask the patient if she still declines screening.]</para>
+        	 <para>[End Risk Factors.]</para>
+        	 <para>[End Documentation Template.] </para>
+        </section>
+    </chapter>
+    <chapter>
+        <title>Order Set: Osteoporosis Screening Age 65 and Older</title>
+        <para>[Begin Order Set.]</para>
+        <section>
+            <title>4.1 Knowledge Narrative</title>
+            <para>[Begin Knowledge Narrative.]</para>
+            <para>[See Clinical Context in Chapter 1.]</para>
+            <para>[This order set applies to any patient who requires osteoporosis screening. All
+                orders are routine unless otherwise specified.]</para>
+            <para>[End Knowledge Narrative.]</para>
+        </section>
+        <section>
+            <title>4.3 Imaging Studies</title>
+            <para>[Begin Imaging Studies.]</para>
+            <para>[Section Prompt: Imaging Studies]</para>
+            <para>[Section Selection Behavior: Select one. Optional.]<itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Dual-energy x-ray absorptiometry screen for osteoporosis</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Imaging Studies.]</para>
+        </section>
+        <section>
+            <title>4.4 Patient and Caregiver Education</title>
+            <para>[Begin Patient and Caregiver Educations.]</para>
+            <para>[Section Prompt: Patient and Caregiver Education.]</para>
+            <para>[Section Selection Behavior: Select one. Optional.]<itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Osteoporosis education</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>[End Patient and Caregiver Education.]</para>
+        </section>
+        <section>
+            <title>4.5 Consults and Referrals</title>
+            <para>[Begin Consults and Referrals.]</para>
+            <para>[Section Prompt: Radiology consult for osteoporosis screening.] </para>
+            <para>[Section Prompt: A radiology consult order would be used to refer a patient to
+                radiology outside the VA]</para>
+            <para>[Section Selection Behavior: Optional.] </para>
+            <para>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>&#x2610; Consult: Radiology</para>
+                    </listitem>
+                </itemizedlist>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>Reason for Consult: Osteoporosis Screening</para>
+                    </listitem>
+                </itemizedlist>
+                <itemizedlist mark="none">
+                    <listitem>
+                        <para>Priority: Routine </para>
+                    </listitem>
+                    <listitem>
+                        <para>[Section Prompt: Referring Physician Information]</para>
+                    </listitem>
+                    <listitem>
+                        <para>&lt;obtain&gt; Referring Physician Name</para>
+                    </listitem>
+                    <listitem>
+                        <para>&lt;obtain&gt; Referring Physician Contact Information</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>[End Consults and Referrals.]</para>
+            <para>[End Order Set.]</para>
+        </section>
+    </chapter>
+    <bibliography>
+        <title>Bibliography/Evidence</title>
+        <biblioentry>
+            <authorgroup>
+                <author>
+                    <personname>Committee on Practice Bulletins-Gynecology</personname>
+                </author>
+                <author>
+                    <personname>ACOG</personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">AGOG Practice Bulletin N. 129. Osteoporosis</citetitle>
+            <citetitle pubwork="journal">Obstet Gynecol</citetitle>
+            <pubdate>2012</pubdate>
+            <volumenum>120</volumenum>
+            <issuenum>3</issuenum>
+            <pagenums>718-734</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Cosman, 2014</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Cosman</surname><firstname>F</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>de Beur</surname><firstname>S.J.</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>LeBoff</surname><firstname>M.S.</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Lewiecki</surname><firstname>E.M.</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Tanner</surname><firstname>B</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Randall</surname><firstname>S</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Lindsay</surname><firstname>R</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Clinician's Guide to Prevention and Treatment of
+                Osteoporosis</citetitle>
+            <citetitle pubwork="journal">Osteoporosis International</citetitle>
+            <pubdate>2014</pubdate>
+            <volumenum>25</volumenum>
+            <issuenum>10</issuenum>
+            <pagenums>2359-2381</pagenums>
+            <bibliomisc><link xlink:href="http://doi.org/10.1007/s00198-014-2794-2"/></bibliomisc>
+        </biblioentry>
+        <biblioentry>
+            <abbrev>Gourlay, 2012</abbrev>
+            <authorgroup>
+                <author>
+                    <personname><surname>Gourlay</surname><firstname>ML</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Fine</surname><firstname>JP</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Preisser</surname><firstname>JS</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>May</surname><firstname>RC</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Li</surname><firstname>C</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Lui</surname><firstname>LY</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Ransohoff</surname><firstname>DF</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Cauley</surname><firstname>JA</firstname></personname>
+                </author>
+                <author>
+                    <personname><surname>Ensrud</surname><firstname>KE</firstname></personname>
+                </author>
+            </authorgroup>
+            <citetitle pubwork="article">Bone-density testing interval and transition to
+                osteoporosis in older women</citetitle>
+            <citetitle pubwork="journal">New England Journal of Medicine</citetitle>
+            <pubdate>2012 Jan</pubdate>
+            <volumenum>19</volumenum>
+            <issuenum>366</issuenum>
+            <pagenums>225-33</pagenums>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>National Institutes of Health</orgname>
+            </author>
+            <citetitle pubwork="webpage">Calcium Fact Sheet for Health Professionals</citetitle>
+            <bibliomisc><link
+                    xlink:href="https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+                /></bibliomisc>
+            <pubdate>Accessed August 2017</pubdate>
+        </biblioentry>
+        <biblioentry>
+            <author>
+                <orgname>USPSTF</orgname>
+            </author>
+            <citetitle pubwork="webpage">Final Update Summary: Osteoporosis: U.S. Preventive
+                Services Task Force website</citetitle>
+            <bibliomisc><link
+                    xlink:href="https://www.uspreventiveservicestaskforce.org/Page/Document/UpdateSummaryFinal/osteoporosis-screening"
+                /></bibliomisc>
+            <pubdate>Reviewed July 2015</pubdate>
+        </biblioentry>
+    </bibliography>
+    <appendix>
+        <title>Existing Sample VA Artifacts</title>
+        <figure>
+            <title>Reminder Resolution: Osteoporosis Screen</title>
+            <mediaobject>
+                <alt>VA Screenshot: Reminder Resolution: Osteoporosis Screen with 4 checkbox
+                    options: 1) order a bone density screening study, 2) historcal entry of outside
+                    bone density screening results, 3) life expectancy is less tan 6 months -
+                    screening for osteoporosis is not indicated, 4) patient declines bone density
+                    screening/patient was educated on the risk of delayed screening.</alt>
+                <imageobject>
+                    <imagedata align="center" fileref="C:\Users\Franklin/ Cuello\git\vha-kbs-knarts\content\womens_health_osteoporosis_screening\images" scalefit="1" width="100%" contentdepth="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <figure>
+            <title>Reminder Resolution: Osteoporosis Education</title>
+            <mediaobject>
+                <alt>VA Screenshot: Osteoporosis Education Reminder Resolution screen with 4
+                    checkbox options: 1) patient was educated on factors that might reduce risk for
+                    osteoporosis, 2) patient received osteoporosis education previously at another
+                    facility, 3) patient declined osteoporosis education at this encounter, 4)
+                    learning needs assessment. </alt>
+                <imageobject>
+                    <imagedata align="center" fileref="images/Fig2OsteoporosisEducation.png" scalefit="1" width="100%" contentdepth="100%"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </appendix>
+</book>
