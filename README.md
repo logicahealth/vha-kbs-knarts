@@ -1,6 +1,6 @@
 ﻿# Veterans Health Administration, Knowledge Based Systems (VHA KBS): Clinical Decision Support (CDS) Knowledge Artifacts (KNARTs)
 
-**This is a working copy curated by VHA program staff with input from OSEHRA and clinical communities. Official artifact releases are made through [CDS Connect](https://cds.ahrq.gov/cdsconnect/explore)**
+**This is a working copy curated by VHA program staff with input from clinical subject matter expert (SME) communities. Artifact releases through 2020 have been made to [CDS Connect](https://cds.ahrq.gov/cdsconnect/repository)**.
 
 This clinical content repository is the authoritative public-facing source of a broad and deep VHA effort to formally represent 100+ order sets, documentation templates, and event-condition-action (ECA) rules as structured knowledge. Long term, the primary aim is to provide a clinically-vetted knowledge base such that standards-based EHR and support systems may apply and reuse the wealth of tacit knowledge held by VA physicians in interoperable, computable, and automated form. This project was initiated in 2017 under Contract VA118-16-D-1008, Task Order VA11817F10080007. Contributions have been made from a large set of subject matter experts, informaticians, university partners, industry leaders, interagency staff, and other professionals.
 
@@ -31,27 +31,18 @@ This repository includes several metadata files useful for task-specific purpose
 ## Master Visual Index and Docker Image
 An `index.html` file at the root level allows for viewing cross-artifact metrics via a web browers, including graphical SVG diagrams of composite artifacts. This may be built into a deployable docker image for local use via the provided `Dockerfile`. A version is hosted by Arizona State University, periodically updated at:
 
-	http://vha-kbs-knarts.healthcreek.org
+	http://vha-kbs-knarts.prestonlee.com
 	
 
 # File Availability Auditing with KNARTwork
 A `manifest.json` is provided for loading into the free web-based KNARTwork tool from Arizona State University. The fastest way to search for specific artifacts or documents it is to use this magic link and search the manifest within the KNARTwork browser:
 
-	http://knartwork.healthcreek.org/browser?repository=http://vha-kbs-knarts.healthcreek.org
+	http://knartwork.prestonlee.com/browser?repository=http://vha-kbs-knarts.prestonlee.com
 
 An "audit" button allows you to check for individual file availability directly via your web browser. The editor will allow you to make changes to the KNARTs, but you'll need to download the updated artifact(s) to save them. 
 
 # CDS Connect Mapping
-The provided `connect.json` file has been jointly created between VHA and the CDS Connect team at AHRQ and MITRE. This file is effectively a remapping of the KNARTwork `manifest.json` file to match CDS Connect's internal metadata structure as closely as possible. This allows for import and integration with the CDS Connect API.
-
-# Additional Resources
-
-TODO this entire section
-TODO list of clinical domains
-TODO CDS Connect links
-TODO OSEHRA Summit 2018 presentation link
-TODO HSPC presentation slides
-TODO OSEHRA webinar
+The provided `connect.json` file has been jointly created between VHA and the CDS Connect team at AHRQ. This file is effectively a remapping of the KNARTwork `manifest.json` file to match CDS Connect's internal metadata structure as closely as possible. This allows for import and integration with the CDS Connect API.
 
 # Contact
 
